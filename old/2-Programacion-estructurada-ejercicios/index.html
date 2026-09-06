@@ -1,0 +1,1528 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>2 Programacion estructurada ejercicios - PROG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../../toggle-sidebar.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ejercicios-de-consolidacion" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="PROG" class="md-header__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PROG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2 Programacion estructurada ejercicios
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../1-Introduccion-programacion/" class="md-tabs__link">
+          
+  
+  
+  Programación
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="PROG" class="md-nav__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    PROG
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1-Introduccion-programacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2-Programacion-estructurada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-Programacion-modular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4-Estructuras-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5-POO-Clases-y-Objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6-POO-Uso-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7-Estructuras-datos-dinamicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8-Programacion-funcional-Streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../9-Ficheros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-Acceso-base-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-Interfaces-graficas-MVC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-consolidacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Consolidación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Consolidación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-refuerzo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Refuerzo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Refuerzo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-ampliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Ampliación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Ampliación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revision-por-pares-peer-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revisión por Pares (Peer Review)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>2 Programacion estructurada ejercicios</h1>
+
+<!-- Nombre de archivo sugerido: U02-Ejercicios-Programacion-Estructurada.md --><div class="admonition info">
+<p class="admonition-title">Contexto del Proyecto: Desarrollo del Core para 'Project Chimera'</p>
+<p>¡Bienvenido al equipo de desarrollo de "Project Chimera"! Nuestro próximo gran lanzamiento es un RPG de texto con una ambientación <em>cyber-noir</em>. Tu primera misión es desarrollar los prototipos de las mecánicas de juego fundamentales. En esta fase, nos centraremos en la lógica pura utilizando exclusivamente las estructuras de control que hemos estudiado: <strong>secuencias, condicionales y bucles</strong>. Todo el código, por ahora, residirá dentro del método <code>main</code> para concentrarnos en estos pilares. ¡Manos al código!</p>
+</div>
+<h2 id="ejercicios-de-consolidacion">Ejercicios de Consolidación</h2>
+<div class="admonition abstract">
+<p class="admonition-title">1) Acceso a la Red Oculta: Sistema de Login | Nivel: Fácil</p>
+<h5 id="objetivo"><strong>Objetivo</strong></h5>
+<p>Crear un sistema de autenticación básico para que el jugador acceda al juego, utilizando condicionales simples y operadores lógicos.</p>
+<h5 id="tarea-a-realizar"><strong>Tarea a realizar</strong></h5>
+<p>Escribe un programa que simule una pantalla de login.<br>
+1.  Define dos constantes <code>String</code>: <code>USUARIO_REGISTRADO</code> y <code>PASSWORD_REGISTRADA</code>. Asígnales los valores que quieras (ej: "netrunner_01", "cyb3rP@ss!").<br>
+2.  Pide al usuario que introduzca su nombre de usuario y su contraseña por consola.<br>
+3.  Comprueba si <strong>ambos</strong>, el usuario y la contraseña introducidos, coinciden con las constantes que definiste. Recuerda usar el método adecuado para comparar <code>String</code>.<br>
+4.  Si las credenciales son correctas, muestra un mensaje de bienvenida: "Acceso concedido. Bienvenido a la Red Oculta, [nombre de usuario]".<br>
+5.  Si no, muestra un mensaje de error: "Credenciales incorrectas. Intruso detectado".<br></p>
+<h5 id="aplicacion-en-el-mundo-real"><strong>Aplicación en el Mundo Real</strong></h5>
+<p>Cada aplicación con cuentas de usuario, desde redes sociales hasta sistemas bancarios, utiliza una lógica de autenticación similar a esta como primera barrera de seguridad.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">2) Botín de Dron: Simulador de 'Loot Drop' | Nivel: Fácil</p>
+<h5 id="objetivo_1"><strong>Objetivo</strong></h5>
+<p>Utilizar condicionales anidados (<code>if-else if-else</code>) para simular la obtención de recompensas de diferente rareza al derrotar a un enemigo.</p>
+<h5 id="tarea-a-realizar_1"><strong>Tarea a realizar</strong></h5>
+<ol>
+<li>Crea un programa que simule el botín que suelta un dron de seguridad derrotado.</li>
+<li>Genera un número entero aleatorio entre 1 y 100. Este será tu "tiro de suerte".</li>
+<li>Implementa la siguiente lógica de recompensas usando una estructura <code>if-else if-else</code>:<ul>
+<li>Si el tiro es mayor a 95, el botín es "Componente Legendario: Matriz de IA corrupta".</li>
+<li>Si no, si el tiro es mayor a 80, el botín es "Componente Épico: Servomotor mejorado".</li>
+<li>Si no, si el tiro es mayor a 60, el botín es "Componente Raro: Placa de blindaje de titanio".</li>
+<li>En cualquier otro caso, el botín es "Componente Común: Chatarra electrónica".</li>
+</ul>
+</li>
+<li>Muestra por pantalla el resultado del tiro de suerte y el botín obtenido.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_1"><strong>Aplicación en el Mundo Real</strong></h5>
+<p>Los sistemas de recompensas aleatorias (cajas de botín, 'gachas', 'drops' de enemigos) en los videojuegos se basan enteramente en esta lógica para mantener el interés del jugador.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">3) Hackeando la Terminal: Menú de Opciones | Nivel: Fácil</p>
+<h5 id="objetivo_2"><strong>Objetivo</strong></h5>
+<p>Aplicar la estructura <code>switch</code> para crear un menú interactivo que responda a las elecciones del usuario.</p>
+<h5 id="tarea-a-realizar_2"><strong>Tarea a realizar</strong></h5>
+<ol>
+<li>Diseña un menú de una terminal que el jugador está hackeando. Muestra las siguientes opciones:<ul>
+<li>1 - Descargar Archivos de Datos</li>
+<li>2 - Desactivar Cámaras de Seguridad</li>
+<li>3 - Sobrecargar Núcleo de Energía</li>
+<li>4 - Salir del Sistema</li>
+</ul>
+</li>
+<li>Pide al usuario que elija una opción (un número del 1 al 4).</li>
+<li>Utiliza una estructura <code>switch</code> (la versión tradicional con <code>break</code>) para gestionar la opción elegida.</li>
+<li>Para cada <code>case</code>, muestra un mensaje descriptivo de la acción que se está realizando (ej: "Iniciando descarga de 150GB de datos clasificados...").</li>
+<li>Incluye un <code>default</code> para manejar el caso en que el usuario introduzca una opción no válida.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_2"><strong>Aplicación en el Mundo Real</strong></h5>
+<p>Los menús son omnipresentes en el software, desde los cajeros automáticos y las operadoras telefónicas hasta las interfaces de configuración de cualquier programa. El <code>switch</code> es la herramienta ideal para gestionarlos.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">4) Secuencia de Autodestrucción: La Cuenta Atrás | Nivel: Fácil</p>
+<h5 id="objetivo_3"><strong>Objetivo</strong></h5>
+<p>Implementar un bucle <code>for</code> para ejecutar una acción un número determinado de veces.</p>
+<h5 id="tarea-a-realizar_3"><strong>Tarea a realizar</strong></h5>
+<ol>
+<li>Escribe un programa que simule una cuenta atrás para la autodestrucción de una base enemiga.</li>
+<li>Usa un bucle <code>for</code> que cuente hacia atrás desde 10 hasta 1.</li>
+<li>En cada iteración, imprime por pantalla "T - [segundo] segundos para la detonación.".</li>
+<li>Después de que el bucle termine, imprime "¡BOOM! La base ha sido destruida.".</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_3"><strong>Aplicación en el Mundo Real</strong></h5>
+<p>Los bucles <code>for</code> se usan constantemente para procesar colecciones de datos de tamaño conocido, como recorrer las filas de una hoja de cálculo, procesar los píxeles de una imagen o, como en este caso, realizar una tarea un número fijo de veces.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">5) Calibración del Ciberdeck: Validación de Entrada | Nivel: Fácil</p>
+<h5 id="objetivo_4"><strong>Objetivo</strong></h5>
+<p>Utilizar un bucle <code>do-while</code> para asegurar que la entrada del usuario cumple con un criterio específico antes de continuar.</p>
+<h5 id="tarea-a-realizar_4"><strong>Tarea a realizar</strong></h5>
+<ol>
+<li>Imagina que el jugador necesita calibrar la potencia de su Ciberdeck, que solo puede operar entre 1 y 100.</li>
+<li>Crea un programa que pida al usuario "Introduce el nivel de potencia (1-100):".</li>
+<li>Usa un bucle <code>do-while</code> para seguir pidiendo el dato mientras el número introducido sea inválido (menor que 1 o mayor que 100).</li>
+<li>Si el usuario introduce un número inválido, muéstrale un mensaje de error como "Error: El nivel de potencia debe estar entre 1 y 100.".</li>
+<li>Cuando el usuario finalmente introduzca un valor válido, el bucle terminará y el programa imprimirá "Ciberdeck calibrado a nivel [número] de potencia.".</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_4"><strong>Aplicación en el Mundo Real</strong></h5>
+<p>La validación de la entrada del usuario es una tarea fundamental en programación para prevenir errores. Se usa en formularios web, configuraciones de software y en cualquier lugar donde un dato incorrecto podría causar un fallo en el sistema.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">6) Depuración: El Bucle Infinito del Droide de Mantenimiento | Nivel: Fácil</p>
+<h5 id="objetivo_5"><strong>Objetivo</strong></h5>
+<p>Analizar un fragmento de código con un error lógico común (un bucle infinito) y corregirlo.</p>
+<h5 id="setup-inicial"><strong>Setup Inicial</strong></h5>
+<p>El siguiente código intenta simular un droide que pule una sección del suelo 10 veces. Sin embargo, el programador junior cometió un error y el droide nunca termina su tarea.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// --- CÓDIGO CON BUG ---</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DroideInfinito</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">seccionesPulidas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Iniciando ciclo de pulido..."</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">seccionesPulidas</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Puliendo sección "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">seccionesPulidas</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"..."</span><span class="p">);</span>
+<span class="w">            </span><span class="c1">// Falta algo aquí...</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Ciclo de pulido completado. El suelo brilla."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="tarea-a-realizar_5"><strong>Tarea a realizar</strong></h5>
+<ol>
+<li>Copia el código anterior en tu editor.</li>
+<li>Ejecútalo y observa el comportamiento. ¿Por qué el programa no termina?</li>
+<li>Identifica la causa del bucle infinito. La condición <code>seccionesPulidas &lt; 10</code> nunca se vuelve falsa.</li>
+<li>Añade la línea de código que falta dentro del bucle <code>while</code> para que el contador se incremente correctamente y el bucle termine después de 10 iteraciones.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_5"><strong>Aplicación en el Mundo Real</strong></h5>
+<p>Los bucles infinitos son uno de los bugs más comunes, especialmente al empezar. Pueden causar que una aplicación se congele o consuma el 100% de la CPU. Saber identificarlos y corregirlos es una habilidad de depuración esencial.</p>
+</div>
+<h2 id="ejercicios-de-refuerzo">Ejercicios de Refuerzo</h2>
+<div class="admonition warning">
+<p class="admonition-title">7) Creación de Personaje: Generador de Atributos | Nivel: Medio</p>
+<h5 id="objetivo_6"><strong>Objetivo</strong></h5>
+<p>Combinar bucles <code>for</code> y condicionales <code>if</code> para crear un sistema más complejo que genere los atributos de un personaje de forma aleatoria.</p>
+<h5 id="tarea-a-realizar_6"><strong>Tarea a realizar</strong></h5>
+<ol>
+<li>Crea un programa para generar los 4 atributos de un personaje: <code>Fuerza</code>, <code>Destreza</code>, <code>Inteligencia</code> y <code>Constitución</code>.</li>
+<li>Define un array de <code>String</code> con los nombres de estos atributos.</li>
+<li>Usa un bucle <code>for-each</code> para recorrer el array de nombres de atributos.</li>
+<li>Dentro del bucle, para cada atributo, simula la tirada de "3 dados de 6 caras" (3d6):<ul>
+<li>Genera tres números aleatorios entre 1 y 6.</li>
+<li>Suma los tres números para obtener el valor total del atributo.</li>
+</ul>
+</li>
+<li>Añade una regla especial: Si los tres dados sacan el mismo número (ej. tres 5s), es un "éxito crítico". Imprime un mensaje especial junto a la tirada.</li>
+<li>
+<p>Muestra el resultado final de cada atributo, por ejemplo: "Fuerza: 14 (Tirada: 5, 3, 6)".</p>
+</li>
+<li>
+<p><strong>Pista:</strong> Para comprobar el éxito crítico, después de generar los tres números ( <code>dado1</code>, <code>dado2</code>, <code>dado3</code>), una condición simple podría ser: <code>if (dado1 == dado2 &amp;&amp; dado2 == dado3)</code>.</p>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_6"><strong>Aplicación en el Mundo Real</strong></h5>
+<p>La generación procedural de contenido (personajes, mapas, misiones) en videojuegos utiliza combinaciones de bucles y condicionales para crear experiencias únicas en cada partida.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">8) Combate por Turnos: Bucle Principal | Nivel: Medio</p>
+<h5 id="objetivo_7"><strong>Objetivo</strong></h5>
+<p>Estructurar el bucle principal de un sistema de combate, donde la lucha continúa mientras se cumpla una condición.</p>
+<h5 id="tarea-a-realizar_7"><strong>Tarea a realizar</strong></h5>
+<ol>
+<li>Crea un prototipo de combate por turnos entre un "Netrunner" (el jugador) y un "Agente de Seguridad" (el enemigo).</li>
+<li>Declara dos variables <code>int</code>: <code>vidaNetrunner</code> (inicializada a 100) y <code>vidaAgente</code> (inicializada a 75).</li>
+<li>Crea un bucle <code>while</code> que continúe mientras la vida del Netrunner <strong>Y</strong> la vida del Agente sean mayores que 0.</li>
+<li>Dentro del bucle, simula un turno de combate:<ul>
+<li>Calcula el daño del Netrunner: un número aleatorio entre 5 y 15. Resta este daño a la <code>vidaAgente</code>.</li>
+<li>Imprime el resultado: "El Netrunner ataca. ¡El Agente pierde [daño] de vida! (Vida restante: [vida])".</li>
+<li><strong>Importante:</strong> Después del ataque del Netrunner, comprueba si la vida del Agente ha caído a 0 o menos. Si es así, usa la instrucción <code>break</code> para salir del bucle inmediatamente.</li>
+<li>Calcula el daño del Agente: un número aleatorio entre 8 y 12. Resta este daño a la <code>vidaNetrunner</code>.</li>
+<li>Imprime el resultado: "El Agente contraataca. ¡Pierdes [daño] de vida! (Vida restante: [vida])".</li>
+</ul>
+</li>
+<li>
+<p>Fuera del bucle, comprueba quién ha ganado (quién tiene vida por encima de 0) e imprime un mensaje de victoria o derrota.</p>
+</li>
+<li>
+<p><strong>Pista:</strong> Para generar un número aleatorio en un rango (ej. entre 5 y 15), puedes usar <code>random.nextInt(MAX - MIN + 1) + MIN</code>. En este caso, <code>random.nextInt(11) + 5</code>.</p>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_7"><strong>Aplicación en el Mundo Real</strong></h5>
+<p>El "bucle de juego" (<code>game loop</code>) es el corazón de cualquier videojuego. Es un gran bucle <code>while</code> que se encarga de procesar la entrada, actualizar el estado del juego y renderizar los gráficos, repitiéndose hasta que el juego termina.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">9) Inventario: Búsqueda de Ítem | Nivel: Medio</p>
+<h5 id="objetivo_8"><strong>Objetivo</strong></h5>
+<p>Utilizar un bucle <code>for-each</code> combinado con una variable <code>boolean</code> para buscar un elemento específico dentro de un array.</p>
+<h5 id="setup-inicial_1"><strong>Setup Inicial</strong></h5>
+<p>El jugador tiene un inventario representado por un array de <code>String</code>:
+<code>String[] inventario = {"Neuro-Estimulante", "Chip de Datos Encriptado", "Pistola EMP", "Cable de Fibra Óptica"};</code></p>
+<h5 id="tarea-a-realizar_8"><strong>Tarea a realizar</strong></h5>
+<ol>
+<li>Crea el array <code>inventario</code> del setup inicial.</li>
+<li>Pide al usuario el nombre del ítem que desea buscar en su inventario.</li>
+<li>Declara una variable <code>boolean</code> llamada <code>encontrado</code> e inicialízala a <code>false</code>.</li>
+<li>Usa un bucle <code>for-each</code> para recorrer cada <code>item</code> del <code>inventario</code>.</li>
+<li>Dentro del bucle, usa un <code>if</code> para comprobar si el <code>item</code> actual es igual al que busca el usuario (¡recuerda usar <code>.equalsIgnoreCase()</code> para que no importe si lo escribe en mayúsculas o minúsculas!).</li>
+<li>Si lo encuentras, cambia la variable <code>encontrado</code> a <code>true</code> y utiliza la instrucción <code>break</code> para detener la búsqueda, ya que no es necesario seguir recorriendo el array.</li>
+<li>Después del bucle, usa un <code>if</code> final para comprobar el valor de la variable <code>encontrado</code>. Si es <code>true</code>, imprime "[Ítem Buscado] se encuentra en el inventario.". Si es <code>false</code>, imprime "No tienes ese ítem.".</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_8"><strong>Aplicación en el Mundo Real</strong></h5>
+<p>La búsqueda de datos en colecciones es una de las operaciones más comunes en programación. Se usa para encontrar un producto en un catálogo, un usuario en una base de datos o un fichero en un directorio.</p>
+</div>
+<h2 id="ejercicios-de-ampliacion">Ejercicios de Ampliación</h2>
+<div class="admonition danger">
+<p class="admonition-title">10) Interfaz de Usuario: Barra de Vida Dinámica | Nivel: Alto</p>
+<h5 id="objetivo_9"><strong>Objetivo</strong></h5>
+<p>Aplicar bucles y lógica condicional para generar una representación visual simple (ASCII art) que cambie en función del valor de una variable.</p>
+<h5 id="tarea-a-realizar_9"><strong>Tarea a realizar</strong></h5>
+<ol>
+<li>Crea un programa que dibuje una barra de vida para un personaje.</li>
+<li>Declara dos variables <code>int</code>: <code>vidaActual</code> y <code>vidaMaxima</code>. Dales valores para probar (ej: <code>vidaActual = 7</code>, <code>vidaMaxima = 20</code>).</li>
+<li>El programa debe imprimir una barra de vida con el siguiente formato: <code>VIDA: [=======-------------] 7/20</code></li>
+<li>La barra visual dentro de los corchetes <code>[]</code> debe tener una longitud total igual a <code>vidaMaxima</code>.</li>
+<li>Usa un único bucle <code>for</code> que itere desde 1 hasta <code>vidaMaxima</code>.</li>
+<li>Dentro del bucle, usa un <code>if</code> para decidir qué carácter imprimir en cada paso:<ul>
+<li>Si el contador del bucle es menor o igual a <code>vidaActual</code>, imprime un carácter que represente la vida (ej: <code>=</code>).</li>
+<li>Si es mayor, imprime un carácter que represente la vida perdida (ej: <code>-</code>).</li>
+</ul>
+</li>
+<li>Asegúrate de construir toda la barra en un <code>String</code> o imprimir los caracteres en la misma línea usando <code>System.out.print()</code> y al final un <code>System.out.println()</code> para el salto de línea.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_9"><strong>Aplicación en el Mundo Real</strong></h5>
+<p>La generación dinámica de interfaces de usuario, ya sean gráficas o de texto, se basa en bucles que recorren datos y condicionales que deciden qué elementos visuales mostrar. Este ejercicio es una versión simplificada de cómo se renderizan barras de progreso, medidores de vida o gráficos de barras.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">11) Mini-juego: Desactivando la Bomba | Nivel: Alto</p>
+<h5 id="objetivo_10"><strong>Objetivo</strong></h5>
+<p>Integrar bucles, condicionales y entrada de usuario para crear un mini-juego completo y funcional.</p>
+<h5 id="tarea-a-realizar_10"><strong>Tarea a realizar</strong></h5>
+<ol>
+<li>Crea un juego de "adivina el número" con la temática de desactivar una bomba.</li>
+<li>El programa generará un "código de desactivación" secreto (un número aleatorio entre 1 y 100).</li>
+<li>El jugador tiene un número limitado de intentos para adivinar el código. Declara una constante <code>INTENTOS_MAXIMOS</code> y dale un valor (ej: 7).</li>
+<li>Usa un bucle <code>for</code> que controle el número de intentos. El bucle se ejecutará desde 1 hasta <code>INTENTOS_MAXIMOS</code>.</li>
+<li>Dentro del bucle:<ul>
+<li>Informa al jugador de cuántos intentos le quedan.</li>
+<li>Pide al jugador que introduzca un número.</li>
+<li>Compara el número del jugador con el código secreto.<ul>
+<li>Si acierta, imprime un mensaje de éxito ("¡Bomba desactivada!") y usa <code>break</code> para salir del bucle.</li>
+<li>Si falla, dale una pista: "El código es MAYOR" o "El código es MENOR".</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Después del bucle, necesitas comprobar si el jugador ha ganado o ha perdido. Una forma de hacerlo es con una variable <code>boolean</code> <code>bombaDesactivada</code>, que se pone a <code>true</code> si acierta. Si al final del juego la variable sigue en <code>false</code>, significa que se han agotado los intentos. Imprime un mensaje de fracaso revelando el código.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_10"><strong>Aplicación en el Mundo Real</strong></h5>
+<p>Este tipo de lógica de "ensayo y error" con un número limitado de intentos es la base de sistemas de seguridad (como el PIN del móvil), mecánicas de puzzles en juegos y procesos de calibración en software industrial.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">12) Exploración: Generador de Mapa Procedural | Nivel: Alto</p>
+<h5 id="objetivo_11"><strong>Objetivo</strong></h5>
+<p>Utilizar bucles anidados y números aleatorios para generar una estructura de datos bidimensional, sentando las bases de la generación procedural de contenido.</p>
+<h5 id="tarea-a-realizar_11"><strong>Tarea a realizar</strong></h5>
+<ol>
+<li>Vas a generar un pequeño mapa de 20x10 caracteres. Declara dos constantes <code>int</code> para el ancho y el alto.</li>
+<li>Usa un bucle <code>for</code> anidado dentro de otro. El bucle exterior controlará las filas (alto) y el interior las columnas (ancho).</li>
+<li>Dentro del bucle interior, en cada "celda" del mapa, decide qué carácter dibujar basándote en una probabilidad aleatoria:<ul>
+<li>Genera un número aleatorio de punto flotante entre 0.0 y 1.0 usando <code>Math.random()</code>.</li>
+<li>Si el número es menor que 0.7 (70% de probabilidad), dibuja un punto <code>.</code> (suelo).</li>
+<li>Si no, si es menor que 0.9 (20% de probabilidad), dibuja una <code>T</code> (un árbol).</li>
+<li>Si no (10% de probabilidad restante), dibuja un <code>~</code> (agua).</li>
+</ul>
+</li>
+<li>Usa <code>System.out.print()</code> dentro del bucle interno para dibujar los caracteres en la misma línea.</li>
+<li>Usa <code>System.out.println()</code> en el bucle externo, justo después de que termine el bucle interno, para crear una nueva línea para la siguiente fila del mapa.</li>
+</ol>
+<h5 id="revision-por-pares-peer-review"><strong>Revisión por Pares (Peer Review)</strong></h5>
+<p>Una vez que tengas tu generador funcionando, intercámbialo con un compañero.
+*   <strong>Revisor:</strong> Ejecuta el código de tu compañero varias veces. ¿El mapa parece aleatorio? ¿Las proporciones de suelo, árboles y agua parecen correctas según el código? Busca posibles mejoras: ¿se podría añadir un borde al mapa? ¿O un punto de inicio para el jugador ('@')?
+*   <strong>Autor:</strong> Recibe el feedback y trata de implementar una de las sugerencias de mejora propuestas por tu compañero.</p>
+<h5 id="aplicacion-en-el-mundo-real_11"><strong>Aplicación en el Mundo Real</strong></h5>
+<p>La generación procedural es una técnica potentísima usada en el desarrollo de juegos para crear mundos masivos (como en No Man's Sky o Minecraft) y en otros campos como la generación de texturas, efectos especiales y simulación de datos.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

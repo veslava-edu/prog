@@ -1,0 +1,1648 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>4 Estructuras datos ejercicios - PROG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ejercicios-practicos-fundamentos-de-estructuras-de-datos-en-java" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PROG" class="md-header__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PROG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4 Estructuras datos ejercicios
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../1-Introduccion-programacion/" class="md-tabs__link">
+          
+  
+  
+  Programación
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PROG" class="md-nav__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    PROG
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-Introduccion-programacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-Programacion-estructurada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-Programacion-modular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-Estructuras-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-POO-Clases-y-Objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-POO-Uso-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-Estructuras-datos-dinamicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-Programacion-funcional-Streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-Ficheros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-Acceso-base-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-Interfaces-graficas-MVC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-al-proyecto-herramientas-de-linea-de-comandos-para-devtune" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducción al Proyecto: Herramientas de Línea de Comandos para "DevTune"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-consolidacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Consolidación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Consolidación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial-codigo-con-bug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial (Código con Bug):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-refuerzo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Refuerzo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Refuerzo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-ampliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Ampliación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Ampliación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revision-por-pares-peer-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revisión por Pares (Peer Review):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revision-por-pares-peer-review_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revisión por Pares (Peer Review):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- Nombre de archivo sugerido: UD4-Ejercicios-Arrays-Cadenas.md --><h1 id="ejercicios-practicos-fundamentos-de-estructuras-de-datos-en-java">Ejercicios Prácticos: Fundamentos de Estructuras de Datos en Java</h1>
+<h2 id="introduccion-al-proyecto-herramientas-de-linea-de-comandos-para-devtune">Introducción al Proyecto: Herramientas de Línea de Comandos para "DevTune"</h2>
+<p>Bienvenido al equipo de herramientas internas de "DevTune", nuestra nueva app de música. Antes de construir la aplicación principal, necesitamos crear una serie de pequeñas utilidades de línea de comandos (CLI) para gestionar y procesar datos de usuarios, playlists y canciones. En estos ejercicios, desarrollarás programas interactivos que se ejecutan en la consola, solicitando datos al usuario y manipulándolos usando las estructuras de datos más fundamentales: arrays, matrices y cadenas. ¡Prepárate para construir herramientas prácticas desde cero!</p>
+<p><br></p>
+<hr>
+<h2 id="ejercicios-de-consolidacion">Ejercicios de Consolidación</h2>
+<hr>
+<div class="admonition abstract">
+<p class="admonition-title">1) Creador de Playlists Fijas | Nivel: Fácil</p>
+<h5 id="objetivo"><strong>Objetivo:</strong></h5>
+<p>Utilizar arrays unidimensionales para almacenar una colección de datos de tamaño fijo introducidos por el usuario.</p>
+<h5 id="tarea-a-realizar"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea un programa que anuncie la creación de una "Playlist de 5 canciones".</li>
+<li>Declara un array de <code>String</code> con un tamaño de 5.</li>
+<li>Usa un bucle <code>for</code> para pedirle al usuario que introduzca el nombre de una canción 5 veces. Cada nombre debe guardarse en una posición del array.</li>
+<li>Una vez que el array esté lleno, usa un bucle <code>for-each</code> para imprimir la playlist completa, precediendo cada canción con su número de pista (ej: "1. Bohemian Rhapsody").</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Muchas aplicaciones manejan colecciones de datos con un tamaño predefinido, como los días de la semana, los meses del año o, en un contexto de hardware, la configuración de un número fijo de sensores. Entender los arrays de tamaño fijo es el primer paso antes de manejar datos dinámicos.</p>
+</div>
+<hr>
+<div class="admonition abstract">
+<p class="admonition-title">2) Analizador de Títulos de Canciones | Nivel: Fácil</p>
+<h5 id="objetivo_1"><strong>Objetivo:</strong></h5>
+<p>Utilizar métodos esenciales de la clase <code>String</code> para extraer información y analizar texto introducido por el usuario.</p>
+<h5 id="tarea-a-realizar_1"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Pide al usuario que introduzca el título de una canción.</li>
+<li>Muestra en pantalla la siguiente información:<ul>
+<li>El número total de caracteres (longitud del <code>String</code>).</li>
+<li>El primer carácter del título.</li>
+<li>El último carácter del título.</li>
+<li>El título convertido completamente a mayúsculas.</li>
+<li>El título convertido completamente a minúsculas.</li>
+</ul>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_1"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>El procesamiento de texto es una de las tareas más comunes en programación. Desde validar un email, buscar una subcadena en un log, hasta formatear nombres de usuario, los métodos de la clase <code>String</code> se usan constantemente para manipular y verificar datos textuales.</p>
+</div>
+<hr>
+<div class="admonition abstract">
+<p class="admonition-title">3) Tablero de Tres en Raya | Nivel: Fácil</p>
+<h5 id="objetivo_2"><strong>Objetivo:</strong></h5>
+<p>Utilizar un array bidimensional (matriz) para representar un estado, como un tablero de juego.</p>
+<h5 id="tarea-a-realizar_2"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una matriz de caracteres de 3x3 (<code>char[][]</code>).</li>
+<li>Inicializa todas las celdas del tablero con un guion (<code>-</code>) para representar que están vacías.</li>
+<li>Modifica el tablero para simular un par de movimientos: coloca una 'X' en la posición central (fila 1, columna 1) y una 'O' en la esquina superior izquierda (fila 0, columna 0).</li>
+<li>Crea una función estática <code>imprimirTablero(char[][] tablero)</code> que reciba la matriz y la imprima en la consola de forma ordenada, fila por fila.</li>
+<li>Llama a esta función desde <code>main</code> para mostrar el estado final del tablero.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_2"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Las matrices son la base para representar cualquier tipo de datos en forma de cuadrícula: desde mapas en videojuegos, hojas de cálculo, hasta imágenes digitales (que son matrices de píxeles) o representaciones de redes.</p>
+</div>
+<hr>
+<div class="admonition abstract">
+<p class="admonition-title">4) Generador de Nombres de Usuario | Nivel: Fácil</p>
+<h5 id="objetivo_3"><strong>Objetivo:</strong></h5>
+<p>Crear un <code>String</code> a partir de piezas de otros <code>String</code> introducidos por el usuario, usando concatenación y métodos de subcadena.</p>
+<h5 id="tarea-a-realizar_3"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Pide al usuario su nombre.</li>
+<li>Pide al usuario su apellido.</li>
+<li>Pide al usuario su año de nacimiento.</li>
+<li>Genera un nombre de usuario combinando:<ul>
+<li>Las tres primeras letras del nombre, en minúsculas.</li>
+<li>Las tres primeras letras del apellido, en minúsculas.</li>
+<li>Los dos últimos dígitos del año de nacimiento.</li>
+</ul>
+</li>
+<li>Muestra el nombre de usuario generado. Por ejemplo, si el usuario introduce "Ana", "López" y "1998", el programa debería mostrar "analop98".</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_3"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Muchos sistemas de registro automático generan identificadores únicos o sugerencias de nombres de usuario combinando datos proporcionados por el propio usuario, asegurando un formato consistente en toda la plataforma.</p>
+</div>
+<hr>
+<div class="admonition abstract">
+<p class="admonition-title">5) Calculadora de Estadísticas de Puntuaciones | Nivel: Fácil</p>
+<h5 id="objetivo_4"><strong>Objetivo:</strong></h5>
+<p>Recorrer un array de números para realizar cálculos básicos como encontrar el mínimo, el máximo y la media.</p>
+<h5 id="tarea-a-realizar_4"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea un array de <code>int</code> con las siguientes puntuaciones de un test de música: <code>{8, 9, 7, 10, 8, 9, 9, 6, 5, 10}</code>.</li>
+<li>Recorre el array para calcular:<ul>
+<li>La puntuación más alta.</li>
+<li>La puntuación más baja.</li>
+<li>La suma total de todas las puntuaciones.</li>
+</ul>
+</li>
+<li>Calcula la media (recuerda que la media puede tener decimales).</li>
+<li>Imprime todos los resultados de forma clara.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_4"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>El procesamiento de listas de números para extraer estadísticas es una tarea fundamental en el análisis de datos, finanzas, ciencia e ingeniería. Desde calcular la media de ventas de un producto hasta encontrar el valor máximo de un sensor, el recorrido de arrays es la base de todo.</p>
+</div>
+<hr>
+<div class="admonition abstract">
+<p class="admonition-title">6) Divisor de Tags de Géneros Musicales | Nivel: Fácil</p>
+<h5 id="objetivo_5"><strong>Objetivo:</strong></h5>
+<p>Utilizar el método <code>split()</code> de la clase <code>String</code> para convertir una cadena de texto en un array de cadenas.</p>
+<h5 id="tarea-a-realizar_5"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Pide al usuario que introduzca una lista de géneros musicales separados por comas (ej: "Rock, Pop, Jazz, Clásica, Hip-Hop").</li>
+<li>Utiliza el método <code>split(",")</code> para dividir la entrada del usuario en un array de <code>String</code>.</li>
+<li>Recorre el nuevo array y muestra cada género en una línea separada, eliminando posibles espacios en blanco al principio o al final de cada género con el método <code>trim()</code>.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_5"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>El método <code>split()</code> es extremadamente útil para procesar datos que vienen en formatos estructurados como CSV (valores separados por comas) o logs, donde un carácter específico se usa como delimitador para separar diferentes campos de información.</p>
+</div>
+<hr>
+<div class="admonition abstract">
+<p class="admonition-title">7) Pasando la Lista de Canciones por Referencia | Nivel: Fácil</p>
+<h5 id="objetivo_6"><strong>Objetivo:</strong></h5>
+<p>Observar cómo la modificación de un array dentro de una función afecta al array original fuera de ella (paso por referencia).</p>
+<h5 id="tarea-a-realizar_6"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>En el método <code>main</code>, crea un array de <code>String</code> con tres canciones.</li>
+<li>Imprime el contenido del array usando <code>Arrays.toString()</code>.</li>
+<li>Crea una función estática <code>public static void capitalizarTitulos(String[] playlist)</code> que reciba el array.</li>
+<li>Dentro de esta función, usa un bucle para recorrer el array y convertir cada título de canción a mayúsculas. <em>No devuelvas nada (void)</em>.</li>
+<li>Llama a esta función desde <code>main</code>, pasándole tu array de canciones.</li>
+<li>Después de llamar a la función, vuelve a imprimir el array en <code>main</code>. Observa y explica por qué ha cambiado si la función no devolvía nada.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_6"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Entender el paso por referencia es crucial para evitar bugs inesperados. En aplicaciones grandes, muchas partes del código pueden tener acceso al mismo objeto de datos (como el perfil de un usuario). Si una función lo modifica sin que el programador sea consciente, puede causar efectos secundarios difíciles de depurar.</p>
+</div>
+<hr>
+<div class="admonition abstract">
+<p class="admonition-title">8) Debugging: Índice Fuera de Límites | Nivel: Fácil</p>
+<h5 id="objetivo_7"><strong>Objetivo:</strong></h5>
+<p>Encontrar y corregir un error común en el manejo de arrays: <code>ArrayIndexOutOfBoundsException</code>.</p>
+<h5 id="setup-inicial-codigo-con-bug"><strong>Setup Inicial (Código con Bug):</strong></h5>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DebuggingIndices</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">topArtistas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"Queen"</span><span class="p">,</span><span class="w"> </span><span class="s">"Led Zeppelin"</span><span class="p">,</span><span class="w"> </span><span class="s">"The Beatles"</span><span class="p">,</span><span class="w"> </span><span class="s">"Pink Floyd"</span><span class="p">};</span>
+
+<span class="w">        </span><span class="c1">// El objetivo es imprimir la lista de artistas con su posición (del 1 al 4)</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- Top Artistas de DevTune ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">topArtistas</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Hay un error en la siguiente línea</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">". "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">topArtistas</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="tarea-a-realizar_7"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Copia, compila y ejecuta el código anterior. Observarás que lanza una excepción.</li>
+<li>Lee el mensaje de error. ¿Qué significa <code>ArrayIndexOutOfBoundsException</code> y en qué valor de <code>i</code> ocurre el problema?</li>
+<li>Explica en un comentario por qué el bucle <code>for</code> y el acceso al array <code>topArtistas[i]</code> están causando este error.</li>
+<li>Corrige el código para que imprima correctamente la lista numerada del 1 al 4 sin lanzar una excepción.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_7"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Los errores "off-by-one" (error por uno) son una de las fuentes de bugs más comunes al trabajar con bucles y arrays. Comprender que los índices de los arrays en Java van de <code>0</code> a <code>longitud - 1</code> es absolutamente fundamental para escribir código correcto y robusto.</p>
+</div>
+<p><br></p>
+<hr>
+<h2 id="ejercicios-de-refuerzo">Ejercicios de Refuerzo</h2>
+<hr>
+<div class="admonition warning">
+<p class="admonition-title">9) Buscador de Artistas | Nivel: Medio</p>
+<h5 id="objetivo_8"><strong>Objetivo:</strong></h5>
+<p>Recorrer un array para buscar un elemento específico introducido por el usuario.</p>
+<h5 id="tarea-a-realizar_8"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Define un array de <code>String</code> con una lista de nombres de artistas: <code>{"Daft Punk", "Gorillaz", "The Chemical Brothers", "Massive Attack"}</code>.</li>
+<li>Pide al usuario que introduzca el nombre de un artista que desea buscar.</li>
+<li>Recorre el array para comprobar si el artista introducido se encuentra en la lista.</li>
+<li>Utiliza <code>equalsIgnoreCase()</code> para que la búsqueda no distinga entre mayúsculas y minúsculas (ej: buscar "daft punk" debería encontrar "Daft Punk").</li>
+<li>
+<p>Muestra un mensaje indicando si el artista fue encontrado y, si es así, en qué posición del ranking (índice + 1). Si no, informa al usuario que no se encontró.</p>
+</li>
+<li>
+<p><strong>Pista:</strong> Necesitarás una variable booleana (ej: <code>boolean encontrado = false;</code>) y una variable para guardar el índice, que puedes cambiar dentro del bucle si encuentras una coincidencia.</p>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_8"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>La búsqueda de elementos en una colección es una operación omnipresente. Desde buscar un producto en una tienda online, encontrar un fichero en un sistema de archivos, hasta verificar si un usuario existe en una base de datos. La búsqueda lineal (recorrer uno a uno) es el algoritmo más simple para ello.</p>
+</div>
+<hr>
+<div class="admonition warning">
+<p class="admonition-title">10) Matriz de Horarios de Conciertos | Nivel: Medio</p>
+<h5 id="objetivo_9"><strong>Objetivo:</strong></h5>
+<p>Manejar una matriz para almacenar y consultar datos tabulados, interactuando con el usuario para obtener las coordenadas.</p>
+<h5 id="tarea-a-realizar_9"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una matriz de <code>String</code> de 4x3 para representar un horario de conciertos. Las filas representan 4 escenarios (<code>"Principal"</code>, <code>"Alternativo"</code>, <code>"Electrónico"</code>, <code>"Acústico"</code>) y las columnas 3 franjas horarias (<code>"18:00"</code>, <code>"20:00"</code>, <code>"22:00"</code>).</li>
+<li>Rellena la matriz con nombres de artistas ficticios.</li>
+<li>Muestra al usuario los escenarios y las franjas horarias disponibles numeradas (ej: "Escenario 1: Principal", "Hora 1: 18:00").</li>
+<li>Pide al usuario que introduzca el número del escenario (1-4) y el número de la franja horaria (1-3) que desea consultar.</li>
+<li>Valida que la entrada del usuario es correcta (resta 1 para obtener el índice del array). Si es inválida, muestra un error.</li>
+<li>
+<p>Si la entrada es válida, muestra el artista que toca en ese escenario y a esa hora.</p>
+</li>
+<li>
+<p><strong>Pista:</strong> Recuerda que los índices de los arrays van de 0 a N-1. Si el usuario introduce <code>1</code>, deberás acceder al índice <code>0</code>.</p>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_9"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Cualquier sistema que muestre información en tablas, como horarios de clases, parrillas de programación de TV, calendarios o tablas de precios, utiliza internamente una estructura de datos bidimensional para almacenar y acceder a la información de forma eficiente a través de sus coordenadas.</p>
+</div>
+<hr>
+<div class="admonition warning">
+<p class="admonition-title">11) Cifrador César Simple | Nivel: Medio</p>
+<h5 id="objetivo_10"><strong>Objetivo:</strong></h5>
+<p>Manipular un <code>String</code> a nivel de caracteres, convirtiéndolo a un array de <code>char</code>, modificándolo y reconstruyéndolo.</p>
+<h5 id="tarea-a-realizar_10"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Pide al usuario un mensaje secreto.</li>
+<li>Pide al usuario un número para el desplazamiento (la "clave" del cifrado).</li>
+<li>Convierte el mensaje a un array de caracteres usando <code>toCharArray()</code>.</li>
+<li>Recorre el array de caracteres. Para cada carácter, si es una letra, súmale el desplazamiento. (Ej: <code>cifrado[i] = (char) (original[i] + desplazamiento);</code>).</li>
+<li>Convierte el array de caracteres modificado de nuevo a un <code>String</code>.</li>
+<li>
+<p>Muestra el mensaje cifrado.</p>
+</li>
+<li>
+<p><strong>Pista:</strong> Este cifrado simple no manejará el "desbordamiento" del alfabeto (si 'Z' + 2 debería ser 'B'). No te preocupes por eso, el objetivo es practicar la manipulación del array de caracteres. Solo cifra las letras para evitar modificar espacios o símbolos. Puedes usar <code>Character.isLetter()</code>.</p>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_10"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>El cifrado de datos es un campo enorme de la seguridad informática. Aunque el Cifrado César es muy simple, el principio de transformar datos a nivel de sus componentes básicos (caracteres, bytes) es fundamental en algoritmos de encriptación y compresión de datos mucho más complejos y seguros.</p>
+</div>
+<hr>
+<div class="admonition warning">
+<p class="admonition-title">12) Función de Suma con Varargs | Nivel: Medio</p>
+<h5 id="objetivo_11"><strong>Objetivo:</strong></h5>
+<p>Crear y utilizar una función que acepte un número variable de argumentos (<code>varargs</code>).</p>
+<h5 id="tarea-a-realizar_11"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una función estática <code>public static int sumar(int... numeros)</code> que pueda sumar una cantidad variable de números enteros.</li>
+<li>Dentro de la función, los <code>varargs</code> se comportan como un array. Usa un bucle <code>for-each</code> para recorrerlos y calcular la suma total.</li>
+<li>Devuelve la suma.</li>
+<li>En el método <code>main</code>, demuestra que tu función <code>sumar</code> funciona correctamente llamándola de diferentes maneras:<ul>
+<li>Sin argumentos: <code>sumar()</code></li>
+<li>Con dos argumentos: <code>sumar(10, 20)</code></li>
+<li>Con cinco argumentos: <code>sumar(5, 10, 15, 20, 25)</code></li>
+</ul>
+</li>
+<li>Imprime el resultado de cada llamada para verificar que son correctos (0, 30 y 75).</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_11"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Los <code>varargs</code> son muy útiles para crear APIs o librerías más flexibles y fáciles de usar. Funciones de logging (donde puedes pasar varios datos a registrar), constructores de consultas a bases de datos, o métodos para añadir múltiples elementos a una colección de una sola vez son casos de uso comunes para esta característica.</p>
+</div>
+<p><br></p>
+<hr>
+<h2 id="ejercicios-de-ampliacion">Ejercicios de Ampliación</h2>
+<hr>
+<div class="admonition danger">
+<p class="admonition-title">13) Batalla Naval Simplificada | Nivel: Alto</p>
+<h5 id="objetivo_12"><strong>Objetivo:</strong></h5>
+<p>Diseñar e implementar un juego interactivo simple en la consola, utilizando una matriz para el tablero y manejando la lógica del juego, incluyendo la entrada del usuario y la validación.</p>
+<h5 id="tarea-a-realizar_12"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea un tablero de juego de 5x5 usando una matriz <code>char[][]</code>.</li>
+<li>Inicializa el tablero con un carácter que represente el agua (ej: <code>~</code>).</li>
+<li>"Esconde" un barco de 1x1 en una posición aleatoria del tablero. Para ello, genera dos números aleatorios entre 0 y 4 (para la fila y la columna) y coloca una 'B' en esa celda.</li>
+<li>Crea un bucle de juego que le permita al usuario 5 intentos para encontrar el barco.</li>
+<li>En cada intento, pide al usuario una coordenada de fila y una de columna (0-4).</li>
+<li>Comprueba la celda elegida por el usuario:<ul>
+<li>Si contiene la 'B', el usuario ha ganado. Imprime un mensaje de victoria y termina el juego.</li>
+<li>Si no, marca esa celda con una 'X' (para "fallo") e informa al usuario. Imprime el tablero actualizado para que vea sus intentos.</li>
+</ul>
+</li>
+<li>Si el usuario agota sus 5 intentos sin encontrar el barco, el juego termina. Imprime un mensaje de derrota y revela dónde estaba el barco.</li>
+</ol>
+<h5 id="revision-por-pares-peer-review"><strong>Revisión por Pares (Peer Review):</strong></h5>
+<p>Intercambia tu código con un compañero. Revisa su implementación:<br>
+*   ¿El código es claro y está bien comentado?<br>
+*   ¿Maneja correctamente la entrada del usuario? ¿Qué pasa si el usuario introduce un número fuera del rango (ej: 5) o texto en lugar de un número?<br>
+*   ¿La lógica del bucle de juego es correcta? ¿Termina en las condiciones adecuadas (victoria o derrota)?<br>
+*   Sugiere una mejora, como permitir barcos más grandes (de 2 o 3 celdas) o añadir un segundo jugador.</p>
+<h5 id="aplicacion-en-el-mundo-real_12"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>El desarrollo de juegos es un campo importante de la programación. Incluso un juego simple como este requiere una gestión cuidadosa del "estado" (la posición de los barcos, los intentos del jugador), la lógica de las reglas y la interacción con el usuario. Es un excelente ejercicio para combinar todo lo aprendido sobre matrices, bucles, condicionales y entrada/salida.</p>
+</div>
+<hr>
+<div class="admonition danger">
+<p class="admonition-title">14) Analizador de Palíndromos | Nivel: Alto</p>
+<h5 id="objetivo_13"><strong>Objetivo:</strong></h5>
+<p>Resolver un problema clásico de algoritmia de cadenas, prestando atención a la "limpieza" de los datos de entrada antes de procesarlos.</p>
+<h5 id="tarea-a-realizar_13"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li><strong>Investigación:</strong> Un palíndromo es una palabra o frase que se lee igual de izquierda a derecha que de derecha a izquierda, ignorando espacios, puntuación y mayúsculas/minúsculas. Ejemplos: "Anita lava la tina", "Radar", "A man, a plan, a canal: Panama".</li>
+<li>Crea un programa que pida al usuario una frase.</li>
+<li><strong>Limpieza de datos:</strong> Antes de verificar, debes procesar la entrada del usuario:<ul>
+<li>Conviértela a minúsculas.</li>
+<li>Elimina todos los caracteres que no sean letras (espacios, comas, etc.). Puedes hacerlo creando un <code>String</code> nuevo y recorriendo el original, añadiendo solo los caracteres que sean letras.</li>
+</ul>
+</li>
+<li><strong>Verificación:</strong> Implementa una función <code>public static boolean esPalindromo(String texto)</code> que reciba el texto ya limpio.<ul>
+<li>Dentro de la función, la forma más eficiente es usar dos "punteros" (variables de índice): uno que empiece en <code>0</code> y otro en <code>texto.length() - 1</code>.</li>
+<li>Compara los caracteres en ambas posiciones. Si son diferentes, no es un palíndromo y puedes devolver <code>false</code>.</li>
+<li>Si son iguales, mueve los punteros uno hacia el otro (el del inicio se incrementa, el del final se decrementa) y repite hasta que se crucen.</li>
+<li>Si el bucle termina sin encontrar diferencias, es un palíndromo y debes devolver <code>true</code>.</li>
+</ul>
+</li>
+<li>Llama a la función desde <code>main</code> y muestra al usuario si su frase es un palíndromo o no.</li>
+</ol>
+<h5 id="revision-por-pares-peer-review_1"><strong>Revisión por Pares (Peer Review):</strong></h5>
+<p>Intercambia tu código con un compañero.<br>
+*   ¿Su método de "limpieza" es robusto? ¿Qué pasa con los acentos o caracteres especiales como 'ñ'? (No es necesario que lo resuelva, pero es un buen punto de discusión).<br>
+*   ¿La lógica de los dos punteros es correcta y eficiente? ¿Podría haber una forma más simple pero menos eficiente de hacerlo (ej: creando un <code>String</code> inverso)?<br>
+*   ¿El código es legible? ¿Los nombres de las variables son claros?</p>
+<h5 id="aplicacion-en-el-mundo-real_13"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Este tipo de problema, aunque parezca académico, entrena habilidades cruciales en el mundo real: la limpieza y normalización de datos de entrada (un paso esencial en casi cualquier aplicación que procese datos de usuario), y la implementación de algoritmos eficientes para el procesamiento de datos. Los algoritmos de dos punteros son una técnica común para resolver muchos problemas de arrays y cadenas de manera óptima.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

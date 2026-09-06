@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetivos del módulo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            overflow: hidden;
+            background-color: #f5f9fc;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            color: #263238;
+        }
+        .header {
+            background-color: #0277bd;
+            padding: 20px 70px;
+            color: white;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px 70px;
+            display: flex;
+            flex-direction: column;
+        }
+        .objectives-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 20px;
+            height: 100%;
+        }
+        .objective-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #e1f5fe;
+            padding-bottom: 8px;
+        }
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #e1f5fe;
+            color: #0277bd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0277bd;
+        }
+        .card-content {
+            flex-grow: 1;
+            overflow-y: auto;
+            max-height: 140px;
+        }
+        .objective-list {
+            list-style: none;
+        }
+        .objective-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .objective-item:last-child {
+            margin-bottom: 0;
+        }
+        .objective-bullet {
+            color: #0277bd;
+            margin-right: 8px;
+            flex-shrink: 0;
+            font-size: 14px;
+            margin-top: 2px;
+        }
+        .objective-text {
+            line-height: 1.3;
+        }
+        .footer {
+            padding: 15px 70px;
+            background-color: #e1f5fe;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-text {
+            font-size: 16px;
+            color: #546e7a;
+        }
+        /* Scrollbar styling */
+        .card-content::-webkit-scrollbar {
+            width: 4px;
+        }
+        .card-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .card-content::-webkit-scrollbar-thumb {
+            background: #0277bd;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1 class="title">Objetivos del módulo</h1>
+        </div>
+        
+        <div class="content">
+            <div class="objectives-container">
+                <!-- Objetivo a: Estructura de programa informático -->
+                <div class="objective-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="card-title">a. Estructura de programa</div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="objective-list">
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Identificar bloques de estructura</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Crear proyectos</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Utilizar entornos de desarrollo</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Identificar tipos de variables</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Crear constantes y literales</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Utilizar operadores del lenguaje</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Comprobar conversiones de tipos</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Introducir comentarios</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Objetivo b: Programación orientada a objetos básica -->
+                <div class="objective-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div class="card-title">b. Programación POO básica</div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="objective-list">
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Identificar fundamentos de POO</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Escribir programas simples</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Instanciar objetos predefinidos</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Utilizar métodos y propiedades</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Llamar a métodos estáticos</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Utilizar parámetros en métodos</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Incorporar librerías de objetos</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Utilizar constructores</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Objetivo c: Estructuras de control -->
+                <div class="objective-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <div class="card-title">c. Estructuras de control</div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="objective-list">
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Utilizar estructuras de selección</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Utilizar estructuras de repetición</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Reconocer sentencias de salto</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Utilizar control de excepciones</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Crear programas ejecutables</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Probar y depurar programas</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Comentar y documentar código</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Objetivo d: Programación orientada a objetos avanzada -->
+                <div class="objective-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="card-title">d. Programas en clases</div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="objective-list">
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Reconocer sintaxis de clases</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Definir clases</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Definir propiedades y métodos</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Crear constructores</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Desarrollar programas con objetos</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Controlar visibilidad</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Definir clases heredadas</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Crear métodos estáticos</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Definir interfaces</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Crear conjuntos de clases</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Objetivo e: Entrada y salida -->
+                <div class="objective-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="card-title">e. Operaciones de E/S</div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="objective-list">
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Utilizar consola para E/S</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Aplicar formatos en visualización</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Reconocer posibilidades E/S</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Utilizar ficheros</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Crear programas con ficheros</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Crear interfaces gráficas</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Programar controladores</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Programas con interfaces</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Objetivo f: Tipos avanzados de datos -->
+                <div class="objective-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="card-title">f. Tipos avanzados de datos</div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="objective-list">
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Utilizar arrays</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Reconocer librerías de datos</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Utilizar listas</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Utilizar iteradores</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Reconocer colecciones de datos</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Crear clases genéricas</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Utilizar expresiones regulares</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Identificar clases para XML</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Manipular documentos XML</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Objetivo g: Características avanzadas de POO -->
+                <div class="objective-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="card-title">g. POO avanzada</div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="objective-list">
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Identificar conceptos de herencia</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Utilizar modificadores de herencia</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Reconocer incidencia de constructores</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Crear clases heredadas</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Diseñar jerarquías de clases</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Probar jerarquías de clases</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Realizar programas con jerarquías</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Comentar y documentar código</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Objetivo h: Bases de datos orientadas a objetos -->
+                <div class="objective-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                        <div class="card-title">h. BDOO</div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="objective-list">
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Identificar características de BDOO</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Analizar aplicación en desarrollo</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Instalar sistemas gestores BDOO</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Clasificar métodos de gestión</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Crear bases de datos</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Programar aplicaciones con BDOO</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Recuperar, actualizar objetos</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Gestionar tipos de datos</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Objetivo i: Bases de datos relacionales -->
+                <div class="objective-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="card-title">i. Bases de datos relacionales</div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="objective-list">
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Identificar características SGBD</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Programar conexiones con BD</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Almacenar información en BD</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Recuperar y mostrar información</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Efectuar borrados y modificaciones</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Ejecutar consultas sobre BD</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle objective-bullet"></i>
+                                <span class="objective-text">Gestionar información en BD</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-text">Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web</div>
+            <div class="footer-text">Curso 2026-2027</div>
+        </div>
+    </div>
+</body>
+</html>

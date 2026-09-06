@@ -1,0 +1,1913 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>2 Programacion estructurada bucles ejercicios sol - PROG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ejercicios-practicos-programacion-estructurada-bucles" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PROG" class="md-header__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PROG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2 Programacion estructurada bucles ejercicios sol
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../1-Introduccion-programacion/" class="md-tabs__link">
+          
+  
+  
+  Programación
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PROG" class="md-nav__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    PROG
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-Introduccion-programacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-Programacion-estructurada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-Programacion-modular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-Estructuras-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-POO-Clases-y-Objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-POO-Uso-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-Estructuras-datos-dinamicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-Programacion-funcional-Streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-Ficheros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-Acceso-base-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-Interfaces-graficas-MVC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-consolidacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Consolidación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Consolidación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial-codigo-con-bug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial (Código con Bug)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-refuerzo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Refuerzo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Refuerzo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pista" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pista
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pista_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pista
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pista_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pista
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-ampliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Ampliación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Ampliación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-de-peer-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea de Peer Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- Nombre de archivo sugerido: 2-Ejercicios-Programacion-estructurada-bucles.md --><h1 id="ejercicios-practicos-programacion-estructurada-bucles">Ejercicios Prácticos: Programación Estructurada - Bucles</h1>
+<p>¡Equipo de desarrollo! Bienvenidos a vuestra primera asignación en el proyecto <strong>"Nexus Engine"</strong>, nuestro motor de videojuegos de nueva generación. Vuestra misión es desarrollar una serie de pequeñas herramientas y prototipos que formarán el núcleo de la lógica del motor. Hoy nos centraremos en una de las herramientas más potentes de nuestro arsenal: los <strong>bucles</strong>. Con ellos, daremos vida a simulaciones, automatizaremos tareas repetitivas y gestionaremos la lógica de juego que se ejecuta fotograma a fotograma. ¡Manos al código!</p>
+<h2 id="ejercicios-de-consolidacion">Ejercicios de Consolidación</h2>
+<div class="admonition abstract">
+<p class="admonition-title">1) Contador de Lanzamiento de Hechizos | Nivel: Fácil</p>
+<h5 id="objetivo">Objetivo</h5>
+<p>Utilizar un bucle <code>for</code> para ejecutar una acción un número predefinido de veces.</p>
+<h5 id="tarea-a-realizar">Tarea a realizar</h5>
+<p>En muchos juegos de rol, algunos hechizos golpean varias veces, como una "Lluvia de Meteoritos". Crea un programa que simule el lanzamiento de un hechizo que golpea 5 veces. Por cada golpe, debe imprimir en la consola un mensaje indicando el número del impacto.</p>
+<p><strong>Salida esperada:</strong>
+</p><div class="highlight"><pre><span></span><code>¡Lanzando Lluvia de Meteoritos!
+Impacto de meteorito número 1
+Impacto de meteorito número 2
+Impacto de meteorito número 3
+Impacto de meteorito número 4
+Impacto de meteorito número 5
+</code></pre></div><p></p>
+<h5 id="aplicacion-en-el-mundo-real">Aplicación en el Mundo Real</h5>
+<p>Este patrón se usa constantemente para gestionar efectos de daño sobre tiempo (DoT), animaciones que se repiten un número fijo de veces, o para procesar un número conocido de entidades en el juego.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Random</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LanzamientoHechizo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Lanzando Lluvia de Meteoritos!"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Usamos un bucle for que se ejecutará 5 veces.</span>
+<span class="w">        </span><span class="c1">// La variable 'i' actúa como contador, empezando en 1 y terminando en 5.</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Impacto de meteorito número "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">2) Simulador de Barra de Experiencia | Nivel: Fácil</p>
+<h5 id="objetivo_1">Objetivo</h5>
+<p>Implementar un bucle <code>while</code> que se ejecute mientras una condición sea verdadera.</p>
+<h5 id="tarea-a-realizar_1">Tarea a realizar</h5>
+<p>Un personaje del juego necesita <code>100</code> puntos de experiencia (XP) para subir de nivel. Actualmente tiene <code>0</code> XP. Cada vez que derrota a un enemigo, gana <code>15</code> XP.</p>
+<p>Crea un programa que simule este proceso. El programa debe ir sumando <code>15</code> XP al total y mostrando el mensaje <code>"¡Has ganado 15 XP! XP totales: [XP_actuales]"</code> hasta que el personaje alcance o supere los <code>100</code> XP. Al final, debe mostrar el mensaje <code>"¡Ding! Has subido de nivel."</code>.</p>
+<h5 id="aplicacion-en-el-mundo-real_1">Aplicación en el Mundo Real</h5>
+<p>Los bucles <code>while</code> son el núcleo de la mayoría de los bucles de juego (<code>game loops</code>), que se ejecutan continuamente <em>mientras</em> el jugador no haya salido de la partida o <em>mientras</em> una condición de victoria/derrota no se haya cumplido.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BarraDeExperiencia</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">experienciaNecesaria</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">experienciaActual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">xpPorEnemigo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// El bucle se ejecutará mientras la experiencia sea menor que la necesaria.</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">experienciaActual</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">experienciaNecesaria</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">experienciaActual</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">xpPorEnemigo</span><span class="p">;</span><span class="w"> </span><span class="c1">// Sumamos la experiencia ganada</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Has ganado 15 XP! XP totales: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">experienciaActual</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// Pequeña pausa para simular el tiempo entre enemigos</span>
+<span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">InterruptedException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// Manejo de la excepción</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Ding! Has subido de nivel."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">3) Menú de Crafting Básico | Nivel: Fácil</p>
+<h5 id="objetivo_2">Objetivo</h5>
+<p>Utilizar un bucle <code>do-while</code> para garantizar que un bloque de código se ejecute al menos una vez.</p>
+<h5 id="tarea-a-realizar_2">Tarea a realizar</h5>
+<p>Necesitamos un menú para la mesa de crafteo del juego. El menú debe mostrarse al menos una vez y repetirse hasta que el jugador elija la opción de salir (opción 0).</p>
+<p>El programa debe:
+1.  Mostrar las opciones del menú.
+2.  Pedir al usuario que introduzca una opción.
+3.  Repetir el proceso si la opción introducida no es <code>0</code>.
+4.  Cuando el usuario introduzca <code>0</code>, mostrar un mensaje de despedida.</p>
+<h5 id="aplicacion-en-el-mundo-real_2">Aplicación en el Mundo Real</h5>
+<p>Los bucles <code>do-while</code> son perfectos para menús interactivos y para la validación de entradas de usuario, ya que siempre necesitas pedir la entrada al menos una vez antes de poder comprobar si es válida o si el usuario quiere salir.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MenuCrafting</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">opcion</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// El do-while asegura que el menú se muestre al menos una vez.</span>
+<span class="w">        </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Mesa de Crafteo ---"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"1. Craftear Espada"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"2. Craftear Escudo"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"3. Craftear Poción"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"0. Salir"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Elige una opción: "</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">opcion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">// Se podría añadir un switch aquí para manejar cada caso.</span>
+<span class="w">            </span><span class="c1">// Por ahora, solo nos importa la lógica del bucle.</span>
+
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">opcion</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// La condición se comprueba al final.</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Has salido de la mesa de crafteo."</span><span class="p">);</span>
+<span class="w">        </span><span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">4) Listado de Ítems del Inventario | Nivel: Fácil</p>
+<h5 id="objetivo_3">Objetivo</h5>
+<p>Recorrer todos los elementos de un array utilizando el bucle <code>for-each</code>.</p>
+<h5 id="tarea-a-realizar_3">Tarea a realizar</h5>
+<p>El motor del juego necesita una forma de mostrar el inventario del jugador. Dado un array de <code>String</code> que representa los ítems, crea un programa que recorra el array e imprima cada ítem en una nueva línea, precedido por un guion.</p>
+<h5 id="setup-inicial">Setup Inicial</h5>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">inventario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"Espada de Hierro"</span><span class="p">,</span><span class="w"> </span><span class="s">"Poción de Salud"</span><span class="p">,</span><span class="w"> </span><span class="s">"Antorcha"</span><span class="p">,</span><span class="w"> </span><span class="s">"Mapa Antiguo"</span><span class="p">};</span>
+</code></pre></div>
+<h5 id="aplicacion-en-el-mundo-real_3">Aplicación en el Mundo Real</h5>
+<p>El bucle <code>for-each</code> es la forma más común, segura y legible de procesar cada elemento de una colección de datos (arrays, listas, etc.). Se usa para renderizar listas en interfaces de usuario, aplicar un efecto a todos los enemigos en una zona o, como en este caso, listar inventarios.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ListadoInventario</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">inventario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"Espada de Hierro"</span><span class="p">,</span><span class="w"> </span><span class="s">"Poción de Salud"</span><span class="p">,</span><span class="w"> </span><span class="s">"Antorcha"</span><span class="p">,</span><span class="w"> </span><span class="s">"Mapa Antiguo"</span><span class="p">};</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- INVENTARIO ---"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Por cada 'item' de tipo String en el array 'inventario'...</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">inventario</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// ...imprime el item.</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"- "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">item</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">5) Generador de Coordenadas de un Mapa | Nivel: Fácil</p>
+<h5 id="objetivo_4">Objetivo</h5>
+<p>Comprender el funcionamiento de los bucles anidados (<code>nested loops</code>).</p>
+<h5 id="tarea-a-realizar_4">Tarea a realizar</h5>
+<p>Para generar proceduralmente un mapa, a menudo necesitamos iterar sobre una rejilla o grid. Crea un programa que utilice dos bucles <code>for</code> anidados para imprimir todas las coordenadas <code>[x, y]</code> de un mapa de 5x5. El contador <code>x</code> (externo) y el contador <code>y</code> (interno) deben ir de 0 a 4.</p>
+<p><strong>Salida esperada (extracto):</strong>
+</p><div class="highlight"><pre><span></span><code>[0, 0] [0, 1] [0, 2] [0, 3] [0, 4] 
+[1, 0] [1, 1] [1, 2] [1, 3] [1, 4] 
+...
+[4, 0] [4, 1] [4, 2] [4, 3] [4, 4] 
+</code></pre></div><p></p>
+<h5 id="aplicacion-en-el-mundo-real_4">Aplicación en el Mundo Real</h5>
+<p>Los bucles anidados son fundamentales en el procesamiento de datos bidimensionales como imágenes (píxel a píxel), matrices en cálculo científico, o tableros y mapas en videojuegos.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GeneradorCoordenadas</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">tamanoMapa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Generando coordenadas del mapa:"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Bucle externo para las filas (coordenada x)</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">tamanoMapa</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Bucle interno para las columnas (coordenada y)</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">tamanoMapa</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// Imprime la coordenada en el formato [x, y]</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"["</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"] "</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="c1">// Al final de cada fila, imprime un salto de línea</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">6) Debugging: Bug en el Cálculo de Daño por Segundo (DPS) | Nivel: Fácil</p>
+<h5 id="objetivo_5">Objetivo</h5>
+<p>Identificar y corregir un error común en un bucle <code>while</code> que provoca un bucle infinito.</p>
+<h5 id="tarea-a-realizar_5">Tarea a realizar</h5>
+<p>El siguiente código intenta simular el daño de un veneno que hace 10 de daño por segundo durante 5 segundos. Sin embargo, el código contiene un error que provoca que se ejecute indefinidamente. Encuentra el bug y corrígelo.</p>
+<h5 id="setup-inicial-codigo-con-bug">Setup Inicial (Código con Bug)</h5>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CalculoDpsBug</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">tiempoTotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">tiempoTranscurrido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">danoPorSegundo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">danoTotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El veneno empieza a hacer efecto..."</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">tiempoTranscurrido</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">tiempoTotal</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">danoTotal</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">danoPorSegundo</span><span class="p">;</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Segundo "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">tiempoTranscurrido</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">": Daño acumulado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">danoTotal</span><span class="p">);</span>
+<span class="w">            </span><span class="c1">// Falta algo aquí...</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El efecto del veneno ha terminado. Daño total infligido: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">danoTotal</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="aplicacion-en-el-mundo-real_5">Aplicación en el Mundo Real</h5>
+<p>Los bucles infinitos son uno de los errores más comunes y frustrantes para los programadores junior. Aprender a detectarlos es una habilidad de depuración esencial que te ahorrará horas de trabajo. La causa suele ser una condición de salida que nunca se alcanza.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<p>El error es que la variable de control del bucle, <code>tiempoTranscurrido</code>, nunca se actualiza dentro del <code>while</code>. Por lo tanto, su valor siempre es <code>0</code>, y la condición <code>tiempoTranscurrido &lt; tiempoTotal</code> (<code>0 &lt; 5</code>) siempre es verdadera.</p>
+<p><strong>Código Corregido:</strong>
+</p><div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CalculoDpsCorregido</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">tiempoTotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">tiempoTranscurrido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">danoPorSegundo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">danoTotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El veneno empieza a hacer efecto..."</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">tiempoTranscurrido</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">tiempoTotal</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">danoTotal</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">danoPorSegundo</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">// SOLUCIÓN: Incrementar el contador del tiempo en cada iteración.</span>
+<span class="w">            </span><span class="n">tiempoTranscurrido</span><span class="o">++</span><span class="p">;</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Segundo "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tiempoTranscurrido</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">": Daño acumulado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">danoTotal</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El efecto del veneno ha terminado. Daño total infligido: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">danoTotal</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p></p>
+</details>
+</div>
+<h2 id="ejercicios-de-refuerzo">Ejercicios de Refuerzo</h2>
+<div class="admonition warning">
+<p class="admonition-title">7) Análisis de Loot Drop | Nivel: Medio</p>
+<h5 id="objetivo_6">Objetivo</h5>
+<p>Combinar un bucle <code>for</code> con condicionales <code>if-else if-else</code> para simular un sistema con probabilidades.</p>
+<h5 id="tarea-a-realizar_6">Tarea a realizar</h5>
+<p>Vamos a simular la apertura de 10 "Cajas de Botín". Por cada caja, se debe generar un número aleatorio entre 1 y 100 que determinará la rareza del ítem obtenido, según las siguientes reglas:
+*   <strong>1-60:</strong> Común
+*   <strong>61-85:</strong> Raro
+*   <strong>86-98:</strong> Épico
+*   <strong>99-100:</strong> Legendario</p>
+<p>El programa debe iterar 10 veces. En cada iteración, generará el número aleatorio e imprimirá un mensaje como: <code>"Caja 1: Has sacado un 78. ¡Ítem Raro!"</code></p>
+<h5 id="pista">Pista</h5>
+<p>Puedes generar un número aleatorio entre 1 y 100 usando <code>new Random().nextInt(100) + 1;</code>. No olvides importar <code>java.util.Random</code>.</p>
+<h5 id="aplicacion-en-el-mundo-real_6">Aplicación en el Mundo Real</h5>
+<p>Este tipo de lógica es el corazón de cualquier sistema basado en probabilidades ("gacha", "loot boxes", crafteo con posibilidad de fallo). Simular estos sistemas ayuda a los diseñadores de juegos a equilibrar la economía y la recompensa para el jugador.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Random</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AnalisisLootDrop</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Random</span><span class="w"> </span><span class="n">generadorAleatorio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">();</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">numeroDeCajas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Abriendo "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numeroDeCajas</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" Cajas de Botín..."</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">numeroDeCajas</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">tirada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">generadorAleatorio</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Número entre 1 y 100</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">rareza</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tirada</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">rareza</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Común"</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tirada</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">85</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">rareza</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Raro"</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tirada</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">98</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">rareza</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Épico"</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 99 o 100</span>
+<span class="w">                </span><span class="n">rareza</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"¡Legendario!"</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Caja "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">": Has sacado un "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tirada</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">". ¡Ítem "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rareza</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"!"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">8) Creación de Personaje: Validación de Puntos de Atributo | Nivel: Medio</p>
+<h5 id="objetivo_7">Objetivo</h5>
+<p>Utilizar un bucle <code>do-while</code> para validar una entrada de usuario compleja que debe cumplir una condición específica.</p>
+<h5 id="tarea-a-realizar_7">Tarea a realizar</h5>
+<p>Durante la creación de un personaje, el jugador dispone de <strong>20 puntos</strong> para distribuir entre tres atributos: Fuerza, Destreza e Inteligencia. El programa debe pedir al jugador que introduzca los puntos para cada uno de los tres atributos.</p>
+<p>El programa debe usar un bucle <code>do-while</code> para repetir la petición de los tres valores hasta que la <strong>suma total de los puntos introducidos sea exactamente 20</strong>. Si la suma es distinta de 20, debe mostrar un mensaje de error y volver a pedir los tres valores.</p>
+<h5 id="pista_1">Pista</h5>
+<p>Declara las variables para los tres atributos fuera del bucle. Dentro del <code>do-while</code>, pide los tres valores y calcula la suma. La condición del <code>while</code> al final será <code>sumaTotal != 20</code>.</p>
+<h5 id="aplicacion-en-el-mundo-real_7">Aplicación en el Mundo Real</h5>
+<p>La validación de formularios es una tarea diaria para cualquier desarrollador. Asegurarse de que los datos introducidos por un usuario cumplen con las reglas del negocio (la suma es correcta, un campo no está vacío, un email tiene el formato adecuado) antes de procesarlos es crucial para evitar errores.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CreacionPersonaje</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PUNTOS_A_REPARTIR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">fuerza</span><span class="p">,</span><span class="w"> </span><span class="n">destreza</span><span class="p">,</span><span class="w"> </span><span class="n">inteligencia</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">sumaTotal</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- Creación de Personaje ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tienes "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">PUNTOS_A_REPARTIR</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" puntos para repartir entre Fuerza, Destreza e Inteligencia."</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce puntos de Fuerza: "</span><span class="p">);</span>
+<span class="w">            </span><span class="n">fuerza</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce puntos de Destreza: "</span><span class="p">);</span>
+<span class="w">            </span><span class="n">destreza</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce puntos de Inteligencia: "</span><span class="p">);</span>
+<span class="w">            </span><span class="n">inteligencia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+<span class="w">            </span><span class="n">sumaTotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fuerza</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">destreza</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">inteligencia</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sumaTotal</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">PUNTOS_A_REPARTIR</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nError: La suma de los puntos ("</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sumaTotal</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">") no es "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">PUNTOS_A_REPARTIR</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">". Inténtalo de nuevo.\n"</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">sumaTotal</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">PUNTOS_A_REPARTIR</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n¡Personaje creado con éxito!"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Fuerza: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fuerza</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Destreza: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">destreza</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Inteligencia: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">inteligencia</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">9) Renderizador de Texto de Combate | Nivel: Medio</p>
+<h5 id="objetivo_8">Objetivo</h5>
+<p>Procesar un <code>String</code> carácter por carácter utilizando un bucle <code>for</code> y métodos de la clase <code>String</code>.</p>
+<h5 id="tarea-a-realizar_8">Tarea a realizar</h5>
+<p>Para darle un toque retro a nuestro motor, vamos a crear un efecto de "máquina de escribir" para los mensajes de combate. Dado un <code>String</code> con un mensaje, el programa debe imprimirlo en la consola carácter por carácter, con una pequeña pausa de 50 milisegundos entre cada carácter.</p>
+<h5 id="setup-inicial_1">Setup Inicial</h5>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"El Dragón Primordial lanza una llamarada..."</span><span class="p">;</span>
+</code></pre></div>
+<h5 id="pista_2">Pista</h5>
+<p>Puedes obtener la longitud de un <code>String</code> con el método <code>.length()</code> y acceder a un carácter en una posición específica con <code>.charAt(index)</code>. Para la pausa, puedes usar <code>Thread.sleep(50);</code>. Recuerda que <code>Thread.sleep</code> puede lanzar una <code>InterruptedException</code>, por lo que necesitarás rodearlo con un bloque <code>try-catch</code>.</p>
+<h5 id="aplicacion-en-el-mundo-real_8">Aplicación en el Mundo Real</h5>
+<p>El procesamiento de cadenas carácter a carácter es fundamental en tareas de parsing (análisis de texto), como leer un fichero de configuración CSV, analizar una URL, o validar que una contraseña cumple con ciertos requisitos (contiene mayúsculas, números, etc.).</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RenderizadorTextoCombate</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"El Dragón Primordial lanza una llamarada..."</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="n">tiempoPausaMs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span><span class="w"> </span><span class="c1">// 50 milisegundos</span>
+
+<span class="w">        </span><span class="c1">// Bucle for que itera desde el primer carácter (índice 0) hasta el último.</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mensaje</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Imprime el carácter en la posición actual 'i'.</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">mensaje</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+
+<span class="w">            </span><span class="c1">// Pausa la ejecución del hilo durante el tiempo especificado.</span>
+<span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="n">tiempoPausaMs</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">InterruptedException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// Es buena práctica manejar la excepción, aunque sea solo para notificar.</span>
+<span class="w">                </span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">interrupt</span><span class="p">();</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"La pausa fue interrumpida."</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Imprime un salto de línea al final para que el siguiente prompt de la consola no se pegue.</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<h2 id="ejercicios-de-ampliacion">Ejercicios de Ampliación</h2>
+<div class="admonition danger">
+<p class="admonition-title">10) Generador de Arte ASCII para Pantallas de Carga | Nivel: Alto</p>
+<h5 id="objetivo_9">Objetivo</h5>
+<p>Aplicar bucles anidados y condicionales para resolver un problema de lógica y generación de patrones.</p>
+<h5 id="tarea-a-realizar_9">Tarea a realizar</h5>
+<p>Las pantallas de carga son más interesantes con algo de arte ASCII. Tu tarea es escribir un programa que genere un <strong>triángulo rectángulo</strong> y un <strong>rombo</strong> usando asteriscos (<code>*</code>). El usuario debe poder especificar el tamaño.</p>
+<ol>
+<li>Pide al usuario un número entero <code>n</code> (por ejemplo, 5).</li>
+<li>Usando bucles anidados, imprime un triángulo rectángulo de <code>n</code> filas.</li>
+<li>A continuación, imprime un rombo de altura <code>2*n - 1</code>.</li>
+</ol>
+<p><strong>Ejemplo de salida para n = 5:</strong></p>
+<p><strong>Triángulo:</strong>
+</p><div class="highlight"><pre><span></span><code>*
+**
+***
+****
+*****
+</code></pre></div><p></p>
+<p><strong>Rombo:</strong>
+</p><div class="highlight"><pre><span></span><code>    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+</code></pre></div><p></p>
+<h5 id="aplicacion-en-el-mundo-real_9">Aplicación en el Mundo Real</h5>
+<p>Aunque generar arte ASCII es un ejercicio clásico, la lógica subyacente es la misma que se usa para renderizar formas en gráficos 2D (calculando qué píxeles activar en una rejilla), generar terrenos procedurales o resolver problemas de programación algorítmica en entrevistas técnicas.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GeneradorArteAscii</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce el tamaño (n): "</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// --- 1. Triángulo Rectángulo ---</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Triángulo ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Bucle para las filas</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Bucle para los asteriscos en cada fila</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"*"</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w"> </span><span class="c1">// Salto de línea al final de cada fila</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// --- 2. Rombo ---</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Rombo ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Parte superior del rombo (incluida la línea central)</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Imprimir espacios en blanco</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" "</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="c1">// Imprimir asteriscos</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"*"</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Parte inferior del rombo</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Imprimir espacios en blanco</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" "</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="c1">// Imprimir asteriscos</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"*"</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">11) Simulador de Economía de Mercado | Nivel: Alto</p>
+<h5 id="objetivo_10">Objetivo</h5>
+<p>Modelar un sistema dinámico simple a lo largo del tiempo usando bucles y lógica condicional, y realizar un seguimiento de los datos generados.</p>
+<h5 id="tarea-a-realizar_10">Tarea a realizar</h5>
+<p>Vamos a simular el precio de un ítem ("Poción de Maná") en el mercado del juego durante 30 días.
+*   El precio inicial es de <code>50.0</code> monedas.
+*   Cada día (cada iteración de un bucle <code>for</code> de 1 a 30), el precio cambia. Genera un número aleatorio entre -3.0 y +3.0 para simular la fluctuación.
+*   Añade una regla de mercado: si el precio sube por encima de 60.0, hay un 75% de probabilidad de que al día siguiente la fluctuación sea negativa (la gente vende). Si baja de 40.0, hay un 75% de probabilidad de que la fluctuación sea positiva (la gente compra).
+*   Durante la simulación, mantén un registro del precio más alto y el más bajo alcanzado.
+*   Al final de los 30 días, imprime el precio final, el precio máximo y el precio mínimo registrados.</p>
+<h5 id="aplicacion-en-el-mundo-real_10">Aplicación en el Mundo Real</h5>
+<p>Este tipo de simulación (conocida como "Simulación de Monte Carlo" en su forma más avanzada) se utiliza en finanzas para predecir el comportamiento de los mercados, en ciencia para modelar sistemas complejos y en diseño de juegos para asegurar que la economía interna sea estable y no se "rompa" con el tiempo.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Random</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SimuladorEconomia</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Random</span><span class="w"> </span><span class="n">random</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">();</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">diasSimulacion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">precioActual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">50.0</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">precioMaximo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">precioActual</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">precioMinimo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">precioActual</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"Iniciando simulación de 30 días. Precio inicial: %.2f monedas.%n"</span><span class="p">,</span><span class="w"> </span><span class="n">precioActual</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">dia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">dia</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">diasSimulacion</span><span class="p">;</span><span class="w"> </span><span class="n">dia</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">double</span><span class="w"> </span><span class="n">fluctuacion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">6.0</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">3.0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Rango de -3.0 a +3.0</span>
+
+<span class="w">            </span><span class="c1">// Reglas de mercado</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">precioActual</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">60.0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">random</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.75</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 75% de probabilidad</span>
+<span class="w">                </span><span class="n">fluctuacion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">random</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">3.0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Fluctuación negativa forzada</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">precioActual</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">40.0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">random</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.75</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 75% de probabilidad</span>
+<span class="w">                </span><span class="n">fluctuacion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">3.0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Fluctuación positiva forzada</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="n">precioActual</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">fluctuacion</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">// Asegurarse de que el precio no sea negativo</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">precioActual</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">precioActual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="c1">// Actualizar máximo y mínimo</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">precioActual</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">precioMaximo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">precioMaximo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">precioActual</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">precioActual</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">precioMinimo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">precioMinimo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">precioActual</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"Día %2d: Precio = %5.2f%n"</span><span class="p">,</span><span class="w"> </span><span class="n">dia</span><span class="p">,</span><span class="w"> </span><span class="n">precioActual</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Resumen de la Simulación ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"Precio final después de 30 días: %.2f monedas.%n"</span><span class="p">,</span><span class="w"> </span><span class="n">precioActual</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"Precio máximo alcanzado: %.2f monedas.%n"</span><span class="p">,</span><span class="w"> </span><span class="n">precioMaximo</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"Precio mínimo alcanzado: %.2f monedas.%n"</span><span class="p">,</span><span class="w"> </span><span class="n">precioMinimo</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">12) Algoritmo de Detección de Patrones de IA | Nivel: Alto</p>
+<h5 id="objetivo_11">Objetivo</h5>
+<p>Resolver un problema algorítmico más abierto que requiere bucles anidados, manipulación de <code>String</code> y lógica de conteo.</p>
+<h5 id="tarea-a-realizar_11">Tarea a realizar</h5>
+<p>El equipo de IA nos ha pedido una herramienta para analizar el comportamiento de los enemigos. Nos han proporcionado un <code>String</code> que representa la secuencia de acciones de un enemigo en un combate (ej: <code>A</code>=Atacar, <code>B</code>=Bloquear, <code>D</code>=Defender).</p>
+<p>Tu tarea es encontrar la <strong>secuencia de dos acciones consecutivas</strong> que más se repite. Por ejemplo, en la secuencia <code>"ABABDABAC"</code>, el par "AB" se repite 3 veces, "BA" se repite 2 veces, "BD" 1 vez, etc. El programa debería identificar que <code>"AB"</code> es el patrón más frecuente.</p>
+<h5 id="setup-inicial_2">Setup Inicial</h5>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">secuenciaIA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"ADDBABADAABBCADAB"</span><span class="p">;</span>
+</code></pre></div>
+<h5 id="tarea-de-peer-review">Tarea de Peer Review</h5>
+<p>Una vez que tengas una solución funcional, intercámbiala con un compañero. Revisa su código y responde a estas preguntas:
+1.  <strong>Corrección:</strong> ¿El código resuelve correctamente el problema para la secuencia de prueba y para otros casos que se te ocurran (ej: una secuencia vacía, una con un único patrón)?
+2.  <strong>Claridad:</strong> ¿Los nombres de las variables son descriptivos? ¿Podrías entender la lógica del programa sin que te la explicaran?
+3.  <strong>Eficiencia (Opcional):</strong> ¿Se te ocurre alguna forma de optimizar el código? ¿Realiza algún cálculo innecesario o repetido?</p>
+<h5 id="aplicacion-en-el-mundo-real_11">Aplicación en el Mundo Real</h5>
+<p>El análisis de patrones en secuencias es un pilar del <code>machine learning</code> y la <code>data science</code>. Se usa para predecir el comportamiento del consumidor, detectar fraudes en transacciones, analizar secuencias de ADN y, en el mundo de los videojuegos, para crear una IA que pueda aprender y anticiparse a las acciones del jugador.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DetectorPatronesIA</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">secuenciaIA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"ADDBABADAABBCADAB"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">secuenciaIA</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"La secuencia es demasiado corta para encontrar patrones de dos acciones."</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">patronMasFrecuente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">""</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">maxFrecuencia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Bucle externo: recorre cada posible patrón de dos letras en la secuencia.</span>
+<span class="w">        </span><span class="c1">// Va desde el inicio hasta el penúltimo carácter.</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">secuenciaIA</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Extraemos el patrón de dos caracteres actual (ej: "AD", "DD", "DB"...)</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">patronActual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">secuenciaIA</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">frecuenciaActual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">// Bucle interno: contamos cuántas veces aparece el 'patronActual' en TODA la secuencia.</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">secuenciaIA</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">secuenciaIA</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">).</span><span class="na">equals</span><span class="p">(</span><span class="n">patronActual</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">frecuenciaActual</span><span class="o">++</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="c1">// Si la frecuencia del patrón que acabamos de contar es mayor</span>
+<span class="w">            </span><span class="c1">// que la máxima que teníamos registrada, la actualizamos.</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">frecuenciaActual</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">maxFrecuencia</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">maxFrecuencia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">frecuenciaActual</span><span class="p">;</span>
+<span class="w">                </span><span class="n">patronMasFrecuente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">patronActual</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Secuencia analizada: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">secuenciaIA</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">maxFrecuencia</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El patrón de dos acciones más frecuente es '"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">patronMasFrecuente</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"'"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Aparece "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">maxFrecuencia</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" veces."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"No se encontraron patrones repetidos."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

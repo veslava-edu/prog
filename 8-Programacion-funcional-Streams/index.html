@@ -1,0 +1,2328 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../7-Estructuras-datos-dinamicas/" rel="prev"/>
+<link href="../9-Ficheros/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>UD8 - Programación funcional y Streams - PROG</title>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script><script src="../js/unpkg.com/d3@7.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-lib@0.18.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-view@0.18.js" type="text/javascript"></script><style type="text/css">div.mkdocs-markmap {
+    width: 100%;
+    min-height: 1em;
+    border: 1px solid grey;
+}
+.mkdocs-markmap > svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+</style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#programacion-funcional-y-streams-en-java-el-arte-de-la-receta-perfecta">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="PROG" class="md-header__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            PROG
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              UD8 - Programación funcional y Streams
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../1-Introduccion-programacion/">
+          
+  
+  
+  Programación
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="PROG" class="md-nav__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    PROG
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1-Introduccion-programacion/">
+<span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2-Programacion-estructurada/">
+<span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3-Programacion-modular/">
+<span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4-Estructuras-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5-POO-Clases-y-Objetos/">
+<span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6-POO-Uso-avanzado/">
+<span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7-Estructuras-datos-dinamicas/">
+<span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conceptos-fundamentales">
+<span class="md-ellipsis">
+      
+        Conceptos Fundamentales
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desarrollo-y-ejemplos-practicos">
+<span class="md-ellipsis">
+      
+        Desarrollo y Ejemplos Prácticos
+      
+    </span>
+</a>
+<nav aria-label="Desarrollo y Ejemplos Prácticos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-introduccion-a-la-programacion-funcional">
+<span class="md-ellipsis">
+      
+        1. Introducción a la Programación Funcional
+      
+    </span>
+</a>
+<nav aria-label="1. Introducción a la Programación Funcional" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-que-es-la-programacion-funcional">
+<span class="md-ellipsis">
+      
+        1.1. ¿Qué es la programación funcional?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12-programacion-imperativa-vs-funcional">
+<span class="md-ellipsis">
+      
+        1.2. Programación imperativa vs funcional
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13-ventajas-de-la-programacion-funcional-en-java">
+<span class="md-ellipsis">
+      
+        1.3. Ventajas de la programación funcional en Java
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14-cuando-usar-programacion-funcional-y-cuando-no">
+<span class="md-ellipsis">
+      
+        1.4. Cuándo usar programación funcional y cuándo no
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-expresiones-lambda">
+<span class="md-ellipsis">
+      
+        2. Expresiones Lambda
+      
+    </span>
+</a>
+<nav aria-label="2. Expresiones Lambda" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21-que-es-una-expresion-lambda">
+<span class="md-ellipsis">
+      
+        2.1. ¿Qué es una expresión lambda?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22-sintaxis-de-las-lambdas">
+<span class="md-ellipsis">
+      
+        2.2. Sintaxis de las lambdas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#23-lambdas-con-una-y-varias-lineas">
+<span class="md-ellipsis">
+      
+        2.3. Lambdas con una y varias líneas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#24-uso-de-lambdas-con-colecciones">
+<span class="md-ellipsis">
+      
+        2.4. Uso de lambdas con colecciones
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#25-variables-efectivamente-finales">
+<span class="md-ellipsis">
+      
+        2.5. Variables efectivamente finales
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-interfaces-funcionales">
+<span class="md-ellipsis">
+      
+        3. Interfaces Funcionales
+      
+    </span>
+</a>
+<nav aria-label="3. Interfaces Funcionales" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31-que-es-una-interfaz-funcional">
+<span class="md-ellipsis">
+      
+        3.1. ¿Qué es una interfaz funcional?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32-anotacion-functionalinterface">
+<span class="md-ellipsis">
+      
+        3.2. Anotación @FunctionalInterface
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#33-interfaces-funcionales-mas-usadas-en-java">
+<span class="md-ellipsis">
+      
+        3.3. Interfaces funcionales más usadas en Java
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#34-ejemplos-practicos-de-cada-interfaz">
+<span class="md-ellipsis">
+      
+        3.4. Ejemplos prácticos de cada interfaz
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-introduccion-a-streams">
+<span class="md-ellipsis">
+      
+        4. Introducción a Streams
+      
+    </span>
+</a>
+<nav aria-label="4. Introducción a Streams" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-que-es-un-stream">
+<span class="md-ellipsis">
+      
+        4.1. ¿Qué es un Stream?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42-diferencias-entre-colecciones-y-streams">
+<span class="md-ellipsis">
+      
+        4.2. Diferencias entre colecciones y streams
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#43-creacion-de-streams">
+<span class="md-ellipsis">
+      
+        4.3. Creación de streams
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#44-streams-secuenciales-y-paralelos">
+<span class="md-ellipsis">
+      
+        4.4. Streams secuenciales y paralelos
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-operaciones-intermedias">
+<span class="md-ellipsis">
+      
+        5. Operaciones Intermedias
+      
+    </span>
+</a>
+<nav aria-label="5. Operaciones Intermedias" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#51-caracteristicas-de-las-operaciones-intermedias">
+<span class="md-ellipsis">
+      
+        5.1. Características de las operaciones intermedias
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#52-filter">
+<span class="md-ellipsis">
+      
+        5.2. filter()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#53-map">
+<span class="md-ellipsis">
+      
+        5.3. map()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#54-flatmap">
+<span class="md-ellipsis">
+      
+        5.4. flatMap()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#55-sorted">
+<span class="md-ellipsis">
+      
+        5.5. sorted()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#56-distinct">
+<span class="md-ellipsis">
+      
+        5.6. distinct()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#57-limit-y-skip">
+<span class="md-ellipsis">
+      
+        5.7. limit() y skip()
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-operaciones-terminales">
+<span class="md-ellipsis">
+      
+        6. Operaciones Terminales
+      
+    </span>
+</a>
+<nav aria-label="6. Operaciones Terminales" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#61-caracteristicas-de-las-operaciones-terminales">
+<span class="md-ellipsis">
+      
+        6.1. Características de las operaciones terminales
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62-foreach">
+<span class="md-ellipsis">
+      
+        6.2. forEach()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#63-collect">
+<span class="md-ellipsis">
+      
+        6.3. collect()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#64-count">
+<span class="md-ellipsis">
+      
+        6.4. count()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#65-anymatch-allmatch-nonematch">
+<span class="md-ellipsis">
+      
+        6.5. anyMatch(), allMatch(), noneMatch()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#66-findfirst-y-findany">
+<span class="md-ellipsis">
+      
+        6.6. findFirst() y findAny()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#67-reduce">
+<span class="md-ellipsis">
+      
+        6.7. reduce()
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-collectors">
+<span class="md-ellipsis">
+      
+        7. Collectors
+      
+    </span>
+</a>
+<nav aria-label="7. Collectors" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#71-que-es-un-collector">
+<span class="md-ellipsis">
+      
+        7.1. ¿Qué es un Collector?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#72-collectorstolist-toset-tomap">
+<span class="md-ellipsis">
+      
+        7.2. Collectors.toList(), toSet(), toMap()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#73-collectorsgroupingby">
+<span class="md-ellipsis">
+      
+        7.3. Collectors.groupingBy()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#74-collectorspartitioningby">
+<span class="md-ellipsis">
+      
+        7.4. Collectors.partitioningBy()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#75-collectorsjoining">
+<span class="md-ellipsis">
+      
+        7.5. Collectors.joining()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#76-collectorscounting-summing-averaging">
+<span class="md-ellipsis">
+      
+        7.6. Collectors.counting(), summing(), averaging()
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-optional">
+<span class="md-ellipsis">
+      
+        8. Optional
+      
+    </span>
+</a>
+<nav aria-label="8. Optional" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#81-problemas-del-null">
+<span class="md-ellipsis">
+      
+        8.1. Problemas del null
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#82-que-es-optional">
+<span class="md-ellipsis">
+      
+        8.2. ¿Qué es Optional?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#83-creacion-de-optional">
+<span class="md-ellipsis">
+      
+        8.3. Creación de Optional
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#84-metodos-principales">
+<span class="md-ellipsis">
+      
+        8.4. Métodos principales
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacion-en-el-mundo-real">
+<span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-saber-mas">
+<span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios">
+<span class="md-ellipsis">
+      
+        EJERCICIOS
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../9-Ficheros/">
+<span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10-Acceso-base-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11-Interfaces-graficas-MVC/">
+<span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conceptos-fundamentales">
+<span class="md-ellipsis">
+      
+        Conceptos Fundamentales
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desarrollo-y-ejemplos-practicos">
+<span class="md-ellipsis">
+      
+        Desarrollo y Ejemplos Prácticos
+      
+    </span>
+</a>
+<nav aria-label="Desarrollo y Ejemplos Prácticos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-introduccion-a-la-programacion-funcional">
+<span class="md-ellipsis">
+      
+        1. Introducción a la Programación Funcional
+      
+    </span>
+</a>
+<nav aria-label="1. Introducción a la Programación Funcional" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-que-es-la-programacion-funcional">
+<span class="md-ellipsis">
+      
+        1.1. ¿Qué es la programación funcional?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12-programacion-imperativa-vs-funcional">
+<span class="md-ellipsis">
+      
+        1.2. Programación imperativa vs funcional
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13-ventajas-de-la-programacion-funcional-en-java">
+<span class="md-ellipsis">
+      
+        1.3. Ventajas de la programación funcional en Java
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14-cuando-usar-programacion-funcional-y-cuando-no">
+<span class="md-ellipsis">
+      
+        1.4. Cuándo usar programación funcional y cuándo no
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-expresiones-lambda">
+<span class="md-ellipsis">
+      
+        2. Expresiones Lambda
+      
+    </span>
+</a>
+<nav aria-label="2. Expresiones Lambda" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21-que-es-una-expresion-lambda">
+<span class="md-ellipsis">
+      
+        2.1. ¿Qué es una expresión lambda?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22-sintaxis-de-las-lambdas">
+<span class="md-ellipsis">
+      
+        2.2. Sintaxis de las lambdas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#23-lambdas-con-una-y-varias-lineas">
+<span class="md-ellipsis">
+      
+        2.3. Lambdas con una y varias líneas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#24-uso-de-lambdas-con-colecciones">
+<span class="md-ellipsis">
+      
+        2.4. Uso de lambdas con colecciones
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#25-variables-efectivamente-finales">
+<span class="md-ellipsis">
+      
+        2.5. Variables efectivamente finales
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-interfaces-funcionales">
+<span class="md-ellipsis">
+      
+        3. Interfaces Funcionales
+      
+    </span>
+</a>
+<nav aria-label="3. Interfaces Funcionales" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31-que-es-una-interfaz-funcional">
+<span class="md-ellipsis">
+      
+        3.1. ¿Qué es una interfaz funcional?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32-anotacion-functionalinterface">
+<span class="md-ellipsis">
+      
+        3.2. Anotación @FunctionalInterface
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#33-interfaces-funcionales-mas-usadas-en-java">
+<span class="md-ellipsis">
+      
+        3.3. Interfaces funcionales más usadas en Java
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#34-ejemplos-practicos-de-cada-interfaz">
+<span class="md-ellipsis">
+      
+        3.4. Ejemplos prácticos de cada interfaz
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-introduccion-a-streams">
+<span class="md-ellipsis">
+      
+        4. Introducción a Streams
+      
+    </span>
+</a>
+<nav aria-label="4. Introducción a Streams" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-que-es-un-stream">
+<span class="md-ellipsis">
+      
+        4.1. ¿Qué es un Stream?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42-diferencias-entre-colecciones-y-streams">
+<span class="md-ellipsis">
+      
+        4.2. Diferencias entre colecciones y streams
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#43-creacion-de-streams">
+<span class="md-ellipsis">
+      
+        4.3. Creación de streams
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#44-streams-secuenciales-y-paralelos">
+<span class="md-ellipsis">
+      
+        4.4. Streams secuenciales y paralelos
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-operaciones-intermedias">
+<span class="md-ellipsis">
+      
+        5. Operaciones Intermedias
+      
+    </span>
+</a>
+<nav aria-label="5. Operaciones Intermedias" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#51-caracteristicas-de-las-operaciones-intermedias">
+<span class="md-ellipsis">
+      
+        5.1. Características de las operaciones intermedias
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#52-filter">
+<span class="md-ellipsis">
+      
+        5.2. filter()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#53-map">
+<span class="md-ellipsis">
+      
+        5.3. map()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#54-flatmap">
+<span class="md-ellipsis">
+      
+        5.4. flatMap()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#55-sorted">
+<span class="md-ellipsis">
+      
+        5.5. sorted()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#56-distinct">
+<span class="md-ellipsis">
+      
+        5.6. distinct()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#57-limit-y-skip">
+<span class="md-ellipsis">
+      
+        5.7. limit() y skip()
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-operaciones-terminales">
+<span class="md-ellipsis">
+      
+        6. Operaciones Terminales
+      
+    </span>
+</a>
+<nav aria-label="6. Operaciones Terminales" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#61-caracteristicas-de-las-operaciones-terminales">
+<span class="md-ellipsis">
+      
+        6.1. Características de las operaciones terminales
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62-foreach">
+<span class="md-ellipsis">
+      
+        6.2. forEach()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#63-collect">
+<span class="md-ellipsis">
+      
+        6.3. collect()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#64-count">
+<span class="md-ellipsis">
+      
+        6.4. count()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#65-anymatch-allmatch-nonematch">
+<span class="md-ellipsis">
+      
+        6.5. anyMatch(), allMatch(), noneMatch()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#66-findfirst-y-findany">
+<span class="md-ellipsis">
+      
+        6.6. findFirst() y findAny()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#67-reduce">
+<span class="md-ellipsis">
+      
+        6.7. reduce()
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-collectors">
+<span class="md-ellipsis">
+      
+        7. Collectors
+      
+    </span>
+</a>
+<nav aria-label="7. Collectors" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#71-que-es-un-collector">
+<span class="md-ellipsis">
+      
+        7.1. ¿Qué es un Collector?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#72-collectorstolist-toset-tomap">
+<span class="md-ellipsis">
+      
+        7.2. Collectors.toList(), toSet(), toMap()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#73-collectorsgroupingby">
+<span class="md-ellipsis">
+      
+        7.3. Collectors.groupingBy()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#74-collectorspartitioningby">
+<span class="md-ellipsis">
+      
+        7.4. Collectors.partitioningBy()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#75-collectorsjoining">
+<span class="md-ellipsis">
+      
+        7.5. Collectors.joining()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#76-collectorscounting-summing-averaging">
+<span class="md-ellipsis">
+      
+        7.6. Collectors.counting(), summing(), averaging()
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-optional">
+<span class="md-ellipsis">
+      
+        8. Optional
+      
+    </span>
+</a>
+<nav aria-label="8. Optional" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#81-problemas-del-null">
+<span class="md-ellipsis">
+      
+        8.1. Problemas del null
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#82-que-es-optional">
+<span class="md-ellipsis">
+      
+        8.2. ¿Qué es Optional?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#83-creacion-de-optional">
+<span class="md-ellipsis">
+      
+        8.3. Creación de Optional
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#84-metodos-principales">
+<span class="md-ellipsis">
+      
+        8.4. Métodos principales
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacion-en-el-mundo-real">
+<span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-saber-mas">
+<span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios">
+<span class="md-ellipsis">
+      
+        EJERCICIOS
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<!-- tema_7_1_programacion_funcional_streams.md --><h1 id="programacion-funcional-y-streams-en-java-el-arte-de-la-receta-perfecta">Programación Funcional y Streams en Java: El Arte de la Receta Perfecta</h1>
+<p><strong>¡Bienvenidos, futuros desarrolladores!</strong></p>
+<p>Como vimos en el <strong>Tema 7: Estructuras Dinámicas de Datos</strong>, manejar grandes colecciones de información es el pan de cada día en el desarrollo de aplicaciones. Pero, ¿qué pasa cuando tienes que <em>procesar</em> esa información de forma eficiente, clara y sin que tu código parezca un laberinto de bucles <code>for</code> anidados?</p>
+<p>Imaginad que vuestro código es un chef en una cocina. Antes, con la <strong>Programación Imperativa</strong>, le dabas instrucciones paso a paso: "Coge la lista de ingredientes (colección), pon un <code>for</code> para recorrerlos, si el ingrediente es 'vegetariano' (condición <code>if</code>), añádelo a la olla (nueva lista), y luego, cuando termines, cuéntame cuántos hay."</p>
+<p>Con la <strong>Programación Funcional</strong> y la <strong>Stream API</strong> de Java, le dices al chef <em>qué</em> quieres, no <em>cómo</em> hacerlo. Le dices: "Quiero la cuenta de todos los ingredientes vegetarianos". El chef (Java) se encarga de la logística interna de la forma más optimizada posible. Es como pasar de escribir una receta a mano a usar un robot de cocina de última generación. ¡Es más rápido, más limpio y menos propenso a errores!</p>
+<p>Este tema es el salto de calidad que vuestro código necesita. Es la llave para entender cómo se trabaja en el mundo profesional con Big Data, microservicios y aplicaciones modernas.</p>
+<h2 id="conceptos-fundamentales">Conceptos Fundamentales</h2>
+<p>Antes de meternos en la cocina, definamos los ingredientes principales:</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Programación Funcional (PF)</p>
+<p>Es un paradigma de programación que trata la computación como la <strong>evaluación de funciones matemáticas</strong> y evita el cambio de estado y los datos mutables. En Java, se implementa principalmente a través de <strong>Expresiones Lambda</strong> y la <strong>Stream API</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Expresión Lambda</p>
+<p>Es una forma concisa de representar una <strong>función anónima</strong> (una función sin nombre). Permite tratar la funcionalidad como un argumento de método o código como datos. Su introducción en Java 8 fue la puerta de entrada a la PF.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Interfaz Funcional</p>
+<p>Cualquier interfaz de Java que contenga <strong>exactamente un método abstracto</strong>. Esto permite que se pueda usar una expresión lambda para implementar ese método, actuando como un "contrato" para la funcionalidad.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Stream (Flujo)</p>
+<p>Una secuencia de elementos que soporta <strong>operaciones de agregación secuenciales y paralelas</strong>. No es una estructura de datos, sino una forma de <strong>procesar</strong> datos de una fuente (como una colección o un array) de manera declarativa y funcional.</p>
+</div>
+<h2 id="desarrollo-y-ejemplos-practicos">Desarrollo y Ejemplos Prácticos</h2>
+<h3 id="1-introduccion-a-la-programacion-funcional">1. Introducción a la Programación Funcional</h3>
+<h4 id="11-que-es-la-programacion-funcional">1.1. ¿Qué es la programación funcional?</h4>
+<p>La Programación Funcional (PF) se basa en dos pilares: las <strong>funciones puras</strong> y la <strong>inmutabilidad</strong>.</p>
+<p>Una <strong>función pura</strong> es aquella que:<br/>
+1.  Siempre devuelve el mismo resultado para los mismos argumentos (determinismo).<br/>
+2.  No tiene <strong>efectos secundarios</strong> (no modifica variables externas, no hace I/O, etc.).<br/></p>
+<p>La <strong>inmutabilidad</strong> significa que, una vez que se crea un objeto o dato, no se puede cambiar. Si necesitas modificarlo, creas una nueva versión. Esto elimina la fuente principal de errores en la programación concurrente: el estado compartido.</p>
+<h4 id="12-programacion-imperativa-vs-funcional">1.2. Programación imperativa vs funcional</h4>
+<p>La diferencia es de mentalidad: <strong>el <em>cómo<em> frente al </em>qué</em></strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Característica</th>
+<th style="text-align: left;">Programación Imperativa (Tradicional)</th>
+<th style="text-align: left;">Programación Funcional (Moderna)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Enfoque</strong></td>
+<td style="text-align: left;">Describe <em>cómo</em> se debe hacer la tarea (paso a paso).</td>
+<td style="text-align: left;">Describe <em>qué</em> se debe lograr (declarativo).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Estado</strong></td>
+<td style="text-align: left;">Usa <strong>estado mutable</strong> (variables que cambian).</td>
+<td style="text-align: left;">Usa <strong>estado inmutable</strong> (los datos no cambian).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Estructuras</strong></td>
+<td style="text-align: left;">Bucles (<code>for</code>, <code>while</code>), condicionales (<code>if/else</code>).</td>
+<td style="text-align: left;">Funciones, Lambdas, Streams.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ejemplo</strong></td>
+<td style="text-align: left;">Recorrer una lista con un <code>for</code> y un <code>if</code>.</td>
+<td style="text-align: left;">Usar <code>lista.stream().filter().collect()</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Concurrencia</strong></td>
+<td style="text-align: left;">Difícil de manejar, propensa a <em>race conditions</em>.</td>
+<td style="text-align: left;">Más fácil y segura, debido a la inmutabilidad.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="13-ventajas-de-la-programacion-funcional-en-java">1.3. Ventajas de la programación funcional en Java</h4>
+<ol>
+<li><strong>Código más conciso y legible:</strong> Reducimos el <em>boilerplate</em> (código repetitivo) y nos centramos en la lógica de negocio.</li>
+<li><strong>Mejor soporte para el paralelismo:</strong> Como las funciones son puras y los datos inmutables, Java puede ejecutar operaciones en paralelo de forma segura y automática (usando <code>parallelStream()</code>).</li>
+<li><strong>Fácil de probar:</strong> Las funciones puras son triviales de testear, ya que no dependen de ningún estado externo.</li>
+</ol>
+<h4 id="14-cuando-usar-programacion-funcional-y-cuando-no">1.4. Cuándo usar programación funcional y cuándo no</h4>
+<div class="admonition info inline">
+<p class="admonition-title">El Chef y el Pinche</p>
+<p>La PF es excelente para el <strong>procesamiento de datos</strong> (filtrar, mapear, reducir). Es el chef que prepara la receta. La PI es necesaria para el <strong>control de flujo</strong> (lanzar excepciones, I/O, bucles de juego). Es el pinche que enciende el horno y friega los platos.</p>
+</div>
+<p><strong>Usar PF (Streams y Lambdas):</strong><br/>
+    *   Transformación de colecciones de datos (ej. convertir una lista de objetos <code>Usuario</code> a una lista de sus nombres).<br/>
+    *   Filtrado y búsqueda de elementos.<br/>
+    *   Operaciones de agregación (sumas, promedios, conteos).<br/>
+    *   Cualquier operación que pueda definirse como una <strong>pipeline</strong> de procesamiento.<br/></p>
+<p><strong>No usar PF (Programación Imperativa):</strong><br/>
+    *   Operaciones que requieren <strong>modificar el estado</strong> de objetos externos de forma controlada (ej. un contador global).<br/>
+    *   Operaciones de <strong>I/O</strong> complejas o que requieren manejo de excepciones específicas en cada paso.<br/>
+    *   Bucles infinitos o lógica de control de flujo muy específica.<br/></p>
+<pre class="mermaid"><code>graph TD
+    A[Inicio: Lista de Pedidos] --&gt; B["¿Necesito transformar o filtrar datos?"];
+    B -- Sí --&gt; C["Usar Programación Funcional"];
+    C --&gt; D["Crear Stream"];
+    D --&gt; E["Aplicar Operaciones Intermedias (filter, map)"];
+    E --&gt; F["Aplicar Operación Terminal (collect, reduce)"];
+    F --&gt; G["Fin: Resultado"];
+    B -- No --&gt; H["Usar Programación Imperativa"];
+    H --&gt; I["Usar bucles for/while"];
+    I --&gt; G;
+
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style H fill:#fcc,stroke:#333,stroke-width:2px</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ol>
+<li>Si tienes que leer un archivo línea por línea y guardar cada línea en una base de datos, ¿qué paradigma usarías principalmente y por qué?</li>
+<li>Explica con tus propias palabras por qué la inmutabilidad facilita el trabajo con <em>multithreading</em> (hilos paralelos).</li>
+<li>¿Qué significa que una función tenga un "efecto secundario"? Pon un ejemplo de código Java.</li>
+<li>¿Podrías usar la Stream API para modificar <em>in-place</em> (en el mismo lugar) los elementos de una lista? ¿Por qué sí o por qué no?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="2-expresiones-lambda">2. Expresiones Lambda</h3>
+<h4 id="21-que-es-una-expresion-lambda">2.1. ¿Qué es una expresión lambda?</h4>
+<p>Una expresión lambda es, esencialmente, una forma de pasar <strong>comportamiento</strong> como argumento a un método. Antes de Java 8, si querías pasar un bloque de código, tenías que crear una clase anónima, lo cual era verboso y tedioso. La lambda simplifica esto a su mínima expresión.</p>
+<h4 id="22-sintaxis-de-las-lambdas">2.2. Sintaxis de las lambdas</h4>
+<p>La sintaxis básica es: <code>(parámetros) -&gt; { cuerpo }</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Si solo hay un parámetro, los paréntesis son opcionales. Si el cuerpo es una sola expresión, las llaves y la palabra <code>return</code> son opcionales. ¡Máxima concisión!</p>
+</div>
+<p><strong>Ejemplo 1: Sin parámetros y una sola línea</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Antes: Clase anónima</span>
+<span class="n">Runnable</span><span class="w"> </span><span class="n">tareaAntigua</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Runnable</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tarea ejecutada."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Ahora: Expresión Lambda</span>
+<span class="n">Runnable</span><span class="w"> </span><span class="n">tareaLambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tarea ejecutada con lambda."</span><span class="p">);</span>
+
+<span class="c1">// Ejecución</span>
+<span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(</span><span class="n">tareaLambda</span><span class="p">).</span><span class="na">start</span><span class="p">();</span>
+</code></pre></div>
+<p><strong>Ejemplo 2: Con un parámetro y una sola línea</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Interfaz funcional: Consumer&lt;T&gt; (acepta T, no devuelve nada)</span>
+<span class="n">Consumer</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">imprimir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mensaje</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Mensaje: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mensaje</span><span class="p">);</span>
+
+<span class="n">imprimir</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="s">"Hola DAW"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Salida: Mensaje: Hola DAW</span>
+</code></pre></div>
+<h4 id="23-lambdas-con-una-y-varias-lineas">2.3. Lambdas con una y varias líneas</h4>
+<p><strong>Ejemplo 3: Lambda con dos parámetros y una sola línea (retorno implícito)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Interfaz funcional: BinaryOperator&lt;T&gt; (acepta 2 T, devuelve 1 T)</span>
+<span class="n">BinaryOperator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sumar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sumar</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// 15</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Suma: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">resultado</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>Ejemplo 4: Lambda con varias líneas (retorno explícito)</strong></p>
+<p>Cuando el cuerpo de la lambda tiene más de una instrucción, o si necesitas lógica compleja (como un <code>if/else</code>), debes usar llaves <code>{}</code> y la palabra clave <code>return</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Interfaz funcional: Function&lt;T, R&gt; (acepta T, devuelve R)</span>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">clasificarEdad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edad</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">edad</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"Menor de edad"</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">edad</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">65</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"Adulto trabajador"</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"Jubilado de oro"</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">clasificarEdad</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="mi">25</span><span class="p">));</span><span class="w"> </span><span class="c1">// Salida: Adulto trabajador</span>
+</code></pre></div>
+<h4 id="24-uso-de-lambdas-con-colecciones">2.4. Uso de lambdas con colecciones</h4>
+<p>Las lambdas brillan al trabajar con colecciones, especialmente con el método <code>forEach</code> (introducido en Java 8 en la interfaz <code>Iterable</code>).</p>
+<p><strong>Ejemplo 5: Iterar con <code>forEach</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lenguajes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">"Java"</span><span class="p">,</span><span class="w"> </span><span class="s">"Python"</span><span class="p">,</span><span class="w"> </span><span class="s">"JavaScript"</span><span class="p">,</span><span class="w"> </span><span class="s">"Kotlin"</span><span class="p">);</span>
+
+<span class="c1">// Antes: Bucle for-each</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- Imperativo ---"</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">lang</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">lenguajes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">lang</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Ahora: forEach con lambda</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- Funcional ---"</span><span class="p">);</span>
+<span class="n">lenguajes</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">lang</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">lang</span><span class="p">));</span>
+</code></pre></div>
+<h4 id="25-variables-efectivamente-finales">2.5. Variables efectivamente finales</h4>
+<p>Una lambda puede acceder a variables locales de su ámbito circundante (el método donde se define), pero con una restricción crucial: <strong>deben ser efectivamente finales</strong>.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Una variable es <strong>efectivamente final</strong> si no se modifica después de su inicialización. Si intentas modificar una variable local dentro de una lambda, el compilador te dará un error. Esto garantiza la inmutabilidad y previene efectos secundarios.</p>
+</div>
+<p><strong>Ejemplo 6: Variable efectivamente final</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">prefijo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Lenguaje: "</span><span class="p">;</span><span class="w"> </span><span class="c1">// Esta variable es efectivamente final</span>
+
+<span class="n">Consumer</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">imprimirConPrefijo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lang</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// prefijo = "Otro prefijo"; // ERROR: Variable local referenciada desde una expresión lambda debe ser final o efectivamente final</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">prefijo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lang</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="n">imprimirConPrefijo</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="s">"C++"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Salida: Lenguaje: C++</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ol>
+<li>¿Cuál es la principal ventaja de usar una expresión lambda en lugar de una clase anónima para implementar un <code>Comparator</code>?</li>
+<li>Si tienes una lambda con un cuerpo de varias líneas, ¿qué debes recordar incluir obligatoriamente?</li>
+<li>¿Qué significa que una variable sea "efectivamente final"? ¿Por qué Java impone esta restricción en las lambdas?</li>
+<li>Escribe una expresión lambda que tome un número entero y devuelva <code>true</code> si es par, y <code>false</code> si es impar.</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="3-interfaces-funcionales">3. Interfaces Funcionales</h3>
+<h4 id="31-que-es-una-interfaz-funcional">3.1. ¿Qué es una interfaz funcional?</h4>
+<p>Como se definió, es una interfaz con <strong>un único método abstracto</strong>. Java proporciona un conjunto de interfaces funcionales predefinidas en el paquete <code>java.util.function</code> que cubren los casos de uso más comunes.</p>
+<h4 id="32-anotacion-functionalinterface">3.2. Anotación <code>@FunctionalInterface</code></h4>
+<p>Esta anotación es <strong>opcional</strong>, pero <strong>altamente recomendada</strong>. Si la añades a tu interfaz, el compilador de Java se asegurará de que solo tenga un método abstracto. Si intentas añadir un segundo, te avisará con un error.</p>
+<p><strong>Ejemplo 7: Creando una interfaz funcional propia</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nd">@FunctionalInterface</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Calculadora</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">operar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// void otroMetodo(); // Si descomentas, el compilador da error por @FunctionalInterface</span>
+<span class="p">}</span>
+
+<span class="c1">// Uso de la interfaz con una lambda</span>
+<span class="n">Calculadora</span><span class="w"> </span><span class="n">multiplicacion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Resultado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">multiplicacion</span><span class="p">.</span><span class="na">operar</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">));</span><span class="w"> </span><span class="c1">// 42</span>
+</code></pre></div>
+<h4 id="33-interfaces-funcionales-mas-usadas-en-java">3.3. Interfaces funcionales más usadas en Java</h4>
+<p>Java nos da cuatro interfaces funcionales básicas, que son la base de casi todas las operaciones de Streams:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Interfaz</th>
+<th style="text-align: left;">Método Abstracto</th>
+<th style="text-align: left;">Descripción</th>
+<th style="text-align: left;">Uso Típico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Predicate<t></t></strong></td>
+<td style="text-align: left;"><code>boolean test(T t)</code></td>
+<td style="text-align: left;">Acepta un argumento y devuelve un booleano.</td>
+<td style="text-align: left;">Filtrado (<code>filter</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Function<t, r=""></t,></strong></td>
+<td style="text-align: left;"><code>R apply(T t)</code></td>
+<td style="text-align: left;">Acepta un argumento de tipo <code>T</code> y devuelve un resultado de tipo <code>R</code>.</td>
+<td style="text-align: left;">Transformación (<code>map</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Consumer<t></t></strong></td>
+<td style="text-align: left;"><code>void accept(T t)</code></td>
+<td style="text-align: left;">Acepta un argumento y no devuelve ningún resultado.</td>
+<td style="text-align: left;">Consumo de datos (<code>forEach</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Supplier<t></t></strong></td>
+<td style="text-align: left;"><code>T get()</code></td>
+<td style="text-align: left;">No acepta argumentos y devuelve un resultado de tipo <code>T</code>.</td>
+<td style="text-align: left;">Generación de datos (creación de Streams).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="34-ejemplos-practicos-de-cada-interfaz">3.4. Ejemplos prácticos de cada interfaz</h4>
+<p><strong>Ejemplo 8: Predicate (Filtrado)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Predicate: ¿Es mayor de 18?</span>
+<span class="n">Predicate</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">esMayorDeEdad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edad</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">edad</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¿20 es mayor de edad? "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">esMayorDeEdad</span><span class="p">.</span><span class="na">test</span><span class="p">(</span><span class="mi">20</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¿16 es mayor de edad? "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">esMayorDeEdad</span><span class="p">.</span><span class="na">test</span><span class="p">(</span><span class="mi">16</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+</code></pre></div>
+<p><strong>Ejemplo 9: Function (Mapeo/Transformación)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Function: Convierte un String a su longitud (String -&gt; Integer)</span>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">longitudCadena</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">();</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Longitud de 'DAW': "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">longitudCadena</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="s">"DAW"</span><span class="p">));</span><span class="w"> </span><span class="c1">// 3</span>
+</code></pre></div>
+<p><strong>Ejemplo 10: Consumer (Consumo)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Consumer: Imprime un objeto de tipo Usuario</span>
+<span class="kd">class</span> <span class="nc">Usuario</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Usuario</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">"Usuario: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">Consumer</span><span class="o">&lt;</span><span class="n">Usuario</span><span class="o">&gt;</span><span class="w"> </span><span class="n">notificar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Notificación enviada a "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="na">nombre</span><span class="p">);</span>
+
+<span class="n">notificar</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Usuario</span><span class="p">(</span><span class="s">"Neo"</span><span class="p">));</span><span class="w"> </span><span class="c1">// Salida: Notificación enviada a Neo</span>
+</code></pre></div>
+<p><strong>Ejemplo 11: Supplier (Suministro/Generación)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Supplier: Genera un número aleatorio</span>
+<span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">generadorAleatorio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">();</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Número aleatorio: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">generadorAleatorio</span><span class="p">.</span><span class="na">get</span><span class="p">());</span>
+</code></pre></div>
+<div class="language-markmap mkdocs-markmap"><markmap-data encoding="base64" hidden="true">IyBJbnRlcmZhY2VzIEZ1bmNpb25hbGVzIENsYXZlCiMjIFByZWRpY2F0ZTxUPgotIE3DqXRvZG86IGBib29sZWFuIHRlc3QoVCB0KWAKLSBVc286IEZpbHRyYXIgKGRldm9sdmVyIHRydWUvZmFsc2UpCi0gRWplbXBsbzogYG4gLT4gbiA+IDBgCiMjIEZ1bmN0aW9uPFQsIFI+Ci0gTcOpdG9kbzogYFIgYXBwbHkoVCB0KWAKLSBVc286IE1hcGVhci9UcmFuc2Zvcm1hciAoVCBhIFIpCi0gRWplbXBsbzogYHMgLT4gcy5sZW5ndGgoKWAKIyMgQ29uc3VtZXI8VD4KLSBNw6l0b2RvOiBgdm9pZCBhY2NlcHQoVCB0KWAKLSBVc286IENvbnN1bWlyL0VqZWN1dGFyIGFjY2nDs24gKHNpbiByZXRvcm5vKQotIEVqZW1wbG86IGBTeXN0ZW0ub3V0OjpwcmludGxuYAojIyBTdXBwbGllcjxUPgotIE3DqXRvZG86IGBUIGdldCgpYAotIFVzbzogU3VtaW5pc3RyYXIvR2VuZXJhciAoc2luIGFyZ3VtZW50b3MpCi0gRWplbXBsbzogYCgpIC0+IG5ldyBEYXRlKClg</markmap-data></div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ol>
+<li>¿Por qué es fundamental que una interfaz funcional tenga solo un método abstracto?</li>
+<li>Si necesitas una interfaz funcional que tome dos enteros y devuelva un <code>String</code>, ¿cuál de las interfaces básicas usarías o tendrías que crear una nueva?</li>
+<li>Imagina que estás creando un log. ¿Qué interfaz funcional usarías para <em>escribir</em> el mensaje en el log sin devolver nada?</li>
+<li>¿Qué ocurre si añades un método <code>default</code> a una interfaz funcional? ¿Sigue siendo funcional?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="4-introduccion-a-streams">4. Introducción a Streams</h3>
+<h4 id="41-que-es-un-stream">4.1. ¿Qué es un Stream?</h4>
+<p>Un <strong>Stream</strong> es una abstracción que nos permite procesar datos de forma declarativa. No almacena datos, sino que actúa como una <strong>tubería</strong> por donde fluyen los datos de una fuente (una colección, un array, un generador) y se procesan mediante una serie de operaciones.</p>
+<div class="admonition info inline end">
+<p class="admonition-title">El Tubería de Fontanería</p>
+<p>Piensa en un Stream como una tubería de fontanería. Los datos son el agua. Las operaciones intermedias (<code>filter</code>, <code>map</code>) son los filtros y las bombas que modifican el flujo. La operación terminal (<code>collect</code>) es el grifo que abre el paso y te da el resultado final.</p>
+</div>
+<h4 id="42-diferencias-entre-colecciones-y-streams">4.2. Diferencias entre colecciones y streams</h4>
+<p>Es crucial entender que un Stream no reemplaza a una Colección. Son complementarios.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Característica</th>
+<th style="text-align: left;">Colección (<code>List</code>, <code>Set</code>, <code>Map</code>)</th>
+<th style="text-align: left;">Stream</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Propósito</strong></td>
+<td style="text-align: left;">Almacenar y gestionar elementos.</td>
+<td style="text-align: left;">Procesar datos de una fuente.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Estado</strong></td>
+<td style="text-align: left;">Los elementos se almacenan físicamente.</td>
+<td style="text-align: left;">No almacena elementos; es una vista lógica.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Recorrido</strong></td>
+<td style="text-align: left;">Se puede recorrer múltiples veces.</td>
+<td style="text-align: left;"><strong>Solo se puede recorrer una vez.</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Mutabilidad</strong></td>
+<td style="text-align: left;">Generalmente mutable (se pueden añadir/quitar elementos).</td>
+<td style="text-align: left;">Inmutable; las operaciones devuelven un nuevo Stream.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Evaluación</strong></td>
+<td style="text-align: left;"><strong>Eager</strong> (ansiosa): los datos se cargan inmediatamente.</td>
+<td style="text-align: left;"><strong>Lazy</strong> (perezosa): las operaciones se ejecutan solo cuando se pide el resultado final.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="43-creacion-de-streams">4.3. Creación de streams</h4>
+<p>Hay varias formas de obtener un Stream:</p>
+<p><strong>Desde colecciones</strong></p>
+<p>Cualquier interfaz que extienda <code>Collection</code> (como <code>List</code> o <code>Set</code>) tiene el método <code>stream()</code>.</p>
+<p><strong>Ejemplo 12: Stream desde una lista</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nombres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">"Ana"</span><span class="p">,</span><span class="w"> </span><span class="s">"Beto"</span><span class="p">,</span><span class="w"> </span><span class="s">"Carlos"</span><span class="p">,</span><span class="w"> </span><span class="s">"Diana"</span><span class="p">);</span>
+<span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">streamNombres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombres</span><span class="p">.</span><span class="na">stream</span><span class="p">();</span>
+</code></pre></div>
+<p><strong>Desde arrays</strong></p>
+<p>Se usa la clase auxiliar <code>Arrays</code>.</p>
+<p><strong>Ejemplo 13: Stream desde un array</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">ciudades</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"Madrid"</span><span class="p">,</span><span class="w"> </span><span class="s">"Barcelona"</span><span class="p">,</span><span class="w"> </span><span class="s">"Sevilla"</span><span class="p">};</span>
+<span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">streamCiudades</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">stream</span><span class="p">(</span><span class="n">ciudades</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>Usando <code>Stream.of()</code></strong></p>
+<p>Para crear un Stream a partir de un conjunto fijo de valores.</p>
+<p><strong>Ejemplo 14: Stream.of()</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">streamNumeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Stream</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="44-streams-secuenciales-y-paralelos">4.4. Streams secuenciales y paralelos</h4>
+<p>Por defecto, todos los Streams son <strong>secuenciales</strong>, lo que significa que las operaciones se ejecutan en un solo hilo.</p>
+<p>Si usas <code>parallelStream()</code>, Java puede dividir el trabajo y ejecutar las operaciones en <strong>múltiples hilos</strong> simultáneamente. Esto es útil para grandes volúmenes de datos, pero puede tener <em>overhead</em> (coste de gestión de hilos) en colecciones pequeñas.</p>
+<p><strong>Ejemplo 15: Streams paralelos</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">listaGigante</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">obtenerListaDe1MillonDeElementos</span><span class="p">();</span>
+
+<span class="c1">// Secuencial (por defecto)</span>
+<span class="n">listaGigante</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">filter</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">).</span><span class="na">count</span><span class="p">();</span>
+
+<span class="c1">// Paralelo (más rápido para grandes datos, pero cuidado con el orden)</span>
+<span class="n">listaGigante</span><span class="p">.</span><span class="na">parallelStream</span><span class="p">().</span><span class="na">filter</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">).</span><span class="na">count</span><span class="p">();</span>
+</code></pre></div>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Fuente as "Fuente de Datos (List)"
+    participant Intermedia1 as "Operación Intermedia 1 (filter)"
+    participant Intermedia2 as "Operación Intermedia 2 (map)"
+    participant Terminal as "Operación Terminal (collect)"
+
+    Note over Fuente: Llamada a .stream()
+    Fuente-&gt;&gt;Intermedia1: Pide el primer elemento
+    Note right of Intermedia1: Lazy Evaluation: No se ejecuta nada hasta el final
+    Intermedia1-&gt;&gt;Intermedia2: Pasa el elemento si cumple el filtro
+    Intermedia2-&gt;&gt;Terminal: Pasa el elemento transformado
+    Terminal-&gt;&gt;Terminal: Almacena el resultado
+
+    loop Procesamiento de Elementos
+        Fuente-&gt;&gt;Intermedia1: Siguiente elemento
+        Intermedia1-&gt;&gt;Intermedia2: Pasa/Descarta
+        Intermedia2-&gt;&gt;Terminal: Pasa/Transforma
+    end
+
+    Note over Terminal: Llamada a .collect() fuerza la ejecución
+    Terminal--&gt;&gt;Fuente: Devuelve el resultado final</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ol>
+<li>¿Cuál es la principal limitación de un Stream en cuanto a su uso? ¿Cómo se soluciona si necesitas procesar los datos varias veces?</li>
+<li>Explica el concepto de <strong>evaluación <em>lazy</em></strong> (perezosa) en el contexto de los Streams. ¿Qué ventaja de rendimiento ofrece?</li>
+<li>¿Cuándo deberías considerar usar <code>parallelStream()</code> en lugar de <code>stream()</code>? ¿Qué riesgo potencial existe?</li>
+<li>Si tienes un array de enteros, ¿cómo crearías un Stream que solo contenga los números pares?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="5-operaciones-intermedias">5. Operaciones Intermedias</h3>
+<h4 id="51-caracteristicas-de-las-operaciones-intermedias">5.1. Características de las operaciones intermedias</h4>
+<p>Las operaciones intermedias son aquellas que:<br/>
+1.  Devuelven un nuevo <code>Stream&lt;T&gt;</code>.<br/>
+2.  Son <strong>lazy</strong> (perezosas): no se ejecutan hasta que se llama a una operación terminal.<br/>
+3.  Permiten <strong>encadenamiento</strong> (<em>chaining</em>): puedes concatenar tantas como necesites para formar una <em>pipeline</em>.<br/></p>
+<h4 id="52-filter">5.2. <code>filter()</code></h4>
+<p>Acepta un <code>Predicate&lt;T&gt;</code> y devuelve un Stream que contiene solo los elementos que cumplen la condición.</p>
+<p><strong>Ejemplo 16: Filtrar nombres que empiezan por 'A'</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nombres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">"Ana"</span><span class="p">,</span><span class="w"> </span><span class="s">"Beto"</span><span class="p">,</span><span class="w"> </span><span class="s">"Carlos"</span><span class="p">,</span><span class="w"> </span><span class="s">"Alba"</span><span class="p">);</span>
+
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">filtrados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombres</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">nombre</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">nombre</span><span class="p">.</span><span class="na">startsWith</span><span class="p">(</span><span class="s">"A"</span><span class="p">))</span><span class="w"> </span><span class="c1">// Predicate</span>
+<span class="w">    </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">filtrados</span><span class="p">);</span><span class="w"> </span><span class="c1">// Salida: [Ana, Alba]</span>
+</code></pre></div>
+<h4 id="53-map">5.3. <code>map()</code></h4>
+<p>Acepta una <code>Function&lt;T, R&gt;</code> y devuelve un Stream de tipo <code>R</code>. Transforma cada elemento del Stream de un tipo a otro.</p>
+<p><strong>Ejemplo 17: Mapear a la longitud de la cadena</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">palabras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">"Java"</span><span class="p">,</span><span class="w"> </span><span class="s">"Stream"</span><span class="p">,</span><span class="w"> </span><span class="s">"Lambda"</span><span class="p">);</span>
+
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">longitudes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">palabras</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">length</span><span class="p">)</span><span class="w"> </span><span class="c1">// Function (Method Reference)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">longitudes</span><span class="p">);</span><span class="w"> </span><span class="c1">// Salida: [4, 6, 6]</span>
+</code></pre></div>
+<h4 id="54-flatmap">5.4. <code>flatMap()</code></h4>
+<p>Acepta una <code>Function</code> que devuelve un <code>Stream</code> y lo "aplana" en un único Stream. Es útil cuando tienes una colección de colecciones y quieres unirlas.</p>
+<p><strong>Ejemplo 18: Aplanar listas</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">listaDeListas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span>
+<span class="w">    </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">"A1"</span><span class="p">,</span><span class="w"> </span><span class="s">"A2"</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">"B1"</span><span class="p">,</span><span class="w"> </span><span class="s">"B2"</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">aplanada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listaDeListas</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">flatMap</span><span class="p">(</span><span class="n">Collection</span><span class="p">::</span><span class="n">stream</span><span class="p">)</span><span class="w"> </span><span class="c1">// Convierte cada lista interna en un Stream y los une</span>
+<span class="w">    </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">aplanada</span><span class="p">);</span><span class="w"> </span><span class="c1">// Salida: [A1, A2, B1, B2]</span>
+</code></pre></div>
+<h4 id="55-sorted">5.5. <code>sorted()</code></h4>
+<p>Ordena los elementos del Stream. Puede usar el orden natural de los elementos o un <code>Comparator</code> personalizado.</p>
+<p><strong>Ejemplo 19: Ordenar por longitud</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lenguajes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">"Java"</span><span class="p">,</span><span class="w"> </span><span class="s">"Python"</span><span class="p">,</span><span class="w"> </span><span class="s">"C++"</span><span class="p">,</span><span class="w"> </span><span class="s">"Go"</span><span class="p">);</span>
+
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ordenados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lenguajes</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">sorted</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparing</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">length</span><span class="p">))</span><span class="w"> </span><span class="c1">// Ordena por longitud de cadena</span>
+<span class="w">    </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ordenados</span><span class="p">);</span><span class="w"> </span><span class="c1">// Salida: [Go, C++, Java, Python]</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th>Código</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Por longitud</td>
+<td><code>Comparator.comparing(String::length)</code></td>
+</tr>
+<tr>
+<td>Alfabético</td>
+<td><code>Comparator.comparing(String::toString)</code></td>
+</tr>
+<tr>
+<td>Alfabético (simple)</td>
+<td><code>Comparator.naturalOrder()</code></td>
+</tr>
+</tbody>
+</table>
+<p>Comparator.comparing siempre responde a esta pregunta: <br/></p>
+<p>👉 ¿Qué valor uso para comparar dos elementos?</p>
+<p>Longitud → String::length
+Texto → String::toString
+Precio → Producto::getPrecio
+Nombre → Alumno::getNombre</p>
+<p>Orden inverso usando reversed()
+</p><div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lenguajes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">"Java"</span><span class="p">,</span><span class="w"> </span><span class="s">"Python"</span><span class="p">,</span><span class="w"> </span><span class="s">"C++"</span><span class="p">,</span><span class="w"> </span><span class="s">"Go"</span><span class="p">);</span>
+
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ordenadosInverso</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lenguajes</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">sorted</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparing</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">toString</span><span class="p">).</span><span class="na">reversed</span><span class="p">())</span>
+<span class="w">    </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ordenadosInverso</span><span class="p">);</span>
+</code></pre></div><p></p>
+<h4 id="56-distinct">5.6. <code>distinct()</code></h4>
+<p>Devuelve un Stream que contiene solo los elementos únicos, eliminando duplicados (usa el método <code>equals()</code> de los objetos).</p>
+<p><strong>Ejemplo 20: Eliminar duplicados</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">unicos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numeros</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">distinct</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">unicos</span><span class="p">);</span><span class="w"> </span><span class="c1">// Salida: [1, 2, 3, 4, 5]</span>
+</code></pre></div>
+<h4 id="57-limit-y-skip">5.7. <code>limit()</code> y <code>skip()</code></h4>
+<p><code>limit(n)</code> trunca el Stream para que no contenga más de <code>n</code> elementos. <code>skip(n)</code> descarta los primeros <code>n</code> elementos.</p>
+<p><strong>Ejemplo 21: Paginación (limit y skip)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">usuarios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">"u1"</span><span class="p">,</span><span class="w"> </span><span class="s">"u2"</span><span class="p">,</span><span class="w"> </span><span class="s">"u3"</span><span class="p">,</span><span class="w"> </span><span class="s">"u4"</span><span class="p">,</span><span class="w"> </span><span class="s">"u5"</span><span class="p">,</span><span class="w"> </span><span class="s">"u6"</span><span class="p">,</span><span class="w"> </span><span class="s">"u7"</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">pagina</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">tamanoPagina</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pagina2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">usuarios</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">skip</span><span class="p">((</span><span class="n">pagina</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">tamanoPagina</span><span class="p">)</span><span class="w"> </span><span class="c1">// Saltamos los primeros 3 (página 1)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">limit</span><span class="p">(</span><span class="n">tamanoPagina</span><span class="p">)</span><span class="w"> </span><span class="c1">// Tomamos los siguientes 3</span>
+<span class="w">    </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pagina2</span><span class="p">);</span><span class="w"> </span><span class="c1">// Salida: [u4, u5, u6]</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ol>
+<li>Si encadenas un <code>filter()</code> y un <code>map()</code>, ¿cuándo se ejecuta realmente el código de ambos?</li>
+<li>Tienes una lista de objetos <code>Producto</code> y quieres obtener una lista de los nombres de los productos que cuestan más de 100€. Escribe la <em>pipeline</em> de Streams necesaria.</li>
+<li>¿Cuál es la diferencia clave entre <code>map()</code> y <code>flatMap()</code>? ¿En qué escenario usarías <code>flatMap()</code>?</li>
+<li>¿Cómo usarías <code>skip()</code> y <code>limit()</code> para obtener el segundo elemento más pequeño de un Stream de números enteros?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="6-operaciones-terminales">6. Operaciones Terminales</h3>
+<h4 id="61-caracteristicas-de-las-operaciones-terminales">6.1. Características de las operaciones terminales</h4>
+<p>Las operaciones terminales son aquellas que:<br/>
+1.  Devuelven un resultado no-Stream (un valor, una colección, un booleano, etc.).<br/>
+2.  <strong>Fuerzan la ejecución</strong> de todas las operaciones intermedias encadenadas.<br/>
+3.  Consumen el Stream, por lo que <strong>no se pueden volver a usar</strong>.<br/></p>
+<h4 id="62-foreach">6.2. <code>forEach()</code></h4>
+<p>Realiza una acción para cada elemento del Stream. Es una operación terminal que no devuelve nada (<code>void</code>).</p>
+<p><strong>Ejemplo 22: Imprimir elementos</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">Stream</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"A"</span><span class="p">,</span><span class="w"> </span><span class="s">"B"</span><span class="p">,</span><span class="w"> </span><span class="s">"C"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span><span class="w"> </span><span class="c1">// Method Reference a Consumer</span>
+</code></pre></div>
+<h4 id="63-collect">6.3. <code>collect()</code></h4>
+<p>Es la operación terminal más común. Acumula los elementos del Stream en un contenedor (una colección, un mapa, un String, etc.). Usa la clase <code>Collectors</code> (ver sección 7).</p>
+<p><strong>Ejemplo 23: Recolectar en una lista</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">cuadrados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Stream</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span><span class="w"> </span><span class="c1">// Recolecta el resultado en una List</span>
+</code></pre></div>
+<h4 id="64-count">6.4. <code>count()</code></h4>
+<p>Devuelve el número de elementos en el Stream como un <code>long</code>.</p>
+<p><strong>Ejemplo 24: Contar elementos filtrados</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="n">totalPares</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Stream</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">count</span><span class="p">();</span><span class="w"> </span><span class="c1">// Salida: 3</span>
+</code></pre></div>
+<h4 id="65-anymatch-allmatch-nonematch">6.5. <code>anyMatch()</code>, <code>allMatch()</code>, <code>noneMatch()</code></h4>
+<p>Devuelven un <code>boolean</code> y son operaciones de <strong>cortocircuito</strong> (<em>short-circuiting</em>):<br/></p>
+<p><em><code>anyMatch(Predicate)</code>: Devuelve <code>true</code> si </em><em>al menos un</em><em> elemento cumple el <code>Predicate</code>.<br/>
+</em><code>allMatch(Predicate)</code>: Devuelve <code>true</code> si <strong>todos</strong> los elementos cumplen el <code>Predicate</code>.<br/>
+<em><code>noneMatch(Predicate)</code>: Devuelve <code>true</code> si </em><em>ningún</em>* elemento cumple el <code>Predicate</code>.<br/></p>
+<p><strong>Ejemplo 25: Comprobación de coincidencias</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">frutas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">"Manzana"</span><span class="p">,</span><span class="w"> </span><span class="s">"Pera"</span><span class="p">,</span><span class="w"> </span><span class="s">"Naranja"</span><span class="p">);</span>
+
+<span class="kt">boolean</span><span class="w"> </span><span class="n">hayPera</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">frutas</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">anyMatch</span><span class="p">(</span><span class="n">f</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"Pera"</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">todoEmpiezaConM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">frutas</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">allMatch</span><span class="p">(</span><span class="n">f</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="na">startsWith</span><span class="p">(</span><span class="s">"M"</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">noHayKiwi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">frutas</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">noneMatch</span><span class="p">(</span><span class="n">f</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"Kiwi"</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+</code></pre></div>
+<h4 id="66-findfirst-y-findany">6.6. <code>findFirst()</code> y <code>findAny()</code></h4>
+<p>Devuelven un <code>Optional&lt;T&gt;</code> (ver sección 8).</p>
+<ul>
+<li><code>findFirst()</code>: Devuelve el primer elemento del Stream (útil en Streams secuenciales).</li>
+<li><code>findAny()</code>: Devuelve cualquier elemento del Stream (más eficiente en Streams paralelos).</li>
+</ul>
+<p><strong>Ejemplo 26: Encontrar el primer elemento</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">primerElemento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Stream</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"a"</span><span class="p">,</span><span class="w"> </span><span class="s">"b"</span><span class="p">,</span><span class="w"> </span><span class="s">"c"</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">findFirst</span><span class="p">();</span>
+
+<span class="n">primerElemento</span><span class="p">.</span><span class="na">ifPresent</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Encontrado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s</span><span class="p">));</span><span class="w"> </span><span class="c1">// Encontrado: a</span>
+</code></pre></div>
+<h4 id="67-reduce">6.7. <code>reduce()</code></h4>
+<p>Combina los elementos del Stream en un único resultado, aplicando una función de acumulación. Es la base de las operaciones de agregación.</p>
+<p><strong>Ejemplo 27: Sumar todos los números (reducción)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+
+<span class="c1">// 1. Con valor inicial (identity): 0 + (1+2+3+4) = 10</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numeros</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">acumulador</span><span class="p">,</span><span class="w"> </span><span class="n">elemento</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">acumulador</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">elemento</span><span class="p">);</span><span class="w"> </span><span class="c1">// o Integer::sum</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Suma total: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">suma</span><span class="p">);</span><span class="w"> </span><span class="c1">// 10</span>
+
+<span class="c1">// 2. Sin valor inicial (devuelve Optional)</span>
+<span class="n">Optional</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">producto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numeros</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">reduce</span><span class="p">((</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+
+<span class="n">producto</span><span class="p">.</span><span class="na">ifPresent</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Producto total: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="p">));</span><span class="w"> </span><span class="c1">// 24</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ol>
+<li>¿Por qué no puedes llamar a una operación terminal dos veces en el mismo Stream?</li>
+<li>Si necesitas saber si todos los usuarios de una lista tienen un email válido, ¿qué operación terminal usarías?</li>
+<li>¿Cuál es la diferencia de uso entre <code>findFirst()</code> y <code>findAny()</code>? ¿Cuándo es preferible uno sobre el otro?</li>
+<li>Escribe una operación <code>reduce()</code> que encuentre el <code>String</code> más largo de una lista de cadenas.</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="7-collectors">7. Collectors</h3>
+<h4 id="71-que-es-un-collector">7.1. ¿Qué es un Collector?</h4>
+<p>Un <code>Collector</code> es una interfaz que describe cómo se acumulan los elementos de un Stream en un resultado final. La clase <code>Collectors</code> (en plural) proporciona implementaciones predefinidas para los casos de uso más comunes.</p>
+<h4 id="72-collectorstolist-toset-tomap">7.2. <code>Collectors.toList()</code>, <code>toSet()</code>, <code>toMap()</code></h4>
+<p><strong>Ejemplo 28: toList y toSet</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">duplicados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+
+<span class="c1">// toList: mantiene duplicados y orden</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">duplicados</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span><span class="w"> </span><span class="c1">// [1, 2, 2, 3, 1]</span>
+
+<span class="c1">// toSet: elimina duplicados, sin orden garantizado</span>
+<span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">conjunto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">duplicados</span><span class="p">.</span><span class="na">stream</span><span class="p">().</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toSet</span><span class="p">());</span><span class="w"> </span><span class="c1">// {1, 2, 3}</span>
+</code></pre></div>
+<p><strong>Ejemplo 29: toMap</strong></p>
+<p>Para crear un <code>Map</code>, necesitas dos funciones: una para la <strong>clave</strong> y otra para el <strong>valor</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Persona</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">dni</span><span class="p">;</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Persona</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">d</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">dni</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getDni</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">dni</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getNombre</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">personas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">"1A"</span><span class="p">,</span><span class="w"> </span><span class="s">"Luis"</span><span class="p">),</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Persona</span><span class="p">(</span><span class="s">"2B"</span><span class="p">,</span><span class="w"> </span><span class="s">"Marta"</span><span class="p">));</span>
+
+<span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mapaDniNombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">personas</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toMap</span><span class="p">(</span><span class="n">Persona</span><span class="p">::</span><span class="n">getDni</span><span class="p">,</span><span class="w"> </span><span class="n">Persona</span><span class="p">::</span><span class="n">getNombre</span><span class="p">));</span>
+
+<span class="c1">// Salida: {1A=Luis, 2B=Marta}</span>
+</code></pre></div>
+<h4 id="73-collectorsgroupingby">7.3. <code>Collectors.groupingBy()</code></h4>
+<p>Agrupa los elementos del Stream basándose en una función de clasificación. El resultado es un <code>Map&lt;K, List&lt;T&gt;&gt;</code>.</p>
+<p><strong>Ejemplo 30: Agrupar por longitud de palabra</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">palabras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">"sol"</span><span class="p">,</span><span class="w"> </span><span class="s">"luna"</span><span class="p">,</span><span class="w"> </span><span class="s">"mar"</span><span class="p">,</span><span class="w"> </span><span class="s">"estrella"</span><span class="p">);</span>
+
+<span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">agrupadoPorLongitud</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">palabras</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">groupingBy</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">length</span><span class="p">));</span>
+
+<span class="cm">/*</span>
+<span class="cm">Salida:</span>
+<span class="cm">{</span>
+<span class="cm">    3: [sol, mar],</span>
+<span class="cm">    4: [luna],</span>
+<span class="cm">    8: [estrella]</span>
+<span class="cm">}</span>
+<span class="cm">*/</span>
+</code></pre></div>
+<h4 id="74-collectorspartitioningby">7.4. <code>Collectors.partitioningBy()</code></h4>
+<p>Es un caso especial de agrupación que divide el Stream en dos grupos basándose en un <code>Predicate</code>: <code>true</code> o <code>false</code>. El resultado es un <code>Map&lt;Boolean, List&lt;T&gt;&gt;</code>.</p>
+<p><strong>Ejemplo 31: Particionar por par/impar</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+
+<span class="n">Map</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">particion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numeros</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">partitioningBy</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">));</span>
+
+<span class="cm">/*</span>
+<span class="cm">Salida:</span>
+<span class="cm">{</span>
+<span class="cm">    false: [1, 3, 5], // Impares</span>
+<span class="cm">    true: [2, 4]     // Pares</span>
+<span class="cm">}</span>
+<span class="cm">*/</span>
+</code></pre></div>
+<h4 id="75-collectorsjoining">7.5. <code>Collectors.joining()</code></h4>
+<p>Concatena los elementos de un Stream de <code>String</code> en un único <code>String</code>, con opciones para separador, prefijo y sufijo.</p>
+<p><strong>Ejemplo 32: Unir con separador</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">"java"</span><span class="p">,</span><span class="w"> </span><span class="s">"streams"</span><span class="p">,</span><span class="w"> </span><span class="s">"lambda"</span><span class="p">);</span>
+
+<span class="n">String</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tags</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">joining</span><span class="p">(</span><span class="s">" | "</span><span class="p">,</span><span class="w"> </span><span class="s">"Tags: ["</span><span class="p">,</span><span class="w"> </span><span class="s">"]"</span><span class="p">));</span>
+
+<span class="c1">// Salida: Tags: [java | streams | lambda]</span>
+</code></pre></div>
+<h4 id="76-collectorscounting-summing-averaging">7.6. <code>Collectors.counting()</code>, <code>summing()</code>, <code>averaging()</code></h4>
+<p>Son <em>downstream collectors</em> que se usan a menudo dentro de <code>groupingBy</code> para realizar cálculos en los grupos.</p>
+<p><strong>Ejemplo 33: Agrupar y contar</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ciudades</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">"Madrid"</span><span class="p">,</span><span class="w"> </span><span class="s">"Barcelona"</span><span class="p">,</span><span class="w"> </span><span class="s">"Madrid"</span><span class="p">,</span><span class="w"> </span><span class="s">"Sevilla"</span><span class="p">,</span><span class="w"> </span><span class="s">"Barcelona"</span><span class="p">);</span>
+
+<span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="o">&gt;</span><span class="w"> </span><span class="n">conteoCiudades</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ciudades</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">groupingBy</span><span class="p">(</span>
+<span class="w">        </span><span class="n">Function</span><span class="p">.</span><span class="na">identity</span><span class="p">(),</span><span class="w"> </span><span class="c1">// La clave es la ciudad misma</span>
+<span class="w">        </span><span class="n">Collectors</span><span class="p">.</span><span class="na">counting</span><span class="p">()</span><span class="w"> </span><span class="c1">// El valor es el conteo de esa ciudad</span>
+<span class="w">    </span><span class="p">));</span>
+
+<span class="cm">/*</span>
+<span class="cm">Salida:</span>
+<span class="cm">{</span>
+<span class="cm">    Madrid: 2,</span>
+<span class="cm">    Barcelona: 2,</span>
+<span class="cm">    Sevilla: 1</span>
+<span class="cm">}</span>
+<span class="cm">*/</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ol>
+<li>Si usas <code>Collectors.toMap()</code> y dos elementos tienen la misma clave, ¿qué ocurre? ¿Cómo podrías solucionarlo?</li>
+<li>¿Cuál es la diferencia principal entre <code>groupingBy()</code> y <code>partitioningBy()</code>? ¿En qué situación usarías el segundo?</li>
+<li>Escribe la <em>pipeline</em> de Streams y <code>Collectors</code> para agrupar una lista de objetos <code>Estudiante</code> por su nota media (Aprobado/Suspenso) y, para cada grupo, contar cuántos estudiantes hay.</li>
+<li>¿Cómo usarías <code>Collectors.joining()</code> para crear una cadena de CSV (valores separados por comas) a partir de una lista de nombres?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="8-optional">8. Optional</h3>
+<h4 id="81-problemas-del-null">8.1. Problemas del <code>null</code></h4>
+<p>El inventor de Java, Tony Hoare, llamó al <code>null</code> su "error de mil millones de dólares". El problema es que cualquier referencia de objeto puede ser <code>null</code>, lo que obliga a los desarrolladores a hacer constantes comprobaciones de <code>if (objeto != null)</code> para evitar la temida <code>NullPointerException</code>.</p>
+<h4 id="82-que-es-optional">8.2. ¿Qué es Optional?</h4>
+<p><code>Optional&lt;T&gt;</code> es un contenedor que puede o no contener un valor no nulo de tipo <code>T</code>. Su propósito es <strong>forzar</strong> al desarrollador a considerar explícitamente el caso en el que un valor podría estar ausente, eliminando la necesidad de devolver <code>null</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code>Optional</code> no está diseñado para reemplazar todas las referencias <code>null</code>. Su uso principal es como <strong>tipo de retorno</strong> para métodos que podrían no tener un resultado (ej. métodos de búsqueda).</p>
+</div>
+<h4 id="83-creacion-de-optional">8.3. Creación de Optional</h4>
+<p><strong>Ejemplo 34: Creación de Optional</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// 1. Optional vacío</span>
+<span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vacio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">();</span>
+
+<span class="c1">// 2. Optional con valor (si el valor es null, lanza NullPointerException)</span>
+<span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">conValor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"Hola"</span><span class="p">);</span>
+
+<span class="c1">// 3. Optional que acepta null (si es null, crea un Optional vacío)</span>
+<span class="n">String</span><span class="w"> </span><span class="n">valorPosiblementeNulo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">obtenerNombreAleatorio</span><span class="p">();</span><span class="w"> </span><span class="c1">// Podría devolver null</span>
+<span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">seguro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">ofNullable</span><span class="p">(</span><span class="n">valorPosiblementeNulo</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="84-metodos-principales">8.4. Métodos principales</h4>
+<p><strong><code>isPresent()</code></strong></p>
+<p>Devuelve <code>true</code> si hay un valor presente. (Uso imperativo, menos recomendado).</p>
+<p><strong><code>ifPresent()</code></strong></p>
+<p>Acepta un <code>Consumer</code> y ejecuta la acción solo si el valor está presente. (Uso funcional, más recomendado).</p>
+<p><strong>Ejemplo 35: ifPresent</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"Manu"</span><span class="p">);</span>
+
+<span class="n">nombre</span><span class="p">.</span><span class="na">ifPresent</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El nombre es: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="p">));</span><span class="w"> </span><span class="c1">// Se ejecuta</span>
+<span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">().</span><span class="na">ifPresent</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"No se ejecuta"</span><span class="p">));</span><span class="w"> </span><span class="c1">// No se ejecuta</span>
+</code></pre></div>
+<p><strong><code>orElse()</code></strong></p>
+<p>Devuelve el valor si está presente; si no, devuelve el valor por defecto que se le pasa.</p>
+<p><strong>Ejemplo 36: orElse</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">resultado1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"Valor"</span><span class="p">).</span><span class="na">orElse</span><span class="p">(</span><span class="s">"Por defecto"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Valor</span>
+<span class="n">String</span><span class="w"> </span><span class="n">resultado2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">().</span><span class="na">orElse</span><span class="p">(</span><span class="s">"Por defecto"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Por defecto</span>
+</code></pre></div>
+<p><strong><code>orElseGet()</code></strong></p>
+<p>Devuelve el valor si está presente; si no, llama a un <code>Supplier</code> para obtener el valor por defecto. Es más eficiente que <code>orElse()</code> si la creación del valor por defecto es costosa, ya que el <code>Supplier</code> solo se ejecuta si es necesario.</p>
+<p><strong>Ejemplo 37: orElseGet (Lazy)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// La función solo se llama si el Optional está vacío</span>
+<span class="n">String</span><span class="w"> </span><span class="n">resultado3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">().</span><span class="na">orElseGet</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Calculando valor por defecto..."</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">"Valor calculado"</span><span class="p">;</span>
+<span class="p">});</span><span class="w"> </span><span class="c1">// Salida: Calculando valor por defecto...</span>
+
+<span class="c1">// orElseGet no se llama si hay valor</span>
+<span class="n">String</span><span class="w"> </span><span class="n">resultado4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"Presente"</span><span class="p">).</span><span class="na">orElseGet</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">"Calculando..."</span><span class="p">);</span><span class="w"> </span><span class="c1">// No hay salida</span>
+</code></pre></div>
+<p><strong><code>orElseThrow()</code></strong></p>
+<p>Devuelve el valor si está presente; si no, lanza una excepción.</p>
+<p><strong>Ejemplo 38: orElseThrow</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Obtiene el valor o lanza una excepción personalizada</span>
+<span class="n">String</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Optional</span><span class="p">.</span><span class="na">empty</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">orElseThrow</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NoSuchElementException</span><span class="p">(</span><span class="s">"El usuario no existe en la base de datos."</span><span class="p">));</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ol>
+<li>¿Por qué se considera que <code>Optional</code> es una mejora sobre la comprobación de <code>null</code>?</li>
+<li>¿Cuál es la diferencia de rendimiento entre <code>orElse("defecto")</code> y <code>orElseGet(() -&gt; "defecto")</code>?</li>
+<li>Si necesitas ejecutar una acción (ej. guardar en base de datos) solo si el <code>Optional</code> contiene un valor, ¿qué método usarías?</li>
+<li>Escribe el código para obtener un valor de un <code>Optional&lt;Double&gt;</code> o lanzar una <code>IllegalArgumentException</code> si está vacío.</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="aplicacion-en-el-mundo-real">Aplicación en el Mundo Real</h2>
+<p>La Programación Funcional y los Streams no son solo un ejercicio académico; son el <strong>estándar de la industria</strong> para el procesamiento de datos a gran escala y la programación concurrente.</p>
+<ol>
+<li><strong>Big Data y Procesamiento de Datos:</strong> Frameworks como <strong>Apache Spark</strong> o <strong>Hadoop</strong> utilizan un modelo de programación funcional (MapReduce) para distribuir el procesamiento de datos en clústeres. Al usar Streams en Java, estáis practicando la misma mentalidad que se usa para manejar petabytes de información.</li>
+<li><strong>Microservicios y Reactividad:</strong> En arquitecturas de microservicios, la inmutabilidad y la ausencia de efectos secundarios son vitales para la estabilidad. Frameworks reactivos como <strong>Spring WebFlux</strong> se basan en el concepto de flujos de datos (Streams) para manejar miles de peticiones concurrentes sin bloquear hilos, algo imposible sin la PF.</li>
+<li><strong>Limpieza de Código:</strong> En empresas como Google o Amazon, el código debe ser mantenible. Una <em>pipeline</em> de Streams de 5 líneas que filtra y mapea es infinitamente más fácil de leer y depurar que un bucle <code>for</code> de 20 líneas con múltiples <code>if</code> anidados. <strong>La legibilidad es un factor de calidad clave.</strong></li>
+</ol>
+<p>Al dominar los Streams, no solo estáis escribiendo código Java, sino que estáis aprendiendo a pensar como un ingeniero de <em>software</em> moderno, capaz de diseñar sistemas que escalan y que son inherentemente más seguros frente a los errores de concurrencia.</p>
+<h2 id="para-saber-mas">Para Saber Más</h2>
+<p>Para profundizar en estos temas y dominar la Stream API, os recomiendo consultar las siguientes fuentes de alta calidad:</p>
+<ol>
+<li><strong>Documentación Oficial de Oracle sobre la Stream API:</strong> <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html">https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html</a></li>
+<li><strong>Guía de Estilo de Google para Java (Google Java Style Guide):</strong> <a href="https://google.github.io/styleguide/javaguide.html">https://google.github.io/styleguide/javaguide.html</a> (Imprescindible para escribir código limpio y profesional).</li>
+<li><strong>Baeldung - Java 8 Streams Tutorial:</strong> <a href="https://www.baeldung.com/java-8-streams">https://www.baeldung.com/java-8-streams</a> (Uno de los mejores recursos con ejemplos prácticos y detallados).</li>
+</ol>
+<p><br/></p><hr class="double"/><p></p>
+<h2 id="ejercicios">EJERCICIOS</h2>
+<hr/>
+<!-- 
+*************************************************
+*   EJERCICIOS PROGRAMACIÓN FUNCIONAL Y STREAMS *   
+*************************************************
+-->
+<p><a href="../8-Programacion-funcional-Streams-Ejercicios/">=&gt; Ejercicios de Programación Funcional y Streams</a></p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script type="text/javascript">(function initializeMarkmap() {
+    const transformer = new markmap.Transformer();
+    const preloadScripts = transformer.plugins
+        .flatMap((plugin) => plugin.config?.preloadScripts || [])
+        .map((item) => transformer.resolveJS(item));
+    const assets = transformer.getAssets();
+    const loading = Promise.all([
+        assets.styles && markmap.loadCSS(assets.styles),
+        markmap.loadJS([...preloadScripts, ...assets.scripts]),
+    ]);
+
+    function parseData(content) {
+        const { root, frontmatter } = transformer.transform(content);
+        let options = markmap.deriveOptions(frontmatter?.markmap);
+        options = Object.assign(
+            {
+                fitRatio: 0.85,
+            },
+            options
+        );
+        return { root, options };
+    }
+
+    function resetMarkmap(m, el) {
+        if (!m.state.rect) return;
+        const { x1, y1, x2, y2 } = m.state.rect;
+        const height = (el.offsetWidth / (x2 - x1)) * (y2 - y1);
+        el.style.height = height + "px";
+        m.fit();
+    }
+
+    function decodeBase64(encoded) {
+        const binary = atob(encoded);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < bytes.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        return new TextDecoder().decode(bytes);
+    }
+
+    function renderMarkmap(el) {
+        const dataEl = el.querySelector("markmap-data");
+        if (!dataEl) return;
+        let content = el.textContent;
+        if (dataEl.getAttribute("encoding") === "base64") {
+            content = decodeBase64(content);
+        }
+        el.innerHTML = "<svg>";
+        svg = el.firstChild;
+        const { root, options } = parseData(content);
+        const m = markmap.Markmap.create(svg, options);
+        m.setData(root);
+        requestAnimationFrame(() => {
+            resetMarkmap(m, el);
+        });
+    }
+
+    function updateMarkmaps(node) {
+        for (const el of node.querySelectorAll(".mkdocs-markmap")) {
+            renderMarkmap(el);
+        }
+    }
+
+    loading.then(() => {
+        const observer = new MutationObserver((mutationList) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "childList") {
+                    for (const node of mutation.addedNodes) {
+                        updateMarkmaps(node);
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true });
+
+        updateMarkmaps(document);
+    });
+})();
+</script></body></html>

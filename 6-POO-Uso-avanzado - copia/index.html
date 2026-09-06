@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>6 POO Uso avanzado copia - PROG</title>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script><script src="../js/unpkg.com/d3@7.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-lib@0.18.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-view@0.18.js" type="text/javascript"></script><style type="text/css">div.mkdocs-markmap {
+    width: 100%;
+    min-height: 1em;
+    border: 1px solid grey;
+}
+.mkdocs-markmap > svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+</style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#poo-avanzada-en-java">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="PROG" class="md-header__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            PROG
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              6 POO Uso avanzado   copia
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../1-Introduccion-programacion/">
+          
+  
+  
+  Programación
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="PROG" class="md-nav__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    PROG
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1-Introduccion-programacion/">
+<span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2-Programacion-estructurada/">
+<span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3-Programacion-modular/">
+<span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4-Estructuras-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5-POO-Clases-y-Objetos/">
+<span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6-POO-Uso-avanzado/">
+<span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7-Estructuras-datos-dinamicas/">
+<span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../8-Programacion-funcional-Streams/">
+<span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../9-Ficheros/">
+<span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10-Acceso-base-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11-Interfaces-graficas-MVC/">
+<span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#herencia-el-adn-del-codigo">
+<span class="md-ellipsis">
+      
+        Herencia: El ADN del Código
+      
+    </span>
+</a>
+<nav aria-label="Herencia: El ADN del Código" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-1-jerarquia-de-vehiculos">
+<span class="md-ellipsis">
+      
+        Ejemplo 1: Jerarquía de Vehículos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-2-figuras-geometricas">
+<span class="md-ellipsis">
+      
+        Ejemplo 2: Figuras Geométricas
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#composicion-construyendo-con-bloques">
+<span class="md-ellipsis">
+      
+        Composición: Construyendo con Bloques
+      
+    </span>
+</a>
+<nav aria-label="Composición: Construyendo con Bloques" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-1-el-coche-y-su-motor">
+<span class="md-ellipsis">
+      
+        Ejemplo 1: El Coche y su Motor
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-2-un-pedido-y-sus-productos">
+<span class="md-ellipsis">
+      
+        Ejemplo 2: Un Pedido y sus Productos
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#clases-abstractas-el-boceto-del-artista">
+<span class="md-ellipsis">
+      
+        Clases Abstractas: El Boceto del Artista
+      
+    </span>
+</a>
+<nav aria-label="Clases Abstractas: El Boceto del Artista" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-1-figuras-geometricas-version-mejorada">
+<span class="md-ellipsis">
+      
+        Ejemplo 1: Figuras Geométricas (versión mejorada)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-2-empleados-de-una-empresa">
+<span class="md-ellipsis">
+      
+        Ejemplo 2: Empleados de una Empresa
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interfaces-el-contrato-de-funcionalidad">
+<span class="md-ellipsis">
+      
+        Interfaces: El Contrato de Funcionalidad
+      
+    </span>
+</a>
+<nav aria-label="Interfaces: El Contrato de Funcionalidad" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-1-objetos-voladores">
+<span class="md-ellipsis">
+      
+        Ejemplo 1: Objetos "Voladores"
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-2-comparable-para-ordenar">
+<span class="md-ellipsis">
+      
+        Ejemplo 2: Comparable para Ordenar
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#polimorfismo-una-esencia-multiples-formas">
+<span class="md-ellipsis">
+      
+        Polimorfismo: Una Esencia, Múltiples Formas
+      
+    </span>
+</a>
+<nav aria-label="Polimorfismo: Una Esencia, Múltiples Formas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-1-la-orquesta-polimorfica">
+<span class="md-ellipsis">
+      
+        Ejemplo 1: La Orquesta Polimórfica
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-2-procesando-figuras">
+<span class="md-ellipsis">
+      
+        Ejemplo 2: Procesando Figuras
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#la-clase-object-en-java-el-ancestro-universal">
+<span class="md-ellipsis">
+      
+        La clase Object en Java: El Ancestro Universal
+      
+    </span>
+</a>
+<nav aria-label="La clase Object en Java: El Ancestro Universal" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metodos-fundamentales-de-object">
+<span class="md-ellipsis">
+      
+        Métodos Fundamentales de Object
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico-sobrescribiendo-equals-hashcode-y-tostring">
+<span class="md-ellipsis">
+      
+        Ejemplo Práctico: Sobrescribiendo equals, hashCode y toString
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacion-en-el-mundo-real">
+<span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-saber-mas">
+<span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<!-- 
+---
+title: "POO Avanzada en Java"
+description: "Explorando la Herencia, Composición, Polimorfismo y otros conceptos clave de la Programación Orientada a Objetos en Java."
+---
+--><h1 id="poo-avanzada-en-java">POO Avanzada en Java</h1>
+<p>¡Hola, futuros cracks del desarrollo! En el tema anterior, pusimos los cimientos de la Programación Orientada a Objetos (POO). Aprendimos a pensar en "objetos", esas pequeñas cápsulas de superpoderes (datos y comportamientos) que son la base de casi todo el software moderno. Ahora, vamos a construir sobre esos cimientos para levantar un rascacielos.</p>
+<p>Piensa en lo que hemos hecho hasta ahora como aprender a fabricar ladrillos (objetos). Cada ladrillo es útil, pero su verdadero poder se desata cuando los combinamos para construir algo más grande. En este tema, aprenderemos las técnicas de los maestros constructores de software: cómo relacionar esos ladrillos, cómo crear "ladrillos base" reutilizables y cómo hacer que distintas piezas encajen de manera flexible.</p>
+<p>Hablaremos de <strong>Herencia</strong>, que es como tener un molde maestro para crear nuevos tipos de ladrillos con características ya definidas. Exploraremos la <strong>Composición</strong>, que es como construir una pared uniendo distintos ladrillos, cada uno con su función. Y nos sumergiremos en el <strong>Polimorfismo</strong>, la magia que permite tratar distintos tipos de ladrillos como si fueran el mismo, haciendo nuestro código increíblemente flexible. ¿Listos para pasar de artesanos a arquitectos de software? ¡Vamos a ello!</p>
+<h2 id="herencia-el-adn-del-codigo">Herencia: El ADN del Código</h2>
+<p>La herencia es uno de los pilares de la POO. Es un mecanismo que nos permite crear nuevas clases a partir de otras ya existentes. La nueva clase, llamada "clase hija" o "subclase", hereda los atributos y métodos de la clase existente, llamada "clase padre" o "superclase".</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Herencia</p>
+<p>Es una relación "es un/a". Permite que una clase (subclase) adquiera las propiedades y comportamientos (métodos) de otra clase (superclase). Piensa en ello como la genética: heredas rasgos de tus padres, pero también tienes tus propias características únicas. Un <code>Coche</code> <strong>es un</strong> <code>Vehiculo</code>, pero tiene atributos adicionales como el número de puertas.</p>
+</div>
+<p>La principal ventaja es la <strong>reutilización de código</strong>. No tenemos que reescribir el código común una y otra vez.</p>
+<p>En Java, utilizamos la palabra clave <code>extends</code> para indicar que una clase hereda de otra.</p>
+<h3 id="ejemplo-1-jerarquia-de-vehiculos">Ejemplo 1: Jerarquía de Vehículos</h3>
+<p>Imagina que estamos modelando distintos tipos de vehículos. Todos comparten características comunes: una marca, un modelo y la capacidad de moverse.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Clase Padre o Superclase</span>
+<span class="c1">// La marcamos como "open" para permitir que otras clases hereden de ella.</span>
+<span class="c1">// En Java, las clases son heredables por defecto, a menos que se marquen como "final".</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Vehiculo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">marca</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">modelo</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Vehiculo</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">marca</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">modelo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">marca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">marca</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">modelo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modelo</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">arrancar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El vehículo ha arrancado."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getInfo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"Marca: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">marca</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", Modelo: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">modelo</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Clase Hija o Subclase</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Coche</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Vehiculo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numeroPuertas</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Coche</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">marca</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">modelo</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numeroPuertas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Llamada al constructor de la clase padre (Vehiculo)</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">marca</span><span class="p">,</span><span class="w"> </span><span class="n">modelo</span><span class="p">);</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">numeroPuertas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numeroPuertas</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Sobrescribimos el método arrancar para especializar el comportamiento</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">arrancar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El coche "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">marca</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">modelo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" ha arrancado."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Añadimos un método propio de Coche</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">tocarClaxon</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Beep, beep!"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getInfo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">getInfo</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", Puertas: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numeroPuertas</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">La palabra <code>super</code></p>
+<p><code>super</code> es una palabra clave que nos da acceso a los miembros (métodos y atributos) de la clase padre. La usamos para:
+1.  Llamar al constructor del padre: <code>super(marca, modelo);</code>
+2.  Llamar a un método del padre desde un método sobrescrito: <code>super.getInfo();</code></p>
+</div>
+<h3 id="ejemplo-2-figuras-geometricas">Ejemplo 2: Figuras Geométricas</h3>
+<p>Otro ejemplo clásico es el de las figuras geométricas. Todas tienen un área, pero se calcula de forma diferente. Aquí, una clase <code>abstract</code> (que veremos más adelante) sería ideal, pero por ahora, usemos una clase base concreta.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Figura</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Figura</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">color</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getArea</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Una figura genérica no tiene un área definida.</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Circulo</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Figura</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">radio</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Circulo</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">radio</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">color</span><span class="p">);</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">radio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">radio</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Sobrescritura obligatoria para un cálculo correcto</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getArea</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radio</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radio</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Rectangulo</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Figura</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">base</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">altura</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Rectangulo</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">altura</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">color</span><span class="p">);</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">altura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">altura</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getArea</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">altura</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<pre class="mermaid"><code>classDiagram
+    class Vehiculo {
+        +String marca
+        +String modelo
+        +arrancar()
+        +getInfo()
+    }
+    class Coche {
+        -int numeroPuertas
+        +arrancar()
+        +tocarClaxon()
+        +getInfo()
+    }
+    Vehiculo &lt;|-- Coche</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Reflexiona</p>
+<ol>
+<li>Piensa en una jerarquía de clases para una tienda online. ¿Cuál sería la clase base? ¿Qué clases hijas podrías crear para productos como "Libro", "Portátil" y "Camiseta"?</li>
+<li>¿Qué pasaría si la clase <code>Vehiculo</code> fuera declarada como <code>final public class Vehiculo</code>?</li>
+<li>¿Por qué crees que los atributos <code>marca</code> y <code>modelo</code> en <code>Vehiculo</code> se declaran como <code>protected</code> en lugar de <code>private</code>? ¿Qué implicaciones tendría cada opción?</li>
+<li>Si tuvieras una clase <code>Bicicleta</code> que hereda de <code>Vehiculo</code>, ¿qué métodos de <code>Vehiculo</code> tendrías que sobrescribir y por qué?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="composicion-construyendo-con-bloques">Composición: Construyendo con Bloques</h2>
+<p>Si la herencia es la relación "es un/a", la composición es la relación "tiene un/a". En lugar de que una clase <em>sea</em> otra, una clase <em>contiene</em> una o más instancias de otras clases para construir una funcionalidad más compleja.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Composición</p>
+<p>Es un principio de diseño que modela una relación "tiene un/a". Una clase compleja se construye a partir de otras clases más simples, conteniéndolas como atributos. Piensa en un coche: un <code>Coche</code> <strong>tiene un</strong> <code>Motor</code>, <strong>tiene</strong> <code>Ruedas</code>, <strong>tiene</strong> una <code>Carroceria</code>. El coche no <em>es</em> un motor, sino que <em>usa</em> un motor para funcionar.</p>
+</div>
+<p>La composición es, en general, más flexible y recomendada que la herencia ("Favorecer la composición sobre la herencia" es un famoso principio de diseño).</p>
+<h3 id="ejemplo-1-el-coche-y-su-motor">Ejemplo 1: El Coche y su Motor</h3>
+<p>Un coche no es un motor, pero necesita uno para funcionar. En lugar de heredar de una clase <code>Motor</code>, la clase <code>Coche</code> tendrá un objeto <code>Motor</code> como uno de sus atributos.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// La clase Motor es una pieza independiente</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Motor</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">tipo</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">caballos</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Motor</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">tipo</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">caballos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">tipo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tipo</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">caballos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">caballos</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">encender</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Motor "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tipo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" encendido."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">apagar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Motor apagado."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// La clase Coche "compone" o "tiene un" Motor</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Coche</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">marca</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">modelo</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Motor</span><span class="w"> </span><span class="n">motor</span><span class="p">;</span><span class="w"> </span><span class="c1">// Relación "tiene un"</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Coche</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">marca</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">modelo</span><span class="p">,</span><span class="w"> </span><span class="n">Motor</span><span class="w"> </span><span class="n">motor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">marca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">marca</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">modelo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modelo</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">motor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">motor</span><span class="p">;</span><span class="w"> </span><span class="c1">// Inyección de dependencia</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">arrancar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Arrancando el "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">marca</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">modelo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"..."</span><span class="p">);</span>
+<span class="w">        </span><span class="n">motor</span><span class="p">.</span><span class="na">encender</span><span class="p">();</span><span class="w"> </span><span class="c1">// Delega la acción al objeto compuesto</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Uso</span>
+<span class="n">Motor</span><span class="w"> </span><span class="n">motorV8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Motor</span><span class="p">(</span><span class="s">"V8"</span><span class="p">,</span><span class="w"> </span><span class="mi">450</span><span class="p">);</span>
+<span class="n">Coche</span><span class="w"> </span><span class="n">mustang</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Coche</span><span class="p">(</span><span class="s">"Ford"</span><span class="p">,</span><span class="w"> </span><span class="s">"Mustang"</span><span class="p">,</span><span class="w"> </span><span class="n">motorV8</span><span class="p">);</span>
+<span class="n">mustang</span><span class="p">.</span><span class="na">arrancar</span><span class="p">();</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Inyección de Dependencias</p>
+<p>Fíjate en el constructor de <code>Coche</code>. No crea el objeto <code>Motor</code> dentro de sí mismo (<code>new Motor(...)</code>), sino que lo recibe como un parámetro. Esto se llama <strong>Inyección de Dependencias</strong> y es una práctica fundamental. Hace que la clase <code>Coche</code> sea más flexible, ya que podemos "inyectarle" cualquier tipo de motor que cumpla el contrato, sin tener que modificar la clase <code>Coche</code>.</p>
+</div>
+<h3 id="ejemplo-2-un-pedido-y-sus-productos">Ejemplo 2: Un Pedido y sus Productos</h3>
+<p>Un pedido en una tienda online no es un producto, sino que contiene una lista de productos.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Producto</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">precio</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Producto</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">precio</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">precio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">precio</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getPrecio</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">precio</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// ... otros getters y setters</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Pedido</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Producto</span><span class="o">&gt;</span><span class="w"> </span><span class="n">productos</span><span class="p">;</span><span class="w"> </span><span class="c1">// Relación "tiene varios"</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Pedido</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">productos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">agregarProducto</span><span class="p">(</span><span class="n">Producto</span><span class="w"> </span><span class="n">producto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">productos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">producto</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcularTotal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Producto</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">productos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">getPrecio</span><span class="p">();</span><span class="w"> </span><span class="c1">// Delega el cálculo parcial</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Uso</span>
+<span class="n">Producto</span><span class="w"> </span><span class="n">laptop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Producto</span><span class="p">(</span><span class="s">"Laptop Pro"</span><span class="p">,</span><span class="w"> </span><span class="mf">1200.00</span><span class="p">);</span>
+<span class="n">Producto</span><span class="w"> </span><span class="n">raton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Producto</span><span class="p">(</span><span class="s">"Ratón Inalámbrico"</span><span class="p">,</span><span class="w"> </span><span class="mf">25.00</span><span class="p">);</span>
+
+<span class="n">Pedido</span><span class="w"> </span><span class="n">miPedido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Pedido</span><span class="p">(</span><span class="mi">101</span><span class="p">);</span>
+<span class="n">miPedido</span><span class="p">.</span><span class="na">agregarProducto</span><span class="p">(</span><span class="n">laptop</span><span class="p">);</span>
+<span class="n">miPedido</span><span class="p">.</span><span class="na">agregarProducto</span><span class="p">(</span><span class="n">raton</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Total del pedido: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">miPedido</span><span class="p">.</span><span class="na">calcularTotal</span><span class="p">());</span><span class="w"> </span><span class="c1">// Salida: Total del pedido: 1225.0</span>
+</code></pre></div>
+<div class="language-markmap mkdocs-markmap"><markmap-data encoding="base64" hidden="true">IyBIZXJlbmNpYSB2cy4gQ29tcG9zaWNpw7NuCgojIyBIZXJlbmNpYSAoImVzIHVuL2EiKQotICoqQWNvcGxhbWllbnRvIEZ1ZXJ0ZSoqOiBMYSBzdWJjbGFzZSBlc3TDoSDDrW50aW1hbWVudGUgbGlnYWRhIGEgbGEgc3VwZXJjbGFzZS4KLSAqKk1lbm9zIEZsZXhpYmxlKio6IExvcyBjYW1iaW9zIGVuIGxhIHN1cGVyY2xhc2UgYWZlY3RhbiBhIHRvZGFzIGxhcyBzdWJjbGFzZXMuCi0gKipMaW1pdGFjacOzbioqOiBFbiBKYXZhLCBzb2xvIHNlIHB1ZWRlIGhlcmVkYXIgZGUgdW5hIGNsYXNlLgotICoqQ3XDoW5kbyB1c2FybGEqKjoKICAtIExhIHJlbGFjacOzbiBlcyBnZW51aW5hbWVudGUgImVzIHVuL2EiLgogIC0gUXVpZXJlcyBhcHJvdmVjaGFyIGVsIHBvbGltb3JmaXNtby4KCiMjIENvbXBvc2ljacOzbiAoInRpZW5lIHVuL2EiKQotICoqQWNvcGxhbWllbnRvIETDqWJpbCoqOiBMYSBjbGFzZSBjb250ZW5lZG9yYSBzb2xvIGNvbm9jZSBsYSBpbnRlcmZheiBww7pibGljYSBkZSBzdXMgY29tcG9uZW50ZXMuCi0gKipNw6FzIEZsZXhpYmxlKio6IFB1ZWRlcyBjYW1iaWFyIGxvcyBjb21wb25lbnRlcyBlbiB0aWVtcG8gZGUgZWplY3VjacOzbiAoSW55ZWNjacOzbiBkZSBEZXBlbmRlbmNpYXMpLgotICoqU2luIExpbWl0YWNpb25lcyoqOiBVbmEgY2xhc2UgcHVlZGUgInRlbmVyIiBtw7psdGlwbGVzIG9iamV0b3MgZGUgZGlzdGludGFzIGNsYXNlcy4KLSAqKkN1w6FuZG8gdXNhcmxhKio6CiAgLSBMYSByZWxhY2nDs24gZXMgInRpZW5lIHVuL2EiIG8gInVzYSB1bi9hIi4KICAtIFF1aWVyZXMgZmxleGliaWxpZGFkIHkgdW4gZGlzZcOxbyBtw6FzIHJvYnVzdG8uCiAgLSAqKsKhQ2FzaSBzaWVtcHJlIGVzIGxhIG9wY2nDs24gcHJlZmVyaWRhISoq</markmap-data></div>
+<div class="admonition question">
+<p class="admonition-title">Reflexiona</p>
+<ol>
+<li>¿Por qué se dice que la composición es más flexible que la herencia? Da un ejemplo práctico.</li>
+<li>Modela una clase <code>Ordenador</code>. ¿Qué objetos la compondrían? ¿Sería una relación de composición o de herencia con, por ejemplo, una clase <code>PlacaBase</code>?</li>
+<li>En el ejemplo del <code>Coche</code> y el <code>Motor</code>, ¿qué pasaría si en lugar de inyectar el motor, la clase <code>Coche</code> lo creara siempre en su propio constructor (ej: <code>this.motor = new Motor("V6", 200);</code>)? ¿Qué ventajas y desventajas tendría ese enfoque?</li>
+<li>¿Cómo modelarías la relación entre un <code>EquipoDeFutbol</code> y sus <code>Jugadores</code>? ¿Herencia o composición? Justifica tu respuesta.</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="clases-abstractas-el-boceto-del-artista">Clases Abstractas: El Boceto del Artista</h2>
+<p>A veces, queremos crear una clase base que sirva como una plantilla, pero que por sí misma no tenga sentido instanciar. Por ejemplo, ¿qué es un "Vehículo" genérico? No puedes comprar "un vehículo", compras un "coche", una "moto", etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Clase Abstracta</p>
+<p>Es una clase que no puede ser instanciada directamente. Funciona como un "boceto" o plantilla para sus subclases. Puede contener tanto métodos concretos (con implementación) como métodos abstractos (sin implementación). Las clases hijas están <strong>obligadas</strong> a implementar todos los métodos abstractos de la clase padre.</p>
+</div>
+<p>Se usan para:
+*   Compartir código común entre clases relacionadas.
+*   Definir un "contrato" que las clases hijas deben cumplir, forzándolas a implementar ciertos métodos.</p>
+<p>Se declaran con la palabra clave <code>abstract</code>.</p>
+<h3 id="ejemplo-1-figuras-geometricas-version-mejorada">Ejemplo 1: Figuras Geométricas (versión mejorada)</h3>
+<p>Nuestro ejemplo anterior de <code>Figura</code> es un candidato perfecto para ser una clase abstracta. No tiene sentido crear un objeto <code>Figura</code>, y queremos obligar a todas las subclases a que definan cómo se calcula su área.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Figura</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Figura</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">color</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Método abstracto: sin cuerpo, solo la firma.</span>
+<span class="w">    </span><span class="c1">// Obliga a las subclases a implementarlo.</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getArea</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Método concreto: compartido por todas las subclases.</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getColor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Circulo</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Figura</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">radio</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Circulo</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">radio</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">color</span><span class="p">);</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">radio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">radio</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Implementación obligatoria del método abstracto</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getArea</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radio</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radio</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Si intentamos esto, el compilador dará un error:</span>
+<span class="c1">// Figura miFigura = new Figura("Rojo"); // ERROR: 'Figura' is abstract; cannot be instantiated</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">¡No puedes instanciar lo abstracto!</p>
+<p>El error del compilador al intentar <code>new Figura()</code> es la esencia de las clases abstractas. Son un contrato, un plano, no el edificio terminado.</p>
+</div>
+<h3 id="ejemplo-2-empleados-de-una-empresa">Ejemplo 2: Empleados de una Empresa</h3>
+<p>En una empresa, hay distintos tipos de empleados (programadores, diseñadores, gerentes), pero todos son "Empleados" y comparten la necesidad de calcular su salario, aunque la fórmula sea diferente para cada uno.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Empleado</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Empleado</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Método abstracto: cada tipo de empleado calculará su salario de forma distinta.</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcularSalario</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Método concreto: todos los empleados tienen un nombre.</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getNombre</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Programador</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Empleado</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">horasExtra</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Programador</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">salarioBase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">horasExtra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registrarHorasExtra</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">horas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">horasExtra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">horas</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcularSalario</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Fórmula específica para programadores</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">salarioBase</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">horasExtra</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">40.0</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<pre class="mermaid"><code>classDiagram
+    class Empleado {
+        &lt;&lt;abstract&gt;&gt;
+        +String nombre
+        +String id
+        +calcularSalario()*
+        +getNombre()
+    }
+    class Programador {
+        -double salarioBase
+        -int horasExtra
+        +calcularSalario()
+        +registrarHorasExtra()
+    }
+    Empleado &lt;|-- Programador</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Reflexiona</p>
+<ol>
+<li>¿Cuál es la diferencia fundamental entre un método abstracto y un método concreto en una clase abstracta?</li>
+<li>Si una clase hereda de una clase abstracta pero no implementa uno de sus métodos abstractos, ¿qué debe pasarle a esa clase hija?</li>
+<li>¿Podría una clase abstracta no tener ningún método abstracto? Si es así, ¿qué utilidad tendría?</li>
+<li>Diseña una jerarquía de clases abstractas para "Cuentas Bancarias" (<code>CuentaBancaria</code>). ¿Qué atributos y métodos serían comunes? ¿Qué método sería abstracto? (Pista: piensa en <code>calcularIntereses()</code>).</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="interfaces-el-contrato-de-funcionalidad">Interfaces: El Contrato de Funcionalidad</h2>
+<p>Mientras que una clase abstracta define lo que un objeto <em>es</em>, una interfaz define lo que un objeto <em>puede hacer</em>. Es un contrato puro que especifica un conjunto de métodos que una clase debe implementar.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Interfaz</p>
+<p>Una interfaz es una colección de métodos abstractos (y constantes). Una clase que <code>implements</code> una interfaz se compromete a proporcionar una implementación para todos los métodos de esa interfaz. Es un contrato de comportamiento.</p>
+</div>
+<p>Una de las grandes ventajas de las interfaces es que una clase puede implementar <strong>múltiples interfaces</strong>, algo que no es posible con la herencia de clases (en Java no hay herencia múltiple de clases).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Característica</th>
+<th style="text-align: left;">Clase Abstracta</th>
+<th style="text-align: left;">Interfaz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Relación</strong></td>
+<td style="text-align: left;">"es un/a" (Is-A)</td>
+<td style="text-align: left;">"puede hacer" (Can-Do)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Herencia Múltiple</strong></td>
+<td style="text-align: left;">No (una clase solo puede <code>extends</code> una clase)</td>
+<td style="text-align: left;">Sí (una clase puede <code>implements</code> varias interfaces)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Constructores</strong></td>
+<td style="text-align: left;">Sí puede tener</td>
+<td style="text-align: left;">No puede tener</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Atributos</strong></td>
+<td style="text-align: left;">Puede tener cualquier tipo de atributo</td>
+<td style="text-align: left;">Solo constantes (<code>public static final</code> por defecto)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Métodos</strong></td>
+<td style="text-align: left;">Puede tener métodos abstractos y concretos</td>
+<td style="text-align: left;">Todos los métodos son <code>public abstract</code> por defecto (desde Java 8 pueden tener <code>default</code> y <code>static</code> methods)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ejemplo-1-objetos-voladores">Ejemplo 1: Objetos "Voladores"</h3>
+<p>No todos los objetos que vuelan son pájaros. Un avión también vuela. La herencia no nos sirve aquí, pero una interfaz <code>Volador</code> sí.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Volador</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Todos los métodos en una interfaz son public abstract por defecto</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">despegar</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">volar</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">aterrizar</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Pajaro</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Volador</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">despegar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El pájaro bate sus alas para despegar."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">volar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El pájaro planea en el cielo."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">aterrizar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El pájaro busca una rama para aterrizar."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Avion</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Volador</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">despegar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El avión acelera en la pista y despega."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">volar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El avión vuela a 10,000 metros de altura."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">aterrizar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El avión despliega el tren de aterrizaje y aterriza."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="ejemplo-2-comparable-para-ordenar">Ejemplo 2: <code>Comparable</code> para Ordenar</h3>
+<p>Java nos proporciona interfaces muy útiles. Una de ellas es <code>Comparable</code>, que permite a los objetos de una clase definir su propio "orden natural" y, por tanto, ser ordenados en colecciones.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Hacemos que la clase Alumno implemente la interfaz Comparable</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Alumno</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Comparable</span><span class="o">&lt;</span><span class="n">Alumno</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nota</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Alumno</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nota</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nota</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getNombre</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getNota</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">nota</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"Alumno [nombre="</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", nota="</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nota</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"]"</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Implementamos el único método de la interfaz: compareTo</span>
+<span class="w">    </span><span class="c1">// Este método define el orden. Queremos ordenar por nota, de mayor a menor.</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compareTo</span><span class="p">(</span><span class="n">Alumno</span><span class="w"> </span><span class="n">otro</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Si this.nota es mayor que otro.nota, debe ir antes (resultado negativo)</span>
+<span class="w">        </span><span class="c1">// Si son iguales, resultado 0.</span>
+<span class="w">        </span><span class="c1">// Si this.nota es menor, debe ir después (resultado positivo).</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="n">otro</span><span class="p">.</span><span class="na">nota</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">nota</span><span class="p">);</span><span class="w"> </span><span class="c1">// Orden descendente</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Uso:</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Alumno</span><span class="o">&gt;</span><span class="w"> </span><span class="n">clase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">clase</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Alumno</span><span class="p">(</span><span class="s">"Ana"</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">));</span>
+<span class="n">clase</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Alumno</span><span class="p">(</span><span class="s">"Luis"</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span>
+<span class="n">clase</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Alumno</span><span class="p">(</span><span class="s">"Juan"</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">));</span>
+
+<span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">clase</span><span class="p">);</span><span class="w"> </span><span class="c1">// ¡Magia! Collections.sort sabe cómo ordenar Alumnos</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">clase</span><span class="p">);</span>
+<span class="c1">// Salida: [Alumno [nombre=Juan, nota=10], Alumno [nombre=Ana, nota=8], Alumno [nombre=Luis, nota=5]]</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Métodos <code>default</code> y <code>static</code> en Interfaces (desde Java 8)</p>
+<p>Desde Java 8, las interfaces pueden tener métodos con implementación.
+-   <strong><code>default</code></strong>: Proporciona una implementación por defecto que las clases pueden usar o sobrescribir.
+-   <strong><code>static</code></strong>: Son métodos de utilidad que pertenecen a la interfaz misma, no a las instancias.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Notificable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">enviarNotificacion</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">mensaje</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">mensaje</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"LOG: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mensaje</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Reflexiona</p>
+<ol>
+<li>Crea una interfaz llamada <code>Almacenable</code> con dos métodos: <code>guardar()</code> y <code>cargar()</code>. Luego, crea dos clases, <code>FicheroTexto</code> y <code>BaseDeDatosSQL</code>, que implementen esta interfaz de manera diferente.</li>
+<li>¿Por qué una clase puede implementar múltiples interfaces pero solo puede heredar de una clase? ¿Qué problema se evita con esta restricción? (Pista: busca "problema del diamante").</li>
+<li>¿Cuándo elegirías una clase abstracta en lugar de una interfaz? Proporciona un escenario concreto.</li>
+<li>Investiga la interfaz <code>Serializable</code> en Java. ¿Para qué sirve? ¿Qué métodos tiene?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="polimorfismo-una-esencia-multiples-formas">Polimorfismo: Una Esencia, Múltiples Formas</h2>
+<p>El polimorfismo es la habilidad de un objeto de presentarse de diferentes formas. Es el resultado de combinar herencia e interfaces. Nos permite escribir código que puede operar con objetos de una superclase o interfaz, sin necesidad de conocer el tipo específico del objeto en tiempo de compilación.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Polimorfismo</p>
+<p>Del griego "muchas formas". Es la capacidad de procesar objetos de diferentes tipos y clases a través de una única interfaz uniforme. En la práctica, significa que puedes tener una referencia de tipo padre que apunta a un objeto de tipo hijo, y cuando llamas a un método, Java ejecutará la versión del método correspondiente al objeto hijo (la versión sobrescrita).</p>
+</div>
+<p>El polimorfismo es lo que hace que nuestro código sea flexible, desacoplado y extensible.</p>
+<h3 id="ejemplo-1-la-orquesta-polimorfica">Ejemplo 1: La Orquesta Polimórfica</h3>
+<p>Imagina una orquesta. El director le dice a un músico "toca", pero el sonido que se produce depende del instrumento. El violín sonará como un violín y la trompeta como una trompeta.</p>
+<p></p><div class="highlight"><pre><span></span><code><span class="c1">// Clase base abstracta</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Instrumento</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">tocar</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Violin</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Instrumento</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">tocar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Suena una melodía de violín..."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Trompeta</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Instrumento</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">tocar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Suena una fanfarria de trompeta!"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// El director de orquesta usa el polimorfismo</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Orquesta</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">iniciarConcierto</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Instrumento</span><span class="o">&gt;</span><span class="w"> </span><span class="n">instrumentos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Instrumento</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">instrumentos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">i</span><span class="p">.</span><span class="na">tocar</span><span class="p">();</span><span class="w"> </span><span class="c1">// ¡Magia polimórfica aquí!</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Uso</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Instrumento</span><span class="o">&gt;</span><span class="w"> </span><span class="n">misInstrumentos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">misInstrumentos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Violin</span><span class="p">());</span>
+<span class="n">misInstrumentos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Trompeta</span><span class="p">());</span>
+<span class="n">misInstrumentos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Violin</span><span class="p">());</span>
+
+<span class="n">Orquesta</span><span class="w"> </span><span class="n">miOrquesta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Orquesta</span><span class="p">();</span>
+<span class="n">miOrquesta</span><span class="p">.</span><span class="na">iniciarConcierto</span><span class="p">(</span><span class="n">misInstrumentos</span><span class="p">);</span>
+</code></pre></div>
+La llamada <code>i.tocar()</code> es polimórfica. Java, en tiempo de ejecución, mira qué objeto real está almacenado en <code>i</code> y llama al método <code>tocar()</code> de esa clase específica (<code>Violin</code> o <code>Trompeta</code>).<p></p>
+<h3 id="ejemplo-2-procesando-figuras">Ejemplo 2: Procesando Figuras</h3>
+<p>Podemos usar el polimorfismo para manejar una colección de figuras diferentes de manera uniforme.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Reutilizamos las clases Figura, Circulo y Rectangulo</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Lienzo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">dibujarTodo</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Figura</span><span class="o">&gt;</span><span class="w"> </span><span class="n">figuras</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Figura</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">figuras</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Dibujando un "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getSimpleName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">                               </span><span class="s">" de color "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="na">getColor</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">                               </span><span class="s">" con área "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="na">getArea</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Uso</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Figura</span><span class="o">&gt;</span><span class="w"> </span><span class="n">misFiguras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">misFiguras</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Circulo</span><span class="p">(</span><span class="s">"Rojo"</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="p">));</span>
+<span class="n">misFiguras</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Rectangulo</span><span class="p">(</span><span class="s">"Azul"</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.0</span><span class="p">));</span>
+<span class="n">misFiguras</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Circulo</span><span class="p">(</span><span class="s">"Verde"</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5</span><span class="p">));</span>
+
+<span class="n">Lienzo</span><span class="w"> </span><span class="n">miLienzo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Lienzo</span><span class="p">();</span>
+<span class="n">miLienzo</span><span class="p">.</span><span class="na">dibujarTodo</span><span class="p">(</span><span class="n">misFiguras</span><span class="p">);</span>
+</code></pre></div>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Cliente
+    participant Orquesta
+    participant Violin as v: Violin
+    participant Trompeta as t: Trompeta
+
+    Cliente-&gt;&gt;Orquesta: iniciarConcierto([v, t])
+    Orquesta-&gt;&gt;v: tocar()
+    v--&gt;&gt;Orquesta: (sonido de violín)
+    Orquesta-&gt;&gt;t: tocar()
+    t--&gt;&gt;Orquesta: (sonido de trompeta)</code></pre>
+<div class="admonition danger">
+<p class="admonition-title">Cuidado con el <code>instanceof</code></p>
+<p>Aunque a veces es necesario, abusar del operador <code>instanceof</code> para comprobar el tipo de un objeto y hacer un casting puede ser una señal de un mal diseño.
+</p><div class="highlight"><pre><span></span><code><span class="c1">// Intenta evitar esto si es posible</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">vehiculo</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Coche</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Coche</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Coche</span><span class="p">)</span><span class="w"> </span><span class="n">vehiculo</span><span class="p">;</span>
+<span class="w">    </span><span class="n">c</span><span class="p">.</span><span class="na">tocarClaxon</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+Un buen uso del polimorfismo a menudo elimina la necesidad de estas comprobaciones.<p></p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Reflexiona</p>
+<ol>
+<li>En el ejemplo de la Orquesta, ¿qué pasaría si añadiéramos una nueva clase <code>Piano</code> que hereda de <code>Instrumento</code>? ¿Necesitaríamos cambiar algo en la clase <code>Orquesta</code>? ¿Por qué es esto una ventaja?</li>
+<li>Explica con tus palabras qué es la "vinculación tardía" (late binding) y cómo se relaciona con el polimorfismo.</li>
+<li>¿Se puede aplicar el polimorfismo con interfaces? Crea un pequeño ejemplo con la interfaz <code>Volador</code> donde una función reciba una lista de <code>Volador</code> y los haga <code>despegar()</code>.</li>
+<li>¿Cuál es la diferencia entre sobrecarga de métodos (overloading) y sobrescritura de métodos (overriding)? ¿Cuál de los dos es un ejemplo de polimorfismo en tiempo de ejecución?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="la-clase-object-en-java-el-ancestro-universal">La clase Object en Java: El Ancestro Universal</h2>
+<p>En Java, existe una clase muy especial que es, directa o indirectamente, la superclase de <strong>todas</strong> las demás clases. Es la cima de la jerarquía de herencia.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: La Clase <code>Object</code></p>
+<p>Es la clase raíz de la jerarquía de clases en Java. Cada clase es descendiente de <code>Object</code>. Esto significa que cada objeto que creas hereda los métodos de <code>Object</code>.</p>
+</div>
+<p>Esto tiene una implicación muy potente: cualquier variable de tipo <code>Object</code> puede contener una referencia a cualquier tipo de objeto en Java.</p>
+<h3 id="metodos-fundamentales-de-object">Métodos Fundamentales de <code>Object</code></h3>
+<p>Aunque <code>Object</code> tiene varios métodos, hay tres que son cruciales para entender y que a menudo necesitarás sobrescribir.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Método</th>
+<th style="text-align: left;">Descripción</th>
+<th style="text-align: left;">¿Por qué sobrescribirlo?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>toString()</code></strong></td>
+<td style="text-align: left;">Devuelve una representación en <code>String</code> del objeto. Por defecto, es el nombre de la clase + <code>@</code> + el hashcode del objeto (ej: <code>Coche@15db9742</code>).</td>
+<td style="text-align: left;">Para proporcionar una representación legible y útil del estado de tu objeto (ej: "Coche [marca=Ford, modelo=Mustang]").</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>equals(Object obj)</code></strong></td>
+<td style="text-align: left;">Compara si dos objetos son "iguales". Por defecto, compara si son el mismo objeto en memoria (identidad, <code>==</code>).</td>
+<td style="text-align: left;">Para definir tu propia lógica de "igualdad de contenido" (ej: dos objetos <code>Alumno</code> son iguales si tienen el mismo DNI).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>hashCode()</code></strong></td>
+<td style="text-align: left;">Devuelve un valor <code>int</code> (código hash) para el objeto.</td>
+<td style="text-align: left;"><strong>Contrato <code>equals-hashCode</code></strong>: Si sobrescribes <code>equals()</code>, DEBES sobrescribir <code>hashCode()</code>. La regla es: si <code>a.equals(b)</code> es <code>true</code>, entonces <code>a.hashCode()</code> debe ser igual a <code>b.hashCode()</code>. Es esencial para el funcionamiento de colecciones como <code>HashSet</code> y <code>HashMap</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ejemplo-practico-sobrescribiendo-equals-hashcode-y-tostring">Ejemplo Práctico: Sobrescribiendo <code>equals</code>, <code>hashCode</code> y <code>toString</code></h3>
+<p>Vamos a crear una clase <code>Punto</code> y a implementar correctamente estos métodos.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Objects</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Punto</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Punto</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Sobrescritura de toString() para una representación clara</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"Punto [x="</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", y="</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"]"</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Sobrescritura de hashCode()</span>
+<span class="w">    </span><span class="c1">// Es crucial para que colecciones como HashSet funcionen correctamente.</span>
+<span class="w">    </span><span class="c1">// Usamos Objects.hash para generar un buen hash a partir de los campos.</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">hashCode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Objects</span><span class="p">.</span><span class="na">hash</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Sobrescritura de equals() para comparar por contenido</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 1. Misma referencia: son idénticos.</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// 2. El otro es nulo o de una clase diferente: no pueden ser iguales.</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">getClass</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">obj</span><span class="p">.</span><span class="na">getClass</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// 3. Hacemos el casting y comparamos los campos relevantes.</span>
+<span class="w">        </span><span class="n">Punto</span><span class="w"> </span><span class="n">punto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Punto</span><span class="p">)</span><span class="w"> </span><span class="n">obj</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">punto</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">punto</span><span class="p">.</span><span class="na">y</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Uso</span>
+<span class="n">Punto</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Punto</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
+<span class="n">Punto</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Punto</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
+<span class="n">Punto</span><span class="w"> </span><span class="n">p3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Punto</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"p1.toString(): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Llama a nuestro toString()</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"p1 == p2: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">p1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">p2</span><span class="p">));</span><span class="w"> </span><span class="c1">// false, son objetos diferentes en memoria</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"p1.equals(p2): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">p2</span><span class="p">));</span><span class="w"> </span><span class="c1">// true, gracias a nuestro `equals()`</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"p1.equals(p3): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">p3</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">¡El Contrato <code>equals-hashCode</code> es Sagrado!</p>
+<p>Romper el contrato entre <code>equals()</code> y <code>hashCode()</code> puede causar comportamientos muy extraños e inesperados, especialmente cuando usas <code>HashSet</code> o <code>HashMap</code>. Si dos objetos son iguales según <code>equals()</code>, <strong>DEBEN</strong> tener el mismo <code>hashCode</code>. La inversa no es obligatoria, pero un buen <code>hashCode</code> minimiza colisiones.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Reflexiona</p>
+<ol>
+<li>¿Qué imprimiría el código del ejemplo de <code>Punto</code> si no hubiéramos sobrescrito el método <code>equals()</code>? ¿Y el método <code>toString()</code>?</li>
+<li>Si tuvieras una clase <code>Libro</code> con atributos <code>titulo</code>, <code>autor</code> e <code>isbn</code>, ¿qué atributos usarías en el método <code>equals()</code> para determinar si dos libros son iguales? ¿Por qué?</li>
+<li>Investiga el método <code>clone()</code> de la clase <code>Object</code>. ¿Para qué sirve y por qué su uso se considera a menudo problemático? ¿Qué alternativas existen (pista: constructor de copia)?</li>
+<li>Crea una clase <code>Producto</code> con <code>id</code> y <code>nombre</code>. Implementa <code>equals</code> y <code>hashCode</code> de manera que dos productos se consideren iguales si tienen el mismo <code>id</code>.</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="aplicacion-en-el-mundo-real">Aplicación en el Mundo Real</h2>
+<p>Estos conceptos no son solo teoría académica; son el pan de cada día en el desarrollo de software profesional.</p>
+<ul>
+<li>
+<p><strong>Frameworks como Spring:</strong> Utilizan masivamente la <strong>Inyección de Dependencias</strong> y las <strong>Interfaces</strong> para lograr un bajo acoplamiento. Tú defines un "contrato" (una interfaz, como <code>UsuarioRepository</code>) y Spring se encarga de "inyectar" la implementación concreta (<code>UsuarioRepositoryImpl</code>) donde la necesites. Esto hace que el código sea increíblemente modular y fácil de testear.</p>
+</li>
+<li>
+<p><strong>Desarrollo de Videojuegos:</strong> La <strong>Herencia</strong> y el <strong>Polimorfismo</strong> son fundamentales. Puedes tener una clase base <code>Enemigo</code> con un método <code>atacar()</code>. Luego, creas subclases como <code>Orco</code>, <code>Dragon</code> y <code>Esqueleto</code>. Cada uno implementa <code>atacar()</code> de forma diferente. El motor del juego simplemente puede tener una lista de <code>Enemigo</code>s y llamar a <code>atacar()</code> en cada uno, sin preocuparse del tipo específico.</p>
+</li>
+<li>
+<p><strong>APIs Gráficas (UI Toolkits):</strong> En JavaFX o Swing, casi todos los componentes visuales (botones, etiquetas, paneles) heredan de una clase base común (como <code>Node</code> o <code>Component</code>). Esto permite tratarlos de forma polimórfica: puedes tener una colección de <code>Component</code>s y aplicarles operaciones comunes, como cambiar su visibilidad o color.</p>
+</li>
+</ul>
+<h2 id="para-saber-mas">Para Saber Más</h2>
+<ol>
+<li><strong>Documentación Oficial de Oracle sobre Herencia:</strong> <a href="https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html">The Java™ Tutorials - Inheritance</a> - La fuente principal y más fiable.</li>
+<li><strong>Baeldung: Abstract Class vs. Interface:</strong> <a href="https://www.baeldung.com/java-interface-vs-abstract-class">Using an Interface vs. Abstract Class in Java</a> - Un excelente artículo que profundiza en cuándo usar una u otra, con ejemplos claros.</li>
+<li><strong>GeeksforGeeks: Composición vs. Herencia:</strong> <a href="https://www.geeksforgeeks.org/composition-vs-inheritance-in-java/">Composition vs Inheritance in Java</a> - Una buena comparativa para asentar uno de los debates más importantes en diseño OO.</li>
+</ol>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script type="text/javascript">(function initializeMarkmap() {
+    const transformer = new markmap.Transformer();
+    const preloadScripts = transformer.plugins
+        .flatMap((plugin) => plugin.config?.preloadScripts || [])
+        .map((item) => transformer.resolveJS(item));
+    const assets = transformer.getAssets();
+    const loading = Promise.all([
+        assets.styles && markmap.loadCSS(assets.styles),
+        markmap.loadJS([...preloadScripts, ...assets.scripts]),
+    ]);
+
+    function parseData(content) {
+        const { root, frontmatter } = transformer.transform(content);
+        let options = markmap.deriveOptions(frontmatter?.markmap);
+        options = Object.assign(
+            {
+                fitRatio: 0.85,
+            },
+            options
+        );
+        return { root, options };
+    }
+
+    function resetMarkmap(m, el) {
+        if (!m.state.rect) return;
+        const { x1, y1, x2, y2 } = m.state.rect;
+        const height = (el.offsetWidth / (x2 - x1)) * (y2 - y1);
+        el.style.height = height + "px";
+        m.fit();
+    }
+
+    function decodeBase64(encoded) {
+        const binary = atob(encoded);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < bytes.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        return new TextDecoder().decode(bytes);
+    }
+
+    function renderMarkmap(el) {
+        const dataEl = el.querySelector("markmap-data");
+        if (!dataEl) return;
+        let content = el.textContent;
+        if (dataEl.getAttribute("encoding") === "base64") {
+            content = decodeBase64(content);
+        }
+        el.innerHTML = "<svg>";
+        svg = el.firstChild;
+        const { root, options } = parseData(content);
+        const m = markmap.Markmap.create(svg, options);
+        m.setData(root);
+        requestAnimationFrame(() => {
+            resetMarkmap(m, el);
+        });
+    }
+
+    function updateMarkmaps(node) {
+        for (const el of node.querySelectorAll(".mkdocs-markmap")) {
+            renderMarkmap(el);
+        }
+    }
+
+    loading.then(() => {
+        const observer = new MutationObserver((mutationList) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "childList") {
+                    for (const node of mutation.addedNodes) {
+                        updateMarkmaps(node);
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true });
+
+        updateMarkmaps(document);
+    });
+})();
+</script></body></html>

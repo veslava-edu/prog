@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Visual Java</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container" id="app-container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Simulador Visual Java</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span>
+                <span>Cambiar tema</span>
+            </button>
+        </header>
+
+        <!-- Sidebar - Examples List -->
+        <aside class="sidebar">
+            <div class="theme-container">
+                <h2>&#x1F4DA; Temática</h2>
+                <select id="theme-selector"></select>
+            </div>
+            <div id="examples-list"></div>
+        </aside>
+
+        <div class="resizer-v" id="resizer-v1"></div>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="tabs">
+                <button class="tab active" id="tab-btn-code" onclick="switchTab('code')">&#x1F4BB; Código</button>
+                <button class="tab" id="tab-btn-diagram" onclick="switchTab('diagram')">&#x1F4CA; Diagrama</button>
+            </div>
+            <div class="tab-content">
+                <div id="code-tab" class="code-viewer"></div>
+                <div id="diagram-tab" class="diagram-canvas" style="display: none;">
+                    <div class="visualization" id="visualization"></div>
+                </div>
+            </div>
+             <div class="console-container">
+                <h3><span style="font-family: 'Courier New', monospace; color: var(--success)">&gt;</span> Consola de Salida</h3>
+                <div id="console-output" class="console-body"></div>
+            </div>
+        </main>
+
+        <div class="resizer-v" id="resizer-v2"></div>
+
+        <!-- Right Panel - Memory Trace -->
+        <aside class="trace-panel">
+            <div class="memory-section">
+                <h3>Stack</h3>
+                <div id="stack-memory"></div>
+            </div>
+            <div class="memory-section">
+                <h3>Heap</h3>
+                <div id="heap-memory"></div>
+            </div>
+            <div class="memory-section">
+                <h3>&#x1F4CB; Registro de eventos</h3>
+                <div class="event-log" id="event-log"></div>
+            </div>
+        </aside>
+
+        <!-- Controls -->
+        <footer class="controls">
+            <button class="control-btn secondary" onclick="resetSimulation()" title="Reiniciar">&#x23EE;&#xFE0F; Inicio</button>
+            <button class="control-btn secondary" onclick="stepBackward()" title="Paso atrás">&#x23EA; Atrás</button>
+            <button class="control-btn success" id="play-pause-btn" onclick="togglePlayPause()" title="Reproducir/Pausar">&#x25B6;&#xFE0F; Reproducir</button>
+            <button class="control-btn" onclick="stepForward()" title="Paso adelante">Adelante &#x23E9;</button>
+            <div class="speed-control">
+                <label>&#x26A1; Velocidad:</label>
+                <input type="range" class="speed-slider" id="speed-slider" min="200" max="2000" value="1000">
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts de la aplicación -->
+    <script src="js/examples/condicionales.js" charset="UTF-8"></script> 
+    <script src="js/app.js" charset="UTF-8"></script>
+</body>
+</html>

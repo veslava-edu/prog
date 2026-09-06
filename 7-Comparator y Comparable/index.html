@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>7 Comparator y Comparable - PROG</title>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script><script src="../js/unpkg.com/d3@7.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-lib@0.18.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-view@0.18.js" type="text/javascript"></script><style type="text/css">div.mkdocs-markmap {
+    width: 100%;
+    min-height: 1em;
+    border: 1px solid grey;
+}
+.mkdocs-markmap > svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+</style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#comparator-y-comparable-poniendo-orden-en-el-caos">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="PROG" class="md-header__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            PROG
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              7 Comparator y Comparable
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../1-Introduccion-programacion/">
+          
+  
+  
+  Programación
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="PROG" class="md-nav__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    PROG
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1-Introduccion-programacion/">
+<span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2-Programacion-estructurada/">
+<span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3-Programacion-modular/">
+<span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4-Estructuras-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5-POO-Clases-y-Objetos/">
+<span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6-POO-Uso-avanzado/">
+<span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7-Estructuras-datos-dinamicas/">
+<span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../8-Programacion-funcional-Streams/">
+<span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../9-Ficheros/">
+<span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10-Acceso-base-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11-Interfaces-graficas-MVC/">
+<span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conceptos-fundamentales">
+<span class="md-ellipsis">
+      
+        Conceptos Fundamentales
+      
+    </span>
+</a>
+<nav aria-label="Conceptos Fundamentales" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapa-mental-cual-elijo">
+<span class="md-ellipsis">
+      
+        Mapa Mental: ¿Cuál elijo?
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desarrollo-y-ejemplos-practicos">
+<span class="md-ellipsis">
+      
+        Desarrollo y Ejemplos Prácticos
+      
+    </span>
+</a>
+<nav aria-label="Desarrollo y Ejemplos Prácticos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#la-clase-base-comparable">
+<span class="md-ellipsis">
+      
+        La Clase Base (Comparable)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-arraylist-ordenacion-estandar">
+<span class="md-ellipsis">
+      
+        1. ArrayList (Ordenación Estándar)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-linkedlist-igual-que-arraylist">
+<span class="md-ellipsis">
+      
+        2. LinkedList (Igual que ArrayList)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-queue-priorityqueue-la-cola-vip">
+<span class="md-ellipsis">
+      
+        3. Queue (PriorityQueue - La Cola VIP)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-deque-arraydeque-ordenacion-manual">
+<span class="md-ellipsis">
+      
+        4. Deque (ArrayDeque - Ordenación Manual)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-hashset-el-caos-inordenable">
+<span class="md-ellipsis">
+      
+        5. HashSet (El Caos Inordenable)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-treeset-ordenacion-automatica">
+<span class="md-ellipsis">
+      
+        6. TreeSet (Ordenación Automática)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-treemap-ordenacion-por-clave">
+<span class="md-ellipsis">
+      
+        7. TreeMap (Ordenación por Clave)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagrama-mermaid-flujo-de-decision">
+<span class="md-ellipsis">
+      
+        Diagrama Mermaid: Flujo de Decisión
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-resumen-metodos-modernos-de-comparator-java-8">
+<span class="md-ellipsis">
+      
+        Tabla Resumen: Métodos Modernos de Comparator (Java 8+)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacion-en-el-mundo-real">
+<span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-saber-mas">
+<span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<!-- comparator_comparable_java_fp.md --><h1 id="comparator-y-comparable-poniendo-orden-en-el-caos">Comparator y Comparable: Poniendo Orden en el Caos</h1>
+<p><strong>Introducción: El Árbitro y el ADN</strong></p>
+<p>¡Buenas, equipo de desarrollo! 👔</p>
+<p>Imaginad una clase de primaria cuando suena el timbre del recreo. Todos los niños salen corriendo en estampida. Caos total. Ahora, imaginad esa misma clase en la fila para entrar al comedor. Están ordenados. ¿Pero cómo? ¿Por altura? ¿Por orden alfabético? ¿Por notas?</p>
+<p>En Java, cuando tenemos una colección de objetos (una lista de Productos, de Usuarios, de Zombies...), estos no saben ordenarse solos. Si le dices a Java "ordena esta lista de Zombies", Java te preguntará: <em>"¿Cómo? ¿El más feo primero? ¿El que tiene menos brazos?"</em>.</p>
+<p>Para responder a eso tenemos dos herramientas:
+1.  <strong>Comparable (El ADN)</strong>: El objeto sabe ordenarse a sí mismo (ej: un número "sabe" que 5 es mayor que 3). Es su "orden natural".
+2.  <strong>Comparator (El Árbitro)</strong>: Un juez externo que decide quién va antes y quién después según reglas personalizadas (ej: ordenar por precio, luego por nombre, luego por stock...).</p>
+<p>¡Vamos a aprender a poner firmes a nuestros objetos! 📏📐</p>
+<hr/>
+<h2 id="conceptos-fundamentales">Conceptos Fundamentales</h2>
+<div class="admonition note">
+<p class="admonition-title">Definición: Comparable (java.lang.Comparable)</p>
+<p>Es una interfaz que se implementa <strong>DENTRO</strong> de la clase que queremos ordenar. Define el "Orden Natural" del objeto.
+*   <strong>Método</strong>: <code>public int compareTo(T o)</code>
+*   <strong>Lógica</strong>: "Yo (this) me comparo contigo (o)".</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Comparator (java.util.Comparator)</p>
+<p>Es una interfaz funcional que se implementa <strong>FUERA</strong> de la clase (o como lambda). Permite crear múltiples estrategias de ordenación sin tocar el código original del objeto.
+*   <strong>Método</strong>: <code>public int compare(T o1, T o2)</code>
+*   <strong>Lógica</strong>: "Yo (Juez) comparo al objeto 1 y al objeto 2".</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">La Regla de Oro del Retorno (int)</p>
+<p>Ambos métodos devuelven un número entero (<code>int</code>). Debéis memorizar esto:
+*   <strong>Negativo (&lt; 0)</strong>: <code>this</code> (o <code>o1</code>) va <strong>ANTES</strong>. (Es menor).
+*   <strong>Cero (0)</strong>: Son <strong>IGUALES</strong> (en cuanto a orden).
+*   <strong>Positivo (&gt; 0)</strong>: <code>this</code> (o <code>o1</code>) va <strong>DESPUÉS</strong>. (Es mayor).</p>
+</div>
+<h3 id="mapa-mental-cual-elijo">Mapa Mental: ¿Cuál elijo?</h3>
+<div class="language-markmap mkdocs-markmap"><markmap-data encoding="base64" hidden="true">IyBPcmRlbmFjacOzbiBlbiBKYXZhCgojIyBDb21wYXJhYmxlIChJbnRlcm5hbCkKLSAqKk1vZGlmaWNhIGxhIGNsYXNlKio6IFPDrSAoaW1wbGVtZW50cyBDb21wYXJhYmxlKS4KLSAqKkNhbnRpZGFkKio6IFNvbG8gdW5hIGzDs2dpY2EgcG9yIGNsYXNlLgotICoqVXNvKio6IFBhcmEgZWwgb3JkZW4gcG9yIGRlZmVjdG8gKGVqOiBETkksIElEKS4KLSAqKk3DqXRvZG8qKjogY29tcGFyZVRvKG8pCgojIyBDb21wYXJhdG9yIChFeHRlcm5hbCkKLSAqKk1vZGlmaWNhIGxhIGNsYXNlKio6IE5vLgotICoqQ2FudGlkYWQqKjogSW5maW5pdGFzIGzDs2dpY2FzIChwb3Igbm9tYnJlLCBwcmVjaW8uLi4pLgotICoqVXNvKio6IFBhcmEgb3JkZW5hY2lvbmVzIGZsZXhpYmxlcyBvIGNsYXNlcyBxdWUgbm8gc29uIHR1eWFzLgotICoqTcOpdG9kb3MqKjogCiAgICAtIGNvbXBhcmUobzEsIG8yKQogICAgLSBDb21wYXJhdG9yLmNvbXBhcmluZyguLi4pCiAgICAtIC50aGVuQ29tcGFyaW5nKC4uLik=</markmap-data></div>
+<p><br/></p><hr/><p></p>
+<h2 id="desarrollo-y-ejemplos-practicos">Desarrollo y Ejemplos Prácticos</h2>
+<p>Para todos los ejemplos, usaremos esta clase <code>Jugador</code>. Fijaos que implementa <code>Comparable</code> para tener un orden por defecto (por ID).</p>
+<h3 id="la-clase-base-comparable">La Clase Base (Comparable)</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Objects</span><span class="p">;</span>
+
+<span class="c1">// Implementamos Comparable para definir el orden "Natural" (por defecto)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Jugador</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Comparable</span><span class="o">&lt;</span><span class="n">Jugador</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">puntuacion</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Jugador</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">puntuacion</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">puntuacion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">puntuacion</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getId</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getNombre</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getPuntuacion</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">puntuacion</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// --- EL MÉTODO DEL ADN (Comparable) ---</span>
+<span class="w">    </span><span class="c1">// Queremos que, por defecto, se ordenen por ID de menor a mayor.</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compareTo</span><span class="p">(</span><span class="n">Jugador</span><span class="w"> </span><span class="n">otro</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Truco: Para enteros podemos restar (si no hay overflow)</span>
+<span class="w">        </span><span class="c1">// O usar Integer.compare(this.id, otro.id) &lt;-- MEJOR</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="p">,</span><span class="w"> </span><span class="n">otro</span><span class="p">.</span><span class="na">id</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"J{"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"id="</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", nom='"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">'\''</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", pts="</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">puntuacion</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">'}'</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// hashCode y equals omitidos por brevedad, pero necesarios en Sets</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="1-arraylist-ordenacion-estandar">1. ArrayList (Ordenación Estándar)</h3>
+<p>El <code>ArrayList</code> es el cliente número 1 de la ordenación.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Collections</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Comparator</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EjemploArrayList</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Jugador</span><span class="o">&gt;</span><span class="w"> </span><span class="n">equipo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">equipo</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">"Mario"</span><span class="p">,</span><span class="w"> </span><span class="mi">5000</span><span class="p">));</span>
+<span class="w">        </span><span class="n">equipo</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">"Luigi"</span><span class="p">,</span><span class="w"> </span><span class="mi">8000</span><span class="p">));</span>
+<span class="w">        </span><span class="n">equipo</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">"Peach"</span><span class="p">,</span><span class="w"> </span><span class="mi">2000</span><span class="p">));</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Original: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">equipo</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 1. Usando COMPARABLE (Orden natural por ID)</span>
+<span class="w">        </span><span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">equipo</span><span class="p">);</span><span class="w"> </span><span class="c1">// O equipo.sort(null) en Java 8+</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Por ID (Comparable): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">equipo</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 2. Usando COMPARATOR (Orden personalizado por Puntuación)</span>
+<span class="w">        </span><span class="c1">// Forma Clásica (Clase Anónima)</span>
+<span class="w">        </span><span class="n">equipo</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Jugador</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nd">@Override</span>
+<span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compare</span><span class="p">(</span><span class="n">Jugador</span><span class="w"> </span><span class="n">j1</span><span class="p">,</span><span class="w"> </span><span class="n">Jugador</span><span class="w"> </span><span class="n">j2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// De mayor a menor puntuación (invertimos orden)</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="n">j2</span><span class="p">.</span><span class="na">getPuntuacion</span><span class="p">(),</span><span class="w"> </span><span class="n">j1</span><span class="p">.</span><span class="na">getPuntuacion</span><span class="p">());</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">});</span>
+
+<span class="w">        </span><span class="c1">// 3. Forma Moderna (Java 8 Lambda + Métodos estáticos)</span>
+<span class="w">        </span><span class="c1">// "Ordena comparando el nombre"</span>
+<span class="w">        </span><span class="n">equipo</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparing</span><span class="p">(</span><span class="n">Jugador</span><span class="p">::</span><span class="n">getNombre</span><span class="p">));</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Por Nombre: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">equipo</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="2-linkedlist-igual-que-arraylist">2. LinkedList (Igual que ArrayList)</h3>
+<p>Aunque la estructura interna es diferente, al implementar <code>List</code>, se ordena igual.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.LinkedList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Comparator</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EjemploLinkedList</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Jugador</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">lista</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="s">"Zelda"</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">));</span>
+<span class="w">        </span><span class="n">lista</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s">"Link"</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">));</span>
+
+<span class="w">        </span><span class="c1">// Queremos ordenar por Puntuación, y si empatan, por Nombre</span>
+<span class="w">        </span><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Jugador</span><span class="o">&gt;</span><span class="w"> </span><span class="n">logicaCompleja</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Comparator</span>
+<span class="w">                </span><span class="p">.</span><span class="na">comparingInt</span><span class="p">(</span><span class="n">Jugador</span><span class="p">::</span><span class="n">getPuntuacion</span><span class="p">)</span><span class="w"> </span><span class="c1">// Primero puntos</span>
+<span class="w">                </span><span class="p">.</span><span class="na">thenComparing</span><span class="p">(</span><span class="n">Jugador</span><span class="p">::</span><span class="n">getNombre</span><span class="p">)</span><span class="w">    </span><span class="c1">// Luego nombre</span>
+<span class="w">                </span><span class="p">.</span><span class="na">reversed</span><span class="p">();</span><span class="w">                          </span><span class="c1">// ¡Todo al revés! (Mayor a menor)</span>
+
+<span class="w">        </span><span class="n">lista</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">logicaCompleja</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Ranking LinkedList: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lista</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="3-queue-priorityqueue-la-cola-vip">3. Queue (PriorityQueue - La Cola VIP)</h3>
+<p>Aquí <strong>NO</strong> usamos <code>.sort()</code>. Una cola normal (<code>LinkedList</code>) es FIFO. Pero una <code>PriorityQueue</code> <strong>ordena los elementos automáticamente según entran</strong>. El que tiene más prioridad (según el Comparator/Comparable) se pone en la cabeza (<code>peek</code>/<code>poll</code>) para salir antes.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.PriorityQueue</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Queue</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EjemploQueue</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// PriorityQueue ordena AUTOMÁTICAMENTE.</span>
+<span class="w">        </span><span class="c1">// Si no pasamos nada, usa el compareTo (por ID).</span>
+<span class="w">        </span><span class="c1">// Pero aquí pasamos un Comparator para que la prioridad sea PUNTUACIÓN ALTA.</span>
+<span class="w">        </span><span class="c1">// (Nota: PriorityQueue saca el "menor" primero, así que invertimos lógica para que "menor" sea el de más puntos)</span>
+
+<span class="w">        </span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">Jugador</span><span class="o">&gt;</span><span class="w"> </span><span class="n">colaPrioritaria</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="o">&lt;&gt;</span><span class="p">(</span>
+<span class="w">            </span><span class="p">(</span><span class="n">j1</span><span class="p">,</span><span class="w"> </span><span class="n">j2</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="n">j2</span><span class="p">.</span><span class="na">getPuntuacion</span><span class="p">(),</span><span class="w"> </span><span class="n">j1</span><span class="p">.</span><span class="na">getPuntuacion</span><span class="p">())</span>
+<span class="w">        </span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">colaPrioritaria</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">"Noob"</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">));</span>
+<span class="w">        </span><span class="n">colaPrioritaria</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">"Pro"</span><span class="p">,</span><span class="w"> </span><span class="mi">9999</span><span class="p">));</span>
+<span class="w">        </span><span class="n">colaPrioritaria</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">"Avg"</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">));</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- Atendiendo por Puntuación ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">colaPrioritaria</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Saldrá primero el de 9999 puntos, luego 500, luego 100</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Atendiendo a: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">colaPrioritaria</span><span class="p">.</span><span class="na">poll</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="4-deque-arraydeque-ordenacion-manual">4. Deque (ArrayDeque - Ordenación Manual)</h3>
+<p><code>ArrayDeque</code> no tiene método <code>sort</code> y no reordena sola como <code>PriorityQueue</code>. Para ordenarla, lo habitual es convertirla a Stream, ordenar y volver a recolectar (o volcar a lista).</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayDeque</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Deque</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Comparator</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.stream.Collectors</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EjemploDeque</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Deque</span><span class="o">&lt;</span><span class="n">Jugador</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pila</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayDeque</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">pila</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">"A"</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">));</span>
+<span class="w">        </span><span class="n">pila</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">"B"</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">));</span>
+
+<span class="w">        </span><span class="c1">// No podemos hacer pila.sort()...</span>
+<span class="w">        </span><span class="c1">// Estrategia: Stream -&gt; Sorted -&gt; Coleccionar a nueva List o Deque</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Pila ordenada por nombre (Visualización):"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">pila</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="na">sorted</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparing</span><span class="p">(</span><span class="n">Jugador</span><span class="p">::</span><span class="n">getNombre</span><span class="p">))</span>
+<span class="w">            </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// La estructura original NO ha cambiado (Deque no está pensada para reordenarse in-situ)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="5-hashset-el-caos-inordenable">5. HashSet (El Caos Inordenable)</h3>
+<p>El <code>HashSet</code> <strong>no tiene orden</strong>. No puedes ordenarlo. Lo que sí puedes hacer es sacarlo a una lista y ordenar la lista para mostrarla.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashSet</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Collections</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EjemploHashSet</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Jugador</span><span class="o">&gt;</span><span class="w"> </span><span class="n">conjunto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">conjunto</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">"Uno"</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">));</span>
+<span class="w">        </span><span class="n">conjunto</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">"Dos"</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">));</span>
+
+<span class="w">        </span><span class="c1">// conjunto.sort(...) // ¡ERROR DE COMPILACIÓN! No existe.</span>
+
+<span class="w">        </span><span class="c1">// Solución: Volcar a lista</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Jugador</span><span class="o">&gt;</span><span class="w"> </span><span class="n">listaTemporal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">conjunto</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">listaTemporal</span><span class="p">);</span><span class="w"> </span><span class="c1">// Usa Comparable (por ID)</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"HashSet mostrado ordenado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">listaTemporal</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="6-treeset-ordenacion-automatica">6. TreeSet (Ordenación Automática)</h3>
+<p>El <code>TreeSet</code> <strong>SIEMPRE</strong> mantiene los datos ordenados. Usa el <code>Comparable</code> por defecto o un <code>Comparator</code> en el constructor.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.TreeSet</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Comparator</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EjemploTreeSet</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Caso A: Sin argumentos -&gt; Usa Comparable (Orden por ID)</span>
+<span class="w">        </span><span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">Jugador</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ordenId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">ordenId</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">"B"</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">));</span>
+<span class="w">        </span><span class="n">ordenId</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">"A"</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">));</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"TreeSet por ID: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ordenId</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Caso B: Con Comparator -&gt; Ignora Comparable y usa nuestra regla</span>
+<span class="w">        </span><span class="c1">// Ordenamos por Nombre (Alfabético inverso)</span>
+<span class="w">        </span><span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">Jugador</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ordenNombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeSet</span><span class="o">&lt;&gt;</span><span class="p">(</span>
+<span class="w">            </span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparing</span><span class="p">(</span><span class="n">Jugador</span><span class="p">::</span><span class="n">getNombre</span><span class="p">).</span><span class="na">reversed</span><span class="p">()</span>
+<span class="w">        </span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">ordenNombre</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">"Ana"</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">));</span>
+<span class="w">        </span><span class="n">ordenNombre</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">"Bea"</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">));</span>
+
+<span class="w">        </span><span class="c1">// Saldrá Bea primero (porque es reversed, B &gt; A en orden descendente)</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"TreeSet por Nombre (Desc): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ordenNombre</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="7-treemap-ordenacion-por-clave">7. TreeMap (Ordenación por Clave)</h3>
+<p>Igual que el TreeSet, pero ordena basándose en la <strong>Key</strong> (Clave). El Valor (Value) es irrelevante para el orden.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.TreeMap</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Comparator</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EjemploTreeMap</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Clave: Jugador, Valor: String (Estado)</span>
+<span class="w">        </span><span class="c1">// Pasamos un Comparator al constructor para que ordene las CLAVES (Jugadores) por Puntuación.</span>
+<span class="w">        </span><span class="n">TreeMap</span><span class="o">&lt;</span><span class="n">Jugador</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ranking</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeMap</span><span class="o">&lt;&gt;</span><span class="p">(</span>
+<span class="w">            </span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparingInt</span><span class="p">(</span><span class="n">Jugador</span><span class="p">::</span><span class="n">getPuntuacion</span><span class="p">).</span><span class="na">reversed</span><span class="p">()</span>
+<span class="w">        </span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">ranking</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">"Low"</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w"> </span><span class="s">"Bronce"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">ranking</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">"High"</span><span class="p">,</span><span class="w"> </span><span class="mi">9000</span><span class="p">),</span><span class="w"> </span><span class="s">"Oro"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">ranking</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Jugador</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">"Mid"</span><span class="p">,</span><span class="w"> </span><span class="mi">5000</span><span class="p">),</span><span class="w"> </span><span class="s">"Plata"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Al imprimir, veremos primero al de 9000 (Key), luego 5000, luego 100</span>
+<span class="w">        </span><span class="n">ranking</span><span class="p">.</span><span class="na">forEach</span><span class="p">((</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">": "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="na">getNombre</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" ("</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="na">getPuntuacion</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" pts)"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><br/></p><hr/><p></p>
+<h3 id="diagrama-mermaid-flujo-de-decision">Diagrama Mermaid: Flujo de Decisión</h3>
+<p>¿Cómo decide Java quién gana?</p>
+<pre class="mermaid"><code>graph TD
+    Start["Inicio Comparación"] --&gt; Check["¿Hay Comparator?"]
+
+    Check -- Sí (Externo) --&gt; UseComparator["Ejecutar compare(o1, o2)"]
+    Check -- No (Defecto) --&gt; Cast["Casting a Comparable"]
+
+    Cast --&gt; UseComparable["Ejecutar o1.compareTo(o2)"]
+
+    UseComparator --&gt; Result{Resultado}
+    UseComparable --&gt; Result
+
+    Result -- "&lt; 0" --&gt; Menor["o1 va ANTES"]
+    Result -- "== 0" --&gt; Igual["Orden Indiferente"]
+    Result -- "&gt; 0" --&gt; Mayor["o1 va DESPUÉS"]</code></pre>
+<h3 id="tabla-resumen-metodos-modernos-de-comparator-java-8">Tabla Resumen: Métodos Modernos de Comparator (Java 8+)</h3>
+<p>Estos métodos estáticos hacen el código mucho más legible. ¡Úsalos!</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Método</th>
+<th style="text-align: left;">Descripción</th>
+<th style="text-align: left;">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>comparing(Function)</code></strong></td>
+<td style="text-align: left;">Crea comparador basado en un campo.</td>
+<td style="text-align: left;"><code>Comparator.comparing(Jugador::getNombre)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>comparingInt(...)</code></strong></td>
+<td style="text-align: left;">Optimizado para enteros (evita boxing).</td>
+<td style="text-align: left;"><code>Comparator.comparingInt(Jugador::getPuntuacion)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>reversed()</code></strong></td>
+<td style="text-align: left;">Invierte el orden actual.</td>
+<td style="text-align: left;"><code>miComparador.reversed()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>thenComparing(...)</code></strong></td>
+<td style="text-align: left;">Si empatan en el primero, usa este segundo criterio.</td>
+<td style="text-align: left;"><code>comp1.thenComparing(comp2)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>nullsFirst()</code></strong> / <strong><code>nullsLast()</code></strong></td>
+<td style="text-align: left;">Gestiona nulos para que no explote.</td>
+<td style="text-align: left;"><code>Comparator.nullsFirst(...)</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition question">
+<p class="admonition-title">Ejercicios Reflexivos</p>
+<ol>
+<li><strong>El problema del Null</strong>: Si tienes una lista con elementos <code>null</code> y haces <code>Collections.sort()</code>, ¿qué pasa? ¿Cómo lo arreglarías usando <code>Comparator.nullsFirst</code>?</li>
+<li><strong>Consistencia</strong>: ¿Qué pasaría en un <code>TreeSet</code> si tu <code>compareTo</code> dice que dos objetos son iguales (<code>return 0</code>) pero tu <code>equals</code> dice que son diferentes (<code>return false</code>)? (Pista: El <code>TreeSet</code> se fía del <code>compareTo</code> e ignorará el segundo objeto pensando que es duplicado).</li>
+<li><strong>Rendimiento</strong>: ¿Es más rápido ordenar un <code>ArrayList</code> o insertar datos en un <code>TreeSet</code> si al final quieres lo mismo? (Pista: <code>ArrayList.sort</code> es O(n log n) una vez. <code>TreeSet</code> hace log n en cada inserción).</li>
+</ol>
+</div>
+<h2 id="aplicacion-en-el-mundo-real">Aplicación en el Mundo Real</h2>
+<ol>
+<li>
+<p><strong>E-Commerce (Amazon/PCComponentes)</strong>:
+    Cuando buscas "Teclado Mecánico", por defecto sale por "Relevancia" (algoritmo complejo). Pero tú pinchas en "Ordenar por: Precio más bajo".</p>
+<ul>
+<li>El backend no cambia los objetos. Simplemente aplica un <strong><code>Comparator</code> de Precio</strong> a la lista de resultados antes de enviártela. Si pinchas "Mejor valorados", aplica un <strong><code>Comparator</code> de Estrellas</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Leaderboards de Juegos</strong>:
+    Los rankings globales se gestionan a menudo con estructuras tipo <code>TreeSet</code> o bases de datos ordenadas (Redis Sorted Sets). Cada vez que tu puntuación cambia, el sistema te reubica automáticamente en el árbol en tiempo logarítmico.</p>
+</li>
+</ol>
+<h2 id="para-saber-mas">Para Saber Más</h2>
+<ul>
+<li>
+<p><strong>Documentación Oficial Comparator</strong>:
+    <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Comparator.html">https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Comparator.html</a></p>
+</li>
+<li>
+<p><strong>Baeldung - Comparator vs Comparable</strong>: La guía definitiva técnica.
+    <a href="https://www.baeldung.com/java-comparator-comparable">https://www.baeldung.com/java-comparator-comparable</a></p>
+</li>
+<li>
+<p><strong>Refactoring Guru</strong>: Patrones de diseño relacionados con estrategias de ordenación.
+    <a href="https://refactoring.guru/design-patterns/strategy">https://refactoring.guru/design-patterns/strategy</a></p>
+</li>
+</ul>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script type="text/javascript">(function initializeMarkmap() {
+    const transformer = new markmap.Transformer();
+    const preloadScripts = transformer.plugins
+        .flatMap((plugin) => plugin.config?.preloadScripts || [])
+        .map((item) => transformer.resolveJS(item));
+    const assets = transformer.getAssets();
+    const loading = Promise.all([
+        assets.styles && markmap.loadCSS(assets.styles),
+        markmap.loadJS([...preloadScripts, ...assets.scripts]),
+    ]);
+
+    function parseData(content) {
+        const { root, frontmatter } = transformer.transform(content);
+        let options = markmap.deriveOptions(frontmatter?.markmap);
+        options = Object.assign(
+            {
+                fitRatio: 0.85,
+            },
+            options
+        );
+        return { root, options };
+    }
+
+    function resetMarkmap(m, el) {
+        if (!m.state.rect) return;
+        const { x1, y1, x2, y2 } = m.state.rect;
+        const height = (el.offsetWidth / (x2 - x1)) * (y2 - y1);
+        el.style.height = height + "px";
+        m.fit();
+    }
+
+    function decodeBase64(encoded) {
+        const binary = atob(encoded);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < bytes.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        return new TextDecoder().decode(bytes);
+    }
+
+    function renderMarkmap(el) {
+        const dataEl = el.querySelector("markmap-data");
+        if (!dataEl) return;
+        let content = el.textContent;
+        if (dataEl.getAttribute("encoding") === "base64") {
+            content = decodeBase64(content);
+        }
+        el.innerHTML = "<svg>";
+        svg = el.firstChild;
+        const { root, options } = parseData(content);
+        const m = markmap.Markmap.create(svg, options);
+        m.setData(root);
+        requestAnimationFrame(() => {
+            resetMarkmap(m, el);
+        });
+    }
+
+    function updateMarkmaps(node) {
+        for (const el of node.querySelectorAll(".mkdocs-markmap")) {
+            renderMarkmap(el);
+        }
+    }
+
+    loading.then(() => {
+        const observer = new MutationObserver((mutationList) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "childList") {
+                    for (const node of mutation.addedNodes) {
+                        updateMarkmaps(node);
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true });
+
+        updateMarkmaps(document);
+    });
+})();
+</script></body></html>

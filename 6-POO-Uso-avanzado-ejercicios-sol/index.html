@@ -1,0 +1,2621 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>6 POO Uso avanzado ejercicios sol - PROG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ejercicios-practicos-poo-avanzada-en-java" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PROG" class="md-header__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PROG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              6 POO Uso avanzado ejercicios sol
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../1-Introduccion-programacion/" class="md-tabs__link">
+          
+  
+  
+  Programación
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PROG" class="md-nav__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    PROG
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-Introduccion-programacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-Programacion-estructurada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-Programacion-modular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-Estructuras-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-POO-Clases-y-Objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-POO-Uso-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-Estructuras-datos-dinamicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-Programacion-funcional-Streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-Ficheros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-Acceso-base-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-Interfaces-graficas-MVC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-consolidacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Consolidación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Consolidación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-persona" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Persona
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-empleado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Empleado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-main-de-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Main de Prueba
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clase Main de Prueba">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-departamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Departamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-main-de-prueba_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Main de Prueba
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clase Main de Prueba">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-empleado-modificada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Empleado (Modificada)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-main-de-prueba_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Main de Prueba
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clase Main de Prueba">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-empleado-abstracta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Empleado (Abstracta)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-programador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Programador
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Manager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-main-de-prueba_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Main de Prueba
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clase Main de Prueba">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-manager-con-el-nuevo-metodo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Manager (con el nuevo método)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-corregido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código Corregido
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prueba-del-codigo-corregido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prueba del Código Corregido
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-refuerzo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Refuerzo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Refuerzo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-empleado-con-getdetalles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Empleado (con getDetalles)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-manager-sobrescribiendo-y-ampliando" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Manager (sobrescribiendo y ampliando)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-main-de-prueba_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Main de Prueba
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clase Main de Prueba">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interfaz-notificable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interfaz Notificable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clases-que-implementan-la-interfaz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clases que implementan la interfaz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sistema-de-notificaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sistema de Notificaciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-main-de-prueba_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Main de Prueba
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clase Main de Prueba">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interfaz-y-rol-concreto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interfaz y Rol Concreto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-programador-modificada-con-composicion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Programador Modificada con Composición
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-main-de-prueba_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Main de Prueba
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clase Main de Prueba">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculadora-de-nominas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calculadora de Nóminas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-main-de-prueba_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Main de Prueba
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-ampliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Ampliación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Ampliación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interfaz-notificable-con-metodo-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interfaz Notificable con Método Default
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sobrescribiendo-el-metodo-default-opcional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sobrescribiendo el método default (Opcional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-main-de-prueba_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Main de Prueba
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clase Main de Prueba">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial-codigo-a-refactorizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial (Código a refactorizar):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-interfaz-de-la-estrategia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Interfaz de la Estrategia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-implementaciones-concretas-de-la-estrategia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Implementaciones Concretas de la Estrategia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-clase-manager-refactorizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Clase Manager Refactorizada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-clase-main-de-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Clase Main de Prueba
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Clase Main de Prueba">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-diseno-solucion-abierta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo de Diseño (Solución Abierta)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplo de Diseño (Solución Abierta)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-clases-en-mermaid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrama de Clases en Mermaid
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#justificacion-del-diseno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Justificación del Diseño
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- Nombre de archivo sugerido: T06-Ejercicios-POO-Avanzada.md --><h1 id="ejercicios-practicos-poo-avanzada-en-java">Ejercicios Prácticos: POO Avanzada en Java</h1>
+<p><strong>Narrativa del Proyecto:</strong> ¡Bienvenido al equipo de desarrollo de <strong>Innovatec Solutions</strong>! Nuestra empresa está en plena expansión y nuestro sistema de gestión de recursos humanos, basado en hojas de cálculo, se ha quedado obsoleto. Tu misión es liderar el diseño y la implementación del núcleo de nuestro nuevo sistema, <strong>"Innovatec HR Core"</strong>, utilizando los principios más sólidos de la Programación Orientada a Objetos en Java.</p>
+<p>Este proyecto no solo gestionará empleados, sino que deberá ser lo suficientemente flexible para adaptarse a nuevos roles, normativas y funcionalidades en el futuro. ¡Es hora de demostrar tus habilidades como arquitecto de software!</p>
+<h2 id="ejercicios-de-consolidacion">Ejercicios de Consolidación</h2>
+<div class="admonition abstract">
+<p class="admonition-title">1) La Jerarquía de Innovatec: Creando la Base de Empleados | Nivel: Fácil</p>
+<h5 id="objetivo"><strong>Objetivo:</strong></h5>
+<p>Aplicar el concepto de <strong>Herencia</strong> para modelar la relación fundamental entre una persona y un empleado en el sistema.</p>
+<h5 id="tarea-a-realizar"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>Persona</code> con los atributos <code>protected</code> <code>nombre</code> y <code>nif</code>. Incluye un constructor para inicializarlos y un método <code>toString()</code> que devuelva una representación básica de la persona.</li>
+<li>Crea una clase <code>Empleado</code> que <strong>herede</strong> de <code>Persona</code>.</li>
+<li><code>Empleado</code> debe añadir un atributo <code>private</code> llamado <code>idEmpleado</code> (un <code>String</code>).</li>
+<li>El constructor de <code>Empleado</code> debe recibir el <code>nombre</code>, <code>nif</code> y el <code>idEmpleado</code>. Asegúrate de llamar correctamente al constructor de la clase padre (<code>Persona</code>) usando <code>super()</code>.</li>
+<li>Sobrescribe el método <code>toString()</code> en <code>Empleado</code> para que, además de la información de la persona, muestre el ID del empleado. Utiliza <code>super.toString()</code> para reutilizar la lógica del padre.</li>
+<li>Crea una clase <code>Main</code> para probar tu código: instancia un objeto <code>Empleado</code> y muestra su información por consola.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Establecer jerarquías de clases es fundamental en cualquier aplicación empresarial. Permite definir entidades generales (como una <code>Persona</code>) y luego especializarlas (<code>Empleado</code>, <code>Cliente</code>, <code>Proveedor</code>) reutilizando código y manteniendo una estructura lógica y ordenada.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="clase-persona">Clase Persona</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Persona</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nif</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Persona</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nif</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nif</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nif</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"Persona[nombre='"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"', nif='"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nif</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"']"</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-empleado">Clase Empleado</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Empleado</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Persona</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">idEmpleado</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Empleado</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nif</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">idEmpleado</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">nif</span><span class="p">);</span><span class="w"> </span><span class="c1">// Llamada al constructor de la clase padre</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">idEmpleado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idEmpleado</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Reutilizamos el toString() del padre y añadimos la nueva información</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"Empleado["</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", idEmpleado='"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">idEmpleado</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"']"</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-main-de-prueba">Clase Main de Prueba</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Empleado</span><span class="w"> </span><span class="n">empleado1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Empleado</span><span class="p">(</span><span class="s">"Ana García"</span><span class="p">,</span><span class="w"> </span><span class="s">"12345678A"</span><span class="p">,</span><span class="w"> </span><span class="s">"EMP-001"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">empleado1</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+<span class="w">        </span><span class="c1">// Salida esperada: Empleado[Persona[nombre='Ana García', nif='12345678A'], idEmpleado='EMP-001']</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">2) Organizando la Empresa: Departamentos y sus Miembros | Nivel: Fácil</p>
+<h5 id="objetivo_1"><strong>Objetivo:</strong></h5>
+<p>Aplicar el concepto de <strong>Composición</strong> para modelar la relación "tiene un/a" entre un <code>Departamento</code> y los <code>Empleado</code>s que lo componen.</p>
+<h5 id="tarea-a-realizar_1"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>Departamento</code>. Esta clase tendrá un atributo <code>private</code> <code>nombre</code> (<code>String</code>) y un atributo <code>private</code> <code>miembros</code> que será una <code>List&lt;Empleado&gt;</code>.</li>
+<li>En el constructor de <code>Departamento</code>, inicializa el nombre y la lista de miembros (como un <code>ArrayList</code> vacío).</li>
+<li>Crea un método <code>agregarMiembro(Empleado empleado)</code> que añada un empleado a la lista.</li>
+<li>Crea un método <code>listarMiembros()</code> que imprima por consola los detalles de todos los empleados del departamento.</li>
+<li>En tu clase <code>Main</code>, crea una instancia de <code>Departamento</code> (ej: "Ingeniería de Software") y varias instancias de <code>Empleado</code>. Agrega los empleados al departamento y luego llama a <code>listarMiembros()</code>.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_1"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>La composición es una de las técnicas de diseño más importantes. En lugar de que un <code>Departamento</code> <em>sea un</em> <code>Empleado</code> (lo cual no tiene sentido), un <code>Departamento</code> <em>tiene</em> <code>Empleado</code>s. Este modelo es flexible y representa con precisión las relaciones del mundo real en la mayoría de los casos.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="clase-departamento">Clase Departamento</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Departamento</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Empleado</span><span class="o">&gt;</span><span class="w"> </span><span class="n">miembros</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Departamento</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">miembros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">agregarMiembro</span><span class="p">(</span><span class="n">Empleado</span><span class="w"> </span><span class="n">empleado</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">miembros</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">empleado</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">empleado</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" ha sido añadido al departamento de "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">listarMiembros</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nMiembros del Departamento de "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">":"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Empleado</span><span class="w"> </span><span class="n">miembro</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">miembros</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"- "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">miembro</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-main-de-prueba_1">Clase Main de Prueba</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Creamos empleados</span>
+<span class="w">        </span><span class="n">Empleado</span><span class="w"> </span><span class="n">empleado1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Empleado</span><span class="p">(</span><span class="s">"Ana García"</span><span class="p">,</span><span class="w"> </span><span class="s">"12345678A"</span><span class="p">,</span><span class="w"> </span><span class="s">"EMP-001"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Empleado</span><span class="w"> </span><span class="n">empleado2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Empleado</span><span class="p">(</span><span class="s">"Luis Pérez"</span><span class="p">,</span><span class="w"> </span><span class="s">"87654321B"</span><span class="p">,</span><span class="w"> </span><span class="s">"EMP-002"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Creamos un departamento</span>
+<span class="w">        </span><span class="n">Departamento</span><span class="w"> </span><span class="n">ingenieria</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Departamento</span><span class="p">(</span><span class="s">"Ingeniería de Software"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Agregamos miembros usando composición</span>
+<span class="w">        </span><span class="n">ingenieria</span><span class="p">.</span><span class="na">agregarMiembro</span><span class="p">(</span><span class="n">empleado1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">ingenieria</span><span class="p">.</span><span class="na">agregarMiembro</span><span class="p">(</span><span class="n">empleado2</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Listamos los miembros</span>
+<span class="w">        </span><span class="n">ingenieria</span><span class="p">.</span><span class="na">listarMiembros</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">3) Identidad Única: El Contrato <code>equals</code> y <code>hashCode</code> | Nivel: Fácil</p>
+<h5 id="objetivo_2"><strong>Objetivo:</strong></h5>
+<p>Comprender y aplicar correctamente la sobrescritura de los métodos <code>equals()</code>, <code>hashCode()</code> y <code>toString()</code> de la clase <code>Object</code>.</p>
+<h5 id="tarea-a-realizar_2"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Partiendo de la clase <code>Empleado</code> del ejercicio 1, modifica su lógica de igualdad. En Innovatec, dos empleados se consideran <strong>la misma persona a efectos contractuales</strong> si su <code>nif</code> es idéntico.</li>
+<li>Sobrescribe el método <code>equals(Object obj)</code> en la clase <code>Empleado</code> para que compare dos empleados basándose <strong>únicamente</strong> en su <code>nif</code>.</li>
+<li>Cumple con el contrato <code>equals-hashCode</code>: sobrescribe también el método <code>hashCode()</code> para que genere un código hash basado en el <code>nif</code>.</li>
+<li>En tu clase <code>Main</code>, crea dos objetos <code>Empleado</code> con el mismo <code>nif</code> pero diferente <code>idEmpleado</code> (por ejemplo, un recontrato). Comprueba que <code>p1.equals(p2)</code> devuelve <code>true</code> y que <code>p1 == p2</code> devuelve <code>false</code>.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_2"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Sobrescribir <code>equals</code> y <code>hashCode</code> es absolutamente crucial cuando se trabaja con colecciones como <code>HashSet</code> o <code>HashMap</code>. Sin una implementación correcta, estas colecciones no funcionarán como se espera, llevando a bugs muy difíciles de detectar. Por ejemplo, podrías acabar con empleados "duplicados" en un conjunto que debería contener solo entradas únicas.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="clase-empleado-modificada">Clase Empleado (Modificada)</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Objects</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Empleado</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Persona</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">idEmpleado</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Empleado</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nif</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">idEmpleado</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">nif</span><span class="p">);</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">idEmpleado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idEmpleado</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"Empleado["</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", idEmpleado='"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">idEmpleado</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"']"</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Dos empleados son iguales si su NIF es el mismo.</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 1. ¿Son la misma referencia?</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">o</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// 2. ¿Es nulo o de una clase diferente?</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">o</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">getClass</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="na">getClass</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// 3. Hacemos el casting y comparamos el NIF</span>
+<span class="w">        </span><span class="n">Empleado</span><span class="w"> </span><span class="n">empleado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Empleado</span><span class="p">)</span><span class="w"> </span><span class="n">o</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Objects</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">nif</span><span class="p">,</span><span class="w"> </span><span class="n">empleado</span><span class="p">.</span><span class="na">nif</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Si `equals` se basa en el NIF, `hashCode` también debe basarse en el NIF.</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">hashCode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Objects</span><span class="p">.</span><span class="na">hash</span><span class="p">(</span><span class="n">nif</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-main-de-prueba_2">Clase Main de Prueba</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashSet</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Set</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Empleado</span><span class="w"> </span><span class="n">empleado1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Empleado</span><span class="p">(</span><span class="s">"Ana García"</span><span class="p">,</span><span class="w"> </span><span class="s">"12345678A"</span><span class="p">,</span><span class="w"> </span><span class="s">"EMP-001"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Empleado</span><span class="w"> </span><span class="n">empleado2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Empleado</span><span class="p">(</span><span class="s">"Ana G. López"</span><span class="p">,</span><span class="w"> </span><span class="s">"12345678A"</span><span class="p">,</span><span class="w"> </span><span class="s">"EMP-157"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Mismo NIF</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¿p1 == p2? "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">empleado1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">empleado2</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¿p1.equals(p2)? "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">empleado1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">empleado2</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+
+<span class="w">        </span><span class="c1">// Prueba con un HashSet</span>
+<span class="w">        </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Empleado</span><span class="o">&gt;</span><span class="w"> </span><span class="n">plantilla</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">plantilla</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">empleado1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">plantilla</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">empleado2</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Gracias a equals/hashCode correctos, el Set solo contiene un elemento.</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tamaño de la plantilla (Set): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">plantilla</span><span class="p">.</span><span class="na">size</span><span class="p">());</span><span class="w"> </span><span class="c1">// 1</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">4) Definiendo Roles: El Empleado Abstracto | Nivel: Fácil</p>
+<h5 id="objetivo_3"><strong>Objetivo:</strong></h5>
+<p>Utilizar <strong>clases abstractas</strong> para definir un "contrato" común y compartir código entre diferentes tipos de empleados.</p>
+<h5 id="tarea-a-realizar_3"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Convierte la clase <code>Empleado</code> en una clase <strong>abstracta</strong>. No tiene sentido instanciar un "empleado genérico".</li>
+<li>Añade un método abstracto a <code>Empleado</code> llamado <code>public abstract double calcularSalario();</code>. Esto obliga a todas las subclases concretas a definir cómo se calcula su salario.</li>
+<li>Crea dos clases concretas que hereden de <code>Empleado</code>:<ul>
+<li><code>Programador</code>: Añade un atributo <code>salarioBase</code> (<code>double</code>). Su <code>calcularSalario()</code> simplemente devolverá este valor.</li>
+<li><code>Manager</code>: Añade un atributo <code>salarioBase</code> y un <code>bonus</code> (<code>double</code>). Su <code>calcularSalario()</code> devolverá la suma de ambos.</li>
+</ul>
+</li>
+<li>En tu clase <code>Main</code>, intenta instanciar un <code>Empleado</code>. El código no debería compilar. Luego, instancia un <code>Programador</code> y un <code>Manager</code> y muestra sus salarios.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_3"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Las clases abstractas son perfectas para modelar entidades que comparten una base común pero cuya implementación completa depende de sus "hijos". Un <code>Vehiculo</code> es abstracto, pero un <code>Coche</code> y una <code>Moto</code> son concretos. En RRHH, un <code>Empleado</code> es un concepto abstracto, mientras que los roles específicos son las implementaciones concretas.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="clase-empleado-abstracta">Clase Empleado (Abstracta)</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Empleado</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Persona</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ... (atributos y constructor como antes) ...</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcularSalario</span><span class="p">();</span><span class="w"> </span><span class="c1">// Método abstracto</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-programador">Clase Programador</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Programador</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Empleado</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Programador</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nif</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">idEmpleado</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">nif</span><span class="p">,</span><span class="w"> </span><span class="n">idEmpleado</span><span class="p">);</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">salarioBase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcularSalario</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">salarioBase</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-manager">Clase Manager</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Manager</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Empleado</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">bonus</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Manager</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nif</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">idEmpleado</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">bonus</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">nif</span><span class="p">,</span><span class="w"> </span><span class="n">idEmpleado</span><span class="p">);</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">salarioBase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">bonus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bonus</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcularSalario</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">salarioBase</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">bonus</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-main-de-prueba_3">Clase Main de Prueba</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Esto daría un error de compilación:</span>
+<span class="w">        </span><span class="c1">// Empleado e = new Empleado("Test", "Test", "Test");</span>
+
+<span class="w">        </span><span class="n">Programador</span><span class="w"> </span><span class="n">prog1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Programador</span><span class="p">(</span><span class="s">"Carlos Ruiz"</span><span class="p">,</span><span class="w"> </span><span class="s">"11122233C"</span><span class="p">,</span><span class="w"> </span><span class="s">"DEV-01"</span><span class="p">,</span><span class="w"> </span><span class="mf">35000.0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Manager</span><span class="w"> </span><span class="n">mgr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Manager</span><span class="p">(</span><span class="s">"Elena Soler"</span><span class="p">,</span><span class="w"> </span><span class="s">"44455566D"</span><span class="p">,</span><span class="w"> </span><span class="s">"MGR-01"</span><span class="p">,</span><span class="w"> </span><span class="mf">50000.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10000.0</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Salario Programador: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">prog1</span><span class="p">.</span><span class="na">calcularSalario</span><span class="p">());</span><span class="w"> </span><span class="c1">// 35000.0</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Salario Manager: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mgr1</span><span class="p">.</span><span class="na">calcularSalario</span><span class="p">());</span><span class="w"> </span><span class="c1">// 60000.0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">5) ¡Bug en Producción! El Cálculo de Nóminas | Nivel: Fácil</p>
+<h5 id="objetivo_4"><strong>Objetivo:</strong></h5>
+<p>Depurar un fragmento de código que hace un mal uso del polimorfismo, provocando una <code>ClassCastException</code>.</p>
+<h5 id="setup-inicial"><strong>Setup Inicial:</strong></h5>
+<p>Utiliza las clases <code>Empleado</code> (abstracta), <code>Programador</code> y <code>Manager</code> del ejercicio anterior. Adicionalmente, crea una nueva clase <code>ConsultorExterno</code> que NO hereda de <code>Empleado</code> pero sí de <code>Persona</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ConsultorExterno</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Persona</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ConsultorExterno</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nif</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">nif</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">facturar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Facturando como consultor externo..."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="tarea-a-realizar_4"><strong>Tarea a realizar:</strong></h5>
+<p>El siguiente código intenta procesar una lista de <code>Persona</code>s. El objetivo es calcular el total de salarios de los <code>Empleado</code>s y, específicamente para los <code>Manager</code>s, llamar a un método <code>aprobarVacaciones()</code>. El código, sin embargo, se rompe.</p>
+<ol>
+<li>Identifica la causa de la <code>ClassCastException</code>.</li>
+<li>Corrige el código usando el operador <code>instanceof</code> para asegurar que los castings sean seguros.</li>
+<li>Añade un método <code>aprobarVacaciones()</code> a la clase <code>Manager</code> para que el código corregido funcione.</li>
+</ol>
+<p><strong>Código con Bug:</strong>
+</p><div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ProcesadorNominas</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">procesar</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">personas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">totalSalarios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Persona</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">personas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Asumimos que todos son empleados para el cálculo de salario</span>
+<span class="w">            </span><span class="n">Empleado</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Empleado</span><span class="p">)</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="c1">// &lt;-- ¡Peligro!</span>
+<span class="w">            </span><span class="n">totalSalarios</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">emp</span><span class="p">.</span><span class="na">calcularSalario</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">// Y si es un Manager, aprobamos vacaciones</span>
+<span class="w">            </span><span class="n">Manager</span><span class="w"> </span><span class="n">mgr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Manager</span><span class="p">)</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="c1">// &lt;-- ¡Doble peligro!</span>
+<span class="w">            </span><span class="n">mgr</span><span class="p">.</span><span class="na">aprobarVacaciones</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Total salarios: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">totalSalarios</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p></p>
+<h5 id="aplicacion-en-el-mundo-real_4"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Este es uno de los errores más comunes al trabajar con polimorfismo. Tratar a todos los objetos de una colección como si fueran del mismo subtipo es una receta para el desastre. El uso defensivo de <code>instanceof</code> antes de un downcasting es una práctica de programación esencial para crear software robusto.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="clase-manager-con-el-nuevo-metodo">Clase Manager (con el nuevo método)</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Manager</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Empleado</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ... (código anterior) ...</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">aprobarVacaciones</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Manager "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" ha aprobado las vacaciones."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="codigo-corregido">Código Corregido</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ProcesadorNominasCorregido</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">procesar</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">personas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">totalSalarios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Persona</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">personas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Procesando a: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">nombre</span><span class="p">);</span>
+<span class="w">            </span><span class="c1">// Primero, comprobamos si la persona es un Empleado</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Empleado</span><span class="w"> </span><span class="n">emp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Java 16+ Pattern Matching for instanceof</span>
+<span class="w">                </span><span class="c1">// Si entra aquí, 'emp' ya es de tipo Empleado y está casteado.</span>
+<span class="w">                </span><span class="n">totalSalarios</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">emp</span><span class="p">.</span><span class="na">calcularSalario</span><span class="p">();</span>
+
+<span class="w">                </span><span class="c1">// Ahora, DENTRO de este bloque, comprobamos si es un Manager</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">emp</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Manager</span><span class="w"> </span><span class="n">mgr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="c1">// Si entra aquí, 'mgr' ya es de tipo Manager.</span>
+<span class="w">                    </span><span class="n">mgr</span><span class="p">.</span><span class="na">aprobarVacaciones</span><span class="p">();</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" no es un empleado, se omite del cálculo de nómina."</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Total salarios: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">totalSalarios</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="prueba-del-codigo-corregido">Prueba del Código Corregido</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Persona</span><span class="o">&gt;</span><span class="w"> </span><span class="n">personal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">personal</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Programador</span><span class="p">(</span><span class="s">"Carlos Ruiz"</span><span class="p">,</span><span class="w"> </span><span class="s">"11122233C"</span><span class="p">,</span><span class="w"> </span><span class="s">"DEV-01"</span><span class="p">,</span><span class="w"> </span><span class="mf">35000.0</span><span class="p">));</span>
+<span class="w">        </span><span class="n">personal</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Manager</span><span class="p">(</span><span class="s">"Elena Soler"</span><span class="p">,</span><span class="w"> </span><span class="s">"44455566D"</span><span class="p">,</span><span class="w"> </span><span class="s">"MGR-01"</span><span class="p">,</span><span class="w"> </span><span class="mf">50000.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10000.0</span><span class="p">));</span>
+<span class="w">        </span><span class="n">personal</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ConsultorExterno</span><span class="p">(</span><span class="s">"Marta Sanz"</span><span class="p">,</span><span class="w"> </span><span class="s">"99988877E"</span><span class="p">));</span>
+
+<span class="w">        </span><span class="n">ProcesadorNominasCorregido</span><span class="w"> </span><span class="n">procesador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ProcesadorNominasCorregido</span><span class="p">();</span>
+<span class="w">        </span><span class="n">procesador</span><span class="p">.</span><span class="na">procesar</span><span class="p">(</span><span class="n">personal</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<h2 id="ejercicios-de-refuerzo">Ejercicios de Refuerzo</h2>
+<div class="admonition warning">
+<p class="admonition-title">6) El Manager Moderno: Extendiendo Funcionalidad | Nivel: Medio</p>
+<h5 id="objetivo_5"><strong>Objetivo:</strong></h5>
+<p>Reforzar el uso de <code>super</code> tanto para llamar a constructores como para extender la funcionalidad de métodos heredados.</p>
+<h5 id="tarea-a-realizar_5"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Añade un método <code>public String getDetalles()</code> a tu clase <code>Empleado</code> (abstracta). Este método debe devolver un <code>String</code> con el nombre y el ID del empleado.</li>
+<li>Ahora, en la clase <code>Manager</code>, sobrescribe el método <code>getDetalles()</code>.</li>
+<li>La nueva implementación en <code>Manager</code> debe <strong>ampliar</strong> la del padre. Debe llamar al método <code>getDetalles()</code> de la clase <code>Empleado</code> usando <code>super.getDetalles()</code> y añadirle información adicional, como por ejemplo, el bonus que gestiona. El resultado final debería ser algo como: <code>"Nombre: Elena Soler, ID: MGR-01, Gestiona un bonus de: 10000.0"</code>.</li>
+<li>
+<p>Crea un <code>Main</code> para instanciar un <code>Manager</code> y un <code>Programador</code> y llama al método <code>getDetalles()</code> en ambos para ver la diferencia.</p>
+</li>
+<li>
+<p><strong>Pista:</strong> Recuerda que <code>super.metodo()</code> te permite invocar la versión del método de la clase padre desde la clase hija, ideal para no repetir código.</p>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_5"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Esta técnica es extremadamente común. Permite construir funcionalidades complejas de forma incremental. Una clase base proporciona una funcionalidad por defecto, y las clases hijas la refinan o la expanden sin tener que reescribir la lógica original.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="clase-empleado-con-getdetalles">Clase Empleado (con getDetalles)</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Empleado</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Persona</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">idEmpleado</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// ... (constructor) ...</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcularSalario</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getDetalles</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"Nombre: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", ID: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">idEmpleado</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-manager-sobrescribiendo-y-ampliando">Clase Manager (sobrescribiendo y ampliando)</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Manager</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Empleado</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">bonus</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// ... (constructor) ...</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcularSalario</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">salarioBase</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">bonus</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getDetalles</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Llama al método del padre para obtener la base del string</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">detallesBase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">getDetalles</span><span class="p">();</span>
+<span class="w">        </span><span class="c1">// Y le añade la información específica del Manager</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">detallesBase</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", Gestiona un bonus de: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">bonus</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-main-de-prueba_4">Clase Main de Prueba</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Programador</span><span class="w"> </span><span class="n">prog1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Programador</span><span class="p">(</span><span class="s">"Carlos Ruiz"</span><span class="p">,</span><span class="w"> </span><span class="s">"11122233C"</span><span class="p">,</span><span class="w"> </span><span class="s">"DEV-01"</span><span class="p">,</span><span class="w"> </span><span class="mf">35000.0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Manager</span><span class="w"> </span><span class="n">mgr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Manager</span><span class="p">(</span><span class="s">"Elena Soler"</span><span class="p">,</span><span class="w"> </span><span class="s">"44455566D"</span><span class="p">,</span><span class="w"> </span><span class="s">"MGR-01"</span><span class="p">,</span><span class="w"> </span><span class="mf">50000.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10000.0</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">prog1</span><span class="p">.</span><span class="na">getDetalles</span><span class="p">());</span>
+<span class="w">        </span><span class="c1">// Salida: Nombre: Carlos Ruiz, ID: DEV-01</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">mgr1</span><span class="p">.</span><span class="na">getDetalles</span><span class="p">());</span>
+<span class="w">        </span><span class="c1">// Salida: Nombre: Elena Soler, ID: MGR-01, Gestiona un bonus de: 10000.0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">7) Habilidades Transversales: La Interfaz <code>Notificable</code> | Nivel: Medio</p>
+<h5 id="objetivo_6"><strong>Objetivo:</strong></h5>
+<p>Diseñar y utilizar una <strong>interfaz</strong> para dotar de una capacidad ("puede hacer") a clases que no tienen una relación de herencia directa.</p>
+<h5 id="tarea-a-realizar_6"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una interfaz llamada <code>Notificable</code> que defina un único método: <code>void enviarNotificacion(String mensaje)</code>.</li>
+<li>En Innovatec, tanto los <code>Manager</code>s como los <code>ConsultorExterno</code>s deben poder recibir notificaciones, pero los <code>Programador</code>es no.</li>
+<li>Haz que las clases <code>Manager</code> y <code>ConsultorExterno</code> <strong>implementen</strong> la interfaz <code>Notificable</code>. Proporciona una implementación simple para el método, por ejemplo, que imprima en consola a quién se notifica y el mensaje.</li>
+<li>Crea una clase <code>SistemaDeNotificaciones</code> con un método <code>enviarNotificacionMasiva(String mensaje, List&lt;Object&gt; destinatarios)</code>.</li>
+<li>Dentro de este método, itera sobre la lista de <code>destinatarios</code>. Usando <code>instanceof</code>, comprueba si cada objeto es <code>Notificable</code> y, si lo es, haz el casting y llama a su método <code>enviarNotificacion</code>.</li>
+<li>
+<p>Prueba tu sistema enviando una notificación a una lista que contenga un <code>Manager</code>, un <code>Programador</code> y un <code>ConsultorExterno</code>.</p>
+</li>
+<li>
+<p><strong>Pista:</strong> Piensa en la interfaz como un "contrato". Cualquier clase que lo firme (<code>implements</code>) está obligada a tener el comportamiento definido en él, sin importar de quién herede.</p>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_6"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Las interfaces son la base del diseño de software flexible en Java. Permiten que sistemas como los gestores de eventos (<code>ActionListener</code>), los comparadores (<code>Comparable</code>, <code>Comparator</code>) o los frameworks de Inyección de Dependencias funcionen, conectando componentes que no necesitan conocer los detalles internos de los demás, solo el "contrato" que cumplen.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="interfaz-notificable">Interfaz Notificable</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Notificable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">enviarNotificacion</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">mensaje</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clases-que-implementan-la-interfaz">Clases que implementan la interfaz</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// En la clase Manager</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Manager</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Empleado</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Notificable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">enviarNotificacion</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">mensaje</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Notificación para Manager "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">": "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mensaje</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// En la clase ConsultorExterno</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ConsultorExterno</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Persona</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Notificable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">enviarNotificacion</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">mensaje</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Enviando email a consultor "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">": "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mensaje</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="sistema-de-notificaciones">Sistema de Notificaciones</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SistemaDeNotificaciones</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">enviarNotificacionMasiva</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">mensaje</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">destinatarios</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Enviando notificaciones masivas ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">dest</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">destinatarios</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dest</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Notificable</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">n</span><span class="p">.</span><span class="na">enviarNotificacion</span><span class="p">(</span><span class="n">mensaje</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- Fin del envío ---"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-main-de-prueba_5">Clase Main de Prueba</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Manager</span><span class="w"> </span><span class="n">mgr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Manager</span><span class="p">(</span><span class="s">"Elena Soler"</span><span class="p">,</span><span class="w"> </span><span class="s">"44455566D"</span><span class="p">,</span><span class="w"> </span><span class="s">"MGR-01"</span><span class="p">,</span><span class="w"> </span><span class="mf">50000.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10000.0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Programador</span><span class="w"> </span><span class="n">prog1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Programador</span><span class="p">(</span><span class="s">"Carlos Ruiz"</span><span class="p">,</span><span class="w"> </span><span class="s">"11122233C"</span><span class="p">,</span><span class="w"> </span><span class="s">"DEV-01"</span><span class="p">,</span><span class="w"> </span><span class="mf">35000.0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">ConsultorExterno</span><span class="w"> </span><span class="n">consultor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConsultorExterno</span><span class="p">(</span><span class="s">"Marta Sanz"</span><span class="p">,</span><span class="w"> </span><span class="s">"99988877E"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">personalMixto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">personalMixto</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">mgr1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">personalMixto</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">prog1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Este será ignorado por el sistema</span>
+<span class="w">        </span><span class="n">personalMixto</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">consultor1</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">SistemaDeNotificaciones</span><span class="w"> </span><span class="n">sistema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SistemaDeNotificaciones</span><span class="p">();</span>
+<span class="w">        </span><span class="n">sistema</span><span class="p">.</span><span class="na">enviarNotificacionMasiva</span><span class="p">(</span><span class="s">"Reunión de proyecto trimestral el viernes a las 10:00"</span><span class="p">,</span><span class="w"> </span><span class="n">personalMixto</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">8) ¿Herencia o Composición? El Dilema del 'Jefe de Equipo' | Nivel: Medio</p>
+<h5 id="objetivo_7"><strong>Objetivo:</strong></h5>
+<p>Analizar un problema de diseño y justificar por qué la <strong>composición es a menudo preferible a la herencia</strong>.</p>
+<h5 id="tarea-a-realizar_7"><strong>Tarea a realizar:</strong></h5>
+<p>En Innovatec, cualquier <code>Programador</code> puede, temporalmente, asumir el rol de <code>JefeDeEquipo</code>. Este rol le da una nueva responsabilidad: <code>revisarCodigo()</code>.
+Un enfoque inicial podría ser crear una clase <code>JefeDeEquipo</code> que herede de <code>Programador</code>. Sin embargo, esto es rígido. ¿Qué pasa si un día un <code>DiseñadorUX</code> también puede ser <code>JefeDeEquipo</code>? No podría heredar de <code>Programador</code>.</p>
+<p>Tu tarea es modelar esta relación usando <strong>composición</strong>, siguiendo el principio de "Favorecer la composición sobre la herencia".</p>
+<ol>
+<li>Crea una interfaz <code>Rol</code> con un método <code>desempenar()</code>.</li>
+<li>Crea una clase <code>RolJefeDeEquipo</code> que implemente <code>Rol</code>. Su método <code>desempenar()</code> imprimirá "Revisando código del equipo...".</li>
+<li>Modifica la clase <code>Programador</code> para que <strong>tenga un</strong> <code>Rol</code>. Añade un atributo <code>private Rol rolActual;</code>.</li>
+<li>Añade métodos en <code>Programador</code> para <code>asignarRol(Rol nuevoRol)</code> y <code>realizarRol()</code>. El segundo método comprobará si el rol no es nulo y llamará a <code>rolActual.desempenar()</code>.</li>
+<li>
+<p>En <code>Main</code>, crea un <code>Programador</code>. Inicialmente no tendrá rol. Luego, asígnale el <code>RolJefeDeEquipo</code> y haz que lo desempeñe.</p>
+</li>
+<li>
+<p><strong>Pista:</strong> Con este diseño, podrías crear un <code>RolMentor</code>, <code>RolFormador</code>, etc., y asignarlos dinámicamente a cualquier <code>Empleado</code> sin cambiar la jerarquía de clases.</p>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_7"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Este es un ejemplo clásico del Patrón de Diseño "Strategy" o "State". Permite cambiar el comportamiento de un objeto en tiempo de ejecución. Es mucho más flexible que la herencia, que fija el comportamiento en tiempo de compilación. Se usa en sistemas de videojuegos (cambiar el estado de un personaje), aplicaciones financieras (cambiar la estrategia de cálculo de impuestos), etc.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="interfaz-y-rol-concreto">Interfaz y Rol Concreto</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Rol</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">desempenar</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RolJefeDeEquipo</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Rol</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">desempenar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Revisando código del equipo y gestionando tareas..."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-programador-modificada-con-composicion">Clase Programador Modificada con Composición</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Programador</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Empleado</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Rol</span><span class="w"> </span><span class="n">rolActual</span><span class="p">;</span><span class="w"> </span><span class="c1">// Composición: un programador "tiene un" rol</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Programador</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nif</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">idEmpleado</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">nif</span><span class="p">,</span><span class="w"> </span><span class="n">idEmpleado</span><span class="p">);</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">salarioBase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">rolActual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"> </span><span class="c1">// Inicialmente sin rol</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">asignarRol</span><span class="p">(</span><span class="n">Rol</span><span class="w"> </span><span class="n">nuevoRol</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">rolActual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nuevoRol</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" ha sido asignado al rol: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nuevoRol</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getSimpleName</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">realizarRol</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rolActual</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">rolActual</span><span class="p">.</span><span class="na">desempenar</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" está trabajando en sus tareas de programación estándar."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcularSalario</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">salarioBase</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-main-de-prueba_6">Clase Main de Prueba</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Programador</span><span class="w"> </span><span class="n">prog1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Programador</span><span class="p">(</span><span class="s">"David Chen"</span><span class="p">,</span><span class="w"> </span><span class="s">"33344455F"</span><span class="p">,</span><span class="w"> </span><span class="s">"DEV-08"</span><span class="p">,</span><span class="w"> </span><span class="mf">42000.0</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n-- Inicio de la semana --"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">prog1</span><span class="p">.</span><span class="na">realizarRol</span><span class="p">();</span><span class="w"> </span><span class="c1">// No tiene rol</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n-- Asignación de nuevas responsabilidades --"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Rol</span><span class="w"> </span><span class="n">rolDeJefe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RolJefeDeEquipo</span><span class="p">();</span>
+<span class="w">        </span><span class="n">prog1</span><span class="p">.</span><span class="na">asignarRol</span><span class="p">(</span><span class="n">rolDeJefe</span><span class="p">);</span>
+<span class="w">        </span><span class="n">prog1</span><span class="p">.</span><span class="na">realizarRol</span><span class="p">();</span><span class="w"> </span><span class="c1">// Ahora desempeña el rol asignado</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">9) La Magia del Polimorfismo: La Calculadora de Nóminas | Nivel: Medio</p>
+<h5 id="objetivo_8"><strong>Objetivo:</strong></h5>
+<p>Aplicar el <strong>polimorfismo</strong> para procesar una colección de objetos de diferentes tipos de forma uniforme.</p>
+<h5 id="tarea-a-realizar_8"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Asegúrate de tener tu jerarquía de <code>Empleado</code> (abstracta) con las subclases <code>Programador</code> y <code>Manager</code>, cada una con su propia implementación de <code>calcularSalario()</code>.</li>
+<li>Crea una clase <code>CalculadoraNominas</code> con un método <code>calcularTotalSalarios(List&lt;Empleado&gt; empleados)</code>.</li>
+<li>Este método debe iterar sobre la lista de <code>Empleado</code>s. Por cada <code>empleado</code> en la lista, debe invocar su método <code>calcularSalario()</code> y sumar el resultado a un total.</li>
+<li>Fíjate en que el método no necesita saber si el objeto es un <code>Programador</code> o un <code>Manager</code>. Simplemente confía en que, por ser un <code>Empleado</code>, tendrá un método <code>calcularSalario()</code> disponible. Esta es la esencia del polimorfismo.</li>
+<li>
+<p>En tu <code>Main</code>, crea una <code>List&lt;Empleado&gt;</code>, añade varias instancias de <code>Programador</code> y <code>Manager</code>, y pasa la lista a tu <code>CalculadoraNominas</code> para obtener el coste total de la plantilla.</p>
+</li>
+<li>
+<p><strong>Pista:</strong> La variable del bucle <code>for</code> será de tipo <code>Empleado</code>, pero en tiempo de ejecución, Java sabrá a qué objeto real apunta (un <code>Programador</code> o un <code>Manager</code>) y llamará a la versión correcta (<code>@Override</code>) del método <code>calcularSalario()</code>.</p>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_8"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>El polimorfismo es la clave para escribir código limpio, mantenible y extensible. Si mañana Innovatec crea un nuevo rol <code>DiseñadorUX</code> que hereda de <code>Empleado</code>, la <code>CalculadoraNominas</code> funcionará con él <strong>sin necesidad de modificar una sola línea de su código</strong>. Esto se conoce como el Principio Abierto/Cerrado (abierto a la extensión, cerrado a la modificación).</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="calculadora-de-nominas">Calculadora de Nóminas</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CalculadoraNominas</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcularTotalSalarios</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Empleado</span><span class="o">&gt;</span><span class="w"> </span><span class="n">empleados</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Calculando Nóminas ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Empleado</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">empleados</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">double</span><span class="w"> </span><span class="n">salario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emp</span><span class="p">.</span><span class="na">calcularSalario</span><span class="p">();</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Salario para "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">emp</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" ("</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">emp</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getSimpleName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">salario</span><span class="p">);</span>
+<span class="w">            </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">salario</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-main-de-prueba_7">Clase Main de Prueba</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// La lista es de tipo "Empleado", pero puede contener cualquier subtipo.</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Empleado</span><span class="o">&gt;</span><span class="w"> </span><span class="n">plantilla</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">plantilla</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Programador</span><span class="p">(</span><span class="s">"Carlos Ruiz"</span><span class="p">,</span><span class="w"> </span><span class="s">"11122233C"</span><span class="p">,</span><span class="w"> </span><span class="s">"DEV-01"</span><span class="p">,</span><span class="w"> </span><span class="mf">35000.0</span><span class="p">));</span>
+<span class="w">        </span><span class="n">plantilla</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Programador</span><span class="p">(</span><span class="s">"David Chen"</span><span class="p">,</span><span class="w"> </span><span class="s">"33344455F"</span><span class="p">,</span><span class="w"> </span><span class="s">"DEV-08"</span><span class="p">,</span><span class="w"> </span><span class="mf">42000.0</span><span class="p">));</span>
+<span class="w">        </span><span class="n">plantilla</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Manager</span><span class="p">(</span><span class="s">"Elena Soler"</span><span class="p">,</span><span class="w"> </span><span class="s">"44455566D"</span><span class="p">,</span><span class="w"> </span><span class="s">"MGR-01"</span><span class="p">,</span><span class="w"> </span><span class="mf">50000.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10000.0</span><span class="p">));</span>
+
+<span class="w">        </span><span class="n">CalculadoraNominas</span><span class="w"> </span><span class="n">calculadora</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CalculadoraNominas</span><span class="p">();</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">costeTotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calculadora</span><span class="p">.</span><span class="na">calcularTotalSalarios</span><span class="p">(</span><span class="n">plantilla</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--------------------------"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"Coste total de la plantilla: %.2f\n"</span><span class="p">,</span><span class="w"> </span><span class="n">costeTotal</span><span class="p">);</span><span class="w"> </span><span class="c1">// 35000 + 42000 + 60000 = 137000</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<h2 id="ejercicios-de-ampliacion">Ejercicios de Ampliación</h2>
+<div class="admonition danger">
+<p class="admonition-title">10) Interfaces Evolucionadas: Métodos <code>default</code> | Nivel: Alto</p>
+<h5 id="objetivo_9"><strong>Objetivo:</strong></h5>
+<p>Investigar y aplicar una característica avanzada de las interfaces en Java (a partir de la versión 8): los <strong>métodos <code>default</code></strong>.</p>
+<h5 id="tarea-a-realizar_9"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li><strong>Investiga:</strong> ¿Qué es un método <code>default</code> en una interfaz de Java? ¿Para qué sirve y qué problema soluciona?</li>
+<li>Vamos a mejorar nuestra interfaz <code>Notificable</code>. A veces, queremos enviar una notificación con una prioridad.</li>
+<li>Añade un nuevo método a la interfaz <code>Notificable</code>: <code>void enviarNotificacionUrgente(String mensaje)</code>.</li>
+<li>En lugar de obligar a todas las clases existentes (<code>Manager</code>, <code>ConsultorExterno</code>) a implementar este nuevo método (lo que rompería el código existente), impleméntalo como un <strong>método <code>default</code></strong>.</li>
+<li>La implementación por defecto de <code>enviarNotificacionUrgente</code> llamará al método abstracto <code>enviarNotificacion</code> pero añadiendo un prefijo como "[URGENTE] ".</li>
+<li>En tu clase <code>Main</code>, toma una instancia de <code>Manager</code> (que es <code>Notificable</code>) y llama al nuevo método <code>enviarNotificacionUrgente()</code>. Verás que funciona sin que hayas tenido que añadir ningún código a la clase <code>Manager</code>.</li>
+<li><strong>Extra:</strong> Sobrescribe el método <code>default</code> en la clase <code>ConsultorExterno</code> para darle un comportamiento personalizado (ej: "Enviando SMS URGENTE a...").</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_9"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Los métodos <code>default</code> fueron una adición crucial a Java. Permiten a los diseñadores de APIs (como las de la propia librería estándar de Java) añadir nueva funcionalidad a interfaces existentes sin romper la compatibilidad con todo el código que ya las utilizaba. Un ejemplo famoso fue la adición del método <code>forEach()</code> a la interfaz <code>Iterable</code>.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="interfaz-notificable-con-metodo-default">Interfaz Notificable con Método Default</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Notificable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Método abstracto existente</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">enviarNotificacion</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">mensaje</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Nuevo método con implementación por defecto</span>
+<span class="w">    </span><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">enviarNotificacionUrgente</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">mensaje</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Reutiliza el otro método de la interfaz</span>
+<span class="w">        </span><span class="n">enviarNotificacion</span><span class="p">(</span><span class="s">"[URGENTE] "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mensaje</span><span class="p">);</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="sobrescribiendo-el-metodo-default-opcional">Sobrescribiendo el método default (Opcional)</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ConsultorExterno</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Persona</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Notificable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ... (implementación de enviarNotificacion) ...</span>
+
+<span class="w">    </span><span class="c1">// Opcionalmente, podemos dar una implementación más específica</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">enviarNotificacionUrgente</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">mensaje</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Enviando SMS URGENTE a consultor "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">": "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mensaje</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-main-de-prueba_8">Clase Main de Prueba</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Manager</span><span class="w"> </span><span class="n">mgr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Manager</span><span class="p">(</span><span class="s">"Elena Soler"</span><span class="p">,</span><span class="w"> </span><span class="s">"44455566D"</span><span class="p">,</span><span class="w"> </span><span class="s">"MGR-01"</span><span class="p">,</span><span class="w"> </span><span class="mf">50000.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10000.0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">ConsultorExterno</span><span class="w"> </span><span class="n">consultor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConsultorExterno</span><span class="p">(</span><span class="s">"Marta Sanz"</span><span class="p">,</span><span class="w"> </span><span class="s">"99988877E"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Probando métodos default ---"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Manager usará la implementación default de la interfaz</span>
+<span class="w">        </span><span class="n">mgr1</span><span class="p">.</span><span class="na">enviarNotificacionUrgente</span><span class="p">(</span><span class="s">"El servidor de producción está caído."</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Salida: Notificación para Manager Elena Soler: [URGENTE] El servidor de producción está caído.</span>
+
+<span class="w">        </span><span class="c1">// ConsultorExterno usará su propia implementación sobrescrita</span>
+<span class="w">        </span><span class="n">consultor1</span><span class="p">.</span><span class="na">enviarNotificacionUrgente</span><span class="p">(</span><span class="s">"Necesitamos tu presencia en la oficina de inmediato."</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Salida: Enviando SMS URGENTE a consultor Marta Sanz: Necesitamos tu presencia en la oficina de inmediato.</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">11) Refactorización a Patrones: El Patrón Strategy | Nivel: Alto</p>
+<h5 id="objetivo_10"><strong>Objetivo:</strong></h5>
+<p>Refactorizar un código problemático (usando <code>if-else</code> anidados) aplicando el <strong>Patrón de Diseño Strategy</strong>. Este patrón es una manifestación perfecta de "favorecer la composición sobre la herencia" y el polimorfismo.</p>
+<h5 id="setup-inicial-codigo-a-refactorizar"><strong>Setup Inicial (Código a refactorizar):</strong></h5>
+<p>En la clase <code>Manager</code>, el cálculo del bonus se ha vuelto complejo. Actualmente, el código es así y es difícil de mantener:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Manager</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Empleado</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ... atributos ...</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nivelRendimiento</span><span class="p">;</span><span class="w"> </span><span class="c1">// "BUENO", "EXCELENTE", "A MEJORAR"</span>
+
+<span class="w">    </span><span class="c1">// ... constructor ...</span>
+
+<span class="w">    </span><span class="c1">// MÉTODO A REFACTORIZAR</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcularBonus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s">"EXCELENTE"</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">nivelRendimiento</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">salarioBase</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bonus</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.20</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s">"BUENO"</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">nivelRendimiento</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">salarioBase</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bonus</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.10</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s">"A MEJORAR"</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">nivelRendimiento</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">bonus</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span><span class="w"> </span><span class="c1">// Solo una parte del bonus base</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// ... otros métodos ...</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="tarea-a-realizar_10"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una interfaz <code>EstrategiaDeCalculoBonus</code>. Debe tener un método <code>double calcular(double salarioBase, double bonus)</code>.</li>
+<li>Crea tres clases que implementen esta interfaz: <code>BonusExcelente</code>, <code>BonusBueno</code> y <code>BonusAMejorar</code>. Cada una contendrá la lógica de cálculo que estaba en el <code>if-else</code>.</li>
+<li>Modifica la clase <code>Manager</code>. Elimina el atributo <code>nivelRendimiento</code> y el método <code>calcularBonus()</code>.</li>
+<li>En su lugar, añade un atributo <code>private EstrategiaDeCalculoBonus estrategiaBonus;</code> (¡Composición!).</li>
+<li>Modifica el constructor del <code>Manager</code> para que reciba una <code>EstrategiaDeCalculoBonus</code> y la asigne.</li>
+<li>Crea un nuevo método <code>public double obtenerBonusFinal()</code> en <code>Manager</code> que <strong>delegue</strong> el cálculo a su objeto de estrategia: <code>return estrategiaBonus.calcular(this.salarioBase, this.bonus);</code>.</li>
+<li>En <code>Main</code>, crea varios <code>Manager</code>s, cada uno con una estrategia diferente, y comprueba que sus bonus se calculan correctamente.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_10"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>El Patrón Strategy es uno de los patrones de comportamiento más importantes. Se usa para permitir que el algoritmo o la lógica de una operación varíe independientemente de los clientes que lo utilizan. Lo encuentras en sistemas de validación de formularios, estrategias de compresión de archivos, algoritmos de renderizado en videojuegos, etc.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="1-interfaz-de-la-estrategia">1. Interfaz de la Estrategia</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">EstrategiaDeCalculoBonus</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcular</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">bonus</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="2-implementaciones-concretas-de-la-estrategia">2. Implementaciones Concretas de la Estrategia</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BonusExcelente</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">EstrategiaDeCalculoBonus</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcular</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">bonus</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">salarioBase</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bonus</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.20</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BonusBueno</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">EstrategiaDeCalculoBonus</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcular</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">bonus</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">salarioBase</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bonus</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.10</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BonusAMejorar</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">EstrategiaDeCalculoBonus</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcular</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">bonus</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">bonus</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="3-clase-manager-refactorizada">3. Clase Manager Refactorizada</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Manager</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Empleado</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">bonus</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">EstrategiaDeCalculoBonus</span><span class="w"> </span><span class="n">estrategiaBonus</span><span class="p">;</span><span class="w"> </span><span class="c1">// Composición</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Manager</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nif</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">idEmpleado</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">bonus</span><span class="p">,</span><span class="w"> </span><span class="n">EstrategiaDeCalculoBonus</span><span class="w"> </span><span class="n">estrategia</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">nif</span><span class="p">,</span><span class="w"> </span><span class="n">idEmpleado</span><span class="p">);</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">salarioBase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">salarioBase</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">bonus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bonus</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">estrategiaBonus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">estrategia</span><span class="p">;</span><span class="w"> </span><span class="c1">// Inyección de la estrategia</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">obtenerBonusFinal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Delega el cálculo al objeto de la estrategia</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">estrategiaBonus</span><span class="p">.</span><span class="na">calcular</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">salarioBase</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">bonus</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calcularSalario</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">salarioBase</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">bonus</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="4-clase-main-de-prueba">4. Clase Main de Prueba</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Creamos las estrategias una vez</span>
+<span class="w">        </span><span class="n">EstrategiaDeCalculoBonus</span><span class="w"> </span><span class="n">exc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BonusExcelente</span><span class="p">();</span>
+<span class="w">        </span><span class="n">EstrategiaDeCalculoBonus</span><span class="w"> </span><span class="n">bue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BonusBueno</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Creamos Managers inyectándoles la estrategia deseada</span>
+<span class="w">        </span><span class="n">Manager</span><span class="w"> </span><span class="n">managerExcelente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Manager</span><span class="p">(</span><span class="s">"Ana Rivas"</span><span class="p">,</span><span class="w"> </span><span class="s">"77788899G"</span><span class="p">,</span><span class="w"> </span><span class="s">"MGR-02"</span><span class="p">,</span><span class="w"> </span><span class="mi">60000</span><span class="p">,</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w"> </span><span class="n">exc</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Manager</span><span class="w"> </span><span class="n">managerBueno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Manager</span><span class="p">(</span><span class="s">"Juan Vega"</span><span class="p">,</span><span class="w"> </span><span class="s">"12312312H"</span><span class="p">,</span><span class="w"> </span><span class="s">"MGR-03"</span><span class="p">,</span><span class="w"> </span><span class="mi">55000</span><span class="p">,</span><span class="w"> </span><span class="mi">12000</span><span class="p">,</span><span class="w"> </span><span class="n">bue</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"Bonus final para %s (Excelente): %.2f\n"</span><span class="p">,</span>
+<span class="w">            </span><span class="n">managerExcelente</span><span class="p">.</span><span class="na">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">managerExcelente</span><span class="p">.</span><span class="na">obtenerBonusFinal</span><span class="p">());</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"Bonus final para %s (Bueno): %.2f\n"</span><span class="p">,</span>
+<span class="w">            </span><span class="n">managerBueno</span><span class="p">.</span><span class="na">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">managerBueno</span><span class="p">.</span><span class="na">obtenerBonusFinal</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">12) Diseño y Revisión por Pares: El Módulo de Fichaje | Nivel: Alto</p>
+<h5 id="objetivo_11"><strong>Objetivo:</strong></h5>
+<p>Diseñar una solución de software a pequeña escala, documentarla con un diagrama de clases y realizar una revisión por pares (Peer Review) para mejorar el diseño.</p>
+<h5 id="tarea-a-realizar_11"><strong>Tarea a realizar:</strong></h5>
+<p>Innovatec necesita un nuevo módulo para el control horario. Los requisitos iniciales son:
+*   Los empleados deben poder "fichar" al entrar y al salir.
+*   Existen diferentes tipos de contrato con distintas políticas de fichaje (ej: <code>ContratoFlexible</code>, <code>ContratoEstricto</code>).
+*   El sistema debe poder generar un reporte de horas trabajadas para un empleado en un periodo.</p>
+<p><strong>Parte 1: Tu Diseño (Individual)</strong>
+1.  Diseña la arquitectura de clases para este módulo. Piensa en qué clases necesitas (<code>RegistroFichaje</code>, <code>PoliticaDeFichaje</code>, etc.) y cómo se relacionan.
+2.  Usa los conceptos de herencia, composición, clases abstractas e interfaces donde creas que aportan más valor.
+3.  Crea un <strong>diagrama de clases en Mermaid</strong> que represente tu diseño.
+4.  Escribe una breve justificación (2-3 párrafos) explicando por qué tomaste ciertas decisiones de diseño (ej: <em>"He usado una interfaz <code>PoliticaDeFichaje</code> para poder añadir nuevas políticas en el futuro sin cambiar el código de <code>Empleado</code>..."</em>).</p>
+<p><strong>Parte 2: Revisión por Pares (En parejas)</strong>
+1.  Intercambia tu diagrama y justificación con un compañero.
+2.  Analiza su diseño y proporciona feedback constructivo por escrito sobre al menos dos puntos. El feedback debe ser profesional y razonado. Ejemplos de buen feedback:
+    *   <em>"Tu uso de la herencia en la clase X es interesante, pero ¿has considerado si la composición podría hacerlo más flexible para el requisito Y?"</em>
+    *   <em>"Me gusta mucho cómo has definido la interfaz Z. Creo que simplifica enormemente la lógica. Una posible mejora sería añadirle un método <code>validarFichaje()</code> para encapsular esa lógica."</em>
+3.  Recibe el feedback de tu compañero y reflexiona sobre cómo podrías mejorar tu diseño inicial.</p>
+<h5 id="aplicacion-en-el-mundo-real_11"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>El diseño de software y la revisión de código (Code Review) son dos de las actividades más importantes en un equipo de desarrollo profesional. Permiten compartir conocimiento, mejorar la calidad del software, detectar errores de diseño antes de que se escriba una sola línea de código y fomentar una cultura de colaboración y mejora continua.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="ejemplo-de-diseno-solucion-abierta">Ejemplo de Diseño (Solución Abierta)</h4>
+<h5 id="diagrama-de-clases-en-mermaid"><strong>Diagrama de Clases en Mermaid</strong></h5>
+<pre class="mermaid"><code>classDiagram
+    class Empleado {
+        +String idEmpleado
+        +List~RegistroFichaje~ registros
+        +PoliticaFichaje politica
+        +ficharEntrada()
+        +ficharSalida()
+    }
+
+    class RegistroFichaje {
+        -LocalDateTime fechaHora
+        -TipoFichaje tipo
+    }
+
+    class TipoFichaje {
+        &lt;&lt;enumeration&gt;&gt;
+        ENTRADA
+        SALIDA
+    }
+
+    class PoliticaFichaje {
+        &lt;&lt;interface&gt;&gt;
+        +validarFichaje(RegistroFichaje, List~RegistroFichaje~) boolean
+        +calcularHoras(List~RegistroFichaje~) double
+    }
+
+    class PoliticaEstricta {
+        +validarFichaje(RegistroFichaje, List~RegistroFichaje~) boolean
+        +calcularHoras(List~RegistroFichaje~) double
+    }
+
+    class PoliticaFlexible {
+        +validarFichaje(RegistroFichaje, List~RegistroFichaje~) boolean
+        +calcularHoras(List~RegistroFichaje~) double
+    }
+
+    Empleado o-- "1" PoliticaFichaje : "tiene una"
+    Empleado o-- "*" RegistroFichaje : "tiene muchos"
+    RegistroFichaje --&gt; TipoFichaje : "es de tipo"
+    PoliticaFichaje &lt;|.. PoliticaEstricta : "implementa"
+    PoliticaFichaje &lt;|.. PoliticaFlexible : "implementa"</code></pre>
+<h5 id="justificacion-del-diseno"><strong>Justificación del Diseño</strong></h5>
+<p>Este diseño se basa en el principio de <strong>"favorecer la composición sobre la herencia"</strong> y el <strong>Patrón Strategy</strong> para las políticas de fichaje, promoviendo una alta flexibilidad y bajo acoplamiento.</p>
+<p>La clase <code>Empleado</code> <strong>compone</strong> una <code>PoliticaFichaje</code>. No hereda de ella. Esto es clave porque un empleado no <em>es</em> una política, sino que <em>se rige por</em> una. Al definir <code>PoliticaFichaje</code> como una <strong>interfaz</strong>, desacoplamos al <code>Empleado</code> de las implementaciones concretas. Mañana podemos crear una <code>PoliticaTeletrabajo</code> e inyectársela a un <code>Empleado</code> sin modificar su código en absoluto. Los métodos <code>validarFichaje</code> y <code>calcularHoras</code> delegan la lógica compleja a la estrategia correspondiente, manteniendo la clase <code>Empleado</code> limpia y centrada en sus responsabilidades principales.</p>
+<p>La relación entre <code>Empleado</code> y <code>RegistroFichaje</code> también es de <strong>composición</strong> ("tiene muchos"), lo cual es una representación natural de la realidad: un empleado acumula un historial de registros de fichaje. El uso de una enumeración <code>TipoFichaje</code> aporta seguridad de tipos y claridad al código, evitando el uso de "magic strings" como "entrada" o "salida". En resumen, el diseño es extensible (fácil añadir nuevas políticas) y mantenible (cada clase tiene una única responsabilidad).</p>
+</details>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

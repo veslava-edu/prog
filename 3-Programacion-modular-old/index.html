@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>3 Programacion modular old - PROG</title>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script><script src="../js/unpkg.com/d3@7.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-lib@0.18.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-view@0.18.js" type="text/javascript"></script><style type="text/css">div.mkdocs-markmap {
+    width: 100%;
+    min-height: 1em;
+    border: 1px solid grey;
+}
+.mkdocs-markmap > svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+</style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#programacion-modular">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="PROG" class="md-header__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            PROG
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              3 Programacion modular old
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../1-Introduccion-programacion/">
+          
+  
+  
+  Programación
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="PROG" class="md-nav__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    PROG
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1-Introduccion-programacion/">
+<span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2-Programacion-estructurada/">
+<span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3-Programacion-modular/">
+<span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4-Estructuras-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5-POO-Clases-y-Objetos/">
+<span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6-POO-Uso-avanzado/">
+<span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7-Estructuras-datos-dinamicas/">
+<span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../8-Programacion-funcional-Streams/">
+<span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../9-Ficheros/">
+<span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10-Acceso-base-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11-Interfaces-graficas-MVC/">
+<span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-programacion-estructurada">
+<span class="md-ellipsis">
+      
+        3. Programación Estructurada
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-programacion-modular">
+<span class="md-ellipsis">
+      
+        7. Programación Modular
+      
+    </span>
+</a>
+<nav aria-label="7. Programación Modular" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#71-funciones-metodos-que-devuelven-un-valor">
+<span class="md-ellipsis">
+      
+        7.1. Funciones (Métodos que devuelven un valor)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#72-procedimientos-metodos-que-no-devuelven-valor">
+<span class="md-ellipsis">
+      
+        7.2. Procedimientos (Métodos que no devuelven valor)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-parametros">
+<span class="md-ellipsis">
+      
+        8. Parámetros
+      
+    </span>
+</a>
+<nav aria-label="8. Parámetros" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#81-paso-por-valor-vs-paso-por-referencia">
+<span class="md-ellipsis">
+      
+        8.1. Paso por Valor vs. Paso por Referencia
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-ambito-de-las-variables-scope">
+<span class="md-ellipsis">
+      
+        9. Ámbito de las Variables (Scope)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<!-- prg_ud2_programacion_estructurada_y_modular.md --><h1 id="programacion-modular">Programación Modular</h1>
+<h2 id="3-programacion-estructurada">3. Programación Estructurada</h2>
+<p>A finales de los 60, el software era un caos. Los programadores usaban una instrucción llamada <code>GOTO</code> que permitía saltar de cualquier punto del programa a cualquier otro. El resultado era el famoso "código espagueti": un lío de saltos imposible de seguir, depurar o mantener.</p>
+<div class="admonition danger">
+<p class="admonition-title">El GOTO es el Lado Oscuro</p>
+<p>Edsger Dijkstra, uno de los padres de la informática, escribió en 1968 un famoso artículo llamado <em>"Go To Statement Considered Harmful"</em> (La sentencia GOTO considerada dañina). Demostró que su uso indiscriminado era una de las principales fuentes de errores en programación.</p>
+</div>
+<p>La <strong>programación estructurada</strong> nació como la solución a este caos. El <strong>Teorema del Programa Estructurado</strong> (de Böhm y Jacopini) demostró matemáticamente que cualquier algoritmo, por complejo que sea, puede construirse usando únicamente tres estructuras de control básicas:</p>
+<ol>
+<li><strong>Secuencia:</strong> Ejecutar instrucciones una detrás de otra.</li>
+<li><strong>Selección (o Condicional):</strong> Elegir entre dos o más caminos de ejecución (<code>if</code>, <code>switch</code>).</li>
+<li><strong>Iteración (o Bucle):</strong> Repetir un bloque de código (<code>while</code>, <code>for</code>).</li>
+</ol>
+<p>Estos tres pilares son la base de casi todos los lenguajes de programación modernos, incluido JAVA. Dominarlos es dominar la lógica fundamental de la programación.</p>
+<div class="language-markmap mkdocs-markmap"><markmap-data encoding="base64" hidden="true">IyBQcm9ncmFtYWNpw7NuIEVzdHJ1Y3R1cmFkYQoKIyMgUGlsYXJlcwotICoqU2VjdWVuY2lhKio6IFBhc28gMSDihpIgUGFzbyAyIOKGkiAuLi4KLSAqKlNlbGVjY2nDs24qKjogwr9FcyB2ZXJkYWQ/IOKGkiBIYXogQSAvIFNpIG5vIOKGkiBIYXogQgotICoqSXRlcmFjacOzbioqOiBNaWVudHJhcyBzZWEgdmVyZGFkIOKGkiBSZXBpdGUgZXN0bwoKIyMgRWwgR3JhbiBFbmVtaWdvCi0gKipgZ290b2AqKjogRWwgInNhbHRvIiBpbmNvbmRpY2lvbmFsIHF1ZSBjcmVhYmEgY8OzZGlnbyBjYcOzdGljby4KLSBMYSBwcm9ncmFtYWNpw7NuIGVzdHJ1Y3R1cmFkYSBsbyBwcm9ow61iZS4KCiMjIEJlbmVmaWNpb3MKLSAqKkNsYXJpZGFkKio6IEVsIGPDs2RpZ28gZXMgbcOhcyBmw6FjaWwgZGUgbGVlciB5IGVudGVuZGVyLgotICoqTWFudGVuaWJpbGlkYWQqKjogTcOhcyBmw6FjaWwgZGUgZGVwdXJhciB5IG1vZGlmaWNhci4KLSAqKkZpYWJpbGlkYWQqKjogTWVub3MgcHJvcGVuc28gYSBlcnJvcmVzIGzDs2dpY29zLg==</markmap-data></div>
+<h2 id="7-programacion-modular">7. Programación Modular</h2>
+<p>A medida que los programas crecen, meter todo el código dentro del método <code>main</code> se vuelve una pesadilla. La <strong>programación modular</strong> es la solución: consiste en descomponer un problema grande en subproblemas más pequeños y manejables, y crear "módulos" de código para resolver cada uno. En JAVA, estos módulos son los <strong>métodos</strong> (que engloban tanto funciones como procedimientos).</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/3-1-modular.jpeg"><img alt="Programación Modular" src="../images/3-1-modular.jpeg"/></a></p>
+<div class="admonition info">
+<p class="admonition-title">La Filosofía del "Divide y Vencerás"</p>
+<p>Es mucho más fácil resolver 10 problemas pequeños que un problema gigante. La programación modular aplica este principio para crear software que es:
+*   <strong>Más legible:</strong> Cada método tiene una única responsabilidad.
+*   <strong>Más reutilizable:</strong> Un método bien hecho se puede llamar desde distintas partes del programa, o incluso desde otros programas.
+*   <strong>Más fácil de depurar:</strong> Si algo falla, puedes aislar el problema en un método específico en lugar de buscarlo en miles de líneas de código.</p>
+</div>
+<h3 id="71-funciones-metodos-que-devuelven-un-valor">7.1. Funciones (Métodos que devuelven un valor)</h3>
+<p>Una función es un bloque de código que realiza una tarea y, al finalizar, <strong>devuelve un resultado</strong>. Es como una máquina expendedora: le metes "dinero" (parámetros) y te devuelve un "producto" (el valor de retorno).</p>
+<p><strong>Anatomía de una función en JAVA:</strong></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/3-2-funcion.png"><img alt="Estructura de una función" src="../images/3-2-funcion.png"/></a></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// &lt;modificadores&gt; &lt;tipo_de_retorno&gt; &lt;nombreDelMetodo&gt;(&lt;lista_de_parámetros&gt;) {</span>
+<span class="c1">//     // Cuerpo del método</span>
+<span class="c1">//     return valor; // El tipo de 'valor' debe coincidir con &lt;tipo_de_retorno&gt;</span>
+<span class="c1">// }</span>
+</code></pre></div>
+<p><strong>Ejemplo: Una función que calcula el daño de un ataque en un RPG</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CombateRPG</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Calcula el daño final de un ataque.</span>
+<span class="cm">     * @param fuerzaAtacante La fuerza del personaje que ataca.</span>
+<span class="cm">     * @param defensaObjetivo La defensa del personaje que recibe el golpe.</span>
+<span class="cm">     * @return El daño total infligido (un número entero).</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">calcularDaño</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">fuerzaAtacante</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">defensaObjetivo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">dañoBase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fuerzaAtacante</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">dañoReducido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dañoBase</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">defensaObjetivo</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Nos aseguramos de que el daño no sea negativo</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dañoReducido</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">dañoReducido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">dañoReducido</span><span class="p">;</span><span class="w"> </span><span class="c1">// Devuelve el resultado del cálculo</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">fuerzaHeroe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">defensaOrco</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Llamamos a la función y guardamos el resultado en una variable</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">dañoInfligido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calcularDaño</span><span class="p">(</span><span class="n">fuerzaHeroe</span><span class="p">,</span><span class="w"> </span><span class="n">defensaOrco</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El héroe ataca al orco e inflige "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dañoInfligido</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" puntos de daño."</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 70</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="72-procedimientos-metodos-que-no-devuelven-valor">7.2. Procedimientos (Métodos que no devuelven valor)</h3>
+<p>Un procedimiento es un bloque de código que realiza una acción, pero <strong>no devuelve ningún resultado</strong>. Su tipo de retorno se especifica con la palabra clave <code>void</code>. Piensa en él como un botón que, al pulsarlo, hace algo (como encender una luz), pero no te da nada a cambio.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="images/procedimiento.png"><img alt="Estructura de un procedimiento" src="images/procedimiento.png"/></a></p>
+<p><strong>Ejemplo: Un procedimiento que muestra la barra de vida de un personaje</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">InterfazUsuario</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Dibuja una barra de vida en la consola.</span>
+<span class="cm">     * Es un procedimiento porque solo realiza una acción (imprimir), no calcula ni devuelve nada.</span>
+<span class="cm">     * @param nombrePersonaje El nombre del personaje.</span>
+<span class="cm">     * @param vidaActual La vida actual.</span>
+<span class="cm">     * @param vidaMaxima La vida máxima.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mostrarBarraDeVida</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombrePersonaje</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vidaActual</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vidaMaxima</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">nombrePersonaje</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" HP: ["</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vidaActual</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"/"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vidaMaxima</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"] "</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Dibujamos la barra</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">barra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">""</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">vidaMaxima</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">vidaActual</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">barra</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">"="</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">barra</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">"-"</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"["</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">barra</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"]"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Llamamos al procedimiento para que realice su acción</span>
+<span class="w">        </span><span class="n">mostrarBarraDeVida</span><span class="p">(</span><span class="s">"Héroe"</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+<span class="w">        </span><span class="n">mostrarBarraDeVida</span><span class="p">(</span><span class="s">"Orco"</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Salida esperada:</span>
+<span class="c1">// Héroe HP: [7/10] [=======---]</span>
+<span class="c1">// Orco HP: [3/10] [===-------]</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>¿Crearías una función o un procedimiento para guardar una partida en un fichero? ¿Y para cargar el nombre del jugador desde ese fichero?</li>
+<li>¿Cuáles son las tres ventajas principales de la programación modular? Explícalas con tus propias palabras.</li>
+<li>Observa el método <code>main</code>. ¿Es una función o un procedimiento? ¿Por qué?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="8-parametros">8. Parámetros</h2>
+<p>Los parámetros son la forma que tenemos de pasar información a nuestros métodos. Son las "materias primas" que necesita un método para poder trabajar.</p>
+<h3 id="81-paso-por-valor-vs-paso-por-referencia">8.1. Paso por Valor vs. Paso por Referencia</h3>
+<p>Este es uno de los conceptos más importantes y que más confusiones genera. Es crucial entender cómo JAVA maneja los parámetros.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Paso por Valor</p>
+<p>Cuando se pasa un parámetro por valor, el método recibe una <strong>copia</strong> del dato original. Cualquier modificación que se haga a esa copia dentro del método <strong>no afecta</strong> a la variable original fuera del método.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Paso por Referencia</p>
+<p>Cuando se pasa un parámetro por referencia, el método recibe la <strong>dirección de memoria</strong> del dato original. Cualquier modificación que se haga dentro del método <strong>sí afecta</strong> a la variable original.</p>
+</div>
+<pre class="mermaid"><code>graph TD
+    A[Paso por Valor] --&gt; B[Copia del valor]
+    A --&gt; C[Modificaciones no se reflejan]
+    D[Paso por Referencia] --&gt; E[Dirección de memoria]
+    D --&gt; F[Modificaciones afectan original]</code></pre>
+<p><strong>La Regla de Oro en JAVA:</strong></p>
+<div class="admonition danger">
+<p class="admonition-title">¡En JAVA, todo se pasa SIEMPRE por valor!</p>
+<p>Sí, has leído bien. Pero hay un matiz muy importante:
+*   Para los <strong>tipos primitivos</strong> (<code>int</code>, <code>double</code>, <code>boolean</code>, etc.), se pasa una copia del valor literal.
+*   Para los <strong>objetos</strong> (incluidos los arrays y Strings), lo que se pasa por valor es una <strong>copia de la referencia</strong> (la dirección de memoria).</p>
+</div>
+<p>¿Qué significa esto en la práctica?</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant CodigoPrincipal as "main()"
+    participant Metodo as "miMetodo()"
+
+    CodigoPrincipal-&gt;&gt;CodigoPrincipal: int vida = 100;
+    Note right of CodigoPrincipal: 'vida' contiene el valor 100
+
+    CodigoPrincipal-&gt;&gt;Metodo: recibirDaño(vida);
+    Note right of CodigoPrincipal: Se crea una COPIA de 'vida'&lt;br&gt;llamada 'daño' con valor 100
+    Metodo-&gt;&gt;Metodo: daño = 90;
+    Note left of Metodo: La copia 'daño' ahora vale 90.&lt;br&gt;La 'vida' original sigue valiendo 100.
+    Metodo--&gt;&gt;CodigoPrincipal: finaliza
+
+    CodigoPrincipal-&gt;&gt;CodigoPrincipal: System.out.println(vida);</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PasoDeParametros</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Este método recibe un tipo primitivo (int).</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">atacar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">vidaEnemigo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  -&gt; Dentro de atacar, la vida del enemigo es: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vidaEnemigo</span><span class="p">);</span>
+<span class="w">        </span><span class="n">vidaEnemigo</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"> </span><span class="c1">// Modificamos la COPIA</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  -&gt; Después del golpe, la vida es: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vidaEnemigo</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Este método recibe un tipo de objeto (array).</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">envenenar</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">statsEnemigo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  -&gt; Dentro de envenenar, la fuerza del enemigo es: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">statsEnemigo</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Modificamos el contenido del objeto al que apunta la referencia</span>
+<span class="w">        </span><span class="n">statsEnemigo</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  -&gt; Después del veneno, la fuerza es: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">statsEnemigo</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// --- Paso por valor con PRIMITIVOS ---</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">vidaOrco</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Vida del Orco antes de llamar a atacar: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vidaOrco</span><span class="p">);</span>
+<span class="w">        </span><span class="n">atacar</span><span class="p">(</span><span class="n">vidaOrco</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Vida del Orco después de llamar a atacar: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vidaOrco</span><span class="p">);</span><span class="w"> </span><span class="c1">// ¡Sigue siendo 100!</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n-----------------\n"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// --- Paso por "valor de referencia" con OBJETOS ---</span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">statsOrco</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">};</span><span class="w"> </span><span class="c1">// [fuerza, defensa]</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Fuerza del Orco antes de llamar a envenenar: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">statsOrco</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+<span class="w">        </span><span class="n">envenenar</span><span class="p">(</span><span class="n">statsOrco</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Fuerza del Orco después de llamar a envenenar: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">statsOrco</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span><span class="w"> </span><span class="c1">// ¡Ha cambiado a 45!</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>La analogía:
+*   <strong>Paso de primitivos:</strong> Te doy una fotocopia de mi número de teléfono. Si tú tachas la fotocopia, mi número original en mi agenda sigue intacto.
+*   <strong>Paso de objetos:</strong> Te doy una fotocopia de la dirección de mi casa. No puedes cambiar la dirección para que apunte a otra casa (no puedes reasignar la referencia), pero sí puedes ir a esa dirección y pintar la puerta de verde (modificar el estado del objeto). Mi casa (el objeto original) ahora tendrá la puerta verde.</p>
+<p><br/></p><hr/><p></p>
+<h2 id="9-ambito-de-las-variables-scope">9. Ámbito de las Variables (Scope)</h2>
+<p>El ámbito o <em>scope</em> de una variable define en qué partes del programa esa variable es visible y se puede utilizar. Es como el rango de acción de un personaje en un juego de estrategia: solo puede atacar a enemigos que estén dentro de su alcance.</p>
+<pre class="mermaid"><code>graph TD
+    A[Ámbito] --&gt; B[Global]
+    A --&gt; C[Local]
+    C --&gt; D[Función]
+    C --&gt; E[Bloque]</code></pre>
+<p>En JAVA, el ámbito está definido principalmente por las llaves <code>{}</code>.</p>
+<ul>
+<li><strong>Variable de Clase (o Miembro/Atributo):</strong> Se declara dentro de una clase, pero fuera de cualquier método. Si lleva la palabra <code>static</code>, pertenece a la clase en sí. Si no, pertenece a cada objeto (instancia) de la clase. Es accesible desde cualquier método de esa clase.</li>
+<li><strong>Variable Local:</strong> Se declara dentro de un método o de un bloque de código (como un <code>if</code> o un <code>for</code>). Solo existe y es accesible desde el punto en que se declara hasta que se cierra la llave <code>}</code> que delimita su bloque.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AmbitoDeVariables</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// 1. Variable de clase (static). Es "global" para esta clase.</span>
+<span class="w">    </span><span class="c1">// Accesible desde cualquier método de esta clase.</span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombreDelJuego</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"La Leyenda de DAW"</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">metodoA</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 2. Variable local al método A.</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">variableA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Desde A, puedo ver la variable de clase: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombreDelJuego</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Desde A, puedo ver mi variable local: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">variableA</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// System.out.println(variableB); // ¡ERROR DE COMPILACIÓN! variableB no existe en este ámbito.</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">metodoA</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// 3. Variable local al método main.</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">variableMain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">variableMain</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// 4. Variable local al bloque if.</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">variableBloqueIf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Solo existo aquí dentro."</span><span class="p">;</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">variableBloqueIf</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// System.out.println(variableBloqueIf); // ¡ERROR DE COMPILACIÓN! Ya no existe fuera del if.</span>
+<span class="w">        </span><span class="c1">// System.out.println(variableA); // ¡ERROR DE COMPILACIÓN! variableA solo existe dentro de metodoA.</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">La regla del mínimo ámbito posible</p>
+<p>Una de las mejores prácticas en programación es declarar las variables en el ámbito más reducido posible. Si solo necesitas una variable dentro de un bucle <code>for</code>, declárala dentro del <code>for</code>. Esto evita efectos secundarios no deseados y hace que el código sea mucho más fácil de entender y mantener.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>¿Por qué crees que es una mala idea usar muchas variables de clase (globales)? ¿Qué problemas podrían causar en un proyecto grande con muchos programadores?</li>
+<li>En un bucle <code>for (int i = 0; i &lt; 10; i++)</code>, ¿cuál es el ámbito de la variable <code>i</code>?</li>
+<li>Si declaras dos variables locales con el mismo nombre en dos métodos diferentes, ¿habría algún problema? ¿Y si una es local y la otra es de clase? (Esto último se llama "shadowing" o sombreado).</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script type="text/javascript">(function initializeMarkmap() {
+    const transformer = new markmap.Transformer();
+    const preloadScripts = transformer.plugins
+        .flatMap((plugin) => plugin.config?.preloadScripts || [])
+        .map((item) => transformer.resolveJS(item));
+    const assets = transformer.getAssets();
+    const loading = Promise.all([
+        assets.styles && markmap.loadCSS(assets.styles),
+        markmap.loadJS([...preloadScripts, ...assets.scripts]),
+    ]);
+
+    function parseData(content) {
+        const { root, frontmatter } = transformer.transform(content);
+        let options = markmap.deriveOptions(frontmatter?.markmap);
+        options = Object.assign(
+            {
+                fitRatio: 0.85,
+            },
+            options
+        );
+        return { root, options };
+    }
+
+    function resetMarkmap(m, el) {
+        if (!m.state.rect) return;
+        const { x1, y1, x2, y2 } = m.state.rect;
+        const height = (el.offsetWidth / (x2 - x1)) * (y2 - y1);
+        el.style.height = height + "px";
+        m.fit();
+    }
+
+    function decodeBase64(encoded) {
+        const binary = atob(encoded);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < bytes.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        return new TextDecoder().decode(bytes);
+    }
+
+    function renderMarkmap(el) {
+        const dataEl = el.querySelector("markmap-data");
+        if (!dataEl) return;
+        let content = el.textContent;
+        if (dataEl.getAttribute("encoding") === "base64") {
+            content = decodeBase64(content);
+        }
+        el.innerHTML = "<svg>";
+        svg = el.firstChild;
+        const { root, options } = parseData(content);
+        const m = markmap.Markmap.create(svg, options);
+        m.setData(root);
+        requestAnimationFrame(() => {
+            resetMarkmap(m, el);
+        });
+    }
+
+    function updateMarkmaps(node) {
+        for (const el of node.querySelectorAll(".mkdocs-markmap")) {
+            renderMarkmap(el);
+        }
+    }
+
+    loading.then(() => {
+        const observer = new MutationObserver((mutationList) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "childList") {
+                    for (const node of mutation.addedNodes) {
+                        updateMarkmaps(node);
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true });
+
+        updateMarkmaps(document);
+    });
+})();
+</script></body></html>

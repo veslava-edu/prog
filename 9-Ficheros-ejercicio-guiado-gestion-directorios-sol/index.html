@@ -1,0 +1,1408 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Ejercicio Guiado: Gestión de Ficheros y Directorios con java.nio - PROG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ejercicio-guiado-gestion-de-ficheros-y-directorios-con-javanio" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PROG" class="md-header__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PROG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ejercicio Guiado: Gestión de Ficheros y Directorios con java.nio
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../1-Introduccion-programacion/" class="md-tabs__link">
+          
+  
+  
+  Programación
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PROG" class="md-nav__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    PROG
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-Introduccion-programacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-Programacion-estructurada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-Programacion-modular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-Estructuras-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-POO-Clases-y-Objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-POO-Uso-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-Estructuras-datos-dinamicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-Programacion-funcional-Streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-Ficheros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-Acceso-base-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-Interfaces-graficas-MVC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#1-introduccion-al-problema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introducción al problema
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-conceptos-basicos-de-javaniofile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Conceptos básicos de java.nio.file
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Conceptos básicos de java.nio.file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-path-representar-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Path — Representar rutas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-files-operar-sobre-rutas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Files — Operar sobre rutas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-directorystream-y-fileslist-listar-contenido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 DirectoryStream y Files.list() — Listar contenido
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-enunciado-del-ejercicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Enunciado del ejercicio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ayudas-paso-a-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Ayudas paso a paso
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Ayudas paso a paso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-crear-la-carpeta-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Crear la carpeta base
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-crear-un-directorio-dentro-de-la-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Crear un directorio dentro de la base
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-crear-un-fichero-vacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Crear un fichero vacío
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-listar-contenido-del-directorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Listar contenido del directorio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-eliminar-fichero-o-directorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Eliminar fichero o directorio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-diagrama-de-flujo-del-programa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Diagrama de flujo del programa
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-objetivo-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Objetivo de aprendizaje
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-resumen-javaiofile-vs-javaniofile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Resumen: java.io.File vs java.nio.file
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-solucion-completa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Solución completa
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ejercicio-guiado-gestion-de-ficheros-y-directorios-con-javanio">Ejercicio Guiado: Gestión de Ficheros y Directorios con java.nio</h1>
+<h2 id="1-introduccion-al-problema">1. Introducción al problema</h2>
+<p>Imagina que trabajas en una pequeña empresa que necesita organizar sus documentos digitales. Cada día se generan archivos (informes, facturas, notas...) y es importante poder gestionar carpetas y ficheros de forma sencilla desde un programa.</p>
+<p>En este ejercicio vas a desarrollar una aplicación en Java que permita <strong>gestionar directorios y ficheros desde consola</strong>. Aprenderás a crear carpetas, listar su contenido, crear archivos y eliminarlos.</p>
+<p>Para ello utilizaremos la <strong>API moderna de Java NIO.2</strong> (<code>java.nio.file</code>), que ofrece clases como <code>Path</code> y <code>Files</code> con un diseño más limpio, seguro y expresivo que la antigua clase <code>File</code> de <code>java.io</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">¿Por qué java.nio en vez de java.io?</p>
+<p>La API <code>java.nio.file</code> (introducida en Java 7) reemplaza y mejora a <code>java.io.File</code> en varios aspectos:</p>
+<ul>
+<li><strong>Excepciones claras</strong>: los métodos de <code>Files</code> lanzan <code>IOException</code> con mensajes descriptivos en lugar de devolver <code>false</code> silenciosamente cuando algo falla.</li>
+<li><strong>Inmutabilidad</strong>: <code>Path</code> es inmutable, lo que evita bugs por modificación accidental de rutas.</li>
+<li><strong>Más funcionalidad</strong>: operaciones atómicas, enlaces simbólicos, atributos extendidos, recorrido de árboles de directorios, etc.</li>
+<li><strong>Integración con Streams</strong>: métodos como <code>Files.list()</code> devuelven <code>Stream&lt;Path&gt;</code>, perfectos para programación funcional.</li>
+</ul>
+</div>
+<hr>
+<h2 id="2-conceptos-basicos-de-javaniofile">2. Conceptos básicos de java.nio.file</h2>
+<p>Antes de empezar a programar, repasemos las clases principales que utilizaremos:</p>
+<h3 id="21-path-representar-rutas">2.1 <code>Path</code> — Representar rutas</h3>
+<p><code>Path</code> es una interfaz que representa una ruta en el sistema de archivos. Se crea con el método estático <code>Path.of(...)</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Path</span><span class="p">;</span>
+
+<span class="n">Path</span><span class="w"> </span><span class="n">carpeta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"datos"</span><span class="p">);</span>
+<span class="n">Path</span><span class="w"> </span><span class="n">fichero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"datos"</span><span class="p">,</span><span class="w"> </span><span class="s">"informe.txt"</span><span class="p">);</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Equivalencia con java.io</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">java.io (antiguo)</th>
+<th style="text-align: left;">java.nio.file (moderno)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>new File("datos")</code></td>
+<td style="text-align: left;"><code>Path.of("datos")</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>new File(base, "informe.txt")</code></td>
+<td style="text-align: left;"><code>base.resolve("informe.txt")</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>fichero.getName()</code></td>
+<td style="text-align: left;"><code>path.getFileName()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>fichero.getAbsolutePath()</code></td>
+<td style="text-align: left;"><code>path.toAbsolutePath()</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="22-files-operar-sobre-rutas">2.2 <code>Files</code> — Operar sobre rutas</h3>
+<p><code>Files</code> es una clase de utilidad con métodos estáticos para crear, eliminar, listar y consultar ficheros y directorios:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Files</span><span class="p">;</span>
+
+<span class="n">Files</span><span class="p">.</span><span class="na">createDirectories</span><span class="p">(</span><span class="n">path</span><span class="p">);</span><span class="w">   </span><span class="c1">// Crea el directorio (y padres si faltan)</span>
+<span class="n">Files</span><span class="p">.</span><span class="na">createFile</span><span class="p">(</span><span class="n">path</span><span class="p">);</span><span class="w">          </span><span class="c1">// Crea un fichero vacío</span>
+<span class="n">Files</span><span class="p">.</span><span class="na">delete</span><span class="p">(</span><span class="n">path</span><span class="p">);</span><span class="w">              </span><span class="c1">// Elimina fichero o directorio vacío</span>
+<span class="n">Files</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="n">path</span><span class="p">);</span><span class="w">              </span><span class="c1">// Comprueba si existe</span>
+<span class="n">Files</span><span class="p">.</span><span class="na">isDirectory</span><span class="p">(</span><span class="n">path</span><span class="p">);</span><span class="w">         </span><span class="c1">// Comprueba si es directorio</span>
+<span class="n">Files</span><span class="p">.</span><span class="na">isRegularFile</span><span class="p">(</span><span class="n">path</span><span class="p">);</span><span class="w">       </span><span class="c1">// Comprueba si es fichero regular</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Diferencia clave con java.io</p>
+<p>Con <code>java.io.File</code>, métodos como <code>mkdir()</code> o <code>delete()</code> devuelven <code>true</code> o <code>false</code> sin explicar qué falló. Con <code>java.nio.file.Files</code>, si algo va mal se lanza una <strong>excepción</strong> (<code>NoSuchFileException</code>, <code>DirectoryNotEmptyException</code>, <code>FileAlreadyExistsException</code>...) con información precisa del problema.</p>
+</div>
+<h3 id="23-directorystream-y-fileslist-listar-contenido">2.3 <code>DirectoryStream</code> y <code>Files.list()</code> — Listar contenido</h3>
+<p>Para listar el contenido de un directorio hay dos enfoques principales:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Opción A: DirectoryStream (bajo nivel, try-with-resources)</span>
+<span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">DirectoryStream</span><span class="o">&lt;</span><span class="n">Path</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">newDirectoryStream</span><span class="p">(</span><span class="n">dir</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Path</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">stream</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">entry</span><span class="p">.</span><span class="na">getFileName</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Opción B: Files.list() con Stream funcional</span>
+<span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Path</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">list</span><span class="p">(</span><span class="n">dir</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">stream</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">entry</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">entry</span><span class="p">.</span><span class="na">getFileName</span><span class="p">()));</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code>Files.list()</code> devuelve un <code>Stream&lt;Path&gt;</code> que <strong>debe cerrarse</strong> (por eso se usa <code>try-with-resources</code>). Esto es diferente a los Streams de colecciones, que no necesitan cerrarse.</p>
+</div>
+<hr>
+<h2 id="3-enunciado-del-ejercicio">3. Enunciado del ejercicio</h2>
+<p>Desarrolla un programa en Java que muestre un <strong>menú por consola</strong> y permita al usuario gestionar ficheros y directorios dentro de una carpeta base llamada <code>datos</code>.</p>
+<p>El menú debe permitir:</p>
+<ol>
+<li>Crear directorio</li>
+<li>Crear fichero</li>
+<li>Listar contenido de un directorio</li>
+<li>Eliminar fichero o directorio</li>
+<li>Salir</li>
+</ol>
+<hr>
+<h2 id="4-ayudas-paso-a-paso">4. Ayudas paso a paso</h2>
+<h3 id="41-crear-la-carpeta-base">4.1 Crear la carpeta base</h3>
+<p>Lo primero que debe hacer el programa es asegurar que existe la carpeta <code>datos</code>. Usamos <code>Files.createDirectories()</code> que crea la carpeta <strong>y todos los directorios padres</strong> que falten. Si ya existe, no hace nada (a diferencia de <code>Files.createDirectory()</code>, que lanzaría excepción).</p>
+<div class="highlight"><pre><span></span><code><span class="n">Path</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"datos"</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Files</span><span class="p">.</span><span class="na">notExists</span><span class="p">(</span><span class="n">base</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Files</span><span class="p">.</span><span class="na">createDirectories</span><span class="p">(</span><span class="n">base</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">¿Por qué <code>createDirectories</code> y no <code>createDirectory</code>?</p>
+<ul>
+<li><code>Files.createDirectory(path)</code> → crea <strong>solo</strong> el último directorio. Falla si el padre no existe o si ya existe el directorio.</li>
+<li><code>Files.createDirectories(path)</code> → crea <strong>toda la cadena</strong> de directorios que falten. No falla si ya existe. Es la opción más segura para inicialización.</li>
+</ul>
+</div>
+<h3 id="42-crear-un-directorio-dentro-de-la-base">4.2 Crear un directorio dentro de la base</h3>
+<p>Para crear un subdirectorio usamos <code>resolve()</code> sobre la ruta base. Este método <strong>concatena</strong> la ruta del padre con el nombre del hijo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Nombre del directorio: "</span><span class="p">);</span>
+<span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+<span class="n">Path</span><span class="w"> </span><span class="n">dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base</span><span class="p">.</span><span class="na">resolve</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="n">Files</span><span class="p">.</span><span class="na">createDirectories</span><span class="p">(</span><span class="n">dir</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Directorio creado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dir</span><span class="p">.</span><span class="na">toAbsolutePath</span><span class="p">());</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">El método <code>resolve()</code></p>
+<p><code>resolve()</code> es el equivalente NIO de <code>new File(padre, hijo)</code>. Construye una nueva ruta combinando la ruta base con el nombre o ruta relativa que le pases. Por ejemplo: <code>Path.of("datos").resolve("informes")</code> produce <code>datos/informes</code>.</p>
+</div>
+<h3 id="43-crear-un-fichero-vacio">4.3 Crear un fichero vacío</h3>
+<p>Para crear un fichero usamos <code>Files.createFile()</code>. Es importante comprobar primero si ya existe, porque este método lanza <code>FileAlreadyExistsException</code> si el fichero ya está creado:</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Nombre del fichero: "</span><span class="p">);</span>
+<span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+<span class="n">Path</span><span class="w"> </span><span class="n">fichero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base</span><span class="p">.</span><span class="na">resolve</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Files</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="n">fichero</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El fichero ya existe."</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Files</span><span class="p">.</span><span class="na">createFile</span><span class="p">(</span><span class="n">fichero</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Fichero creado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fichero</span><span class="p">.</span><span class="na">toAbsolutePath</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="44-listar-contenido-del-directorio">4.4 Listar contenido del directorio</h3>
+<p>Usamos <code>Files.list()</code> que devuelve un <code>Stream&lt;Path&gt;</code>. Es obligatorio cerrarlo, así que lo envolvemos en <code>try-with-resources</code>. Además distinguimos visualmente entre ficheros y directorios:</p>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Path</span><span class="o">&gt;</span><span class="w"> </span><span class="n">contenido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">list</span><span class="p">(</span><span class="n">base</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">contenido</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">entry</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">tipo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">isDirectory</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">"[DIR] "</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">"[FIC] "</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">tipo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="na">getFileName</span><span class="p">());</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Mejora: ordenar la lista</p>
+<p>Puedes aprovechar que <code>Files.list()</code> devuelve un <code>Stream</code> para ordenar, filtrar, etc.:</p>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Path</span><span class="o">&gt;</span><span class="w"> </span><span class="n">contenido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">list</span><span class="p">(</span><span class="n">base</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">contenido</span>
+<span class="w">        </span><span class="p">.</span><span class="na">sorted</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">entry</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">tipo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">isDirectory</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">"[DIR] "</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">"[FIC] "</span><span class="p">;</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">tipo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="na">getFileName</span><span class="p">());</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<h3 id="45-eliminar-fichero-o-directorio">4.5 Eliminar fichero o directorio</h3>
+<p>Usamos <code>Files.deleteIfExists()</code> que elimina el elemento si existe y devuelve <code>true</code>, o devuelve <code>false</code> si no existía. Esto evita la excepción <code>NoSuchFileException</code> que lanzaría <code>Files.delete()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Nombre del fichero o directorio a eliminar: "</span><span class="p">);</span>
+<span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+<span class="n">Path</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base</span><span class="p">.</span><span class="na">resolve</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">eliminado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">deleteIfExists</span><span class="p">(</span><span class="n">target</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">eliminado</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Eliminado correctamente."</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"No existe: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Directorios no vacíos</p>
+<p><code>Files.delete()</code> y <code>Files.deleteIfExists()</code> solo pueden eliminar <strong>directorios vacíos</strong>. Si el directorio contiene ficheros, se lanzará <code>DirectoryNotEmptyException</code>. Para eliminar un directorio con contenido habría que recorrerlo primero y eliminar su contenido recursivamente (por ejemplo con <code>Files.walkFileTree()</code>).</p>
+</div>
+<hr>
+<h2 id="5-diagrama-de-flujo-del-programa">5. Diagrama de flujo del programa</h2>
+<pre class="mermaid"><code>flowchart TD
+    A["Inicio"] --&gt; B["Crear carpeta base&lt;br/&gt;'datos' si no existe"]
+    B --&gt; C["Mostrar menú"]
+    C --&gt; D{"Opción elegida"}
+    D --&gt;|1| E["Pedir nombre → &lt;br/&gt;Files.createDirectories()"]
+    D --&gt;|2| F["Pedir nombre → &lt;br/&gt;Files.createFile()"]
+    D --&gt;|3| G["Files.list() → &lt;br/&gt;mostrar contenido"]
+    D --&gt;|4| H["Pedir nombre → &lt;br/&gt;Files.deleteIfExists()"]
+    D --&gt;|5| I["Salir"]
+    E --&gt; C
+    F --&gt; C
+    G --&gt; C
+    H --&gt; C</code></pre>
+<hr>
+<h2 id="6-objetivo-de-aprendizaje">6. Objetivo de aprendizaje</h2>
+<p>Al finalizar este ejercicio deberías ser capaz de:</p>
+<ul>
+<li>Crear y manipular rutas con <code>Path</code> y <code>Path.of()</code>.</li>
+<li>Usar <code>Files</code> para crear, listar y eliminar ficheros y directorios.</li>
+<li>Comprender las ventajas de <code>java.nio.file</code> frente a <code>java.io.File</code>.</li>
+<li>Aplicar <code>try-with-resources</code> con <code>Stream&lt;Path&gt;</code> al listar directorios.</li>
+<li>Gestionar errores del sistema de archivos mediante excepciones.</li>
+</ul>
+<hr>
+<h2 id="7-resumen-javaiofile-vs-javaniofile">7. Resumen: java.io.File vs java.nio.file</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Aspecto</th>
+<th style="text-align: left;"><code>java.io.File</code> (antiguo)</th>
+<th style="text-align: left;"><code>java.nio.file</code> (moderno)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Representar ruta</td>
+<td style="text-align: left;"><code>new File("datos")</code></td>
+<td style="text-align: left;"><code>Path.of("datos")</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Combinar rutas</td>
+<td style="text-align: left;"><code>new File(base, nombre)</code></td>
+<td style="text-align: left;"><code>base.resolve(nombre)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Crear directorio</td>
+<td style="text-align: left;"><code>file.mkdir()</code> → <code>boolean</code></td>
+<td style="text-align: left;"><code>Files.createDirectories(path)</code> → excepción si falla</td>
+</tr>
+<tr>
+<td style="text-align: left;">Crear fichero</td>
+<td style="text-align: left;"><code>file.createNewFile()</code> → <code>boolean</code></td>
+<td style="text-align: left;"><code>Files.createFile(path)</code> → excepción si falla</td>
+</tr>
+<tr>
+<td style="text-align: left;">Listar contenido</td>
+<td style="text-align: left;"><code>file.listFiles()</code> → <code>File[]</code></td>
+<td style="text-align: left;"><code>Files.list(path)</code> → <code>Stream&lt;Path&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Eliminar</td>
+<td style="text-align: left;"><code>file.delete()</code> → <code>boolean</code></td>
+<td style="text-align: left;"><code>Files.deleteIfExists(path)</code> → <code>boolean</code> + excepción si error</td>
+</tr>
+<tr>
+<td style="text-align: left;">Comprobar existencia</td>
+<td style="text-align: left;"><code>file.exists()</code></td>
+<td style="text-align: left;"><code>Files.exists(path)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Gestión de errores</td>
+<td style="text-align: left;">Silenciosa (<code>true</code>/<code>false</code>)</td>
+<td style="text-align: left;">Excepciones descriptivas</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="8-solucion-completa">8. Solución completa</h2>
+<details class="success">
+<summary>Solución</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Files</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Path</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.stream.Stream</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GestionFicherosNio</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Path</span><span class="w"> </span><span class="n">BASE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"datos"</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Files</span><span class="p">.</span><span class="na">createDirectories</span><span class="p">(</span><span class="n">BASE</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"No se pudo crear la carpeta base: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">ejecutando</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">ejecutando</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">mostrarMenu</span><span class="p">();</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">opcion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">().</span><span class="na">trim</span><span class="p">();</span>
+
+<span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">opcion</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">case</span><span class="w"> </span><span class="s">"1"</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">crearDirectorio</span><span class="p">(</span><span class="n">sc</span><span class="p">);</span>
+<span class="w">                    </span><span class="k">case</span><span class="w"> </span><span class="s">"2"</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">crearFichero</span><span class="p">(</span><span class="n">sc</span><span class="p">);</span>
+<span class="w">                    </span><span class="k">case</span><span class="w"> </span><span class="s">"3"</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">listarContenido</span><span class="p">();</span>
+<span class="w">                    </span><span class="k">case</span><span class="w"> </span><span class="s">"4"</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">eliminar</span><span class="p">(</span><span class="n">sc</span><span class="p">);</span>
+<span class="w">                    </span><span class="k">case</span><span class="w"> </span><span class="s">"5"</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">ejecutando</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">                    </span><span class="k">default</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Opción no válida."</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error de E/S: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">sc</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Programa finalizado."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mostrarMenu</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"=== Gestión de Ficheros (java.nio) ==="</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"1. Crear directorio"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"2. Crear fichero"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"3. Listar contenido"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"4. Eliminar fichero o directorio"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"5. Salir"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Elige opción: "</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">crearDirectorio</span><span class="p">(</span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Nombre del directorio: "</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">().</span><span class="na">trim</span><span class="p">();</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nombre</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El nombre no puede estar vacío."</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">Path</span><span class="w"> </span><span class="n">dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BASE</span><span class="p">.</span><span class="na">resolve</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Files</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="n">dir</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Ya existe: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dir</span><span class="p">.</span><span class="na">getFileName</span><span class="p">());</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">Files</span><span class="p">.</span><span class="na">createDirectories</span><span class="p">(</span><span class="n">dir</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Directorio creado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dir</span><span class="p">.</span><span class="na">toAbsolutePath</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">crearFichero</span><span class="p">(</span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Nombre del fichero: "</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">().</span><span class="na">trim</span><span class="p">();</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nombre</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El nombre no puede estar vacío."</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">Path</span><span class="w"> </span><span class="n">fichero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BASE</span><span class="p">.</span><span class="na">resolve</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Files</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="n">fichero</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Ya existe: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fichero</span><span class="p">.</span><span class="na">getFileName</span><span class="p">());</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">Files</span><span class="p">.</span><span class="na">createFile</span><span class="p">(</span><span class="n">fichero</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Fichero creado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fichero</span><span class="p">.</span><span class="na">toAbsolutePath</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">listarContenido</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Files</span><span class="p">.</span><span class="na">notExists</span><span class="p">(</span><span class="n">BASE</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"La carpeta base no existe."</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Path</span><span class="o">&gt;</span><span class="w"> </span><span class="n">contenido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">list</span><span class="p">(</span><span class="n">BASE</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">long</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">contenido</span>
+<span class="w">                </span><span class="p">.</span><span class="na">sorted</span><span class="p">()</span>
+<span class="w">                </span><span class="p">.</span><span class="na">peek</span><span class="p">(</span><span class="n">entry</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">String</span><span class="w"> </span><span class="n">tipo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">isDirectory</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">"[DIR]"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">"[FIC]"</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"  %s %s%n"</span><span class="p">,</span><span class="w"> </span><span class="n">tipo</span><span class="p">,</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="na">getFileName</span><span class="p">());</span>
+<span class="w">                </span><span class="p">})</span>
+<span class="w">                </span><span class="p">.</span><span class="na">count</span><span class="p">();</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  (vacío)"</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eliminar</span><span class="p">(</span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Nombre del fichero o directorio a eliminar: "</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">().</span><span class="na">trim</span><span class="p">();</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nombre</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El nombre no puede estar vacío."</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">Path</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BASE</span><span class="p">.</span><span class="na">resolve</span><span class="p">(</span><span class="n">nombre</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">eliminado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">deleteIfExists</span><span class="p">(</span><span class="n">target</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">eliminado</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Eliminado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"No existe: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Ejemplo de ejecución:</strong></p>
+<div class="highlight"><pre><span></span><code>=== Gestión de Ficheros (java.nio) ===
+1. Crear directorio
+2. Crear fichero
+3. Listar contenido
+4. Eliminar fichero o directorio
+5. Salir
+Elige opción: 1
+Nombre del directorio: informes
+Directorio creado: C:\proyecto\datos\informes
+
+=== Gestión de Ficheros (java.nio) ===
+1. Crear directorio
+2. Crear fichero
+3. Listar contenido
+4. Eliminar fichero o directorio
+5. Salir
+Elige opción: 2
+Nombre del fichero: factura.txt
+Fichero creado: C:\proyecto\datos\factura.txt
+
+=== Gestión de Ficheros (java.nio) ===
+1. Crear directorio
+2. Crear fichero
+3. Listar contenido
+4. Eliminar fichero o directorio
+5. Salir
+Elige opción: 3
+  [FIC] factura.txt
+  [DIR] informes
+
+=== Gestión de Ficheros (java.nio) ===
+1. Crear directorio
+2. Crear fichero
+3. Listar contenido
+4. Eliminar fichero o directorio
+5. Salir
+Elige opción: 4
+Nombre del fichero o directorio a eliminar: factura.txt
+Eliminado: factura.txt
+
+=== Gestión de Ficheros (java.nio) ===
+1. Crear directorio
+2. Crear fichero
+3. Listar contenido
+4. Eliminar fichero o directorio
+5. Salir
+Elige opción: 5
+Programa finalizado.
+</code></pre></div>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

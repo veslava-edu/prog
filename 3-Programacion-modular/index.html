@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../2-Programacion-estructurada/" rel="prev"/>
+<link href="../4-Estructuras-datos/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>UD3 - Programación modular - PROG</title>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script><script src="../js/unpkg.com/d3@7.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-lib@0.18.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-view@0.18.js" type="text/javascript"></script><style type="text/css">div.mkdocs-markmap {
+    width: 100%;
+    min-height: 1em;
+    border: 1px solid grey;
+}
+.mkdocs-markmap > svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+</style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#programacion-modular-en-java-construyendo-software-como-si-fueran-legos">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="PROG" class="md-header__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            PROG
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              UD3 - Programación modular
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../1-Introduccion-programacion/">
+          
+  
+  
+  Programación
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="PROG" class="md-nav__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    PROG
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1-Introduccion-programacion/">
+<span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2-Programacion-estructurada/">
+<span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-conceptos-fundamentales">
+<span class="md-ellipsis">
+      
+        1. Conceptos Fundamentales
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-programacion-modular">
+<span class="md-ellipsis">
+      
+        2. Programación Modular
+      
+    </span>
+</a>
+<nav aria-label="2. Programación Modular" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21-desarrollo-y-ejemplos-practicos">
+<span class="md-ellipsis">
+      
+        2.1. Desarrollo y Ejemplos Prácticos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22-anatomia-de-un-metodo-funciones-vs-procedimientos">
+<span class="md-ellipsis">
+      
+        2.2. Anatomía de un Método: Funciones vs. Procedimientos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#23-funciones-los-metodos-que-devuelven-un-valor">
+<span class="md-ellipsis">
+      
+        2.3. Funciones: Los Métodos que Devuelven un Valor
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#24-procedimientos-los-metodos-que-realizan-acciones-void">
+<span class="md-ellipsis">
+      
+        2.4. Procedimientos: Los Métodos que Realizan Acciones (void)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#25-parametros-paso-por-valor-vs-paso-por-referencia">
+<span class="md-ellipsis">
+      
+        2.5. Parámetros: Paso por Valor vs. Paso por Referencia
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#26-ambito-de-las-variables-scope-lo-que-se-declara-en-un-metodo-se-queda-en-el-metodo">
+<span class="md-ellipsis">
+      
+        2.6. Ámbito de las Variables (Scope): "Lo que se declara en un método, se queda en el método"
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-sobrecarga-de-metodos">
+<span class="md-ellipsis">
+      
+        3. Sobrecarga de Métodos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-recursividad-el-arte-de-los-metodos-que-se-llaman-a-si-mismos">
+<span class="md-ellipsis">
+      
+        4. Recursividad: El Arte de los Métodos que se Llaman a Sí Mismos
+      
+    </span>
+</a>
+<nav aria-label="4. Recursividad: El Arte de los Métodos que se Llaman a Sí Mismos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-ejemplos-recursivos">
+<span class="md-ellipsis">
+      
+        4.1. Ejemplos recursivos
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacion-en-el-mundo-real">
+<span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-saber-mas">
+<span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-">
+<span class="md-ellipsis">
+      
+        ---
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios">
+<span class="md-ellipsis">
+      
+        EJERCICIOS
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4-Estructuras-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5-POO-Clases-y-Objetos/">
+<span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6-POO-Uso-avanzado/">
+<span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7-Estructuras-datos-dinamicas/">
+<span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../8-Programacion-funcional-Streams/">
+<span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../9-Ficheros/">
+<span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10-Acceso-base-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11-Interfaces-graficas-MVC/">
+<span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-conceptos-fundamentales">
+<span class="md-ellipsis">
+      
+        1. Conceptos Fundamentales
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-programacion-modular">
+<span class="md-ellipsis">
+      
+        2. Programación Modular
+      
+    </span>
+</a>
+<nav aria-label="2. Programación Modular" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21-desarrollo-y-ejemplos-practicos">
+<span class="md-ellipsis">
+      
+        2.1. Desarrollo y Ejemplos Prácticos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22-anatomia-de-un-metodo-funciones-vs-procedimientos">
+<span class="md-ellipsis">
+      
+        2.2. Anatomía de un Método: Funciones vs. Procedimientos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#23-funciones-los-metodos-que-devuelven-un-valor">
+<span class="md-ellipsis">
+      
+        2.3. Funciones: Los Métodos que Devuelven un Valor
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#24-procedimientos-los-metodos-que-realizan-acciones-void">
+<span class="md-ellipsis">
+      
+        2.4. Procedimientos: Los Métodos que Realizan Acciones (void)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#25-parametros-paso-por-valor-vs-paso-por-referencia">
+<span class="md-ellipsis">
+      
+        2.5. Parámetros: Paso por Valor vs. Paso por Referencia
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#26-ambito-de-las-variables-scope-lo-que-se-declara-en-un-metodo-se-queda-en-el-metodo">
+<span class="md-ellipsis">
+      
+        2.6. Ámbito de las Variables (Scope): "Lo que se declara en un método, se queda en el método"
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-sobrecarga-de-metodos">
+<span class="md-ellipsis">
+      
+        3. Sobrecarga de Métodos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-recursividad-el-arte-de-los-metodos-que-se-llaman-a-si-mismos">
+<span class="md-ellipsis">
+      
+        4. Recursividad: El Arte de los Métodos que se Llaman a Sí Mismos
+      
+    </span>
+</a>
+<nav aria-label="4. Recursividad: El Arte de los Métodos que se Llaman a Sí Mismos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-ejemplos-recursivos">
+<span class="md-ellipsis">
+      
+        4.1. Ejemplos recursivos
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacion-en-el-mundo-real">
+<span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-saber-mas">
+<span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-">
+<span class="md-ellipsis">
+      
+        ---
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios">
+<span class="md-ellipsis">
+      
+        EJERCICIOS
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<!-- 2-Programacion-Modular.md --><h1 id="programacion-modular-en-java-construyendo-software-como-si-fueran-legos">Programación Modular en Java: Construyendo Software como si fueran LEGOs</h1>
+<p>¡Hola, equipo! Si en el tema anterior sentamos las bases de la programación estructurada para dejar atrás el caos, ahora vamos a dar el siguiente paso para convertirnos en auténticos arquitectos de software. ¿Habéis montado alguna vez un set de LEGO complejo, como el Halcón Milenario o un coche de Technic? No empiezas uniendo piezas al azar, ¿verdad? Sigues un manual que agrupa las instrucciones en pasos: "primero, monta el motor", "luego, construye el chasis", "finalmente, ensambla la cabina". Cada uno de esos subconjuntos es una pieza completa y funcional por sí misma.</p>
+<p>La <strong>programación modular</strong> es exactamente eso. Es la filosofía de "divide y vencerás" aplicada al código. En lugar de escribir un único bloque de miles de líneas en el <code>main</code> (el equivalente a tirar todas las piezas de LEGO en el suelo y rezar), descomponemos un problema gigante en subproblemas pequeños y manejables. Cada uno de estos subproblemas se resuelve en su propio "módulo", que en Java llamamos <strong>métodos</strong>.</p>
+<p>En el mundo laboral, nadie os pedirá construir una aplicación entera en un solo archivo. Trabajaréis en equipos donde un compañero se encarga del módulo de autenticación, otro del sistema de pagos y vosotros del perfil de usuario. La programación modular no es solo una buena práctica; es la única forma viable de construir software robusto, mantenible y escalable. ¡Vamos a aprender a construir nuestros propios "kits de LEGO" de código!</p>
+<p>A finales de los 60, el software era un caos. Los programadores usaban una instrucción llamada <code>GOTO</code> que permitía saltar de cualquier punto del programa a cualquier otro. El resultado era el famoso "código espagueti": un lío de saltos imposible de seguir, depurar o mantener.</p>
+<div class="admonition danger">
+<p class="admonition-title">El GOTO es el Lado Oscuro</p>
+<p>Edsger Dijkstra, uno de los padres de la informática, escribió en 1968 un famoso artículo llamado <em>"Go To Statement Considered Harmful"</em> (La sentencia GOTO considerada dañina). Demostró que su uso indiscriminado era una de las principales fuentes de errores en programación.</p>
+</div>
+<p>La <strong>programación estructurada</strong> nació como la solución a este caos. El <strong>Teorema del Programa Estructurado</strong> (de Böhm y Jacopini) demostró matemáticamente que cualquier algoritmo, por complejo que sea, puede construirse usando únicamente tres estructuras de control básicas:</p>
+<ol>
+<li><strong>Secuencia:</strong> Ejecutar instrucciones una detrás de otra.</li>
+<li><strong>Selección (o Condicional):</strong> Elegir entre dos o más caminos de ejecución (<code>if</code>, <code>switch</code>).</li>
+<li><strong>Iteración (o Bucle):</strong> Repetir un bloque de código (<code>while</code>, <code>for</code>).</li>
+</ol>
+<p>Estos tres pilares son la base de casi todos los lenguajes de programación modernos, incluido JAVA. Dominarlos es dominar la lógica fundamental de la programación.</p>
+<div class="language-markmap mkdocs-markmap"><markmap-data encoding="base64" hidden="true">IyBQcm9ncmFtYWNpw7NuIEVzdHJ1Y3R1cmFkYQoKIyMgUGlsYXJlcwotICoqU2VjdWVuY2lhKio6IFBhc28gMSDihpIgUGFzbyAyIOKGkiAuLi4KLSAqKlNlbGVjY2nDs24qKjogwr9FcyB2ZXJkYWQ/IOKGkiBIYXogQSAvIFNpIG5vIOKGkiBIYXogQgotICoqSXRlcmFjacOzbioqOiBNaWVudHJhcyBzZWEgdmVyZGFkIOKGkiBSZXBpdGUgZXN0bwoKIyMgRWwgR3JhbiBFbmVtaWdvCi0gKipgZ290b2AqKjogRWwgInNhbHRvIiBpbmNvbmRpY2lvbmFsIHF1ZSBjcmVhYmEgY8OzZGlnbyBjYcOzdGljby4KLSBMYSBwcm9ncmFtYWNpw7NuIGVzdHJ1Y3R1cmFkYSBsbyBwcm9ow61iZS4KCiMjIEJlbmVmaWNpb3MKLSAqKkNsYXJpZGFkKio6IEVsIGPDs2RpZ28gZXMgbcOhcyBmw6FjaWwgZGUgbGVlciB5IGVudGVuZGVyLgotICoqTWFudGVuaWJpbGlkYWQqKjogTcOhcyBmw6FjaWwgZGUgZGVwdXJhciB5IG1vZGlmaWNhci4KLSAqKkZpYWJpbGlkYWQqKjogTWVub3MgcHJvcGVuc28gYSBlcnJvcmVzIGzDs2dpY29zLg==</markmap-data></div>
+<p><br/></p><hr/><p></p>
+<h2 id="1-conceptos-fundamentales">1. Conceptos Fundamentales</h2>
+<p>Antes de empezar a construir, necesitamos conocer nuestras herramientas y materiales. Estos son los términos clave que usarás a diario.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Programación Modular</p>
+<p>Es un paradigma de programación que consiste en dividir un programa grande en partes más pequeñas e independientes llamadas módulos. Cada módulo tiene una tarea específica y bien definida, y se pueden desarrollar y probar de forma aislada para luego combinarlos y formar la aplicación completa.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Método</p>
+<p>En Java, un método es el bloque de construcción fundamental de la programación modular. Es un conjunto de instrucciones de código agrupadas bajo un nombre que realizan una tarea específica. Es la implementación práctica de un "módulo".</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Función</p>
+<p>Una función es un tipo de método que, después de realizar su tarea, <strong>devuelve un resultado</strong> o un valor. Es como una máquina expendedora: le das unos parámetros (dinero) y te devuelve un producto (un valor).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Procedimiento</p>
+<p>Un procedimiento es el otro tipo de método. Realiza una serie de acciones, pero <strong>no devuelve ningún valor</strong>. Su tipo de retorno se especifica con la palabra clave <code>void</code>. Es como pulsar el botón del ascensor: realiza una acción (mover la cabina), pero no te entrega nada a cambio.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Parámetro</p>
+<p>Un parámetro es una <strong>variable declarada en la definición de un método</strong>. Actúa como un marcador de posición, un "hueco" que espera recibir un valor cuando el método sea llamado. Define qué tipo de información necesita el método para trabajar.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Argumento</p>
+<p>Un argumento es el <strong>valor real que se pasa a un método cuando es llamado</strong>. Es la "pieza" que encaja en el "hueco" definido por el parámetro.</p>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="2-programacion-modular">2. Programación Modular</h2>
+<p>A medida que los programas crecen, meter todo el código dentro del método <code>main</code> se vuelve una pesadilla. La <strong>programación modular</strong> es la solución: consiste en descomponer un problema grande en subproblemas más pequeños y manejables, y crear "módulos" de código para resolver cada uno. En JAVA, estos módulos son los <strong>métodos</strong> (que engloban tanto funciones como procedimientos).</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/3-1-modular.jpeg"><img alt="Programación Modular" src="../images/3-1-modular.jpeg"/></a></p>
+<div class="admonition info">
+<p class="admonition-title">La Filosofía del "Divide y Vencerás"</p>
+<p>Es mucho más fácil resolver 10 problemas pequeños que un problema gigante. La programación modular aplica este principio para crear software que es:<br/>
+*   <strong>Más legible:</strong> Cada método tiene una única responsabilidad.<br/>
+*   <strong>Más reutilizable:</strong> Un método bien hecho se puede llamar desde distintas partes del programa, o incluso desde otros programas.<br/>
+*   <strong>Más fácil de depurar:</strong> Si algo falla, puedes aislar el problema en un método específico en lugar de buscarlo en miles de líneas de código.</p>
+</div>
+<h3 id="21-desarrollo-y-ejemplos-practicos">2.1. Desarrollo y Ejemplos Prácticos</h3>
+<p>Imagina que te encargan desarrollar una app como Discord. La tarea es gigantesca. Pero si la divides, la cosa cambia:<br/>
+*   Un módulo para gestionar el login de usuarios.<br/>
+*   Un módulo para enviar y recibir mensajes en un canal.<br/>
+*   Un módulo para gestionar las llamadas de voz.<br/>
+*   Un módulo para administrar los roles y permisos de un servidor.<br/></p>
+<p>De repente, el problema se ha transformado en cuatro problemas más pequeños y mucho más fáciles de abordar. Esta es la esencia de la descomposición modular.</p>
+<pre class="mermaid"><code>graph TD
+    subgraph "Problema Gigante"
+        A[Desarrollar Discord]
+    end
+
+    subgraph "Subproblemas (Módulos)"
+        B[Gestión de Usuarios]
+        C[Chat en Tiempo Real]
+        D[Llamadas de Voz/Vídeo]
+        E[Administración de Servidores]
+    end
+
+    A --&gt;|"Divide y Vencerás"| B
+    A --&gt;|"Divide y Vencerás"| C
+    A --&gt;|"Divide y Vencerás"| D
+    A --&gt;|"Divide y Vencerás"| E
+
+    B --&gt; F{Aplicación Final}
+    C --&gt; F
+    D --&gt; F
+    E --&gt; F</code></pre>
+<p>Las ventajas son inmediatas y transformadoras:<br/>
+*   <strong>Claridad y Legibilidad:</strong> Un método <code>calculateUserTaxes()</code> es infinitamente más fácil de entender que buscar esas 20 líneas de código perdidas en un método <code>main</code> de 2000 líneas.<br/>
+*   <strong>Reutilización:</strong> ¿Necesitas validar un email en 5 sitios distintos de tu app? Creas un método <code>isValidEmail(String email)</code> una vez y lo llamas 5 veces. ¡Adiós al código duplicado!<br/>
+*   <strong>Facilidad de Depuración:</strong> Si hay un error en el cálculo de impuestos, sabes que el bug está dentro de <code>calculateUserTaxes()</code>. No tienes que cazarlo por toda la aplicación. Aislar y corregir errores se vuelve trivial.<br/>
+*   <strong>Trabajo en Equipo:</strong> Permite que varios programadores trabajen en paralelo en distintos módulos sin pisarse los unos a los otros.<br/></p>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>Piensa en la aplicación de tu banco. ¿Qué módulos o subproblemas crees que la componen? Nombra al menos cuatro.</li>
+<li>¿Qué significa el principio de "responsabilidad única" en el contexto de la programación modular? ¿Por qué es tan importante?</li>
+<li>Imagina que estás trabajando en un e-commerce. Se detecta un fallo que aplica incorrectamente los descuentos en el carrito de la compra. Si el código es modular, ¿dónde empezarías a buscar el error? ¿Qué pasaría si todo el código estuviera en un solo archivo?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="22-anatomia-de-un-metodo-funciones-vs-procedimientos">2.2. Anatomía de un Método: Funciones vs. Procedimientos</h3>
+<p>En Java, todos son métodos, pero es crucial distinguir entre los que devuelven un valor (funciones) y los que no (procedimientos).</p>
+<p>Un método se declara definiendo su cabecera y su cuerpo, dentro de una clase JAVA.</p>
+<p>La <strong>cabecera</strong> de un método se define, en este orden:<br/>
+● Acceso(modificadores de visibilidad y directiva static).<br/>
+● Tipo de retorno, o tipo de sus resultados (valores de retorno).<br/>
+● Nombre (identificador).<br/>
+● Lista de parámetros, o los tipos y nombres de sus datos (parámetros).<br/></p>
+<p>El <strong>cuerpo</strong> es la secuencia de instrucciones que se ejecutan al invocarlo, puede incluir:<br/>
+● Declaraciones de variables.<br/>
+● Cualquier tipo de instrucción o bloque de instrucciones: asignación, condicional, bucle, e incluso, llamadas o invocaciones a otros métodos.</p>
+<p>En JAVA se debe indicar el tipo de dato de retorno antes del identificador.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">suma</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">…</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="cm">/*declaramos un método con</span>
+<span class="cm">identificador suma y que retorna un valor entero(int) */</span>
+</code></pre></div>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/3-4-estructura-funcion.png"><img alt="Estructura de una función" src="../images/3-4-estructura-funcion.png"/></a></p>
+<p>Como resultado de su invocación, un método devuelve unos resultados, los denominados valores de retorno. <br/>
+● El tipo de retorno de un método puede ser cualquier tipo de dato en JAVA (int, double, char, String, boolean, etc.). También pueden devolver objetos. <br/>
+● Para devolver un valor, dentro del método se debe utilizar la instrucción return. En concreto, el valor de retorno debe aparecer después de la palabra reservada return. </p>
+<p>Además, se deben tener en cuenta las siguientes consideraciones:<br/>
+○ La ejecución de un método finaliza tras la ejecución de cualquiera de los return que aparecen en su cuerpo.<br/>
+○ Si un método no devuelve explícitamente ningún valor, entonces el tipo de su resultado es void. En este caso, implícitamente, se ejecuta “return” como última instrucción del método. <br/></p>
+<h3 id="23-funciones-los-metodos-que-devuelven-un-valor">2.3. Funciones: Los Métodos que Devuelven un Valor</h3>
+<p>Una función realiza un cálculo o una operación y te entrega el resultado. Utiliza la palabra clave <code>return</code> para devolver el valor. El tipo de dato que devuelve debe coincidir con el declarado en la firma del método.</p>
+<p><strong>Ejemplo 1: Calculando el bono de un empleado</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HumanResources</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Calcula el bono anual de un empleado basado en su rendimiento.</span>
+<span class="cm">     * Es una función porque calcula y devuelve un valor numérico.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param baseSalary El salario base del empleado.</span>
+<span class="cm">     * @param performanceRating Una calificación de rendimiento de 1 (malo) a 5 (excelente).</span>
+<span class="cm">     * @return El monto del bono calculado en euros.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculateBonus</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">baseSalary</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">performanceRating</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">bonusPercentage</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Usamos un switch expression (Java 14+) para más claridad</span>
+<span class="w">        </span><span class="n">bonusPercentage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">performanceRating</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="mf">0.20</span><span class="p">;</span><span class="w">  </span><span class="c1">// 20% para rendimiento excelente</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="mf">0.15</span><span class="p">;</span><span class="w">  </span><span class="c1">// 15% para bueno</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="mf">0.10</span><span class="p">;</span><span class="w">  </span><span class="c1">// 10% para promedio</span>
+<span class="w">            </span><span class="k">default</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"> </span><span class="c1">// 0% para por debajo del promedio</span>
+<span class="w">        </span><span class="p">};</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">baseSalary</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">bonusPercentage</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">50000.0</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">rating</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Llamamos a la función y almacenamos el resultado</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">employeeBonus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calculateBonus</span><span class="p">(</span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="n">rating</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Salario: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"€, Calificación: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rating</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Bono Anual: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">employeeBonus</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"€"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 7500.0€</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Ejemplo 2: Creando un nombre de usuario único</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Random</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserRegistration</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Genera un nombre de usuario sugerido combinando nombre, apellido y un número aleatorio.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param firstName El nombre de la persona.</span>
+<span class="cm">     * @param lastName El apellido de la persona.</span>
+<span class="cm">     * @return Un String con el nombre de usuario sugerido (ej: "jdoe789").</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">generateUsername</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">firstName</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">lastName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">firstName</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">lastName</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">firstName</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">lastName</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s">"default_user"</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">firstInitial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">firstName</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">).</span><span class="na">toLowerCase</span><span class="p">();</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">lastNameShort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lastName</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">();</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lastNameShort</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">lastNameShort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lastNameShort</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">randomNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">().</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">900</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="c1">// Número aleatorio entre 100 y 999</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">firstInitial</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lastNameShort</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">randomNumber</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">user1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">generateUsername</span><span class="p">(</span><span class="s">"John"</span><span class="p">,</span><span class="w"> </span><span class="s">"Doe"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">user2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">generateUsername</span><span class="p">(</span><span class="s">"Samantha"</span><span class="p">,</span><span class="w"> </span><span class="s">"Williamson"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Usuario sugerido para John Doe: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Usuario sugerido para Samantha Williamson: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user2</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="24-procedimientos-los-metodos-que-realizan-acciones-void">2.4. Procedimientos: Los Métodos que Realizan Acciones (<code>void</code>)</h3>
+<p>Un procedimiento ejecuta una serie de pasos pero no devuelve nada. Su propósito es cambiar el estado de algo o realizar una acción, como imprimir en consola, guardar en un fichero o modificar un objeto. Se identifican por la palabra clave <code>void</code> en su firma.</p>
+<p><strong>Ejemplo 1: Un procedimiento para mostrar un mensaje de bienvenida</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserInterface</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Muestra un mensaje de bienvenida personalizado en la consola.</span>
+<span class="cm">     * Es un procedimiento porque su única acción es imprimir, no devuelve nada.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param username El nombre del usuario a saludar.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">displayWelcomeMessage</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"======================================"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Bienvenido de vuelta, "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"!"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tu panel de control está listo."</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"======================================"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Llamamos al procedimiento para que realice su acción</span>
+<span class="w">        </span><span class="n">displayWelcomeMessage</span><span class="p">(</span><span class="s">"AdminUser"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Ejemplo 2: Un procedimiento para registrar un evento en un log</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.LocalDateTime</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.time.format.DateTimeFormatter</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SystemLogger</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Registra un mensaje de evento con un nivel de severidad y marca de tiempo.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param level El nivel del log (ej: "INFO", "WARNING", "ERROR").</span>
+<span class="cm">     * @param message El mensaje a registrar.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">logEvent</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">level</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">format</span><span class="p">(</span><span class="n">DateTimeFormatter</span><span class="p">.</span><span class="na">ISO_LOCAL_DATE_TIME</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"["</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"] ["</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"] - "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">logEvent</span><span class="p">(</span><span class="s">"INFO"</span><span class="p">,</span><span class="w"> </span><span class="s">"El sistema se ha iniciado correctamente."</span><span class="p">);</span>
+<span class="w">        </span><span class="n">logEvent</span><span class="p">(</span><span class="s">"WARNING"</span><span class="p">,</span><span class="w"> </span><span class="s">"La memoria está al 85% de su capacidad."</span><span class="p">);</span>
+<span class="w">        </span><span class="n">logEvent</span><span class="p">(</span><span class="s">"ERROR"</span><span class="p">,</span><span class="w"> </span><span class="s">"No se pudo conectar a la base de datos."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Función (Método con retorno)</th>
+<th>Procedimiento (Método <code>void</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Propósito</strong></td>
+<td>Calcular un valor y devolverlo.</td>
+<td>Ejecutar una acción o modificar un estado.</td>
+</tr>
+<tr>
+<td><strong>Palabra Clave</strong></td>
+<td><code>return &lt;valor&gt;;</code></td>
+<td>No usa <code>return</code> para devolver un valor (puede usar <code>return;</code> para salir).</td>
+</tr>
+<tr>
+<td><strong>Tipo de Retorno</strong></td>
+<td>Cualquiera (<code>int</code>, <code>String</code>, <code>double</code>, un objeto, etc.)</td>
+<td>Siempre <code>void</code>.</td>
+</tr>
+<tr>
+<td><strong>Uso Típico</strong></td>
+<td><code>resultado = miFuncion();</code></td>
+<td><code>miProcedimiento();</code></td>
+</tr>
+<tr>
+<td><strong>Analogía</strong></td>
+<td>Una calculadora que te da un resultado.</td>
+<td>Un interruptor que enciende una luz.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>¿Crearías una función o un procedimiento para validar si una contraseña cumple con los requisitos de seguridad? ¿Y para mostrar un mensaje de error si no los cumple? Justifica tu respuesta.</li>
+<li>Observa el método <code>main</code>. ¿Es una función o un procedimiento? ¿Por qué?</li>
+<li>En el ejemplo <code>HumanResources</code>, ¿qué pasaría si un empleado tiene una calificación de 2? ¿Qué valor devolvería la función <code>calculateBonus</code>? ¿Cómo podrías modificar el código para que sea aún más robusto?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="25-parametros-paso-por-valor-vs-paso-por-referencia">2.5. Parámetros: Paso por Valor vs. Paso por Referencia</h3>
+<p>Este es uno de los conceptos más importantes y que más confusiones genera. Es crucial entender cómo JAVA maneja los parámetros.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Paso por Valor</p>
+<p>Cuando se pasa un parámetro por valor, el método recibe una <strong>copia</strong> del dato original. Cualquier modificación que se haga a esa copia dentro del método <strong>no afecta</strong> a la variable original fuera del método.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Paso por Referencia</p>
+<p>Cuando se pasa un parámetro por referencia, el método recibe la <strong>dirección de memoria</strong> del dato original. Cualquier modificación que se haga dentro del método <strong>sí afecta</strong> a la variable original.</p>
+</div>
+<pre class="mermaid"><code>graph TD
+    A[Paso por Valor] --&gt; B[Copia del valor]
+    A --&gt; C[Modificaciones no se reflejan]
+    D[Paso por Referencia] --&gt; E[Dirección de memoria]
+    D --&gt; F[Modificaciones afectan original]</code></pre>
+<p>Los métodos serían inútiles si no pudieran recibir información para trabajar. Los parámetros son su canal de entrada de datos. Entender cómo Java los maneja es, sin exagerar, uno de los pilares para evitar futuros dolores de cabeza.</p>
+<p><strong>La Regla de Oro en JAVA:</strong></p>
+<div class="admonition danger">
+<p class="admonition-title">¡En JAVA, todo se pasa SIEMPRE por valor!</p>
+<p>Repítelo como un mantra. Pero aquí viene el matiz que lo cambia todo:<br/>
+*   Para los <strong>tipos primitivos</strong> (<code>int</code>, <code>double</code>, <code>boolean</code>, <code>char</code>...), se pasa una <strong>copia del valor</strong> literal.<br/>
+*   Para los <strong>objetos</strong> (Arrays, Strings, cualquier clase que crees...), lo que se pasa por valor es una <strong>copia de la referencia</strong> (la dirección de memoria donde está el objeto).</p>
+</div>
+<p>¿Y esto qué significa en la práctica?</p>
+<ul>
+<li><strong>Primitivos (Paso por Valor Puro):</strong> Le das al método una fotocopia de un número. Si el método tacha y escribe encima de la fotocopia, tu número original permanece intacto.</li>
+<li><strong>Objetos (Paso por Copia de Referencia):</strong> Le das al método una fotocopia de la dirección de tu casa. El método no puede cambiar la dirección para que apunte a otra casa (no puede hacer que tu variable original apunte a otro objeto). Pero sí puede ir a la dirección que le has dado y pintar la puerta de verde (modificar el estado interno del objeto). Tu casa original ahora tendrá la puerta verde.</li>
+</ul>
+<p><strong>Ejemplo Práctico: Primitivos vs. Objetos</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ParameterPassingDemo</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Recibe un tipo primitivo. Cualquier cambio es local.</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">attemptToModifyPrimitive</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">health</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  -&gt; Método recibe health: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">health</span><span class="p">);</span>
+<span class="w">        </span><span class="n">health</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Modificamos la COPIA local.</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  -&gt; Método modifica health a: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">health</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Recibe un objeto (array). Puede modificar el estado del objeto.</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">modifyObjectState</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">inventory</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  -&gt; Método recibe inventario[0]: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">inventory</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Modificamos el contenido del objeto al que apunta la referencia</span>
+<span class="w">        </span><span class="n">inventory</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Espada Rota"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  -&gt; Método modifica inventario[0] a: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">inventory</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// --- Paso por valor con PRIMITIVOS ---</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">playerHealth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Vida del jugador ANTES de llamar al método: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">playerHealth</span><span class="p">);</span>
+<span class="w">        </span><span class="n">attemptToModifyPrimitive</span><span class="p">(</span><span class="n">playerHealth</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Vida del jugador DESPUÉS de llamar al método: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">playerHealth</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n-----------------------------------------\n"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// --- Paso por "valor de la referencia" con OBJETOS ---</span>
+<span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">playerInventory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"Espada de Acero"</span><span class="p">,</span><span class="w"> </span><span class="s">"Poción"</span><span class="p">};</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Inventario ANTES de llamar al método: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">playerInventory</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+<span class="w">        </span><span class="n">modifyObjectState</span><span class="p">(</span><span class="n">playerInventory</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Inventario DESPUÉS de llamar al método: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">playerInventory</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<pre class="mermaid"><code>sequenceDiagram
+    participant main as "main()"
+    participant metodo as "metodo()"
+
+    main-&gt;&gt;main: int vidaPrimitiva = 100;
+    main-&gt;&gt;main: int[] statsObjeto = {50, 20};
+
+    Note right of main: 'vidaPrimitiva' vale 100.
+    main-&gt;&gt;metodo: reducirVida(vidaPrimitiva);
+    Note left of metodo: Se crea una COPIA de 'vidaPrimitiva'&lt;br&gt;con valor 100.
+    metodo-&gt;&gt;metodo: La copia se reduce a 80.
+    Note left of metodo: La 'vidaPrimitiva' original en main()&lt;br&gt;SIGUE VALIENDO 100.
+    metodo--&gt;&gt;main: finaliza
+
+    Note right of main: 'statsObjeto' apunta a una dirección&lt;br&gt;de memoria con [50, 20].
+    main-&gt;&gt;metodo: aplicarVeneno(statsObjeto);
+    Note left of metodo: Se crea una COPIA de la dirección de memoria.&lt;br&gt;Ambas referencias apuntan al MISMO objeto [50, 20].
+    metodo-&gt;&gt;metodo: Se modifica el objeto: statsObjeto[0] = 45;
+    Note left of metodo: Se está cambiando el objeto original&lt;br&gt;a través de la referencia copiada.
+    metodo--&gt;&gt;main: finaliza
+    Note right of main: ¡El array original en main()&lt;br&gt;AHORA CONTIENE [45, 20]!</code></pre>
+<p>La analogía:<br/>
+*   <strong>Paso de primitivos:</strong> Te doy una fotocopia de mi número de teléfono. Si tú tachas la fotocopia, mi número original en mi agenda sigue intacto.<br/>
+*   <strong>Paso de objetos:</strong> Te doy una fotocopia de la dirección de mi casa. No puedes cambiar la dirección para que apunte a otra casa (no puedes reasignar la referencia), pero sí puedes ir a esa dirección y pintar la puerta de verde (modificar el estado del objeto). Mi casa (el objeto original) ahora tendrá la puerta verde.<br/></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tipo de Parámetro</th>
+<th style="text-align: left;">¿Qué se pasa al método?</th>
+<th style="text-align: left;">¿Afecta a la variable original?</th>
+<th style="text-align: left;">Analogía</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Primitivos</strong> (<code>int</code>, <code>double</code>...)</td>
+<td style="text-align: left;">Una copia del valor.</td>
+<td style="text-align: left;"><strong>NO</strong>. Las modificaciones son locales al método.</td>
+<td style="text-align: left;">Te doy una fotocopia de mi DNI.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Objetos</strong> (<code>String</code>, <code>Array</code>...)</td>
+<td style="text-align: left;">Una copia de la referencia (dirección de memoria).</td>
+<td style="text-align: left;"><strong>SÍ</strong>, si se modifica el estado <em>interno</em> del objeto. <strong>NO</strong>, si se intenta reasignar la referencia a un nuevo objeto.</td>
+<td style="text-align: left;">Te doy la dirección de mi casa.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>Si un método recibe un <code>String</code> y dentro hace <code>miString = "nuevo valor";</code>, ¿cambiará el <code>String</code> original fuera del método? ¿Por qué? (Pista: Los Strings son inmutables en Java).</li>
+<li>Diseña la firma de un método llamado <code>resetPassword</code> que necesita recibir un objeto de tipo <code>User</code> y la nueva contraseña. ¿Sería una función o un procedimiento?</li>
+<li>En el ejemplo <code>modifyObjectState</code>, ¿qué pasaría si dentro del método añadiéramos la línea <code>inventory = new String[]{"Nuevo Inventario"};</code>? ¿Afectaría al <code>playerInventory</code> del <code>main</code>? Razona tu respuesta basándote en el paso por copia de referencia.</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="26-ambito-de-las-variables-scope-lo-que-se-declara-en-un-metodo-se-queda-en-el-metodo">2.6. Ámbito de las Variables (Scope): "Lo que se declara en un método, se queda en el método"</h3>
+<p>El <strong>ámbito</strong> o <strong>scope</strong> de una variable define dónde es visible y accesible esa variable en tu programa. Es como la jurisdicción de un policía: solo puede actuar dentro de sus límites. En Java, estos límites están definidos principalmente por las llaves <code>{}</code>.</p>
+<pre class="mermaid"><code>graph TD
+    A[Ámbito] --&gt; B[Global]
+    A --&gt; C[Local]
+    C --&gt; D[Función]
+    C --&gt; E[Bloque]</code></pre>
+<div class="language-markmap mkdocs-markmap"><markmap-data encoding="base64" hidden="true">IyDDgW1iaXRvIGRlIGxhcyBWYXJpYWJsZXMKCiMjIFZhcmlhYmxlIGRlIENsYXNlIChBdHJpYnV0bykKLSAqKkRlY2xhcmFjacOzbioqOiBEZW50cm8gZGUgbGEgY2xhc2UsIGZ1ZXJhIGRlIGN1YWxxdWllciBtw6l0b2RvLgotICoqYHN0YXRpY2AqKjogUGVydGVuZWNlIGEgbGEgY2xhc2UuIENvbXBhcnRpZGEgcG9yIHRvZG9zIGxvcyBvYmpldG9zLgotICoqTm8gYHN0YXRpY2AqKjogUGVydGVuZWNlIGEgY2FkYSBvYmpldG8gKGluc3RhbmNpYSkuCi0gKipWaXNpYmlsaWRhZCoqOiBBY2Nlc2libGUgZGVzZGUgY3VhbHF1aWVyIG3DqXRvZG8gZGUgbGEgY2xhc2UuCi0gKipBbmFsb2fDrWEqKjogRWwgbsO6bWVybyBkZSBsYSBjYWxsZSBkZSB1biBlZGlmaWNpby4gVG9kb3MgbG9zIGFwYXJ0YW1lbnRvcyBsbyBjb25vY2VuLgoKIyMgVmFyaWFibGUgTG9jYWwKLSAqKkRlY2xhcmFjacOzbioqOiBEZW50cm8gZGUgdW4gbcOpdG9kbyBvIHVuIGJsb3F1ZSAoYGlmYCwgYGZvcmAsIGB7fWApLgotICoqVmlzaWJpbGlkYWQqKjogU29sbyBkZXNkZSBzdSBkZWNsYXJhY2nDs24gaGFzdGEgZWwgY2llcnJlIGRlIHN1IGxsYXZlIGB9YC4KLSAqKlZpZGEqKjogTmFjZSBhbCBkZWNsYXJhcnNlLCBtdWVyZSBhbCBzYWxpciBkZSBzdSBibG9xdWUuCi0gKipBbmFsb2fDrWEqKjogVW5hIG5vdGEgcXVlIGRlamFzIGVuIGxhIG5ldmVyYSBkZSB0dSBhcGFydGFtZW50by4gU29sbyBsYSB2ZW4gbG9zIHF1ZSBlc3TDoW4gZGVudHJvLg==</markmap-data></div>
+<p><strong>Ejemplo Práctico: Demostración de Ámbitos</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ScopeDemo</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// 1. VARIABLE DE CLASE (static). "Global" para esta clase.</span>
+<span class="w">    </span><span class="c1">// Accesible desde cualquier método (static) de la clase.</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">GAME_VERSION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"v1.2.0"</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">playerSetup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 2. VARIABLE LOCAL al método playerSetup.</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">playerName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Aragorn"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Configurando a "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">playerName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" para el juego "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GAME_VERSION</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// 3. VARIABLE LOCAL al bloque 'if'.</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">setupMessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"¡Personaje listo!"</span><span class="p">;</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">setupMessage</span><span class="p">);</span><span class="w"> </span><span class="c1">// OK: Visible dentro de su bloque.</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">playerName</span><span class="p">);</span><span class="w">   </span><span class="c1">// OK: El bloque hijo puede ver las variables del padre.</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// ¡ERROR DE COMPILACIÓN! 'setupMessage' no existe aquí. Murió al cerrar la llave del 'if'.</span>
+<span class="w">        </span><span class="c1">// System.out.println(setupMessage); </span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Iniciando el motor del juego. Versión: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GAME_VERSION</span><span class="p">);</span>
+<span class="w">        </span><span class="n">playerSetup</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// ¡ERROR DE COMPILACIÓN! 'playerName' no existe en el ámbito de 'main'.</span>
+<span class="w">        </span><span class="c1">// System.out.println("El jugador es: " + playerName);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">La Regla del Mínimo Ámbito Posible</p>
+<p>Una de las mejores prácticas en programación es declarar las variables en el ámbito más reducido posible. Si solo necesitas una variable dentro de un bucle <code>for</code>, declárala dentro del <code>for</code>: <code>for (int i = 0; ...</code>. Esto reduce la "contaminación" de los ámbitos superiores, previene errores por modificación accidental de variables y hace el código mucho más fácil de razonar y mantener.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>¿Por qué crees que abusar de las variables de clase (o "globales") se considera una mala práctica en proyectos grandes? ¿Qué problemas de colaboración y depuración podría causar?</li>
+<li>Si declaras una variable <code>int i = 0;</code> antes de un bucle <code>for</code>, y dentro del bucle declaras otra variable <code>String i = "hola";</code>, ¿funcionaría? ¿Qué es el "variable shadowing" o sombreado de variables?</li>
+<li>En el ejemplo <code>ScopeDemo</code>, ¿podrías declarar <code>GAME_VERSION</code> dentro del <code>main</code> y aun así acceder a ella desde <code>playerSetup</code>? ¿Cómo tendrías que cambiar la llamada al método para que funcionara?</li>
+</ol>
+</div>
+<h2 id="3-sobrecarga-de-metodos">3. Sobrecarga de Métodos</h2>
+<p>En Java, es posible definir múltiples métodos con el mismo nombre, siempre que se cumplan las siguientes condiciones:<br/></p>
+<ul>
+<li>Si el método tiene un solo parámetro, cada método debe usar un tipo de parámetro diferente.<br/></li>
+<li>Si hay más de un parámetro, al menos uno de ellos debe ser de un tipo distinto.<br/></li>
+<li>Si el método no tiene parámetros, no se permite otro método con el mismo nombre.<br/></li>
+</ul>
+<p>Ejemplo:    </p>
+<div class="highlight"><pre><span></span><code><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">bienvenida</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">"¡Hola, qué tal estás?"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">bienvenida</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">usuario</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">"¡Hola, "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">usuario</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"! ¿Qué tal estás?"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">bienvenida</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">usuario</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">lugar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">"¡Hola, "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">usuario</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"! ¿Cómo estás en "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lugar</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"?"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En JAVA podemos tener métodos con el mismo nombre, pero se debe tener en cuenta que aunque el tipo de retorno sea distinto, si los parámetros son iguales, se producirá un 
+error de compilación. Esto se debe a que JAVA realmente no sabe el método que debe utilizar.</p>
+<p><br/></p><hr/><p></p>
+<h2 id="4-recursividad-el-arte-de-los-metodos-que-se-llaman-a-si-mismos">4. Recursividad: El Arte de los Métodos que se Llaman a Sí Mismos</h2>
+<p>La recursividad es una técnica de programación donde un método se llama a sí mismo para resolver un problema. Es una alternativa a los bucles (iteración) y es increíblemente elegante para ciertos tipos de problemas, como los matemáticos o los que implican estructuras de datos jerárquicas (como árboles de archivos).</p>
+<p>Todo método recursivo debe tener dos elementos clave: <br/>
+1.  <strong>Caso Base:</strong> Una condición que detiene la recursividad. Sin él, el método se llamaría a sí mismo infinitamente, provocando un error <code>StackOverflowError</code> (¡sí, como la web de donde copiamos el código!).<br/>
+2.  <strong>Llamada Recursiva:</strong> La parte del método que se llama a sí misma, pero con un argumento que lo acerca cada vez más al caso base.</p>
+<h3 id="41-ejemplos-recursivos">4.1. Ejemplos recursivos</h3>
+<p><strong>Suma Recursiva de números desde 1 hasta N</strong></p>
+<p>Programa recursivo que calcula la suma desde 1 hasta un número entero N leído por teclado.</p>
+<p>La solución recursiva se basa en lo siguiente:</p>
+<p>Caso Base: Si n == 1 la suma es 1   </p>
+<p>Si n &gt; 1 la suma es n + (la suma de los anteriores números hasta 1)<br/>
+Por ejemplo, si n = 5, la suma es 5 más la suma desde 1 hasta 4. </p>
+<p><br/>
+A su vez la suma si n = 4 es 4 + la suma desde 1 hasta 3 y así sucesivamente hasta llegar al caso base como se muestra en la imagen.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/3-5-recursividad.jpg"><img alt="Suma Recursiva" src="../images/3-5-recursividad.jpg"/></a></p>
+<p>El programa que calcula la suma desde 1 hasta N de forma recursiva es el siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Suma1N</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
+<span class="w">        </span><span class="k">do</span><span class="p">{</span>
+<span class="w">           </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce un numero entero &gt;0 "</span><span class="p">);</span>
+<span class="w">           </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">num</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Suma desde 1 hasta "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" = "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">suma1N</span><span class="p">(</span><span class="n">num</span><span class="p">));</span><span class="w">                                    </span>
+
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">//método recursivo para calcular la suma desde 1 hasta N</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">suma1N</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">){</span>
+<span class="w">           </span><span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//caso base</span>
+<span class="w">              </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">           </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">suma1N</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">           </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Ejemplo Clásico: El Factorial de un Número</strong></p>
+<p>El factorial de 5 ( <code>5!</code> ) es <code>5 * 4 * 3 * 2 * 1</code>. Esto se puede definir recursivamente:<br/>
+*   <code>factorial(n) = n * factorial(n-1)</code><br/>
+*   Caso Base: <code>factorial(0) = 1</code><br/></p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RecursionExample</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Calcula el factorial de un número usando recursividad.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param n El número (no negativo) del que calcular el factorial.</span>
+<span class="cm">     * @return El resultado del factorial.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Caso Base: Si n es 0, el factorial es 1. La recursividad se detiene aquí.</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Caso Base alcanzado. Retornando 1."</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Llamada Recursiva: Llama a sí misma con un problema más pequeño (n-1).</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Calculando "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" * factorial("</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">")"</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factorial</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nEl factorial de "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" es: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Ejemplo 2: Cuenta atrás</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Countdown</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Imprime una cuenta atrás desde un número n hasta 0.</span>
+<span class="cm">     * @param n El número de inicio.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">countdown</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Caso Base:</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="c1">// Detiene la recursión</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Llamada Recursiva:</span>
+<span class="w">        </span><span class="n">countdown</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Lanzamiento en...!"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">countdown</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Despegue!"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">El Peligro de la Recursividad Infinita</p>
+<p>Si olvidas el caso base o tu llamada recursiva nunca lo alcanza, Java seguirá apilando llamadas a métodos una encima de otra en la memoria (el "Stack"). Cuando esta memoria se agota, tu programa se bloquea con un <code>StackOverflowError</code>. ¡Siempre asegúrate de que tu recursividad tiene un fin!</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>¿Podrías reescribir la función <code>factorial</code> usando un bucle <code>for</code> en lugar de recursividad? ¿Qué versión te parece más intuitiva?</li>
+<li>Piensa en la estructura de carpetas de tu ordenador. ¿Cómo usarías un método recursivo para encontrar un archivo llamado <code>examen.pdf</code> dentro de una carpeta y todas sus subcarpetas? ¿Cuál sería el caso base?</li>
+<li>La secuencia de Fibonacci es <code>0, 1, 1, 2, 3, 5, 8...</code> donde cada número es la suma de los dos anteriores. ¿Cómo la implementarías con una función recursiva? (Pista: necesitarás dos casos base).</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="aplicacion-en-el-mundo-real">Aplicación en el Mundo Real</h2>
+<p>La programación modular no es un concepto académico; es la columna vertebral del desarrollo de software moderno.<br/>
+*   <strong>APIs y Librerías:</strong> Cuando usas una librería como <code>Google Maps</code> en tu app, no tienes acceso a todo su código. Simplemente llamas a los métodos (módulos) que Google ha expuesto para ti, como <code>map.addMarker()</code> o <code>map.setZoom()</code>. Estás consumiendo una API (Interfaz de Programación de Aplicaciones), que es la máxima expresión de la modularidad.<br/>
+*   <strong>Frameworks (Spring, Angular, etc.):</strong> Un framework te proporciona una estructura de "esqueleto" para tu aplicación, llena de módulos pre-construidos para la seguridad, el acceso a bases de datos, la gestión de peticiones web, etc. Tu trabajo es "rellenar los huecos" con tus propios módulos que contienen la lógica específica de tu negocio.<br/>
+*   <strong>Arquitectura de Microservicios:</strong> Es la programación modular llevada al extremo. Empresas como Netflix o Amazon no tienen una sola aplicación monolítica. Tienen cientos de pequeños servicios independientes (un microservicio para el catálogo de películas, otro para las recomendaciones, otro para la facturación...). Cada microservicio es un programa modular en sí mismo, y se comunican entre ellos a través de la red. Esto les permite escalar, actualizar y mantener su plataforma de forma increíblemente eficiente.<br/></p>
+<h2 id="para-saber-mas">Para Saber Más</h2>
+<p>Para seguir profundizando en el arte de la programación modular en Java, te recomiendo estos recursos de alta calidad:</p>
+<ol>
+<li><strong>Documentación Oficial de Oracle sobre Métodos:</strong> <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html">Defining Methods - The Java™ Tutorials</a>. Ir a la fuente oficial siempre es la mejor opción para obtener información precisa y detallada.</li>
+<li><strong>Baeldung - A Guide to the Method in Java:</strong> <a href="https://www.baeldung.com/java-method">A Guide to the Method in Java</a>. Baeldung es una referencia imprescindible en el ecosistema Java, con explicaciones claras y ejemplos prácticos excelentes.</li>
+<li><strong>Vídeo-Tutorial - Java Methods de "Bro Code":</strong> <a href="https://www.youtube.com/watch?v=a199KZGMNEk">Java Methods ☕</a>. Un tutorial en vídeo, directo y entretenido, que cubre los fundamentos de los métodos de una manera muy visual. Ideal para reforzar lo aprendido.</li>
+</ol>
+<p><br/></p><hr class="double"/><br/><p></p>
+<h2 id="-">---</h2>
+<h2 id="ejercicios">EJERCICIOS</h2>
+<hr/>
+<!-- 
+****************************
+*   EJERCICIOS P. MODULAR  *    
+****************************
+-->
+<p><a href="../3-Programacion-modular-ejercicios/">=&gt; Ejercicios de Programación modular </a></p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script type="text/javascript">(function initializeMarkmap() {
+    const transformer = new markmap.Transformer();
+    const preloadScripts = transformer.plugins
+        .flatMap((plugin) => plugin.config?.preloadScripts || [])
+        .map((item) => transformer.resolveJS(item));
+    const assets = transformer.getAssets();
+    const loading = Promise.all([
+        assets.styles && markmap.loadCSS(assets.styles),
+        markmap.loadJS([...preloadScripts, ...assets.scripts]),
+    ]);
+
+    function parseData(content) {
+        const { root, frontmatter } = transformer.transform(content);
+        let options = markmap.deriveOptions(frontmatter?.markmap);
+        options = Object.assign(
+            {
+                fitRatio: 0.85,
+            },
+            options
+        );
+        return { root, options };
+    }
+
+    function resetMarkmap(m, el) {
+        if (!m.state.rect) return;
+        const { x1, y1, x2, y2 } = m.state.rect;
+        const height = (el.offsetWidth / (x2 - x1)) * (y2 - y1);
+        el.style.height = height + "px";
+        m.fit();
+    }
+
+    function decodeBase64(encoded) {
+        const binary = atob(encoded);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < bytes.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        return new TextDecoder().decode(bytes);
+    }
+
+    function renderMarkmap(el) {
+        const dataEl = el.querySelector("markmap-data");
+        if (!dataEl) return;
+        let content = el.textContent;
+        if (dataEl.getAttribute("encoding") === "base64") {
+            content = decodeBase64(content);
+        }
+        el.innerHTML = "<svg>";
+        svg = el.firstChild;
+        const { root, options } = parseData(content);
+        const m = markmap.Markmap.create(svg, options);
+        m.setData(root);
+        requestAnimationFrame(() => {
+            resetMarkmap(m, el);
+        });
+    }
+
+    function updateMarkmaps(node) {
+        for (const el of node.querySelectorAll(".mkdocs-markmap")) {
+            renderMarkmap(el);
+        }
+    }
+
+    loading.then(() => {
+        const observer = new MutationObserver((mutationList) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "childList") {
+                    for (const node of mutation.addedNodes) {
+                        updateMarkmaps(node);
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true });
+
+        updateMarkmaps(document);
+    });
+})();
+</script></body></html>

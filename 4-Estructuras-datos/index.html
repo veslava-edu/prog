@@ -1,0 +1,2353 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../3-Programacion-modular/">
+      
+      
+        <link rel="next" href="../5-POO-Clases-y-Objetos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>UD4 - Estructuras de datos - PROG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ud4-estructuras-de-datos-organizando-la-informacion" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PROG" class="md-header__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PROG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD4 - Estructuras de datos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../1-Introduccion-programacion/" class="md-tabs__link">
+          
+  
+  
+  Programación
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PROG" class="md-nav__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    PROG
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-Introduccion-programacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-Programacion-estructurada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-Programacion-modular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-de-una-pila-de-papeles-a-una-biblioteca-digital" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducción: De una Pila de Papeles a una Biblioteca Digital
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptos-fundamentales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceptos Fundamentales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays-los-archivadores-fijos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arrays: Los Archivadores Fijos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays: Los Archivadores Fijos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arrays-unidimensionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arrays Unidimensionales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays Unidimensionales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declaracion-e-inicializacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declaración e Inicialización
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recorriendo-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recorriendo Arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-por-referencia-vs-valor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso por Referencia vs. Valor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-clase-javautilarrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La Clase java.util.Arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays-multidimensionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arrays Multidimensionales
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bucles-for-each-la-forma-elegante-de-recorrer-colecciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bucles for-each: La Forma Elegante de Recorrer Colecciones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bucles for-each: La Forma Elegante de Recorrer Colecciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recorriendo-arrays-de-una-dimension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recorriendo Arrays de una Dimensión
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recorriendo-arrays-de-dos-dimensiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recorriendo Arrays de dos Dimensiones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argumentos-de-linea-de-comandos-el-string-args-del-main" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argumentos de Línea de Comandos: El String[] args del main
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Argumentos de Línea de Comandos: El String[] args del main">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-funciona" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo Funciona?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-un-saludo-personalizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: Un Saludo Personalizado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varargs-parametros-flexibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varargs: Parámetros Flexibles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Varargs: Parámetros Flexibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-una-calculadora-de-sumas-flexible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: Una Calculadora de Sumas Flexible
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copiando-arrays-no-es-lo-que-parece" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copiando Arrays: No es lo que Parece
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Copiando Arrays: No es lo que Parece">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copia-por-referencia-la-llave-compartida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copia por Referencia: La Llave Compartida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clonado-de-arrays-creando-una-copia-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clonado de Arrays: Creando una Copia Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordenacion-y-busqueda-eficiencia-en-accion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ordenación y Búsqueda: Eficiencia en Acción
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordenación y Búsqueda: Eficiencia en Acción">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arrayssort-el-poder-de-la-ordenacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arrays.sort(): El Poder de la Ordenación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arraysbinarysearch-buscando-a-la-velocidad-de-la-luz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arrays.binarySearch(): Buscando a la Velocidad de la Luz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strings-mas-que-un-array-de-caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strings: Más que un Array de Caracteres
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Strings: Más que un Array de Caracteres">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-inmutabilidad-el-superpoder-oculto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La Inmutabilidad: El Superpoder Oculto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-esenciales-de-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métodos Esenciales de String
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stringbuilder-el-gemelo-mutable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StringBuilder: El Gemelo Mutable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-saber-mas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ---
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EJERCICIOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-POO-Clases-y-Objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-POO-Uso-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-Estructuras-datos-dinamicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-Programacion-funcional-Streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-Ficheros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-Acceso-base-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-Interfaces-graficas-MVC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-de-una-pila-de-papeles-a-una-biblioteca-digital" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducción: De una Pila de Papeles a una Biblioteca Digital
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptos-fundamentales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceptos Fundamentales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays-los-archivadores-fijos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arrays: Los Archivadores Fijos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays: Los Archivadores Fijos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arrays-unidimensionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arrays Unidimensionales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays Unidimensionales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declaracion-e-inicializacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declaración e Inicialización
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recorriendo-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recorriendo Arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-por-referencia-vs-valor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso por Referencia vs. Valor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-clase-javautilarrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La Clase java.util.Arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays-multidimensionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arrays Multidimensionales
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bucles-for-each-la-forma-elegante-de-recorrer-colecciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bucles for-each: La Forma Elegante de Recorrer Colecciones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bucles for-each: La Forma Elegante de Recorrer Colecciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recorriendo-arrays-de-una-dimension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recorriendo Arrays de una Dimensión
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recorriendo-arrays-de-dos-dimensiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recorriendo Arrays de dos Dimensiones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argumentos-de-linea-de-comandos-el-string-args-del-main" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argumentos de Línea de Comandos: El String[] args del main
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Argumentos de Línea de Comandos: El String[] args del main">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-funciona" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo Funciona?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-un-saludo-personalizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: Un Saludo Personalizado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varargs-parametros-flexibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Varargs: Parámetros Flexibles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Varargs: Parámetros Flexibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-una-calculadora-de-sumas-flexible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: Una Calculadora de Sumas Flexible
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copiando-arrays-no-es-lo-que-parece" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copiando Arrays: No es lo que Parece
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Copiando Arrays: No es lo que Parece">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copia-por-referencia-la-llave-compartida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copia por Referencia: La Llave Compartida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clonado-de-arrays-creando-una-copia-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clonado de Arrays: Creando una Copia Real
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordenacion-y-busqueda-eficiencia-en-accion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ordenación y Búsqueda: Eficiencia en Acción
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordenación y Búsqueda: Eficiencia en Acción">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arrayssort-el-poder-de-la-ordenacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arrays.sort(): El Poder de la Ordenación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arraysbinarysearch-buscando-a-la-velocidad-de-la-luz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arrays.binarySearch(): Buscando a la Velocidad de la Luz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strings-mas-que-un-array-de-caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strings: Más que un Array de Caracteres
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Strings: Más que un Array de Caracteres">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-inmutabilidad-el-superpoder-oculto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La Inmutabilidad: El Superpoder Oculto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-esenciales-de-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métodos Esenciales de String
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stringbuilder-el-gemelo-mutable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StringBuilder: El Gemelo Mutable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-saber-mas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ---
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EJERCICIOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- UD4 - Estructuras de Datos --><h1 id="ud4-estructuras-de-datos-organizando-la-informacion">UD4 - Estructuras de Datos: Organizando la Información</h1>
+<h3 id="introduccion-de-una-pila-de-papeles-a-una-biblioteca-digital">Introducción: De una Pila de Papeles a una Biblioteca Digital</h3>
+<p>Imagina que eres el desarrollador de una nueva app de música, llamémosla "DevTune". Al principio, con 10 usuarios, podrías guardar sus playlists favoritas en variables sueltas. Pero, ¿qué pasa cuando tienes 10 millones de usuarios? ¿Crearías 10 millones de variables? ¡Imposible! Tu código sería un caos inmanejable, como una habitación llena de papeles hasta el techo. Necesitas un sistema para organizar esa información.</p>
+<p>En la unidad anterior, <strong>UD3 - Programación modular</strong>, aprendimos a crear funciones, que son como "recetas" para realizar tareas. Pero una buena receta necesita ingredientes bien organizados. Las <strong>estructuras de datos</strong> son precisamente eso: los sistemas de estanterías, archivadores y catálogos que nos permiten guardar, encontrar y gestionar nuestros "ingredientes" (los datos) de manera eficiente.</p>
+<p>En este tema, pasaremos de tener datos sueltos a construir nuestra propia biblioteca digital. Empezaremos con las estanterías más básicas (Arrays) y avanzaremos hasta sistemas de catálogo inteligentes (Colecciones como Listas, Conjuntos y Mapas) que nos permitirán manejar cantidades masivas de información sin volvernos locos. ¡Bienvenido a la arquitectura de la información!</p>
+<h2 id="conceptos-fundamentales">Conceptos Fundamentales</h2>
+<p>Antes de construir, necesitamos conocer nuestras herramientas. Estos son los pilares sobre los que se asienta toda la gestión de datos en programación.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Estructura de Datos</p>
+<p>Es una forma especializada de organizar, procesar, recuperar y almacenar datos en una computadora. Piensa en ella como un contenedor diseñado para un tipo específico de información y optimizado para ciertas operaciones. No es lo mismo una caja de zapatos para guardar fotos (acceso lento y desordenado) que un álbum de fotos (acceso rápido y ordenado).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Inmutabilidad vs. Mutabilidad</p>
+<p>Un objeto <strong>inmutable</strong> es como una fotografía impresa: una vez creada, no se puede cambiar. Si quieres una versión diferente, tienes que tomar una foto nueva. Un objeto <strong>mutable</strong> es como un documento de texto: puedes editarlo, borrar partes y añadir contenido en cualquier momento sin necesidad de crear un archivo nuevo. Esta diferencia es CRUCIAL para el rendimiento y la seguridad.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Colección (Collection)</p>
+<p>Es un objeto que agrupa múltiples elementos en una sola unidad. Las colecciones se utilizan para almacenar, recuperar, manipular y comunicar datos agregados. Son los "muebles" de nuestra biblioteca digital: estanterías (Listas), vitrinas de objetos únicos (Conjuntos), etc.</p>
+</div>
+<p><br></p><hr><p></p>
+<h2 id="arrays-los-archivadores-fijos">Arrays: Los Archivadores Fijos</h2>
+<p>El <code>array</code> es la estructura de datos más fundamental. Es como un archivador con un número fijo de cajones, cada uno etiquetado con un número (su índice). Es increíblemente rápido para acceder a un cajón si sabes su número, pero tiene una gran limitación: no puedes añadir más cajones una vez que lo has comprado.</p>
+<div class="admonition tip">
+<p class="admonition-title">Analogía Laboral: El Array</p>
+<p>Un array es como una huevera. Tiene un número fijo de huecos (su tamaño), y cada hueco está diseñado para contener exactamente un huevo (el mismo tipo de dato). Puedes acceder instantáneamente al tercer huevo, pero no puedes meter un séptimo huevo en una huevera de seis.</p>
+</div>
+<h3 id="arrays-unidimensionales">Arrays Unidimensionales</h3>
+<p>Es la forma más simple de un array: una única fila de elementos.</p>
+<h4 id="declaracion-e-inicializacion">Declaración e Inicialización</h4>
+<p>En Java, declarar e inicializar un array es un proceso de dos pasos: reservar el espacio y (opcionalmente) llenarlo.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Google Java Style Guide</span>
+
+<span class="kn">package</span><span class="w"> </span><span class="nn">com.example.estructuras</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DemoArrays</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 1. Declaración y creación (reserva de memoria)</span>
+<span class="w">        </span><span class="c1">// Crea un array para 5 números enteros.</span>
+<span class="w">        </span><span class="c1">// Por defecto, se inicializan a 0 para tipos numéricos.</span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">puntuaciones</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// 2. Asignación de valores por índice</span>
+<span class="w">        </span><span class="n">puntuaciones</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">95</span><span class="p">;</span><span class="w"> </span><span class="c1">// El primer elemento está en el índice 0</span>
+<span class="w">        </span><span class="n">puntuaciones</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">87</span><span class="p">;</span>
+<span class="w">        </span><span class="n">puntuaciones</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">        </span><span class="n">puntuaciones</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">73</span><span class="p">;</span>
+<span class="w">        </span><span class="n">puntuaciones</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">91</span><span class="p">;</span><span class="w"> </span><span class="c1">// El último elemento está en tamaño - 1</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"La puntuación del jugador 3 es: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">puntuaciones</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">);</span><span class="w"> </span><span class="c1">// Acceso directo</span>
+
+<span class="w">        </span><span class="c1">// Declaración e inicialización en una sola línea (cuando sabes los valores)</span>
+<span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">nombresVideojuegos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"The Witcher 3"</span><span class="p">,</span><span class="w"> </span><span class="s">"Cyberpunk 2077"</span><span class="p">,</span><span class="w"> </span><span class="s">"Elden Ring"</span><span class="p">};</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Mi juego favorito es: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombresVideojuegos</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/4-1-arrays.png"><img alt="Creación de array" src="../images/4-1-arrays.png"></a></p>
+<h4 id="recorriendo-arrays">Recorriendo Arrays</h4>
+<p>Para procesar todos los elementos de un array, usamos bucles. El bucle <code>for</code> clásico nos da control sobre el índice, mientras que el <code>for-each</code> (o bucle mejorado) es más simple si solo necesitamos el valor.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Google Java Style Guide</span>
+
+<span class="kn">package</span><span class="w"> </span><span class="nn">com.example.estructuras</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RecorrerArrays</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">nombresVideojuegos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"The Witcher 3"</span><span class="p">,</span><span class="w"> </span><span class="s">"Cyberpunk 2077"</span><span class="p">,</span><span class="w"> </span><span class="s">"Elden Ring"</span><span class="p">,</span><span class="w"> </span><span class="s">"Baldur's Gate 3"</span><span class="p">};</span>
+
+<span class="w">        </span><span class="c1">// Opción 1: Bucle for clásico</span>
+<span class="w">        </span><span class="c1">// Útil cuando necesitas el índice</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- Bucle for clásico ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nombresVideojuegos</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Juego en posición "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">": "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombresVideojuegos</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Opción 2: Bucle for-each (mejorado)</span>
+<span class="w">        </span><span class="c1">// Más limpio y seguro si solo necesitas el valor</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Bucle for-each ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">juego</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">nombresVideojuegos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Juego: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">juego</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="paso-por-referencia-vs-valor">Paso por Referencia vs. Valor</h4>
+<p>Este es uno de los conceptos que más confunden al principio, pero es vital.</p>
+<div class="admonition danger">
+<p class="admonition-title">¡Atención! Confusión a la vista</p>
+<p>En Java, los <strong>tipos primitivos</strong> (<code>int</code>, <code>double</code>, <code>boolean</code>...) se pasan a las funciones <strong>por valor</strong> (se hace una copia). Sin embargo, los <strong>objetos</strong> (y los arrays SON objetos en Java) se pasan <strong>por referencia</strong> (se pasa la "dirección de memoria" del objeto original). ¡Esto significa que una función PUEDE modificar tu array original!</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c1">// Google Java Style Guide</span>
+
+<span class="kn">package</span><span class="w"> </span><span class="nn">com.example.estructuras</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PasoPorReferencia</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">inventario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span><span class="w"> </span><span class="c1">// Pociones, Flechas, Bombas</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Inventario antes de la misión: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">inventario</span><span class="p">));</span>
+
+<span class="w">        </span><span class="c1">// Enviamos el inventario a una misión</span>
+<span class="w">        </span><span class="n">gastarRecursosEnMision</span><span class="p">(</span><span class="n">inventario</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// ¡El inventario original ha cambiado!</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Inventario después de la misión: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">inventario</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Esta función modifica el array que recibe como parámetro.</span>
+<span class="cm">     * @param recursos El array de inventario del jugador.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">gastarRecursosEnMision</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">recursos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">" -&gt; Usando recursos en la misión..."</span><span class="p">);</span>
+<span class="w">        </span><span class="n">recursos</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// Gastamos 5 flechas</span>
+<span class="w">        </span><span class="n">recursos</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Usamos 1 bomba</span>
+<span class="w">        </span><span class="c1">// No necesitamos un 'return', el cambio afecta al array original.</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<pre class="mermaid"><code>sequenceDiagram
+    participant main as "main()"
+    participant gastarRecursos as "gastarRecursosEnMision()"
+
+    main-&gt;&gt;main: int[] inventario = {10, 20, 5};
+    Note right of main: 'inventario' apunta a la dirección de memoria 0x123
+
+    main-&gt;&gt;gastarRecursos: gastarRecursosEnMision(inventario);
+    Note left of gastarRecursos: El parámetro 'recursos' ahora también&lt;br&gt;apunta a la misma dirección 0x123.&lt;br&gt;¡No es una copia del contenido!
+
+    gastarRecursos-&gt;&gt;gastarRecursos: recursos[1] -= 5;
+    Note right of main: El array en 0x123 ahora es {10, 15, 5}
+
+    gastarRecursos--&gt;&gt;main: La función termina.
+    main-&gt;&gt;main: System.out.println(inventario);
+    Note right of main: Se imprime el array modificado {10, 15, 4}</code></pre>
+<h4 id="la-clase-javautilarrays">La Clase <code>java.util.Arrays</code></h4>
+<p>Java nos da una clase de utilidad fantástica para trabajar con arrays. No tienes que reinventar la rueda para tareas comunes.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Google Java Style Guide</span>
+
+<span class="kn">package</span><span class="w"> </span><span class="nn">com.example.estructuras</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ClaseArraysUtil</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">puntuaciones</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">95</span><span class="p">,</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">73</span><span class="p">,</span><span class="w"> </span><span class="mi">91</span><span class="p">,</span><span class="w"> </span><span class="mi">87</span><span class="p">};</span>
+
+<span class="w">        </span><span class="c1">// 1. Convertir a String para imprimirlo fácilmente</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Puntuaciones: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">puntuaciones</span><span class="p">));</span>
+
+<span class="w">        </span><span class="c1">// 2. Ordenar el array</span>
+<span class="w">        </span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">puntuaciones</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Puntuaciones ordenadas: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">puntuaciones</span><span class="p">));</span>
+
+<span class="w">        </span><span class="c1">// 3. Búsqueda binaria (¡el array DEBE estar ordenado!)</span>
+<span class="w">        </span><span class="c1">// Devuelve el índice del elemento, o un número negativo si no lo encuentra.</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">indiceDe100</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">binarySearch</span><span class="p">(</span><span class="n">puntuaciones</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El 100 está en el índice: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">indiceDe100</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 4. Rellenar un array con un valor</span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">inventarioLleno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Arrays</span><span class="p">.</span><span class="na">fill</span><span class="p">(</span><span class="n">inventarioLleno</span><span class="p">,</span><span class="w"> </span><span class="mi">99</span><span class="p">);</span><span class="w"> </span><span class="c1">// Llenar el inventario con 99 pociones</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Inventario lleno: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">inventarioLleno</span><span class="p">));</span>
+
+<span class="w">        </span><span class="c1">// 5. Copiar un array</span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">puntuacionesCopia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">copyOf</span><span class="p">(</span><span class="n">puntuaciones</span><span class="p">,</span><span class="w"> </span><span class="n">puntuaciones</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Copia del array: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">puntuacionesCopia</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="arrays-multidimensionales">Arrays Multidimensionales</h4>
+<p>Si un array unidimensional es una fila, uno multidimensional es una tabla o una cuadrícula. El más común es el de dos dimensiones (2D), perfecto para representar tableros de juego, mapas, imágenes, etc.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Analogía Laboral</p>
+<p>Un array 2D es como una hoja de cálculo de Excel. Tienes filas y columnas, y para acceder a una celda específica, necesitas ambas coordenadas (por ejemplo, <code>C5</code>).</p>
+</div>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/4-2-matrices.png"><img alt="Creación de matrices" src="../images/4-2-matrices.png"></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/4-2-matrices-ejemplo.png"><img alt="Ejemplo de matriz" src="../images/4-2-matrices-ejemplo.png"></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/4-3-matrices-ejemplo2.png"><img alt="Ejemplo de matriz" src="../images/4-3-matrices-ejemplo2.png"></a> </p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Google Java Style Guide</span>
+
+<span class="kn">package</span><span class="w"> </span><span class="nn">com.example.estructuras</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DemoArrays2D</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Un tablero de Tres en Raya (3x3)</span>
+<span class="w">        </span><span class="c1">// ' ' -&gt; Vacío, 'X' -&gt; Jugador 1, 'O' -&gt; Jugador 2</span>
+<span class="w">        </span><span class="kt">char</span><span class="o">[][]</span><span class="w"> </span><span class="n">tablero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">char</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">3</span><span class="o">]</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Inicializar con espacios vacíos</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">tablero</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">' '</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Algunas jugadas</span>
+<span class="w">        </span><span class="n">tablero</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'X'</span><span class="p">;</span><span class="w"> </span><span class="c1">// Fila 0, Columna 0</span>
+<span class="w">        </span><span class="n">tablero</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'O'</span><span class="p">;</span><span class="w"> </span><span class="c1">// Fila 1, Columna 1</span>
+<span class="w">        </span><span class="n">tablero</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'X'</span><span class="p">;</span><span class="w"> </span><span class="c1">// Fila 0, Columna 1</span>
+
+<span class="w">        </span><span class="c1">// Imprimir el tablero</span>
+<span class="w">        </span><span class="n">imprimirTablero</span><span class="p">(</span><span class="n">tablero</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">imprimirTablero</span><span class="p">(</span><span class="kt">char</span><span class="o">[][]</span><span class="w"> </span><span class="n">tablero</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">tablero</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">tablero</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"["</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tablero</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"]"</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w"> </span><span class="c1">// Nueva línea para la siguiente fila</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Accediendo al índice de la matriz.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/4-4-matrices-indices.png"><img alt="Índice de matriz" src="../images/4-4-matrices-indices.png"></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/4-5-matrices-indices.png"><img alt="Ejemplo de índice" src="../images/4-5-matrices-indices.png"></a></p>
+<p>Obteniendo la longitud de una dimensión:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/4-6-matrices-longitud.png"><img alt="Longitud de matriz" src="../images/4-6-matrices-longitud.png"></a></p>
+<p>Matrices irregulares:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/4-7-matrices-irregulares.png"><img alt="Matrices irregulares" src="../images/4-7-matrices-irregulares.png"></a></p>
+<div class="admonition question">
+<p class="admonition-title">Reflexionemos sobre Arrays</p>
+<ol>
+<li>Si un <code>array</code> se pasa por referencia, ¿qué implicaciones de seguridad podría tener esto en una aplicación grande donde muchas partes del código acceden al mismo array de datos sensibles (por ejemplo, datos de usuario)?</li>
+<li><code>Arrays.binarySearch()</code> es mucho más rápido que un bucle <code>for</code> para buscar, pero tiene un prerrequisito. ¿Cuál es y qué coste tiene? ¿En qué escenario no valdría la pena usarlo a pesar de su velocidad?</li>
+<li>Imagina que estás desarrollando un clon de "Buscaminas". ¿Cómo usarías un array 2D para representar el tablero? ¿Qué tipo de datos almacenarías en cada celda?</li>
+</ol>
+</div>
+<p>¡Claro que sí! Aquí tienes una versión parafraseada y extendida de ese concepto, con el código adaptado a la <strong>Google Java Style Guide</strong> y con un enfoque más didáctico, como lo explicaríamos en clase.</p>
+<hr>
+<h3 id="bucles-for-each-la-forma-elegante-de-recorrer-colecciones">Bucles <code>for-each</code>: La Forma Elegante de Recorrer Colecciones</h3>
+<p>Aunque el bucle <code>for</code> tradicional con un índice es potente, a veces solo queremos recorrer todos los elementos de un array sin preocuparnos por las posiciones. Para esto, Java nos ofrece una sintaxis más limpia y menos propensa a errores: el <strong>bucle <code>for-each</code></strong> o bucle mejorado.</p>
+<h4 id="recorriendo-arrays-de-una-dimension">Recorriendo Arrays de una Dimensión</h4>
+<p>Para arrays simples o unidimensionales, el <code>for-each</code> nos permite procesar cada elemento de manera directa.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Google Java Style Guide</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RecorridoElegante1D</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Ejemplo 1: Iterar sobre los elementos con un bucle for-each.</span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">puntuacionesPartida</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">};</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Puntuaciones obtenidas: "</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">puntuacion</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">puntuacionesPartida</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// En cada iteración, 'puntuacion' toma el valor de un elemento del array.</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">puntuacion</span><span class="p">);</span><span class="w"> </span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w"> </span><span class="c1">// Imprime 14567838</span>
+
+<span class="w">        </span><span class="c1">// Ejemplo 2: Imprimir el contenido completo de un array.</span>
+<span class="w">        </span><span class="c1">// La forma más rápida y recomendada para depurar o visualizar un array.</span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">inventarioItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">};</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Contenido del inventario: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">inventarioItems</span><span class="p">));</span><span class="w"> </span><span class="c1">// Imprime [1, 4, 5, 6]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">¡Usa <code>Arrays.toString()</code>!</p>
+<p>Cuando quieras ver rápidamente qué contiene un array, <code>Arrays.toString()</code> es tu mejor amigo. Si intentas imprimir el array directamente (<code>System.out.println(miArray)</code>), Java te mostrará su referencia en memoria (algo como <code>[I@7f31245a</code>), ¡lo cual no es nada útil para depurar!</p>
+</div>
+<h4 id="recorriendo-arrays-de-dos-dimensiones">Recorriendo Arrays de dos Dimensiones</h4>
+<p>La elegancia del <code>for-each</code> se extiende a los arrays multidimensionales. Simplemente anidamos los bucles: el bucle exterior recorrerá las filas, y el interior, las columnas de cada fila.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Google Java Style Guide</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RecorridoElegante2D</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Ejemplo 1: Iterar sobre cada elemento de una matriz.</span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">matrizCoordenadas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">}};</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Coordenadas procesadas: "</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">fila</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">matrizCoordenadas</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// El primer bucle obtiene cada array-fila.</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">coordenada</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">fila</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">      </span><span class="c1">// El segundo bucle obtiene cada elemento de esa fila.</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">coordenada</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w"> </span><span class="c1">// Imprime 14567867838</span>
+
+<span class="w">        </span><span class="c1">// Ejemplo 2: Imprimir una matriz fila por fila.</span>
+<span class="w">        </span><span class="c1">// Una técnica muy común para visualizar tableros o cuadrículas.</span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">tableroJuego</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">}};</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Estado del tablero:"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">fila</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">tableroJuego</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">fila</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="c1">// Imprime:</span>
+<span class="w">        </span><span class="c1">// [3, 8, 5]</span>
+<span class="w">        </span><span class="c1">// [4, 1, 8, 4]</span>
+<span class="w">        </span><span class="c1">// [5, 2]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><br></p><hr><p></p>
+<h3 id="argumentos-de-linea-de-comandos-el-string-args-del-main">Argumentos de Línea de Comandos: El <code>String[] args</code> del <code>main</code></h3>
+<p>Seguro que desde el primer "Hola Mundo" has visto esta cabecera: <code>public static void main(String[] args)</code>. La hemos usado sin pensar mucho en ella, pero es la puerta de entrada para que nuestros programas interactúen con el mundo exterior desde el momento en que se ejecutan.</p>
+<div class="admonition note">
+<p class="admonition-title">Anatomía del Método <code>main</code></p>
+<ul>
+<li><strong><code>public</code></strong>: Es accesible desde cualquier lugar.</li>
+<li><strong><code>static</code></strong>: Se puede ejecutar sin necesidad de crear un objeto de la clase. Es el punto de partida.</li>
+<li><strong><code>void</code></strong>: No devuelve ningún valor una vez que termina.</li>
+<li><strong><code>String[] args</code></strong>: ¡Aquí está la clave! Es un <strong>array de Strings</strong> llamado <code>args</code> (de "argumentos"). Este array recoge cualquier texto que le pasemos a nuestro programa en la consola justo después del comando de ejecución.</li>
+</ul>
+</div>
+<p>Piensa en ello como darle instrucciones a tu programa antes de que empiece a trabajar.</p>
+<h4 id="como-funciona">¿Cómo Funciona?</h4>
+<p>Cuando ejecutas un programa Java desde la terminal, todo lo que escribes después del nombre de la clase (o del <code>.jar</code>) se divide por los espacios y se almacena en el array <code>args</code>.</p>
+<pre class="mermaid"><code>graph TD
+    subgraph "Terminal"
+        A["java EjecutarPrograma.java Juan 1990"]
+    end
+
+    subgraph "Array 'args' en Memoria"
+        B["args[0] = 'Juan'"]
+        C["args[1] = '1990'"]
+    end
+
+    A --&gt; B;
+    A --&gt; C;</code></pre>
+<h4 id="ejemplo-un-saludo-personalizado">Ejemplo: Un Saludo Personalizado</h4>
+<p>Veamos cómo usar estos argumentos para crear un saludo que se adapta a lo que el usuario escribe en la consola.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Google Java Style Guide</span>
+<span class="kn">package</span><span class="w"> </span><span class="nn">com.example.estructuras</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SaludoPersonalizado</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Si el array 'args' tiene elementos, los usamos.</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"¡Hola"</span><span class="p">);</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"! Bienvenido al sistema."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Si no se pasaron argumentos, mostramos un saludo genérico.</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Hola, mundo! Bienvenido al sistema."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Ejecuciones en la terminal:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Sin argumentos</span>
+$<span class="w"> </span>java<span class="w"> </span>SaludoPersonalizado.java
+¡Hola,<span class="w"> </span>mundo!<span class="w"> </span>Bienvenido<span class="w"> </span>al<span class="w"> </span>sistema.
+
+<span class="c1"># Con un argumento</span>
+$<span class="w"> </span>java<span class="w"> </span>SaludoPersonalizado.java<span class="w"> </span>Ana
+¡Hola<span class="w"> </span>Ana!<span class="w"> </span>Bienvenido<span class="w"> </span>al<span class="w"> </span>sistema.
+
+<span class="c1"># Con múltiples argumentos</span>
+$<span class="w"> </span>java<span class="w"> </span>SaludoPersonalizado.java<span class="w"> </span>Ana<span class="w"> </span>Soto
+¡Hola<span class="w"> </span>Ana<span class="w"> </span>Soto!<span class="w"> </span>Bienvenido<span class="w"> </span>al<span class="w"> </span>sistema.
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Todo es un String</p>
+<p>Recuerda que <code>args</code> es un <code>String[]</code>. Si pasas un número como <code>java MiPrograma 3</code>, el valor <code>args[0]</code> será el <strong>string</strong> <code>"3"</code>, no el <strong>número entero</strong> <code>3</code>. Si quieres usarlo para operaciones matemáticas, tendrás que convertirlo explícitamente usando <code>Integer.parseInt(args[0])</code>. ¡Esto es una fuente muy común de errores (<code>NumberFormatException</code>) si el usuario no introduce un número válido!</p>
+</div>
+<p><br></p><hr><p></p>
+<h3 id="varargs-parametros-flexibles">Varargs: Parámetros Flexibles</h3>
+<p>¿Y si quisieras crear una función que sume números, pero no sabes de antemano si el usuario querrá sumar dos, tres o veinte números? Aquí es donde entran los <strong>argumentos variables</strong> o <code>varargs</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Varargs</p>
+<p>Es una característica de Java que permite a un método aceptar un número variable de argumentos del mismo tipo. Es "azúcar sintáctico" (una forma más cómoda de escribir algo) que, por debajo, convierte los argumentos en un array.</p>
+</div>
+<p>La sintaxis es simple: se añaden tres puntos (<code>...</code>) después del tipo de dato del último parámetro del método.</p>
+<p><strong>Reglas de Oro de los Varargs:</strong>
+1.  <strong>Se convierte en un array:</strong> Dentro del método, la variable <code>varargs</code> se trata como un array normal.
+2.  <strong>Solo uno por método:</strong> Un método solo puede tener un parámetro <code>varargs</code>.
+3.  <strong>Siempre al final:</strong> El parámetro <code>varargs</code> debe ser el último en la lista de parámetros del método.</p>
+<h4 id="ejemplo-una-calculadora-de-sumas-flexible">Ejemplo: Una Calculadora de Sumas Flexible</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// Google Java Style Guide</span>
+<span class="kn">package</span><span class="w"> </span><span class="nn">com.example.estructuras</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CalculadoraFlexible</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// ¡El main también puede usar varargs!</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Suma 1: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sumar</span><span class="p">());</span><span class="w"> </span><span class="c1">// 0</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Suma 2: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sumar</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">));</span><span class="w"> </span><span class="c1">// 30</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Suma 3: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sumar</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">55</span><span class="p">));</span><span class="w"> </span><span class="c1">// 100</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Suma una cantidad variable de números enteros.</span>
+<span class="cm">     * @param numeros Los números a sumar.</span>
+<span class="cm">     * @return La suma total.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">sumar</span><span class="p">(</span><span class="kt">int</span><span class="p">...</span><span class="w"> </span><span class="n">numeros</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// Dentro del método, 'numeros' es tratado como un int[]</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">numeros</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">numero</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><br></p><hr><p></p>
+<h3 id="copiando-arrays-no-es-lo-que-parece">Copiando Arrays: No es lo que Parece</h3>
+<p>Aquí llegamos a uno de los conceptos más importantes y que más errores provoca al principio: la diferencia entre copiar una referencia y clonar un objeto.</p>
+<h4 id="copia-por-referencia-la-llave-compartida">Copia por Referencia: La Llave Compartida</h4>
+<p>Como vimos antes, los arrays son objetos. Cuando haces <code>arrayB = arrayA;</code>, no estás creando un nuevo array. Estás creando una segunda "etiqueta" o "puntero" que apunta exactamente al <strong>mismo objeto en memoria</strong>.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Analogía Laboral</p>
+<p>Imagina que <code>arrayA</code> es un enlace a un documento de Google Docs. Si le envías ese enlace a un compañero (<code>arrayB = arrayA</code>), ambos estáis viendo y editando <strong>el mismo documento</strong>. Si tu compañero borra un párrafo, tú también verás que ha desaparecido.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c1">// Google Java Style Guide</span>
+<span class="kn">package</span><span class="w"> </span><span class="nn">com.example.estructuras</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CopiaPorReferencia</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">inventarioOriginal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">};</span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">inventarioAsignado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inventarioOriginal</span><span class="p">;</span><span class="w"> </span><span class="c1">// No es una copia, es una referencia</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Original antes del cambio: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">inventarioOriginal</span><span class="p">));</span>
+
+<span class="w">        </span><span class="c1">// Modificamos el segundo array</span>
+<span class="w">        </span><span class="n">inventarioAsignado</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// ¡El original también ha cambiado!</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Original después del cambio: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">inventarioOriginal</span><span class="p">));</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Asignado después del cambio: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">inventarioAsignado</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<pre class="mermaid"><code>graph TD
+    subgraph "Memoria"
+        direction TB
+        A["Array en 0x123: [10, 20, 30]"]
+    end
+
+    B["inventarioOriginal"] --&gt; A
+    C["inventarioAsignado"] --&gt; A
+
+    subgraph "Código"
+        D["inventarioAsignado[0] = 99;"]
+    end
+
+    D --&gt; E["Array en 0x123: [99, 20, 30]"]
+
+    A --&gt;|"Actualizado en memoria"| E</code></pre>
+<h4 id="clonado-de-arrays-creando-una-copia-real">Clonado de Arrays: Creando una Copia Real</h4>
+<p>Para crear una copia independiente de un array, necesitamos <strong>clonarlo</strong>, es decir, crear un nuevo objeto en memoria con el mismo contenido.</p>
+<p><strong>1. El Método <code>clone()</code></strong></p>
+<p>Es la forma más directa, pero a veces puede ser menos legible. Crea una copia superficial (suficiente para arrays de primitivos, pero ¡cuidado con arrays de objetos!).</p>
+<p><strong>2. <code>System.arraycopy()</code></strong></p>
+<p>Un método de bajo nivel, muy rápido pero más verboso. Te da un control total sobre qué parte del array copiar y dónde.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// System.arraycopy(origen, posOrigen, destino, posDestino, longitud);</span>
+</code></pre></div>
+<p><strong>3. <code>Arrays.copyOf()</code> (Recomendado)</strong></p>
+<p>La forma más moderna, clara y flexible de clonar un array.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Google Java Style Guide</span>
+<span class="kn">package</span><span class="w"> </span><span class="nn">com.example.estructuras</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ClonadoDeArrays</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">primos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">};</span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">copiaReferencia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">primos</span><span class="p">;</span><span class="w"> </span><span class="c1">// Referencia, no copia</span>
+
+<span class="w">        </span><span class="c1">// --- Creando una copia real e independiente ---</span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">copiaClonada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">primos</span><span class="p">.</span><span class="na">clone</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Modificamos las copias</span>
+<span class="w">        </span><span class="n">copiaReferencia</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="p">;</span><span class="w"> </span><span class="c1">// Esto afectará al original</span>
+<span class="w">        </span><span class="n">copiaClonada</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">101</span><span class="p">;</span><span class="w">   </span><span class="c1">// Esto NO afectará al original</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Array Original:    "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">primos</span><span class="p">));</span><span class="w"> </span><span class="c1">// [99, 3, 5, 7, 11]</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Copia Referencia:  "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">copiaReferencia</span><span class="p">));</span><span class="w"> </span><span class="c1">// [99, 3, 5, 7, 11]</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Copia Clonada:     "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">copiaClonada</span><span class="p">));</span><span class="w"> </span><span class="c1">// [2, 101, 5, 7, 11]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><br></p><hr><p></p>
+<h3 id="ordenacion-y-busqueda-eficiencia-en-accion">Ordenación y Búsqueda: Eficiencia en Acción</h3>
+<p>Una de las razones principales para usar estructuras de datos es poder encontrar información rápidamente. Y para buscar rápido, primero hay que ordenar.</p>
+<div class="admonition note">
+<p class="admonition-title">La Regla de Oro de la Búsqueda</p>
+<p>Trabajar con datos ordenados es exponencialmente más eficiente que con datos desordenados. Es la diferencia entre encontrar un nombre en una agenda telefónica (ordenada) y encontrarlo en una pila de tarjetas de visita tiradas al azar.</p>
+</div>
+<h4 id="arrayssort-el-poder-de-la-ordenacion"><code>Arrays.sort()</code>: El Poder de la Ordenación</h4>
+<p>Aunque existen muchos algoritmos de ordenación (Burbuja, Inserción, Quicksort...), en la práctica casi siempre usaremos el método <code>Arrays.sort()</code>. Java utiliza un algoritmo de ordenación dual-pivot Quicksort altamente optimizado, que es extremadamente rápido para la mayoría de los casos.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Google Java Style Guide</span>
+<span class="kn">package</span><span class="w"> </span><span class="nn">com.example.estructuras</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">OrdenacionArrays</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">puntuaciones</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">95</span><span class="p">,</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">73</span><span class="p">,</span><span class="w"> </span><span class="mi">91</span><span class="p">,</span><span class="w"> </span><span class="mi">87</span><span class="p">};</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Puntuaciones desordenadas: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">puntuaciones</span><span class="p">));</span>
+
+<span class="w">        </span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">puntuaciones</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Puntuaciones ordenadas:    "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">puntuaciones</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="arraysbinarysearch-buscando-a-la-velocidad-de-la-luz"><code>Arrays.binarySearch()</code>: Buscando a la Velocidad de la Luz</h4>
+<p>Una vez que un array está ordenado, podemos usar uno de los algoritmos de búsqueda más eficientes que existen: la <strong>búsqueda binaria</strong>.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Búsqueda Binaria: Divide y Vencerás</p>
+<p>En lugar de buscar elemento por elemento (búsqueda lineal), la búsqueda binaria va al punto medio del array.
+1.  Si el elemento del medio es el que buscas, ¡listo!
+2.  Si es mayor, sabes que tu objetivo solo puede estar en la mitad inferior.
+3.  Si es menor, solo puede estar en la mitad superior.
+Repites este proceso, dividiendo el rango de búsqueda por la mitad en cada paso. Esto es increíblemente rápido.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c1">// Google Java Style Guide</span>
+<span class="kn">package</span><span class="w"> </span><span class="nn">com.example.estructuras</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BusquedaBinaria</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">usuarios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"ana"</span><span class="p">,</span><span class="w"> </span><span class="s">"juan"</span><span class="p">,</span><span class="w"> </span><span class="s">"luis"</span><span class="p">,</span><span class="w"> </span><span class="s">"maria"</span><span class="p">,</span><span class="w"> </span><span class="s">"pedro"</span><span class="p">,</span><span class="w"> </span><span class="s">"sara"</span><span class="p">};</span>
+
+<span class="w">        </span><span class="c1">// ¡Importante! La búsqueda binaria REQUIERE que el array esté ordenado.</span>
+<span class="w">        </span><span class="c1">// En este caso, ya lo está alfabéticamente.</span>
+
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">usuarioABuscar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"maria"</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">indice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">binarySearch</span><span class="p">(</span><span class="n">usuarios</span><span class="p">,</span><span class="w"> </span><span class="n">usuarioABuscar</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">indice</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"'"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">usuarioABuscar</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"' encontrada en la posición: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">indice</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"'"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">usuarioABuscar</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"' no ha sido encontrada."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<pre class="mermaid"><code>graph LR
+    A["Array Ordenado: [ana, juan, luis, maria, pedro, sara]"] --&gt; B{Buscar 'maria'};
+    B --&gt; C{"1. Mirar en el medio (índice 2): 'luis'"};
+    C --&gt; D{"'maria' &gt; 'luis', descartar la mitad inferior"};
+    D --&gt; E["Nuevo rango: [maria, pedro, sara]"];
+    E --&gt; F{"2. Mirar en el medio del nuevo rango: 'pedro'"};
+    F --&gt; G{"'maria' &lt; 'pedro', descartar la mitad superior"};
+    G --&gt; H["Nuevo rango: [maria]"];
+    H --&gt; I{"3. Mirar en el medio: 'maria'"};
+    I --&gt; J["¡Elemento encontrado en 3 pasos!"];</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Reflexionemos sobre Copias y Ordenación</p>
+<ol>
+<li>Si clonas un array de objetos (por ejemplo, <code>Articulo[]</code>), ¿los objetos <code>Articulo</code> dentro del nuevo array son copias o son referencias a los objetos originales? ¿Qué implicaciones tiene esto? (Esto se conoce como copia superficial vs. profunda).</li>
+<li>Estás desarrollando una función que recibe un array de datos, necesita ordenarlo para una operación interna, pero no debe modificar el array original que te pasaron. ¿Cómo implementarías esta función de forma segura?</li>
+<li>Si <code>Arrays.binarySearch()</code> devuelve un número negativo (ej: <code>-5</code>), ¿qué información útil nos está dando ese número sobre dónde <em>debería</em> estar el elemento si existiera? (¡Investiga la documentación!).</li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Visualizando Algoritmos</p>
+</div>
+<p><a href="https://algoanim.ide.sk/">Animación Algoanim </a><br>
+<a href="https://algorithm-visualizer.seancoughlin.me/searching">Animación algotithm-visualizer </a> </p>
+<p><br></p><hr><p></p>
+<h2 id="strings-mas-que-un-array-de-caracteres">Strings: Más que un Array de Caracteres</h2>
+<p>Aunque un <code>String</code> parece un simple texto, en Java es un objeto inmutable y muy potente, con una gran cantidad de métodos útiles. Tratarlo como un simple array de caracteres es quedarse muy corto.</p>
+<h3 id="la-inmutabilidad-el-superpoder-oculto">La Inmutabilidad: El Superpoder Oculto</h3>
+<div class="admonition tip">
+<p class="admonition-title">Inmutable = A prueba de cambios accidentales</p>
+<p>Una vez que creas un <code>String</code>, su contenido no puede ser modificado. Cualquier método que parezca que lo modifica (<code>toUpperCase</code>, <code>replace</code>, etc.) en realidad devuelve un <strong>nuevo</strong> objeto <code>String</code> con el cambio.</p>
+<p><strong>¿Por qué es esto una ventaja?</strong><br>
+*   <strong>Seguridad:</strong> Si pasas un <code>String</code> a una función, tienes la garantía de que no lo cambiará.<br>
+*   <strong>Rendimiento:</strong> El sistema puede reutilizar <code>Strings</code> idénticos en memoria (lo que se conoce como "String Pool").<br>
+*   <strong>Concurrencia:</strong> Es seguro usar <code>Strings</code> en entornos multihilo sin miedo a que un hilo modifique el valor que otro está leyendo.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c1">// Google Java Style Guide</span>
+
+<span class="kn">package</span><span class="w"> </span><span class="nn">com.example.estructuras</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">InmutabilidadString</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">saludo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"hola"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Saludo original: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">saludo</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">saludo</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">();</span><span class="w"> </span><span class="c1">// Esta línea NO cambia el string 'saludo'</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Saludo después de toUpperCase(): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">saludo</span><span class="p">);</span><span class="w"> </span><span class="c1">// Sigue siendo "hola"</span>
+
+<span class="w">        </span><span class="c1">// Para capturar el cambio, debemos asignarlo a una variable (puede ser la misma)</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">saludoMayusculas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">saludo</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Nuevo string en mayúsculas: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">saludoMayusculas</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">saludo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">saludo</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">();</span><span class="w"> </span><span class="c1">// Reasignamos la variable 'saludo' al nuevo objeto</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Saludo original reasignado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">saludo</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="metodos-esenciales-de-string">Métodos Esenciales de <code>String</code></h3>
+<p>La clase <code>String</code> viene cargada de herramientas. Aquí tienes las más comunes:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Método</th>
+<th style="text-align: left;">Descripción</th>
+<th style="text-align: left;">Ejemplo de Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>length()</code></td>
+<td style="text-align: left;">Devuelve el número de caracteres.</td>
+<td style="text-align: left;"><code>"hola".length()</code> devuelve <code>4</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>charAt(int index)</code></td>
+<td style="text-align: left;">Devuelve el carácter en una posición específica.</td>
+<td style="text-align: left;"><code>"java".charAt(1)</code> devuelve <code>'a'</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>substring(int begin, int end)</code></td>
+<td style="text-align: left;">Extrae una subcadena.</td>
+<td style="text-align: left;"><code>"desarrollo".substring(2, 5)</code> devuelve <code>"sar"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>indexOf(String str)</code></td>
+<td style="text-align: left;">Busca la primera ocurrencia de una subcadena.</td>
+<td style="text-align: left;"><code>"hola mundo".indexOf("mun")</code> devuelve <code>5</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>equals(Object anObject)</code></td>
+<td style="text-align: left;">Compara el contenido de dos strings (sensible a mayúsculas).</td>
+<td style="text-align: left;"><code>"Java".equals("java")</code> devuelve <code>false</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>equalsIgnoreCase(...)</code></td>
+<td style="text-align: left;">Compara el contenido ignorando mayúsculas/minúsculas.</td>
+<td style="text-align: left;"><code>"Java".equalsIgnoreCase("java")</code> devuelve <code>true</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>replace(char old, char new)</code></td>
+<td style="text-align: left;">Reemplaza todas las ocurrencias de un carácter.</td>
+<td style="text-align: left;"><code>"hola".replace('o', 'a')</code> devuelve <code>"hala"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>split(String regex)</code></td>
+<td style="text-align: left;">Divide el string en un array usando un delimitador.</td>
+<td style="text-align: left;"><code>"1,2,3".split(",")</code> devuelve <code>{"1", "2", "3"}</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>trim()</code></td>
+<td style="text-align: left;">Elimina los espacios en blanco al principio y al final.</td>
+<td style="text-align: left;"><code>"  hola  ".trim()</code> devuelve <code>"hola"</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="stringbuilder-el-gemelo-mutable"><code>StringBuilder</code>: El Gemelo Mutable</h3>
+<p>Si necesitas construir un <code>String</code> a base de muchas piezas (por ejemplo, en un bucle), usar el operador <code>+</code> es muy ineficiente porque crea un nuevo objeto <code>String</code> en cada iteración.</p>
+<div class="admonition warning">
+<p class="admonition-title">El Asesino Silencioso del Rendimiento</p>
+<p>Concatenar strings en un bucle con <code>+</code> es una de las peores prácticas de rendimiento en Java. Es como si para añadir un ladrillo a una pared, ¡reconstruyeras la pared entera desde cero cada vez!</p>
+</div>
+<p>Para estos casos, usamos <code>StringBuilder</code>, que es mutable y mucho más eficiente.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Google Java Style Guide</span>
+
+<span class="kn">package</span><span class="w"> </span><span class="nn">com.example.estructuras</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DemoStringBuilder</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// MALA PRÁCTICA: Ineficiente</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">listaNombres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">""</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">nombres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"Ana"</span><span class="p">,</span><span class="w"> </span><span class="s">"Juan"</span><span class="p">,</span><span class="w"> </span><span class="s">"Maria"</span><span class="p">};</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">nombres</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">listaNombres</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", "</span><span class="p">;</span><span class="w"> </span><span class="c1">// Crea un nuevo objeto String en cada iteración</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Mala práctica: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">listaNombres</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// BUENA PRÁCTICA: Eficiente</span>
+<span class="w">        </span><span class="n">StringBuilder</span><span class="w"> </span><span class="n">sb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">();</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">nombres</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">sb</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">nombre</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="s">", "</span><span class="p">);</span><span class="w"> </span><span class="c1">// Modifica el objeto interno, muy rápido</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="c1">// Al final, lo convertimos a un String inmutable</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">listaNombresEficiente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sb</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Buena práctica: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">listaNombresEficiente</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Reflexionemos sobre Strings</p>
+<ol>
+<li>En una aplicación web, los parámetros de una URL (ej: <code>?user=admin&amp;pass=123</code>) se reciben como <code>String</code>. ¿Por qué la inmutabilidad de los <code>String</code> es una característica de seguridad importante en este contexto?</li>
+<li>Estás procesando un archivo CSV (valores separados por comas) muy grande, línea por línea. Cada línea es un <code>String</code>. ¿Qué método de la clase <code>String</code> sería fundamental para poder trabajar con los datos de cada columna?</li>
+<li>Imagina que tienes que generar un informe en formato JSON o XML que es muy largo y se construye a partir de cientos de piezas de datos de una base de datos. ¿Usarías <code>String</code> con el operador <code>+</code> o <code>StringBuilder</code>? Justifica tu respuesta.</li>
+</ol>
+</div>
+<p><br></p><hr><p></p>
+<h2 id="aplicacion-en-el-mundo-real">Aplicación en el Mundo Real</h2>
+<p>Puede que los arrays y los strings parezcan básicos, pero son los cimientos sobre los que se construyen aplicaciones increíblemente complejas. No son solo para ejercicios de clase; son el pan de cada día de un desarrollador.</p>
+<ul>
+<li>
+<p><strong>Desarrollo de Videojuegos y Gráficos:</strong> ¿Alguna vez has jugado a un juego de estrategia por turnos o un RPG con un mapa de casillas? Ese mapa es, en esencia, un <strong>array bidimensional</strong> (<code>int[][] mapGrid</code>). Cada celda contiene un código que representa el terreno: <code>0</code> para hierba, <code>1</code> para agua, <code>2</code> para una montaña. Cuando tu personaje se mueve, el juego simplemente está cambiando valores en las coordenadas de esa matriz. De igual manera, una imagen digital no es más que un array 2D de píxeles, donde cada elemento almacena un valor de color.</p>
+</li>
+<li>
+<p><strong>Herramientas de Línea de Comandos (CLI):</strong> ¿Usas <code>git</code>? Cuando escribes <code>git commit -m "Mi primer commit"</code>, estás usando argumentos de línea de comandos. El programa <code>git</code> recibe un <code>String[] args</code> donde <code>args[0]</code> es <code>"commit"</code>, <code>args[1]</code> es <code>"-m"</code>, y <code>args[2]</code> es <code>"Mi primer commit"</code>. Herramientas de automatización, <em>scripts</em> de servidor y muchas utilidades de desarrollo dependen de este mecanismo para funcionar sin una interfaz gráfica.</p>
+</li>
+<li>
+<p><strong>Procesamiento de Datos y Ficheros:</strong> Cuando una aplicación necesita procesar un fichero de configuración (<code>.ini</code>, <code>.properties</code>) o un archivo de datos como un CSV, es habitual leer el fichero línea por línea. Cada línea es un <code>String</code>. Métodos como <code>split(";")</code> son cruciales para dividir esa línea en un <strong>array de Strings</strong>, donde cada elemento es un dato de una columna, listo para ser procesado o insertado en una base de datos.</p>
+</li>
+<li>
+<p><strong>Generación de Contenido Dinámico:</strong> Imagina que estás construyendo el motor de un blog. Un post se compone de un título, un cuerpo, comentarios, tags, etc. Para generar el HTML final que se envía al navegador, no concatenas <code>Strings</code> con <code>+</code> (¡nunca en un bucle!). Usas un <strong><code>StringBuilder</code></strong> para añadir eficientemente el <code>&lt;h1&gt;</code> del título, los <code>&lt;p&gt;</code> del cuerpo, los <code>&lt;li&gt;</code> de los comentarios, etc. Es la única forma de hacerlo con un rendimiento aceptable cuando el contenido es grande y complejo.</p>
+</li>
+</ul>
+<p><br></p><hr><p></p>
+<h2 id="para-saber-mas">Para Saber Más</h2>
+<p>Dominar estas estructuras es un viaje continuo. Si quieres profundizar, te recomiendo encarecidamente estos recursos de alta calidad que te darán una visión más profunda y profesional.</p>
+<ol>
+<li>
+<p><strong>Java Platform SE 21 Documentation - Arrays</strong>: La fuente oficial de la verdad. Aquí encontrarás todos los detalles técnicos sobre cómo funcionan los arrays en Java, directamente de Oracle. Es denso, pero es la documentación de referencia. <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html">https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html</a></p>
+</li>
+<li>
+<p><strong>GeeksforGeeks - Varargs (Variable Arguments) in Java</strong>: Un artículo muy claro y con excelentes ejemplos que explora los <code>varargs</code> en profundidad, incluyendo las reglas y los casos de uso más comunes. Imprescindible para escribir código más flexible. <a href="https://www.geeksforgeeks.org/variable-arguments-varargs-in-java/">https://www.geeksforgeeks.org/variable-arguments-varargs-in-java/</a></p>
+</li>
+<li>
+<p><strong>Baeldung - A Guide to System.arraycopy() in Java</strong>: Baeldung es un recurso de cabecera para cualquier desarrollador Java. Este artículo desglosa uno de los métodos de copia más rápidos y potentes, explicando cuándo y por qué deberías usarlo sobre otras alternativas. <a href="https://www.baeldung.com/java-system-arraycopy">https://www.baeldung.com/java-system-arraycopy</a></p>
+</li>
+</ol>
+<p><br></p><hr class="double"><br><p></p>
+<h2 id="-">---</h2>
+<h2 id="ejercicios">EJERCICIOS</h2>
+<hr>
+<!-- 
+***********************************
+*   EJERCICIOS ESTRUCTURAS DATOS  * 
+***********************************
+-->
+<p><a href="../4-Estructuras-datos-ejercicios/">=&gt; Ejercicios de Estructuras de Datos </a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

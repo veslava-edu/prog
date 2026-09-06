@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>7 HashMap - PROG</title>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script><script src="../js/unpkg.com/d3@7.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-lib@0.18.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-view@0.18.js" type="text/javascript"></script><style type="text/css">div.mkdocs-markmap {
+    width: 100%;
+    min-height: 1em;
+    border: 1px solid grey;
+}
+.mkdocs-markmap > svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+</style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#hashmap-el-diccionario-supersonico-de-java">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="PROG" class="md-header__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            PROG
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              7 HashMap
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../1-Introduccion-programacion/">
+          
+  
+  
+  Programación
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="PROG" class="md-nav__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    PROG
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1-Introduccion-programacion/">
+<span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2-Programacion-estructurada/">
+<span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3-Programacion-modular/">
+<span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4-Estructuras-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5-POO-Clases-y-Objetos/">
+<span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6-POO-Uso-avanzado/">
+<span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7-Estructuras-datos-dinamicas/">
+<span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../8-Programacion-funcional-Streams/">
+<span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../9-Ficheros/">
+<span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10-Acceso-base-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11-Interfaces-graficas-MVC/">
+<span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conceptos-fundamentales">
+<span class="md-ellipsis">
+      
+        Conceptos Fundamentales
+      
+    </span>
+</a>
+<nav aria-label="Conceptos Fundamentales" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapa-mental-la-estructura-k-v">
+<span class="md-ellipsis">
+      
+        Mapa Mental: La Estructura K-V
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desarrollo-y-ejemplos-practicos">
+<span class="md-ellipsis">
+      
+        Desarrollo y Ejemplos Prácticos
+      
+    </span>
+</a>
+<nav aria-label="Desarrollo y Ejemplos Prácticos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-operaciones-basicas-crud">
+<span class="md-ellipsis">
+      
+        1. Operaciones Básicas (CRUD)
+      
+    </span>
+</a>
+<nav aria-label="1. Operaciones Básicas (CRUD)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-la-agenda-de-contactos">
+<span class="md-ellipsis">
+      
+        Ejemplo: La Agenda de Contactos
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-verificaciones-el-check">
+<span class="md-ellipsis">
+      
+        2. Verificaciones (El "Check")
+      
+    </span>
+</a>
+<nav aria-label='2. Verificaciones (El "Check")' class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-login-de-usuarios">
+<span class="md-ellipsis">
+      
+        Ejemplo: Login de Usuarios
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-iteracion-recorriendo-el-mapa">
+<span class="md-ellipsis">
+      
+        3. Iteración: Recorriendo el Mapa
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-metodos-inteligentes-java-8">
+<span class="md-ellipsis">
+      
+        4. Métodos "Inteligentes" (Java 8+)
+      
+    </span>
+</a>
+<nav aria-label='4. Métodos "Inteligentes" (Java 8+)' class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-contador-de-palabras-word-frequency">
+<span class="md-ellipsis">
+      
+        Ejemplo: Contador de Palabras (Word Frequency)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-otros-metodos">
+<span class="md-ellipsis">
+      
+        5. Otros Métodos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagrama-mermaid-como-funciona-put-internamente">
+<span class="md-ellipsis">
+      
+        Diagrama Mermaid: ¿Cómo funciona put internamente?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-comparativa-hashmap-vs-arraylist">
+<span class="md-ellipsis">
+      
+        Tabla Comparativa: HashMap vs ArrayList
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacion-en-el-mundo-real">
+<span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-saber-mas">
+<span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<!-- hashmap_java_fp.md --><h1 id="hashmap-el-diccionario-supersonico-de-java">HashMap: El Diccionario Supersónico de Java</h1>
+<p><strong>Introducción: El Guardarropa de la Discoteca</strong></p>
+<p>¡Qué pasa, equipo! 🎧</p>
+<p>Imaginad que llegáis a una discoteca en invierno. Lleváis un abrigo enorme. Vais al guardarropa, entregáis el abrigo y os dan un <strong>ticket con un número</strong> (por ejemplo, el 105).</p>
+<p>Cuando queréis irnos, no le decís al encargado: <em>"Oye, dame mi abrigo, es uno azul que tiene un botón medio suelto..."</em>. ¡No! Le dais el <strong>ticket 105</strong>. El encargado va directo a la percha 105 y te lo da. <strong>Tiempo de búsqueda: Instantáneo</strong>.</p>
+<p>Esto es un <strong>HashMap</strong>.
+*   El <strong>Ticket</strong> es la <strong>KEY</strong> (Clave). Única e irrepetible.
+*   El <strong>Abrigo</strong> es el <strong>VALUE</strong> (Valor). Lo que guardas.
+*   El <strong>Guardarropa</strong> es el <strong>MAP</strong> (Mapa).</p>
+<p>Si usáramos un <code>ArrayList</code> para esto, el encargado tendría que mirar todos los abrigos uno por uno hasta encontrar el tuyo (lento, ineficiente y acabaríais congelados). Con <code>HashMap</code>, el acceso es directo y veloz. 🚀</p>
+<hr/>
+<h2 id="conceptos-fundamentales">Conceptos Fundamentales</h2>
+<div class="admonition note">
+<p class="admonition-title">Definición: Map (Mapa)</p>
+<p>Es una interfaz que asigna <strong>Claves</strong> (Keys) a <strong>Valores</strong> (Values). No es una <code>Collection</code> tradicional (no hereda de <code>Collection</code>), es una estructura paralela.
+*   <strong>Regla de Oro</strong>: No puede contener claves duplicadas. Cada clave tiene asociado, como máximo, un valor.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: HashMap</p>
+<p>Es la implementación más usada de <code>Map</code>.<br/>
+*   <strong>Hash</strong>: Usa el código hash de la clave para calcular dónde guardar el valor en memoria.<br/>
+*   <strong>Orden</strong>: <strong>NO garantiza orden</strong>. Si metes datos hoy, mañana pueden salir en otro orden.<br/>
+*   <strong>Nulls</strong>: Permite <strong>una</strong> clave <code>null</code> y múltiples valores <code>null</code>.<br/></p>
+</div>
+<h3 id="mapa-mental-la-estructura-k-v">Mapa Mental: La Estructura K-V</h3>
+<div class="language-markmap mkdocs-markmap"><markmap-data encoding="base64" hidden="true">IyBKYXZhIE1hcHMKCiMjIENvbmNlcHRvcwotICoqS2V5IChLKSoqOiBFbCBpZGVudGlmaWNhZG9yIChETkksIEVtYWlsLCBJRCkuCiAgICAtIERFQkUgc2VyIMO6bmljby4KICAgIC0gREVCRSBzZXIgaW5tdXRhYmxlIChyZWNvbWVuZGFkbykuCi0gKipWYWx1ZSAoVikqKjogRWwgZGF0byAoT2JqZXRvIFBlcnNvbmEsIFN0cmluZywgSW50ZWdlcikuCiAgICAtIFB1ZWRlIGhhYmVyIGR1cGxpY2Fkb3MuCi0gKipFbnRyeSAoRW50cmFkYSkqKjogTGEgcGFyZWphIDxLLCBWPi4KCiMjIEltcGxlbWVudGFjaW9uZXMKLSAqKkhhc2hNYXAqKjogRWwgZXN0w6FuZGFyIChSw6FwaWRvLCBzaW4gb3JkZW4pLgotICoqTGlua2VkSGFzaE1hcCoqOiBSw6FwaWRvICsgT3JkZW4gZGUgaW5zZXJjacOzbi4KLSAqKlRyZWVNYXAqKjogT3JkZW5hZG8gcG9yIGNsYXZlIChMZW50bywgdXNhIMOhcmJvbCku</markmap-data></div>
+<p><br/></p><hr/><p></p>
+<h2 id="desarrollo-y-ejemplos-practicos">Desarrollo y Ejemplos Prácticos</h2>
+<p>Vamos a ver los métodos agrupados por funcionalidad. Recordad: aquí trabajamos con parejas.</p>
+<h3 id="1-operaciones-basicas-crud">1. Operaciones Básicas (CRUD)</h3>
+<ul>
+<li><strong><code>put(K key, V value)</code></strong>: Inserta la pareja. Si la clave ya existía, <strong>machaca</strong> el valor antiguo y lo devuelve.</li>
+<li><strong><code>get(Object key)</code></strong>: Busca por clave y devuelve el valor. Si no existe, devuelve <code>null</code>.</li>
+<li><strong><code>remove(Object key)</code></strong>: Borra la pareja asociada a esa clave.</li>
+<li><strong><code>size()</code></strong> / <strong><code>isEmpty()</code></strong> / <strong><code>clear()</code></strong>: Lo de siempre.</li>
+</ul>
+<h4 id="ejemplo-la-agenda-de-contactos">Ejemplo: La Agenda de Contactos</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashMap</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Map</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AgendaContactos</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// &lt;Clave: Nombre (String), Valor: Telefono (Integer)&gt;</span>
+<span class="w">        </span><span class="c1">// Usamos la interfaz Map a la izquierda (Buenas prácticas)</span>
+<span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">agenda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// 1. PUT: Añadir contactos</span>
+<span class="w">        </span><span class="n">agenda</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"Elon Musk"</span><span class="p">,</span><span class="w"> </span><span class="mi">666111222</span><span class="p">);</span>
+<span class="w">        </span><span class="n">agenda</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"Jeff Bezos"</span><span class="p">,</span><span class="w"> </span><span class="mi">666999888</span><span class="p">);</span>
+<span class="w">        </span><span class="n">agenda</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"Mi Madre"</span><span class="p">,</span><span class="w"> </span><span class="mi">600000000</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 2. PUT (Actualizar): Elon cambia de número</span>
+<span class="w">        </span><span class="c1">// Al usar la misma clave, se sobrescribe el valor.</span>
+<span class="w">        </span><span class="n">Integer</span><span class="w"> </span><span class="n">antiguoNumero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">agenda</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"Elon Musk"</span><span class="p">,</span><span class="w"> </span><span class="mi">123456789</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Número antiguo de Elon: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">antiguoNumero</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 3. GET: Recuperar datos</span>
+<span class="w">        </span><span class="n">Integer</span><span class="w"> </span><span class="n">telefonoMadre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">agenda</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"Mi Madre"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Llamando a mamá: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">telefonoMadre</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Intentar recuperar alguien que no existe</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Télefono de Batman: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">agenda</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"Batman"</span><span class="p">));</span><span class="w"> </span><span class="c1">// null</span>
+
+<span class="w">        </span><span class="c1">// 4. REMOVE: Borrar contacto</span>
+<span class="w">        </span><span class="n">agenda</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">"Jeff Bezos"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Adiós Jeff</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Total contactos: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">agenda</span><span class="p">.</span><span class="na">size</span><span class="p">());</span><span class="w"> </span><span class="c1">// 2</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Agenda: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">agenda</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="2-verificaciones-el-check">2. Verificaciones (El "Check")</h3>
+<p>Antes de actuar, a veces hay que preguntar.</p>
+<ul>
+<li><strong><code>containsKey(Object key)</code></strong>: Fundamental. Pregunta si la clave existe. Rapidez: O(1).</li>
+<li><strong><code>containsValue(Object value)</code></strong>: Pregunta si el valor existe. <strong>Cuidado</strong>: Es lento O(n) porque tiene que mirar todos los valores uno a uno.</li>
+</ul>
+<h4 id="ejemplo-login-de-usuarios">Ejemplo: Login de Usuarios</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashMap</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginSystem</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// &lt;Usuario, Contraseña&gt;</span>
+<span class="w">        </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">credenciales</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">credenciales</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"admin"</span><span class="p">,</span><span class="w"> </span><span class="s">"1234"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">credenciales</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"invitado"</span><span class="p">,</span><span class="w"> </span><span class="s">"guest"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">usuarioIntento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"hacker"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// containsKey es super eficiente</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">credenciales</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">usuarioIntento</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Usuario encontrado. Verificando password..."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error: El usuario no existe."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// containsValue (Más lento, evitar en mapas gigantes)</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">existePasswordInsegura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">credenciales</span><span class="p">.</span><span class="na">containsValue</span><span class="p">(</span><span class="s">"1234"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¿Hay passwords débiles? "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">existePasswordInsegura</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="3-iteracion-recorriendo-el-mapa">3. Iteración: Recorriendo el Mapa</h3>
+<p>Como un mapa no es una lista, no tiene un índice numérico <code>0..n</code>. Tenemos tres formas de verlo (Vistas):
+1.  <strong><code>keySet()</code></strong>: Conjunto de Claves.
+2.  <strong><code>values()</code></strong>: Colección de Valores.
+3.  <strong><code>entrySet()</code></strong>: Conjunto de Parejas (Entry). <strong>(La más eficiente)</strong>.</p>
+<p>Además, desde Java 8 tenemos el maravilloso <code>forEach</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashMap</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Map</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">InventarioFruta</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">precios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">precios</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"Manzana"</span><span class="p">,</span><span class="w"> </span><span class="mf">1.50</span><span class="p">);</span>
+<span class="w">        </span><span class="n">precios</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"Pera"</span><span class="p">,</span><span class="w"> </span><span class="mf">2.00</span><span class="p">);</span>
+<span class="w">        </span><span class="n">precios</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"Kiwis"</span><span class="p">,</span><span class="w"> </span><span class="mf">3.50</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- 1. Iterar solo Claves (keySet) ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">fruta</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">precios</span><span class="p">.</span><span class="na">keySet</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Vendemos: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fruta</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- 2. Iterar solo Valores (values) ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Double</span><span class="w"> </span><span class="n">precio</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">precios</span><span class="p">.</span><span class="na">values</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Precio: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">precio</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"€"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- 3. Iterar Todo (entrySet) - EFICIENTE ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">entrada</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">precios</span><span class="p">.</span><span class="na">entrySet</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">entrada</span><span class="p">.</span><span class="na">getKey</span><span class="p">();</span>
+<span class="w">            </span><span class="n">Double</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">entrada</span><span class="p">.</span><span class="na">getValue</span><span class="p">();</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"La "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" cuesta "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"€"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- 4. Java 8 forEach (Lambda) - MODERNO ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">precios</span><span class="p">.</span><span class="na">forEach</span><span class="p">((</span><span class="n">fruta</span><span class="p">,</span><span class="w"> </span><span class="n">precio</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Oferta: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fruta</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" a "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">precio</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.9</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"€"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="4-metodos-inteligentes-java-8">4. Métodos "Inteligentes" (Java 8+)</h3>
+<p>Estos métodos os ahorrarán cientos de <code>if-else</code> y comprobaciones de nulos. Son la marca de un programador senior.</p>
+<ul>
+<li><strong><code>putIfAbsent(K, V)</code></strong>: Solo inserta si la clave no existía (o valía null).</li>
+<li><strong><code>getOrDefault(K, V_defecto)</code></strong>: Dame el valor, y si no existe, dame este valor por defecto (para evitar nulos).</li>
+<li><strong><code>replace(K, V)</code></strong>: Actualiza solo si la clave ya existe.</li>
+<li><strong><code>computeIfAbsent(K, Function)</code></strong>: Si no existe, calcúlalo y guárdalo (Lazy loading).</li>
+</ul>
+<h4 id="ejemplo-contador-de-palabras-word-frequency">Ejemplo: Contador de Palabras (Word Frequency)</h4>
+<p>Imaginad que queréis contar cuántas veces aparece cada palabra en una lista.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashMap</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Map</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ContadorPalabras</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">texto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"java"</span><span class="p">,</span><span class="w"> </span><span class="s">"code"</span><span class="p">,</span><span class="w"> </span><span class="s">"java"</span><span class="p">,</span><span class="w"> </span><span class="s">"coffee"</span><span class="p">,</span><span class="w"> </span><span class="s">"code"</span><span class="p">,</span><span class="w"> </span><span class="s">"java"</span><span class="p">};</span>
+
+<span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">palabra</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">texto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// FORMA ANTIGUA (Muy verbosa)</span>
+<span class="w">            </span><span class="cm">/*</span>
+<span class="cm">            if (contador.containsKey(palabra)) {</span>
+<span class="cm">                int actual = contador.get(palabra);</span>
+<span class="cm">                contador.put(palabra, actual + 1);</span>
+<span class="cm">            } else {</span>
+<span class="cm">                contador.put(palabra, 1);</span>
+<span class="cm">            }</span>
+<span class="cm">            */</span>
+
+<span class="w">            </span><span class="c1">// FORMA MODERNA 1: merge</span>
+<span class="w">            </span><span class="c1">// Si existe, suma 1 al valor actual. Si no, pon 1.</span>
+<span class="w">            </span><span class="n">contador</span><span class="p">.</span><span class="na">merge</span><span class="p">(</span><span class="n">palabra</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="p">::</span><span class="n">sum</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// FORMA MODERNA 2: getOrDefault (Alternativa común)</span>
+<span class="w">            </span><span class="c1">// contador.put(palabra, contador.getOrDefault(palabra, 0) + 1);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Frecuencias: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">contador</span><span class="p">);</span><span class="w"> </span>
+<span class="w">        </span><span class="c1">// {code=2, java=3, coffee=1}</span>
+
+<span class="w">        </span><span class="c1">// --- Ejemplos de putIfAbsent y replace ---</span>
+
+<span class="w">        </span><span class="c1">// Solo añadimos "python" si no estaba</span>
+<span class="w">        </span><span class="n">contador</span><span class="p">.</span><span class="na">putIfAbsent</span><span class="p">(</span><span class="s">"java"</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// No hace nada, java ya existe</span>
+<span class="w">        </span><span class="n">contador</span><span class="p">.</span><span class="na">putIfAbsent</span><span class="p">(</span><span class="s">"python"</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Añade python=1</span>
+
+<span class="w">        </span><span class="c1">// Replace: Corregimos "coffee" solo si existe</span>
+<span class="w">        </span><span class="n">contador</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="s">"coffee"</span><span class="p">,</span><span class="w"> </span><span class="mi">99</span><span class="p">);</span><span class="w"> </span>
+<span class="w">        </span><span class="n">contador</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="s">"c++"</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// No hace nada, c++ no existe</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Final: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">contador</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="5-otros-metodos">5. Otros Métodos</h3>
+<ul>
+<li><strong><code>clone()</code></strong>: Crea una copia superficial (shallow copy). Devuelve <code>Object</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mapOriginal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">mapOriginal</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">"Uno"</span><span class="p">);</span>
+<span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mapCopia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="n">mapOriginal</span><span class="p">.</span><span class="na">clone</span><span class="p">();</span>
+</code></pre></div>
+<p><br/></p><hr/><p></p>
+<h3 id="diagrama-mermaid-como-funciona-put-internamente">Diagrama Mermaid: ¿Cómo funciona <code>put</code> internamente?</h3>
+<p>Cuando hacéis <code>put("Clave", "Valor")</code>, Java no tira los datos al azar.</p>
+<pre class="mermaid"><code>graph TD
+    A["put 'Clave', 'Valor'"] --&gt; B["Calcular hashCode de 'Clave'"]
+    B --&gt; C["Obtener índice del Array"]
+    C --&gt; D["¿Hay algo en ese índice?"]
+
+    D -- No (Vacío) --&gt; E["Crear Nodo y Guardar"]
+
+    D -- Sí (Colisión) --&gt; F["Comparar claves con equals"]
+    F --&gt; G["¿Son iguales?"]
+
+    G -- Sí --&gt; H["Sobrescribir Valor Antiguo"]
+    G -- No --&gt; I["Añadir al final de la lista enlazada/árbol en ese hueco"]</code></pre>
+<h3 id="tabla-comparativa-hashmap-vs-arraylist">Tabla Comparativa: HashMap vs ArrayList</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Característica</th>
+<th style="text-align: left;">ArrayList</th>
+<th style="text-align: left;">HashMap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Estructura</strong></td>
+<td style="text-align: left;">Lista ordenada (Índice 0, 1, 2...)</td>
+<td style="text-align: left;">Diccionario (Clave -&gt; Valor)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Acceso</strong></td>
+<td style="text-align: left;">Rápido por índice, lento por valor</td>
+<td style="text-align: left;">Rápido por clave (Casi instantáneo)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Duplicados</strong></td>
+<td style="text-align: left;">Sí</td>
+<td style="text-align: left;">Claves NO, Valores SÍ</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Uso Ideal</strong></td>
+<td style="text-align: left;">Listados secuenciales, inventarios</td>
+<td style="text-align: left;">Búsquedas por ID, Cachés, Índices</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Consejo Pro: Claves Inmutables</p>
+<p>Intentad usar siempre objetos <strong>inmutables</strong> como claves (<code>String</code>, <code>Integer</code>, <code>UUID</code>).
+¿Por qué? Si usas un objeto propio (<code>Persona</code>) como clave y luego le cambias el nombre a esa persona, su código hash cambia. ¡El HashMap ya no podrá encontrarlo y perderás el dato para siempre en el limbo de la memoria! 👻</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Ejercicios Reflexivos</p>
+<ol>
+<li><strong>Colisiones</strong>: ¿Qué pasa si dos objetos diferentes tienen el mismo <code>hashCode</code>? ¿El HashMap explota o sabe manejarlo? (Investiga "Chaining" o encadenamiento).</li>
+<li><strong>Null Pointer</strong>: ¿Qué ocurre si intentas hacer <code>map.get("clave inexistente")</code> y asignas el resultado directamente a un <code>int</code> primitivo (no <code>Integer</code>)?</li>
+<li><strong>Orden</strong>: Ejecuta un <code>HashMap</code> imprimiendo las claves. ¿Salen en el mismo orden en el que las insertaste? Si necesitas orden de inserción, ¿qué clase hermana de HashMap usarías?</li>
+</ol>
+</div>
+<h2 id="aplicacion-en-el-mundo-real">Aplicación en el Mundo Real</h2>
+<ol>
+<li><strong>Caché de Datos</strong>:
+    Imagina que consultas una base de datos lenta para obtener el perfil de un usuario. Para no consultarla mil veces, guardas el resultado en un <code>HashMap&lt;ID_Usuario, Perfil&gt;</code>. La próxima vez, miras primero en el mapa (RAM).</li>
+<li><strong>Sesiones Web</strong>:
+    En un servidor web, cada usuario tiene una sesión. El servidor usa un mapa gigante <code>HashMap&lt;SessionID, DatosUsuario&gt;</code> para saber quién eres cada vez que haces clic en un enlace.</li>
+<li><strong>JSON</strong>:
+    Un objeto JSON (<code>{"nombre": "Pepe", "edad": 20}</code>) es, estructuralmente, un Mapa de claves Strings a valores Object. Muchas librerías de Java parsean JSON directamente a <code>HashMap</code>.</li>
+</ol>
+<h2 id="para-saber-mas">Para Saber Más</h2>
+<ul>
+<li>
+<p><strong>Documentación Oficial de HashMap</strong>:
+    <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html">https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html</a></p>
+</li>
+<li>
+<p><strong>W3Schools - Java HashMap</strong>: Introducción sencilla y visual.
+    <a href="https://www.w3schools.com/java/java_hashmap.asp">https://www.w3schools.com/java/java_hashmap.asp</a></p>
+</li>
+<li>
+<p><strong>GeeksForGeeks - HashMap Examples</strong>: Casos de uso específicos.
+    <a href="https://www.geeksforgeeks.org/java/hashmap-class-methods-java-examples-set-1-put-get-isempty-size/">https://www.geeksforgeeks.org/java/hashmap-class-methods-java-examples-set-1-put-get-isempty-size/</a></p>
+</li>
+</ul>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script type="text/javascript">(function initializeMarkmap() {
+    const transformer = new markmap.Transformer();
+    const preloadScripts = transformer.plugins
+        .flatMap((plugin) => plugin.config?.preloadScripts || [])
+        .map((item) => transformer.resolveJS(item));
+    const assets = transformer.getAssets();
+    const loading = Promise.all([
+        assets.styles && markmap.loadCSS(assets.styles),
+        markmap.loadJS([...preloadScripts, ...assets.scripts]),
+    ]);
+
+    function parseData(content) {
+        const { root, frontmatter } = transformer.transform(content);
+        let options = markmap.deriveOptions(frontmatter?.markmap);
+        options = Object.assign(
+            {
+                fitRatio: 0.85,
+            },
+            options
+        );
+        return { root, options };
+    }
+
+    function resetMarkmap(m, el) {
+        if (!m.state.rect) return;
+        const { x1, y1, x2, y2 } = m.state.rect;
+        const height = (el.offsetWidth / (x2 - x1)) * (y2 - y1);
+        el.style.height = height + "px";
+        m.fit();
+    }
+
+    function decodeBase64(encoded) {
+        const binary = atob(encoded);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < bytes.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        return new TextDecoder().decode(bytes);
+    }
+
+    function renderMarkmap(el) {
+        const dataEl = el.querySelector("markmap-data");
+        if (!dataEl) return;
+        let content = el.textContent;
+        if (dataEl.getAttribute("encoding") === "base64") {
+            content = decodeBase64(content);
+        }
+        el.innerHTML = "<svg>";
+        svg = el.firstChild;
+        const { root, options } = parseData(content);
+        const m = markmap.Markmap.create(svg, options);
+        m.setData(root);
+        requestAnimationFrame(() => {
+            resetMarkmap(m, el);
+        });
+    }
+
+    function updateMarkmaps(node) {
+        for (const el of node.querySelectorAll(".mkdocs-markmap")) {
+            renderMarkmap(el);
+        }
+    }
+
+    loading.then(() => {
+        const observer = new MutationObserver((mutationList) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "childList") {
+                    for (const node of mutation.addedNodes) {
+                        updateMarkmaps(node);
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true });
+
+        updateMarkmaps(document);
+    });
+})();
+</script></body></html>

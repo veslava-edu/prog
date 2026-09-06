@@ -1,0 +1,1793 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Ejercicios de Bucles y Condicionales en Java - PROG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ejercicios-de-bucles-y-condicionales-en-java" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PROG" class="md-header__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PROG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ejercicios de Bucles y Condicionales en Java
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../1-Introduccion-programacion/" class="md-tabs__link">
+          
+  
+  
+  Programación
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PROG" class="md-nav__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    PROG
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-Introduccion-programacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-Programacion-estructurada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-Programacion-modular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-Estructuras-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-POO-Clases-y-Objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-POO-Uso-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-Estructuras-datos-dinamicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-Programacion-funcional-Streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-Ficheros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-Acceso-base-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-Interfaces-graficas-MVC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#nivel-padawan-1-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nivel PADAWAN (1 - 10)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nivel PADAWAN (1 - 10)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1-multiplos-fijos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 1: Múltiplos Fijos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-2-suma-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 2: Suma Simple
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-3-encontrando-el-maximo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 3: Encontrando el Máximo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-4-conteo-dinamico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 4: Conteo Dinámico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-5-bucle-centinela-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 5: Bucle Centinela Simple
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-6-conteo-regresivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 6: Conteo Regresivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-7-calculo-de-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 7: Cálculo de Media
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-8-filtrado-condicional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 8: Filtrado Condicional
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-9-intentos-limitados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 9: Intentos Limitados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-10-clasificacion-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 10: Clasificación Simple
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nivel-jedi-11-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nivel JEDI (11 - 20)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nivel JEDI (11 - 20)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-11-factorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 11: Factorial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-12-deteccion-con-bandera-flag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 12: Detección con Bandera (Flag)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-13-conteo-doble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 13: Conteo Doble
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-14-tablas-de-multiplicar-anidamiento-basico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 14: Tablas de Multiplicar (Anidamiento Básico)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-15-acumulacion-condicional-dual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 15: Acumulación Condicional Dual
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-16-login-con-do-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 16: Login con do-while
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-17-horas-extra-condicional-de-calculo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 17: Horas Extra (Condicional de Cálculo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-18-recorrido-ascii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 18: Recorrido ASCII
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-19-validacion-de-rango" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 19: Validación de Rango
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-20-detector-de-numeros-primos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 20: Detector de Números Primos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nivel-maestro-jedi-21-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nivel MAESTRO JEDI (21 - 30)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nivel MAESTRO JEDI (21 - 30)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-21-simulacion-con-aleatoriedad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 21: Simulación con Aleatoriedad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-22-potencia-sin-operador-nativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 22: Potencia sin Operador Nativo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-23-secuencia-de-fibonacci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 23: Secuencia de Fibonacci
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-24-patrones-geometricos-anidamiento-avanzado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 24: Patrones Geométricos (Anidamiento Avanzado)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-25-filtrado-con-bucle-centinela-y-bandera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 25: Filtrado con Bucle Centinela y Bandera
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-26-suma-de-pares-e-impares-en-rango" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 26: Suma de Pares e Impares en Rango
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-27-inversion-de-numeros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 27: Inversión de Números
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-28-adivinanza-binaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 28: Adivinanza Binaria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-29-optimizacion-de-billetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 29: Optimización de Billetes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-30-numeros-perfectos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 30: Números Perfectos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ejercicios-de-bucles-y-condicionales-en-java">Ejercicios de Bucles y Condicionales en Java</h1>
+<hr>
+<h2 id="nivel-padawan-1-10">Nivel PADAWAN (1 - 10)</h2>
+<p>Ejercicios centrados en bucles simples (<code>for</code>, <code>while</code>) y el uso básico de <code>if/else</code>.</p>
+<h3 id="ejercicio-1-multiplos-fijos">Ejercicio 1: Múltiplos Fijos</h3>
+<p><strong>Enunciado:</strong> Realiza un programa que muestre por pantalla los 15 primeros múltiplos del número 3 (3, 6, 9, ..., 45).</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Conteo (Bucle):</strong> Necesitas una estructura que repita una acción exactamente 15 veces. Utiliza un bucle <code>for</code> inicializado en 1 y que se ejecute hasta 15.<ul>
+<li><em>Comprobación (Trazas):</em> Verifica que el contador <code>i</code> comience en 1 y termine en 15.</li>
+</ul>
+</li>
+<li><strong>Cálculo (Aritmética):</strong> Dentro del bucle, calcula el múltiplo multiplicando el contador <code>i</code> por 3.<ul>
+<li><em>Comprobación (Trazas):</em> Para <code>i=1</code>, el resultado debe ser 3. Para <code>i=5</code>, debe ser 15.</li>
+</ul>
+</li>
+<li><strong>Visualización:</strong> Imprime el resultado en cada iteración.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Secuencias de identificación automática o generación de códigos de inventario (SKUs) siguiendo un patrón fijo.</p>
+</div>
+<h3 id="ejercicio-2-suma-simple">Ejercicio 2: Suma Simple</h3>
+<p><strong>Enunciado:</strong> Realiza un programa que calcule y muestre la suma de todos los números enteros comprendidos entre 1 y 100.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Acumulador (Inicialización):</strong> Declara una variable <code>suma</code> fuera del bucle e inicialízala a 0. Este será tu acumulador.<ul>
+<li><em>Comprobación (Trazas):</em> Verifica que antes del bucle, <code>suma</code> sea 0.</li>
+</ul>
+</li>
+<li><strong>Iteración (Bucle):</strong> Crea un bucle <code>for</code> que recorra los números desde 1 hasta 100.</li>
+<li><strong>Acumulación (Proceso):</strong> Dentro del bucle, actualiza el valor del acumulador sumándole el número actual (<code>suma = suma + i</code>).<ul>
+<li><em>Comprobación (Trazas):</em> Si en la iteración 5, <code>suma</code> vale 10 (1+2+3+4), después de la suma, <code>suma</code> debe valer 15.</li>
+</ul>
+</li>
+<li><strong>Resultado:</strong> Muestra el valor final de la <code>suma</code> fuera del bucle.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Cálculo de intereses compuestos o deudas acumuladas a lo largo de un período de tiempo.</p>
+</div>
+<h3 id="ejercicio-3-encontrando-el-maximo">Ejercicio 3: Encontrando el Máximo</h3>
+<p><strong>Enunciado:</strong> Pide al usuario que introduzca 5 números enteros por teclado y, al finalizar, muestra cuál de ellos fue el número mayor.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Inicialización del Máximo:</strong> Declara una variable <code>maximo</code> e inicialízala con un valor muy pequeño (o el primer número leído) para garantizar que cualquier otro número sea mayor que él inicialmente.<ul>
+<li><em>Comprobación (Trazas):</em> Si inicializas con el primer input, verifica que después de la primera lectura, <code>maximo</code> es igual al input.</li>
+</ul>
+</li>
+<li><strong>Bucle y Lectura:</strong> Usa un bucle <code>for</code> para repetir la lectura de input 5 veces.</li>
+<li><strong>Comparación (Condicional):</strong> Dentro del bucle, usa una sentencia <code>if</code> para comparar el número recién leído con el <code>maximo</code> actual. Si el nuevo número es mayor, actualiza <code>maximo</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Simula la entrada {10, 5, 20}. Después de leer 20, verifica que <code>maximo</code> se actualice de 10 a 20.</li>
+</ul>
+</li>
+<li><strong>Salida:</strong> Muestra el valor final de <code>maximo</code>.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Determinar la venta máxima o el pico de tráfico en un registro diario de datos.</p>
+</div>
+<h3 id="ejercicio-4-conteo-dinamico">Ejercicio 4: Conteo Dinámico</h3>
+<p><strong>Enunciado:</strong> Pide al usuario un número entero positivo $N$ y muestra por pantalla todos los números desde el 1 hasta $N$.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Lectura:</strong> Lee el número $N$ desde el teclado.</li>
+<li><strong>Bucle Dinámico:</strong> Utiliza un bucle <code>while</code> o <code>for</code>. Si usas <code>while</code>, debes inicializar una variable de conteo (<code>i = 1</code>) y la condición debe ser <code>i &lt;= N</code>.</li>
+<li><strong>Proceso:</strong> Dentro del bucle, imprime el valor actual del contador y asegúrate de incrementarlo al final de cada iteración.<ul>
+<li><em>Comprobación (Trazas):</em> Si $N=4$, verifica que el bucle imprima 1, 2, 3, 4 y luego termine.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Implementación de barras de progreso o conteo de tareas pendientes en un sistema operativo.</p>
+</div>
+<h3 id="ejercicio-5-bucle-centinela-simple">Ejercicio 5: Bucle Centinela Simple</h3>
+<p><strong>Enunciado:</strong> Realiza un programa que continúe pidiendo números enteros por teclado hasta que el usuario introduzca el número 0 (cero).</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Lectura Inicial:</strong> Lee el primer número antes de entrar al bucle. Este actuará como valor inicial para la condición.</li>
+<li><strong>Bucle de Control (<code>while</code>):</strong> Define el bucle <code>while</code> cuya condición de permanencia sea que el número leído sea diferente de 0.</li>
+<li><strong>Proceso Continuo:</strong> Dentro del bucle, realiza cualquier acción deseada (o simplemente imprime el número) y, crucialmente, <strong>vuelve a leer un nuevo número</strong> al final para actualizar la condición del <code>while</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Simula la entrada {5, 1, -8, 0}. El bucle debe ejecutarse 3 veces antes de fallar la condición al leer el 0.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Terminales de procesamiento continuo o interfaces de línea de comandos donde el comando de salida es una palabra clave o un valor específico.</p>
+</div>
+<h3 id="ejercicio-6-conteo-regresivo">Ejercicio 6: Conteo Regresivo</h3>
+<p><strong>Enunciado:</strong> Muestra por pantalla la cuenta regresiva desde 50 hasta 1 (ambos inclusive).</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Bucle Decremental:</strong> Usa un bucle <code>for</code> con una inicialización alta (<code>i = 50</code>), una condición de parada baja (<code>i &gt;= 1</code>) y un operador de decremento (<code>i--</code>).<ul>
+<li><em>Comprobación (Trazas):</em> Verifica que el valor inicial sea 50, que en la siguiente iteración sea 49, y que el bucle no se ejecute cuando <code>i</code> sea 0.</li>
+</ul>
+</li>
+<li><strong>Visualización:</strong> Imprime el valor de <code>i</code> en cada paso.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Sistemas de control de misiones para lanzamientos o temporizadores de seguridad.</p>
+</div>
+<h3 id="ejercicio-7-calculo-de-media">Ejercicio 7: Cálculo de Media</h3>
+<p><strong>Enunciado:</strong> Pide al usuario que introduzca 4 notas por teclado y, al finalizar la lectura, calcula y muestra la media aritmética de dichas notas.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Variables de Control:</strong> Declara un acumulador <code>suma = 0</code> y utiliza un contador <code>i</code>.</li>
+<li><strong>Bucle:</strong> Usa un bucle <code>for</code> de 4 iteraciones para leer las 4 notas.</li>
+<li><strong>Acumulación:</strong> Dentro del bucle, suma cada nota leída al acumulador <code>suma</code>.</li>
+<li><strong>Cálculo Final (División):</strong> Después de que el bucle termine, calcula la <code>media</code> dividiendo la <code>suma</code> entre el número de notas (4). Es crucial que esta división se realice usando tipos de punto flotante (<code>double</code>) para obtener un resultado preciso.<ul>
+<li><em>Comprobación (Trazas):</em> Simula la entrada {10, 5, 5, 0}. La <code>suma</code> debe ser 20. La <code>media</code> final debe ser $20.0 / 4 = 5.0$.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Sistemas académicos o de recursos humanos para calcular el rendimiento promedio de un empleado o un estudiante.</p>
+</div>
+<h3 id="ejercicio-8-filtrado-condicional">Ejercicio 8: Filtrado Condicional</h3>
+<p><strong>Enunciado:</strong> Muestra todos los números enteros impares comprendidos entre 1 y 50.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Bucle de Recorrido:</strong> Implementa un bucle <code>for</code> que itere por todos los números desde 1 hasta 50.</li>
+<li><strong>Filtro (Condicional):</strong> Dentro del bucle, utiliza la operación <strong>módulo</strong> (<code>%</code>) para determinar si el número actual es impar. Un número es impar si su residuo al dividirlo entre 2 es diferente de 0. (<code>if (i % 2 != 0)</code>).</li>
+<li><strong>Salida:</strong> Solo imprime el número <code>i</code> si pasa la condición del paso 2.<ul>
+<li><em>Comprobación (Trazas):</em> Verifica que para <code>i=4</code> no se imprima nada, y para <code>i=5</code> sí se imprima.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Filtrado de datos en un <em>dataset</em> donde solo se requieren los registros que cumplen ciertas condiciones matemáticas (ej. IDs de cliente con terminación impar).</p>
+</div>
+<h3 id="ejercicio-9-intentos-limitados">Ejercicio 9: Intentos Limitados</h3>
+<p><strong>Enunciado:</strong> Pide al usuario introducir un PIN secreto de 4 dígitos. El usuario tiene un máximo de 3 intentos para acertar. Si acierta, el programa termina con éxito; si falla los 3, el programa termina bloqueado.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Constante:</strong> Declara la constante del <code>PIN_CORRECTO</code>.</li>
+<li><strong>Bucle de Intentos:</strong> Implementa un bucle <code>for</code> o <code>while</code> que limite las iteraciones a 3. Usa una variable <code>intentos</code>.</li>
+<li><strong>Condición de Éxito y Ruptura:</strong> Dentro del bucle, después de leer el PIN, utiliza un <code>if</code> para verificar si el input coincide con el <code>PIN_CORRECTO</code>. Si acierta, imprime el mensaje de éxito y utiliza la sentencia <code>break</code> para salir inmediatamente del bucle.<ul>
+<li><em>Comprobación (Trazas):</em> Si acierta en el intento 2, verifica que el bucle se detenga y no se ejecute la tercera iteración.</li>
+</ul>
+</li>
+<li><strong>Control de Bloqueo:</strong> Fuera del bucle, verifica si el bucle terminó por el <code>break</code> (éxito) o porque se agotaron los 3 intentos.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Sistemas de seguridad, cajeros automáticos o pasarelas de pago con límite de fallos para evitar ataques de fuerza bruta.</p>
+</div>
+<h3 id="ejercicio-10-clasificacion-simple">Ejercicio 10: Clasificación Simple</h3>
+<p><strong>Enunciado:</strong> Lee un número entero por teclado y, mediante sentencias condicionales, clasifícalo e imprime si es positivo, negativo o cero.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Lectura:</strong> Lee el número $N$.</li>
+<li><strong>Condicional Principal:</strong> Utiliza la estructura <code>if-else if-else</code>. La primera condición debe ser <code>if (N &gt; 0)</code>.</li>
+<li><strong>Segunda Condición:</strong> La siguiente debe ser <code>else if (N &lt; 0)</code>.</li>
+<li><strong>Caso Residual:</strong> El bloque <code>else</code> final manejará automáticamente el caso restante (cero).<ul>
+<li><em>Comprobación (Trazas):</em> Prueba la traza con $N=10$, $N=-5$ y $N=0$ para asegurar que solo se ejecute un bloque de código por entrada.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Clasificación básica de métricas o indicadores (ej. si la ganancia es positiva, negativa o nula).</p>
+</div>
+<hr>
+<h2 id="nivel-jedi-11-20">Nivel JEDI (11 - 20)</h2>
+<p>Ejercicios que requieren el uso de acumuladores complejos, bucles anidados, validación de entrada o el uso de <em>flags</em> (banderas booleanas).</p>
+<h3 id="ejercicio-11-factorial">Ejercicio 11: Factorial</h3>
+<p><strong>Enunciado:</strong> Realiza un programa que lea un número entero positivo $N$ y calcule y visualice su factorial $N!$.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Validación:</strong> Utiliza un bucle <code>while</code> o <code>if</code> para asegurar que el número $N$ leído sea positivo (o cero, ya que $0! = 1$).</li>
+<li><strong>Inicialización:</strong> Declara un acumulador <code>factorial</code> e inicialízalo a 1 (ya que la multiplicación por 0 arruinaría el cálculo).</li>
+<li><strong>Iteración Decremental:</strong> Usa un bucle <code>while</code> o <code>for</code> que vaya desde $N$ hasta 1.</li>
+<li><strong>Acumulación Multiplicativa:</strong> Dentro del bucle, multiplica el acumulador por el contador actual (<code>factorial = factorial * i</code>).<ul>
+<li><em>Comprobación (Trazas):</em> Simula $N=4$.<ul>
+<li>Inicio: <code>factorial = 1</code>.</li>
+<li>Iteración 1 (<code>i=4</code>): <code>factorial</code> es $1 \times 4 = 4$.</li>
+<li>Iteración 2 (<code>i=3</code>): <code>factorial</code> es $4 \times 3 = 12$.</li>
+<li>Iteración 3 (<code>i=2</code>): <code>factorial</code> es $12 \times 2 = 24$.</li>
+<li>Iteración 4 (<code>i=1</code>): <code>factorial</code> es $24 \times 1 = 24$.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Algoritmos de probabilidad, combinatoria o en simulaciones físicas.</p>
+</div>
+<h3 id="ejercicio-12-deteccion-con-bandera-flag">Ejercicio 12: Detección con Bandera (Flag)</h3>
+<p><strong>Enunciado:</strong> Pide al usuario que introduzca 10 números enteros por teclado. Al finalizar la lectura, informa si al menos uno de los números introducidos fue negativo. Debes usar una variable <strong>booleana</strong> para registrar el evento.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Inicialización de Bandera:</strong> Declara una variable <code>boolean</code> llamada <code>hayNegativo</code> e inicialízala a <code>false</code>.<ul>
+<li><em>Comprobación (Trazas):</em> <code>hayNegativo = false</code> al inicio.</li>
+</ul>
+</li>
+<li><strong>Bucle de Lectura:</strong> Usa un bucle <code>for</code> para leer exactamente 10 números.</li>
+<li><strong>Activación de Bandera:</strong> Dentro del bucle, si el número leído es negativo, establece <code>hayNegativo = true</code>.</li>
+<li><strong>Terminación Temprana (Opcional):</strong> Una vez que la bandera sea <code>true</code>, puedes usar <code>break</code> para terminar el bucle anticipadamente, ya que la condición ya se ha cumplido.</li>
+<li><strong>Resultado Final:</strong> Después del bucle, usa un <code>if</code> para imprimir el mensaje apropiado basado en el estado final de la variable <code>hayNegativo</code>.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Sistemas de monitoreo industrial o meteorológico que necesitan alertar (activar una alarma) si se detecta un valor fuera de un rango seguro, sin importar cuántos valores más se lean.</p>
+</div>
+<h3 id="ejercicio-13-conteo-doble">Ejercicio 13: Conteo Doble</h3>
+<p><strong>Enunciado:</strong> Pide al usuario que introduzca 10 números no nulos por teclado y, al finalizar, muestra cuántos de ellos fueron positivos y cuántos fueron negativos.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Acumuladores Duales:</strong> Declara dos contadores, <code>conteoPositivos = 0</code> y <code>conteoNegativos = 0</code>.</li>
+<li><strong>Bucle Fijo:</strong> Usa un bucle <code>for</code> para iterar 10 veces.</li>
+<li><strong>Condicionales Anidadas:</strong> Dentro del bucle, lee el número $N$. Utiliza una estructura <code>if/else if</code>:<ul>
+<li><code>if (N &gt; 0)</code>: incrementa <code>conteoPositivos</code>.</li>
+<li><code>else if (N &lt; 0)</code>: incrementa <code>conteoNegativos</code>.</li>
+</ul>
+</li>
+<li><strong>Salida:</strong> Muestra los valores finales de ambos contadores.<ul>
+<li><em>Comprobación (Trazas):</em> Simula la entrada {-5, 10, -10}. Al final, <code>conteoPositivos</code> debe ser 1 y <code>conteoNegativos</code> debe ser 2.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Análisis de tendencias o resultados electorales (votos a favor vs. votos en contra) o análisis de transacciones financieras (créditos vs. débitos).</p>
+</div>
+<h3 id="ejercicio-14-tablas-de-multiplicar-anidamiento-basico">Ejercicio 14: Tablas de Multiplicar (Anidamiento Básico)</h3>
+<p><strong>Enunciado:</strong> Muestra por pantalla las tablas de multiplicar completas del 1 al 10, utilizando un bucle anidado.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Bucle Externo (Tabla):</strong> El bucle <code>for</code> externo debe controlar qué tabla se está calculando (de $i=1$ a $i=10$).<ul>
+<li><em>Comprobación (Trazas):</em> Asegura que el bucle externo se ejecuta 10 veces.</li>
+</ul>
+</li>
+<li><strong>Bucle Interno (Multiplicador):</strong> Dentro del bucle externo, implementa un segundo bucle <code>for</code> que controle por qué número se está multiplicando (de $j=1$ a $j=10$).<ul>
+<li><em>Comprobación (Trazas):</em> Para $i=2$, verifica que el bucle interno ejecute $2 \times 1, 2 \times 2, \dots, 2 \times 10$.</li>
+</ul>
+</li>
+<li><strong>Cálculo y Salida:</strong> Dentro del bucle interno, realiza e imprime el resultado de $i \times j$. Asegúrate de imprimir un salto de línea después de que termine cada tabla (al final del bucle externo).</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Generación de matrices o <em>datasets</em> tabulares en programación de reportes.</p>
+</div>
+<h3 id="ejercicio-15-acumulacion-condicional-dual">Ejercicio 15: Acumulación Condicional Dual</h3>
+<p><strong>Enunciado:</strong> Lee una secuencia de números por teclado. La lectura termina cuando el usuario introduce -1. Al finalizar, muestra por separado el <strong>producto de todos los números pares</strong> leídos y la <strong>suma de todos los números impares</strong> leídos.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Inicialización Dual:</strong> Inicializa dos acumuladores: <code>productoPares = 1</code> y <code>sumaImpares = 0</code>. (El producto debe ser 1, no 0, para no anular la multiplicación).</li>
+<li><strong>Bucle Centinela (<code>while</code>):</strong> Usa un bucle <code>while</code> que permanezca activo mientras el input no sea -1.</li>
+<li><strong>Condicional Múltiple:</strong> Dentro del bucle, después de leer el número $N$:<ul>
+<li>Usa un <code>if</code> para determinar si $N$ es par (usando <code>% 2 == 0</code>). Si lo es, aplica <code>productoPares *= N</code>.</li>
+<li>Usa un <code>else</code> para el caso impar. Si lo es, aplica <code>sumaImpares += N</code>.</li>
+</ul>
+</li>
+<li><strong>Lectura Continua:</strong> No olvides leer el siguiente número al final del <code>while</code>.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Procesamiento de lotes de datos donde diferentes tipos de transacciones (pares e impares) deben ser gestionadas por sistemas distintos (ej. acumular impuestos y multiplicar cantidades).</p>
+</div>
+<h3 id="ejercicio-16-login-con-do-while">Ejercicio 16: Login con <code>do-while</code></h3>
+<p><strong>Enunciado:</strong> Simula un sistema de <em>login</em>. Pide un usuario y una clave. El usuario tiene un máximo de 3 intentos. Utiliza el bucle <strong><code>do-while</code></strong> para asegurar que el proceso de verificación se ejecute al menos una vez.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Constantes:</strong> Define las credenciales correctas.</li>
+<li><strong>Contadores y Banderas:</strong> Inicializa <code>intentos = 0</code> y <code>accesoExitoso = false</code>.</li>
+<li><strong>Estructura <code>do-while</code>:</strong> Implementa el <code>do-while</code>. El cuerpo del <code>do</code> debe leer las credenciales e incrementar <code>intentos</code>.</li>
+<li><strong>Verificación:</strong> Dentro del <code>do</code>, utiliza un <code>if</code> para comparar las credenciales. Si son correctas, establece <code>accesoExitoso = true</code>.</li>
+<li><strong>Condición del <code>while</code>:</strong> La condición debe ser <code>while (intentos &lt; 3 &amp;&amp; !accesoExitoso)</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Si falla dos veces, en la tercera iteración <code>intentos</code> es 3 y el bucle termina, independientemente del resultado. Si acierta en el primer intento, el bucle debe parar inmediatamente.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Sistemas de autenticación donde la validación de la lógica es crítica y debe ejecutarse al menos una vez (ej. cajeros automáticos, inicio de sesión).</p>
+</div>
+<h3 id="ejercicio-17-horas-extra-condicional-de-calculo">Ejercicio 17: Horas Extra (Condicional de Cálculo)</h3>
+<p><strong>Enunciado:</strong> Pide al usuario las horas trabajadas en una semana. Si ha trabajado más de 40 horas, las horas excedentes se pagan con un factor de 1.5. Calcula y muestra el salario total, asumiendo una tarifa base de 10 €/hora.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Constante:</strong> Define la <code>TARIFA_BASE = 10</code> y el <code>LIMITE_HORAS = 40</code>.</li>
+<li><strong>Lectura:</strong> Lee las <code>horasTrabajadas</code>.</li>
+<li><strong>Lógica Condicional:</strong> Utiliza <code>if/else</code> para determinar el cálculo del salario:<ul>
+<li><code>if (horasTrabajadas &gt; LIMITE_HORAS)</code>: Calcula el salario base (40 * 10) y luego el salario extra (<code>(horasTrabajadas - 40) * 10 * 1.5</code>). Súmalos.</li>
+<li><code>else</code>: El salario es simplemente <code>horasTrabajadas * 10</code>.</li>
+</ul>
+</li>
+<li><strong>Trazas:</strong> Simula 50 horas trabajadas:<ul>
+<li>Salario base: $40 \times 10 = 400$.</li>
+<li>Horas extra: $50 - 40 = 10$.</li>
+<li>Salario extra: $10 \times 10 \times 1.5 = 150$.</li>
+<li>Total: $400 + 150 = 550$.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Programación de nóminas y cálculos complejos basados en tarifas y umbrales.</p>
+</div>
+<h3 id="ejercicio-18-recorrido-ascii">Ejercicio 18: Recorrido ASCII</h3>
+<p><strong>Enunciado:</strong> Muestra todas las letras mayúsculas del alfabeto (de A a Z) utilizando un bucle <code>for</code> que trabaje con el tipo de dato <strong><code>char</code></strong>.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Inicialización <code>char</code>:</strong> Inicializa el bucle <code>for</code> con una variable de tipo <code>char</code> que comience en el carácter 'A'.</li>
+<li><strong>Condición <code>char</code>:</strong> La condición debe ser que el carácter sea menor o igual al carácter 'Z'.</li>
+<li><strong>Incremento:</strong> Utiliza el incremento normal (<code>++</code>) sobre la variable <code>char</code>. Java interpreta esto sumando 1 a su código ASCII y mostrando el siguiente carácter.<ul>
+<li><em>Comprobación (Trazas):</em> El bucle debe comenzar con 'A', luego pasar a 'B', 'C', y así sucesivamente.</li>
+</ul>
+</li>
+<li><strong>Visualización:</strong> Imprime la letra en cada iteración.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Generación de identificadores alfanuméricos, secuencias de columnas en hojas de cálculo o procesamiento de caracteres en sistemas de archivos.</p>
+</div>
+<h3 id="ejercicio-19-validacion-de-rango">Ejercicio 19: Validación de Rango</h3>
+<p><strong>Enunciado:</strong> Pide una edad al usuario. Usa un bucle <code>while</code> para forzar a que el usuario introduzca una edad válida (entre 1 y 120). Una vez obtenida la edad válida, indica si la persona puede votar (&gt;= 18) y, si no puede, cuántos años le faltan.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Bucle de Validación (<code>do-while</code>):</strong> Utiliza un <code>do-while</code> para asegurar que la lectura se realice al menos una vez. La condición del <code>while</code> debe ser <code>(edad &lt; 1 || edad &gt; 120)</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Si el usuario ingresa 0, el bucle debe repetirse. Si ingresa 25, el bucle debe terminar.</li>
+</ul>
+</li>
+<li><strong>Condicional de Voto:</strong> Después del bucle (con una edad válida garantizada), utiliza un <code>if/else</code>:<ul>
+<li><code>if (edad &gt;= 18)</code>: mensaje de puede votar.</li>
+<li><code>else</code>: calcular la diferencia <code>18 - edad</code> y mostrar el resultado.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Cualquier formulario de registro en línea que deba asegurar que los datos introducidos cumplen con criterios de rango específicos antes de continuar.</p>
+</div>
+<h3 id="ejercicio-20-detector-de-numeros-primos">Ejercicio 20: Detector de Números Primos</h3>
+<p><strong>Enunciado:</strong> Lee un número entero $N$ por teclado y determina si es un número <strong>primo</strong> (solo divisible por 1 y por sí mismo).</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Pre-condiciones:</strong> Usa un <code>if</code> para manejar los casos especiales 0, 1 y números negativos (que no son primos).</li>
+<li><strong>Bandera:</strong> Inicializa la bandera <code>esPrimo = true</code>.</li>
+<li><strong>Bucle de Prueba:</strong> Para probar la divisibilidad de $N$, solo necesitas verificar hasta la raíz cuadrada de $N$, o de forma más sencilla, hasta $N/2$. Usa un bucle <code>for</code> que vaya desde $i=2$ hasta $N/2$.</li>
+<li><strong>Detección de Divisor:</strong> Dentro del bucle, usa un <code>if</code> con la operación módulo: <code>if (N % i == 0)</code>. Si se cumple, significa que has encontrado un divisor; por lo tanto, establece <code>esPrimo = false</code> y usa <code>break</code> para detener el bucle (ya no necesitas buscar más).<ul>
+<li><em>Comprobación (Trazas):</em> Simula $N=9$.<ul>
+<li><code>i=2</code>: $9\%2 \ne 0$.</li>
+<li><code>i=3</code>: $9\%3 = 0$. ¡Falso! <code>esPrimo = false</code>. <code>break</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Resultado Final:</strong> Imprime el resultado basándote en el valor final de <code>esPrimo</code>.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Criptografía y algoritmos de seguridad (como RSA), que dependen de la generación y verificación de números primos muy grandes.</p>
+</div>
+<hr>
+<h2 id="nivel-maestro-jedi-21-30">Nivel MAESTRO JEDI (21 - 30)</h2>
+<p>Ejercicios que combinan múltiples estructuras de control, patrones de diseño o la implementación de algoritmos más complejos.</p>
+<h3 id="ejercicio-21-simulacion-con-aleatoriedad">Ejercicio 21: Simulación con Aleatoriedad</h3>
+<p><strong>Enunciado:</strong> Simula el lanzamiento de dos dados estándar (6 caras) 10 veces. Cuenta y muestra cuántas veces la suma de los dos dados fue exactamente 7. (Debes usar <code>Math.random()</code> para la simulación).</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Contador:</strong> Inicializa <code>conteoSietes = 0</code>.</li>
+<li><strong>Bucle de Lanzamiento:</strong> Usa un bucle <code>for</code> que se repita 10 veces (los 10 lanzamientos).</li>
+<li><strong>Generación Aleatoria:</strong> Dentro del bucle, genera dos números aleatorios enteros entre 1 y 6 (dado 1 y dado 2).</li>
+<li><strong>Condición de Éxito:</strong> Usa un <code>if</code> para verificar la suma: <code>if (dado1 + dado2 == 7)</code>. Si se cumple, incrementa <code>conteoSietes</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Simula un caso donde el lanzamiento 3 da (3, 4) y el lanzamiento 5 da (6, 1). Verifica que <code>conteoSietes</code> sea 2 después del lanzamiento 5.</li>
+</ul>
+</li>
+<li><strong>Resultado:</strong> Muestra el <code>conteoSietes</code> al final.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Simulación Monte Carlo, modelado de riesgos o estadística aplicada en el desarrollo de videojuegos y sistemas de lotería.</p>
+</div>
+<h3 id="ejercicio-22-potencia-sin-operador-nativo">Ejercicio 22: Potencia sin Operador Nativo</h3>
+<p><strong>Enunciado:</strong> Realiza un programa que calcule el valor $A^B$ (A elevado a B) sin utilizar el operador de potencia nativo ni la función <code>Math.pow()</code>. Los valores $A$ (base) y $B$ (exponente, positivo) son introducidos por teclado.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Lectura y Validación:</strong> Lee $A$ y $B$. Asegura que $B$ sea $\ge 0$.</li>
+<li><strong>Inicialización:</strong> Inicializa la variable <code>resultado = 1.0</code> (o 1, si trabajas solo con enteros).</li>
+<li><strong>Bucle de Multiplicación:</strong> Usa un bucle <code>for</code> que se ejecute $B$ veces.</li>
+<li><strong>Acumulación:</strong> Dentro del bucle, la operación a realizar es <code>resultado = resultado * A</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Simula $A=2, B=3$.<ul>
+<li>Inicio: <code>resultado = 1</code>.</li>
+<li>Iteración 1: <code>resultado = 1 * 2 = 2</code>.</li>
+<li>Iteración 2: `resultado = 2 * 2 = 4$.</li>
+<li>Iteración 3: `resultado = 4 * 2 = 8$.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Implementación de funciones matemáticas en entornos de bajo nivel o programación de microcontroladores donde las bibliotecas avanzadas no están disponibles.</p>
+</div>
+<h3 id="ejercicio-23-secuencia-de-fibonacci">Ejercicio 23: Secuencia de Fibonacci</h3>
+<p><strong>Enunciado:</strong> Muestra los primeros 15 términos de la secuencia de Fibonacci. (La secuencia comienza 1, 1, y cada término posterior es la suma de los dos anteriores: 1, 1, 2, 3, 5, 8...).</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Inicialización de Base:</strong> Define las dos primeras variables de la secuencia: <code>a = 1</code> y <code>b = 1</code>.</li>
+<li><strong>Impresión Inicial:</strong> Imprime $a$ y $b$ fuera del bucle.</li>
+<li><strong>Bucle de Generación:</strong> Usa un bucle <code>for</code> que comience en la tercera posición (el contador $i=3$) y vaya hasta 15.</li>
+<li><strong>Cálculo del Siguiente Término:</strong> Dentro del bucle, calcula el siguiente número: <code>siguiente = a + b</code>.</li>
+<li><strong>Desplazamiento (Actualización de Estado):</strong> Para la siguiente iteración, debes "desplazar" los valores:<ul>
+<li><code>a</code> toma el valor que tenía <code>b</code>.</li>
+<li><code>b</code> toma el valor de <code>siguiente</code>.</li>
+<li><em>Comprobación (Trazas):</em> Si $a=2$ y $b=3$:<ul>
+<li><code>siguiente = 5</code>.</li>
+<li><code>a</code> se convierte en 3.</li>
+<li><code>b</code> se convierte en 5.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Visualización:</strong> Imprime <code>siguiente</code> en cada iteración.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Algoritmos de búsqueda, análisis de patrones naturales o modelos de crecimiento de poblaciones.</p>
+</div>
+<h3 id="ejercicio-24-patrones-geometricos-anidamiento-avanzado">Ejercicio 24: Patrones Geométricos (Anidamiento Avanzado)</h3>
+<p><strong>Enunciado:</strong> Pide un número $N$ al usuario (altura) y muestra un triángulo rectángulo de asteriscos (<code>*</code>) de esa altura.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Bucle Externo (Filas):</strong> El bucle externo <code>i</code> controla el número de filas (de 1 a $N$).<ul>
+<li><em>Comprobación (Trazas):</em> Si $N=3$, este bucle se ejecuta 3 veces.</li>
+</ul>
+</li>
+<li><strong>Bucle Interno (Columnas):</strong> El bucle interno <code>j</code> controla cuántos asteriscos se imprimen en la fila actual. Debe ir desde 1 hasta el valor de la fila actual ($j \le i$).<ul>
+<li><em>Comprobación (Trazas):</em> Cuando <code>i=2</code>, el bucle <code>j</code> imprime 2 asteriscos.</li>
+</ul>
+</li>
+<li><strong>Impresión:</strong> Dentro del bucle interno, imprime el carácter <code>*</code> (sin salto de línea).</li>
+<li><strong>Salto de Línea:</strong> Al finalizar el bucle interno (después de imprimir todos los asteriscos de esa fila), imprime un salto de línea para pasar a la siguiente fila.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Generación de gráficos o visualizaciones básicas en entornos de consola, o la base para algoritmos de dibujo vectorial.</p>
+</div>
+<h3 id="ejercicio-25-filtrado-con-bucle-centinela-y-bandera">Ejercicio 25: Filtrado con Bucle Centinela y Bandera</h3>
+<p><strong>Enunciado:</strong> Lee una secuencia de notas (valores entre 0 y 10). La lectura termina cuando el usuario introduce -1. Indica si en la secuencia hubo o no al menos una nota con valor 10.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Bandera y Bucle:</strong> Inicializa <code>huboDiez = false</code>. Usa un bucle <code>while</code> controlado por el valor centinela -1.</li>
+<li><strong>Validación de Rango:</strong> Dentro del bucle, <strong>antes</strong> de la lógica principal, usa un <code>if</code> para asegurar que la nota esté entre 0 y 10. Si no lo está, salta el procesamiento (o pide reintroducir, dependiendo de la tolerancia).</li>
+<li><strong>Detección de Diez:</strong> Dentro de la lógica principal, usa un <code>if</code> para verificar si la nota es igual a 10. Si lo es, establece <code>huboDiez = true</code>.</li>
+<li><strong>Terminación Temprana (Opcional):</strong> Si <code>huboDiez</code> es <code>true</code>, puedes usar <code>break</code> para salir del <code>while</code>.</li>
+<li><strong>Resultado:</strong> Imprime el resultado basándose en el estado de <code>huboDiez</code>.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Sistemas de evaluación de calidad donde se requiere determinar si se alcanzó el nivel de calidad máxima en alguna de las muestras.</p>
+</div>
+<h3 id="ejercicio-26-suma-de-pares-e-impares-en-rango">Ejercicio 26: Suma de Pares e Impares en Rango</h3>
+<p><strong>Enunciado:</strong> Calcula de forma independiente la suma total de los números <strong>pares</strong> y la suma total de los números <strong>impares</strong> comprendidos en el rango de 100 a 200 (ambos inclusive). Muestra ambas sumas al final.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Acumuladores Duales:</strong> Inicializa <code>sumaPar = 0</code> y <code>sumaImpar = 0</code>.</li>
+<li><strong>Bucle de Rango:</strong> Usa un bucle <code>for</code> que recorra los números de 100 a 200.</li>
+<li><strong>Filtrado y Acumulación:</strong> Dentro del bucle, usa la condición módulo (<code>%</code>):<ul>
+<li><code>if (i % 2 == 0)</code>: Acumula en <code>sumaPar</code>.</li>
+<li><code>else</code>: Acumula en <code>sumaImpar</code>.</li>
+<li><em>Comprobación (Trazas):</em> Verifica que 100 se sume a <code>sumaPar</code>, y 101 se sume a <code>sumaImpar</code>.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Balanceo de carga en sistemas informáticos donde los procesos se categorizan y se suman por grupos (ej. transacciones de alta prioridad vs. baja prioridad).</p>
+</div>
+<h3 id="ejercicio-27-inversion-de-numeros">Ejercicio 27: Inversión de Números</h3>
+<p><strong>Enunciado:</strong> Pide al usuario un número entero. Invierte el orden de sus dígitos (ej. 1234 se convierte en 4321) y muestra el número invertido.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Variables:</strong> Inicializa <code>invertido = 0</code>. Trabaja con el número original <code>N</code>.</li>
+<li><strong>Bucle de Descomposición:</strong> Usa un bucle <code>while</code> que se ejecute mientras $N$ sea mayor que 0.</li>
+<li><strong>Extracción de Dígito:</strong> Dentro del bucle, el último dígito se obtiene con la operación módulo: <code>digito = N % 10</code>.</li>
+<li><strong>Acumulación Inversa:</strong> Actualiza el número invertido multiplicando por 10 y sumando el dígito: <code>invertido = (invertido * 10) + digito</code>.</li>
+<li><strong>Recorte de Número:</strong> Elimina el último dígito del número original: <code>N = N / 10</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Simula $N=123$.<ul>
+<li>Iteración 1: <code>digito=3</code>. <code>invertido=3</code>. <code>N=12</code>.</li>
+<li>Iteración 2: <code>digito=2</code>. <code>invertido=32</code>. <code>N=1</code>.</li>
+<li>Iteración 3: <code>digito=1</code>. <code>invertido=321</code>. <code>N=0</code>. Fin.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Verificación de palíndromos numéricos o la manipulación de números de serie y códigos de identificación en formato inverso.</p>
+</div>
+<h3 id="ejercicio-28-adivinanza-binaria">Ejercicio 28: Adivinanza Binaria</h3>
+<p><strong>Enunciado:</strong> El usuario "piensa" un número entre 1 y 100. El programa debe intentar adivinarlo haciendo preguntas. El usuario solo puede responder si el número es "M" (mayor), "m" (menor) o "I" (igual). El programa debe usar una búsqueda binaria simple para optimizar los intentos.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Límites:</strong> Inicializa <code>min = 1</code> y <code>max = 100</code>.</li>
+<li><strong>Bucle de Búsqueda:</strong> Usa un bucle <code>while</code> que se ejecute mientras no se haya adivinado el número.</li>
+<li><strong>Cálculo del Intento:</strong> Calcula el punto medio (la hipótesis): <code>intento = (min + max) / 2</code>.</li>
+<li><strong>Respuesta del Usuario:</strong> Lee la respuesta del usuario (M, m, I).</li>
+<li><strong>Ajuste de Límites (Condicional):</strong> Utiliza <code>if/else if</code>:<ul>
+<li><code>if (respuesta == 'I')</code>: Éxito. Usar <code>break</code>.</li>
+<li><code>else if (respuesta == 'M')</code>: El número está en la mitad superior. <code>max = intento - 1</code>.</li>
+<li><code>else if (respuesta == 'm')</code>: El número está en la mitad inferior. <code>min = intento + 1</code>.</li>
+<li><em>Comprobación (Trazas):</em> Si el número pensado es 60.<ul>
+<li>Intento 1: <code>(1+100)/2 = 50</code>. Usuario dice 'm'. <code>min</code> se convierte en 51.</li>
+<li>Intento 2: <code>(51+100)/2 = 75</code>. Usuario dice 'M'. <code>max</code> se convierte en 74.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Algoritmos de búsqueda binaria en bases de datos, que es la forma más eficiente de encontrar un registro en una lista ordenada.</p>
+</div>
+<h3 id="ejercicio-29-optimizacion-de-billetes">Ejercicio 29: Optimización de Billetes</h3>
+<p><strong>Enunciado:</strong> Dada una cantidad $C$ de euros (múltiplo de 5), calcula y muestra la <strong>cantidad mínima de billetes</strong> de 500, 200, 100, 50, 20, 10 y 5 € necesarios para cubrir dicha cantidad.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>array de Billetes:</strong> Define un conjunto de valores (array conceptualmente) de billetes ordenados de mayor a menor: ${500, 200, 100, 50, 20, 10, 5}$.</li>
+<li><strong>Bucle por Tipo de Billete:</strong> Usa un bucle <code>for</code> que recorra este conjunto de billetes, del más grande al más pequeño.</li>
+<li><strong>Cálculo de Cantidad:</strong> Para cada billete, calcula cuántos billetes de ese tipo caben en la cantidad restante: <code>cantidad = C / billeteActual</code>.</li>
+<li><strong>Impresión y Restante:</strong> Si <code>cantidad &gt; 0</code>, imprime el resultado. Luego, recalcula la cantidad restante para la siguiente iteración: <code>C = C % billeteActual</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Simula $C=785$.<ul>
+<li>Billete 500: <code>785/500 = 1</code>. Restante: $785\%500 = 285$.</li>
+<li>Billete 200: <code>285/200 = 1</code>. Restante: $285\%200 = 85$.</li>
+<li>Billete 100: `85/100 = 0$.</li>
+<li>...</li>
+<li>Billete 50: `85/50 = 1$. Restante: $85\%50 = 35$.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Lógica de dispensación de dinero en cajeros automáticos o diseño de algoritmos de cambio que buscan la máxima eficiencia.</p>
+</div>
+<h3 id="ejercicio-30-numeros-perfectos">Ejercicio 30: Números Perfectos</h3>
+<p><strong>Enunciado:</strong> Pide un número entero $N$ al usuario y determina si es un <strong>Número Perfecto</strong>. Un número perfecto es aquel cuya suma de sus divisores propios (excluyendo el propio número) es igual al número. (Ejemplo: $6 = 1 + 2 + 3$).</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Validación y Acumulador:</strong> Asegura que $N &gt; 0$. Inicializa <code>sumaDivisores = 0</code>.</li>
+<li><strong>Bucle de Divisores:</strong> Usa un bucle <code>for</code> que recorra todos los números desde $i=1$ hasta $N-1$ (divisores <em>propios</em>).</li>
+<li><strong>Condición de Divisor:</strong> Dentro del bucle, usa un <code>if</code> para verificar si $i$ es un divisor de $N$: <code>if (N % i == 0)</code>.</li>
+<li><strong>Acumulación:</strong> Si la condición se cumple, suma $i$ al acumulador <code>sumaDivisores</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Simula $N=6$.<ul>
+<li>$i=1$: $6\%1=0$. `sumaDivisores = 1$.</li>
+<li>$i=2$: $6\%2=0$. `sumaDivisores = 1+2=3$.</li>
+<li>$i=3$: $6\%3=0$. `sumaDivisores = 3+3=6$.</li>
+<li>$i=4$: $6\%4 \ne 0$.</li>
+<li>$i=5$: $6\%5 \ne 0$.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Resultado Final:</strong> Después del bucle, compara: <code>if (sumaDivisores == N)</code>.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Investigación en la teoría de números, que tiene aplicaciones en criptografía y análisis de algoritmos computacionales.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href=".." rel="prev"/>
+<link href="../2-Programacion-estructurada/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>UD1 - Introducción a la programación - PROG</title>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script><script src="../js/unpkg.com/d3@7.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-lib@0.18.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-view@0.18.js" type="text/javascript"></script><style type="text/css">div.mkdocs-markmap {
+    width: 100%;
+    min-height: 1em;
+    border: 1px solid grey;
+}
+.mkdocs-markmap > svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+</style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#introduccion-a-la-programacion">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="PROG" class="md-header__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            PROG
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              UD1 - Introducción a la programación
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="./">
+          
+  
+  
+  Programación
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="PROG" class="md-nav__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    PROG
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-algoritmos-y-programas">
+<span class="md-ellipsis">
+      
+        1. Algoritmos y Programas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-paradigmas-de-programacion">
+<span class="md-ellipsis">
+      
+        2. Paradigmas de Programación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-fases-de-programacion">
+<span class="md-ellipsis">
+      
+        3. Fases de Programación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-tipos-de-lenguajes">
+<span class="md-ellipsis">
+      
+        4. Tipos de Lenguajes
+      
+    </span>
+</a>
+<nav aria-label="4. Tipos de Lenguajes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-cercania-al-programador">
+<span class="md-ellipsis">
+      
+        4.1. Cercanía al programador
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42-generaciones">
+<span class="md-ellipsis">
+      
+        4.2. Generaciones
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-traductores-compiladores-e-interpretes">
+<span class="md-ellipsis">
+      
+        5. Traductores: Compiladores e Intérpretes
+      
+    </span>
+</a>
+<nav aria-label="5. Traductores: Compiladores e Intérpretes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#51-lenguaje-compilado">
+<span class="md-ellipsis">
+      
+        5.1. Lenguaje compilado
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#52-lenguaje-interpretado">
+<span class="md-ellipsis">
+      
+        5.2. Lenguaje interpretado
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#53-lenguaje-mixto-o-intermedio">
+<span class="md-ellipsis">
+      
+        5.3. Lenguaje mixto o intermedio
+      
+    </span>
+</a>
+<nav aria-label="5.3. Lenguaje mixto o intermedio" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico-hola-mundo-en-java">
+<span class="md-ellipsis">
+      
+        Ejemplo Práctico: ¡Hola Mundo en JAVA!
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-el-lenguaje-java">
+<span class="md-ellipsis">
+      
+        6. El Lenguaje Java
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#61-como-opera-java">
+<span class="md-ellipsis">
+      
+        6.1. ¿Cómo opera Java?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62-programar-en-java">
+<span class="md-ellipsis">
+      
+        6.2. Programar en JAVA
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#63-primer-programa-hola-mundo">
+<span class="md-ellipsis">
+      
+        6.3. Primer programa - "Hola Mundo!"
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-elementos-de-un-lenguaje-de-programacion">
+<span class="md-ellipsis">
+      
+        7. Elementos de un Lenguaje de Programación
+      
+    </span>
+</a>
+<nav aria-label="7. Elementos de un Lenguaje de Programación" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico-elementos-en-accion">
+<span class="md-ellipsis">
+      
+        Ejemplo Práctico: Elementos en Acción
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacion-en-el-mundo-real">
+<span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-saber-mas">
+<span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-">
+<span class="md-ellipsis">
+      
+        ---
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuracion-del-entorno">
+<span class="md-ellipsis">
+      
+        Configuración del entorno
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2-Programacion-estructurada/">
+<span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3-Programacion-modular/">
+<span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4-Estructuras-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5-POO-Clases-y-Objetos/">
+<span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6-POO-Uso-avanzado/">
+<span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7-Estructuras-datos-dinamicas/">
+<span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../8-Programacion-funcional-Streams/">
+<span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../9-Ficheros/">
+<span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10-Acceso-base-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11-Interfaces-graficas-MVC/">
+<span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-algoritmos-y-programas">
+<span class="md-ellipsis">
+      
+        1. Algoritmos y Programas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-paradigmas-de-programacion">
+<span class="md-ellipsis">
+      
+        2. Paradigmas de Programación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-fases-de-programacion">
+<span class="md-ellipsis">
+      
+        3. Fases de Programación
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-tipos-de-lenguajes">
+<span class="md-ellipsis">
+      
+        4. Tipos de Lenguajes
+      
+    </span>
+</a>
+<nav aria-label="4. Tipos de Lenguajes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-cercania-al-programador">
+<span class="md-ellipsis">
+      
+        4.1. Cercanía al programador
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42-generaciones">
+<span class="md-ellipsis">
+      
+        4.2. Generaciones
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-traductores-compiladores-e-interpretes">
+<span class="md-ellipsis">
+      
+        5. Traductores: Compiladores e Intérpretes
+      
+    </span>
+</a>
+<nav aria-label="5. Traductores: Compiladores e Intérpretes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#51-lenguaje-compilado">
+<span class="md-ellipsis">
+      
+        5.1. Lenguaje compilado
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#52-lenguaje-interpretado">
+<span class="md-ellipsis">
+      
+        5.2. Lenguaje interpretado
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#53-lenguaje-mixto-o-intermedio">
+<span class="md-ellipsis">
+      
+        5.3. Lenguaje mixto o intermedio
+      
+    </span>
+</a>
+<nav aria-label="5.3. Lenguaje mixto o intermedio" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico-hola-mundo-en-java">
+<span class="md-ellipsis">
+      
+        Ejemplo Práctico: ¡Hola Mundo en JAVA!
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-el-lenguaje-java">
+<span class="md-ellipsis">
+      
+        6. El Lenguaje Java
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#61-como-opera-java">
+<span class="md-ellipsis">
+      
+        6.1. ¿Cómo opera Java?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62-programar-en-java">
+<span class="md-ellipsis">
+      
+        6.2. Programar en JAVA
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#63-primer-programa-hola-mundo">
+<span class="md-ellipsis">
+      
+        6.3. Primer programa - "Hola Mundo!"
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-elementos-de-un-lenguaje-de-programacion">
+<span class="md-ellipsis">
+      
+        7. Elementos de un Lenguaje de Programación
+      
+    </span>
+</a>
+<nav aria-label="7. Elementos de un Lenguaje de Programación" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-practico-elementos-en-accion">
+<span class="md-ellipsis">
+      
+        Ejemplo Práctico: Elementos en Acción
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacion-en-el-mundo-real">
+<span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-saber-mas">
+<span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-">
+<span class="md-ellipsis">
+      
+        ---
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuracion-del-entorno">
+<span class="md-ellipsis">
+      
+        Configuración del entorno
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<!-- prg_ud1_introduccion_a_la_programacion.md --><h1 id="introduccion-a-la-programacion">Introducción a la Programación</h1>
+<p>¡Buenas a todos, futuros cracks del código! Bienvenidos al primer asalto en vuestra carrera como desarrolladores. Antes de que empecemos a escribir código que podría dominar el mundo (o al menos, entregar una práctica a tiempo), tenemos que entender la base de todo: ¿qué narices es programar?</p>
+<p>Imaginad que sois chefs de talla mundial y queréis preparar una paella valenciana que haga llorar de emoción. ¿Qué necesitáis? Una <strong>receta</strong>. Esa receta son los pasos exactos, en orden, sin ambigüedades: "sofreír el pollo", "añadir el tomate", "echar el arroz"... Si seguís la receta al pie de la letra, el resultado será una paella espectacular. Si os saltáis un paso o lo hacéis en el orden incorrecto, acabaréis con algo que en Valencia llaman "arroz con cosas", y eso, amigos míos, es un crimen culinario.</p>
+<p>En nuestro mundo, esa receta es un <strong>algoritmo</strong>. Es la idea, la secuencia lógica de pasos para resolver un problema. El <strong>programa</strong> es esa misma receta, pero traducida a un idioma que nuestro "cocinero" particular, el ordenador, pueda entender. Y el lenguaje que usaremos para escribir esa receta será <strong>JAVA</strong>.</p>
+<p>Nuestro objetivo en este tema es aprender a pensar como un programador: a coger un problema grande y abstracto, descomponerlo en pequeños pasos lógicos (la receta) y luego aprender las reglas del idioma (JAVA) para escribirlo de forma que la máquina haga exactamente lo que queremos. ¡Vamos a encender los fogones!</p>
+<h2 id="1-algoritmos-y-programas">1. Algoritmos y Programas</h2>
+<p>Aunque a menudo se usan como sinónimos, es crucial entender la diferencia entre un algoritmo y un programa. Es la diferencia entre la idea y la ejecución, entre el plano y el edificio.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Algoritmo</p>
+<p>Un <strong>algoritmo</strong> es una secuencia de pasos lógicos, ordenados, finitos y no ambiguos, diseñados para resolver un problema específico o realizar una tarea. Es la estrategia, el "cómo" vamos a solucionar algo, independientemente del lenguaje de programación.</p>
+</div>
+<p>Pensemos en el algoritmo para "llegar a clase por la mañana":</p>
+<ol>
+<li>Sonar el despertador.</li>
+<li>Apagar el despertador (posiblemente varias veces).</li>
+<li>Levantarse.</li>
+<li>Ducharse.</li>
+<li>Vestirse.</li>
+<li>...y así sucesivamente.</li>
+</ol>
+<p>Este algoritmo funciona sin importar si lo piensas en español, inglés o klingon. Es una idea universal.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Programa</p>
+<p>Un <strong>programa</strong> es la implementación de uno o más algoritmos en un lenguaje de programación específico. Es el conjunto de instrucciones que un ordenador puede interpretar y ejecutar para llevar a cabo las tareas definidas en el algoritmo.</p>
+</div>
+<p>Siguiendo la analogía, un programa sería nuestra receta de paella escrita para un robot de cocina Thermomix (nuestro ordenador), usando el lenguaje de programación específico que ese robot entiende.</p>
+<p>Un buen algoritmo debe cumplir tres reglas de oro:</p>
+<ul>
+<li><strong>Preciso:</strong> Cada paso debe estar definido de forma clara y sin ambigüedad. No vale un "echar un poco de sal". ¿Cuánto es "un poco"? Hay que ser específicos.</li>
+<li><strong>Definido:</strong> Si sigues el algoritmo dos veces con los mismos datos de entrada, el resultado debe ser siempre el mismo. Dos recetas idénticas deben producir dos paellas idénticas.</li>
+<li><strong>Finito:</strong> El algoritmo debe tener un número limitado de pasos y terminar en algún momento. No puede quedarse en un bucle infinito de "sofreír el pollo".</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>Describe con tus propias palabras el algoritmo que sigues para hacer una compra online. ¿Es preciso, definido y finito?</li>
+<li>Piensa en una app que uses a diario (Instagram, TikTok, WhatsApp). ¿Qué crees que hace el algoritmo principal de esa app?</li>
+<li>¿Cuál es la diferencia fundamental entre el algoritmo de "calcular la ruta más corta en Google Maps" y el programa que se ejecuta en tu móvil?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="2-paradigmas-de-programacion">2. Paradigmas de Programación</h2>
+<p>Un paradigma de programación es como una filosofía o un estilo de construir software. No es un lenguaje, sino una forma de pensar y estructurar el código. Imagina que quieres construir una casa: puedes usar un paradigma de "ladrillo y cemento" (tradicional) o un paradigma de "casas prefabricadas" (modular). Ambos sirven para construir una casa, pero el enfoque, las herramientas y las reglas son completamente diferentes.</p>
+<p>En programación pasa lo mismo. Dependiendo del problema, un paradigma puede ser más adecuado que otro. Lo interesante es que muchos lenguajes modernos, como JAVA, son <strong>multiparadigma</strong>, lo que significa que nos permiten mezclar estilos según nos convenga.</p>
+<div class="admonition info">
+<p class="admonition-title">¡No te cases con uno solo!</p>
+<p>Ser un buen desarrollador no significa dominar un solo paradigma, sino entender cuál es la mejor herramienta para cada trabajo. A veces necesitarás un martillo (imperativo) y otras, un destornillador de precisión (funcional).</p>
+</div>
+<p>A lo largo de tu carrera te toparás con varios, pero estos son los más importantes:</p>
+<div class="language-markmap mkdocs-markmap"><markmap-data encoding="base64" hidden="true">IyBQYXJhZGlnbWFzIGRlIFByb2dyYW1hY2nDs24KCiMjIEltcGVyYXRpdm8KLSBEZXNjcmliZSAqKmPDs21vKiogaGFjZXIgbGFzIGNvc2FzLgotIEVsIGPDs2RpZ28gZXMgdW5hIHNlY3VlbmNpYSBkZSBjb21hbmRvcyBxdWUgbW9kaWZpY2FuIGVsIGVzdGFkbyBkZWwgcHJvZ3JhbWEuCi0gKipQcm9ncmFtYWNpw7NuIFByb2NlZGltZW50YWwqKgogIC0gRWo6IEMsIFBhc2NhbCwgQkFTSUMKICAtIFNlIGJhc2EgZW4gZnVuY2lvbmVzIG8gcHJvY2VkaW1pZW50b3MuCi0gKipQcm9ncmFtYWNpw7NuIE9yaWVudGFkYSBhIE9iamV0b3MgKFBPTykqKgogIC0gRWo6ICoqSkFWQSoqLCBDKyssIFB5dGhvbiwgQyMKICAtIEVsIG11bmRvIHNlIG1vZGVsYSBjb21vIG9iamV0b3MgcXVlIHRpZW5lbiBkYXRvcyAoYXRyaWJ1dG9zKSA8YnIvPnkgY29tcG9ydGFtaWVudG9zIChtw6l0b2RvcykuCiAgLSBFcyBlbCBwYXJhZGlnbWEgZG9taW5hbnRlIGVuIGxhIGluZHVzdHJpYS4KCiMjIERlY2xhcmF0aXZvCi0gPGJyLz5EZXNjcmliZSAqKnF1w6kqKiByZXN1bHRhZG8gcXVpZXJlcyBvYnRlbmVyLgotIE5vIGVzcGVjaWZpY2FzIGxvcyBwYXNvcywgc29sbyBlbCBvYmpldGl2byBmaW5hbC4KLSAqKlByb2dyYW1hY2nDs24gTMOzZ2ljYSoqCiAgLSBFajogUHJvbG9nCiAgLSBCYXNhZG8gZW4gbGEgbMOzZ2ljYSBmb3JtYWwuIExlIGRhcyBoZWNob3MgeSByZWdsYXMsIDxici8+eSBlbCBzaXN0ZW1hIGRlZHVjZSBsYXMgcmVzcHVlc3Rhcy4KLSAqKlByb2dyYW1hY2nDs24gRnVuY2lvbmFsKioKICAtIEVqOiBIYXNrZWxsLCBMaXNwLCAoeSBjYXJhY3RlcsOtc3RpY2FzIGVuIEpBVkEsIFB5dGhvbiwgSlMpCiAgLSBUcmF0YSBsYSBjb21wdXRhY2nDs24gY29tbyBsYSBldmFsdWFjacOzbiBkZSBmdW5jaW9uZXMgbWF0ZW3DoXRpY2FzLiA8YnIvPkV2aXRhIGxvcyBkYXRvcyBtdXRhYmxlcyB5IGxvcyBlZmVjdG9zIHNlY3VuZGFyaW9zLg==</markmap-data></div>
+<p>En este curso nos centraremos casi exclusivamente en la <strong>Programación Orientada a Objetos (POO)</strong>, ya que es el alma de JAVA y el paradigma más demandado en el desarrollo de aplicaciones empresariales.</p>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>Una consulta SQL como <code>SELECT nombre FROM usuarios WHERE edad &gt; 18</code> ¿A qué paradigma pertenece? ¿Por qué?</li>
+<li>Cuando escribes una hoja de estilos CSS para una web, estás describiendo cómo <em>debería verse</em> la página, no los pasos para dibujarla pixel por pixel. ¿Qué tipo de paradigma es?</li>
+<li>¿Por qué crees que la Programación Orientada a Objetos es tan popular para construir aplicaciones grandes y complejas?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="3-fases-de-programacion">3. Fases de Programación</h2>
+<p>Crear software no es solo sentarse a teclear como un poseso mientras bebes café (aunque esa parte es importante). Es un proceso estructurado, un ciclo de vida que asegura que lo que construimos funciona, resuelve el problema real y no se desmorona a la primera de cambio. Piénsalo como construir un edificio: no empiezas a poner ladrillos al azar.</p>
+<pre class="mermaid"><code>graph LR
+    A[1. Análisis del Problema] --&gt; B[2. Diseño del Algoritmo];
+    B --&gt; C[3. Codificación/Implementación];
+    C --&gt; D[4. Pruebas y Depuración];
+    D --&gt; E[5. Documentación];
+    E --&gt; F[6. Mantenimiento y Explotación];
+
+    subgraph "Fase de Resolución"
+        A
+        B
+    end
+
+    subgraph "Fase de Implementación"
+        C
+        D
+    end
+
+    subgraph "Fase de Explotación"
+        E
+        F
+    end</code></pre>
+<ol>
+<li><strong>Análisis del Problema:</strong> Es la fase más crucial. Aquí te reúnes con el cliente (o tu jefe) y te enteras de qué problema hay que resolver. Tienes que entender los requisitos a la perfección. Preguntar, preguntar y volver a preguntar. Si no entiendes el problema, cualquier solución que programes será inútil.</li>
+<li><strong>Diseño del Algoritmo:</strong> Una vez que entiendes el "qué", diseñas el "cómo". Aquí es donde creas la receta. Dibujas diagramas, escribes pseudocódigo... planeas la estructura de tu programa antes de escribir una sola línea de código real. Un buen diseño te ahorrará semanas de sufrimiento en el futuro.</li>
+<li><strong>Codificación (Implementación):</strong> ¡Ahora sí! Es el momento de traducir tu algoritmo a un lenguaje de programación, en nuestro caso, <strong>JAVA</strong>. Abres tu IDE (Entorno de Desarrollo Integrado) y te pones a teclear.</li>
+<li><strong>Pruebas y Depuración:</strong> Ningún programa (o casi ninguno) funciona bien a la primera. En esta fase, te pones el sombrero de "villano" y tratas de romper tu propio código. Pruebas todos los casos posibles, buscas errores (<code>bugs</code>) y los corriges (depuración).</li>
+<li><strong>Documentación:</strong> No solo se trata de comentar el código. También incluye manuales de usuario, documentación técnica, etc. Un código sin documentar es como un mapa del tesoro sin leyenda: inútil para quien venga después (que podrías ser tú mismo dentro de 6 meses).</li>
+<li><strong>Mantenimiento:</strong> El software, una vez entregado, sigue vivo. Hay que corregir errores que aparecen con el uso, añadir nuevas funcionalidades, adaptarlo a nuevos sistemas operativos... Esta fase puede durar años y consumir la mayor parte del coste total del proyecto.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">¡No te saltes el análisis y el diseño!</p>
+<p>La tentación de saltar directamente a la codificación es enorme, especialmente al principio. ¡No lo hagas! Es como empezar a construir un edificio sin planos. Dedicar tiempo al análisis y al diseño es la marca de un verdadero profesional.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>¿Qué crees que pasa si un equipo de desarrollo interpreta mal los requisitos en la fase de análisis? Pon un ejemplo.</li>
+<li>¿Por qué es importante la fase de pruebas? ¿No basta con que el programa "parezca" que funciona?</li>
+<li>Imagina que heredas un proyecto de un programador que se fue de la empresa y no dejó nada de documentación. ¿Cuáles serían los principales problemas a los que te enfrentarías?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="4-tipos-de-lenguajes">4. Tipos de Lenguajes</h2>
+<p>No todos los lenguajes de programación son iguales. Se pueden clasificar de muchas maneras, pero dos de las más comunes son según su nivel de abstracción (cercanía al hardware) y su evolución histórica (generaciones).</p>
+<h3 id="41-cercania-al-programador">4.1. Cercanía al programador</h3>
+<p>Esto mide cómo de lejos o cerca está un lenguaje del "idioma" que hablan los microprocesadores (unos y ceros).</p>
+<ul>
+<li>
+<p><strong>Lenguajes de Bajo Nivel:</strong> Son los más cercanos al hardware. Son muy rápidos y potentes, pero también increíblemente difíciles de leer, escribir y depurar. Es como intentar dar instrucciones a un motor hablando directamente con los pistones.</p>
+<ul>
+<li><strong>Lenguaje Máquina:</strong> Son literalmente unos y ceros (<code>10110010 11010111...</code>). Es el único idioma que el procesador entiende de forma nativa.</li>
+<li><strong>Lenguaje Ensamblador:</strong> Usa mnemotécnicos (palabras cortas como <code>MOV</code>, <code>ADD</code>, <code>JMP</code>) para representar las instrucciones de máquina. Es un poco más legible, pero sigue estando atado a la arquitectura de un procesador específico.</li>
+</ul>
+</li>
+<li>
+<p><strong>Lenguajes de Alto Nivel:</strong> Son los que usamos el 99.9% del tiempo. Están diseñados para ser entendidos por los humanos. Usan una sintaxis parecida al inglés y nos abstraen de la complejidad del hardware. <strong>JAVA</strong>, Python, C++, C#, JavaScript... todos son lenguajes de alto nivel.</p>
+</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">La abstracción es tu amiga</p>
+<p>Un lenguaje de alto nivel te permite escribir <code>System.out.println("Hola");</code> en lugar de miles de instrucciones en binario para decirle a la pantalla qué píxeles encender. ¡Bendita abstracción!</p>
+</div>
+<h3 id="42-generaciones">4.2. Generaciones</h3>
+<p>Esta es una clasificación más histórica, que muestra la evolución del pensamiento en programación.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Generación</th>
+<th style="text-align: left;">Descripción</th>
+<th style="text-align: left;">Ejemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Primera (1GL)</strong></td>
+<td style="text-align: left;">Lenguaje máquina. Instrucciones directamente en binario para una CPU específica.</td>
+<td style="text-align: left;">Código binario</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Segunda (2GL)</strong></td>
+<td style="text-align: left;">Lenguaje ensamblador. Se introduce el uso de mnemotécnicos. Se necesita un programa "ensamblador".</td>
+<td style="text-align: left;">Assembly (ASM)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tercera (3GL)</strong></td>
+<td style="text-align: left;">Lenguajes de alto nivel. Son independientes de la máquina y mucho más legibles. <strong>Aquí vivimos nosotros.</strong></td>
+<td style="text-align: left;"><strong>JAVA</strong>, C, C++, Python</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cuarta (4GL)</strong></td>
+<td style="text-align: left;">Diseñados para un propósito específico, como la gestión de bases de datos. Son más declarativos.</td>
+<td style="text-align: left;">SQL, MATLAB</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Quinta (5GL)</strong></td>
+<td style="text-align: left;">Orientados a la inteligencia artificial y la resolución de problemas basada en restricciones.</td>
+<td style="text-align: left;">Prolog, LISP</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Generaciones vs. Paradigmas</p>
+<p>Hoy en día, la clasificación por generaciones es más bien una curiosidad histórica. Es mucho más útil y práctico clasificar los lenguajes por sus paradigmas (POO, Funcional, etc.), ya que eso define cómo vas a trabajar con ellos realmente.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>¿Qué ventajas crees que tiene un lenguaje de alto nivel sobre uno de bajo nivel para desarrollar una aplicación web compleja?</li>
+<li>¿Y qué desventajas? ¿En qué casos muy específicos podría ser útil usar un lenguaje de bajo nivel hoy en día? (Pista: piensa en videojuegos, sistemas operativos, drivers...).</li>
+<li>SQL se considera un lenguaje de 4ª generación. ¿Por qué crees que encaja en esa descripción?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="5-traductores-compiladores-e-interpretes">5. Traductores: Compiladores e Intérpretes</h2>
+<p>Hemos dicho que los ordenadores solo entienden lenguaje máquina (binario), pero nosotros escribimos en lenguajes de alto nivel como JAVA. ¿Cómo se cierra esa brecha? Con programas especiales llamados <strong>traductores</strong>. Su trabajo es convertir nuestro código legible por humanos en código ejecutable por la máquina.</p>
+<p>Existen dos tipos principales de traductores: los compiladores y los intérpretes.</p>
+<h3 id="51-lenguaje-compilado">5.1. Lenguaje compilado</h3>
+<p>Un compilador es como un traductor que coge una novela entera en inglés y la traduce completamente al español antes de que tú empieces a leerla.</p>
+<pre class="mermaid"><code>graph LR
+    subgraph "Fase de Desarrollo (1-vez)&lt;br/&gt;"
+        A[Código Fuente en C++] --&gt; B{Compilador}
+        B --&gt; C[Fichero Ejecutable]
+    end
+
+    subgraph "Fase de Ejecución (muchas veces)"
+        C --&gt; D{Sistema Operativo}
+        D --&gt; E[Ejecución del Programa]
+    end
+
+    style C fill:#f9f,stroke:#333,stroke-width:2px</code></pre>
+<ul>
+<li><strong>Proceso:</strong> El compilador lee <strong>todo</strong> tu código fuente, lo analiza en busca de errores de sintaxis y, si todo está correcto, lo traduce a un fichero ejecutable en lenguaje máquina.</li>
+<li><strong>Ventajas:</strong> La ejecución es muy rápida, porque la traducción ya está hecha. El fichero ejecutable es independiente, no necesita el código fuente para funcionar.</li>
+<li><strong>Desventajas:</strong> El proceso de compilación puede ser lento. Si encuentras un error, tienes que corregir, recompilar todo y volver a probar. El ejecutable solo funciona en el sistema operativo y arquitectura para el que fue compilado (un <code>.exe</code> de Windows no funciona en Linux).</li>
+<li><strong>Ejemplos:</strong> C, C++, Go, Rust.</li>
+</ul>
+<h3 id="52-lenguaje-interpretado">5.2. Lenguaje interpretado</h3>
+<p>Un intérprete es como un traductor simultáneo en una conversación. Traduce cada frase en el momento en que se dice.</p>
+<pre class="mermaid"><code>graph TD
+    subgraph "Fase de Ejecución(cada vez)"
+        A[Código Fuente en Python] --&gt; B{Intérprete};
+        B -- "Línea 1" --&gt; C[Ejecución];
+        B -- "Línea 2" --&gt; C;
+        B -- "..." --&gt; C;
+    end
+
+    style A fill:#ccf,stroke:#333,stroke-width:2px</code></pre>
+<ul>
+<li><strong>Proceso:</strong> El intérprete lee tu código fuente línea por línea. Traduce una línea, la ejecuta, traduce la siguiente, la ejecuta, y así sucesivamente.</li>
+<li><strong>Ventajas:</strong> Es muy flexible y rápido para prototipar. No hay un paso de compilación largo. El mismo código puede funcionar en cualquier sistema que tenga el intérprete instalado (gran portabilidad).</li>
+<li><strong>Desventajas:</strong> La ejecución es más lenta que en un lenguaje compilado, porque la traducción se hace en tiempo real cada vez que se ejecuta el programa.</li>
+<li><strong>Ejemplos:</strong> Python, JavaScript, PHP, Ruby.</li>
+</ul>
+<h3 id="53-lenguaje-mixto-o-intermedio">5.3. Lenguaje mixto o intermedio</h3>
+<p>Y entonces... llegó <strong>JAVA</strong> y dijo: "¿Por qué no tener lo mejor de ambos mundos?". Los lenguajes mixtos, como JAVA, usan una combinación de compilador e intérprete.</p>
+<div class="admonition info inline">
+<p class="admonition-title">El Bytecode de JAVA</p>
+<p>Este código intermedio es una de las claves del famoso lema de Java: <em>"Write Once, Run Anywhere"</em> (Escribe una vez, ejecuta en cualquier parte).</p>
+</div>
+<p>El proceso es el siguiente:</p>
+<ol>
+<li><strong>Compilación:</strong> Primero, el compilador de JAVA (<code>javac</code>) coge tu código fuente (<code>.java</code>) y lo compila, pero no a código máquina nativo, sino a un código intermedio llamado <strong>Bytecode</strong> (<code>.class</code>). Este bytecode es universal e independiente de la plataforma.</li>
+<li><strong>Interpretación/Ejecución:</strong> Luego, la <strong>Máquina Virtual de Java (JVM)</strong>, que es un intérprete específico para cada sistema operativo (hay una JVM para Windows, una para Linux, etc.), coge ese bytecode y lo traduce a código máquina nativo para ejecutarlo.</li>
+</ol>
+<p></p><pre class="mermaid"><code>graph LR
+    subgraph "Fase de Desarrollo (1-vez)"
+        A[MiPrograma.java] -- javac --&gt; B[MiPrograma.class];
+    end
+
+    subgraph "Fase de Ejecución*"
+        subgraph "Máquina 1 (Windows)"
+            B --&gt; C1[JVM para Windows];
+            C1 --&gt; D1[Ejecución Nativa];
+        end
+        subgraph "Máquina 2 (Linux)"
+            B --&gt; C2[JVM para Linux];
+            C2 --&gt; D2[Ejecución Nativa];
+        end
+    end
+
+    style B fill:#f96,stroke:#333,stroke-width:2px
+    B --&gt; |"(Bytecode)"| B</code></pre>
+* (en cualquier máquina) <br/><p></p>
+<p>Este enfoque combina la portabilidad de los lenguajes interpretados (el mismo <code>.class</code> funciona en todas partes) con una velocidad muy cercana a la de los lenguajes compilados, gracias a optimizaciones avanzadas de la JVM como el compilador JIT (Just-In-Time).</p>
+<h4 id="ejemplo-practico-hola-mundo-en-java">Ejemplo Práctico: ¡Hola Mundo en JAVA!</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// Archivo: HolaMundo.java</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HolaMundo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 1. El compilador (javac) convierte este archivo .java en HolaMundo.class (bytecode).</span>
+<span class="w">        </span><span class="c1">// 2. La JVM (java) ejecuta el bytecode, y esta línea imprime un mensaje en la consola.</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Hola, futuro desarrollador de DAW!"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>Si estás desarrollando un videojuego AAA que necesita el máximo rendimiento gráfico, ¿qué tipo de lenguaje (compilado o interpretado) elegirías y por qué?</li>
+<li>Si estás creando un pequeño script para automatizar una tarea en tu ordenador, ¿qué tipo de lenguaje sería más práctico?</li>
+<li>Explica con tus propias palabras la ventaja del enfoque "mixto" de JAVA. ¿Por qué crees que fue una idea tan revolucionaria?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="6-el-lenguaje-java">6. El Lenguaje Java</h2>
+<p>Entre las características más destacadas de Java se encuentran:</p>
+<ul>
+<li>Se trata de un lenguaje basado en la programación orientada a objetos.</li>
+<li>En Java, cada aplicación se desarrolla y se compila solo una vez. Los programas pueden ejecutarse en cualquier entorno sin depender de la plataforma específica, siguiendo el principio de "escribe una vez, ejecuta en cualquier lugar".</li>
+<li>Su amplia adaptabilidad se debe a la Máquina Virtual de Java (JVM), que actúa como una capa adicional sobre el sistema operativo real. Esto permite correr el código compilado de un programa Java en distintos entornos, sin importar la arquitectura subyacente.</li>
+<li>Para correr aplicaciones creadas en Java, es esencial contar con una JVM instalada en el dispositivo o sistema donde se vaya a usar.</li>
+</ul>
+<h2 id="61-como-opera-java">6.1. ¿Cómo opera Java?</h2>
+<p>El mecanismo funciona de esta manera:</p>
+<p>Primero, se genera un fichero con extensión <code>.java</code>, que contiene el código fuente del programa. Luego, este código se compila, resultando en un fichero con extensión <code>.class</code>, conocido como bytecode de Java.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/1-1-estructura-programa.png"><img alt="Estructura de un programa" src="../images/1-1-estructura-programa.png"/></a></p>
+<p>Posteriormente, el bytecode de Java es procesado por la Máquina Virtual de Java, que lo transforma en código máquina a través de un compilador Just-In-Time (JIT). Finalmente, este código máquina se ejecuta directamente en el hardware del equipo.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/1-2-byte-code.png"><img alt="Estructura de un programa" src="../images/1-2-byte-code.png"/></a></p>
+<p>El fichero <code>.class</code> con el bytecode de Java permanece idéntico en todas las plataformas. Es la JVM la responsable de traducir ese bytecode y adaptarlo al código máquina adecuado para el hardware particular (como el dispositivo o su arquitectura).</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/1-3-compilacion-ejecucion.png"><img alt="JVM" src="../images/1-3-compilacion-ejecucion.png"/></a></p>
+<p>De esta forma, cada tipo de hardware recibe un código máquina personalizado.    </p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/1-4-ciclo-completo.png"><img alt="Ciclo completo" src="../images/1-4-ciclo-completo.png"/></a> </p>
+<h2 id="62-programar-en-java">6.2. Programar en JAVA</h2>
+<p>● ¿Qué necesitamos falta para <strong>EJECUTAR</strong> un programa creado en Java?<br/>
+→ Java Runtime Environment (JRE)<br/>
+→ Máquina virtual JAVA (JVM)<br/>
+→ El compilador Just-In-Time (JIT)<br/><br/></p>
+<p>● ¿Qué nos hace falta para <strong>CREAR</strong> un programa en Java?<br/>
+→ Java Development Kit (JDK)<br/>
+→ Editor de código: IntelliJ IDEA, VSCode, Eclipse...<br/></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/1-5-entorno.png"><img alt="Programar en JAVA" src="../images/1-5-entorno.png"/></a></p>
+<p>JIT es un componente del entorno de ejecución que mejora el rendimiento de las aplicaciones Java™ compilando códigos de bytes en código de máquina nativo en tiempo de ejecución.</p>
+<h2 id="63-primer-programa-hola-mundo">6.3. Primer programa - "Hola Mundo!"</h2>
+<ol>
+<li><strong>Crear una estructura de carpetas</strong>:</li>
+<li>
+<p>Comienza creando una carpeta principal para almacenar tu código Java, por ejemplo, <code>CursoJava</code>. Dentro de esta, organiza subcarpetas por cada tema. Para este caso, crea una subcarpeta llamada <code>IntroduccionAJava</code>.</p>
+</li>
+<li>
+<p><strong>Abrir la carpeta en tu editor</strong>:</p>
+</li>
+<li>
+<p>Usa la opción <code>Abrir carpeta...</code> en tu editor de código (como Visual Studio Code) para seleccionar la carpeta <code>IntroduccionAJava</code>.</p>
+</li>
+<li>
+<p><strong>Crear un nuevo archivo Java</strong>:</p>
+</li>
+<li>
+<p>Ve al menú <code>Archivo &gt; Nuevo archivo</code> para crear un fichero nuevo. Luego, guárdalo con <code>Archivo &gt; Guardar como...</code> y nómbralo <code>HolaMundo.java</code>. El nombre del fichero java debe coincidir con el nombre de la clase.</p>
+</li>
+<li>
+<p><strong>Escribir el código Java</strong>:</p>
+</li>
+<li>Copia el código Java proporcionado en el curso dentro del archivo <code>HolaMundo.java</code>.</li>
+</ol>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/1-6-primer-programa.png"><img alt="Primer Programa" src="../images/1-6-primer-programa.png"/></a></p>
+<ol>
+<li><strong>Abrir una terminal</strong>:</li>
+<li>
+<p>Accede a la terminal integrada en tu editor mediante la opción <code>Terminal &gt; Nueva Terminal</code>.</p>
+</li>
+<li>
+<p><strong>Compilar el programa</strong>:</p>
+</li>
+<li>En la terminal, ejecuta el siguiente comando para compilar el código:
+     <div class="highlight"><pre><span></span><code>javac HolaMundo.java
+</code></pre></div></li>
+<li>
+<p>Esto generará un archivo <code>HolaMundo.class</code>, que contiene el bytecode de Java.</p>
+</li>
+<li>
+<p><strong>Ejecutar el programa</strong>:</p>
+</li>
+<li>Para correr el programa, usa el comando:
+     <div class="highlight"><pre><span></span><code>java HolaMundo
+</code></pre></div></li>
+<li>Al ejecutarlo, verás el mensaje <code>Hola Mundo!</code> en la consola.</li>
+</ol>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/1-6-primer-programa-explicado.png"><img alt="Primer Programa Explicado" src="../images/1-6-primer-programa-explicado.png"/></a></p>
+<p><br/></p><hr/><p></p>
+<h2 id="7-elementos-de-un-lenguaje-de-programacion">7. Elementos de un Lenguaje de Programación</h2>
+<p>Todo lenguaje, ya sea humano o de programación, tiene un conjunto de reglas y elementos que lo componen. No puedes escribir una frase en español poniendo las palabras en cualquier orden; necesitas seguir unas reglas gramaticales. En programación, es igual. Estos son los ladrillos con los que construiremos todos nuestros programas.</p>
+<ul>
+<li><strong>Sintaxis:</strong> Son las reglas gramaticales del lenguaje. Definen la estructura correcta de las sentencias. Por ejemplo, en JAVA, cada instrucción debe terminar con un punto y coma (<code>;</code>). Si lo omites, el compilador se quejará con un error de sintaxis.</li>
+<li><strong>Semántica:</strong> Es el significado de las instrucciones. La sintaxis puede ser correcta, pero la semántica puede estar mal. Por ejemplo, <code>int x = "hola";</code> tiene una sintaxis casi correcta, pero su semántica es un desastre: estás intentando meter un texto en una caja (variable) diseñada solo para números enteros.</li>
+<li><strong>Variables:</strong> Son como cajas con etiquetas donde guardamos datos. Cada caja tiene un nombre (el identificador de la variable) y solo puede contener un tipo de dato específico.</li>
+<li><strong>Tipos de Datos:</strong> Definen qué tipo de información puede almacenar una variable. No es lo mismo guardar un número entero que un texto. JAVA tiene tipos de datos primitivos (los básicos) y tipos de objeto.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tipo Primitivo</th>
+<th style="text-align: left;">Descripción</th>
+<th style="text-align: left;">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;">Números enteros</td>
+<td style="text-align: left;"><code>42</code>, <code>-100</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>double</code></td>
+<td style="text-align: left;">Números con decimales</td>
+<td style="text-align: left;"><code>3.14159</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>char</code></td>
+<td style="text-align: left;">Un único carácter</td>
+<td style="text-align: left;"><code>'A'</code>, <code>'€'</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;">Verdadero o falso</td>
+<td style="text-align: left;"><code>true</code>, <code>false</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>String</code> (Objeto)</td>
+<td style="text-align: left;">Secuencia de caracteres</td>
+<td style="text-align: left;"><code>"Hola Mundo"</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Operadores:</strong> Son símbolos que realizan operaciones sobre las variables y los valores.<ul>
+<li>Aritméticos: <code>+</code> (suma), <code>-</code> (resta), <code>*</code> (multiplicación), <code>/</code> (división).</li>
+<li>De comparación: <code>==</code> (igual a), <code>!=</code> (distinto de), <code>&lt;</code> (menor que), <code>&gt;</code> (mayor que).</li>
+<li>Lógicos: <code>&amp;&amp;</code> (Y lógico), <code>||</code> (O lógico), <code>!</code> (NO lógico).</li>
+</ul>
+</li>
+<li><strong>Control de Flujo:</strong> Son las estructuras que nos permiten alterar el orden secuencial de ejecución. En lugar de ejecutar línea tras línea, podemos tomar decisiones o repetir acciones.<ul>
+<li><strong>Condicionales:</strong> <code>if-else</code>, <code>switch</code>. Permiten ejecutar un bloque de código u otro dependiendo de si una condición es verdadera o falsa.</li>
+<li><strong>Bucles:</strong> <code>for</code>, <code>while</code>, <code>do-while</code>. Permiten repetir un bloque de código múltiples veces.</li>
+</ul>
+</li>
+<li><strong>Funciones/Métodos:</strong> Son bloques de código reutilizables que realizan una tarea específica. En lugar de escribir el mismo código una y otra vez, lo encapsulas en un método y lo llamas cuando lo necesitas.</li>
+<li><strong>Comentarios:</strong> Son notas que dejamos en el código para nosotros o para otros programadores. El traductor (compilador o intérprete) los ignora por completo. Son vitales para mantener el código legible.</li>
+</ul>
+<h4 id="ejemplo-practico-elementos-en-accion">Ejemplo Práctico: Elementos en Acción</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// Archivo: CalculadoraSimple.java</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Esto es un comentario de bloque.</span>
+<span class="cm"> * Este programa demuestra varios elementos básicos de JAVA.</span>
+<span class="cm"> */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CalculadoraSimple</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Declaración de variables con sus tipos de datos</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">numeroA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// Un número entero</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">numeroB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">operacion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"suma"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Estructura de control de flujo: condicional if-else</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">operacion</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"suma"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Operador aritmético +</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numeroA</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numeroB</span><span class="p">;</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El resultado de la suma es: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">resultado</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Operación no reconocida."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Bucle 'for' para mostrar una cuenta</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Contando... "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>En el código anterior, identifica un ejemplo de: variable, tipo de dato, operador, control de flujo y comentario.</li>
+<li>¿Qué pasaría si en la línea <code>int numeroA = 10;</code> olvidamos el punto y coma final? ¿Sería un error de sintaxis o de semántica?</li>
+<li>¿Y si intentáramos hacer <code>int resultado = numeroA / 0;</code>? El programa compilaría (la sintaxis es correcta), pero fallaría al ejecutarse. ¿Qué tipo de error es este?</li>
+<li>¿Por qué crees que es importante que las variables tengan un tipo de dato definido? ¿Qué problemas podría causar si una misma variable pudiera contener un número, luego un texto y luego un valor booleano?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="aplicacion-en-el-mundo-real">Aplicación en el Mundo Real</h2>
+<p>Entender estos conceptos fundamentales no es un ejercicio académico; es la base sobre la que se construyen todas las aplicaciones que usas cada día.</p>
+<ul>
+<li><strong>Algoritmos en Redes Sociales:</strong> El <em>feed</em> de TikTok o Instagram no es aleatorio. Un complejo <strong>algoritmo</strong> analiza tus "me gusta", el tiempo que pasas viendo cada vídeo, a quién sigues, etc., para decidir qué mostrarte a continuación. El <strong>programa</strong> es la app de TikTok/Instagram que implementa ese algoritmo.</li>
+<li><strong>Paradigmas en el Desarrollo de Videojuegos:</strong> Los grandes motores de videojuegos como Unity o Unreal Engine utilizan masivamente la <strong>Programación Orientada a Objetos (POO)</strong>. Un "enemigo" es un objeto con atributos (vida, velocidad, daño) y métodos (atacar(), moverse(), morir()). Cada enemigo en la pantalla es una "instancia" de ese objeto.</li>
+<li><strong>Compiladores e Intérpretes en la Web:</strong> Cuando navegas por una página web, tu navegador (Chrome, Firefox) actúa como un <strong>intérprete</strong> de JavaScript. Ejecuta el código JS que la página descarga línea por línea para hacerla interactiva. Por otro lado, el <em>backend</em> de esa web (la parte que se ejecuta en el servidor), si está hecho en JAVA, fue <strong>compilado</strong> a bytecode para un rendimiento óptimo.</li>
+</ul>
+<p>Comprender esta base te permite no solo escribir código, sino entender por qué ciertas tecnologías se eligen para ciertos trabajos y cómo encajan todas las piezas del puzzle del desarrollo de software.</p>
+<h2 id="para-saber-mas">Para Saber Más</h2>
+<p>Para seguir profundizando en estos conceptos, aquí tienes algunos recursos de alta calidad:</p>
+<ol>
+<li><a href="https://roadmap.sh/computer-science"><strong>Roadmap.sh - Computer Science</strong></a>: Un mapa interactivo y muy visual sobre todos los conceptos fundamentales de la informática, desde algoritmos hasta sistemas operativos. Ideal para tener una visión global.</li>
+<li><a href="https://www.youtube.com/playlist?list=PLhQjrBD2T3828ZVbK0OCdPfLd0vPajg1D"><strong>CS50's Introduction to Computer Science (Harvard University)</strong></a>: Uno de los mejores cursos de introducción a la programación del mundo, disponible gratis en YouTube. Los primeros vídeos explican estos conceptos con una claridad magistral. (Está en inglés, pero tiene subtítulos de alta calidad).</li>
+<li><a href="http://pseint.sourceforge.net/index.php?page=documentacion.php"><strong>PSeInt - Documentación y Ejemplos</strong></a>: La herramienta que usaremos para pseudocódigo. Su página de documentación tiene muchísimos ejemplos para practicar la lógica de los algoritmos antes de saltar a un lenguaje formal como JAVA.</li>
+</ol>
+<p><br/></p><hr/><p></p>
+<h2 id="-">---</h2>
+<h2 id="configuracion-del-entorno">Configuración del entorno</h2>
+<p><a href="../docs/Configuracion-equipo.pdf"><strong>Instrucciones de configuración</strong></a></p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script type="text/javascript">(function initializeMarkmap() {
+    const transformer = new markmap.Transformer();
+    const preloadScripts = transformer.plugins
+        .flatMap((plugin) => plugin.config?.preloadScripts || [])
+        .map((item) => transformer.resolveJS(item));
+    const assets = transformer.getAssets();
+    const loading = Promise.all([
+        assets.styles && markmap.loadCSS(assets.styles),
+        markmap.loadJS([...preloadScripts, ...assets.scripts]),
+    ]);
+
+    function parseData(content) {
+        const { root, frontmatter } = transformer.transform(content);
+        let options = markmap.deriveOptions(frontmatter?.markmap);
+        options = Object.assign(
+            {
+                fitRatio: 0.85,
+            },
+            options
+        );
+        return { root, options };
+    }
+
+    function resetMarkmap(m, el) {
+        if (!m.state.rect) return;
+        const { x1, y1, x2, y2 } = m.state.rect;
+        const height = (el.offsetWidth / (x2 - x1)) * (y2 - y1);
+        el.style.height = height + "px";
+        m.fit();
+    }
+
+    function decodeBase64(encoded) {
+        const binary = atob(encoded);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < bytes.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        return new TextDecoder().decode(bytes);
+    }
+
+    function renderMarkmap(el) {
+        const dataEl = el.querySelector("markmap-data");
+        if (!dataEl) return;
+        let content = el.textContent;
+        if (dataEl.getAttribute("encoding") === "base64") {
+            content = decodeBase64(content);
+        }
+        el.innerHTML = "<svg>";
+        svg = el.firstChild;
+        const { root, options } = parseData(content);
+        const m = markmap.Markmap.create(svg, options);
+        m.setData(root);
+        requestAnimationFrame(() => {
+            resetMarkmap(m, el);
+        });
+    }
+
+    function updateMarkmaps(node) {
+        for (const el of node.querySelectorAll(".mkdocs-markmap")) {
+            renderMarkmap(el);
+        }
+    }
+
+    loading.then(() => {
+        const observer = new MutationObserver((mutationList) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "childList") {
+                    for (const node of mutation.addedNodes) {
+                        updateMarkmaps(node);
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true });
+
+        updateMarkmaps(document);
+    });
+})();
+</script></body></html>

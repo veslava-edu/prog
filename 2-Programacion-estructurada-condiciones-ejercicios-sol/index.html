@@ -1,0 +1,2119 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>2 Programacion estructurada condiciones ejercicios sol - PROG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modulo-de-practicas-condiciones-en-java" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PROG" class="md-header__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PROG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2 Programacion estructurada condiciones ejercicios sol
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../1-Introduccion-programacion/" class="md-tabs__link">
+          
+  
+  
+  Programación
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PROG" class="md-nav__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    PROG
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-Introduccion-programacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-Programacion-estructurada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-Programacion-modular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-Estructuras-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-POO-Clases-y-Objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-POO-Uso-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-Estructuras-datos-dinamicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-Programacion-funcional-Streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-Ficheros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-Acceso-base-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-Interfaces-graficas-MVC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-consolidacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Consolidación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Consolidación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-refuerzo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Refuerzo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Refuerzo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-ampliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Ampliación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Ampliación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peer-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Peer Review:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial-codigo-a-mejorar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial (Código a mejorar):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peer-review_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Peer Review:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peer-review_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Peer Review:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- Nombre de archivo sugerido: T02-Ejercicios-Condiciones.md --><h1 id="modulo-de-practicas-condiciones-en-java">Módulo de Prácticas: Condiciones en JAVA</h1>
+<p>¡Buenas, equipo! Es hora de poner en práctica las estructuras de control que son el cerebro de cualquier programa: las condiciones. En el desarrollo de software profesional, rara vez escribimos código que se ejecuta igual siempre. Nuestra labor es anticipar situaciones y hacer que el programa reaccione de forma inteligente.</p>
+<p><strong>Narrativa del Proyecto: Módulos para "CyberGuard Sentinel"</strong></p>
+<p>Trabajamos para <strong>CyberGuard Solutions</strong>, una empresa líder en ciberseguridad. Nuestro proyecto actual es "Sentinel", una nueva suite de seguridad integral. Hoy nos han encargado desarrollar varios prototipos de módulos de lógica que tomarán decisiones clave: validar credenciales, clasificar amenazas, aplicar reglas de firewall y gestionar licencias de usuario. Cada ejercicio representa un pequeño componente de este gran sistema. ¡A programar!</p>
+<h2 id="ejercicios-de-consolidacion">Ejercicios de Consolidación</h2>
+<div class="admonition abstract">
+<p class="admonition-title">1) Módulo de Autenticación: Verificación de Credenciales | Nivel: Fácil</p>
+<h5 id="objetivo"><strong>Objetivo:</strong></h5>
+<p>Implementar una lógica de <code>if-else</code> básica para validar un nombre de usuario y una contraseña, reforzando el uso correcto de <code>equals()</code> para comparar <code>String</code>.</p>
+<h5 id="tarea-a-realizar"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>ModuloAutenticacion</code>.</li>
+<li>Dentro del método <code>main</code>, declara dos constantes de tipo <code>String</code>: <code>USUARIO_REGISTRADO</code> y <code>PASS_REGISTRADA</code> con los valores "admin" y "SentinelPass123" respectivamente.</li>
+<li>Pide al usuario que introduzca su nombre de usuario y su contraseña por consola.</li>
+<li>Utiliza una estructura <code>if-else</code> para comprobar si <strong>ambos</strong>, el usuario y la contraseña introducidos, coinciden con las constantes.<ul>
+<li>Si coinciden, muestra el mensaje: "Acceso concedido. Bienvenido a CyberGuard Sentinel."</li>
+<li>Si no coinciden, muestra: "Acceso denegado. Credenciales incorrectas."</li>
+</ul>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Cada sistema que requiere un login, desde una aplicación bancaria hasta una red social, utiliza esta lógica fundamental como primera barrera de seguridad. Hacerlo correctamente es crucial para proteger los datos del usuario.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModuloAutenticacion</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 1. Declaración de constantes para las credenciales correctas</span>
+<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">USUARIO_REGISTRADO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"admin"</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">PASS_REGISTRADA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"SentinelPass123"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// 2. Setup del Scanner para leer la entrada del usuario</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">teclado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 3. Petición de datos al usuario</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce tu nombre de usuario: "</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">usuarioInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">teclado</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce tu contraseña: "</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">passInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">teclado</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// 4. Lógica condicional para la validación</span>
+<span class="w">        </span><span class="c1">// Se usa '&amp;&amp;' para asegurar que AMBAS condiciones son verdaderas.</span>
+<span class="w">        </span><span class="c1">// Se usa '.equals()' para comparar el contenido de los Strings.</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">usuarioInput</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">USUARIO_REGISTRADO</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">passInput</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">PASS_REGISTRADA</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Rama que se ejecuta si la condición es TRUE</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Acceso concedido. Bienvenido a CyberGuard Sentinel."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Rama que se ejecuta si la condición es FALSE</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Acceso denegado. Credenciales incorrectas."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">teclado</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">2) Módulo de Privilegios: Chequeo de Administrador | Nivel: Fácil</p>
+<h5 id="objetivo_1"><strong>Objetivo:</strong></h5>
+<p>Utilizar una estructura <code>if</code> simple (sin <code>else</code>) para ejecutar una acción adicional solo si se cumple una condición específica.</p>
+<h5 id="tarea-a-realizar_1"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>VerificadorPrivilegios</code>.</li>
+<li>Dentro del <code>main</code>, declara una variable <code>boolean</code> llamada <code>esAdmin</code> e inicialízala a <code>true</code> (puedes cambiarla a <code>false</code> para probar).</li>
+<li>Declara una variable <code>String</code> con el <code>nombreUsuario</code>.</li>
+<li>El programa siempre debe imprimir un mensaje de bienvenida general, por ejemplo: "Bienvenido, [nombreUsuario]".</li>
+<li>A continuación, usa una estructura <code>if</code> para comprobar si <code>esAdmin</code> es <code>true</code>.</li>
+<li><strong>Solo si es administrador</strong>, imprime un mensaje adicional: "Panel de administración activado. Tenga cuidado."</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_1"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>En las aplicaciones, ciertas funcionalidades (como borrar usuarios o cambiar configuraciones críticas) solo deben ser visibles o accesibles para roles específicos. Un <code>if</code> simple es la forma de implementar esta lógica de "bonus" o acceso especial.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">VerificadorPrivilegios</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 1. Setup de las variables</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">nombreUsuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"CoordinadorDAW"</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">esAdmin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// Cambiar a 'false' para probar el otro caso</span>
+
+<span class="w">        </span><span class="c1">// 2. Mensaje que se muestra siempre</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Bienvenido, "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombreUsuario</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 3. Condicional 'if' simple</span>
+<span class="w">        </span><span class="c1">// Este bloque de código solo se ejecutará si la variable 'esAdmin' es 'true'</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">esAdmin</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Panel de administración activado. Tenga cuidado."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// El programa continúa su ejecución normal aquí</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Operaciones estándar disponibles."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">3) Módulo de Análisis: Clasificador de Amenazas | Nivel: Fácil</p>
+<h5 id="objetivo_2"><strong>Objetivo:</strong></h5>
+<p>Aplicar la estructura <code>if-else if-else</code> para clasificar un valor numérico en diferentes categorías excluyentes.</p>
+<h5 id="tarea-a-realizar_2"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>ClasificadorAmenazas</code>.</li>
+<li>Pide al usuario que introduzca un "nivel de riesgo" numérico (un entero entre 0 y 100).</li>
+<li>Implementa una cadena <code>if-else if-else</code> para mostrar un mensaje según las siguientes reglas:<ul>
+<li>Si el nivel es mayor a 90: "Amenaza Crítica: Acción inmediata requerida."</li>
+<li>Si el nivel es mayor a 70 (y no es crítico): "Amenaza Alta: Se recomienda supervisión."</li>
+<li>Si el nivel es mayor a 30 (y no es alto ni crítico): "Amenaza Media: Revisión periódica necesaria."</li>
+<li>Para cualquier otro caso (30 o menos): "Amenaza Baja: Sistema en parámetros normales."</li>
+</ul>
+</li>
+<li>Asegúrate de manejar el caso de que alguien introduzca un número negativo o mayor que 100 con un <code>if</code> inicial.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_2"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Los sistemas de monitorización (de redes, de salud de servidores, etc.) usan constantemente esta lógica para convertir datos numéricos brutos (como el uso de CPU o el tráfico de red) en alertas comprensibles y priorizadas para los operadores humanos.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ClasificadorAmenazas</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduzca el nivel de riesgo detectado (0-100): "</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">nivelRiesgo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Primer 'if' para validar el rango de entrada</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nivelRiesgo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">nivelRiesgo</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error: El nivel de riesgo debe estar entre 0 y 100."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nivelRiesgo</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">90</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Amenaza Crítica: Acción inmediata requerida."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nivelRiesgo</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">70</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Amenaza Alta: Se recomienda supervisión."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nivelRiesgo</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Amenaza Media: Revisión periódica necesaria."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Amenaza Baja: Sistema en parámetros normales."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">4) Módulo de Conexión: Selector de Protocolo de Red | Nivel: Fácil</p>
+<h5 id="objetivo_3"><strong>Objetivo:</strong></h5>
+<p>Utilizar una estructura <code>switch</code> para gestionar un menú de opciones basado en un valor entero, demostrando su legibilidad frente a un <code>if-else if</code> largo.</p>
+<h5 id="tarea-a-realizar_3"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>SelectorProtocolo</code>.</li>
+<li>Muestra al usuario un menú de opciones:
+    <div class="highlight"><pre><span></span><code>Seleccione el protocolo de conexión:
+1. HTTP (Navegación web)
+2. FTP (Transferencia de archivos)
+3. SSH (Acceso remoto seguro)
+4. SMTP (Envío de correo)
+</code></pre></div></li>
+<li>Pide al usuario que elija una opción (un número del 1 al 4).</li>
+<li>Usa una estructura <code>switch</code> sobre la opción elegida.</li>
+<li>Para cada <code>case</code>, imprime un mensaje confirmando la selección. Por ejemplo, para el caso 1: "Estableciendo conexión vía HTTP...".</li>
+<li>Incluye un caso <code>default</code> para manejar opciones no válidas, mostrando el mensaje "Protocolo desconocido. Conexión cancelada."</li>
+<li><strong>Importante:</strong> No olvides el <code>break</code> en cada <code>case</code>.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_3"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Los menús de configuración en aplicaciones de consola, los cajeros automáticos o cualquier sistema que ofrezca al usuario una lista de acciones discretas son candidatos perfectos para ser implementados con un <code>switch</code>.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SelectorProtocolo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Seleccione el protocolo de conexión:"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"1. HTTP (Navegación web)"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"2. FTP (Transferencia de archivos)"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"3. SSH (Acceso remoto seguro)"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"4. SMTP (Envío de correo)"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Opción: "</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">opcion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">opcion</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Estableciendo conexión vía HTTP..."</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="c1">// Sale del switch</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Estableciendo conexión vía FTP..."</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="c1">// Sale del switch</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Estableciendo conexión vía SSH..."</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="c1">// Sale del switch</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="p">:</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Estableciendo conexión vía SMTP..."</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="c1">// Sale del switch</span>
+<span class="w">            </span><span class="k">default</span><span class="p">:</span>
+<span class="w">                </span><span class="c1">// Se ejecuta si 'opcion' no coincide con ningún case</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Protocolo desconocido. Conexión cancelada."</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">5) Depuración: El Bug en el Control de Acceso | Nivel: Fácil</p>
+<h5 id="objetivo_4"><strong>Objetivo:</strong></h5>
+<p>Identificar y corregir un error lógico común en una estructura condicional.</p>
+<h5 id="setup-inicial"><strong>Setup Inicial:</strong></h5>
+<p>Copia el siguiente código en una nueva clase <code>ControlDeAccesoBug</code>. Contiene un error sutil.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ControlDeAccesoBug</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Un usuario es VIP si tiene nivel de acceso 5 O si es empleado del mes.</span>
+<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">NIVEL_ACCESO_VIP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce tu nivel de acceso (1-5): "</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">nivelUsuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"¿Eres el empleado del mes? (true/false): "</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">esEmpleadoDelMes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextBoolean</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// ¡Hay un error en la siguiente condición!</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nivelUsuario</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">NIVEL_ACCESO_VIP</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">esEmpleadoDelMes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Acceso a la zona VIP concedido."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Acceso a la zona VIP denegado."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="tarea-a-realizar_4"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Lee el comentario que describe la regla de negocio: "Un usuario es VIP si tiene nivel de acceso 5 <strong>Y</strong> si es empleado del mes".</li>
+<li>Ejecuta el programa tal como está. Prueba a introducir un nivel de acceso <code>5</code> y <code>false</code> para empleado del mes. ¿Qué ocurre? Ahora prueba con nivel <code>3</code> y <code>true</code>. ¿El comportamiento es el esperado según la regla?</li>
+<li>Identifica el operador lógico incorrecto en la condición del <code>if</code>.</li>
+<li>Reemplázalo por el operador correcto para que la lógica cumpla con el requisito.</li>
+<li>Vuelve a probar los casos anteriores para verificar que ahora funciona como se espera.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_4"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Los errores lógicos son de los más comunes y a veces difíciles de detectar, ya que el programa compila y se ejecuta sin fallar. Un simple <code>||</code> en lugar de un <code>&amp;&amp;</code> puede crear una brecha de seguridad masiva. La depuración es una habilidad esencial para cualquier programador.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<p>El error está en el operador <code>||</code> (OR lógico). La regla de negocio exige que ambas condiciones se cumplan, por lo que el operador correcto es <code>&amp;&amp;</code> (AND lógico).</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ControlDeAccesoBug</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// La regla es: Nivel 5 Y ser empleado del mes.</span>
+<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">NIVEL_ACCESO_VIP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce tu nivel de acceso (1-5): "</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">nivelUsuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"¿Eres el empleado del mes? (true/false): "</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">esEmpleadoDelMes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextBoolean</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// CORRECCIÓN: Se cambió el || (OR) por &amp;&amp; (AND)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nivelUsuario</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">NIVEL_ACCESO_VIP</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">esEmpleadoDelMes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Acceso a la zona VIP concedido."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Acceso a la zona VIP denegado."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<h2 id="ejercicios-de-refuerzo">Ejercicios de Refuerzo</h2>
+<div class="admonition warning">
+<p class="admonition-title">6) Módulo de Firewall: Reglas de Conexión Anidadas | Nivel: Medio</p>
+<h5 id="objetivo_5"><strong>Objetivo:</strong></h5>
+<p>Implementar condicionales anidados (<code>if</code> dentro de otro <code>if</code>) para simular una regla de firewall que evalúa múltiples criterios secuencialmente.</p>
+<h5 id="tarea-a-realizar_5"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>SimuladorFirewall</code>.</li>
+<li>Pide al usuario que introduzca una dirección IP de origen (como un <code>String</code>) y un número de puerto (como un <code>int</code>).</li>
+<li>Define dos constantes: <code>IP_BLOQUEADA</code> con valor "192.168.1.100" y <code>PUERTO_ADMIN</code> con valor <code>22</code>.</li>
+<li>
+<p>Implementa la siguiente lógica con <code>if</code> anidados:</p>
+<ul>
+<li>El <code>if</code> exterior comprobará si la IP introducida <strong>NO</strong> es igual a la <code>IP_BLOQUEADA</code>.</li>
+<li>Si la IP no está bloqueada, el <code>if</code> interior comprobará si el puerto es el <code>PUERTO_ADMIN</code> (22).<ul>
+<li>Si es el puerto de admin, mostrará: "Alerta: Intento de acceso al puerto de administración (22) desde una IP permitida. Se requiere monitoreo."</li>
+<li>Si no es el puerto de admin, mostrará: "Conexión permitida. Tráfico normal."</li>
+</ul>
+</li>
+<li>Si la IP <strong>SÍ</strong> está en la lista de bloqueadas (en el <code>else</code> del primer <code>if</code>), mostrará el mensaje: "Conexión bloqueada. La IP de origen está en la lista negra."</li>
+</ul>
+</li>
+<li>
+<p><strong>Pista:</strong> Recuerda usar <code>.equals()</code> para comparar <code>String</code> y <code>==</code> para comparar <code>int</code>. El <code>if</code> anidado va dentro de la rama "true" del <code>if</code> principal.</p>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_5"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Los firewalls y los sistemas de control de acceso a redes procesan millones de paquetes por segundo aplicando conjuntos de reglas jerárquicas. La lógica anidada es fundamental para evaluar condiciones en un orden específico, descartando tráfico no deseado lo antes posible.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SimuladorFirewall</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">IP_BLOQUEADA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"192.168.1.100"</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PUERTO_ADMIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">22</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce la IP de origen: "</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">ipOrigen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce el puerto de destino: "</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">puertoDestino</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// if exterior: comprueba la IP. Usamos '!' para negar la condición.</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">ipOrigen</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">IP_BLOQUEADA</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Este bloque solo se ejecuta si la IP NO está bloqueada.</span>
+
+<span class="w">            </span><span class="c1">// if interior: comprueba el puerto</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">puertoDestino</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PUERTO_ADMIN</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Alerta: Intento de acceso al puerto de administración (22) desde una IP permitida. Se requiere monitoreo."</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Conexión permitida. Tráfico normal."</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// else del if exterior: se ejecuta si la IP SÍ está bloqueada.</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Conexión bloqueada. La IP de origen está en la lista negra."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">7) Módulo de Licencias: Gestor de Características (Switch Expression) | Nivel: Medio</p>
+<h5 id="objetivo_6"><strong>Objetivo:</strong></h5>
+<p>Utilizar una "Switch Expression" de JAVA 12+ para asignar un valor a una variable de forma más concisa y segura, basado en el tipo de licencia de un usuario.</p>
+<h5 id="tarea-a-realizar_6"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>GestorLicencias</code>.</li>
+<li>Pide al usuario que introduzca su tipo de licencia: "FREE", "PRO" o "ENTERPRISE".</li>
+<li>Usa una <strong>Switch Expression</strong> para determinar las características disponibles y asignarlas a una variable <code>String</code> llamada <code>features</code>.<ul>
+<li><code>case "FREE"</code> -&gt; <code>"Acceso a funcionalidades básicas."</code></li>
+<li><code>case "PRO"</code> -&gt; <code>"Acceso a funcionalidades básicas y de colaboración."</code></li>
+<li><code>case "ENTERPRISE"</code> -&gt; <code>"Acceso total, incluyendo reportes avanzados y soporte prioritario."</code></li>
+<li><code>default</code> -&gt; <code>"Tipo de licencia no reconocido."</code></li>
+</ul>
+</li>
+<li>
+<p>Al final, imprime el valor de la variable <code>features</code>.</p>
+</li>
+<li>
+<p><strong>Pista:</strong> La sintaxis de una Switch Expression es <code>variable = switch (valor) { case "A" -&gt; "Resultado A"; default -&gt; "Resultado por defecto"; };</code>. No olvides el punto y coma al final de toda la expresión.</p>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_6"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Las aplicaciones SaaS (Software as a Service) gestionan múltiples niveles de suscripción. Usar una Switch Expression permite determinar de forma limpia y segura qué conjunto de permisos o características cargar para un usuario basándose en su nivel de pago, evitando errores de <code>break</code> olvidados.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GestorLicencias</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce tu tipo de licencia (FREE, PRO, ENTERPRISE): "</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Usamos toUpperCase() para hacer la comparación insensible a mayúsculas/minúsculas</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">tipoLicencia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextLine</span><span class="p">().</span><span class="na">toUpperCase</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Switch Expression (JAVA 12+)</span>
+<span class="w">        </span><span class="c1">// Asigna el resultado directamente a la variable 'features'.</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">tipoLicencia</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"FREE"</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">"Acceso a funcionalidades básicas."</span><span class="p">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"PRO"</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">"Acceso a funcionalidades básicas y de colaboración."</span><span class="p">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"ENTERPRISE"</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">"Acceso total, incluyendo reportes avanzados y soporte prioritario."</span><span class="p">;</span>
+<span class="w">            </span><span class="k">default</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">"Tipo de licencia no reconocido."</span><span class="p">;</span>
+<span class="w">        </span><span class="p">};</span><span class="w"> </span><span class="c1">// El punto y coma final es parte de la sentencia de asignación.</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Características de tu plan: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">features</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">8) Módulo de Diagnóstico: Escáner de Vulnerabilidades | Nivel: Medio</p>
+<h5 id="objetivo_7"><strong>Objetivo:</strong></h5>
+<p>Construir una condición <code>if</code> compleja utilizando múltiples operadores lógicos (<code>&amp;&amp;</code>, <code>||</code>, <code>!</code>) para determinar si un sistema es vulnerable.</p>
+<h5 id="tarea-a-realizar_7"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>EscanerVulnerabilidades</code>.</li>
+<li>Simula el estado de un sistema con tres variables <code>boolean</code>:<ul>
+<li><code>sistemaOperativoActualizado</code></li>
+<li><code>antivirusInstalado</code></li>
+<li><code>firewallActivado</code></li>
+</ul>
+</li>
+<li>Pide al usuario que introduzca el estado de cada una de estas variables (<code>true</code> o <code>false</code>).</li>
+<li>La regla de vulnerabilidad es la siguiente: un sistema se considera <strong>"ALTAMENTE VULNERABLE"</strong> si el sistema operativo <strong>NO</strong> está actualizado <strong>Y</strong> (el antivirus <strong>NO</strong> está instalado <strong>O</strong> el firewall <strong>NO</strong> está activado).</li>
+<li>Escribe una única sentencia <code>if</code> que implemente esta regla. Si la condición es verdadera, imprime el mensaje de "ALTAMENTE VULNERABLE". En caso contrario, imprime "Sistema con seguridad aceptable."</li>
+<li>
+<p>Prueba varias combinaciones para asegurarte de que la lógica es correcta.</p>
+</li>
+<li>
+<p><strong>Pista:</strong> La clave está en usar paréntesis para agrupar la parte de la condición del <code>OR</code>. La estructura sería <code>if (!condicionA &amp;&amp; (!condicionB || !condicionC))</code>.</p>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_7"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>El software de seguridad y auditoría utiliza reglas lógicas complejas para correlacionar diferentes hallazgos. Un solo problema puede ser de bajo riesgo, pero la combinación de varios problemas (un SO antiguo y un firewall desactivado) eleva la criticidad exponencialmente.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EscanerVulnerabilidades</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"¿El sistema operativo está actualizado? (true/false): "</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">sistemaOperativoActualizado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextBoolean</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"¿El antivirus está instalado? (true/false): "</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">antivirusInstalado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextBoolean</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"¿El firewall está activado? (true/false): "</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">firewallActivado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextBoolean</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Regla: NO actualizado Y (NO antivirus O NO firewall)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">sistemaOperativoActualizado</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">antivirusInstalado</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">firewallActivado</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"ALERTA: El sistema es ALTAMENTE VULNERABLE."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Diagnóstico: Sistema con seguridad aceptable."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">9) Módulo de Alerta: Códigos de Estado del Sistema | Nivel: Medio</p>
+<h5 id="objetivo_8"><strong>Objetivo:</strong></h5>
+<p>Refactorizar una cadena <code>if-else if-else</code> a una estructura <code>switch</code> para mejorar la legibilidad y mantenibilidad del código que maneja un conjunto de códigos de estado discretos.</p>
+<h5 id="setup-inicial_1"><strong>Setup Inicial:</strong></h5>
+<p>El siguiente código funciona, pero es verboso. Tu tarea es mejorarlo.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Código a refactorizar</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">codigoEstado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// Simula un código de estado recibido</span>
+<span class="n">String</span><span class="w"> </span><span class="n">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">""</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">codigoEstado</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"OK: El sistema funciona correctamente."</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">codigoEstado</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"WARNING: Espacio en disco bajo."</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">codigoEstado</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"ERROR: No se puede conectar a la base de datos."</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">codigoEstado</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"CRITICAL: Falla de seguridad detectada."</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"FATAL: Código de estado desconocido."</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">mensaje</span><span class="p">);</span>
+</code></pre></div>
+<h5 id="tarea-a-realizar_8"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>MonitorSistema</code>.</li>
+<li>Pide al usuario que introduzca un código de estado (un entero).</li>
+<li>Reimplementa la lógica del <code>Setup Inicial</code> utilizando una estructura <code>switch</code> tradicional (con <code>case</code>, <code>break</code> y <code>default</code>).</li>
+<li>Prueba con diferentes códigos (0, 1, 2, 3, y uno no válido como 5) para verificar que el comportamiento es idéntico al original, pero el código es más limpio.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_8"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Muchos sistemas y APIs (Interfaces de Programación de Aplicaciones) se comunican mediante códigos numéricos estandarizados (como los códigos de estado HTTP 200, 404, 500). Un <code>switch</code> es la herramienta ideal en el código que recibe estas respuestas para actuar de una forma u otra de manera ordenada.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MonitorSistema</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce el código de estado del sistema: "</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">codigoEstado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">mensaje</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">codigoEstado</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span>
+<span class="w">                </span><span class="n">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"OK: El sistema funciona correctamente."</span><span class="p">;</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<span class="w">                </span><span class="n">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"WARNING: Espacio en disco bajo."</span><span class="p">;</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+<span class="w">                </span><span class="n">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"ERROR: No se puede conectar a la base de datos."</span><span class="p">;</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
+<span class="w">                </span><span class="n">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"CRITICAL: Falla de seguridad detectada."</span><span class="p">;</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="k">default</span><span class="p">:</span>
+<span class="w">                </span><span class="n">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"FATAL: Código de estado desconocido."</span><span class="p">;</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">mensaje</span><span class="p">);</span>
+<span class="w">        </span><span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<h2 id="ejercicios-de-ampliacion">Ejercicios de Ampliación</h2>
+<div class="admonition danger">
+<p class="admonition-title">10) Módulo de Acceso Dinámico: Política de Hora y Rol | Nivel: Alto</p>
+<h5 id="objetivo_9"><strong>Objetivo:</strong></h5>
+<p>Diseñar e implementar un sistema de control de acceso complejo que combine múltiples variables (rol, hora, nivel de seguridad) utilizando una combinación de <code>switch</code> y <code>if-else</code> anidados.</p>
+<h5 id="tarea-a-realizar_9"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>ControlAccesoDinamico</code>.</li>
+<li>Pide al usuario tres datos:<ul>
+<li>Rol del usuario (<code>String</code>): "ADMIN", "EMPLEADO", "INVITADO".</li>
+<li>Hora del día (<code>int</code>): Un número entero de 0 a 23.</li>
+<li>Nivel de seguridad de la sala (<code>int</code>): Un número del 1 al 5.</li>
+</ul>
+</li>
+<li>Implementa la siguiente política de acceso:<ul>
+<li><strong>ADMIN:</strong> Tiene acceso siempre (24h) a cualquier sala (nivel 1-5).</li>
+<li><strong>EMPLEADO:</strong><ul>
+<li>Solo tiene acceso en horario laboral (de 9 a 18, inclusive).</li>
+<li>Dentro de su horario, solo puede acceder a salas con nivel de seguridad 3 o inferior.</li>
+</ul>
+</li>
+<li><strong>INVITADO:</strong><ul>
+<li>Solo tiene acceso en un horario restringido (de 10 a 17, inclusive).</li>
+<li>Dentro de su horario, solo puede acceder a salas de nivel 1.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Utiliza un <code>switch</code> para la variable <code>rol</code>. Dentro de cada <code>case</code>, utiliza <code>if-else</code> anidados para verificar la hora y el nivel de seguridad.</li>
+<li>Imprime un mensaje claro al final: "Acceso Permitido" o "Acceso Denegado", y si es denegado, intenta explicar brevemente por qué (ej: "Fuera de horario laboral", "Nivel de seguridad demasiado alto").</li>
+</ol>
+<h5 id="peer-review"><strong>Peer Review:</strong></h5>
+<p>Intercambia tu solución con un compañero. Revisa su código buscando:
+*   <strong>Claridad:</strong> ¿La estructura de <code>switch</code> y <code>if</code> anidados es fácil de seguir?
+*   <strong>Corrección:</strong> ¿Implementa todas las reglas de la política de acceso correctamente? Prueba con casos límite (ej: hora 9, 18, 17; nivel 3, 1).
+*   <strong>Manejo de Casos:</strong> ¿Qué ocurre si se introduce un rol no válido? ¿Y una hora o nivel fuera de rango? Proporciona feedback constructivo.</p>
+<h5 id="aplicacion-en-el-mundo-real_9"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Los sistemas de control de acceso físico (puertas con tarjetas) o lógicos (acceso a servidores) en grandes corporaciones implementan políticas increíblemente granulares como esta. Ser capaz de traducir un conjunto de reglas de negocio complejas en código lógico robusto es una habilidad de alto nivel.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ControlAccesoDinamico</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce tu rol (ADMIN, EMPLEADO, INVITADO): "</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">rol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextLine</span><span class="p">().</span><span class="na">toUpperCase</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce la hora actual (0-23): "</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">hora</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce el nivel de seguridad de la sala (1-5): "</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">nivelSeguridad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">mensajeFinal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Acceso Denegado"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">rol</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"ADMIN"</span><span class="p">:</span>
+<span class="w">                </span><span class="n">mensajeFinal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Acceso Permitido"</span><span class="p">;</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"EMPLEADO"</span><span class="p">:</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">hora</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">hora</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nivelSeguridad</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">mensajeFinal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Acceso Permitido"</span><span class="p">;</span>
+<span class="w">                    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">mensajeFinal</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">": Nivel de seguridad demasiado alto para tu rol."</span><span class="p">;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">mensajeFinal</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">": Fuera de horario laboral (9-18)."</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"INVITADO"</span><span class="p">:</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">hora</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">hora</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">17</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nivelSeguridad</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">mensajeFinal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Acceso Permitido"</span><span class="p">;</span>
+<span class="w">                    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">mensajeFinal</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">": Los invitados solo pueden acceder a salas de nivel 1."</span><span class="p">;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">mensajeFinal</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">": Fuera de horario de visitas (10-17)."</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">default</span><span class="p">:</span>
+<span class="w">                </span><span class="n">mensajeFinal</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">": Rol no reconocido."</span><span class="p">;</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">mensajeFinal</span><span class="p">);</span>
+<span class="w">        </span><span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">11) Refactorización: Optimizando el Intérprete de Comandos | Nivel: Alto</p>
+<h5 id="objetivo_10"><strong>Objetivo:</strong></h5>
+<p>Analizar un bloque de código ineficiente basado en <code>if-else if</code> y refactorizarlo a una estructura <code>switch</code> (tradicional o expression), justificando la mejora.</p>
+<h5 id="setup-inicial-codigo-a-mejorar"><strong>Setup Inicial (Código a mejorar):</strong></h5>
+<p>Imagina un intérprete de comandos de una aplicación. El siguiente código, aunque funcional, es difícil de leer y de extender.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">InterpreteComandosLegacy</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"CMD&gt; "</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">comando</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextLine</span><span class="p">().</span><span class="na">toLowerCase</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">comando</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"start"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Iniciando servicios..."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">comando</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"stop"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Deteniendo todos los servicios."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">comando</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"restart"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Reiniciando. Por favor, espere."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">comando</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"status"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Estado de los servicios: TODOS ACTIVOS."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">comando</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"help"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Comandos disponibles: start, stop, restart, status, help"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error: Comando '"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">comando</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"' no reconocido."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="tarea-a-realizar_10"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una nueva clase <code>InterpreteComandosModerno</code>.</li>
+<li>Reimplementa la lógica del <code>InterpreteComandosLegacy</code> utilizando la estructura <code>switch</code> que consideres más apropiada (tradicional o una <em>switch expression</em>).</li>
+<li>Añade un breve comentario en tu código (o prepárate para explicarlo) respondiendo a estas dos preguntas:<ul>
+<li>¿Por qué un <code>switch</code> es preferible en este escenario específico?</li>
+<li>¿Qué ventajas o desventajas tendría usar una <em>switch expression</em> aquí en lugar de un <code>switch</code> tradicional?</li>
+</ul>
+</li>
+</ol>
+<h5 id="peer-review_1"><strong>Peer Review:</strong></h5>
+<p>Compara tu refactorización con la de un compañero.
+*   ¿Eligió el mismo tipo de <code>switch</code> que tú?
+*   Discutid las justificaciones. ¿Hay algún argumento que no habías considerado?
+*   ¿Cómo manejaríais la adición de 10 nuevos comandos? ¿Qué estructura escala mejor?</p>
+<h5 id="aplicacion-en-el-mundo-real_10"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Refactorizar código es una tarea diaria para un desarrollador. Mejorar la legibilidad y la eficiencia de un código existente es tan importante como escribir código nuevo. Saber cuándo una estructura de control es más apropiada que otra marca la diferencia entre un código mantenible y una pesadilla a largo plazo.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">InterpreteComandosModerno</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"CMD&gt; "</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">comando</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextLine</span><span class="p">().</span><span class="na">toLowerCase</span><span class="p">();</span>
+
+<span class="w">        </span><span class="cm">/*</span>
+<span class="cm">         * Justificación de la refactorización:</span>
+<span class="cm">         * 1. ¿Por qué 'switch' es preferible?</span>
+<span class="cm">         *    - Legibilidad: El 'switch' deja claro que estamos comparando una única variable ('comando')</span>
+<span class="cm">         *      contra una serie de valores constantes. La intención es mucho más directa que una cadena</span>
+<span class="cm">         *      de 'if-else if' que podría, en teoría, evaluar condiciones totalmente diferentes en cada paso.</span>
+<span class="cm">         *    - Eficiencia: En muchos casos (especialmente con Strings a partir de Java 7), el compilador</span>
+<span class="cm">         *      puede optimizar un 'switch' a una estructura más eficiente (como una tabla de saltos)</span>
+<span class="cm">         *      que un 'if-else if' secuencial.</span>
+<span class="cm">         * </span>
+<span class="cm">         * 2. ¿Switch Expression vs. Switch tradicional?</span>
+<span class="cm">         *    - Ventajas de Expression: No requiere 'break', lo que elimina una fuente común de errores.</span>
+<span class="cm">         *      Si el objetivo fuera devolver un valor (ej. un objeto 'ResultadoComando'), sería ideal.</span>
+<span class="cm">         *    - Desventajas de Expression: Para simplemente ejecutar acciones (imprimir por pantalla),</span>
+<span class="cm">         *      el 'switch' tradicional puede ser ligeramente más directo a la vista, ya que no se</span>
+<span class="cm">         *      está "asignando" nada. Ambas son buenas opciones aquí. A continuación se usa la tradicional</span>
+<span class="cm">         *      por su similitud con la estructura original.</span>
+<span class="cm">         */</span>
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">comando</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"start"</span><span class="p">:</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Iniciando servicios..."</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"stop"</span><span class="p">:</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Deteniendo todos los servicios."</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"restart"</span><span class="p">:</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Reiniciando. Por favor, espere."</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"status"</span><span class="p">:</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Estado de los servicios: TODOS ACTIVOS."</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"help"</span><span class="p">:</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Comandos disponibles: start, stop, restart, status, help"</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="k">default</span><span class="p">:</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error: Comando '"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">comando</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"' no reconocido."</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">12) Módulo de Triaje: Asistente de Respuesta a Incidentes | Nivel: Alto</p>
+<h5 id="objetivo_11"><strong>Objetivo:</strong></h5>
+<p>Crear una herramienta interactiva que combine <code>switch</code> y <code>if-else</code> para guiar a un analista de seguridad a través de un proceso de toma de decisiones.</p>
+<h5 id="tarea-a-realizar_11"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>AsistenteDeTriaje</code>.</li>
+<li>La herramienta debe hacer tres preguntas consecutivas al analista:<ul>
+<li><strong>Pregunta 1:</strong> "Tipo de Alerta (MALWARE, INTRUSION, PHISHING):"</li>
+<li><strong>Pregunta 2:</strong> "Nivel de Severidad (1-10):"</li>
+<li><strong>Pregunta 3:</strong> "¿El sistema afectado es crítico para el negocio? (true/false):"</li>
+</ul>
+</li>
+<li>Implementa la lógica para determinar la "Acción Recomendada" basándote en las respuestas. Usa una combinación de <code>switch</code> para el tipo de alerta y <code>if-else</code> para las otras dos variables.</li>
+<li><strong>Reglas de decisión:</strong><ul>
+<li>Si el tipo es <strong>MALWARE</strong>:<ul>
+<li>Si la severidad es &gt; 7 <strong>O</strong> el sistema es crítico -&gt; "Acción: Aislar el sistema inmediatamente y escalar a Nivel 2."</li>
+<li>Si no -&gt; "Acción: Ejecutar escáner antivirus y monitorizar."</li>
+</ul>
+</li>
+<li>Si el tipo es <strong>INTRUSION</strong>:<ul>
+<li>Si el sistema es crítico -&gt; "Acción: Bloquear IP de origen, aislar sistema y contactar con el Equipo de Respuesta a Incidentes (IRT)."</li>
+<li>Si no es crítico, pero la severidad es &gt; 5 -&gt; "Acción: Bloquear IP de origen y analizar logs."</li>
+<li>Si no -&gt; "Acción: Monitorizar tráfico desde la IP de origen."</li>
+</ul>
+</li>
+<li>Si el tipo es <strong>PHISHING</strong>:<ul>
+<li>"Acción: Eliminar correo de todos los buzones, resetear credenciales del usuario afectado y enviar comunicado de alerta." (Esta acción es siempre la misma independientemente de las otras variables).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Al final, muestra la "Acción Recomendada" al usuario.</li>
+</ol>
+<h5 id="peer-review_2"><strong>Peer Review:</strong></h5>
+<p>Intercambia tu código con un compañero.
+*   <strong>Lógica de Negocio:</strong> ¿El código implementa correctamente las complejas reglas de decisión? Probad juntos varios escenarios, especialmente los casos límite.
+*   <strong>Usabilidad:</strong> ¿La interacción con el programa es clara? ¿Se entiende lo que el programa pide en cada paso?
+*   <strong>Robustez:</strong> ¿Qué pasa si el usuario introduce un tipo de alerta no válido o una severidad de 15? ¿Cómo podría mejorarse el programa para manejar entradas incorrectas?</p>
+<h5 id="aplicacion-en-el-mundo-real_11"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Los "playbooks" de respuesta a incidentes en ciberseguridad son esencialmente árboles de decisión complejos. Automatizar parte de este triaje a través de una herramienta guiada puede acelerar drásticamente el tiempo de respuesta, minimizar errores humanos y asegurar que se sigan los procedimientos correctos durante una crisis.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AsistenteDeTriaje</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">accionRecomendada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"No se ha podido determinar una acción."</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Pregunta 1: Tipo de Alerta</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Tipo de Alerta (MALWARE, INTRUSION, PHISHING): "</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">tipoAlerta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextLine</span><span class="p">().</span><span class="na">toUpperCase</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Pregunta 2: Severidad</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Nivel de Severidad (1-10): "</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">severidad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Pregunta 3: Criticidad del sistema</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"¿El sistema afectado es crítico para el negocio? (true/false): "</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">esCritico</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextBoolean</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">tipoAlerta</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"MALWARE"</span><span class="p">:</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">severidad</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">esCritico</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">accionRecomendada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Acción: Aislar el sistema inmediatamente y escalar a Nivel 2."</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">accionRecomendada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Acción: Ejecutar escáner antivirus y monitorizar."</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"INTRUSION"</span><span class="p">:</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">esCritico</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">accionRecomendada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Acción: Bloquear IP de origen, aislar sistema y contactar con el Equipo de Respuesta a Incidentes (IRT)."</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">severidad</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">accionRecomendada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Acción: Bloquear IP de origen y analizar logs."</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">accionRecomendada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Acción: Monitorizar tráfico desde la IP de origen."</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="s">"PHISHING"</span><span class="p">:</span>
+<span class="w">                </span><span class="n">accionRecomendada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Acción: Eliminar correo de todos los buzones, resetear credenciales del usuario afectado y enviar comunicado de alerta."</span><span class="p">;</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">default</span><span class="p">:</span>
+<span class="w">                </span><span class="n">accionRecomendada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Error: Tipo de alerta no reconocido."</span><span class="p">;</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- TRIAGE COMPLETADO ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">accionRecomendada</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

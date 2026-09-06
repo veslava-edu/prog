@@ -1,0 +1,1643 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>3 Programacion modular ejercicios - PROG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ejercicios-practicos-programacion-modular" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PROG" class="md-header__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PROG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3 Programacion modular ejercicios
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../1-Introduccion-programacion/" class="md-tabs__link">
+          
+  
+  
+  Programación
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PROG" class="md-nav__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    PROG
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-Introduccion-programacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-Programacion-estructurada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-Programacion-modular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-Estructuras-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-POO-Clases-y-Objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-POO-Uso-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-Estructuras-datos-dinamicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-Programacion-funcional-Streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-Ficheros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-Acceso-base-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-Interfaces-graficas-MVC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#narrativa-del-proyecto-modulos-para-hr-suite-de-devsolutions-inc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Narrativa del Proyecto: Módulos para "HR-Suite" de DevSolutions Inc.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-consolidacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Consolidación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Consolidación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-refuerzo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Refuerzo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Refuerzo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-ampliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Ampliación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Ampliación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-de-revision-por-pares-peer-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea de Revisión por Pares (Peer Review):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- Nombre de archivo sugerido: T03-Ejercicios-Programacion-modular.md --><h1 id="ejercicios-practicos-programacion-modular">Ejercicios Prácticos: Programación Modular</h1>
+<h2 id="narrativa-del-proyecto-modulos-para-hr-suite-de-devsolutions-inc">Narrativa del Proyecto: Módulos para "HR-Suite" de DevSolutions Inc.</h2>
+<p>¡Bienvenido al equipo de desarrollo de DevSolutions Inc.! Nuestra empresa está creciendo y necesitamos construir una nueva suite de herramientas internas de Recursos Humanos llamada <strong>"HR-Suite"</strong>. Olvídate de las hojas de cálculo y los procesos manuales; vamos a automatizar y modernizar la gestión de empleados.</p>
+<p>Tu misión, como nuevo desarrollador Java, es construir los "ladrillos de LEGO" fundamentales de esta aplicación. Cada ejercicio te encargará la creación de un módulo (un método) específico que resolverá un pequeño problema del dominio de RRHH. A través de estos ejercicios, no solo aplicarás los conceptos de programación modular, sino que construirás piezas de código reutilizables y robustas, listas para ser integradas en un proyecto de software real. ¡Manos al código!</p>
+<p><br></p>
+<h2 id="ejercicios-de-consolidacion">Ejercicios de Consolidación</h2>
+<div class="admonition abstract">
+<p class="admonition-title">1) El Glosario del Desarrollador de HR-Suite | Nivel: Fácil</p>
+<h5 id="objetivo"><strong>Objetivo:</strong></h5>
+<p>Asegurar la comprensión de los conceptos teóricos fundamentales de la programación modular antes de escribir código.</p>
+<h5 id="tarea-a-realizar"><strong>Tarea a realizar:</strong></h5>
+<p>Responde a las siguientes preguntas como si estuvieras preparando unas notas para un nuevo integrante del equipo de DevSolutions.</p>
+<ol>
+<li>En el contexto de "HR-Suite", vamos a tener un módulo para <code>calculatePayroll()</code> que devuelve el total a pagar, y otro para <code>printPayslip()</code> que solo muestra la nómina en consola. ¿Cuál de los dos sería una <strong>función</strong> y cuál un <strong>procedimiento</strong>? Justifica tu respuesta.</li>
+<li>Si llamamos al método <code>calculatePayroll(employeeId, month, year)</code>, ¿qué son <code>employeeId</code>, <code>month</code> y <code>year</code> en la definición del método? ¿Y qué serían los valores <code>101</code>, <code>"Enero"</code> y <code>2024</code> cuando lo invocamos?</li>
+<li>¿Qué demuestra el <strong>Teorema del Programa Estructurado</strong> y por qué fue tan importante para abandonar prácticas como el <code>GOTO</code>?</li>
+<li>Define con tus propias palabras qué es la <strong>programación modular</strong> y por qué es esencial para un proyecto como "HR-Suite", donde trabajan varios desarrolladores.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Utilizar la terminología correcta es clave en un entorno profesional para comunicarse de manera efectiva con otros desarrolladores, arquitectos de software y jefes de proyecto.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">2) Módulo de Bienvenida al Empleado | Nivel: Fácil</p>
+<h5 id="objetivo_1"><strong>Objetivo:</strong></h5>
+<p>Crear un procedimiento simple (<code>void</code>) que acepte parámetros para realizar una acción.</p>
+<h5 id="tarea-a-realizar_1"><strong>Tarea a realizar:</strong></h5>
+<p>Dentro de la clase <code>Onboarding</code>, crea un procedimiento estático llamado <code>displayWelcomeMessage</code>.<br>
+1.  Debe aceptar dos parámetros: un <code>String</code> para el nombre del empleado (<code>employeeName</code>) y un <code>String</code> para su departamento (<code>department</code>).<br>
+2.  El método debe imprimir un mensaje de bienvenida formateado en la consola.</p>
+<p><strong>Ejemplo de salida para <code>displayWelcomeMessage("Ana García", "Ingeniería de Software")</code>:</strong>
+</p><div class="highlight"><pre><span></span><code>========================================
+¡Bienvenida a DevSolutions Inc., Ana García!
+Estamos encantados de tenerte en el departamento de Ingeniería de Software.
+========================================
+</code></pre></div><p></p>
+<h5 id="aplicacion-en-el-mundo-real_1"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Los procedimientos son perfectos para tareas que no necesitan devolver un valor, como mostrar información en la interfaz de usuario, registrar eventos en un log o enviar correos electrónicos.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">3) Calculadora de Antigüedad | Nivel: Fácil</p>
+<h5 id="objetivo_2"><strong>Objetivo:</strong></h5>
+<p>Crear una función simple que realice un cálculo y devuelva un resultado.</p>
+<h5 id="tarea-a-realizar_2"><strong>Tarea a realizar:</strong></h5>
+<p>En la clase <code>EmployeeTools</code>, crea una función estática llamada <code>calculateYearsOfService</code>.<br>
+1.  Debe aceptar un parámetro: un <code>int</code> para el año en que el empleado comenzó a trabajar (<code>startYear</code>).<br>
+2.  La función debe calcular cuántos años lleva el empleado en la empresa y devolver el resultado como un <code>int</code>. Asume que el año actual es 2025 para este ejercicio.<br>
+3.  En el <code>main</code>, llama a esta función con un año de ejemplo y muestra el resultado.</p>
+<h5 id="aplicacion-en-el-mundo-real_2"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Las funciones son la base de cualquier programa. Se usan constantemente para calcular valores, validar datos, procesar información y devolver un resultado que otras partes del programa pueden utilizar.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">4) Bug en el Módulo de Reportes | Nivel: Fácil</p>
+<h5 id="objetivo_3"><strong>Objetivo:</strong></h5>
+<p>Identificar y corregir un error común relacionado con el ámbito (scope) de las variables.</p>
+<h5 id="setup-inicial"><strong>Setup Inicial:</strong></h5>
+<p>Copia el siguiente código en un fichero <code>ReportGenerator.java</code>. Verás que no compila.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ReportGenerator</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">COMPANY_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"DevSolutions Inc."</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">generatePerformanceReport</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">employeeName</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">performanceScore</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Generando reporte para: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">employeeName</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">performanceScore</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">4.5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">performanceLevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Excelente"</span><span class="p">;</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Nivel de Rendimiento: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">performanceLevel</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">performanceScore</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">3.5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">performanceLevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Bueno"</span><span class="p">;</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Nivel de Rendimiento: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">performanceLevel</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Esta línea da un error de compilación.</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">reportFooter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Reporte generado por "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">COMPANY_NAME</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" para el nivel: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">performanceLevel</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">reportFooter</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">generatePerformanceReport</span><span class="p">(</span><span class="s">"Laura Vidal"</span><span class="p">,</span><span class="w"> </span><span class="mf">4.8</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="tarea-a-realizar_3"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li><strong>Identifica el error:</strong> ¿Por qué la línea que crea <code>reportFooter</code> no compila? Explica el problema de ámbito en una o dos frases.</li>
+<li><strong>Corrige el código:</strong> Modifica el método <code>generatePerformanceReport</code> para que funcione correctamente. La variable <code>performanceLevel</code> debe ser accesible al final del método.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_3"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Entender el ámbito de las variables es fundamental para evitar errores y escribir código limpio. Un error de scope puede ser frustrante de encontrar si no se comprenden bien las reglas de visibilidad.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">5) El Experimento de la Bonificación | Nivel: Fácil</p>
+<h5 id="objetivo_4"><strong>Objetivo:</strong></h5>
+<p>Comprender la diferencia fundamental entre el paso por valor para tipos primitivos y para objetos (copia de la referencia).</p>
+<h5 id="tarea-a-realizar_4"><strong>Tarea a realizar:</strong></h5>
+<p>Observa el siguiente código y, <strong>sin ejecutarlo</strong>, predice cuál será la salida por consola. Justifica tu predicción para cada una de las dos partes (la primitiva y la del objeto).</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BonusExperiment</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Intenta modificar un tipo primitivo (int)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">calculateBonus</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">baseBonus</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">baseBonus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">baseBonus</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  -&gt; Dentro del método, la bonificación es: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">baseBonus</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Modifica el estado de un objeto (array)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addExtraBonusToTeam</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">teamBonuses</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">teamBonuses</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">teamBonuses</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">500.0</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  -&gt; Dentro del método, la bonificación del líder es: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">teamBonuses</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// --- Parte 1: Primitivos ---</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">individualBonus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Bonificación individual ANTES de llamar al método: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">individualBonus</span><span class="p">);</span>
+<span class="w">        </span><span class="n">calculateBonus</span><span class="p">(</span><span class="n">individualBonus</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Bonificación individual DESPUÉS de llamar al método: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">individualBonus</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n-----------------------------------------\n"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// --- Parte 2: Objetos ---</span>
+<span class="w">        </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">engineeringTeamBonuses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">3000.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2000.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1800.0</span><span class="p">};</span><span class="w"> </span><span class="c1">// [Líder, Senior, Junior]</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Bonificación del líder ANTES de llamar al método: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">engineeringTeamBonuses</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+<span class="w">        </span><span class="n">addExtraBonusToTeam</span><span class="p">(</span><span class="n">engineeringTeamBonuses</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Bonificación del líder DESPUÉS de llamar al método: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">engineeringTeamBonuses</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="aplicacion-en-el-mundo-real_4"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Este concepto es una de las principales fuentes de bugs para los programadores que empiezan. Entenderlo te ahorrará horas de depuración al saber si un método puede o no modificar los datos que le pasas.</p>
+</div>
+<p><br></p>
+<h2 id="ejercicios-de-refuerzo">Ejercicios de Refuerzo</h2>
+<div class="admonition warning">
+<p class="admonition-title">6) Calculadora de Bonificación Avanzada | Nivel: Medio</p>
+<h5 id="objetivo_5"><strong>Objetivo:</strong></h5>
+<p>Implementar una función con lógica condicional más elaborada, manejando múltiples casos y devolviendo un valor.</p>
+<h5 id="tarea-a-realizar_5"><strong>Tarea a realizar:</strong></h5>
+<p>En el módulo de RRHH, es necesario calcular la bonificación anual de un empleado. Crea una función estática <code>calculateAnnualBonus</code> en una clase <code>Compensation</code>. <br>
+1.  La función debe recibir dos parámetros: <code>double baseSalary</code> y <code>int yearsOfService</code>.<br>
+2.  La bonificación se calcula según estas reglas:<br>
+    *   Si <code>yearsOfService</code> es menor a 2, la bonificación es del 5% del <code>baseSalary</code>.<br>
+    *   Si <code>yearsOfService</code> está entre 2 y 5 (inclusive), la bonificación es del 8% del <code>baseSalary</code>.<br>
+    *   Si <code>yearsOfService</code> es mayor a 5, la bonificación es del 10% del <code>baseSalary</code>.<br>
+    *   <strong>Regla adicional:</strong> Si el salario base es superior a 80,000€, se añade un 2% extra a la bonificación final, independientemente de la antigüedad.<br>
+3.  La función debe devolver el monto final de la bonificación como un <code>double</code>.<br>
+4.  Prueba la función en el <code>main</code> con al menos tres casos distintos que cubran todas las reglas.<br></p>
+<ul>
+<li><strong>Pista:</strong> Calcula primero el porcentaje de bonificación base según la antigüedad y luego, si aplica, añade el porcentaje extra.<br></li>
+</ul>
+<h5 id="aplicacion-en-el-mundo-real_5"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Las funciones que encapsulan reglas de negocio complejas son extremadamente comunes. Un módulo como este permite que la lógica de cálculo de bonificaciones se mantenga en un solo lugar, facilitando su actualización si las políticas de la empresa cambian.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">7) Módulo de Logging con Sobrecarga | Nivel: Medio</p>
+<h5 id="objetivo_6"><strong>Objetivo:</strong></h5>
+<p>Practicar la sobrecarga de métodos para ofrecer diferentes maneras de invocar una misma acción, aumentando la flexibilidad del módulo.</p>
+<h5 id="tarea-a-realizar_6"><strong>Tarea a realizar:</strong></h5>
+<p>En la clase <code>SystemLogger</code> de "HR-Suite", necesitamos un método para registrar eventos, pero a veces solo tendremos el mensaje, y otras veces tendremos más detalles.<br>
+1.  Crea tres métodos estáticos <code>void</code> llamados <code>logEvent</code>, todos en la misma clase:<br>
+    *   <code>logEvent(String message)</code>: Imprime el mensaje con un nivel por defecto "INFO" y la fecha/hora actual.<br>
+    *   <code>logEvent(String message, String level)</code>: Imprime el mensaje con el <code>level</code> especificado y la fecha/hora.<br>
+    *   <code>logEvent(String message, String level, int employeeId)</code>: Imprime el mensaje, el <code>level</code>, el ID del empleado y la fecha/hora.<br>
+2.  Para evitar repetir código, haz que las versiones más simples llamen a las más complejas con valores por defecto. Por ejemplo, <code>logEvent(message)</code> podría llamar a <code>logEvent(message, "INFO")</code>.<br>
+3.  En el <code>main</code>, demuestra el uso de las tres versiones del método.<br></p>
+<ul>
+<li><strong>Pista:</strong> Puedes usar <code>java.time.LocalDateTime.now()</code> para obtener la marca de tiempo actual.</li>
+</ul>
+<h5 id="aplicacion-en-el-mundo-real_6"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>La sobrecarga de métodos es muy común en las librerías y APIs de Java. Por ejemplo, los constructores de muchas clases están sobrecargados para permitir crear objetos de diferentes maneras. Esto hace que el código sea más intuitivo y fácil de usar para otros programadores.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">8) Gestión de Estado de Empleados | Nivel: Medio</p>
+<h5 id="objetivo_7"><strong>Objetivo:</strong></h5>
+<p>Reforzar el concepto de paso por copia de referencia modificando el estado de un objeto a través de un método.</p>
+<h5 id="setup-inicial_1"><strong>Setup Inicial:</strong></h5>
+<p>Crea una clase simple <code>Employee</code> con los siguientes atributos y métodos:<br>
+    *   Atributos: <code>String name</code> y <code>boolean isActive</code>.<br>
+    *   Constructor: <code>public Employee(String name)</code> que inicialice <code>name</code> y ponga <code>isActive</code> a <code>true</code> por defecto.<br>
+    *   Métodos "getter" y "setter" para <code>isActive</code>: <code>public boolean isActive()</code> y <code>public void setActive(boolean active)</code>.<br>
+    *   Un método <code>toString()</code> para mostrar el estado del empleado.</p>
+<h5 id="tarea-a-realizar_7"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>EmployeeManagement</code> con un procedimiento estático <code>deactivateEmployee(Employee employee)</code>.</li>
+<li>Este método debe recibir un objeto <code>Employee</code> y cambiar su estado a inactivo llamando al método <code>setActive(false)</code>.</li>
+<li>En el <code>main</code> de <code>EmployeeManagement</code>:<ul>
+<li>Crea una instancia de <code>Employee</code>.</li>
+<li>Muestra su estado inicial (debería ser activo).</li>
+<li>Llama al método <code>deactivateEmployee</code>, pasándole el objeto que has creado.</li>
+<li>Vuelve a mostrar su estado (debería haber cambiado a inactivo), demostrando que el objeto original fue modificado.</li>
+</ul>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_7"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Esta es la forma más común de trabajar con objetos en programación. Rara vez pasas objetos a métodos para que no hagan nada con ellos. Normalmente, los métodos interactúan y modifican el estado de los objetos para cumplir con una tarea, como desactivar un usuario, actualizar un producto o guardar cambios en una base de datos.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">9) Secuencia de Fibonacci Recursiva | Nivel: Medio</p>
+<h5 id="objetivo_8"><strong>Objetivo:</strong></h5>
+<p>Implementar una solución recursiva a un problema clásico, identificando el caso base y la llamada recursiva.</p>
+<h5 id="tarea-a-realizar_8"><strong>Tarea a realizar:</strong></h5>
+<p>La secuencia de Fibonacci es una serie de números donde cada número es la suma de los dos anteriores: <code>0, 1, 1, 2, 3, 5, 8, ...</code>.<br>
+1.  Crea una clase <code>MathUtils</code> con una función estática recursiva <code>fibonacci(int n)</code>.<br>
+2.  La función debe devolver el n-ésimo número de la secuencia de Fibonacci.<br>
+3.  <strong>Lógica recursiva:</strong><br>
+    *   <code>fibonacci(n)</code> es <code>fibonacci(n-1) + fibonacci(n-2)</code>.<br>
+    *   <strong>Casos Base:</strong><br>
+        *   Si <code>n</code> es 0, el resultado es 0.<br>
+        *   Si <code>n</code> es 1, el resultado es 1.<br>
+4.  En el <code>main</code>, prueba la función pidiendo el 7º número de la secuencia (que debería ser 13).</p>
+<ul>
+<li><strong>Pista:</strong> Un método recursivo necesita una condición de parada (el caso base) para no llamarse a sí mismo infinitamente. En este caso, tienes dos.</li>
+</ul>
+<h5 id="aplicacion-en-el-mundo-real_8"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Aunque la recursividad no es la solución más eficiente para todos los problemas (a veces un bucle es mejor), es una herramienta mental muy poderosa. Es perfecta para problemas que pueden ser definidos en términos de sí mismos, como procesar estructuras de datos en árbol (sistemas de ficheros, organigramas) o en algoritmos de "divide y vencerás".</p>
+</div>
+<p><br></p>
+<h2 id="ejercicios-de-ampliacion">Ejercicios de Ampliación</h2>
+<div class="admonition danger">
+<p class="admonition-title">10) Módulo Validador de Contraseñas | Nivel: Alto</p>
+<h5 id="objetivo_9"><strong>Objetivo:</strong></h5>
+<p>Diseñar y construir un pequeño módulo autocontenido que combine una función (validación) y un procedimiento (generación y log), aplicando el principio de responsabilidad única.</p>
+<h5 id="setup-inicial_2"><strong>Setup Inicial:</strong></h5>
+<p>Necesitarás generar una contraseña aleatoria. Investiga cómo usar <code>java.security.SecureRandom</code> para generar números aleatorios seguros y cómo construir un <code>String</code> a partir de caracteres seleccionados.</p>
+<h5 id="tarea-a-realizar_9"><strong>Tarea a realizar:</strong></h5>
+<p>Crea una clase <code>PasswordManager</code> para "HR-Suite".<br>
+1.  <strong>Función de Validación:</strong> Crea una función estática <code>public static boolean isPasswordSecure(String password)</code> que verifique si una contraseña cumple con las siguientes políticas de DevSolutions:<br>
+    *   Mínimo 8 caracteres de longitud.<br>
+    *   Contiene al menos una letra mayúscula.<br>
+    *   Contiene al menos una letra minúscula.<br>
+    *   Contiene al menos un número.<br>
+    *   Contiene al menos un carácter especial (ej: <code>!@#$%^&amp;*()</code>).<br>
+    La función debe devolver <code>true</code> si cumple todas las reglas, y <code>false</code> en caso contrario.</p>
+<ol>
+<li><strong>Procedimiento de Generación:</strong> Crea un procedimiento estático <code>public static void generateAndAssignPassword(String employeeName)</code> que:<br><ul>
+<li>Genere una contraseña aleatoria de 12 caracteres que <strong>cumpla siempre</strong> con las políticas de seguridad.<br></li>
+<li>Llame a un método de logging (puedes crearlo o reutilizar el del ejercicio 7) para registrar un evento como: <code>INFO: Nueva contraseña generada para el empleado: Ana Reyes</code>. No debe imprimir la contraseña por seguridad.<br></li>
+<li>Imprima en consola la contraseña generada (para este ejercicio, sí la mostraremos para poder verificarla).</li>
+</ul>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_9"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>En los sistemas reales, la gestión de la seguridad es crucial. Un módulo como este centraliza toda la lógica relacionada con las contraseñas. Si en el futuro la política de seguridad cambia (ej: se requieren 10 caracteres), solo tienes que modificar este módulo en un único lugar, y el cambio se aplicará en toda la aplicación.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">11) Refactorización: Del Caos del <code>main</code> a la Claridad Modular | Nivel: Alto</p>
+<h5 id="objetivo_10"><strong>Objetivo:</strong></h5>
+<p>Aplicar la filosofía "Divide y Vencerás" refactorizando un método monolítico en varios métodos pequeños con responsabilidades únicas.</p>
+<h5 id="setup-inicial_3"><strong>Setup Inicial:</strong></h5>
+<p>El siguiente código en un único método <code>main</code> simula el proceso de dar de alta a un nuevo empleado. Es difícil de leer, de probar y de mantener.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Random</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MonolithicOnboarding</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Datos del nuevo empleado</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">firstName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Carlos"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">lastName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Ramírez"</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">baseSalary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">45000.0</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">department</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Ventas"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// --- 1. Generar nombre de usuario ---</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Generando credenciales..."</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">firstInitial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">firstName</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">).</span><span class="na">toLowerCase</span><span class="p">();</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">lastNameShort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lastName</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">();</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lastNameShort</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">lastNameShort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lastNameShort</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">randomNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">().</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">900</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">firstInitial</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lastNameShort</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">randomNumber</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Username creado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// --- 2. Calcular salario con bonificación inicial ---</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Calculando paquete salarial..."</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">initialBonus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">department</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"Ventas"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">initialBonus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2000.0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">department</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"Tecnología"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">initialBonus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3500.0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">finalSalary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">baseSalary</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">initialBonus</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Salario final con bonificación: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">finalSalary</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"€"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// --- 3. Enviar correo de bienvenida ---</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Enviando notificación de bienvenida..."</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">emailBody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Estimado/a "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">firstName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">",\n\n"</span><span class="w"> </span><span class="o">+</span>
+<span class="w">                           </span><span class="s">"Te damos la bienvenida a DevSolutions en el departamento de "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">department</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">".\n"</span><span class="w"> </span><span class="o">+</span>
+<span class="w">                           </span><span class="s">"Tus credenciales de acceso son: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"\n"</span><span class="w"> </span><span class="o">+</span>
+<span class="w">                           </span><span class="s">"Tu paquete salarial inicial es de "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">finalSalary</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"€.\n\n"</span><span class="w"> </span><span class="o">+</span>
+<span class="w">                           </span><span class="s">"Un saludo,\nRecursos Humanos."</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- INICIO CORREO ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">emailBody</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- FIN CORREO ---"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nProceso de alta para "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">firstName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lastName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" completado."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="tarea-a-realizar_10"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una nueva clase <code>ModularOnboarding</code>.</li>
+<li>Refactoriza el código del <code>main</code> de <code>MonolithicOnboarding</code> dividiéndolo en al menos tres métodos estáticos y bien definidos. Sugerencias:<ul>
+<li><code>generateUsername(String firstName, String lastName)</code>: Una <strong>función</strong> que devuelve el <code>String</code> del nombre de usuario.</li>
+<li><code>calculateInitialSalary(double baseSalary, String department)</code>: Una <strong>función</strong> que devuelve el salario final como <code>double</code>.</li>
+<li><code>sendWelcomeEmail(String firstName, String username, String department, double finalSalary)</code>: Un <strong>procedimiento</strong> que imprime el correo.</li>
+</ul>
+</li>
+<li>El nuevo método <code>main</code> de <code>ModularOnboarding</code> debe ser muy limpio y legible. Simplemente debe orquestar las llamadas a los nuevos métodos que has creado.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_10"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>La refactorización es una tarea diaria para un desarrollador. Constantemente estamos mejorando código existente para hacerlo más mantenible, legible y eficiente. Saber identificar bloques de código que pueden ser extraídos a sus propios métodos es una habilidad fundamental.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">12) Reto Recursivo: Coste Total de un Departamento | Nivel: Alto</p>
+<h5 id="objetivo_11"><strong>Objetivo:</strong></h5>
+<p>Resolver un problema complejo utilizando recursividad sobre una estructura de objetos jerárquica, un caso de uso perfecto para esta técnica.</p>
+<h5 id="setup-inicial_4"><strong>Setup Inicial:</strong></h5>
+<p>Crea una clase <code>Employee</code> que pueda representar una jerarquía.<br>
+*   Atributos: <code>String name</code>, <code>double salary</code>, y <code>List&lt;Employee&gt; subordinates</code> (una lista de sus subordinados directos).<br>
+*   Constructor: <code>public Employee(String name, double salary)</code> que inicialice el nombre, el salario y una lista de subordinados vacía.<br>
+*   Método: <code>public void addSubordinate(Employee employee)</code> para añadir un empleado a su lista de subordinados.</p>
+<h5 id="tarea-a-realizar_11"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>OrgChart</code> con una función estática y recursiva: <code>public static double getTotalSalary(Employee manager)</code>.</li>
+<li>Esta función debe calcular la suma del salario del <code>manager</code> más la suma de los salarios de todos sus subordinados, directos e indirectos.</li>
+<li><strong>Lógica Recursiva:</strong><ul>
+<li>El coste total de un manager es su propio salario más el coste total de cada uno de sus subordinados directos.</li>
+<li><strong>Caso Base:</strong> Un empleado sin subordinados (<code>subordinates</code> está vacía). Su coste total es simplemente su propio salario.</li>
+</ul>
+</li>
+<li>En el <code>main</code>, construye un organigrama de ejemplo (un jefe con varios managers, y esos managers con sus propios equipos) y llama a <code>getTotalSalary</code> para calcular el coste total del CEO.</li>
+</ol>
+<h5 id="tarea-de-revision-por-pares-peer-review"><strong>Tarea de Revisión por Pares (Peer Review):</strong></h5>
+<p>Intercambia tu solución con un compañero. Revisa su código y responde a estas preguntas:
+1.  <strong>Correctitud:</strong> ¿La función calcula correctamente el total para un organigrama complejo? Prueba a añadir un nivel más de jerarquía a su estructura.
+2.  <strong>Claridad del Caso Base:</strong> ¿Está el caso base claramente identificado y es correcto? ¿Qué pasaría si se le pasa un <code>Employee</code> que es <code>null</code>? ¿Lo maneja el código?
+3.  <strong>Legibilidad:</strong> ¿El código es fácil de entender? ¿Podrían mejorarse los nombres de las variables?</p>
+<h5 id="aplicacion-en-el-mundo-real_11"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Calcular el coste de un departamento, renderizar un árbol de componentes en una interfaz gráfica (como en React), o recorrer un sistema de archivos para encontrar un fichero son problemas del mundo real que se resuelven de forma muy elegante y natural con recursividad.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

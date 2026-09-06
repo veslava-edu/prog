@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>10 Acceso base datos manus - PROG</title>
+<link href="../../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../../toggle-sidebar.js"></script><script src="../../js/unpkg.com/d3@7.js" type="text/javascript"></script><script src="../../js/unpkg.com/markmap-lib@0.18.js" type="text/javascript"></script><script src="../../js/unpkg.com/markmap-view@0.18.js" type="text/javascript"></script><style type="text/css">div.mkdocs-markmap {
+    width: 100%;
+    min-height: 1em;
+    border: 1px solid grey;
+}
+.mkdocs-markmap > svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+</style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#acceso-a-bd-relacionales-desde-java">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="PROG" class="md-header__button md-logo" data-md-component="logo" href="../.." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            PROG
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              10 Acceso base datos manus
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../1-Introduccion-programacion/">
+          
+  
+  
+  Programación
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="PROG" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    PROG
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../1-Introduccion-programacion/">
+<span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2-Programacion-estructurada/">
+<span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../3-Programacion-modular/">
+<span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4-Estructuras-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../5-POO-Clases-y-Objetos/">
+<span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../6-POO-Uso-avanzado/">
+<span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../7-Estructuras-datos-dinamicas/">
+<span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../8-Programacion-funcional-Streams/">
+<span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../9-Ficheros/">
+<span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../10-Acceso-base-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../11-Interfaces-graficas-MVC/">
+<span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conceptos-fundamentales">
+<span class="md-ellipsis">
+      
+        Conceptos Fundamentales
+      
+    </span>
+</a>
+<nav aria-label="Conceptos Fundamentales" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arquitectura-jdbc-como-se-monta-el-tinglado">
+<span class="md-ellipsis">
+      
+        Arquitectura JDBC: ¿Cómo se monta el tinglado?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#componentes-clave-de-jdbc">
+<span class="md-ellipsis">
+      
+        Componentes Clave de JDBC
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desarrollo-y-ejemplos-practicos">
+<span class="md-ellipsis">
+      
+        Desarrollo y Ejemplos Prácticos
+      
+    </span>
+</a>
+<nav aria-label="Desarrollo y Ejemplos Prácticos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-configuracion-del-entorno-maven">
+<span class="md-ellipsis">
+      
+        1. Configuración del Entorno (Maven)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-estableciendo-la-conexion-try-with-resources">
+<span class="md-ellipsis">
+      
+        2. Estableciendo la Conexión (Try-with-Resources)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-consultando-datos-dql-select">
+<span class="md-ellipsis">
+      
+        3. Consultando Datos (DQL: SELECT)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-modificando-datos-dml-insert-update-delete">
+<span class="md-ellipsis">
+      
+        4. Modificando Datos (DML: INSERT, UPDATE, DELETE)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-metadatos-preguntandole-a-la-base-de-datos-sobre-si-misma">
+<span class="md-ellipsis">
+      
+        5. Metadatos: Preguntándole a la Base de Datos sobre sí misma
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-transacciones-asegurando-la-integridad-de-los-datos">
+<span class="md-ellipsis">
+      
+        6. Transacciones: Asegurando la Integridad de los Datos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-resultsetmetadata-conociendo-la-estructura-de-tu-consulta">
+<span class="md-ellipsis">
+      
+        7. ResultSetMetaData: Conociendo la Estructura de tu Consulta
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#patrones-de-diseno-singleton-y-dao-implementacion-avanzada">
+<span class="md-ellipsis">
+      
+        Patrones de Diseño: Singleton y DAO (Implementación Avanzada)
+      
+    </span>
+</a>
+<nav aria-label="Patrones de Diseño: Singleton y DAO (Implementación Avanzada)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-el-patron-singleton-para-la-conexion-pool-de-conexiones">
+<span class="md-ellipsis">
+      
+        8. El Patrón Singleton para la Conexión (Pool de Conexiones)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-el-patron-dao-data-access-object-con-interfaces-genericas">
+<span class="md-ellipsis">
+      
+        9. El Patrón DAO (Data Access Object) con Interfaces Genéricas
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacion-en-el-mundo-real">
+<span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-saber-mas">
+<span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<!-- tema_jdbc_java_extendido.md --><h1 id="acceso-a-bd-relacionales-desde-java">Acceso a BD Relacionales desde JAVA</h1>
+<p>¡Hola a todos, futuros arquitectos del software! 👋 Bienvenidos a uno de los temas más críticos de vuestra formación en DAW. Si pensabais que vuestros objetos de Java iban a vivir para siempre en la memoria RAM, lamento deciros que la RAM es como la memoria de un pez: en cuanto apagas el servidor, ¡puf!, todo desaparece. 🐟💨</p>
+<p>Para que vuestros datos sobrevivan al apocalipsis de un reinicio de sistema, necesitamos guardarlos en una <strong>Base de Datos Relacional</strong>. Pero hay un pequeño problema: Java habla en "Objetos" y MySQL habla en "Tablas". Es como intentar que un fan de Star Wars y uno de Star Trek se pongan de acuerdo en cuál es la mejor saga... ¡necesitamos un traductor! Y ese traductor se llama <strong>JDBC</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">Analogía Laboral: El Camarero y la Cocina</p>
+<p>Imagina que tu aplicación Java es un cliente en un restaurante y la Base de Datos es la cocina. El cliente no entra a la cocina a freír las patatas (sería un caos de seguridad). En su lugar, usa un <strong>camarero</strong> (el Driver JDBC) que lleva la comanda (la consulta SQL), se la da al chef (el SGBD), y luego te trae el plato con la comida (el ResultSet). Sin el camarero, ¡te quedarías con hambre y la cocina sería un desastre!</p>
+</div>
+<hr/>
+<h2 id="conceptos-fundamentales">Conceptos Fundamentales</h2>
+<p>Antes de ensuciarnos las manos con código, vamos a dejar claros los términos que usaréis en las entrevistas de trabajo (y para no parecer perdidos en el examen).</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: API (Application Programming Interface)</p>
+<p>Es un conjunto de definiciones y protocolos que permite que dos aplicaciones de software se comuniquen entre sí. Es el "contrato" que dice: "Si me llamas de esta manera, te devolveré este resultado".</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: JDBC (Java Database Connectivity)</p>
+<p>Es una API estándar de Java que permite a las aplicaciones conectarse a casi cualquier base de datos relacional (MySQL, PostgreSQL, Oracle, etc.) usando el mismo conjunto de clases e interfaces. Es el "enchufe universal" de Java para los datos.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Driver (Controlador)</p>
+<p>Es la implementación específica para un motor de base de datos concreto. JDBC es la interfaz (el qué), y el Driver es la implementación (el cómo). Sin el driver de MySQL, Java no sabe cómo hablar con MySQL.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Desfase Objeto-Relacional</p>
+<p>Es la crisis de identidad que sufren los datos. En Java tenemos clases con herencia y colecciones; en SQL tenemos tablas con filas y columnas. Mapear un objeto <code>Alumno</code> a una fila de la tabla <code>alumnos</code> es lo que conocemos como salvar este desfase.</p>
+</div>
+<h3 id="arquitectura-jdbc-como-se-monta-el-tinglado">Arquitectura JDBC: ¿Cómo se monta el tinglado?</h3>
+<p>JDBC no es una sola pieza, es un equipo de componentes trabajando en armonía. Podemos verlo en dos niveles:</p>
+<ol>
+<li><strong>Arquitectura de 2 capas (Cliente-Servidor):</strong> Tu programa Java habla directamente con la BD. Ideal para aplicaciones pequeñas o herramientas de administración.</li>
+<li><strong>Arquitectura de 3 capas:</strong> Tu programa Java (en el servidor de aplicaciones) habla con la BD, y el cliente (un navegador) solo ve el resultado. Es el estándar en la web moderna.</li>
+</ol>
+<h3 id="componentes-clave-de-jdbc">Componentes Clave de JDBC</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Componente</th>
+<th style="text-align: left;">Responsabilidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>DriverManager</strong></td>
+<td style="text-align: left;">El "jefe" que gestiona los drivers y establece las conexiones.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Connection</strong></td>
+<td style="text-align: left;">La sesión abierta con la base de datos. ¡No la dejes abierta o el servidor llorará!</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Statement</strong></td>
+<td style="text-align: left;">El sobre donde metes tu carta (SQL) para enviarla.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>PreparedStatement</strong></td>
+<td style="text-align: left;">Un <code>Statement</code> precompilado. Más rápido y seguro contra inyecciones SQL.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ResultSet</strong></td>
+<td style="text-align: left;">La caja que contiene las filas que te devuelve la base de datos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SQLException</strong></td>
+<td style="text-align: left;">La clase que maneja cualquier error que ocurra en la base de datos.</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>graph TD
+    subgraph "Aplicación Java"
+        A[Código del Alumno] --&gt; B[DriverManager]
+        B --&gt; C[Connection]
+        C --&gt; D[Statement / PreparedStatement]
+    end
+
+    subgraph "Capa de Datos"
+        E[Driver JDBC MySQL]
+        F[(Base de Datos MySQL)]
+    end
+
+    D --&gt; E
+    E --&gt; F
+    F --&gt; E
+    E --&gt; D
+    D --&gt; G[ResultSet]
+    G --&gt; A</code></pre>
+<div class="admonition tip">
+<p class="admonition-title">Consejo de Pro</p>
+<p>Antiguamente hacíamos <code>Class.forName("com.mysql.cj.jdbc.Driver")</code> para cargar el driver. En el Java moderno (JDBC 4.0+), esto ya no es estrictamente necesario porque Java es lo suficientemente listo para encontrarlo solo si está en el classpath. ¡Un dolor de cabeza menos!</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ol>
+<li>¿Cuál es la principal diferencia entre una arquitectura de 2 capas y una de 3 capas en el contexto de JDBC?</li>
+<li>¿Por qué crees que existe un "Desfase Objeto-Relacional"? ¿Qué problemas concretos te imaginas al guardar un objeto con una lista de otros objetos en una tabla?</li>
+<li>Si cambias de MySQL a PostgreSQL, ¿qué componentes de la arquitectura JDBC tendrías que cambiar en tu código?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="desarrollo-y-ejemplos-practicos">Desarrollo y Ejemplos Prácticos</h2>
+<h3 id="1-configuracion-del-entorno-maven">1. Configuración del Entorno (Maven)</h3>
+<p>Olvídate de descargar archivos <code>.jar</code> a mano como si estuviéramos en 2005. Usamos Maven para gestionar las dependencias. En tu <code>pom.xml</code>, añade el conector de MySQL.</p>
+<div class="admonition danger">
+<p class="admonition-title">Alerta de Seguridad</p>
+<p>Cuidado con las versiones antiguas de los conectores. A menudo tienen vulnerabilidades (CVEs). Revisa siempre <a href="https://mvnrepository.com/">MVNRepository</a> para asegurarte de que no estás usando una versión con "agujeros". Para MySQL 8.4+, usa la versión 9.2.0 del conector.</p>
+</div>
+<p><strong>Ejemplo 1: Dependencia en <code>pom.xml</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j --&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+<span class="w">    </span><span class="nt">&lt;groupId&gt;</span>com.mysql<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>mysql-connector-j<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>9.2.0<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+<h3 id="2-estableciendo-la-conexion-try-with-resources">2. Estableciendo la Conexión (Try-with-Resources)</h3>
+<p>La forma profesional de manejar conexiones es el <strong>try-with-resources</strong> (introducido en Java 7). Esto asegura que la conexión se cierre automáticamente incluso si algo explota. Dejar conexiones abiertas es como dejar el grifo abierto: al final, inundas el servidor.</p>
+<p>La URL de conexión sigue este formato: <code>jdbc:subprotocolo://servidor:puerto/base_de_datos</code></p>
+<p><strong>Ejemplo 2: Conexión básica con Try-with-Resources</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.Connection</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.DriverManager</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.SQLException</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ConexionBasica</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"jdbc:mysql://localhost:3306/gestionalumnos"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"profesor"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"12345678"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// El bloque try() se encarga de llamar a conn.close() automáticamente</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">pass</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Conexión establecida con éxito! 🚀"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Catálogo actual: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">getCatalog</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error al conectar: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Código de estado SQL: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getSQLState</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Ejemplo 3: Conexión con parámetros adicionales en la URL</strong></p>
+<p>A veces necesitas configurar la zona horaria o el uso de SSL directamente en la URL de conexión.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.Connection</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.DriverManager</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.SQLException</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ConexionAvanzada</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Añadimos parámetros para forzar la zona horaria y desactivar SSL (solo para desarrollo local)</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"jdbc:mysql://localhost:3306/gestionalumnos?serverTimezone=UTC&amp;useSSL=false"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"profesor"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"12345678"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">pass</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Conexión avanzada establecida! 🛠️"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="3-consultando-datos-dql-select">3. Consultando Datos (DQL: SELECT)</h3>
+<p>Para leer datos usamos <code>Statement</code> y <code>ResultSet</code>. El <code>ResultSet</code> funciona como un cursor que apunta a las filas.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Detalle Técnico</p>
+<p>El método <code>rs.next()</code> mueve el cursor a la siguiente fila. Al principio, el cursor está <strong>antes</strong> de la primera fila, por eso siempre hay que llamar a <code>next()</code> al menos una vez. Devuelve <code>true</code> si hay una fila, y <code>false</code> si ya no hay más.</p>
+</div>
+<p><strong>Ejemplo 4: Consulta básica con Statement</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.*</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ConsultaAlumnos</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"jdbc:mysql://localhost:3306/gestionalumnos"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"profesor"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"12345678"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"SELECT id, nombre, apellido1, ciudad FROM alumno"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Anidamos los recursos en el try para que se cierren en orden inverso (rs, stmt, conn)</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">pass</span><span class="p">);</span>
+<span class="w">             </span><span class="n">Statement</span><span class="w"> </span><span class="n">stmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span>
+<span class="w">             </span><span class="n">ResultSet</span><span class="w"> </span><span class="n">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stmt</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">(</span><span class="n">sql</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- LISTADO DE ALUMNOS ---"</span><span class="p">);</span>
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">rs</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// Es mejor usar el nombre de la columna que el índice numérico</span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rs</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"id"</span><span class="p">);</span>
+<span class="w">                </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"nombre"</span><span class="p">);</span>
+<span class="w">                </span><span class="n">String</span><span class="w"> </span><span class="n">apellido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"apellido1"</span><span class="p">);</span>
+<span class="w">                </span><span class="n">String</span><span class="w"> </span><span class="n">ciudad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"ciudad"</span><span class="p">);</span>
+
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"[%d] %s %s - %s%n"</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">apellido</span><span class="p">,</span><span class="w"> </span><span class="n">ciudad</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Ejemplo 5: Consulta con PreparedStatement (La forma correcta)</strong></p>
+<p>Nunca, <strong>NUNCA</strong>, concatenes Strings para crear una consulta SQL si los datos vienen del usuario. Eso abre la puerta a la <strong>Inyección SQL</strong>. Usa siempre <code>PreparedStatement</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BusquedaSegura</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"jdbc:mysql://localhost:3306/gestionalumnos"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"profesor"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"12345678"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// El símbolo '?' es un comodín que rellenaremos después</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"SELECT * FROM alumno WHERE ciudad = ? AND categoria = ?"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">pass</span><span class="p">);</span>
+<span class="w">             </span><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">pstmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span><span class="n">sql</span><span class="p">);</span>
+<span class="w">             </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce la ciudad a buscar: "</span><span class="p">);</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">ciudadBuscada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce la categoría (número): "</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">categoriaBuscada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">// Sustituimos los comodines (el índice empieza en 1)</span>
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ciudadBuscada</span><span class="p">);</span>
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setInt</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">categoriaBuscada</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// Ejecutamos la consulta ya preparada</span>
+<span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">ResultSet</span><span class="w"> </span><span class="n">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pstmt</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="kt">boolean</span><span class="w"> </span><span class="n">encontrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">                </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">rs</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">encontrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Encontrado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"nombre"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"apellido1"</span><span class="p">));</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">encontrado</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"No hay alumnos en esa ciudad con esa categoría."</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Inyección SQL: El cuento de Bobby Tables</p>
+<p>Si haces <code>String sql = "SELECT * FROM usuarios WHERE nombre = '" + nombreUsuario + "'";</code> y el usuario introduce <code>Juan'; DROP TABLE usuarios; --</code>, tu base de datos desaparecerá. <code>PreparedStatement</code> "escapa" los caracteres peligrosos automáticamente.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ol>
+<li>¿Por qué es fundamental usar <code>try-with-resources</code> al trabajar con JDBC? ¿Qué tres objetos principales deben cerrarse?</li>
+<li>¿Qué diferencia hay entre <code>Statement</code> y <code>PreparedStatement</code>? ¿Cuál deberías usar por defecto y por qué?</li>
+<li>Si un <code>ResultSet</code> devuelve 1000 filas, ¿se cargan todas en la memoria RAM de Java al instante? Investiga sobre el concepto de "Fetch Size".</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="4-modificando-datos-dml-insert-update-delete">4. Modificando Datos (DML: INSERT, UPDATE, DELETE)</h3>
+<p>Para cambiar datos, usamos <code>executeUpdate()</code>. Este método devuelve un entero con el número de filas afectadas. Si devuelve 0, ¡algo has hecho mal o no había nada que cambiar!</p>
+<p><strong>Ejemplo 6: Inserción de un nuevo registro</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.*</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">InsertarAlumno</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"jdbc:mysql://localhost:3306/gestionalumnos"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"profesor"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"12345678"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">sqlInsert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"INSERT INTO alumno (nombre, apellido1, apellido2, ciudad, categoria) VALUES (?, ?, ?, ?, ?)"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">pass</span><span class="p">);</span>
+<span class="w">             </span><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">pstmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span><span class="n">sqlInsert</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">"Brais"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">"Moure"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">"Dev"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s">"Galicia"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setInt</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">filasAfectadas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pstmt</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">();</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">filasAfectadas</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"✅ Alumno insertado correctamente. Filas afectadas: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">filasAfectadas</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"❌ No se pudo insertar el alumno."</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error en la inserción: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Ejemplo 7: Actualización y Borrado</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.*</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModificarBorrar</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"jdbc:mysql://localhost:3306/gestionalumnos"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"profesor"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"12345678"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">sqlUpdate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"UPDATE alumno SET ciudad = ? WHERE id = ?"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">sqlDelete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"DELETE FROM alumno WHERE id = ?"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">pass</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">            </span><span class="c1">// 1. Actualizar</span>
+<span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">pstmtUpdate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span><span class="n">sqlUpdate</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pstmtUpdate</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">"Madrid"</span><span class="p">);</span>
+<span class="w">                </span><span class="n">pstmtUpdate</span><span class="p">.</span><span class="na">setInt</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Suponiendo que el ID 1 existe</span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">actualizados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pstmtUpdate</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">();</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Alumnos actualizados: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">actualizados</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="c1">// 2. Borrar</span>
+<span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">pstmtDelete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span><span class="n">sqlDelete</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pstmtDelete</span><span class="p">.</span><span class="na">setInt</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">);</span><span class="w"> </span><span class="c1">// Borramos al alumno con ID 15</span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">borrados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pstmtDelete</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">();</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Alumnos borrados: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">borrados</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="5-metadatos-preguntandole-a-la-base-de-datos-sobre-si-misma">5. Metadatos: Preguntándole a la Base de Datos sobre sí misma</h3>
+<p>A veces no sabemos qué tablas hay en la base de datos o qué columnas tiene una tabla. Para eso usamos <code>DatabaseMetaData</code> y <code>ResultSetMetaData</code>. Es como pedirle el currículum a la base de datos.</p>
+<p><strong>Ejemplo 8: Obteniendo información de la Base de Datos</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.*</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExploradorMetadatos</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"jdbc:mysql://localhost:3306/gestionalumnos"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"profesor"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"12345678"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">pass</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">            </span><span class="n">DatabaseMetaData</span><span class="w"> </span><span class="n">dbmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">getMetaData</span><span class="p">();</span>
+
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- INFO DEL SISTEMA ---"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"SGBD: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dbmd</span><span class="p">.</span><span class="na">getDatabaseProductName</span><span class="p">());</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Versión SGBD: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dbmd</span><span class="p">.</span><span class="na">getDatabaseProductVersion</span><span class="p">());</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Driver: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dbmd</span><span class="p">.</span><span class="na">getDriverName</span><span class="p">());</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Versión Driver: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dbmd</span><span class="p">.</span><span class="na">getDriverVersion</span><span class="p">());</span>
+
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- TABLAS EN 'gestionalumnos' ---"</span><span class="p">);</span>
+<span class="w">            </span><span class="c1">// Parámetros: catalog, schemaPattern, tableNamePattern, types</span>
+<span class="w">            </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">tipos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"TABLE"</span><span class="p">};</span>
+<span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">ResultSet</span><span class="w"> </span><span class="n">rsTablas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dbmd</span><span class="p">.</span><span class="na">getTables</span><span class="p">(</span><span class="s">"gestionalumnos"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s">"%"</span><span class="p">,</span><span class="w"> </span><span class="n">tipos</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">rsTablas</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">String</span><span class="w"> </span><span class="n">nombreTabla</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rsTablas</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"TABLE_NAME"</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tabla encontrada: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombreTabla</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ol>
+<li>¿Qué devuelve el método <code>executeUpdate()</code> y cómo puedes usar ese valor para validar tu operación?</li>
+<li>Si intentas borrar un registro que está referenciado como clave foránea en otra tabla, ¿qué ocurrirá a nivel de JDBC?</li>
+<li>¿Para qué crees que puede ser útil en un proyecto real utilizar <code>DatabaseMetaData</code>?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="6-transacciones-asegurando-la-integridad-de-los-datos">6. Transacciones: Asegurando la Integridad de los Datos</h3>
+<p>Imagina que estás transfiriendo dinero de una cuenta a otra. Si restas el dinero de la primera cuenta pero la aplicación falla antes de sumarlo a la segunda, ¡tendrías un problema grave! Las <strong>transacciones</strong> aseguran que un conjunto de operaciones se completen todas juntas (COMMIT) o ninguna (ROLLBACK). Es el "todo o nada" de las bases de datos.</p>
+<p>Por defecto, JDBC opera en modo <code>auto-commit</code>, lo que significa que cada sentencia SQL es una transacción por sí misma. Para gestionar transacciones manualmente, debemos desactivar el <code>auto-commit</code>.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant App as Aplicación Java
+    participant DB as Base de Datos
+
+    App-&gt;&gt;DB: conn.setAutoCommit(false)
+    App-&gt;&gt;DB: pstmt1.executeUpdate() (Restar dinero)
+    App-&gt;&gt;DB: pstmt2.executeUpdate() (Sumar dinero)
+    alt Operaciones exitosas
+        App-&gt;&gt;DB: conn.commit()
+        DB--&gt;&gt;App: OK
+    else Error en alguna operación
+        App-&gt;&gt;DB: conn.rollback()
+        DB--&gt;&gt;App: OK (Deshace cambios)
+    end
+    App-&gt;&gt;DB: conn.setAutoCommit(true) (Opcional, restaurar)</code></pre>
+<p><strong>Ejemplo 9: Gestión de Transacciones</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.*</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GestionTransacciones</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"jdbc:mysql://localhost:3306/gestionalumnos"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"profesor"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"12345678"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">pass</span><span class="p">);</span>
+<span class="w">            </span><span class="n">conn</span><span class="p">.</span><span class="na">setAutoCommit</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w"> </span><span class="c1">// Desactivamos el auto-commit</span>
+
+<span class="w">            </span><span class="c1">// Operación 1: Insertar un alumno</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">sqlInsert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"INSERT INTO alumno (nombre, apellido1, ciudad, categoria) VALUES (?, ?, ?, ?)"</span><span class="p">;</span>
+<span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">pstmtInsert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span><span class="n">sqlInsert</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pstmtInsert</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">"Laura"</span><span class="p">);</span>
+<span class="w">                </span><span class="n">pstmtInsert</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">"García"</span><span class="p">);</span>
+<span class="w">                </span><span class="n">pstmtInsert</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">"Sevilla"</span><span class="p">);</span>
+<span class="w">                </span><span class="n">pstmtInsert</span><span class="p">.</span><span class="na">setInt</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="w">                </span><span class="n">pstmtInsert</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">();</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Alumno Laura insertado."</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="c1">// Operación 2: Intentar actualizar un alumno que no existe (esto causará un error si no se maneja)</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">sqlUpdate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"UPDATE alumno SET categoria = ? WHERE id = ?"</span><span class="p">;</span>
+<span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">pstmtUpdate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span><span class="n">sqlUpdate</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pstmtUpdate</span><span class="p">.</span><span class="na">setInt</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="w">                </span><span class="n">pstmtUpdate</span><span class="p">.</span><span class="na">setInt</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">9999</span><span class="p">);</span><span class="w"> </span><span class="c1">// ID que probablemente no existe</span>
+<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">filasActualizadas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pstmtUpdate</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">();</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">filasActualizadas</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Advertencia: No se actualizó ningún alumno con ID 9999."</span><span class="p">);</span>
+<span class="w">                    </span><span class="c1">// Podríamos lanzar una excepción aquí para forzar el rollback</span>
+<span class="w">                    </span><span class="c1">// throw new SQLException("No se encontró el alumno para actualizar.");</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="n">conn</span><span class="p">.</span><span class="na">commit</span><span class="p">();</span><span class="w"> </span><span class="c1">// Si todo va bien, confirmamos los cambios</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Transacción completada con éxito. Cambios guardados."</span><span class="p">);</span>
+
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error en la transacción: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">conn</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">conn</span><span class="p">.</span><span class="na">rollback</span><span class="p">();</span><span class="w"> </span><span class="c1">// Si algo falla, deshacemos todos los cambios</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Transacción revertida (rollback)."</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error al hacer rollback: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ex</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">conn</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">conn</span><span class="p">.</span><span class="na">setAutoCommit</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"> </span><span class="c1">// Restaurar auto-commit si es necesario</span>
+<span class="w">                    </span><span class="n">conn</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error al cerrar la conexión: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="7-resultsetmetadata-conociendo-la-estructura-de-tu-consulta">7. ResultSetMetaData: Conociendo la Estructura de tu Consulta</h3>
+<p><code>ResultSetMetaData</code> te permite obtener información sobre las columnas de un <code>ResultSet</code>, como el nombre de la columna, su tipo de datos, si es autoincremental, etc. Es útil cuando no conoces de antemano la estructura de la tabla o cuando quieres construir una interfaz de usuario dinámica.</p>
+<p><strong>Ejemplo 10: Obteniendo metadatos de un ResultSet</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.*</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ResultSetMetadataExplorer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"jdbc:mysql://localhost:3306/gestionalumnos"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"profesor"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"12345678"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"SELECT id, nombre, apellido1, ciudad FROM alumno"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">pass</span><span class="p">);</span>
+<span class="w">             </span><span class="n">Statement</span><span class="w"> </span><span class="n">stmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span>
+<span class="w">             </span><span class="n">ResultSet</span><span class="w"> </span><span class="n">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stmt</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">(</span><span class="n">sql</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">            </span><span class="n">ResultSetMetaData</span><span class="w"> </span><span class="n">rsmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rs</span><span class="p">.</span><span class="na">getMetaData</span><span class="p">();</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">columnCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rsmd</span><span class="p">.</span><span class="na">getColumnCount</span><span class="p">();</span>
+
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- METADATOS DE LA CONSULTA ---"</span><span class="p">);</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">columnCount</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"Columna %d: %s (Tipo: %s, Etiqueta: %s)%n"</span><span class="p">,</span>
+<span class="w">                                  </span><span class="n">i</span><span class="p">,</span>
+<span class="w">                                  </span><span class="n">rsmd</span><span class="p">.</span><span class="na">getColumnName</span><span class="p">(</span><span class="n">i</span><span class="p">),</span>
+<span class="w">                                  </span><span class="n">rsmd</span><span class="p">.</span><span class="na">getColumnTypeName</span><span class="p">(</span><span class="n">i</span><span class="p">),</span>
+<span class="w">                                  </span><span class="n">rsmd</span><span class="p">.</span><span class="na">getColumnLabel</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- DATOS ---"</span><span class="p">);</span>
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">rs</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">columnCount</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">rsmd</span><span class="p">.</span><span class="na">getColumnLabel</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">": "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rs</span><span class="p">.</span><span class="na">getObject</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"\t"</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ol>
+<li>¿Cuál es el estado por defecto de <code>auto-commit</code> en JDBC? ¿Por qué es importante cambiarlo para operaciones que requieren integridad?</li>
+<li>Si tienes una transacción con 5 operaciones y la tercera falla, ¿qué sucede con las dos primeras si no has gestionado la transacción correctamente?</li>
+<li>¿En qué escenarios reales podría ser útil <code>ResultSetMetaData</code>? Piensa en herramientas o aplicaciones que necesiten adaptarse a diferentes estructuras de datos.</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="patrones-de-diseno-singleton-y-dao-implementacion-avanzada">Patrones de Diseño: Singleton y DAO (Implementación Avanzada)</h2>
+<p>Como ya vimos, meter todo el código JDBC en el <code>main</code> es una receta para el desastre. Vamos a implementar los patrones Singleton y DAO de forma más robusta y reutilizable.</p>
+<h3 id="8-el-patron-singleton-para-la-conexion-pool-de-conexiones">8. El Patrón Singleton para la Conexión (Pool de Conexiones)</h3>
+<p>Crear una conexión a la base de datos es costoso en tiempo y recursos. El patrón Singleton nos asegura que solo haya una instancia de un objeto, pero para conexiones, lo ideal es un <strong>Pool de Conexiones</strong>. Un pool mantiene varias conexiones abiertas y listas para usar, lo que mejora drásticamente el rendimiento. Para este ejemplo, simularemos un Singleton simple para la conexión, pero en producción usaríamos librerías como HikariCP o c3p0.</p>
+<pre class="mermaid"><code>classDiagram
+    class ConexionBD {
+        -static Connection instance
+        -ConexionBD()
+        +static Connection getConnection()
+        +static void closeConnection()
+    }
+    note for ConexionBD "Asegura una única instancia de conexión\n(o simula un pool básico)"</code></pre>
+<p><strong>Ejemplo 11: Implementación del Singleton para la Conexión</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.Connection</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.DriverManager</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.SQLException</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ConexionBD</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Connection</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"jdbc:mysql://localhost:3306/gestionalumnos?serverTimezone=UTC&amp;useSSL=false"</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">USER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"profesor"</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">PASS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"12345678"</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Constructor privado para evitar instanciación externa</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="nf">ConexionBD</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span><span class="w"> </span><span class="n">USER</span><span class="p">,</span><span class="w"> </span><span class="n">PASS</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Conexión a la BD establecida (Singleton)."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error al establecer la conexión Singleton: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Método estático para obtener la única instancia de la conexión</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Connection</span><span class="w"> </span><span class="nf">getConnection</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">instance</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="n">ConexionBD</span><span class="p">();</span><span class="w"> </span><span class="c1">// Crea la instancia si no existe</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Método para cerrar la conexión (importante en aplicaciones pequeñas)</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">closeConnection</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">instance</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">instance</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Conexión a la BD cerrada (Singleton)."</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error al cerrar la conexión Singleton: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="9-el-patron-dao-data-access-object-con-interfaces-genericas">9. El Patrón DAO (Data Access Object) con Interfaces Genéricas</h3>
+<p>El patrón DAO abstrae la lógica de acceso a datos de la lógica de negocio. Esto significa que tu aplicación no necesita saber cómo se guardan o recuperan los datos, solo le pide al DAO que lo haga. Usaremos interfaces genéricas para que el DAO sea reutilizable para diferentes entidades (Alumno, Profesor, Asignatura, etc.).</p>
+<div class="language-markmap mkdocs-markmap"><markmap-data encoding="base64" hidden="true">IyBQYXRyw7NuIERBTyBBdmFuemFkbwojIyBJT3BlcmF0aW9uc0NSVUQ8VCwgSUQ+Ci0gKipUKio6IFRpcG8gZGUgbGEgZW50aWRhZCAoZS5nLiwgQWx1bW5vKQotICoqSUQqKjogVGlwbyBkZWwgaWRlbnRpZmljYWRvciAoZS5nLiwgSW50ZWdlciwgTG9uZykKLSAqKk3DqXRvZG9zKio6IGBzYXZlYCwgYGZpbmRCeUlkYCwgYGZpbmRBbGxgLCBgdXBkYXRlYCwgYGRlbGV0ZWAKIyMgSW1wbGVtZW50YWNpw7NuIChlLmcuLCBBbHVtbm9EQU9JbXBsKQotIEltcGxlbWVudGEgYElPcGVyYXRpb25zQ1JVRDxBbHVtbm8sIEludGVnZXI+YAotIFVzYSBgQ29uZXhpb25CRC5nZXRDb25uZWN0aW9uKClgCi0gQ29udGllbmUgbGEgbMOzZ2ljYSBKREJDIGVzcGVjw61maWNhIHBhcmEgYEFsdW1ub2AKIyMgRmFjdG9yaWFEQU8gKFNpbmdsZXRvbikKLSBDZW50cmFsaXphIGxhIGNyZWFjacOzbiBkZSBEQU9zCi0gQXNlZ3VyYSB1bmEgw7puaWNhIGluc3RhbmNpYSBkZSBjYWRhIERBTwotIGBnZXRBbHVtbm9EQU8oKWAsIGBnZXRQcm9mZXNvckRBTygpYCwgZXRjLg==</markmap-data></div>
+<p><strong>Ejemplo 12: Interfaz Genérica <code>IOperationsCRUD</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">IOperationsCRUD</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">ID</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">entity</span><span class="p">);</span>
+<span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="nf">findById</span><span class="p">(</span><span class="n">ID</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findAll</span><span class="p">();</span>
+<span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">entity</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">ID</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Ejemplo 13: Clase POJO <code>Alumno</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Alumno</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">apellido1</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">apellido2</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ciudad</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">categoria</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Alumno</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">apellido1</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">apellido2</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ciudad</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">categoria</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">apellido1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">apellido1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">apellido2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">apellido2</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">ciudad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ciudad</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">categoria</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">categoria</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Constructor sin ID para inserciones</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Alumno</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">apellido1</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">apellido2</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ciudad</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">categoria</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">apellido1</span><span class="p">,</span><span class="w"> </span><span class="n">apellido2</span><span class="p">,</span><span class="w"> </span><span class="n">ciudad</span><span class="p">,</span><span class="w"> </span><span class="n">categoria</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Getters y Setters</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getId</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setId</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getNombre</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setNombre</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getApellido1</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">apellido1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setApellido1</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">apellido1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">apellido1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">apellido1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getApellido2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">apellido2</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setApellido2</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">apellido2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">apellido2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">apellido2</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getCiudad</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">ciudad</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setCiudad</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">ciudad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">ciudad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ciudad</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getCategoria</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">categoria</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setCategoria</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">categoria</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">categoria</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">categoria</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"Alumno{"</span><span class="w"> </span><span class="o">+</span>
+<span class="w">               </span><span class="s">"id="</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">+</span>
+<span class="w">               </span><span class="s">", nombre=\'"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"\'"</span><span class="w"> </span><span class="o">+</span>
+<span class="w">               </span><span class="s">", apellido1=\'"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">apellido1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"\'"</span><span class="w"> </span><span class="o">+</span>
+<span class="w">               </span><span class="s">", apellido2=\'"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">apellido2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"\'"</span><span class="w"> </span><span class="o">+</span>
+<span class="w">               </span><span class="s">", ciudad=\'"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ciudad</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"\'"</span><span class="w"> </span><span class="o">+</span>
+<span class="w">               </span><span class="s">", categoria="</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">categoria</span><span class="w"> </span><span class="o">+</span>
+<span class="w">               </span><span class="sc">'\}'</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Ejemplo 14: Implementación <code>AlumnoDAOImpl</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AlumnoDAOImpl</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IOperationsCRUD</span><span class="o">&lt;</span><span class="n">Alumno</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Alumno</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="n">Alumno</span><span class="w"> </span><span class="n">alumno</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"INSERT INTO alumno (nombre, apellido1, apellido2, ciudad, categoria) VALUES (?, ?, ?, ?, ?)"</span><span class="p">;</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ConexionBD</span><span class="p">.</span><span class="na">getConnection</span><span class="p">();</span>
+<span class="w">             </span><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">pstmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span><span class="p">.</span><span class="na">RETURN_GENERATED_KEYS</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">alumno</span><span class="p">.</span><span class="na">getNombre</span><span class="p">());</span>
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">alumno</span><span class="p">.</span><span class="na">getApellido1</span><span class="p">());</span>
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">alumno</span><span class="p">.</span><span class="na">getApellido2</span><span class="p">());</span>
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">alumno</span><span class="p">.</span><span class="na">getCiudad</span><span class="p">());</span>
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setInt</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">alumno</span><span class="p">.</span><span class="na">getCategoria</span><span class="p">());</span>
+
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">affectedRows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pstmt</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">affectedRows</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">ResultSet</span><span class="w"> </span><span class="n">generatedKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pstmt</span><span class="p">.</span><span class="na">getGeneratedKeys</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">generatedKeys</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">alumno</span><span class="p">.</span><span class="na">setId</span><span class="p">(</span><span class="n">generatedKeys</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span><span class="w"> </span><span class="c1">// Asignar el ID generado</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">alumno</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Alumno</span><span class="w"> </span><span class="nf">findById</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"SELECT id, nombre, apellido1, apellido2, ciudad, categoria FROM alumno WHERE id = ?"</span><span class="p">;</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ConexionBD</span><span class="p">.</span><span class="na">getConnection</span><span class="p">();</span>
+<span class="w">             </span><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">pstmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span><span class="n">sql</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setInt</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">ResultSet</span><span class="w"> </span><span class="n">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pstmt</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rs</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Alumno</span><span class="p">(</span>
+<span class="w">                        </span><span class="n">rs</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"id"</span><span class="p">),</span>
+<span class="w">                        </span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"nombre"</span><span class="p">),</span>
+<span class="w">                        </span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"apellido1"</span><span class="p">),</span>
+<span class="w">                        </span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"apellido2"</span><span class="p">),</span>
+<span class="w">                        </span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"ciudad"</span><span class="p">),</span>
+<span class="w">                        </span><span class="n">rs</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"categoria"</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Alumno</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findAll</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Alumno</span><span class="o">&gt;</span><span class="w"> </span><span class="n">alumnos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"SELECT id, nombre, apellido1, apellido2, ciudad, categoria FROM alumno"</span><span class="p">;</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ConexionBD</span><span class="p">.</span><span class="na">getConnection</span><span class="p">();</span>
+<span class="w">             </span><span class="n">Statement</span><span class="w"> </span><span class="n">stmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span>
+<span class="w">             </span><span class="n">ResultSet</span><span class="w"> </span><span class="n">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stmt</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">(</span><span class="n">sql</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">rs</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">alumnos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Alumno</span><span class="p">(</span>
+<span class="w">                    </span><span class="n">rs</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"id"</span><span class="p">),</span>
+<span class="w">                    </span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"nombre"</span><span class="p">),</span>
+<span class="w">                    </span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"apellido1"</span><span class="p">),</span>
+<span class="w">                    </span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"apellido2"</span><span class="p">),</span>
+<span class="w">                    </span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"ciudad"</span><span class="p">),</span>
+<span class="w">                    </span><span class="n">rs</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="s">"categoria"</span><span class="p">)</span>
+<span class="w">                </span><span class="p">));</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">alumnos</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Alumno</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">Alumno</span><span class="w"> </span><span class="n">alumno</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"UPDATE alumno SET nombre = ?, apellido1 = ?, apellido2 = ?, ciudad = ?, categoria = ? WHERE id = ?"</span><span class="p">;</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ConexionBD</span><span class="p">.</span><span class="na">getConnection</span><span class="p">();</span>
+<span class="w">             </span><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">pstmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span><span class="n">sql</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">alumno</span><span class="p">.</span><span class="na">getNombre</span><span class="p">());</span>
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">alumno</span><span class="p">.</span><span class="na">getApellido1</span><span class="p">());</span>
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">alumno</span><span class="p">.</span><span class="na">getApellido2</span><span class="p">());</span>
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">alumno</span><span class="p">.</span><span class="na">getCiudad</span><span class="p">());</span>
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setInt</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">alumno</span><span class="p">.</span><span class="na">getCategoria</span><span class="p">());</span>
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setInt</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="n">alumno</span><span class="p">.</span><span class="na">getId</span><span class="p">());</span>
+
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">affectedRows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pstmt</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">();</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">affectedRows</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">alumno</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"DELETE FROM alumno WHERE id = ?"</span><span class="p">;</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ConexionBD</span><span class="p">.</span><span class="na">getConnection</span><span class="p">();</span>
+<span class="w">             </span><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">pstmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span><span class="n">sql</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">setInt</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<span class="w">            </span><span class="n">pstmt</span><span class="p">.</span><span class="na">executeUpdate</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Ejemplo 15: <code>FactoriaDAO</code> para gestionar instancias de DAO</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FactoriaDAO</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">AlumnoDAO</span><span class="w"> </span><span class="n">alumnoDAO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="nf">FactoriaDAO</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* Evitar instanciación */</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">AlumnoDAO</span><span class="w"> </span><span class="nf">getAlumnoDAO</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">alumnoDAO</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">alumnoDAO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AlumnoDAOImpl</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">alumnoDAO</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// Podríamos añadir más métodos para otros DAOs: getProfesorDAO(), etc.</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Ejemplo 16: Uso del DAO en la aplicación principal</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MainApp</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Obtener la instancia del DAO a través de la factoría</span>
+<span class="w">        </span><span class="n">AlumnoDAO</span><span class="w"> </span><span class="n">alumnoDAO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FactoriaDAO</span><span class="p">.</span><span class="na">getAlumnoDAO</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// 1. Insertar un nuevo alumno</span>
+<span class="w">        </span><span class="n">Alumno</span><span class="w"> </span><span class="n">nuevoAlumno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Alumno</span><span class="p">(</span><span class="s">"Ana"</span><span class="p">,</span><span class="w"> </span><span class="s">"Pérez"</span><span class="p">,</span><span class="w"> </span><span class="s">"López"</span><span class="p">,</span><span class="w"> </span><span class="s">"Barcelona"</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">alumnoDAO</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="n">nuevoAlumno</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Alumno insertado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nuevoAlumno</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 2. Buscar un alumno por ID</span>
+<span class="w">        </span><span class="n">Alumno</span><span class="w"> </span><span class="n">alumnoEncontrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alumnoDAO</span><span class="p">.</span><span class="na">findById</span><span class="p">(</span><span class="n">nuevoAlumno</span><span class="p">.</span><span class="na">getId</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Alumno encontrado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">alumnoEncontrado</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 3. Actualizar un alumno</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">alumnoEncontrado</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">alumnoEncontrado</span><span class="p">.</span><span class="na">setCiudad</span><span class="p">(</span><span class="s">"Valencia"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">alumnoDAO</span><span class="p">.</span><span class="na">update</span><span class="p">(</span><span class="n">alumnoEncontrado</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Alumno actualizado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">alumnoEncontrado</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// 4. Listar todos los alumnos</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Alumno</span><span class="o">&gt;</span><span class="w"> </span><span class="n">todosLosAlumnos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alumnoDAO</span><span class="p">.</span><span class="na">findAll</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- TODOS LOS ALUMNOS ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">todosLosAlumnos</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 5. Eliminar un alumno</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nuevoAlumno</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Asegurarse de que tiene un ID válido</span>
+<span class="w">            </span><span class="n">alumnoDAO</span><span class="p">.</span><span class="na">delete</span><span class="p">(</span><span class="n">nuevoAlumno</span><span class="p">.</span><span class="na">getId</span><span class="p">());</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Alumno con ID "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nuevoAlumno</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" eliminado."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Cerrar la conexión al finalizar la aplicación (si se usa Singleton simple)</span>
+<span class="w">        </span><span class="n">ConexionBD</span><span class="p">.</span><span class="na">closeConnection</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Consejo de Arquitectura</p>
+<p>En aplicaciones más grandes, el <code>FactoriaDAO</code> podría ser reemplazado por un <strong>framework de Inyección de Dependencias</strong> como Spring, que gestiona automáticamente la creación y el ciclo de vida de los objetos DAO y las conexiones a la base de datos.</p>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="aplicacion-en-el-mundo-real">Aplicación en el Mundo Real</h2>
+<p>En el mundo profesional, rara vez usarás JDBC directamente para todas las operaciones CRUD. Frameworks como <strong>Hibernate</strong> o <strong>Spring Data JPA</strong> construyen una capa de abstracción sobre JDBC, permitiéndote trabajar con objetos Java directamente sin escribir SQL. Sin embargo, entender JDBC es fundamental para:</p>
+<ul>
+<li><strong>Depuración</strong>: Cuando algo falla en Hibernate, saber JDBC te permite entender qué SQL se está ejecutando realmente.</li>
+<li><strong>Optimización</strong>: Para consultas muy complejas o de alto rendimiento, a veces es necesario "bajar" a JDBC puro para un control más fino.</li>
+<li><strong>Proyectos Legacy</strong>: Mantener o migrar aplicaciones antiguas que usan JDBC directamente.</li>
+<li><strong>Herramientas</strong>: Desarrollar herramientas de administración de bases de datos o utilidades específicas.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Humor para Programadores</p>
+<p>¿Por qué los programadores de Java prefieren las bases de datos relacionales? Porque en las NoSQL no encuentran su "Select" interior. 😂 (Vale, es malo, pero después de 4 horas de depuración de SQL, ¡te reirás!).</p>
+</div>
+<hr/>
+<h2 id="para-saber-mas">Para Saber Más</h2>
+<p>Si te has quedado con ganas de más (o necesitas aprobar el examen con nota), echa un ojo a estos recursos:</p>
+<ul>
+<li><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/">Documentación Oficial de Oracle sobre JDBC</a>: La fuente de la verdad.</li>
+<li><a href="https://www.baeldung.com/java-jdbc">Tutorial de Baeldung sobre JDBC</a>: Ejemplos claros y modernos.</li>
+<li><a href="https://dev.mysql.com/doc/connector-j/en/">Guía de MySQL Connector/J</a>: Todo sobre el driver que hemos usado.</li>
+<li><a href="https://github.com/brettwooldridge/HikariCP">HikariCP - El pool de conexiones más rápido</a>: Si quieres ir un paso más allá en la gestión de conexiones.</li>
+</ul>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script type="text/javascript">(function initializeMarkmap() {
+    const transformer = new markmap.Transformer();
+    const preloadScripts = transformer.plugins
+        .flatMap((plugin) => plugin.config?.preloadScripts || [])
+        .map((item) => transformer.resolveJS(item));
+    const assets = transformer.getAssets();
+    const loading = Promise.all([
+        assets.styles && markmap.loadCSS(assets.styles),
+        markmap.loadJS([...preloadScripts, ...assets.scripts]),
+    ]);
+
+    function parseData(content) {
+        const { root, frontmatter } = transformer.transform(content);
+        let options = markmap.deriveOptions(frontmatter?.markmap);
+        options = Object.assign(
+            {
+                fitRatio: 0.85,
+            },
+            options
+        );
+        return { root, options };
+    }
+
+    function resetMarkmap(m, el) {
+        if (!m.state.rect) return;
+        const { x1, y1, x2, y2 } = m.state.rect;
+        const height = (el.offsetWidth / (x2 - x1)) * (y2 - y1);
+        el.style.height = height + "px";
+        m.fit();
+    }
+
+    function decodeBase64(encoded) {
+        const binary = atob(encoded);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < bytes.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        return new TextDecoder().decode(bytes);
+    }
+
+    function renderMarkmap(el) {
+        const dataEl = el.querySelector("markmap-data");
+        if (!dataEl) return;
+        let content = el.textContent;
+        if (dataEl.getAttribute("encoding") === "base64") {
+            content = decodeBase64(content);
+        }
+        el.innerHTML = "<svg>";
+        svg = el.firstChild;
+        const { root, options } = parseData(content);
+        const m = markmap.Markmap.create(svg, options);
+        m.setData(root);
+        requestAnimationFrame(() => {
+            resetMarkmap(m, el);
+        });
+    }
+
+    function updateMarkmaps(node) {
+        for (const el of node.querySelectorAll(".mkdocs-markmap")) {
+            renderMarkmap(el);
+        }
+    }
+
+    loading.then(() => {
+        const observer = new MutationObserver((mutationList) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "childList") {
+                    for (const node of mutation.addedNodes) {
+                        updateMarkmaps(node);
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true });
+
+        updateMarkmaps(document);
+    });
+})();
+</script></body></html>

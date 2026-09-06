@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>7 ArrayList - PROG</title>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script><script src="../js/unpkg.com/d3@7.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-lib@0.18.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-view@0.18.js" type="text/javascript"></script><style type="text/css">div.mkdocs-markmap {
+    width: 100%;
+    min-height: 1em;
+    border: 1px solid grey;
+}
+.mkdocs-markmap > svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+</style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#tema-7-arraylist-tu-mochila-infinita-en-java">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="PROG" class="md-header__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            PROG
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              7 ArrayList
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../1-Introduccion-programacion/">
+          
+  
+  
+  Programación
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="PROG" class="md-nav__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    PROG
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1-Introduccion-programacion/">
+<span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2-Programacion-estructurada/">
+<span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3-Programacion-modular/">
+<span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4-Estructuras-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5-POO-Clases-y-Objetos/">
+<span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6-POO-Uso-avanzado/">
+<span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7-Estructuras-datos-dinamicas/">
+<span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../8-Programacion-funcional-Streams/">
+<span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../9-Ficheros/">
+<span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10-Acceso-base-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11-Interfaces-graficas-MVC/">
+<span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduccion-del-casillero-al-inventario-rpg">
+<span class="md-ellipsis">
+      
+        Introducción: Del "Casillero" al "Inventario RPG"
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conceptos-fundamentales">
+<span class="md-ellipsis">
+      
+        Conceptos Fundamentales
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desarrollo-y-ejemplos-practicos">
+<span class="md-ellipsis">
+      
+        Desarrollo y Ejemplos Prácticos
+      
+    </span>
+</a>
+<nav aria-label="Desarrollo y Ejemplos Prácticos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-creacion-de-arraylist">
+<span class="md-ellipsis">
+      
+        1. Creación de ArrayList
+      
+    </span>
+</a>
+<nav aria-label="1. Creación de ArrayList" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#forma-clasica-vs-forma-moderna">
+<span class="md-ellipsis">
+      
+        Forma Clásica vs. Forma Moderna
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creacion-con-valores-iniciales-listof">
+<span class="md-ellipsis">
+      
+        Creación con valores iniciales (List.of)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diferencias-clave-en-la-creacion">
+<span class="md-ellipsis">
+      
+        Diferencias Clave en la Creación
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-metodos-del-arraylist">
+<span class="md-ellipsis">
+      
+        2. Métodos del ArrayList
+      
+    </span>
+</a>
+<nav aria-label="2. Métodos del ArrayList" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-anadir-elementos-add-addall">
+<span class="md-ellipsis">
+      
+        A. Añadir Elementos (add, addAll)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b-informacion-basica-size-isempty-contains">
+<span class="md-ellipsis">
+      
+        B. Información Básica (size, isEmpty, contains)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#c-acceso-y-busqueda-get-indexof-lastindexof">
+<span class="md-ellipsis">
+      
+        C. Acceso y Búsqueda (get, indexOf, lastIndexOf)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#d-modificacion-y-ordenacion-set-replaceall-sort">
+<span class="md-ellipsis">
+      
+        D. Modificación y Ordenación (set, replaceAll, sort)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#e-eliminacion-clear-remove-removeall-removeif-retainall">
+<span class="md-ellipsis">
+      
+        E. Eliminación (clear, remove, removeAll, removeIf, retainAll)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#f-iteracion-foreach-iterator-listiterator-spliterator">
+<span class="md-ellipsis">
+      
+        F. Iteración (forEach, iterator, listIterator, spliterator)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#g-gestion-avanzada-y-conversion-clone-ensurecapacity-sublist-toarray-trimtosize">
+<span class="md-ellipsis">
+      
+        G. Gestión Avanzada y Conversión (clone, ensureCapacity, subList, toArray, trimToSize)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-comparativa-arraylist-vs-array">
+<span class="md-ellipsis">
+      
+        3. Comparativa: ArrayList vs Array
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacion-en-el-mundo-real">
+<span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-saber-mas">
+<span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<!-- fichero: tema_8_arraylist.md --><h1 id="tema-7-arraylist-tu-mochila-infinita-en-java">Tema 7 - ArrayList – Tu Mochila Infinita en Java</h1>
+<h2 id="introduccion-del-casillero-al-inventario-rpg">Introducción: Del "Casillero" al "Inventario RPG"</h2>
+<p>¿Recordáis en el <strong>Tema 7</strong> cuando hablamos de las estructuras de datos dinámicas? Bien, hoy vamos a conocer a la estrella del rock de las colecciones en Java: el <strong>ArrayList</strong>.</p>
+<p>Para entenderlo, pensad en los <strong>Arrays</strong> clásicos (los que vimos hace meses) como esos <strong>casilleros de instituto</strong> o de gimnasio. Tienen un tamaño fijo. Si te dan el casillero 5, solo te cabe lo que quepa ahí. Si quieres meter tu casco de moto, la mochila, los libros y el patinete... mala suerte, no estira. Tienes que pedir un casillero nuevo más grande y moverlo todo a mano. ¡Un dolor de cabeza!</p>
+<p>El <strong>ArrayList</strong>, en cambio, es como el <strong>Inventario de un videojuego RPG</strong> (tipo <em>Zelda</em>, <em>Skyrim</em> o <em>Baldur's Gate</em>). Empiezas con poco espacio, pero a medida que recoges objetos (loot), la bolsa se "expande" mágicamente. No te preocupas por cuántos huecos quedan; simplemente metes la poción, la espada y esa armadura legendaria. Java se encarga de gestionar el espacio por ti.</p>
+<p>En el mundo laboral, el 90% de las veces que necesites una lista de cosas, usarás un <code>ArrayList</code>. Es la herramienta por defecto para "montones de datos" que cambian de tamaño.</p>
+<hr/>
+<h2 id="conceptos-fundamentales">Conceptos Fundamentales</h2>
+<p>Antes de tirar líneas de código como si no hubiera un mañana, definamos qué tenemos entre manos.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: ArrayList</p>
+<p>Es una clase de la librería estándar de Java (<code>java.util</code>) que implementa una <strong>matriz redimensionable</strong> (un array dinámico). A diferencia de un array normal (<code>[]</code>), el <code>ArrayList</code> crece y decrece automáticamente a medida que añadimos o borramos elementos.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Generics (&lt; T &gt;)</p>
+<p>Verás mucho el símbolo <code>&lt;String&gt;</code>, <code>&lt;Integer&gt;</code>, etc. Esto son <strong>Genéricos</strong>. Sirven para obligar a la lista a aceptar <em>solo</em> un tipo de dato. Es como poner una etiqueta en tu tupper que dice "SOLO LENTEJAS". Si intentas meter macarrones (otro tipo de objeto), el compilador te gritará antes de ejecutar.</p>
+</div>
+<p>Aquí tienes un mapa mental de dónde estamos ubicados en la jerarquía de Java:</p>
+<div class="language-markmap mkdocs-markmap"><markmap-data encoding="base64" hidden="true">IyBKYXZhIENvbGxlY3Rpb24gRnJhbWV3b3JrCgojIyBDb2xsZWN0aW9uIChJbnRlcmZheikKLSAqKkxpc3QgKEludGVyZmF6KSoqCiAgICAtICoqQXJyYXlMaXN0KiogKE51ZXN0cmEgZXN0cmVsbGEgaG95KQogICAgLSBMaW5rZWRMaXN0IChMaXN0YSBlbmxhemFkYSkKICAgIC0gVmVjdG9yIChFbCBhYnVlbG8gb2Jzb2xldG8pCi0gU2V0IChJbnRlcmZheikKICAgIC0gSGFzaFNldAogICAgLSBUcmVlU2V0Ci0gUXVldWUgKEludGVyZmF6KQogICAgLSBQcmlvcml0eVF1ZXVlCgojIyBNYXAgKEludGVyZmF6IEluZGVwZW5kaWVudGUpCi0gSGFzaE1hcAotIFRyZWVNYXA=</markmap-data></div>
+<p><br/></p><hr/><p></p>
+<h2 id="desarrollo-y-ejemplos-practicos">Desarrollo y Ejemplos Prácticos</h2>
+<h3 id="1-creacion-de-arraylist">1. Creación de ArrayList</h3>
+<p>En <strong>Java 21</strong>, tenemos varias formas de instanciar un <code>ArrayList</code>. La evolución del lenguaje nos ha permitido escribir menos código para hacer lo mismo (lo que llamamos "Syntactic Sugar" 🍬).</p>
+<h4 id="forma-clasica-vs-forma-moderna">Forma Clásica vs. Forma Moderna</h4>
+<p>La forma más común utiliza el constructor vacío. Por defecto, Java crea una lista con una capacidad inicial pequeña (normalmente 10 huecos invisibles).</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CreacionListas</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// FORMA CLÁSICA (Antes de Java 7) - Muy verbosa</span>
+<span class="w">        </span><span class="c1">// ArrayList&lt;String&gt; listaNombres = new ArrayList&lt;String&gt;();</span>
+
+<span class="w">        </span><span class="c1">// FORMA ESTÁNDAR (Operador Diamond &lt;&gt;)</span>
+<span class="w">        </span><span class="c1">// Recomendado: Usar la interfaz 'List' a la izquierda (Polimorfismo)</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">estudiantes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// FORMA JAVA 10+ (Inferencia de tipos con 'var')</span>
+<span class="w">        </span><span class="c1">// El compilador deduce que es un ArrayList&lt;String&gt;</span>
+<span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="n">videojuegos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">videojuegos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Elden Ring"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">videojuegos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Hollow Knight"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Mis juegos: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">videojuegos</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="creacion-con-valores-iniciales-listof">Creación con valores iniciales (List.of)</h4>
+<p>A veces ya tienes los datos y no quieres hacer 20 <code>add()</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Cuidado con List.of()</p>
+<p><code>List.of("A", "B")</code> crea una lista <strong>INMUTABLE</strong> (no se puede modificar). Si intentas añadir algo después, el programa explotará (<code>UnsupportedOperationException</code>).
+Para hacerla mutable, pásala al constructor del <code>ArrayList</code>.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CreacionAvanzada</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// 1. Crear una lista inmutable (Java 9+)</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">inmutable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"HTML"</span><span class="p">,</span><span class="w"> </span><span class="s">"CSS"</span><span class="p">,</span><span class="w"> </span><span class="s">"JS"</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// inmutable.add("JAVA"); // ¡ERROR! Boom 💥</span>
+
+<span class="w">        </span><span class="c1">// 2. Crear ArrayList mutable a partir de unos valores (TRUCO PRO)</span>
+<span class="w">        </span><span class="c1">// Creamos un ArrayList nuevo y le volcamos el contenido de List.of</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tecnologiasWeb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"HTML"</span><span class="p">,</span><span class="w"> </span><span class="s">"CSS"</span><span class="p">,</span><span class="w"> </span><span class="s">"JS"</span><span class="p">));</span>
+
+<span class="w">        </span><span class="n">tecnologiasWeb</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"JAVA"</span><span class="p">);</span><span class="w"> </span><span class="c1">// ¡Ahora sí funciona!</span>
+<span class="w">        </span><span class="n">tecnologiasWeb</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"SQL"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Stack Fullstack: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tecnologiasWeb</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="diferencias-clave-en-la-creacion">Diferencias Clave en la Creación</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Método</th>
+<th style="text-align: left;">Mutabilidad</th>
+<th style="text-align: left;">Permite Nulos</th>
+<th style="text-align: left;">Caso de Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>new ArrayList&lt;&gt;()</code></td>
+<td style="text-align: left;"><strong>Sí</strong> (Total)</td>
+<td style="text-align: left;">Sí</td>
+<td style="text-align: left;">Cuando empezarás vacío e irás llenando.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Arrays.asList(...)</code></td>
+<td style="text-align: left;"><strong>Parcial</strong> (Tamaño fijo)</td>
+<td style="text-align: left;">Sí</td>
+<td style="text-align: left;">Puente entre Arrays clásicos y Listas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>List.of(...)</code></td>
+<td style="text-align: left;"><strong>No</strong> (Inmutable)</td>
+<td style="text-align: left;"><strong>No</strong></td>
+<td style="text-align: left;">Constantes, listas de configuración.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>new ArrayList&lt;&gt;(List.of(...))</code></td>
+<td style="text-align: left;"><strong>Sí</strong> (Total)</td>
+<td style="text-align: left;">No (en origen)</td>
+<td style="text-align: left;">Inicializar lista mutable con datos.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ol>
+<li>Si estás creando una lista de los días de la semana para usarla en una validación, ¿usarías <code>new ArrayList</code> o <code>List.of</code>?</li>
+<li>¿Por qué crees que se recomienda declarar la variable como <code>List</code> (interfaz) en lugar de <code>ArrayList</code> (clase)? <em>Pista: Piensa en si mañana quieres cambiar a LinkedList.</em></li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="2-metodos-del-arraylist">2. Métodos del ArrayList</h3>
+<p>A continuación, vamos a diseccionar la clase <code>ArrayList</code>. He agrupado los métodos para que tengan sentido lógico, aunque cubriremos <strong>todos</strong> los solicitados.</p>
+<p>Imagínate que gestionamos una <strong>Playlist de Spotify</strong> colaborativa.</p>
+<h4 id="a-anadir-elementos-add-addall">A. Añadir Elementos (<code>add</code>, <code>addAll</code>)</h4>
+<div class="admonition info inline">
+<p class="admonition-title">Capacidad vs Tamaño</p>
+<p><strong>Capacity</strong>: Cuántos huecos tiene reservados en memoria (interno).
+<strong>Size</strong>: Cuántos elementos reales has metido.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">playlist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="c1">// add(E e): Añade al final. Devuelve boolean (siempre true en ArrayList).</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Bohemian Rhapsody"</span><span class="p">);</span><span class="w"> </span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Despacito"</span><span class="p">);</span>
+
+<span class="c1">// add(int index, E element): Inserta en una posición, desplazando el resto a la derecha.</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">"Imagine"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Se pone la primera</span>
+
+<span class="c1">// addAll(Collection&lt;? extends E&gt; c): Añade toda otra lista al final.</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">rockClassics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"Stairway to Heaven"</span><span class="p">,</span><span class="w"> </span><span class="s">"Hotel California"</span><span class="p">);</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">cambiado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">rockClassics</span><span class="p">);</span>
+
+<span class="c1">// addAll(int index, Collection c): Inserta una colección en una posición específica.</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"Song 2"</span><span class="p">,</span><span class="w"> </span><span class="s">"Wonderwall"</span><span class="p">));</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">playlist</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="b-informacion-basica-size-isempty-contains">B. Información Básica (<code>size</code>, <code>isEmpty</code>, <code>contains</code>)</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// size(): Devuelve el número de elementos (int).</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Canciones totales: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
+
+<span class="c1">// isEmpty(): Devuelve true si no hay elementos.</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">playlist</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡A bailar!"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// contains(Object o): Busca si existe el elemento (usa equals()). Devuelve boolean.</span>
+<span class="c1">// Es muy útil para evitar duplicados manuales.</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">playlist</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">"Despacito"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Oh no, esa canción otra vez no..."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="c-acceso-y-busqueda-get-indexof-lastindexof">C. Acceso y Búsqueda (<code>get</code>, <code>indexOf</code>, <code>lastIndexOf</code>)</h4>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Cuidado con <code>get(index)</code>. Si pides un índice que no existe (ej: índice 10 en lista de 5), obtendrás un <code>IndexOutOfBoundsException</code>. ¡Es el error clásico del novato!</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c1">// get(int index): Devuelve el elemento en esa posición (T).</span>
+<span class="n">String</span><span class="w"> </span><span class="n">primeraCancion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="c1">// indexOf(Object o): Devuelve la posición de la PRIMERA aparición. -1 si no está.</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">posImagine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="s">"Imagine"</span><span class="p">);</span>
+
+<span class="c1">// lastIndexOf(Object o): Devuelve la posición de la ÚLTIMA aparición.</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Imagine"</span><span class="p">);</span><span class="w"> </span><span class="c1">// La añadimos otra vez para probar</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">ultimaPos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">lastIndexOf</span><span class="p">(</span><span class="s">"Imagine"</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Primera aparición: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">posImagine</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", Última: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ultimaPos</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="d-modificacion-y-ordenacion-set-replaceall-sort">D. Modificación y Ordenación (<code>set</code>, <code>replaceAll</code>, <code>sort</code>)</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Comparator</span><span class="p">;</span>
+
+<span class="c1">// set(int index, E element): Reemplaza el elemento en la posición. Devuelve el antiguo.</span>
+<span class="c1">// Cambiamos "Despacito" (si estuviera en pos 2) por algo mejor.</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">"Thunderstruck"</span><span class="p">);</span>
+
+<span class="c1">// replaceAll(UnaryOperator&lt;E&gt; operator): Reemplaza TODOS los elementos según una función lambda.</span>
+<span class="c1">// Ejemplo: Poner todo en mayúsculas.</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">replaceAll</span><span class="p">(</span><span class="n">cancion</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">cancion</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">());</span>
+
+<span class="c1">// sort(Comparator&lt;? super E&gt; c): Ordena la lista.</span>
+<span class="c1">// null -&gt; usa el orden natural (alfabético para Strings).</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span><span class="w"> </span>
+
+<span class="c1">// Orden inverso usando un Comparator</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">reverseOrder</span><span class="p">());</span>
+</code></pre></div>
+<h4 id="e-eliminacion-clear-remove-removeall-removeif-retainall">E. Eliminación (<code>clear</code>, <code>remove</code>, <code>removeAll</code>, <code>removeIf</code>, <code>retainAll</code>)</h4>
+<p>Aquí es donde la gestión dinámica brilla. Borrar en un array normal es una pesadilla (huecos vacíos). Aquí es automático.</p>
+<pre class="mermaid"><code>graph LR
+    A[Lista: A, B, C, D] -- remove(1) --&gt; B[Elimina 'B']
+    B -- Desplaza Izq --&gt; C[Lista: A, C, D]
+    style B fill:#f96,stroke:#333</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">// remove(int index): Borra por posición. Devuelve el elemento borrado.</span>
+<span class="n">String</span><span class="w"> </span><span class="n">borrada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span>
+
+<span class="c1">// remove(Object o): Borra la primera aparición del objeto. Devuelve boolean.</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">fueBorrada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">"WONDERWALL"</span><span class="p">);</span>
+
+<span class="c1">// removeAll(Collection&lt;?&gt; c): Borra de mi lista TODO lo que aparezca en la otra lista.</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">cancionesProhibidas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"DESPACITO"</span><span class="p">,</span><span class="w"> </span><span class="s">"MACARENA"</span><span class="p">);</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">removeAll</span><span class="p">(</span><span class="n">cancionesProhibidas</span><span class="p">);</span>
+
+<span class="c1">// removeIf(Predicate&lt;? super E&gt; filter): Borra si cumple una condición (Lambda).</span>
+<span class="c1">// Ejemplo: Borrar canciones muy cortas o que empiecen por 'T'.</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">removeIf</span><span class="p">(</span><span class="n">cancion</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">cancion</span><span class="p">.</span><span class="na">startsWith</span><span class="p">(</span><span class="s">"T"</span><span class="p">));</span>
+
+<span class="c1">// retainAll(Collection&lt;?&gt; c): "Quédate SOLO con esto". Lo contrario a removeAll.</span>
+<span class="c1">// Borra todo lo que NO esté en la colección pasada.</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">soloRock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"BOHEMIAN RHAPSODY"</span><span class="p">,</span><span class="w"> </span><span class="s">"THUNDERSTRUCK"</span><span class="p">);</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">retainAll</span><span class="p">(</span><span class="n">soloRock</span><span class="p">);</span><span class="w"> </span><span class="c1">// Si 'Imagine' estaba, se borra.</span>
+
+<span class="c1">// clear(): Borra TODO. Reseteo de fábrica.</span>
+<span class="c1">// playlist.clear();</span>
+</code></pre></div>
+<h4 id="f-iteracion-foreach-iterator-listiterator-spliterator">F. Iteración (<code>forEach</code>, <code>iterator</code>, <code>listIterator</code>, <code>spliterator</code>)</h4>
+<p>¿Cómo recorremos la lista? Tienes muchas opciones.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant App
+    participant Iterator
+    participant ArrayList
+
+    App-&gt;&gt;ArrayList: iterator()
+    ArrayList--&gt;&gt;Iterator: crea nuevo
+    loop Mientras hasNext()
+        App-&gt;&gt;Iterator: hasNext()
+        Iterator--&gt;&gt;App: true
+        App-&gt;&gt;Iterator: next()
+        Iterator-&gt;&gt;ArrayList: obtiene elemento
+        ArrayList--&gt;&gt;Iterator: elemento
+        Iterator--&gt;&gt;App: elemento
+    end</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">// forEach(Consumer&lt;? super E&gt; action): La forma moderna y elegante (Lambda).</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">cancion</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Reproduciendo: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cancion</span><span class="p">));</span>
+
+<span class="c1">// iterator(): Devuelve un objeto Iterator estándar.</span>
+<span class="c1">// Útil si necesitas borrar elementos MIENTRAS recorres (aunque removeIf es mejor ahora).</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
+<span class="k">while</span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">it</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Iterando: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// listIterator(): Un iterador más potente. Permite ir hacia atrás y adelante.</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">listIt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">listIterator</span><span class="p">();</span>
+<span class="k">while</span><span class="p">(</span><span class="n">listIt</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span><span class="w"> </span><span class="n">listIt</span><span class="p">.</span><span class="na">next</span><span class="p">();</span><span class="w"> </span><span class="c1">// Vamos al final</span>
+<span class="k">while</span><span class="p">(</span><span class="n">listIt</span><span class="p">.</span><span class="na">hasPrevious</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Vamos marcha atrás</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Rewind: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">listIt</span><span class="p">.</span><span class="na">previous</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="c1">// spliterator(): "Splitable Iterator". Diseñado para procesamiento paralelo.</span>
+<span class="c1">// Raro de usar manualmente en FP, pero es la base de los Streams paralelos.</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">split</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">spliterator</span><span class="p">();</span>
+<span class="c1">// tryAdvance intenta procesar un elemento, devuelve false si no quedan.</span>
+<span class="n">split</span><span class="p">.</span><span class="na">tryAdvance</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Spliterator vio: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">));</span>
+</code></pre></div>
+<h4 id="g-gestion-avanzada-y-conversion-clone-ensurecapacity-sublist-toarray-trimtosize">G. Gestión Avanzada y Conversión (<code>clone</code>, <code>ensureCapacity</code>, <code>subList</code>, <code>toArray</code>, <code>trimToSize</code>)</h4>
+<p>Métodos para optimizar memoria o interactuar con APIs antiguas.</p>
+<p></p><div class="highlight"><pre><span></span><code><span class="c1">// ensureCapacity(int minCapacity): Pre-reserva memoria.</span>
+<span class="c1">// Si sabes que vas a meter 1 millón de datos, haz esto antes para evitar</span>
+<span class="c1">// que Java tenga que redimensionar el array interno 20 veces.</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">numeros</span><span class="p">.</span><span class="na">ensureCapacity</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"> </span>
+
+<span class="c1">// trimToSize(): Reduce la capacidad interna al tamaño actual.</span>
+<span class="c1">// Si reservaste 1000 huecos pero solo usas 5, esto libera memoria.</span>
+<span class="n">numeros</span><span class="p">.</span><span class="na">trimToSize</span><span class="p">();</span>
+
+<span class="c1">// subList(int fromIndex, int toIndex): Crea una VISTA de una parte de la lista.</span>
+<span class="c1">// ¡OJO! No es una copia. Si modificas la sublista, modificas la original.</span>
+<span class="c1">// Rango: [from, to) -&gt; Incluye el inicio, excluye el final.</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">top3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">subList</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">size</span><span class="p">()));</span>
+
+<span class="c1">// clone(): Crea una copia superficial (Shallow Copy) del ArrayList.</span>
+<span class="c1">// Devuelve Object, así que hay que castear.</span>
+<span class="n">Object</span><span class="w"> </span><span class="n">copiaObjeto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">clone</span><span class="p">();</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">copiaLista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">clone</span><span class="p">();</span>
+
+<span class="c1">// toArray(): Convierte la lista en un array clásico [].</span>
+<span class="c1">// Opción 1: Devuelve Object[]</span>
+<span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">arraySimple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">toArray</span><span class="p">();</span>
+
+<span class="c1">// Opción 2: Devuelve T[] (Tipado). Es la recomendada.</span>
+<span class="c1">// Pasamos un array de tamaño 0 para que Java cree uno nuevo del tamaño correcto.</span>
+<span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">arrayTipado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">toArray</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+</code></pre></div>
+<br/><p></p>
+<div class="admonition info">
+<p class="admonition-title">Copia Superficial (Clone)</p>
+<p><code>clone()</code> copia la estructura de la lista, pero <strong>NO</strong> duplica los objetos que contiene. Si la lista contiene objetos complejos (ej: <code>Persona</code>), ambas listas apuntarán a las mismas personas en memoria. Si cambias el nombre de una persona en la lista clonada, ¡cambia en la original!</p>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="3-comparativa-arraylist-vs-array">3. Comparativa: ArrayList vs Array</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Característica</th>
+<th style="text-align: left;">Array Clásico <code>String[]</code></th>
+<th style="text-align: left;">ArrayList <code>ArrayList&lt;String&gt;</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Tamaño</strong></td>
+<td style="text-align: left;">Fijo (nace y muere igual).</td>
+<td style="text-align: left;">Dinámico (crece y decrece).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Rendimiento</strong></td>
+<td style="text-align: left;">Extremadamente rápido.</td>
+<td style="text-align: left;">Ligeramente más lento (por la gestión interna).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tipos</strong></td>
+<td style="text-align: left;">Primitivos (<code>int</code>) y Objetos.</td>
+<td style="text-align: left;">Solo Objetos (usa <code>Integer</code>, no <code>int</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Métodos</strong></td>
+<td style="text-align: left;">Casi ninguno (solo <code>length</code>).</td>
+<td style="text-align: left;">Cientos (<code>add</code>, <code>remove</code>, <code>sort</code>...).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Uso en FP</strong></td>
+<td style="text-align: left;">Algoritmos de bajo nivel.</td>
+<td style="text-align: left;">Desarrollo de Apps, Web, Servicios.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ol>
+<li>¿Qué pasaría si usas <code>subList</code> para obtener una vista, y luego borras un elemento de la lista <strong>original</strong>? (Pista: <code>ConcurrentModificationException</code>).</li>
+<li>¿Por qué <code>ensureCapacity</code> no cambia el <code>size()</code> de la lista?</li>
+<li>Investiga: ¿Qué complejidad Big O tiene el método <code>contains()</code>? ¿Es eficiente para buscar en listas de 1 millón de elementos?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="aplicacion-en-el-mundo-real">Aplicación en el Mundo Real</h2>
+<p>El <code>ArrayList</code> es el "martillo" en la caja de herramientas de cualquier desarrollador Java. Lo usarás para todo:</p>
+<ol>
+<li><strong>Carritos de la Compra (E-commerce):</strong> Cuando añades productos en Amazon, se guardan en una lista asociada a tu sesión. Si borras uno, usas <code>remove()</code>.</li>
+<li><strong>Feeds de Redes Sociales:</strong> Instagram o TikTok cargan los posts en lotes. Empiezan con 10 (una lista). Cuando haces scroll al fondo, piden 10 más al servidor y hacen un <code>addAll()</code> a tu lista local para que sigas viendo contenido sin cortes.</li>
+<li><strong>Gestión de Datos JDBC:</strong> Cuando pides 500 clientes a una base de datos SQL (Tema 2), el driver JDBC recorre los resultados y te devuelve... ¡exacto!, un <code>ArrayList&lt;Cliente&gt;</code>.</li>
+</ol>
+<h2 id="para-saber-mas">Para Saber Más</h2>
+<p>Aquí tienes recursos seleccionados de alta calidad para profundizar (y no, no son de relleno):</p>
+<ul>
+<li>
+<p><strong>Documentación Oficial de Oracle (Java 21)</strong>: La biblia. Siempre hay que ir a la fuente.
+    <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html">https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html</a></p>
+</li>
+<li>
+<p><strong>Baeldung - Guide to Java ArrayList</strong>: Baeldung es el "StackOverflow bien explicado". Sus guías son el estándar de la industria.
+    <a href="https://www.baeldung.com/java-arraylist">https://www.baeldung.com/java-arraylist</a></p>
+</li>
+<li>
+<p><strong>Visualizing Memory Management in Java ArrayList</strong>: Para entender cómo crece el array interno visualmente.
+    <a href="https://www.geeksforgeeks.org/internal-working-of-arraylist-in-java/">https://www.geeksforgeeks.org/internal-working-of-arraylist-in-java/</a></p>
+</li>
+</ul>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script type="text/javascript">(function initializeMarkmap() {
+    const transformer = new markmap.Transformer();
+    const preloadScripts = transformer.plugins
+        .flatMap((plugin) => plugin.config?.preloadScripts || [])
+        .map((item) => transformer.resolveJS(item));
+    const assets = transformer.getAssets();
+    const loading = Promise.all([
+        assets.styles && markmap.loadCSS(assets.styles),
+        markmap.loadJS([...preloadScripts, ...assets.scripts]),
+    ]);
+
+    function parseData(content) {
+        const { root, frontmatter } = transformer.transform(content);
+        let options = markmap.deriveOptions(frontmatter?.markmap);
+        options = Object.assign(
+            {
+                fitRatio: 0.85,
+            },
+            options
+        );
+        return { root, options };
+    }
+
+    function resetMarkmap(m, el) {
+        if (!m.state.rect) return;
+        const { x1, y1, x2, y2 } = m.state.rect;
+        const height = (el.offsetWidth / (x2 - x1)) * (y2 - y1);
+        el.style.height = height + "px";
+        m.fit();
+    }
+
+    function decodeBase64(encoded) {
+        const binary = atob(encoded);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < bytes.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        return new TextDecoder().decode(bytes);
+    }
+
+    function renderMarkmap(el) {
+        const dataEl = el.querySelector("markmap-data");
+        if (!dataEl) return;
+        let content = el.textContent;
+        if (dataEl.getAttribute("encoding") === "base64") {
+            content = decodeBase64(content);
+        }
+        el.innerHTML = "<svg>";
+        svg = el.firstChild;
+        const { root, options } = parseData(content);
+        const m = markmap.Markmap.create(svg, options);
+        m.setData(root);
+        requestAnimationFrame(() => {
+            resetMarkmap(m, el);
+        });
+    }
+
+    function updateMarkmaps(node) {
+        for (const el of node.querySelectorAll(".mkdocs-markmap")) {
+            renderMarkmap(el);
+        }
+    }
+
+    loading.then(() => {
+        const observer = new MutationObserver((mutationList) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "childList") {
+                    for (const node of mutation.addedNodes) {
+                        updateMarkmaps(node);
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true });
+
+        updateMarkmaps(document);
+    });
+})();
+</script></body></html>

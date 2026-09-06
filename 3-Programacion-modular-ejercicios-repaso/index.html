@@ -1,0 +1,1724 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Ejercicios de Funciones y Procedimientos en Java - PROG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ejercicios-de-funciones-y-procedimientos-en-java" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PROG" class="md-header__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PROG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ejercicios de Funciones y Procedimientos en Java
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../1-Introduccion-programacion/" class="md-tabs__link">
+          
+  
+  
+  Programación
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PROG" class="md-nav__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    PROG
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-Introduccion-programacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-Programacion-estructurada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-Programacion-modular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-Estructuras-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-POO-Clases-y-Objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-POO-Uso-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-Estructuras-datos-dinamicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-Programacion-funcional-Streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-Ficheros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-Acceso-base-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-Interfaces-graficas-MVC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#nivel-padawan-1-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nivel PADAWAN (1 - 10)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nivel PADAWAN (1 - 10)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1-duplicar-valor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 1: Duplicar Valor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-2-saludo-personalizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 2: Saludo Personalizado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-3-area-de-un-rectangulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 3: Área de un Rectángulo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-4-verificacion-de-paridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 4: Verificación de Paridad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-5-mayor-de-dos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 5: Mayor de Dos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-6-imprimir-secuencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 6: Imprimir Secuencia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-7-conversion-a-mayusculas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 7: Conversión a Mayúsculas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-8-esta-en-rango" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 8: ¿Está en Rango?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-9-generar-pin-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 9: Generar PIN Simple
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-10-sumar-tres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 10: Sumar Tres
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nivel-jedi-11-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nivel JEDI (11 - 20)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nivel JEDI (11 - 20)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-11-suma-de-rango" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 11: Suma de Rango
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-12-clasificacion-de-nota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 12: Clasificación de Nota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-13-numero-de-digitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 13: Número de Dígitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-14-potencia-sin-mathpow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 14: Potencia (Sin Math.pow)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-15-factorial-con-condicional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 15: Factorial con Condicional
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-16-hipotenusa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 16: Hipotenusa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-17-triangulo-equilatero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 17: Triángulo Equilátero
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-18-convertir-a-minutos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 18: Convertir a Minutos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-19-validar-dninif-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 19: Validar DNI/NIF (Módulo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-20-conteo-de-vocales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 20: Conteo de Vocales
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nivel-maestro-jedi-21-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nivel MAESTRO JEDI (21 - 30)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nivel MAESTRO JEDI (21 - 30)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-21-conversion-de-temperatura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 21: Conversión de Temperatura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-22-encontrar-el-minimo-comun-multiplo-mcm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 22: Encontrar el Mínimo Común Múltiplo (MCM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-23-invertir-numero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 23: Invertir Número
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-24-es-palindromo-numerico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 24: Es Palíndromo Numérico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-25-dibujar-linea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 25: Dibujar Línea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-26-simulacion-de-dado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 26: Simulación de Dado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-27-promedio-ponderado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 27: Promedio Ponderado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-28-caracter-al-reves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 28: Carácter al Revés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-29-es-multiplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 29: Es Múltiplo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-30-dibujar-barra-de-progreso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 30: Dibujar Barra de Progreso
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ejercicios-de-funciones-y-procedimientos-en-java">Ejercicios de Funciones y Procedimientos en Java</h1>
+<hr>
+<h2 id="nivel-padawan-1-10">Nivel PADAWAN (1 - 10)</h2>
+<p>Ejercicios centrados en la sintaxis básica de funciones con uno o dos parámetros y retornos simples.</p>
+<h3 id="ejercicio-1-duplicar-valor">Ejercicio 1: Duplicar Valor</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba un número entero (<code>N</code>) y devuelva el doble de ese valor.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> Define la función para que acepte un <code>int</code> y devuelva un <code>int</code>.<ul>
+<li><em>Comprobación (Trazas):</em> El cuerpo de la función debe ser <code>public static int duplicar(int n)</code>.</li>
+</ul>
+</li>
+<li><strong>Cálculo:</strong> Dentro de la función, multiplica el parámetro por 2.<ul>
+<li><em>Comprobación (Trazas):</em> Si se llama con <code>duplicar(7)</code>, la operación es 7 * 2 = 14. El retorno debe ser 14.</li>
+</ul>
+</li>
+<li><strong>Llamada y Uso:</strong> Desde el método <code>main</code>, llama a la función con un valor y almacena el resultado en una variable para imprimirlo.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Cálculo de tarifas o precios que tienen una duplicación por promoción, o el cálculo de memoria requerida para una estructura de datos simple.</p>
+</div>
+<h3 id="ejercicio-2-saludo-personalizado">Ejercicio 2: Saludo Personalizado</h3>
+<p><strong>Enunciado:</strong> Crea un procedimiento que reciba el nombre y la hora actual (enteros) y muestre un saludo formal por consola, adaptando el saludo si la hora es antes o después de las 12 del mediodía.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> Define un procedimiento (<code>void</code>) que acepte un <code>String nombre</code> y un <code>int hora</code>.<ul>
+<li><em>Comprobación (Trazas):</em> La firma debe ser <code>public static void saludar(String nombre, int hora)</code>.</li>
+</ul>
+</li>
+<li><strong>Lógica Condicional:</strong> Dentro del procedimiento, usa una sentencia <code>if/else</code> para comprobar si <code>hora</code> es menor o igual a 12.</li>
+<li><strong>Impresión:</strong> Imprime un mensaje diferente ("Buenos días, " vs. "Buenas tardes, ") basado en la condición, concatenando el <code>nombre</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Si se llama con <code>saludar("Ana", 10)</code>, el output debe ser "Buenos días, Ana".</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Módulos de bienvenida en sistemas de <em>login</em> o <em>dashboards</em> que personalizan la interacción según la hora del día.</p>
+</div>
+<h3 id="ejercicio-3-area-de-un-rectangulo">Ejercicio 3: Área de un Rectángulo</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba dos números de punto flotante (<code>double</code>) correspondientes a la base y la altura de un rectángulo y devuelva su área.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> La función debe recibir dos <code>double</code> y devolver un <code>double</code>.</li>
+<li><strong>Cálculo:</strong> La lógica de la función es simplemente la multiplicación de los dos parámetros: <code>return base * altura;</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Si se llama con <code>areaRectangulo(5.0, 3.0)</code>, el resultado debe ser 5.0 * 3.0 = 15.0.</li>
+</ul>
+</li>
+<li><strong>Invocación:</strong> Llama a la función desde <code>main</code> e imprime el resultado.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Módulos de cálculo geométrico en diseño asistido por ordenador (CAD) o videojuegos 2D.</p>
+</div>
+<h3 id="ejercicio-4-verificacion-de-paridad">Ejercicio 4: Verificación de Paridad</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba un número entero y devuelva un <code>boolean</code> que indique si el número es par (<code>true</code>) o impar (<code>false</code>).</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> La función debe recibir un <code>int</code> y devolver un <code>boolean</code>.</li>
+<li><strong>Cálculo Módulo:</strong> Utiliza el operador módulo (<code>%</code>) para comprobar la paridad. Un número es par si su residuo al dividirlo por 2 es 0.</li>
+<li><strong>Retorno:</strong> Devuelve el resultado de la expresión lógica: <code>return n % 2 == 0;</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Si se llama con <code>esPar(4)</code>, 4 % 2 = 0, que es <code>true</code>. Si se llama con <code>esPar(5)</code>, 5 % 2 = 1, que es <code>false</code>.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Filtrado de datos en sistemas de procesamiento por lotes o asignación de tareas a procesadores según su índice de trabajo.</p>
+</div>
+<h3 id="ejercicio-5-mayor-de-dos">Ejercicio 5: Mayor de Dos</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba dos números enteros y devuelva el valor del número mayor.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> La función debe aceptar dos <code>int</code> y devolver un <code>int</code>.</li>
+<li><strong>Lógica Condicional:</strong> Utiliza una sentencia <code>if/else</code> o el operador ternario para comparar los dos parámetros y retornar el más grande.<ul>
+<li><em>Comprobación (Trazas):</em> Si se llama con <code>mayor(10, 20)</code>, la condición 10 &gt; 20 es <code>false</code>, por lo que debe devolver 20. Si se llama con <code>mayor(50, 50)</code>, puede devolver cualquiera de los dos.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Algoritmos de ordenamiento simple o la comparación de métricas de rendimiento (ej. CPU vs. RAM) para tomar una decisión.</p>
+</div>
+<h3 id="ejercicio-6-imprimir-secuencia">Ejercicio 6: Imprimir Secuencia</h3>
+<p><strong>Enunciado:</strong> Crea un procedimiento que reciba un número entero (<code>N</code>) y muestre todos los números enteros desde 1 hasta <code>N</code>.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> Procedimiento (<code>void</code>) que acepta un <code>int n</code>.</li>
+<li><strong>Bucle:</strong> Dentro del procedimiento, utiliza un bucle <code>for</code> que itere desde <code>i=1</code> hasta <code>n</code>.</li>
+<li><strong>Impresión:</strong> En cada iteración, imprime el valor del contador <code>i</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Si se llama con <code>imprimirSecuencia(5)</code>, el bucle debe imprimir <code>1, 2, 3, 4, 5</code>.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Generación de índices o secuencias de identificación en un sistema de impresión de etiquetas o códigos.</p>
+</div>
+<h3 id="ejercicio-7-conversion-a-mayusculas">Ejercicio 7: Conversión a Mayúsculas</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba una letra (<code>char</code>) minúscula y devuelva su equivalente en mayúscula. No uses funciones de librería (solo aritmética ASCII).</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> La función debe recibir un <code>char</code> y devolver un <code>char</code>.</li>
+<li><strong>Conversión ASCII:</strong> El código ASCII de una minúscula es exactamente 32 unidades mayor que el código de su mayúscula correspondiente. La operación es: <code>return (char) (letra - 32);</code>.<ul>
+<li><em>Comprobación (Trazas):</em> La 'a' es ASCII 97. 97 - 32 = 65, que es 'A'.</li>
+</ul>
+</li>
+<li><strong>Llamada:</strong> Prueba la función con un carácter minúscula desde <code>main</code>.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Sistemas de validación de entrada de datos donde se requiere estandarizar el texto a un formato específico, como códigos de producto.</p>
+</div>
+<h3 id="ejercicio-8-esta-en-rango">Ejercicio 8: ¿Está en Rango?</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba un número entero y dos límites (mínimo y máximo). La función debe devolver <code>true</code> si el número se encuentra dentro del rango (inclusivo) o <code>false</code> en caso contrario.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> La función debe aceptar tres <code>int</code> y devolver un <code>boolean</code>.</li>
+<li><strong>Lógica Compuesta:</strong> La condición es una conjunción de dos cheques: (<code>numero &gt;= min</code> <strong>Y</strong> <code>numero &lt;= max</code>).</li>
+<li><strong>Retorno:</strong> Devuelve el resultado de esta expresión lógica compuesta.<ul>
+<li><em>Comprobación (Trazas):</em> Si se llama con <code>estaEnRango(15, 10, 20)</code>, devuelve <code>true</code>. Si se llama con <code>estaEnRango(5, 10, 20)</code>, devuelve <code>false</code>.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Validación de formularios en el servidor para asegurar que la edad, la cantidad o la puntuación introducida se encuentra dentro de los límites esperados.</p>
+</div>
+<h3 id="ejercicio-9-generar-pin-simple">Ejercicio 9: Generar PIN Simple</h3>
+<p><strong>Enunciado:</strong> Crea una función que no reciba parámetros y devuelva un número entero aleatorio entre 1000 y 9999 (un PIN de 4 dígitos).</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> La función no acepta parámetros y devuelve un <code>int</code>.</li>
+<li><strong>Cálculo Aleatorio:</strong> Utiliza la función <code>Math.random()</code>. La fórmula general para un rango <code>[min, max]</code> es <code>(int) (Math.random() * (max - min + 1) + min)</code>.</li>
+<li><strong>Implementación:</strong> El cálculo específico es <code>(int) (Math.random() * 9000 + 1000)</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Llama a la función 3 veces. Verifica que todos los resultados sean números de 4 dígitos (entre 1000 y 9999).</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Generación de códigos OTP (One-Time Password) o números de referencia temporales para transacciones.</p>
+</div>
+<h3 id="ejercicio-10-sumar-tres">Ejercicio 10: Sumar Tres</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba tres números de punto flotante (<code>double</code>) y devuelva la suma de los tres.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> La función debe aceptar tres <code>double</code> y devolver un <code>double</code>.</li>
+<li><strong>Cálculo:</strong> La función retorna <code>num1 + num2 + num3;</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Si se llama con <code>sumarTres(1.5, 2.0, 3.5)</code>, el resultado debe ser 7.0.</li>
+</ul>
+</li>
+<li><strong>Llamada:</strong> Llama a la función en <code>main</code>.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Totalización de cuentas de cliente que incluyen un subtotal, impuestos y costes de envío.</p>
+</div>
+<hr>
+<h2 id="nivel-jedi-11-20">Nivel JEDI (11 - 20)</h2>
+<p>Ejercicios que requieren lógica condicional más elaborada, bucles internos o cálculos matemáticos complejos dentro de la función.</p>
+<h3 id="ejercicio-11-suma-de-rango">Ejercicio 11: Suma de Rango</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba dos enteros <code>A</code> y <code>B</code> y devuelva la suma de todos los números enteros comprendidos entre <code>A</code> y <code>B</code> (ambos inclusive).</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma y Acumulador:</strong> La función recibe dos <code>int</code> y devuelve un <code>int</code>. Inicializa <code>suma = 0</code>.</li>
+<li><strong>Bucle Interno:</strong> Implementa un bucle <code>for</code> que recorra desde el menor de los parámetros hasta el mayor. Asume que <code>A</code> &lt; <code>B</code> por ahora.</li>
+<li><strong>Acumulación:</strong> Dentro del bucle, <code>suma += i;</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Si se llama con <code>sumaRango(3, 5)</code>, la suma debe ser 3+4+5=12.</li>
+</ul>
+</li>
+<li><strong>Lógica de Orden (Ampliación):</strong> Añade una lógica al inicio para asegurar que el bucle siempre vaya del menor al mayor, incluso si el usuario llama con <code>sumaRango(5, 3)</code>. (Usa un <code>if</code> para determinar el orden).</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Cálculo de series matemáticas o la totalización de recursos consumidos durante un período de tiempo definido por un índice inicial y final.</p>
+</div>
+<h3 id="ejercicio-12-clasificacion-de-nota">Ejercicio 12: Clasificación de Nota</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba una nota entera (de 0 a 10) y devuelva una cadena de texto (<code>String</code>) con su calificación ("Sobresaliente", "Notable", "Aprobado", "Suspenso").</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma y Casos Base:</strong> Recibe un <code>int nota</code> y devuelve un <code>String</code>. Inicializa la cadena de resultado.</li>
+<li><strong>Lógica <code>if-else if</code>:</strong> Utiliza una estructura condicional anidada para cubrir los rangos:<ul>
+<li><code>if (nota &gt;= 9)</code>: "Sobresaliente".</li>
+<li><code>else if (nota &gt;= 7)</code>: "Notable".</li>
+<li><code>else if (nota &gt;= 5)</code>: "Aprobado".</li>
+<li><code>else</code>: "Suspenso".</li>
+<li><em>Comprobación (Trazas):</em> Prueba <code>calificar(8)</code> debe devolver "Notable". Prueba <code>calificar(4)</code> debe devolver "Suspenso".</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Sistemas académicos o de evaluación de personal para convertir puntuaciones numéricas en categorías cualitativas.</p>
+</div>
+<h3 id="ejercicio-13-numero-de-digitos">Ejercicio 13: Número de Dígitos</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba un número entero positivo y devuelva la cantidad de dígitos que contiene.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma y Contador:</strong> Recibe un <code>int n</code> y devuelve un <code>int</code>. Inicializa <code>contador = 0</code>.</li>
+<li><strong>Bucle de División:</strong> Utiliza un bucle <code>while</code> que se ejecute mientras <code>N</code> sea mayor que 0.</li>
+<li><strong>Recorte y Conteo:</strong> Dentro del bucle, divide <code>N</code> entre 10 (<code>n = n / 10;</code>) y en el mismo paso incrementa el contador.<ul>
+<li><em>Comprobación (Trazas):</em> Simula <code>N=543</code>.<ul>
+<li>Iteración 1: <code>n=54</code>, <code>contador=1</code>.</li>
+<li>Iteración 2: <code>n=5</code>, <code>contador=2</code>.</li>
+<li>Iteración 3: <code>n=0</code>, <code>contador=3</code>. Fin. El resultado es 3.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Validación de longitud de campos numéricos (ej. código postal, DNI) o conversión de números a formato de texto para reportes.</p>
+</div>
+<h3 id="ejercicio-14-potencia-sin-mathpow">Ejercicio 14: Potencia (Sin <code>Math.pow</code>)</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba una base entera <code>A</code> y un exponente entero positivo <code>B</code> y calcule el valor <code>A</code> elevado a <code>B</code> sin usar el operador de potencia nativo ni <code>Math.pow()</code>.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma y Resultado:</strong> Recibe dos <code>int</code> y devuelve un <code>int</code>. Inicializa <code>resultado = 1</code>.</li>
+<li><strong>Bucle de Multiplicación:</strong> Implementa un bucle <code>for</code> que se ejecute <code>B</code> veces (de <code>i=1</code> a <code>B</code>).</li>
+<li><strong>Multiplicación Acumulativa:</strong> Dentro del bucle, multiplica el resultado por la base: <code>resultado *= base;</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Simula <code>A=3</code>, <code>B=4</code>.<ul>
+<li>Iteración 1: 1 * 3 = 3.</li>
+<li>Iteración 2: 3 * 3 = 9.</li>
+<li>Iteración 3: 9 * 3 = 27.</li>
+<li>Iteración 4: 27 * 3 = 81.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Implementación de lógica matemática en entornos de programación de bajo nivel o en la creación de bibliotecas personalizadas.</p>
+</div>
+<h3 id="ejercicio-15-factorial-con-condicional">Ejercicio 15: Factorial con Condicional</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba un número entero <code>N</code> y calcule su factorial <code>N!</code>. La función debe devolver 1 si <code>N</code> es 0, y el factorial si <code>N</code> es positivo. Si <code>N</code> es negativo, debe devolver -1 (como código de error).</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Validación de Error:</strong> Usa un <code>if</code> para el caso de error: <code>if (n &lt; 0)</code> devuelve -1.</li>
+<li><strong>Caso Base 0!:</strong> Usa un <code>else if</code> para el caso <code>N=0</code>, devolviendo 1.</li>
+<li><strong>Bucle (Factorial):</strong> En el bloque <code>else</code> (para <code>N &gt; 0</code>), implementa el bucle de multiplicación para el cálculo del factorial (ver Ejercicio 11/Padawan para la lógica de bucle).<ul>
+<li><em>Comprobación (Trazas):</em> Prueba <code>factorial(-5)</code> (devuelve -1). Prueba <code>factorial(3)</code> (devuelve 6).</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Algoritmos que requieren un resultado matemático complejo y deben incorporar una verificación de parámetros para manejar entradas inválidas.</p>
+</div>
+<h3 id="ejercicio-16-hipotenusa">Ejercicio 16: Hipotenusa</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba las longitudes de los dos catetos de un triángulo rectángulo y devuelva la longitud de la hipotenusa (usando el Teorema de Pitágoras y <code>Math.sqrt()</code>).</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> La función recibe dos <code>double</code> y devuelve un <code>double</code>.</li>
+<li><strong>Cálculo al Cuadrado:</strong> Calcula la suma de los catetos al cuadrado: <code>sumaCuadrados = (cateto1 * cateto1) + (cateto2 * cateto2);</code>.</li>
+<li><strong>Raíz Cuadrada:</strong> Aplica la raíz cuadrada al resultado usando <code>Math.sqrt()</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Si se llama con <code>hipotenusa(3.0, 4.0)</code>, la suma de cuadrados es 9.0 + 16.0 = 25.0. La raíz cuadrada es 5.0.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Cálculo de distancias euclídeas en sistemas de navegación (GPS) o en gráficos 3D para determinar la longitud de un vector.</p>
+</div>
+<h3 id="ejercicio-17-triangulo-equilatero">Ejercicio 17: Triángulo Equilátero</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba las longitudes de tres lados y devuelva <code>true</code> si pueden formar un triángulo equilátero, o <code>false</code> en caso contrario.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> La función acepta tres <code>double</code> y devuelve un <code>boolean</code>.</li>
+<li><strong>Lógica de Equilátero:</strong> La condición para ser equilátero es que todos los lados sean iguales.</li>
+<li><strong>Retorno:</strong> Devuelve el resultado de la expresión lógica: <code>return (ladoA == ladoB) &amp;&amp; (ladoB == ladoC);</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Prueba <code>esEquilatero(5.0, 5.0, 5.0)</code> (devuelve <code>true</code>). Prueba <code>esEquilatero(5.0, 5.0, 4.0)</code> (devuelve <code>false</code>).</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Lógica de motor de geometría en el desarrollo de videojuegos o aplicaciones de realidad aumentada.</p>
+</div>
+<h3 id="ejercicio-18-convertir-a-minutos">Ejercicio 18: Convertir a Minutos</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba dos enteros que representan una cantidad de horas y minutos, y devuelva la cantidad total de minutos que representan.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> La función recibe <code>int horas</code> y <code>int minutos</code> y devuelve un <code>int</code>.</li>
+<li><strong>Conversión de Horas:</strong> Calcula los minutos contenidos en las horas: <code>minutosHoras = horas * 60;</code>.</li>
+<li><strong>Suma:</strong> Suma este resultado a los minutos originales y retorna el total.<ul>
+<li><em>Comprobación (Trazas):</em> Si se llama con <code>totalMinutos(2, 30)</code>:<ul>
+<li>2 * 60 = 120.</li>
+<li>120 + 30 = 150. El resultado es 150.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Sistemas de planificación de tareas (scheduling) o gestión de tiempo que necesitan trabajar con unidades de tiempo atómicas.</p>
+</div>
+<h3 id="ejercicio-19-validar-dninif-modulo">Ejercicio 19: Validar DNI/NIF (Módulo)</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba un número entero de 8 dígitos y devuelva el carácter correspondiente de la letra del DNI/NIF. (La letra se obtiene del residuo de dividir el número entre 23, y usar una secuencia fija de 23 letras: <code>TRWAGMYFPDXBNJZSQVHLCKE</code>).</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Cadena Constante:</strong> En el <code>main</code> o dentro de la función (como constante), define la cadena <code>LETRAS = "TRWAGMYFPDXBNJZSQVHLCKE"</code>.</li>
+<li><strong>Cálculo del Módulo:</strong> Dentro de la función, calcula el índice: <code>indice = numero % 23</code>.</li>
+<li><strong>Extracción de Carácter:</strong> El carácter se extrae usando el índice sobre la cadena de letras. Puedes usar <code>LETRAS.charAt(indice)</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Si el número es 12345678, el módulo es 11. El carácter en la posición 11 de la cadena (empezando en 0) es 'D'.</li>
+</ul>
+</li>
+<li><strong>Retorno:</strong> La función devuelve el <code>char</code> de la letra.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Validación de identidad en sistemas de registro o gestión de bases de datos gubernamentales.</p>
+</div>
+<h3 id="ejercicio-20-conteo-de-vocales">Ejercicio 20: Conteo de Vocales</h3>
+<p><strong>Enunciado:</strong> Crea un procedimiento que reciba un carácter y, mediante un <code>switch</code> o <code>if/else if</code> anidados, imprima si es una vocal ('a', 'e', 'i', 'o', 'u') o una consonante. (Asume que solo se ingresan letras minúsculas).</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> Procedimiento (<code>void</code>) que acepta un <code>char letra</code>.</li>
+<li><strong>Lógica <code>switch</code> (Recomendado):</strong> Utiliza una sentencia <code>switch</code> que tenga 5 casos (<code>case 'a'</code>, <code>case 'e'</code>, etc.).</li>
+<li><strong>Impresión:</strong> Dentro de los <code>case</code> de vocal, imprime "Vocal". Utiliza el <code>default</code> para el caso de "Consonante".<ul>
+<li><em>Comprobación (Trazas):</em> Prueba <code>clasificarLetra('o')</code> (imprime "Vocal"). Prueba <code>clasificarLetra('b')</code> (imprime "Consonante").</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Análisis de texto simple o pre-procesamiento de datos lingüísticos en sistemas de inteligencia artificial.</p>
+</div>
+<hr>
+<h2 id="nivel-maestro-jedi-21-30">Nivel MAESTRO JEDI (21 - 30)</h2>
+<p>Ejercicios que requieren un diseño de función modular, simulación de recursividad (mediante bucles), o lógica de biblioteca.</p>
+<h3 id="ejercicio-21-conversion-de-temperatura">Ejercicio 21: Conversión de Temperatura</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba una temperatura en grados Celsius (<code>double</code>) y devuelva su equivalente en grados Fahrenheit. (Fórmula: F = C * (9/5) + 32).</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> Recibe un <code>double celsius</code> y devuelve un <code>double</code>.</li>
+<li><strong>Cálculo de Factor:</strong> Asegúrate de que la operación 9/5 se realice usando aritmética de punto flotante (9.0/5.0) para evitar que Java realice una división entera.</li>
+<li><strong>Implementación de Fórmula:</strong> <code>return celsius * (9.0 / 5.0) + 32.0;</code>.<ul>
+<li><em>Comprobación (Trazas):</em> La temperatura de congelación es 0°C, que debe dar 32.0°F.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Sistemas de monitoreo climático o aplicaciones de utilidad para viajeros que requieren conversión de unidades.</p>
+</div>
+<h3 id="ejercicio-22-encontrar-el-minimo-comun-multiplo-mcm">Ejercicio 22: Encontrar el Mínimo Común Múltiplo (MCM)</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba dos enteros <code>A</code> y <code>B</code> y devuelva su Mínimo Común Múltiplo (MCM). (Fórmula: MCM(A, B) = (|A * B|) / MCD(A, B)). Para este ejercicio, debes simular la lógica de buscar el MCD mediante un bucle, si la función no existiera, y luego aplicarlo.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>MCD (Algoritmo de Euclides, Simulado en Bucle):</strong> Crea la lógica de una función que encuentre el Máximo Común Divisor (MCD) utilizando el algoritmo de Euclides (simulación de bucle de división y módulo) para obtener el divisor.</li>
+<li><strong>Fórmula MCM:</strong> Aplica la fórmula principal. Utiliza <code>Math.abs()</code> para obtener el valor absoluto del producto.</li>
+<li><strong>Cálculo y Retorno:</strong> Devuelve el resultado de la división entre el producto absoluto y el MCD encontrado.<ul>
+<li><em>Comprobación (Trazas):</em> Si <code>A=4</code> y <code>B=6</code>. MCD(4, 6)=2. El MCM debe ser (4 * 6) / 2 = 12.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Algoritmos de tiempo, como la planificación de eventos recurrentes (ej. dos trenes salen cada 4 y 6 horas, ¿cuándo salen juntos?).</p>
+</div>
+<h3 id="ejercicio-23-invertir-numero">Ejercicio 23: Invertir Número</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba un número entero positivo y devuelva un nuevo entero con los dígitos del número original invertidos (ej. 1234 devuelve 4321).</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma y Acumulador:</strong> Recibe un <code>int n</code> y devuelve un <code>int</code>. Inicializa <code>invertido = 0</code>.</li>
+<li><strong>Bucle de Descomposición:</strong> Utiliza un bucle <code>while</code> mientras <code>N</code> &gt; 0.</li>
+<li><strong>Extracción/Recomposición:</strong> Dentro del bucle:<ul>
+<li>Obtén el último dígito: <code>digito = n % 10;</code>.</li>
+<li>Añade el dígito al resultado: <code>invertido = (invertido * 10) + digito;</code>.</li>
+<li>Recorta el número original: <code>n = n / 10;</code>.</li>
+<li><em>Comprobación (Trazas):</em> Simula <code>N=123</code>.<ul>
+<li>Iteración 1: 123 % 10 = 3. <code>invertido=3</code>. 123 / 10 = 12.</li>
+<li>Iteración 2: 12 % 10 = 2. <code>invertido=32</code>. 12 / 10 = 1.</li>
+<li>Iteración 3: 1 % 10 = 1. <code>invertido=321</code>. 1 / 10 = 0.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Verificación de números palíndromos o procesamiento de secuencias codificadas.</p>
+</div>
+<h3 id="ejercicio-24-es-palindromo-numerico">Ejercicio 24: Es Palíndromo Numérico</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba un número entero y devuelva <code>true</code> si es un palíndromo (se lee igual al derecho que al revés), o <code>false</code> en caso contrario. <strong>Debe reutilizar la lógica de inversión del número de forma conceptual.</strong></p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Lógica Inversora (Delegación Conceptual):</strong> Duplica la lógica de inversión del Ejercicio 23 <em>dentro</em> de esta función. Guarda el número original en una variable auxiliar <em>antes</em> de invertirlo.</li>
+<li><strong>Comparación:</strong> Compara el número original (<code>auxiliar</code>) con el número invertido.</li>
+<li><strong>Retorno:</strong> Devuelve el resultado de la comparación lógica.<ul>
+<li><em>Comprobación (Trazas):</em> Si <code>N=121</code>. Invertido es 121. La función debe devolver <code>true</code>. Si <code>N=123</code>. Invertido es 321. La función debe devolver <code>false</code>.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Algoritmos de procesamiento de datos para verificar la integridad o el formato de secuencias numéricas.</p>
+</div>
+<h3 id="ejercicio-25-dibujar-linea">Ejercicio 25: Dibujar Línea</h3>
+<p><strong>Enunciado:</strong> Crea un procedimiento que reciba un carácter y un entero <code>N</code> y muestre <code>N</code> veces ese carácter en la misma línea, seguido de un salto de línea.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma y Longitud:</strong> Procedimiento (<code>void</code>) que acepta un <code>char c</code> y un <code>int n</code>.</li>
+<li><strong>Bucle de Impresión:</strong> Utiliza un bucle <code>for</code> de 0 a <code>N-1</code>.</li>
+<li><strong>Impresión sin Salto:</strong> Dentro del bucle, utiliza <code>System.out.print(c)</code> (sin <code>ln</code>) para mantener la impresión en la misma línea.</li>
+<li><strong>Salto de Línea:</strong> Después de que el bucle termine, usa <code>System.out.println()</code> (sin parámetros) para avanzar a la siguiente línea.<ul>
+<li><em>Comprobación (Trazas):</em> Si se llama con <code>dibujarLinea('*', 5)</code>, debe imprimir <code>*****</code> en una sola línea, y el cursor debe quedar debajo.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Generación de reportes de texto, barras de progreso o la construcción de interfaces de consola.</p>
+</div>
+<h3 id="ejercicio-26-simulacion-de-dado">Ejercicio 26: Simulación de Dado</h3>
+<p><strong>Enunciado:</strong> Crea una función que no reciba parámetros y simule el lanzamiento de un dado de 6 caras, devolviendo un entero entre 1 y 6.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> Función sin parámetros que devuelve un <code>int</code>.</li>
+<li><strong>Generación Aleatoria:</strong> Usa <code>Math.random()</code>. La fórmula general para un rango <code>[1, 6]</code> es <code>(int) (Math.random() * 6 + 1)</code>.</li>
+<li><strong>Retorno:</strong> Devuelve el resultado del cálculo.<ul>
+<li><em>Comprobación (Trazas):</em> Llama a la función 10 veces y verifica que el resultado nunca sea menor que 1 ni mayor que 6.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Núcleo de sistemas de juegos de mesa, módulos de probabilidad o simulación de eventos aleatorios.</p>
+</div>
+<h3 id="ejercicio-27-promedio-ponderado">Ejercicio 27: Promedio Ponderado</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba dos notas y sus respectivos porcentajes de peso (peso1, peso2). Devuelve el promedio ponderado de las dos notas. (Asume que peso1 + peso2 = 100).</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> La función recibe cuatro <code>double</code> (nota1, peso1, nota2, peso2) y devuelve un <code>double</code>.</li>
+<li><strong>Cálculo Ponderado:</strong> El cálculo es: <code>((nota1 * peso1) + (nota2 * peso2)) / 100.0</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Si Nota A es 10 con 30% y Nota B es 5 con 70%. El cálculo es ((10 * 30) + (5 * 70)) / 100 = (300 + 350) / 100 = 6.5.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Sistemas académicos para calcular la nota final de un curso donde diferentes actividades tienen pesos distintos.</p>
+</div>
+<h3 id="ejercicio-28-caracter-al-reves">Ejercicio 28: Carácter al Revés</h3>
+<p><strong>Enunciado:</strong> Crea un procedimiento que reciba una palabra (<code>String</code>) e imprima esa palabra al revés.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma y Longitud:</strong> Procedimiento (<code>void</code>) que acepta un <code>String palabra</code>. Obtén la longitud de la palabra con <code>palabra.length()</code>.</li>
+<li><strong>Bucle Decremental:</strong> Utiliza un bucle <code>for</code> que comience en el índice final de la cadena (<code>length - 1</code>) y vaya hasta 0 (inclusivo).</li>
+<li><strong>Impresión de Carácter:</strong> Dentro del bucle, imprime el carácter en el índice actual usando <code>palabra.charAt(i)</code>. Usa <code>print</code> (sin <code>ln</code>).<ul>
+<li><em>Comprobación (Trazas):</em> Si <code>palabra="HOLA"</code>.<ul>
+<li><code>i=3</code>: imprime 'A'.</li>
+<li><code>i=2</code>: imprime 'L'.</li>
+<li><code>i=1</code>: imprime 'O'.</li>
+<li><code>i=0</code>: imprime 'H'. Salida: ALOH.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Pre-procesamiento de datos o validación de cadenas para análisis.</p>
+</div>
+<h3 id="ejercicio-29-es-multiplo">Ejercicio 29: Es Múltiplo</h3>
+<p><strong>Enunciado:</strong> Crea una función que reciba dos números enteros <code>A</code> y <code>B</code> y devuelva <code>true</code> si <code>A</code> es múltiplo de <code>B</code>, o <code>false</code> en caso contrario.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> La función recibe dos <code>int</code> y devuelve un <code>boolean</code>.</li>
+<li><strong>Lógica Módulo:</strong> Un número <code>A</code> es múltiplo de <code>B</code> si el residuo de la división de <code>A</code> entre <code>B</code> es 0.</li>
+<li><strong>Retorno:</strong> Devuelve el resultado de la expresión: <code>return a % b == 0;</code>.<ul>
+<li><em>Comprobación (Trazas):</em> Prueba <code>esMultiplo(10, 5)</code>. 10 % 5 = 0, <code>true</code>. Prueba <code>esMultiplo(10, 3)</code>. 10 % 3 = 1, <code>false</code>.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Filtros de ciclos o periodos en sistemas de calendario y planificación (ej. ¿ocurre un evento cada 3 días?).</p>
+</div>
+<h3 id="ejercicio-30-dibujar-barra-de-progreso">Ejercicio 30: Dibujar Barra de Progreso</h3>
+<p><strong>Enunciado:</strong> Crea un procedimiento que reciba un entero entre 0 y 100 (porcentaje) y muestre una barra de progreso de 20 caracteres de longitud en la consola, usando el carácter <code>#</code> para el progreso y <code>-</code> para el resto.</p>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma y Parámetros:</strong> Procedimiento (<code>void</code>) que acepta un <code>int porcentaje</code>. Define la <code>LONGITUD_MAXIMA = 20</code>.</li>
+<li><strong>Cálculo de Relleno:</strong> Calcula cuántos caracteres <code>#</code> se deben imprimir: <code>relleno = (porcentaje * LONGITUD_MAXIMA) / 100</code>.</li>
+<li><strong>Bucle de Relleno:</strong> Usa un bucle <code>for</code> para imprimir <code>relleno</code> veces el carácter <code>#</code>.</li>
+<li><strong>Bucle de Vacío:</strong> Usa un segundo bucle <code>for</code> (o continúa el primero) para imprimir los caracteres restantes (<code>-</code>). El conteo debe ir desde <code>relleno</code> hasta <code>LONGITUD_MAXIMA - 1</code>.</li>
+<li><strong>Visualización:</strong> Imprime el porcentaje al final.<ul>
+<li><em>Comprobación (Trazas):</em> Si <code>porcentaje=50</code>. <code>relleno</code> es 50 * 20 / 100 = 10. El resultado debe ser <code>##########---------- 50%</code>.</li>
+</ul>
+</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Contexto de Aplicación:</strong></p>
+<p>Interfaces de línea de comandos (CLI) o sistemas de gestión de tareas que requieren retroalimentación visual del estado de un proceso.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

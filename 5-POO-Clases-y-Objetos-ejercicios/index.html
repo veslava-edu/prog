@@ -1,0 +1,1859 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>5 POO Clases y Objetos ejercicios - PROG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ejercicios-practicos-la-poo-en-techevents-platform" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PROG" class="md-header__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PROG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5 POO Clases y Objetos ejercicios
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../1-Introduccion-programacion/" class="md-tabs__link">
+          
+  
+  
+  Programación
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PROG" class="md-nav__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    PROG
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-Introduccion-programacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-Programacion-estructurada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-Programacion-modular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-Estructuras-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-POO-Clases-y-Objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-POO-Uso-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-Estructuras-datos-dinamicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-Programacion-funcional-Streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-Ficheros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-Acceso-base-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-Interfaces-graficas-MVC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-consolidacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Consolidación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Consolidación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo-representar-graficamente-las-entidades-principales-de-la-plataforma-techevents-platform-y-sus-relaciones-utilizando-un-diagrama-de-clases-uml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo: Representar gráficamente las entidades principales de la plataforma 'TechEvents Platform' y sus relaciones utilizando un diagrama de clases UML.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo-implementar-la-clase-evento-en-java-aplicando-los-conceptos-de-atributos-constructores-y-encapsulacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo: Implementar la clase Evento en Java, aplicando los conceptos de atributos, constructores y encapsulación.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo-crear-la-clase-producto-para-la-tienda-de-merchandising-de-techevents-platform-implementando-atributos-constructor-y-la-encapsulacion-con-getters-y-setters-incluyendo-validacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo: Crear la clase Producto para la tienda de merchandising de 'TechEvents Platform', implementando atributos, constructor y la encapsulación con getters y setters (incluyendo validación).
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo-implementar-la-clase-participante-con-multiples-constructores-sobrecarga-para-permitir-diferentes-formas-de-inicializacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo: Implementar la clase Participante con múltiples constructores (sobrecarga) para permitir diferentes formas de inicialización.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo-refactorizar-la-clase-ubicacion-para-usar-encadenamiento-de-constructores-this-y-centralizar-la-logica-de-inicializacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo: Refactorizar la clase Ubicacion para usar encadenamiento de constructores (this()) y centralizar la lógica de inicialización.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo-identificar-y-corregir-un-bug-relacionado-con-la-implementacion-incorrecta-de-un-contador-de-instancias-utilizando-un-atributo-de-instancia-en-lugar-de-uno-estatico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo: Identificar y corregir un bug relacionado con la implementación incorrecta de un contador de instancias utilizando un atributo de instancia en lugar de uno estático.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-refuerzo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Refuerzo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Refuerzo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo-implementar-una-clase-techtokens-que-gestione-una-moneda-virtual-comun-para-la-plataforma-utilizando-atributos-y-metodos-estaticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo: Implementar una clase TechTokens que gestione una moneda virtual común para la plataforma, utilizando atributos y métodos estáticos.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pista" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pista:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo-utilizar-la-palabra-clave-final-en-atributos-de-instancia-para-asegurar-que-la-identidad-de-un-objeto-no-cambie-una-vez-creado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo: Utilizar la palabra clave final en atributos de instancia para asegurar que la identidad de un objeto no cambie una vez creado.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo-comprender-y-demostrar-las-diferencias-en-el-paso-de-parametros-por-valor-de-primitivos-vs-por-valor-de-referencia-en-un-contexto-de-objetos-del-mundo-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo: Comprender y demostrar las diferencias en el paso de parámetros (por valor de primitivos vs. por valor de referencia) en un contexto de objetos del mundo real.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-ampliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Ampliación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Ampliación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo-disenar-e-implementar-una-jerarquia-basica-de-clases-para-un-sistema-de-notificaciones-aplicando-herencia-y-polimorfismo-introduccion-conceptual-y-el-uso-de-constantes-estaticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo: Diseñar e implementar una jerarquía básica de clases para un sistema de notificaciones, aplicando herencia y polimorfismo (introducción conceptual) y el uso de constantes estáticas.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peer-review-revision-por-pares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Peer Review (Revisión por Pares):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo-implementar-el-patron-de-diseno-singleton-para-la-clase-gestorconexionbd-garantizando-que-solo-exista-una-unica-instancia-de-este-recurso-en-toda-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo: Implementar el patrón de diseño Singleton para la clase GestorConexionBD, garantizando que solo exista una única instancia de este recurso en toda la aplicación.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peer-review-revision-por-pares_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Peer Review (Revisión por Pares):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo-consolidar-el-uso-de-static-final-y-la-no-instanciacion-creando-una-clase-de-servicio-o-utilidad-que-resuelva-calculos-para-la-plataforma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo: Consolidar el uso de static, final y la no-instanciación, creando una clase de servicio o utilidad que resuelva cálculos para la plataforma.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peer-review-revision-por-pares_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Peer Review (Revisión por Pares):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- Nombre de archivo sugerido: T5-Ejercicios-POO-Clases-y-Objetos.md --><h1 id="ejercicios-practicos-la-poo-en-techevents-platform">Ejercicios Prácticos: La POO en "TechEvents Platform"</h1>
+<p>¡Hola, futuro arquitecto de software!</p>
+<p>Bienvenidos a la fase práctica de la Programación Orientada a Objetos. En este conjunto de ejercicios, vamos a sumergirnos en el desarrollo de "TechEvents Platform", una aplicación de gestión de eventos tecnológicos. Imagina que somos un equipo de desarrollo que necesita diseñar y construir los cimientos de esta plataforma, utilizando los principios de la POO que acabamos de explorar.</p>
+<p>El objetivo es modelar entidades del mundo real (como <code>Evento</code>, <code>Participante</code>, <code>Ponente</code>, <code>Ubicacion</code>) como clases en Java, definir sus atributos, sus comportamientos y cómo interactúan entre sí. Esta es la base de cualquier sistema robusto y escalable. Prepárense para aplicar conceptos como la encapsulación, los constructores, los getters, setters y los miembros estáticos para construir un sistema coherente y funcional.</p>
+<p>Cada ejercicio les desafiará a pensar como diseñadores y programadores, pasando de la especificación a la implementación en código Java. ¡Manos a la obra!</p>
+<hr>
+<h2 id="ejercicios-de-consolidacion">Ejercicios de Consolidación</h2>
+<div class="admonition abstract">
+<p class="admonition-title">1) Diseñando la Plataforma: Diagrama de Clases UML para 'TechEvents' | Nivel: Fácil</p>
+</div>
+<h5 id="objetivo-representar-graficamente-las-entidades-principales-de-la-plataforma-techevents-platform-y-sus-relaciones-utilizando-un-diagrama-de-clases-uml">Objetivo: Representar gráficamente las entidades principales de la plataforma 'TechEvents Platform' y sus relaciones utilizando un diagrama de clases UML.</h5>
+<h5 id="tarea-a-realizar">Tarea a realizar:</h5>
+<p>Basándote en la descripción de una plataforma de gestión de eventos, identifica las principales clases (entidades), sus atributos más relevantes (al menos 3 por clase) y sus métodos clave (al menos 2 por clase, incluyendo constructores o getters/setters si los consideras esenciales).</p>
+<p>Considera las siguientes entidades iniciales:<br>
+*   <strong>Evento</strong>: Un evento tiene un título, una fecha, una descripción, una capacidad máxima de participantes y un precio.<br>
+*   <strong>Participante</strong>: Cada participante tiene un nombre, apellidos, email, y puede registrarse en un evento.<br>
+*   <strong>Ubicacion</strong>: Un evento se celebra en una ubicación con un nombre, dirección y capacidad física.</p>
+<p>Crea un diagrama de clases UML (puedes usar la sintaxis de Mermaid.js vista en los materiales) que muestre:<br>
+1.  Las tres clases (<code>Evento</code>, <code>Participante</code>, <code>Ubicacion</code>).<br>
+2.  Los atributos (<code>private</code>) de cada clase con sus tipos de datos.<br>
+3.  Los métodos (<code>public</code>) de cada clase (al menos 2 por clase, los constructores cuentan como método).<br>
+4.  Las relaciones entre estas clases (por ejemplo, un <code>Evento</code> tiene una <code>Ubicacion</code>, un <code>Participante</code> se registra en un <code>Evento</code>). Indica el tipo de relación (asociación, agregación, composición) y su cardinalidad (1 a muchos, 1 a 1, etc.).</p>
+<h5 id="aplicacion-en-el-mundo-real">Aplicación en el Mundo Real:</h5>
+<p>Diseñar diagramas UML es una habilidad fundamental en el desarrollo de software. Permite a los equipos visualizar la arquitectura de la aplicación, discutir el diseño antes de escribir código y asegurar que todos los miembros tienen una comprensión común de las entidades del sistema. Es una herramienta clave para la comunicación técnica y la documentación.</p>
+<div class="admonition abstract">
+<p class="admonition-title">2) Creación de la Clase <code>Evento</code>: El Alma de la Plataforma | Nivel: Fácil</p>
+</div>
+<h5 id="objetivo-implementar-la-clase-evento-en-java-aplicando-los-conceptos-de-atributos-constructores-y-encapsulacion">Objetivo: Implementar la clase <code>Evento</code> en Java, aplicando los conceptos de atributos, constructores y encapsulación.</h5>
+<h5 id="setup-inicial">Setup Inicial:</h5>
+<p>Asegúrate de tener un entorno de desarrollo Java (IDE como IntelliJ IDEA o VS Code con el JDK 21).</p>
+<h5 id="tarea-a-realizar_1">Tarea a realizar:</h5>
+<p>Crea una nueva clase Java llamada <code>Evento</code>. Esta clase debe cumplir con los siguientes requisitos:</p>
+<ol>
+<li>
+<p><strong>Atributos:</strong></p>
+<ul>
+<li><code>titulo</code> (String): El nombre del evento.</li>
+<li><code>fecha</code> (String): La fecha del evento (por simplicidad, usa <code>String</code> por ahora, aunque en un futuro usaríamos <code>LocalDate</code>).</li>
+<li><code>descripcion</code> (String): Una breve descripción del evento.</li>
+<li><code>capacidadMaxima</code> (int): El número máximo de participantes.</li>
+<li><code>precio</code> (double): El coste de la entrada al evento.</li>
+<li>Todos los atributos deben ser <code>private</code> para asegurar la encapsulación.</li>
+</ul>
+</li>
+<li>
+<p><strong>Constructor:</strong></p>
+<ul>
+<li>Un constructor público que reciba <code>titulo</code>, <code>fecha</code>, <code>descripcion</code>, <code>capacidadMaxima</code> y <code>precio</code> como parámetros.</li>
+<li>El constructor debe inicializar todos los atributos de la clase con los valores proporcionados. Usa <code>this</code> para desambiguar si los nombres de los parámetros coinciden con los de los atributos.</li>
+</ul>
+</li>
+<li>
+<p><strong>Métodos (Getters):</strong></p>
+<ul>
+<li>Implementa métodos <code>public</code> <code>get</code> para cada uno de los atributos, permitiendo consultar sus valores desde fuera de la clase. Ejemplo: <code>public String getTitulo()</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Método <code>toString()</code>:</strong></p>
+<ul>
+<li>Sobreescribe el método <code>toString()</code> para que devuelva una representación en <code>String</code> del evento, incluyendo todos sus atributos de forma legible. Ejemplo: <code>"Evento: [Título], Fecha: [Fecha], Precio: [Precio]€"</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Clase <code>Main</code> para Pruebas:</strong></p>
+<ul>
+<li>Crea una clase <code>Main</code> (o <code>AppEventos</code>) con un método <code>main</code>.</li>
+<li>Dentro de <code>main</code>, crea al menos dos objetos <code>Evento</code> diferentes, utilizando el constructor que has definido.</li>
+<li>Imprime los detalles de cada evento utilizando su método <code>toString()</code>.</li>
+<li>Accede a al menos un atributo de cada evento usando su <code>getter</code> e imprímelo por separado.</li>
+</ul>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_1">Aplicación en el Mundo Real:</h5>
+<p>La creación de clases es el primer paso en la programación orientada a objetos. Encapsular la lógica de una entidad en una clase bien definida mejora la modularidad, facilita el mantenimiento y permite reutilizar el código en diferentes partes de la aplicación.</p>
+<div class="admonition abstract">
+<p class="admonition-title">3) Mejorando la Gestión de Stock: <code>Producto</code> con Encapsulación y Setters | Nivel: Fácil</p>
+</div>
+<h5 id="objetivo-crear-la-clase-producto-para-la-tienda-de-merchandising-de-techevents-platform-implementando-atributos-constructor-y-la-encapsulacion-con-getters-y-setters-incluyendo-validacion">Objetivo: Crear la clase <code>Producto</code> para la tienda de merchandising de 'TechEvents Platform', implementando atributos, constructor y la encapsulación con getters y setters (incluyendo validación).</h5>
+<h5 id="tarea-a-realizar_2">Tarea a realizar:</h5>
+<p>Crea una clase <code>Producto</code> con las siguientes características:</p>
+<ol>
+<li>
+<p><strong>Atributos <code>private</code></strong>:</p>
+<ul>
+<li><code>nombre</code> (String)</li>
+<li><code>precio</code> (double)</li>
+<li><code>stock</code> (int)</li>
+<li><code>idProducto</code> (String): Generado automáticamente o asignado de forma única, puede ser un simple <code>String</code> por ahora.</li>
+</ul>
+</li>
+<li>
+<p><strong>Constructor</strong>:</p>
+<ul>
+<li>Un constructor que reciba <code>idProducto</code>, <code>nombre</code>, <code>precio</code> y <code>stock</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Getters para todos los atributos</strong>.</p>
+</li>
+<li>
+<p><strong>Setters para <code>precio</code> y <code>stock</code></strong>:</p>
+<ul>
+<li>El <code>setPrecio</code> debe asegurar que el precio nunca sea negativo. Si se intenta establecer un precio negativo, debe dejar el precio sin cambios o establecerlo a 0.0, e imprimir un mensaje de advertencia.</li>
+<li>El <code>setStock</code> debe asegurar que el stock nunca sea negativo. Si se intenta establecer un stock negativo, debe dejar el stock sin cambios o establecerlo a 0, e imprimir un mensaje de advertencia.</li>
+</ul>
+</li>
+<li>
+<p><strong>Método <code>toString()</code></strong>:</p>
+<ul>
+<li>Sobreescribe <code>toString()</code> para proporcionar una representación legible del <code>Producto</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Clase <code>Main</code> para Pruebas</strong>:</p>
+<ul>
+<li>En tu clase <code>Main</code>, crea al menos dos objetos <code>Producto</code>.</li>
+<li>Demuestra el uso de los <code>getters</code>.</li>
+<li>Demuestra el funcionamiento de los <code>setters</code> con valores válidos e inválidos, observando los mensajes de advertencia.</li>
+</ul>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_2">Aplicación en el Mundo Real:</h5>
+<p>La encapsulación con setters y validaciones es crucial para mantener la integridad de los datos en cualquier sistema. Evita estados inconsistentes o inválidos de los objetos, lo que reduce bugs y hace el software más robusto y fiable, especialmente en transacciones comerciales.</p>
+<div class="admonition abstract">
+<p class="admonition-title">4) Flexibilidad en la Creación de Objetos: Sobrecarga de Constructores para <code>Participante</code> | Nivel: Fácil</p>
+</div>
+<h5 id="objetivo-implementar-la-clase-participante-con-multiples-constructores-sobrecarga-para-permitir-diferentes-formas-de-inicializacion">Objetivo: Implementar la clase <code>Participante</code> con múltiples constructores (sobrecarga) para permitir diferentes formas de inicialización.</h5>
+<h5 id="tarea-a-realizar_3">Tarea a realizar:</h5>
+<p>Crea una clase <code>Participante</code> con las siguientes especificaciones:</p>
+<ol>
+<li>
+<p><strong>Atributos <code>private</code></strong>:</p>
+<ul>
+<li><code>idParticipante</code> (String): Identificador único (puedes autogenerar uno simple o pedirlo).</li>
+<li><code>nombre</code> (String)</li>
+<li><code>apellidos</code> (String)</li>
+<li><code>email</code> (String)</li>
+<li><code>registrado</code> (boolean): Indica si el participante ya ha completado su registro (por defecto <code>false</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Sobrecarga de Constructores</strong>:</p>
+<ul>
+<li><strong>Constructor por defecto</strong>: Inicializa <code>idParticipante</code> con un valor por defecto (ej. "GEN_000"), <code>nombre</code> y <code>apellidos</code> como "Desconocido", <code>email</code> como "sin_email@example.com", y <code>registrado</code> a <code>false</code>.</li>
+<li><strong>Constructor con nombre y email</strong>: Recibe <code>nombre</code> y <code>email</code>. <code>apellidos</code> será "No proporcionado", <code>idParticipante</code> se autogenera (ej. "PART_" + un número secuencial o aleatorio simple), y <code>registrado</code> a <code>true</code> (asumimos que al dar estos datos ya se registra).</li>
+<li><strong>Constructor completo</strong>: Recibe <code>idParticipante</code>, <code>nombre</code>, <code>apellidos</code>, <code>email</code> y <code>registrado</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Getters para todos los atributos</strong>.</p>
+</li>
+<li>
+<p><strong>Método <code>toString()</code></strong>:</p>
+<ul>
+<li>Sobreescribe <code>toString()</code> para mostrar los detalles del participante.</li>
+</ul>
+</li>
+<li>
+<p><strong>Clase <code>Main</code> para Pruebas</strong>:</p>
+<ul>
+<li>En tu clase <code>Main</code>, crea un objeto <code>Participante</code> usando cada uno de los constructores.</li>
+<li>Imprime los detalles de cada participante para verificar su correcta inicialización.</li>
+</ul>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_3">Aplicación en el Mundo Real:</h5>
+<p>La sobrecarga de constructores es esencial para proporcionar flexibilidad en la creación de objetos. Permite a los desarrolladores instanciar objetos con diferentes niveles de detalle o en diferentes estados iniciales, adaptándose a las necesidades del flujo de la aplicación (ej. registro rápido vs. registro completo).</p>
+<div class="admonition abstract">
+<p class="admonition-title">5) <code>this()</code> para Evitar Duplicidad: Refactorizando <code>Ubicacion</code> | Nivel: Fácil</p>
+</div>
+<h5 id="objetivo-refactorizar-la-clase-ubicacion-para-usar-encadenamiento-de-constructores-this-y-centralizar-la-logica-de-inicializacion">Objetivo: Refactorizar la clase <code>Ubicacion</code> para usar encadenamiento de constructores (<code>this()</code>) y centralizar la lógica de inicialización.</h5>
+<h5 id="setup-inicial_1">Setup Inicial:</h5>
+<p>Partiendo de una clase <code>Ubicacion</code> similar a la definida en el ejercicio 1 o 2.</p>
+<h5 id="tarea-a-realizar_4">Tarea a realizar:</h5>
+<p>Crea o modifica la clase <code>Ubicacion</code> con las siguientes características:</p>
+<ol>
+<li>
+<p><strong>Atributos <code>private</code></strong>:</p>
+<ul>
+<li><code>nombre</code> (String)</li>
+<li><code>direccion</code> (String)</li>
+<li><code>capacidadTotal</code> (int): La capacidad máxima de personas.</li>
+<li><code>tieneParking</code> (boolean): Indica si la ubicación dispone de parking (por defecto <code>false</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Constructores sobrecargados utilizando <code>this()</code></strong>:</p>
+<ul>
+<li><strong>Constructor completo</strong>: <code>public Ubicacion(String nombre, String direccion, int capacidadTotal, boolean tieneParking)</code>. Este será el constructor "principal" que inicialice todos los atributos.</li>
+<li><strong>Constructor con datos esenciales</strong>: <code>public Ubicacion(String nombre, String direccion, int capacidadTotal)</code>. Este constructor debe llamar al constructor completo, estableciendo <code>tieneParking</code> a <code>false</code> por defecto.</li>
+<li><strong>Constructor básico</strong>: <code>public Ubicacion(String nombre, String direccion)</code>. Este constructor debe llamar al anterior, estableciendo <code>capacidadTotal</code> a <code>0</code> por defecto y <code>tieneParking</code> a <code>false</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Getters para todos los atributos</strong>.</p>
+</li>
+<li>
+<p><strong>Método <code>toString()</code></strong>:</p>
+<ul>
+<li>Sobreescribe <code>toString()</code> para mostrar todos los detalles de la ubicación.</li>
+</ul>
+</li>
+<li>
+<p><strong>Clase <code>Main</code> para Pruebas</strong>:</p>
+<ul>
+<li>Crea una instancia de <code>Ubicacion</code> usando cada uno de los tres constructores.</li>
+<li>Imprime cada objeto para verificar que los valores por defecto se establecen correctamente a través del encadenamiento.</li>
+</ul>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_4">Aplicación en el Mundo Real:</h5>
+<p>El uso de <code>this()</code> para el encadenamiento de constructores es una técnica fundamental para escribir código DRY (Don't Repeat Yourself). Evita la duplicación de lógica de inicialización, hace el código más limpio, más fácil de leer y mucho más mantenible, ya que un cambio en la inicialización básica solo necesita hacerse en un único lugar.</p>
+<div class="admonition abstract">
+<p class="admonition-title">6) El Bug del Contador de Participantes: Depuración con Atributos Estáticos | Nivel: Medio</p>
+</div>
+<h5 id="objetivo-identificar-y-corregir-un-bug-relacionado-con-la-implementacion-incorrecta-de-un-contador-de-instancias-utilizando-un-atributo-de-instancia-en-lugar-de-uno-estatico">Objetivo: Identificar y corregir un bug relacionado con la implementación incorrecta de un contador de instancias utilizando un atributo de instancia en lugar de uno estático.</h5>
+<h5 id="setup-inicial_2">Setup Inicial:</h5>
+<p>Se te proporciona el siguiente código incompleto para la clase <code>Participante</code>.
+</p><div class="highlight"><pre><span></span><code><span class="c1">// Participante.java (CON BUG)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.UUID</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Participante</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">idParticipante</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// BUG: Este atributo DEBERÍA ser estático</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">contadorParticipantes</span><span class="p">;</span><span class="w"> </span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Participante</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">idParticipante</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"PART_"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">UUID</span><span class="p">.</span><span class="na">randomUUID</span><span class="p">().</span><span class="na">toString</span><span class="p">().</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">).</span><span class="na">toUpperCase</span><span class="p">();</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">email</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">contadorParticipantes</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// Incrementa el contador</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getContadorParticipantes</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">contadorParticipantes</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"ID: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">idParticipante</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", Nombre: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", Email: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", Contador (incorrecto): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">contadorParticipantes</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Main.java (para probar el bug)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Participante</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Participante</span><span class="p">(</span><span class="s">"Ana García"</span><span class="p">,</span><span class="w"> </span><span class="s">"ana@example.com"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Participante</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Participante</span><span class="p">(</span><span class="s">"Luis Pérez"</span><span class="p">,</span><span class="w"> </span><span class="s">"luis@example.com"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Participante</span><span class="w"> </span><span class="n">p3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Participante</span><span class="p">(</span><span class="s">"Marta Soto"</span><span class="p">,</span><span class="w"> </span><span class="s">"marta@example.com"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">p1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">p2</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">p3</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nContador de P1: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p1</span><span class="p">.</span><span class="na">getContadorParticipantes</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Contador de P2: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p2</span><span class="p">.</span><span class="na">getContadorParticipantes</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Contador de P3: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p3</span><span class="p">.</span><span class="na">getContadorParticipantes</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¿Número total de participantes creados? Esperado: 3. Obtenido: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p3</span><span class="p">.</span><span class="na">getContadorParticipantes</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p></p>
+<h5 id="tarea-a-realizar_5">Tarea a realizar:</h5>
+<ol>
+<li><strong>Analiza el código</strong>: Ejecuta el código proporcionado. Observa la salida e identifica el comportamiento inesperado del <code>contadorParticipantes</code>.</li>
+<li><strong>Explica el bug</strong>: ¿Por qué el <code>contadorParticipantes</code> no muestra el número total de participantes creados, sino siempre <code>1</code> para cada uno? Relaciona esto con el concepto de miembros de instancia vs. miembros de clase.</li>
+<li><strong>Corrige el código</strong>: Modifica la clase <code>Participante</code> para que el <code>contadorParticipantes</code> (renombrado a <code>totalParticipantesCreados</code> para mayor claridad) sea un atributo <code>static</code> y cuente correctamente el número total de instancias de <code>Participante</code> creadas.</li>
+<li><strong>Adapta el acceso</strong>: Asegúrate de que el acceso a este contador estático se realice de la forma recomendada (<code>Clase.atributoEstatico</code>) tanto para incrementarlo en el constructor como para consultarlo en la clase <code>Main</code>.</li>
+<li><strong>Verifica la corrección</strong>: Ejecuta el código modificado y confirma que la salida ahora muestra el recuento total de participantes correctamente.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_5">Aplicación en el Mundo Real:</h5>
+<p>Depurar y entender el comportamiento de los miembros <code>static</code> es crítico. Los errores en su uso pueden llevar a datos inconsistentes en toda la aplicación, difíciles de rastrear. Este ejercicio simula un escenario común donde un atributo que debería ser compartido globalmente se implementa erróneamente por instancia.</p>
+<hr>
+<h2 id="ejercicios-de-refuerzo">Ejercicios de Refuerzo</h2>
+<div class="admonition warning">
+<p class="admonition-title">7) Gestión de 'TechTokens': Atributos Estáticos y Métodos de Utilidad | Nivel: Medio</p>
+</div>
+<h5 id="objetivo-implementar-una-clase-techtokens-que-gestione-una-moneda-virtual-comun-para-la-plataforma-utilizando-atributos-y-metodos-estaticos">Objetivo: Implementar una clase <code>TechTokens</code> que gestione una moneda virtual común para la plataforma, utilizando atributos y métodos estáticos.</h5>
+<h5 id="tarea-a-realizar_6">Tarea a realizar:</h5>
+<p>En la plataforma "TechEvents Platform", los usuarios ganan "TechTokens" por participar y pueden canjearlos. Vamos a crear una clase para gestionar aspectos globales de esta moneda.</p>
+<ol>
+<li>
+<p><strong>Clase <code>TechTokens</code></strong>:</p>
+<ul>
+<li>Crea una clase llamada <code>TechTokens</code>. Esta clase no debe poder instanciarse (pista: ¿qué tipo de constructor lo impide?).</li>
+<li><strong>Atributo Estático <code>private</code></strong>: <code>tasaConversionEuro</code> (double): Representa cuántos TechTokens equivale 1 Euro. Inicialízalo a <code>10.0</code> (1€ = 10 TT).</li>
+<li><strong>Atributo Estático <code>private</code></strong>: <code>nombreMoneda</code> (String): El nombre de la moneda, inicialízalo a "TechTokens".</li>
+<li><strong>Método Estático <code>public</code></strong>: <code>convertirEurosATokens(double euros)</code>: Recibe una cantidad en euros y devuelve la cantidad equivalente en TechTokens.</li>
+<li><strong>Método Estático <code>public</code></strong>: <code>getNombreMoneda()</code>: Devuelve el nombre de la moneda.</li>
+</ul>
+</li>
+<li>
+<p><strong>Clase <code>Main</code> para Pruebas</strong>:</p>
+<ul>
+<li>En tu clase <code>Main</code>, utiliza los métodos estáticos de <code>TechTokens</code> para realizar y mostrar las siguientes operaciones:<ul>
+<li>Consultar el nombre de la moneda.</li>
+<li>Calcular cuántos TechTokens se obtienen por 50.00€.</li>
+<li>Calcular cuántos Euros son 250 TechTokens.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="pista">Pista:</h5>
+<p>Recuerda que los métodos y atributos estáticos se acceden directamente a través del nombre de la clase, sin necesidad de crear un objeto: <code>NombreClase.metodoEstatico()</code>.</p>
+<h5 id="aplicacion-en-el-mundo-real_6">Aplicación en el Mundo Real:</h5>
+<p>Las clases de utilidad con miembros estáticos son omnipresentes en el desarrollo. La clase <code>Math</code> de Java es el ejemplo perfecto. Se usan para encapsular reglas de negocio o cálculos universales que no dependen del estado de ningún objeto específico.</p>
+<div class="admonition warning">
+<p class="admonition-title">8) <code>final</code> y el ADN del Objeto: La Clase <code>Ponente</code> | Nivel: Medio</p>
+</div>
+<h5 id="objetivo-utilizar-la-palabra-clave-final-en-atributos-de-instancia-para-asegurar-que-la-identidad-de-un-objeto-no-cambie-una-vez-creado">Objetivo: Utilizar la palabra clave <code>final</code> en atributos de instancia para asegurar que la identidad de un objeto no cambie una vez creado.</h5>
+<h5 id="tarea-a-realizar_7">Tarea a realizar:</h5>
+<p>Crea la clase <code>Ponente</code> para la plataforma. La información de un ponente, como su identificador y su nombre, no debe poder cambiar una vez que se ha asignado.</p>
+<ol>
+<li>
+<p><strong>Clase <code>Ponente</code></strong>:</p>
+<ul>
+<li><strong>Atributos <code>private final</code></strong>:<ul>
+<li><code>idPonente</code> (String)</li>
+<li><code>nombreCompleto</code> (String)</li>
+</ul>
+</li>
+<li><strong>Atributos <code>private</code> no-final</strong>:<ul>
+<li><code>temaPrincipal</code> (String)</li>
+<li><code>tarifaHora</code> (double)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Constructor</strong>:</p>
+<ul>
+<li>Crea un constructor que reciba todos los atributos. <strong>Obligatoriamente</strong>, el constructor debe inicializar los atributos <code>final</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Métodos</strong>:</p>
+<ul>
+<li>Implementa <code>getters</code> para todos los atributos (incluyendo los <code>final</code>).</li>
+<li>Implementa <code>setters</code> solo para los atributos no-<code>final</code> (<code>temaPrincipal</code> y <code>tarifaHora</code>).</li>
+<li>Añade un método <code>calcularCostoCharla(int horas)</code> que devuelva <code>tarifaHora * horas</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Intento de Setter para un <code>final</code></strong>:</p>
+<ul>
+<li>Intenta crear un <code>setter</code> para <code>idPonente</code> (<code>public void setIdPonente(String nuevoId)</code>). Observa el error de compilación. Incluye el comentario sobre el error en tu solución.</li>
+</ul>
+</li>
+<li>
+<p><strong>Clase <code>Main</code> para Pruebas</strong>:</p>
+<ul>
+<li>Crea un objeto <code>Ponente</code>.</li>
+<li>Intenta modificar un atributo <code>final</code> (esto debe fallar en la compilación).</li>
+<li>Modifica con éxito un atributo no-<code>final</code> (<code>tarifaHora</code>).</li>
+<li>Imprime el costo de una charla de 4 horas.</li>
+</ul>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_7">Aplicación en el Mundo Real:</h5>
+<p>El uso de <code>final</code> es un pilar de la programación defensiva. Se utiliza en identificadores únicos (<code>ID</code>, <code>UUID</code>), nombres, o cualquier valor que deba permanecer inalterable. Asegura que el estado fundamental de un objeto no pueda ser modificado accidentalmente, lo cual es vital en entornos multihilo o sistemas de bases de datos.</p>
+<div class="admonition warning">
+<p class="admonition-title">9) Paso por Valor en el Mundo Real: Simulación de Transferencia de Fondos | Nivel: Medio</p>
+</div>
+<h5 id="objetivo-comprender-y-demostrar-las-diferencias-en-el-paso-de-parametros-por-valor-de-primitivos-vs-por-valor-de-referencia-en-un-contexto-de-objetos-del-mundo-real">Objetivo: Comprender y demostrar las diferencias en el paso de parámetros (por valor de primitivos vs. por valor de referencia) en un contexto de objetos del mundo real.</h5>
+<h5 id="setup-inicial_3">Setup Inicial:</h5>
+<p>Utiliza la clase <code>CuentaBancaria</code> del material teórico como base (simplificada para solo tener <code>saldo</code>).
+</p><div class="highlight"><pre><span></span><code><span class="c1">// CuentaBancaria.java (Simplificada para el ejercicio)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CuentaBancaria</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">saldo</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">CuentaBancaria</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">saldoInicial</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">saldo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">saldoInicial</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getSaldo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">saldo</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setSaldo</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">nuevoSaldo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">saldo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nuevoSaldo</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">ingresar</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">cantidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cantidad</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">saldo</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">cantidad</span><span class="p">;</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Ingreso realizado. Nuevo saldo: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">saldo</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p></p>
+<h5 id="tarea-a-realizar_8">Tarea a realizar:</h5>
+<p>Crea una clase <code>GestorFondos</code> con dos métodos estáticos y realiza pruebas en <code>Main</code>.</p>
+<ol>
+<li><strong>Clase <code>GestorFondos</code></strong>:<ul>
+<li><strong>Método Estático A (Paso de Primitivo)</strong>:
+    <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">intentarModificarMonto</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">monto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">monto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Se intenta modificar el valor recibido</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  [Dentro de A] Monto modificado a: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">monto</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><strong>Método Estático B (Paso de Objeto)</strong>:
+    <div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">transferir</span><span class="p">(</span><span class="n">CuentaBancaria</span><span class="w"> </span><span class="n">cuentaOrigen</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">cantidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  [Dentro de B] Saldo inicial en cuenta origen: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cuentaOrigen</span><span class="p">.</span><span class="na">getSaldo</span><span class="p">());</span>
+<span class="w">    </span><span class="n">cuentaOrigen</span><span class="p">.</span><span class="na">ingresar</span><span class="p">(</span><span class="o">-</span><span class="n">cantidad</span><span class="p">);</span><span class="w"> </span><span class="c1">// ¡BUG: Intenta retirar de forma NO segura! (se ingresa con valor negativo)</span>
+<span class="w">    </span><span class="n">cuentaOrigen</span><span class="p">.</span><span class="na">setSaldo</span><span class="p">(</span><span class="n">cuentaOrigen</span><span class="p">.</span><span class="na">getSaldo</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">cantidad</span><span class="p">);</span><span class="w"> </span><span class="c1">// Simulación de retiro</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  [Dentro de B] Saldo final en cuenta origen: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cuentaOrigen</span><span class="p">.</span><span class="na">getSaldo</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Clase <code>Main</code> (Pruebas)</strong>:</p>
+<ul>
+<li><strong>Prueba 1 (Primitivo)</strong>: Declara un <code>double</code> llamado <code>montoTransferir = 100.0</code>. Llama a <code>GestorFondos.intentarModificarMonto(montoTransferir)</code>. Imprime el valor de <code>montoTransferir</code> después de la llamada.</li>
+<li><strong>Prueba 2 (Objeto)</strong>: Crea un objeto <code>CuentaBancaria</code> llamado <code>miCuenta</code> con saldo inicial <code>500.0</code>. Llama a <code>GestorFondos.transferir(miCuenta, 50.0)</code>. Imprime el saldo de <code>miCuenta</code> después de la llamada.</li>
+</ul>
+</li>
+<li>
+<p><strong>Análisis</strong>: En los comentarios del <code>Main</code>, explica por qué el valor de <code>montoTransferir</code> no cambió, pero el saldo de <code>miCuenta</code> sí que se modificó, aun cuando Java solo usa "paso por valor".</p>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_8">Aplicación en el Mundo Real:</h5>
+<p>En el desarrollo de APIs y librerías, es fundamental que los desarrolladores entiendan qué información se está pasando a un método y si los cambios internos afectarán al objeto que se pasa como argumento. La mala comprensión de esto es una fuente constante de bugs sutiles en la manipulación de objetos.</p>
+<hr>
+<h2 id="ejercicios-de-ampliacion">Ejercicios de Ampliación</h2>
+<div class="admonition danger">
+<p class="admonition-title">10) Diseño de un Sistema de Notificaciones Modular | Nivel: Alto</p>
+</div>
+<h5 id="objetivo-disenar-e-implementar-una-jerarquia-basica-de-clases-para-un-sistema-de-notificaciones-aplicando-herencia-y-polimorfismo-introduccion-conceptual-y-el-uso-de-constantes-estaticas">Objetivo: Diseñar e implementar una jerarquía básica de clases para un sistema de notificaciones, aplicando herencia y polimorfismo (introducción conceptual) y el uso de constantes estáticas.</h5>
+<h5 id="tarea-a-realizar_9">Tarea a realizar:</h5>
+<p>La plataforma necesita enviar notificaciones. Vamos a modelar las notificaciones como una clase base que luego será extendida.</p>
+<ol>
+<li>
+<p><strong>Clase de Utilidad <code>ConfiguracionNotificacion</code></strong>:</p>
+<ul>
+<li>Crea una clase <code>ConfiguracionNotificacion</code> que no sea instanciable.</li>
+<li>Define una constante <code>public static final String REMITENTE_DEFAULT = "no-reply@techevents.com";</code></li>
+<li>Define una constante <code>public static final int MAX_LONGITUD_TEXTO = 500;</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Clase Base <code>Notificacion</code></strong>:</p>
+<ul>
+<li>Define la clase <code>Notificacion</code> con los siguientes atributos <code>private</code>:<ul>
+<li><code>remitente</code> (String)</li>
+<li><code>destinatario</code> (String)</li>
+<li><code>mensaje</code> (String)</li>
+</ul>
+</li>
+<li>Asegura la encapsulación con <code>getters</code>.</li>
+<li>El constructor debe recibir <code>destinatario</code> y <code>mensaje</code>. El <code>remitente</code> debe tomar el valor por defecto de la constante estática <code>REMITENTE_DEFAULT</code> de la clase <code>ConfiguracionNotificacion</code>.</li>
+<li>El constructor debe recortar el <code>mensaje</code> si supera <code>MAX_LONGITUD_TEXTO</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Método de Comportamiento Polimórfico</strong>:</p>
+<ul>
+<li>Añade un método <code>public String enviar()</code> que devuelve el texto: <code>"Enviando Notificación al [Destinatario] desde [Remitente]: [Mensaje Recortado/Completo]"</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Clase <code>Main</code> para Pruebas</strong>:</p>
+<ul>
+<li>Crea un objeto <code>Notificacion</code> con un mensaje muy largo (ej. más de 500 caracteres).</li>
+<li>Crea otro objeto <code>Notificacion</code> con un mensaje corto.</li>
+<li>Llama al método <code>enviar()</code> en ambos y comprueba que el remitente es el por defecto y el mensaje largo ha sido recortado.</li>
+</ul>
+</li>
+</ol>
+<h5 id="peer-review-revision-por-pares">Peer Review (Revisión por Pares):</h5>
+<p>Pídele a un compañero que revise tu implementación de la lógica de recorte del mensaje en el constructor. ¿Ha respetado el principio de encapsulación y ha usado correctamente las constantes estáticas? Pídele que te sugiera una alternativa para el recorte de texto sin usar la constante estática de longitud máxima, para discutir pros y contras.</p>
+<h5 id="aplicacion-en-el-mundo-real_9">Aplicación en el Mundo Real:</h5>
+<p>Este ejercicio modela cómo las grandes aplicaciones manejan tareas como el envío de correos o SMS. Las configuraciones globales se definen en clases estáticas, y los objetos base (como <code>Notificacion</code>) gestionan la lógica común de negocio (como el remitente o el límite de caracteres).</p>
+<div class="admonition danger">
+<p class="admonition-title">11) El Patrón Singleton para el Gestor de Conexiones | Nivel: Alto</p>
+</div>
+<h5 id="objetivo-implementar-el-patron-de-diseno-singleton-para-la-clase-gestorconexionbd-garantizando-que-solo-exista-una-unica-instancia-de-este-recurso-en-toda-la-aplicacion">Objetivo: Implementar el patrón de diseño Singleton para la clase <code>GestorConexionBD</code>, garantizando que solo exista una única instancia de este recurso en toda la aplicación.</h5>
+<h5 id="tarea-a-realizar_10">Tarea a realizar:</h5>
+<p>En la plataforma, solo debe haber un gestor de conexiones a la base de datos para controlar los recursos. Utiliza el patrón Singleton para asegurar esto.</p>
+<ol>
+<li>
+<p><strong>Clase <code>GestorConexionBD</code></strong>:</p>
+<ul>
+<li><strong>Atributo <code>private static</code></strong>: <code>instancia</code> de tipo <code>GestorConexionBD</code>. Inicializado a <code>null</code>.</li>
+<li><strong>Atributo <code>private</code></strong>: <code>urlConexion</code> (String). Inicializada en el constructor a "jdbc:oracle:thin:@servidor_prod:1521:XE".</li>
+<li><strong>Constructor <code>private</code></strong>: El constructor debe ser <code>private</code>. Imprime un mensaje: <code>"Se ha creado la única instancia del Gestor de Conexión."</code></li>
+<li><strong>Método <code>public static</code></strong>: <code>getInstance()</code>: Este es el punto de acceso global.<ul>
+<li>Debe verificar si <code>instancia</code> es <code>null</code>. Si lo es, crea la nueva y única instancia (<code>new GestorConexionBD()</code>) y la asigna a <code>instancia</code>.</li>
+<li>Si no es <code>null</code>, simplemente devuelve la instancia existente.</li>
+</ul>
+</li>
+<li><strong>Método <code>public</code> de instancia</strong>: <code>conectar()</code>: Imprime <code>"Conectando a la BD: " + urlConexion</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Clase <code>Main</code> para Pruebas</strong>:</p>
+<ul>
+<li><strong>Prueba 1</strong>: Llama a <code>GestorConexionBD.getInstance()</code> dos veces, asignando el resultado a dos variables diferentes (<code>conexion1</code> y <code>conexion2</code>).</li>
+<li><strong>Verificación</strong>: Imprime el resultado de comparar las dos referencias (<code>conexion1 == conexion2</code>). Debería ser <code>true</code>.</li>
+<li><strong>Prueba de unicidad</strong>: Comprueba la salida. Solo se debe imprimir el mensaje del constructor UNA sola vez.</li>
+<li>Llama al método <code>conectar()</code> en ambas variables.</li>
+</ul>
+</li>
+</ol>
+<h5 id="peer-review-revision-por-pares_1">Peer Review (Revisión por Pares):</h5>
+<p>Pídele a un compañero que intente crear una segunda instancia del <code>GestorConexionBD</code> sin usar el método <code>getInstance()</code> (por ejemplo, con <code>new GestorConexionBD()</code>). Debe obtener un error de compilación. Pídele que te explique por qué el constructor debe ser privado.</p>
+<h5 id="aplicacion-en-el-mundo-real_10">Aplicación en el Mundo Real:</h5>
+<p>El Singleton es uno de los patrones de diseño más utilizados. Es vital para recursos de aplicación que deben ser únicos: gestores de bases de datos, gestores de logs, configuración de sistema y <em>thread pools</em>. Aplicarlo correctamente asegura el control estricto de los recursos compartidos.</p>
+<div class="admonition danger">
+<p class="admonition-title">12) Reto de Modelado: Creando una Clase de Utilidad de Propósito Múltiple | Nivel: Alto</p>
+</div>
+<h5 id="objetivo-consolidar-el-uso-de-static-final-y-la-no-instanciacion-creando-una-clase-de-servicio-o-utilidad-que-resuelva-calculos-para-la-plataforma">Objetivo: Consolidar el uso de <code>static</code>, <code>final</code> y la no-instanciación, creando una clase de servicio o utilidad que resuelva cálculos para la plataforma.</h5>
+<h5 id="tarea-a-realizar_11">Tarea a realizar:</h5>
+<p>Crea una clase <code>UtilidadEvento</code> que actúe como un conjunto de herramientas para la gestión de eventos.</p>
+<ol>
+<li>
+<p><strong>Clase <code>UtilidadEvento</code></strong>:</p>
+<ul>
+<li>Haz que esta clase no sea instanciable (constructor privado).</li>
+<li><strong>Constante Estática <code>final</code></strong>: <code>IVA_APLICABLE</code> (double), con valor <code>0.21</code> (21%).</li>
+<li><strong>Método Estático</strong>: <code>calcularPrecioFinal(double precioBase)</code>: Recibe un precio base y devuelve el precio con el IVA aplicado.</li>
+<li><strong>Método Estático</strong>: <code>generarCodigoAsistencia(String email, String fecha)</code>:<ul>
+<li>Genera y devuelve un código de asistencia único (String).</li>
+<li>El código debe ser la concatenación de las primeras 3 letras del email, las últimas 4 cifras de la fecha (asumiendo que la fecha es <code>DD/MM/YYYY</code>) y un número aleatorio de 3 dígitos (ej: <code>System.currentTimeMillis() % 1000</code>).</li>
+<li><em>Ejemplo</em>: <code>email="pepe@corp.com", fecha="20/11/2024"</code> -&gt; Código: <code>PEPE2024XXX</code> (donde XXX es el aleatorio).</li>
+</ul>
+</li>
+<li><strong>Método Estático</strong>: <code>esFinDeSemana(int diaDeLaSemana)</code>: Recibe un entero representando el día de la semana (<code>1</code>=Lunes, <code>7</code>=Domingo) y devuelve <code>true</code> si es fin de semana (<code>6</code> o <code>7</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Clase <code>Main</code> para Pruebas</strong>:</p>
+<ul>
+<li>Muestra el cálculo del precio final para una entrada de 100.00€.</li>
+<li>Genera e imprime el código de asistencia para el email "alicia@events.net" y la fecha "05/10/2024".</li>
+<li>Comprueba si el día 1 (Lunes) y el día 7 (Domingo) son fin de semana.</li>
+</ul>
+</li>
+</ol>
+<h5 id="peer-review-revision-por-pares_2">Peer Review (Revisión por Pares):</h5>
+<p>Pídele a un compañero que revise tu método <code>generarCodigoAsistencia</code>. ¿Qué posibles problemas de robustez o seguridad tiene este método? ¿Cómo podría mejorarse usando la clase <code>UUID</code> o <code>SecureRandom</code> en lugar de la forma simple que se pide? Discute estas alternativas.
+<br></p>
+<h5 id="aplicacion-en-el-mundo-real_11">Aplicación en el Mundo Real:</h5>
+<p>La creación de códigos únicos (como códigos QR, códigos de barras o claves de licencia) y la gestión de cálculos fiscales son tareas de utilidad comunes en el desarrollo empresarial. Este ejercicio simula la centralización de estas lógicas en una clase de servicios.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

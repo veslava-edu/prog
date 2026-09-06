@@ -1,0 +1,1837 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>4 Estructuras datos arrays repaso - PROG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modulo-de-practicas-estructuras-estaticas-de-datos-arrays-1d-en-java" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PROG" class="md-header__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PROG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4 Estructuras datos arrays repaso
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../1-Introduccion-programacion/" class="md-tabs__link">
+          
+  
+  
+  Programación
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PROG" class="md-nav__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    PROG
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-Introduccion-programacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-Programacion-estructurada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-Programacion-modular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-Estructuras-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-POO-Clases-y-Objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-POO-Uso-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-Estructuras-datos-dinamicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-Programacion-funcional-Streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-Ficheros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-Acceso-base-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-Interfaces-graficas-MVC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-rapida-a-arrays-en-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducción Rápida a Arrays en JAVA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nivel-padawan-1-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nivel PADAWAN (1 - 7)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nivel PADAWAN (1 - 7)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nivel-jedi-8-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nivel JEDI (8 - 14)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nivel JEDI (8 - 14)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nivel-maestro-jedi-15-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nivel MAESTRO JEDI (15 - 20)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nivel MAESTRO JEDI (15 - 20)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>--- START OF FILE 3-Programacion-estructurada-arrays.md ---</p>
+<!-- Nombre de archivo sugerido: T03-Ejercicios-Arrays.md -->
+<h1 id="modulo-de-practicas-estructuras-estaticas-de-datos-arrays-1d-en-java">Módulo de Prácticas: Estructuras Estáticas de Datos (Arrays 1D) en JAVA</h1>
+<p>¡Saludos! Hoy nos sumergiremos en la base de la gestión de datos: los <em>arrays</em> unidimensionales.</p>
+<hr>
+<h2 id="introduccion-rapida-a-arrays-en-java">Introducción Rápida a Arrays en JAVA</h2>
+<p>Un <em>array</em> (o arreglo) en Java es una colección estática de elementos del mismo tipo. "Estático" significa que su tamaño se define al crearse y no puede cambiar.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Concepto</th>
+<th style="text-align: left;">Sintaxis en JAVA</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Declaración</strong></td>
+<td style="text-align: left;"><code>int[] miArray;</code></td>
+<td style="text-align: left;">Indica que <code>miArray</code> será un array de enteros.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Inicialización</strong></td>
+<td style="text-align: left;"><code>miArray = new int[5];</code></td>
+<td style="text-align: left;">Crea el array y le asigna un tamaño fijo de 5 elementos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Inicialización Literal</strong></td>
+<td style="text-align: left;"><code>int[] miArray = {10, 20, 30};</code></td>
+<td style="text-align: left;">Crea e inicializa con valores concretos. El tamaño es 3.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Asignar/Leer Valor</strong></td>
+<td style="text-align: left;"><code>miArray[0] = 5;</code> <code>int x = miArray[0];</code></td>
+<td style="text-align: left;">La indexación comienza siempre en <strong>0</strong> (cero).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Longitud</strong></td>
+<td style="text-align: left;"><code>miArray.length</code></td>
+<td style="text-align: left;">Devuelve el tamaño (cantidad de elementos).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Recorrido Básico</strong></td>
+<td style="text-align: left;"><code>for (int i = 0; i &lt; miArray.length; i++) { ... }</code></td>
+<td style="text-align: left;">Se usa un bucle para acceder a cada elemento por su índice.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="nivel-padawan-1-7">Nivel PADAWAN (1 - 7)</h2>
+<p>Ejercicios centrados en la inicialización, el recorrido y las operaciones básicas de lectura.</p>
+<div class="admonition abstract">
+<p class="admonition-title">1) Mostrar Valores de un Array</p>
+<h5 id="objetivo"><strong>Objetivo:</strong></h5>
+<p>Declarar, inicializar y recorrer un array para mostrar sus valores.</p>
+<h5 id="tarea-a-realizar"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea un método <code>mostrarValores(int[] lista)</code>.</li>
+<li>En el <code>main</code>, declara e inicializa un array <code>int[]</code> con 7 valores.</li>
+<li>Llama al método para imprimir cada valor, indicando su posición (índice).</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> Define el procedimiento (<code>void</code>) que acepta un array de enteros.</li>
+<li><strong>Bucle Indexado:</strong> Usa un bucle <code>for</code> inicializado en 0 y que se ejecute mientras el índice sea menor que la longitud del array (<code>lista.length</code>).</li>
+<li><strong>Visualización:</strong> Dentro del bucle, imprime el índice (<code>i</code>) y el valor del elemento (<code>lista[i]</code>).</li>
+<li><strong>Comprobación (Trazas):</strong> Verifica que el primer valor impreso corresponda al índice 0 y el último al índice <code>length - 1</code>.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>Uso correcto de <code>for (int i = 0; i &lt; lecturas.length; i++)</code> para garantizar el acceso a todos los índices.</p>
+</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">2) Sumar Elementos</p>
+<h5 id="objetivo_1"><strong>Objetivo:</strong></h5>
+<p>Recorrer un array para calcular la suma total de sus elementos.</p>
+<h5 id="tarea-a-realizar_1"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa una función <code>calcularSuma(int[] valores)</code> que reciba un array de enteros y devuelva la suma total de todos sus elementos.</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma y Acumulador:</strong> Define la función (retorna <code>int</code>) e inicializa una variable <code>suma = 0</code> fuera del bucle.</li>
+<li><strong>Iteración:</strong> Crea un bucle que recorra todos los elementos del array (de 0 a <code>length - 1</code>).</li>
+<li><strong>Acumulación:</strong> Dentro del bucle, suma el valor del elemento actual al acumulador: <code>suma = suma + valores[i]</code>.</li>
+<li><strong>Retorno:</strong> Devuelve el valor final de <code>suma</code>.</li>
+<li><strong>Comprobación (Trazas):</strong> Si el array es <code>{1, 2, 3}</code>, verifica que la <code>suma</code> sea 3 después de la iteración 2 y 6 al finalizar.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>Inicializar una variable acumuladora (<code>suma = 0</code>) <strong>fuera</strong> del bucle y actualizarla <strong>dentro</strong> del bucle.</p>
+</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">3) Encontrar el Máximo</p>
+<h5 id="objetivo_2"><strong>Objetivo:</strong></h5>
+<p>Encontrar el valor máximo dentro de un array.</p>
+<h5 id="tarea-a-realizar_2"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa una función <code>encontrarMaximo(int[] datos)</code> que devuelva el valor más alto del array.</li>
+<li>Asume que el array nunca estará vacío.</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> Define la función que retorna <code>int</code>.</li>
+<li><strong>Inicialización del Máximo:</strong> Inicializa la variable <code>maximo</code> con el primer elemento del array: <code>maximo = datos[0]</code>.</li>
+<li><strong>Iteración y Comparación:</strong> Crea un bucle que comience desde el segundo elemento (índice 1).</li>
+<li><strong>Condicional:</strong> Dentro del bucle, usa un <code>if</code> para comparar: si <code>datos[i] &gt; maximo</code>, actualiza <code>maximo = datos[i]</code>.</li>
+<li><strong>Retorno:</strong> Devuelve el valor final de <code>maximo</code>.</li>
+<li><strong>Comprobación (Trazas):</strong> Usa el array <code>{10, 5, 20}</code>. Verifica que <code>maximo</code> se inicialice en 10, y que se actualice correctamente a 20.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>Inicializa la variable <code>maximo</code> con el valor del primer elemento (<code>datos[0]</code>) para asegurar que la comparación inicial funcione correctamente con cualquier conjunto de números.</p>
+</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">4) Encontrar el Mínimo</p>
+<h5 id="objetivo_3"><strong>Objetivo:</strong></h5>
+<p>Encontrar el valor mínimo dentro de un array.</p>
+<h5 id="tarea-a-realizar_3"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa una función <code>encontrarMinimo(int[] datos)</code> que devuelva el valor más bajo del array (asumiendo todos los valores son positivos).</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> Define la función que retorna <code>int</code>.</li>
+<li><strong>Inicialización del Mínimo:</strong> Inicializa <code>minimo = datos[0]</code>.</li>
+<li><strong>Iteración y Comparación:</strong> Recorre el array desde el índice 1.</li>
+<li><strong>Condicional:</strong> Dentro del bucle, usa un <code>if</code> para comparar: si <code>datos[i] &lt; minimo</code>, actualiza <code>minimo = datos[i]</code>.</li>
+<li><strong>Comprobación (Trazas):</strong> Usa el array <code>{10, 5, 20}</code>. Verifica que <code>minimo</code> se actualice de 10 a 5.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>La lógica es inversa a la de buscar el máximo: dentro del bucle, usa <code>if (datos[i] &lt; minimo)</code>.</p>
+</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">5) Calcular el Promedio</p>
+<h5 id="objetivo_4"><strong>Objetivo:</strong></h5>
+<p>Combinar la suma y la longitud del array para calcular el promedio.</p>
+<h5 id="tarea-a-realizar_4"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa una función <code>calcularPromedio(int[] valores)</code> que devuelva el promedio como un valor <code>double</code>.</li>
+<li>Asegúrate de manejar el <em>casting</em> de tipos para que la división sea flotante. Si el array está vacío, devuelve <code>0.0</code>.</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> Define la función que retorna <code>double</code>.</li>
+<li><strong>Validación de Longitud:</strong> Usa un <code>if</code> para verificar si <code>valores.length == 0</code>. Si es así, retorna <code>0.0</code>.</li>
+<li><strong>Cálculo de Suma:</strong> Implementa un bucle para calcular la <code>suma</code> de todos los elementos (ver Ejercicio 2).</li>
+<li><strong>División y Casting:</strong> Retorna la división de la suma por la longitud, asegurando que la <code>suma</code> sea tratada como <code>double</code>: <code>return (double) suma / valores.length;</code>.</li>
+<li><strong>Comprobación (Trazas):</strong> Usa el array <code>{10, 20}</code>. Verifica que la suma sea 30 y que el resultado sea <code>15.0</code>.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>Antes de la división, convierte la suma a <code>double</code> para evitar que Java realice una división entera que truncaría el resultado.</p>
+</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">6) Contar Elementos Mayores que un Umbral</p>
+<h5 id="objetivo_5"><strong>Objetivo:</strong></h5>
+<p>Contar cuántos elementos en un array cumplen una condición de umbral.</p>
+<h5 id="tarea-a-realizar_5"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa una función <code>contarSuperiores(int[] lista, int umbral)</code> que devuelva la cantidad de elementos en el array que son estrictamente mayores que el <code>umbral</code>.</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma y Contador:</strong> Define la función (retorna <code>int</code>) e inicializa un contador a cero: <code>int contador = 0;</code>.</li>
+<li><strong>Iteración:</strong> Recorre el array con un bucle <code>for</code>.</li>
+<li><strong>Condicional:</strong> Dentro del bucle, usa un <code>if</code>: si <code>lista[i] &gt; umbral</code>, incrementa <code>contador</code>.</li>
+<li><strong>Retorno:</strong> Devuelve el valor final de <code>contador</code>.</li>
+<li><strong>Comprobación (Trazas):</strong> Usa <code>{95, 80, 100}</code> y <code>umbral=90</code>. Verifica que solo se incremente el contador para 95 y 100, retornando 2.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>Usa un contador (<code>int contador = 0;</code>) y un <code>if</code> dentro del bucle: <code>if (niveles[i] &gt; umbral)</code>.</p>
+</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">7) Encontrar la Posición de un Valor</p>
+<h5 id="objetivo_6"><strong>Objetivo:</strong></h5>
+<p>Buscar la posición (índice) del primer elemento que cumple una condición.</p>
+<h5 id="tarea-a-realizar_6"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa una función <code>encontrarIndice(long[] datos, long valorBusqueda)</code> que devuelva el índice de la <em>primera</em> vez que se encuentra el <code>valorBusqueda</code>.</li>
+<li>Si el valor no se encuentra en el array, el método debe devolver el valor especial <code>-1</code>.</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> Define la función que retorna <code>int</code>.</li>
+<li><strong>Iteración:</strong> Recorre el array con un bucle <code>for</code> utilizando el índice <code>i</code>.</li>
+<li><strong>Condicional y Retorno Temprano:</strong> Dentro del bucle, usa un <code>if</code> para comparar <code>datos[i] == valorBusqueda</code>. Si son iguales, retorna <code>i</code> inmediatamente.</li>
+<li><strong>Retorno por Defecto:</strong> Si el bucle termina sin encontrar el valor (es decir, el <code>return i</code> nunca se ejecutó), retorna <code>-1</code>.</li>
+<li><strong>Comprobación (Trazas):</strong> Usa <code>{10, 20, 30}</code> y busca 20. Verifica que retorne 1. Busca 50, verifica que retorne -1.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>Si se encuentra la coincidencia, usa <code>return i</code> <strong>dentro</strong> del bucle para terminar la función inmediatamente. Si el bucle termina, usa <code>return -1</code>.</p>
+</div>
+</div>
+<hr>
+<h2 id="nivel-jedi-8-14">Nivel JEDI (8 - 14)</h2>
+<p>Ejercicios que requieren un manejo más complejo del recorrido, la creación de nuevos arrays o la modificación de datos <em>in-place</em>.</p>
+<div class="admonition warning">
+<p class="admonition-title">8) Imprimir al Revés</p>
+<h5 id="objetivo_7"><strong>Objetivo:</strong></h5>
+<p>Recorrer un array de manera inversa.</p>
+<h5 id="tarea-a-realizar_7"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa un procedimiento <code>imprimirInverso(int[] datos)</code> que imprima todos los elementos del array en orden inverso, sin modificar el array original.</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> Define el procedimiento (<code>void</code>).</li>
+<li><strong>Bucle Decremental:</strong> Usa un bucle <code>for</code> con la inicialización <code>i = datos.length - 1</code>, la condición <code>i &gt;= 0</code> y el operador de decremento <code>i--</code>.</li>
+<li><strong>Visualización:</strong> Dentro del bucle, imprime el elemento <code>datos[i]</code>.</li>
+<li><strong>Comprobación (Trazas):</strong> Usa <code>{1, 2, 3}</code>. Verifica que la secuencia de impresión sea 3, 2, 1.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>El bucle debe iniciar en <code>datos.length - 1</code>, tener la condición <code>i &gt;= 0</code> y usar el decremento <code>i--</code>.</p>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">9) Filtrar Valores Positivos</p>
+<h5 id="objetivo_8"><strong>Objetivo:</strong></h5>
+<p>Crear un nuevo array a partir de un filtro.</p>
+<h5 id="tarea-a-realizar_8"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa una función <code>filtrarPositivos(double[] datos)</code> que devuelva un <strong>nuevo array</strong> de <code>double</code> conteniendo solo los valores del array original que sean mayores o iguales a <code>0.0</code>.</li>
+<li><em>Pista:</em> Esto requiere dos bucles: uno para contar los elementos válidos (para determinar el tamaño del nuevo array) y otro para rellenarlo.</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Conteo de Válidos:</strong> Usa un primer bucle para recorrer <code>datos</code> y contar cuántos elementos son $&gt;= 0.0$ (almacena el resultado en <code>contador</code>).</li>
+<li><strong>Creación de Array Resultante:</strong> Crea el nuevo array con el tamaño exacto: <code>double[] resultado = new double[contador];</code>.</li>
+<li><strong>Relleno:</strong> Usa un segundo bucle para recorrer <code>datos</code> de nuevo.</li>
+<li><strong>Copia Condicional:</strong> Dentro del segundo bucle, si un elemento es válido, cópialo a <code>resultado[j]</code> y luego incrementa el índice del resultado (<code>j</code>).</li>
+<li><strong>Comprobación (Trazas):</strong> Usa <code>{-5, 10, -1, 5}</code>. Verifica que <code>contador=2</code>. El array resultante debe ser <code>{10.0, 5.0}</code>.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>Manejar dos índices: <code>i</code> para el array original y un índice separado (<code>j</code> o <code>indiceNuevo</code>) para el nuevo array.</p>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">10) Reemplazar Valores Negativos por Cero</p>
+<h5 id="objetivo_9"><strong>Objetivo:</strong></h5>
+<p>Modificar un array <em>in-place</em> (sin crear uno nuevo) basándose en una condición.</p>
+<h5 id="tarea-a-realizar_9"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa una función <code>reemplazarNegativos(int[] datos)</code> que modifique el array <code>datos</code> de forma que cualquier valor negativo sea reemplazado por <code>0</code>.</li>
+<li>La función debe devolver la cantidad de valores que fueron reemplazados.</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma y Contador:</strong> Define la función (retorna <code>int</code>) e inicializa <code>reemplazados = 0</code>.</li>
+<li><strong>Bucle Indexado:</strong> Usa un bucle <code>for</code> con el índice <code>i</code> para poder modificar el array.</li>
+<li><strong>Modificación Condicional:</strong> Dentro del bucle, si <code>datos[i] &lt; 0</code>:<ul>
+<li>Establece <code>datos[i] = 0</code>.</li>
+<li>Incrementa <code>reemplazados</code>.</li>
+</ul>
+</li>
+<li><strong>Comprobación (Trazas):</strong> Usa <code>{10, -5, 2}</code>. Verifica que el array se modifique a <code>{10, 0, 2}</code> y que la función retorne 1.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>El bucle debe acceder a los elementos por índice (<code>datos[i]</code>) para poder modificar su valor directamente.</p>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">11) Comparar si Dos Arrays Son Idénticos</p>
+<h5 id="objetivo_10"><strong>Objetivo:</strong></h5>
+<p>Comparar si dos arrays del mismo tipo son exactamente iguales.</p>
+<h5 id="tarea-a-realizar_10"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa una función <code>sonIguales(int[] listaA, int[] listaB)</code> que devuelva <code>true</code> si ambos arrays tienen la misma longitud y sus elementos coinciden en el mismo orden, y <code>false</code> en caso contrario.</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> Define la función que retorna <code>boolean</code>.</li>
+<li><strong>Chequeo de Longitud:</strong> Comprueba si <code>listaA.length != listaB.length</code>. Si son diferentes, retorna <code>false</code> inmediatamente.</li>
+<li><strong>Iteración y Comparación:</strong> Usa un bucle <code>for</code> para recorrer los arrays desde 0 hasta <code>length - 1</code>.</li>
+<li><strong>Retorno Temprano:</strong> Dentro del bucle, si <code>listaA[i] != listaB[i]</code>, retorna <code>false</code> inmediatamente.</li>
+<li><strong>Retorno de Éxito:</strong> Si el bucle finaliza sin retornar <code>false</code>, significa que son iguales, así que retorna <code>true</code>.</li>
+<li><strong>Comprobación (Trazas):</strong> Compara <code>{1, 2}</code> con <code>{1, 3}</code>. Verifica que retorne <code>false</code> en el índice 1.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>El primer paso debe ser un <code>if</code> para comparar <code>listaA.length != listaB.length</code>. Si difieren, puedes retornar <code>false</code> inmediatamente.</p>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">12) Comprobar Elementos Comunes</p>
+<h5 id="objetivo_11"><strong>Objetivo:</strong></h5>
+<p>Implementar una búsqueda dentro de una búsqueda (bucle anidado) para verificar si un valor de un array existe en otro.</p>
+<h5 id="tarea-a-realizar_11"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa una función <code>hayCoincidencia(int[] listaA, int[] listaB)</code> que devuelva <code>true</code> si <em>cualquier</em> valor del array <code>listaA</code> se encuentra en el array <code>listaB</code>.</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> Define la función que retorna <code>boolean</code>.</li>
+<li><strong>Bucle Externo:</strong> Recorre el primer array (<code>listaA</code>) con un índice <code>i</code>.</li>
+<li><strong>Bucle Interno:</strong> Dentro, usa un bucle anidado que recorra el segundo array (<code>listaB</code>) con un índice <code>j</code>.</li>
+<li><strong>Condicional y Retorno Temprano:</strong> Dentro del bucle interno, si <code>listaA[i] == listaB[j]</code>, retorna <code>true</code> (coincidencia encontrada).</li>
+<li><strong>Retorno de Fracaso:</strong> Si el bucle externo finaliza (es decir, se revisó cada elemento de A contra todo B), retorna <code>false</code>.</li>
+<li><strong>Comprobación (Trazas):</strong> Usa <code>A={1, 5}, B={3, 5}</code>. Verifica que retorne <code>true</code> cuando <code>i=1</code> y <code>j=1</code>.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>Utiliza un bucle externo que recorra <code>listaA</code> y un bucle interno que, para cada elemento, recorra <code>listaB</code> en busca de una coincidencia.</p>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">13) Rotar a la Derecha</p>
+<h5 id="objetivo_12"><strong>Objetivo:</strong></h5>
+<p>Modificar un array <em>in-place</em> rotando sus elementos una posición a la derecha.</p>
+<h5 id="tarea-a-realizar_12"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa un procedimiento <code>rotarDerecha(long[] datos)</code> que mueva los elementos una posición a la derecha. El último elemento debe pasar a ser el primero.</li>
+<li><em>Pista:</em> Guarda el último elemento en una variable temporal antes de empezar el bucle.</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma y Almacenamiento:</strong> Define el procedimiento (<code>void</code>). Almacena el último valor: <code>long temp = datos[datos.length - 1];</code>.</li>
+<li><strong>Bucle de Desplazamiento:</strong> Usa un bucle <code>for</code> que recorra el array <strong>de derecha a izquierda</strong> (desde <code>i = datos.length - 1</code> hasta <code>i &gt; 0</code>).</li>
+<li><strong>Asignación de Desplazamiento:</strong> Dentro del bucle, cada elemento toma el valor del que tiene a su izquierda: <code>datos[i] = datos[i - 1];</code>.</li>
+<li><strong>Restauración del Primero:</strong> Fuera del bucle, asigna el valor guardado al primer elemento: <code>datos[0] = temp;</code>.</li>
+<li><strong>Comprobación (Trazas):</strong> Usa <code>{10, 20, 30}</code>. <code>temp=30</code>. Verifica que el array final sea <code>{30, 10, 20}</code>.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>El bucle debe recorrer el array de derecha a izquierda (<code>i = length - 1; i &gt; 0; i--</code>) para que cada elemento sobrescriba al anterior <em>antes</em> de que su valor se pierda.</p>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">14) Sumar Dos Arrays Elemento a Elemento</p>
+<h5 id="objetivo_13"><strong>Objetivo:</strong></h5>
+<p>Crear un nuevo array a partir de la suma de los elementos de dos arrays.</p>
+<h5 id="tarea-a-realizar_13"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa una función <code>sumarArrays(double[] listaA, double[] listaB)</code> que devuelva un <strong>nuevo array</strong> de <code>double</code> donde cada elemento es la suma de los elementos correspondientes en <code>listaA</code> y <code>listaB</code>.</li>
+<li>Asume que los arrays de entrada tienen la misma longitud.</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma y Creación de Array:</strong> Define la función (retorna <code>double[]</code>). Crea el array resultado con la misma longitud: <code>double[] resultado = new double[listaA.length];</code>.</li>
+<li><strong>Iteración:</strong> Usa un bucle <code>for</code> desde 0 hasta <code>length - 1</code>.</li>
+<li><strong>Suma y Asignación:</strong> Dentro del bucle, calcula la suma de los elementos correspondientes y asigna al array resultado: <code>resultado[i] = listaA[i] + listaB[i];</code>.</li>
+<li><strong>Retorno:</strong> Devuelve el array <code>resultado</code>.</li>
+<li><strong>Comprobación (Trazas):</strong> Usa <code>A={1.0, 2.0}, B={0.5, 1.5}</code>. Verifica que <code>resultado[0]</code> sea 1.5 y <code>resultado[1]</code> sea 3.5.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>Declara el nuevo array con la longitud común: <code>double[] resultado = new double[listaA.length];</code>.</p>
+</div>
+</div>
+<hr>
+<h2 id="nivel-maestro-jedi-15-20">Nivel MAESTRO JEDI (15 - 20)</h2>
+<p>Ejercicios que requieren la implementación de algoritmos más complejos, a menudo utilizando la técnica de dos punteros o bucles anidados sofisticados.</p>
+<div class="admonition danger">
+<p class="admonition-title">15) Ordenar el Array (Ascendente)</p>
+<h5 id="objetivo_14"><strong>Objetivo:</strong></h5>
+<p>Implementar un algoritmo de ordenación simple (<em>in-place</em>).</p>
+<h5 id="tarea-a-realizar_14"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa un procedimiento <code>ordenarAscendente(int[] lista)</code> que ordene el array <em>in-place</em> de forma ascendente.</li>
+<li><strong>No utilices métodos de ordenación predefinidos de Java.</strong> Utiliza el algoritmo <em>Bubble Sort</em> (o cualquier otro de intercambio) basado únicamente en bucles anidados y una variable temporal para el intercambio.</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> Define el procedimiento (<code>void</code>).</li>
+<li><strong>Bucle Externo (Pasadas):</strong> Usa un bucle <code>for</code> (índice <code>i</code>) que controle el número de pasadas necesarias (<code>length - 1</code> veces).</li>
+<li><strong>Bucle Interno (Comparación y Intercambio):</strong> Anida un segundo bucle <code>for</code> (índice <code>j</code>) que recorra los elementos aún no ordenados (<code>length - 1 - i</code> veces).</li>
+<li><strong>Condicional de Intercambio:</strong> Dentro del bucle interno, si <code>lista[j] &gt; lista[j+1]</code>:<ul>
+<li>Realiza el intercambio de 3 pasos: <code>temp = lista[j]; lista[j] = lista[j+1]; lista[j+1] = temp;</code>.</li>
+</ul>
+</li>
+<li><strong>Comprobación (Trazas):</strong> Usa <code>{3, 1, 2}</code>. En la primera pasada, verifica que 3 y 1 se intercambien, dejando <code>{1, 3, 2}</code>.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>Se requieren dos bucles anidados y una variable <code>temp</code> para realizar el intercambio cuando <code>lista[j] &gt; lista[j+1]</code>.</p>
+</div>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">16) Contar Valores Distintos</p>
+<h5 id="objetivo_15"><strong>Objetivo:</strong></h5>
+<p>Contar la cantidad de valores únicos en un array sin usar estructuras auxiliares.</p>
+<h5 id="tarea-a-realizar_15"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa una función <code>contarValoresUnicos(int[] lista)</code> que devuelva la cantidad total de valores distintos en el array.</li>
+<li><em>Pista:</em> Usa un bucle externo (<code>i</code>) que recorra todos los elementos. Dentro, usa un bucle interno (<code>j &lt; i</code>) para verificar si el elemento actual (<code>lista[i]</code>) ya fue visto en una posición anterior.</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma y Contador:</strong> Define la función (retorna <code>int</code>) e inicializa <code>unicos = 0</code>.</li>
+<li><strong>Bucle Externo:</strong> Usa un bucle <code>for</code> (<code>i</code>) para iterar sobre cada elemento.</li>
+<li><strong>Bandera de Duplicado:</strong> Inicializa <code>boolean yaVisto = false</code> dentro del bucle externo.</li>
+<li><strong>Bucle Interno (Búsqueda hacia atrás):</strong> Usa un segundo bucle (<code>j</code>) que recorra las posiciones anteriores a <code>i</code> (desde 0 hasta <code>i - 1</code>).</li>
+<li><strong>Activación de Bandera:</strong> Si <code>lista[i] == lista[j]</code>, establece <code>yaVisto = true</code> y usa <code>break</code> para salir del bucle interno.</li>
+<li><strong>Conteo Final:</strong> Después del bucle interno, si <code>!yaVisto</code>, incrementa <code>unicos</code>.</li>
+<li><strong>Comprobación (Trazas):</strong> Usa <code>{1, 2, 1}</code>. En <code>i=2</code> (valor 1), el bucle interno encuentra una coincidencia en <code>j=0</code>. <code>yaVisto</code> se vuelve <code>true</code>, y <code>unicos</code> no se incrementa, resultando en 2.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>Necesitas una bandera <code>boolean yaVisto = false</code> que se active en el bucle interno si se encuentra una coincidencia anterior. Solo incrementas el contador si la bandera es <code>false</code> al salir del bucle interno.</p>
+</div>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">17) Verificar Simetría (Palíndromo de Array)</p>
+<h5 id="objetivo_16"><strong>Objetivo:</strong></h5>
+<p>Implementar una verificación de palíndromo para un array de números.</p>
+<h5 id="tarea-a-realizar_16"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa una función <code>esSimetrico(int[] lista)</code> que devuelva <code>true</code> si el array se lee igual de izquierda a derecha que de derecha a izquierda.</li>
+<li><em>Pista:</em> Utiliza la técnica de <strong>dos punteros</strong> (uno en el inicio y otro en el final) que se mueven hacia el centro del array en cada iteración del bucle <code>while</code>.</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma y Punteros:</strong> Define la función (retorna <code>boolean</code>). Inicializa <code>izquierdo = 0</code> y <code>derecho = lista.length - 1</code>.</li>
+<li><strong>Bucle de Convergencia:</strong> Usa un bucle <code>while (izquierdo &lt; derecho)</code>.</li>
+<li><strong>Condicional de Asimetría:</strong> Si <code>lista[izquierdo] != lista[derecho]</code>, retorna <code>false</code> inmediatamente.</li>
+<li><strong>Avance de Punteros:</strong> Incrementa <code>izquierdo</code> y decrementa <code>derecho</code>.</li>
+<li><strong>Retorno de Éxito:</strong> Si el bucle finaliza, retorna <code>true</code>.</li>
+<li><strong>Comprobación (Trazas):</strong> Usa <code>{1, 2, 1}</code>. I=0, D=2. Match. I=1, D=1. Loop termina. Retorna <code>true</code>.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>El bucle debe ser <code>while (punteroIzquierdo &lt; punteroDerecho)</code>. Si <code>lista[izquierdo] != lista[derecho]</code>, retorna <code>false</code>.</p>
+</div>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">18) Detección de Suma Local Excesiva</p>
+<h5 id="objetivo_17"><strong>Objetivo:</strong></h5>
+<p>Implementar un patrón de "ventana deslizante" simple para verificar una condición localmente.</p>
+<h5 id="tarea-a-realizar_17"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa una función <code>haySumaExcesiva(long[] datos, long limite)</code> que devuelva <code>true</code> si en cualquier segmento consecutivo de <strong>cuatro</strong> elementos la suma supera el <code>limite</code>.</li>
+<li>Asegúrate de que tu bucle no intente acceder a índices fuera de los límites del array.</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma:</strong> Define la función que retorna <code>boolean</code>.</li>
+<li><strong>Bucle de Ventana:</strong> Usa un bucle <code>for</code> (índice <code>i</code>) que recorra las posiciones de inicio válidas para una ventana de 4 elementos: <code>i &lt;= datos.length - 4</code>.</li>
+<li><strong>Cálculo de Suma Local:</strong> Dentro del bucle, calcula la suma de los 4 elementos consecutivos: <code>suma = datos[i] + datos[i+1] + datos[i+2] + datos[i+3]</code>.</li>
+<li><strong>Condicional y Retorno Temprano:</strong> Si <code>suma &gt; limite</code>, retorna <code>true</code>.</li>
+<li><strong>Retorno de Fracaso:</strong> Si el bucle finaliza, retorna <code>false</code>.</li>
+<li><strong>Comprobación (Trazas):</strong> Usa <code>{100, 10, 10, 10, 100}</code> y <code>limite=120</code>. Verifica que el bucle para <code>i=0</code> calcule 130, retorne <code>true</code>.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>El bucle principal (<code>for i</code>) debe terminar cuando queden menos de 4 elementos para la ventana: <code>i &lt;= datos.length - 4</code>.</p>
+</div>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">19) Intercalar Elementos de Dos Arrays</p>
+<h5 id="objetivo_18"><strong>Objetivo:</strong></h5>
+<p>Combinar dos arrays en un tercero, alternando los elementos de ambos.</p>
+<h5 id="tarea-a-realizar_18"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa una función <code>intercalar(int[] listaA, int[] listaB)</code> que devuelva un <strong>nuevo array</strong> que contenga los elementos de <code>listaA</code> y <code>listaB</code> de forma alternada.</li>
+<li>El array resultante debe tener una longitud igual a la suma de las longitudes de A y B. Si una lista es más corta, se añaden los elementos restantes de la lista más larga.</li>
+<li><em>Pista:</em> Utiliza un único bucle que se ejecute tantas veces como la longitud del array resultante. Dentro, usa <code>if</code> anidados para verificar si el índice actual es válido para A y B.</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Firma y Arrays:</strong> Define la función (retorna <code>int[]</code>). Crea <code>int[] resultado</code> con longitud <code>A.length + B.length</code>. Inicializa <code>iA=0, iB=0</code>.</li>
+<li><strong>Bucle de Relleno:</strong> Usa un bucle <code>for</code> (<code>iR</code>) desde 0 hasta <code>resultado.length - 1</code>.</li>
+<li><strong>Alternancia Condicional:</strong> Dentro del bucle, comprueba la posición y la disponibilidad de elementos:<ul>
+<li>Si <code>iA &lt; listaA.length</code> <strong>Y</strong> (<code>iB &gt;= listaB.length</code> <strong>O</strong> <code>iR</code> es par): Copia <code>listaA[iA]</code> a <code>resultado[iR]</code> y avanza <code>iA</code>.</li>
+<li>Si no, copia <code>listaB[iB]</code> a <code>resultado[iR]</code> y avanza <code>iB</code>.</li>
+</ul>
+</li>
+<li><strong>Comprobación (Trazas):</strong> Usa <code>A={1, 3}, B={2}</code>. Verifica que en el índice 0 se copia A, en 1 se copia B, en 2 se copia A, dando <code>{1, 2, 3}</code>.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>El tamaño del nuevo array es <code>listaA.length + listaB.length</code>. Utiliza tres índices (<code>iA</code>, <code>iB</code>, <code>iResultado</code>) para controlar la posición en cada array.</p>
+</div>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">20) Encontrar Elementos Comunes en Arrays Ordenados</p>
+<h5 id="objetivo_19"><strong>Objetivo:</strong></h5>
+<p>Encontrar la intersección (elementos comunes) de dos arrays <strong>ordenados</strong> de la forma más eficiente.</p>
+<h5 id="tarea-a-realizar_19"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Implementa una función <code>encontrarInterseccion(int[] listaA, int[] listaB)</code> que reciba dos arrays <strong>ordenados</strong> y devuelva un <strong>nuevo array</strong> conteniendo solo los valores que aparecen en ambos.</li>
+<li><em>Pista:</em> Utiliza la técnica de <strong>dos punteros</strong> (uno para <code>listaA</code> y uno para <code>listaB</code>). Si los elementos son iguales, se añade al resultado y se avanzan ambos punteros. Si son diferentes, se avanza el puntero del valor menor.</li>
+</ol>
+<details class="success">
+<summary><strong>Metodología: Divide y Vencerás</strong></summary>
+<ol>
+<li><strong>Definición de Punteros:</strong> Inicializa <code>iA = 0</code>, <code>iB = 0</code>. Crea un array temporal de tamaño máximo (<code>min(A.length, B.length)</code>) para almacenar coincidencias.</li>
+<li><strong>Bucle de Punteros:</strong> Usa un bucle <code>while (iA &lt; listaA.length &amp;&amp; iB &lt; listaB.length)</code>.</li>
+<li><strong>Lógica de Tres Vías:</strong> Dentro del <code>while</code>:<ul>
+<li><code>if (listaA[iA] &lt; listaB[iB])</code>: Avanza <code>iA++</code>.</li>
+<li><code>else if (listaB[iB] &lt; listaA[iA])</code>: Avanza <code>iB++</code>.</li>
+<li><code>else</code>: (Coincidencia) Almacena el valor, avanza <code>iA++</code> y <code>iB++</code>.</li>
+</ul>
+</li>
+<li><strong>Creación de Array Final:</strong> Crea el array final del tamaño exacto de las coincidencias encontradas en el temporal.</li>
+<li><strong>Comprobación (Trazas):</strong> Usa <code>A={10, 20}, B={5, 20}</code>. Verifica que 5 (menor) hace avanzar <code>iB</code>. Luego 10 (menor) hace avanzar <code>iA</code>. Finalmente 20=20, se añade 20, y ambos avanzan, terminando con el resultado <code>{20}</code>.</li>
+</ol>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><strong>Concepto Clave:</strong></p>
+<p>La eficiencia se logra utilizando un bucle <code>while (i &lt; listaA.length &amp;&amp; j &lt; listaB.length)</code> y realizando solo una comparación y uno o dos avances por iteración.</p>
+</div>
+</div>
+<p>--- END OF FILE 3-Programacion-estructurada-arrays.md ---</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

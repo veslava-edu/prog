@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>2 Programacion estructurada condicionales - PROG</title>
+<link href="../../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../../toggle-sidebar.js"></script><script src="../../js/unpkg.com/d3@7.js" type="text/javascript"></script><script src="../../js/unpkg.com/markmap-lib@0.18.js" type="text/javascript"></script><script src="../../js/unpkg.com/markmap-view@0.18.js" type="text/javascript"></script><style type="text/css">div.mkdocs-markmap {
+    width: 100%;
+    min-height: 1em;
+    border: 1px solid grey;
+}
+.mkdocs-markmap > svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+</style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#programacion-estructurada-y-modular">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="PROG" class="md-header__button md-logo" data-md-component="logo" href="../.." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            PROG
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              2 Programacion estructurada condicionales
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../1-Introduccion-programacion/">
+          
+  
+  
+  Programación
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="PROG" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    PROG
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../1-Introduccion-programacion/">
+<span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2-Programacion-estructurada/">
+<span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../3-Programacion-modular/">
+<span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4-Estructuras-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../5-POO-Clases-y-Objetos/">
+<span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../6-POO-Uso-avanzado/">
+<span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../7-Estructuras-datos-dinamicas/">
+<span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../8-Programacion-funcional-Streams/">
+<span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../9-Ficheros/">
+<span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../10-Acceso-base-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../11-Interfaces-graficas-MVC/">
+<span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-tipos-y-operaciones">
+<span class="md-ellipsis">
+      
+        1. Tipos y Operaciones
+      
+    </span>
+</a>
+<nav aria-label="1. Tipos y Operaciones" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-lenguajes-tipados-y-no-tipados">
+<span class="md-ellipsis">
+      
+        1.1. Lenguajes tipados y no tipados
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12-operaciones">
+<span class="md-ellipsis">
+      
+        1.2. Operaciones
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13-precedencia-de-operadores">
+<span class="md-ellipsis">
+      
+        1.3. Precedencia de Operadores
+      
+    </span>
+</a>
+<nav aria-label="1.3. Precedencia de Operadores" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-de-precedencia-simplificada-para-java">
+<span class="md-ellipsis">
+      
+        Tabla de Precedencia (Simplificada para JAVA)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplos-practicos">
+<span class="md-ellipsis">
+      
+        Ejemplos Prácticos
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14-casting-y-conversion-de-tipos">
+<span class="md-ellipsis">
+      
+        1.4. Casting y Conversión de Tipos
+      
+    </span>
+</a>
+<nav aria-label="1.4. Casting y Conversión de Tipos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#casting-implicito-widening-conversion">
+<span class="md-ellipsis">
+      
+        Casting Implícito (Widening Conversion)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#casting-explicito-narrowing-conversion">
+<span class="md-ellipsis">
+      
+        Casting Explícito (Narrowing Conversion)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplos-en-java">
+<span class="md-ellipsis">
+      
+        Ejemplos en JAVA
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#15-variables-y-constantes">
+<span class="md-ellipsis">
+      
+        1.5. Variables y Constantes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#16-operaciones-con-strings">
+<span class="md-ellipsis">
+      
+        1.6. Operaciones con Strings
+      
+    </span>
+</a>
+<nav aria-label="1.6. Operaciones con Strings" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-de-metodos-comunes-de-string">
+<span class="md-ellipsis">
+      
+        Tabla de Métodos Comunes de String
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#17-comentarios">
+<span class="md-ellipsis">
+      
+        1.7. Comentarios
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-algoritmo">
+<span class="md-ellipsis">
+      
+        2. Algoritmo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-programacion-estructurada">
+<span class="md-ellipsis">
+      
+        3. Programación Estructurada
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-secuencias">
+<span class="md-ellipsis">
+      
+        4. Secuencias
+      
+    </span>
+</a>
+<nav aria-label="4. Secuencias" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-ejemplos-de-ejecucion-secuencial">
+<span class="md-ellipsis">
+      
+        4.1 Ejemplos de Ejecución Secuencial
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42-secuencias-avanzadas-streams-en-java">
+<span class="md-ellipsis">
+      
+        4.2 Secuencias Avanzadas: Streams en JAVA
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-condicionales">
+<span class="md-ellipsis">
+      
+        5. Condicionales
+      
+    </span>
+</a>
+<nav aria-label="5. Condicionales" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#51-condicional-basico-if-unico">
+<span class="md-ellipsis">
+      
+        5.1. Condicional Básico (if único)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#52-condicional-simple-if-else">
+<span class="md-ellipsis">
+      
+        5.2. Condicional Simple (if-else)
+      
+    </span>
+</a>
+<nav aria-label="5.2. Condicional Simple (if-else)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-login-de-un-videojuego">
+<span class="md-ellipsis">
+      
+        Ejemplo: Login de un videojuego
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#53-condicionales-multiples-if-else-if-else">
+<span class="md-ellipsis">
+      
+        5.3. Condicionales Múltiples (if-else if-else)
+      
+    </span>
+</a>
+<nav aria-label="5.3. Condicionales Múltiples (if-else if-else)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-sistema-de-loot-botin-de-un-enemigo">
+<span class="md-ellipsis">
+      
+        Ejemplo: Sistema de "loot" (botín) de un enemigo
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#54-estructura-switch">
+<span class="md-ellipsis">
+      
+        5.4. Estructura switch
+      
+    </span>
+</a>
+<nav aria-label="5.4. Estructura switch" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-menu-de-opciones">
+<span class="md-ellipsis">
+      
+        Ejemplo: Menú de opciones
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<!-- prg_ud2_programacion_estructurada_y_modular.md --><h1 id="programacion-estructurada-y-modular">Programación Estructurada y Modular</h1>
+<p>¡Muy buenas, equipo! En el tema anterior sentamos las bases de nuestro rascacielos. Aprendimos qué es un algoritmo (el plano), un programa (el edificio) y los distintos materiales de construcción (los lenguajes). Ahora toca ponerse el casco y empezar a levantar muros. Hoy vamos a ver las dos filosofías de construcción que dominan el mundo del software: la <strong>Programación Estructurada</strong> y la <strong>Programación Modular</strong>.</p>
+<p>Imaginad que estáis montando un PC gaming de última generación. La <strong>programación estructurada</strong> es como el manual de instrucciones: una serie de pasos claros y ordenados. "Primero, instala la CPU en la placa base. Segundo, si tienes dos módulos de RAM, colócalos en los slots A2 y B2. Tercero, repite para cada tornillo: apriétalo hasta que haga tope". Son secuencias, decisiones y repeticiones. Sin estas tres estructuras, el montaje sería un caos de cables y componentes sin sentido.</p>
+<p>Pero, ¿qué pasa con los componentes en sí? El procesador, la tarjeta gráfica, la fuente de alimentación... cada uno es una pequeña maravilla de la ingeniería, diseñado por un equipo de expertos para hacer una cosa y hacerla bien. Podéis comprar una tarjeta gráfica NVIDIA o AMD, y ambas funcionarán si respetan el estándar PCIe. Eso, compañeros, es la <strong>programación modular</strong>. En lugar de construir el PC átomo por átomo, lo montamos a partir de "módulos" (componentes) ya funcionales y reutilizables.</p>
+<p>En este tema, aprenderemos a usar las herramientas de la programación estructurada (los <code>if</code>, <code>for</code>, <code>while</code>) para dar lógica a nuestro código, y luego veremos cómo la programación modular (creando nuestras propias funciones y procedimientos) nos permite construir software más limpio, reutilizable y fácil de mantener, como si estuviéramos montando un PC con piezas de alta gama. ¡Manos a la obra!</p>
+<h2 id="1-tipos-y-operaciones">1. Tipos y Operaciones</h2>
+<p>Antes de poder construir nada, necesitamos entender nuestros materiales. En programación, esos materiales son los <strong>datos</strong>, y para que el ordenador sepa cómo tratarlos, los clasificamos en <strong>tipos</strong>. Un tipo de dato no es más que una etiqueta que le dice a JAVA: "Oye, en esta caja solo puedes guardar números enteros" o "en esta otra, solo texto". Esto evita desastres como intentar sumar tu nombre a tu edad.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Tipo de Dato</p>
+<p>Un tipo de dato define dos cosas:
+1.  El <strong>conjunto de valores</strong> que una variable puede almacenar (ej: números enteros, texto, valores de verdad).
+2.  El <strong>conjunto de operaciones</strong> que se pueden realizar con esos valores (ej: puedes sumar dos números, pero no puedes dividir dos nombres).</p>
+</div>
+<p>En JAVA, como en la mayoría de los lenguajes, distinguimos entre tipos simples (o primitivos) y tipos compuestos.</p>
+<ul>
+<li><strong>Tipos Simples (Primitivos):</strong> Son los ladrillos más básicos. Representan un único valor.</li>
+<li><strong>Tipos Compuestos (de Objeto o Referencia):</strong> Son estructuras más complejas construidas a partir de los tipos simples. No almacenan el dato directamente, sino una "dirección" o referencia a donde se encuentra el dato en memoria. <code>String</code>, los arrays, y cualquier clase que creemos, son de este tipo.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">// Tipos de datos en JAVA</span>
+
+<span class="c1">// --- Tipos Primitivos (Simples) ---</span>
+
+<span class="c1">// Números enteros</span>
+<span class="kt">byte</span><span class="w"> </span><span class="n">unByte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">127</span><span class="p">;</span><span class="w">           </span><span class="c1">// 8 bits, de -128 a 127</span>
+<span class="kt">short</span><span class="w"> </span><span class="n">unShort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">32767</span><span class="p">;</span><span class="w">       </span><span class="c1">// 16 bits</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">unEntero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2147483647</span><span class="p">;</span><span class="w">   </span><span class="c1">// 32 bits (el más común para enteros)</span>
+<span class="kt">long</span><span class="w"> </span><span class="n">unLargo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9223372036854775807L</span><span class="p">;</span><span class="w"> </span><span class="c1">// 64 bits, la 'L' al final es obligatoria</span>
+
+<span class="c1">// Números de punto flotante (decimales)</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">unFlotante</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159f</span><span class="p">;</span><span class="w"> </span><span class="c1">// 32 bits, la 'f' al final es obligatoria</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">unDoble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.141592653589793</span><span class="p">;</span><span class="w"> </span><span class="c1">// 64 bits (el estándar para decimales)</span>
+
+<span class="c1">// Caracteres</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">unCaracter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'A'</span><span class="p">;</span><span class="w">       </span><span class="c1">// 16 bits, un único carácter Unicode. Se usan comillas simples.</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">otroCaracter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'\u00A9'</span><span class="p">;</span><span class="w"> </span><span class="c1">// El símbolo de copyright (©)</span>
+
+<span class="c1">// Lógicos</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">esEstudiante</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// Solo puede ser true o false</span>
+
+<span class="c1">// --- Tipos Compuestos (de Referencia/Objeto) ---</span>
+
+<span class="c1">// Cadenas de texto (el más usado)</span>
+<span class="n">String</span><span class="w"> </span><span class="n">unNombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Ada Lovelace"</span><span class="p">;</span><span class="w"> </span><span class="c1">// Objeto que representa una secuencia de caracteres. Comillas dobles.</span>
+
+<span class="c1">// Arrays (colecciones de un mismo tipo)</span>
+<span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">notasExamenes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">};</span>
+<span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">listaCompra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"Leche"</span><span class="p">,</span><span class="w"> </span><span class="s">"Pan"</span><span class="p">,</span><span class="w"> </span><span class="s">"Huevos"</span><span class="p">};</span>
+
+<span class="c1">// Matrices (array de arrays)</span>
+<span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">tableroTresEnRaya</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<h3 id="11-lenguajes-tipados-y-no-tipados">1.1. Lenguajes tipados y no tipados</h3>
+<p>Aquí entramos en una de las grandes batallas filosóficas de la programación. JAVA pertenece a un bando muy claro.</p>
+<ul>
+<li>
+<p><strong>Lenguajes Fuertemente Tipados (o de Tipado Estático):</strong> JAVA, C++, C#, Kotlin.
+    Son como un inspector de obras muy estricto. Te obligan a declarar el tipo de cada variable antes de usarla (<code>int edad;</code>) y comprueban en tiempo de <strong>compilación</strong> que no intentes hacer cosas raras, como <code>edad = "dieciocho";</code>. Si lo intentas, el programa ni siquiera se genera. Esto pilla muchos errores de antemano y hace el código más seguro y, a menudo, más rápido.</p>
+</li>
+<li>
+<p><strong>Lenguajes Débilmente Tipados (o de Tipado Dinámico):</strong> Python, JavaScript, PHP.
+    Son más relajados. No te obligan a declarar el tipo. Una variable puede contener un número en una línea y un texto en la siguiente. El tipo se decide en tiempo de <strong>ejecución</strong>. Esto da mucha flexibilidad y permite escribir código más rápido, pero también es una fuente común de errores que solo aparecen cuando el programa ya está funcionando.</p>
+</li>
+</ul>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Programador
+    participant Compilador as Compilador (JAVA)
+    participant Interprete as Intérprete (Python)
+
+    Programador-&gt;&gt;Compilador: Escribe: int edad = "hola";
+    Compilador--&gt;&gt;Programador: ¡ERROR! No puedes hacer eso. El programa no se compila.
+
+    Programador-&gt;&gt;Interprete: Escribe: edad = "hola"
+    Interprete-&gt;&gt;Interprete: El programa se ejecuta...
+    Note right of Interprete: ...hasta que intentas hacer:&lt;br&gt;edad + 5
+    Interprete--&gt;&gt;Programador: ¡ERROR en ejecución! No puedo sumar texto y número.</code></pre>
+<h3 id="12-operaciones">1.2. Operaciones</h3>
+<p>Las operaciones son las acciones que podemos realizar con nuestros datos. Se representan mediante operadores.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// --- Operadores Aritméticos ---</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">            </span><span class="c1">// Suma: 15</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">resta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">            </span><span class="c1">// Resta: 5</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">multiplicacion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">   </span><span class="c1">// Multiplicación: 50</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">divisionEntera</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">   </span><span class="c1">// División entera: 3 (se trunca la parte decimal)</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">divisionReal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">3.0</span><span class="p">;</span><span class="w"> </span><span class="c1">// División real: 3.333...</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">modulo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">           </span><span class="c1">// Módulo (resto de la división): 1</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">contador</span><span class="o">++</span><span class="p">;</span><span class="w">                    </span><span class="c1">// Incremento postfijo (ahora contador es 1)</span>
+<span class="o">++</span><span class="n">contador</span><span class="p">;</span><span class="w">                    </span><span class="c1">// Incremento prefijo (ahora contador es 2)</span>
+<span class="n">contador</span><span class="o">--</span><span class="p">;</span><span class="w">                    </span><span class="c1">// Decremento postfijo (ahora contador es 1)</span>
+<span class="o">--</span><span class="n">contador</span><span class="p">;</span><span class="w">                    </span><span class="c1">// Decremento prefijo (ahora contador es 0)</span>
+
+<span class="c1">// --- Operadores Relacionales (devuelven boolean) ---</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">esIgual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w">     </span><span class="c1">// Igualdad: true</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">esDistinto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w">  </span><span class="c1">// Desigualdad: true</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">esMayor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w">      </span><span class="c1">// Mayor que: true</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">esMenor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w">      </span><span class="c1">// Menor que: false</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">esMayorOIgual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// Mayor o igual que: true</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">esMenorOIgual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// Menor o igual que: false</span>
+
+<span class="c1">// --- Operadores Lógicos (operan sobre booleans) ---</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">tieneCarnet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">esMayorDeEdad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">puedeConducir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tieneCarnet</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">esMayorDeEdad</span><span class="p">;</span><span class="w"> </span><span class="c1">// AND (Y lógico): true</span>
+
+<span class="kt">boolean</span><span class="w"> </span><span class="n">tieneDescuentoJoven</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">tieneDescuentoFamilia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">aplicaDescuento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tieneDescuentoJoven</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">tieneDescuentoFamilia</span><span class="p">;</span><span class="w"> </span><span class="c1">// OR (O lógico): true</span>
+
+<span class="kt">boolean</span><span class="w"> </span><span class="n">estaLloviendo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">noLlueve</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">estaLloviendo</span><span class="p">;</span><span class="w"> </span><span class="c1">// NOT (Negación): false</span>
+
+<span class="c1">// --- Operadores de Asignación ---</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="n">valor</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// Suma y asignación (equivale a valor = valor + 5;). Ahora es 15.</span>
+<span class="n">valor</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// Resta y asignación. Ahora es 12.</span>
+<span class="n">valor</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// Multiplicación y asignación. Ahora es 24.</span>
+<span class="n">valor</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="c1">// División y asignación. Ahora es 6.</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>Declara en JAVA una variable para almacenar el precio de un producto, otra para el nombre de un videojuego y otra para saber si un usuario está o no conectado.</li>
+<li>Escribe una expresión en JAVA que sea <code>true</code> si un alumno ha aprobado (nota &gt;= 5) y además ha entregado todos los trabajos (haEntregadoTodo == true).</li>
+<li>¿Qué resultado daría la operación <code>13 % 5</code> en JAVA? ¿Y <code>13 / 5</code>? ¿Por qué son diferentes?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="13-precedencia-de-operadores">1.3. Precedencia de Operadores</h3>
+<p>No todas las operaciones se realizan en el mismo orden. Al igual que en matemáticas, JAVA tiene unas reglas de prioridad para saber qué calcular primero. Si escribes <code>3 + 5 * 2</code>, JAVA no calcula <code>8 * 2</code>, sino que sabe que la multiplicación va primero, calculando <code>3 + 10</code>.</p>
+<h4 id="tabla-de-precedencia-simplificada-para-java">Tabla de Precedencia (Simplificada para JAVA)</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Nivel</th>
+<th style="text-align: left;">Categoría</th>
+<th style="text-align: left;">Operadores</th>
+<th style="text-align: left;">Asociatividad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Postfijo</td>
+<td style="text-align: left;"><code>expr++</code>, <code>expr--</code></td>
+<td style="text-align: left;">Izquierda a derecha</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Unario</td>
+<td style="text-align: left;"><code>++expr</code>, <code>--expr</code>, <code>+</code>, <code>-</code>, <code>!</code></td>
+<td style="text-align: left;">Derecha a izquierda</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Multiplicativo</td>
+<td style="text-align: left;"><code>*</code>, <code>/</code>, <code>%</code></td>
+<td style="text-align: left;">Izquierda a derecha</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Aditivo</td>
+<td style="text-align: left;"><code>+</code>, <code>-</code></td>
+<td style="text-align: left;">Izquierda a derecha</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Relacional</td>
+<td style="text-align: left;"><code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></td>
+<td style="text-align: left;">Izquierda a derecha</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Igualdad</td>
+<td style="text-align: left;"><code>==</code>, <code>!=</code></td>
+<td style="text-align: left;">Izquierda a derecha</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">AND Lógico</td>
+<td style="text-align: left;"><code>&amp;&amp;</code></td>
+<td style="text-align: left;">Izquierda a derecha</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">OR Lógico</td>
+<td style="text-align: left;"><code>||</code></td>
+<td style="text-align: left;">Izquierda a derecha</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">Asignación</td>
+<td style="text-align: left;"><code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code></td>
+<td style="text-align: left;">Derecha a izquierda</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Regla de oro: ante la duda, usa paréntesis</p>
+<p>Aunque es bueno conocer la precedencia, el código más legible es el que no te hace pensar. Usar paréntesis <code>()</code> para agrupar operaciones no solo fuerza el orden que tú quieres, sino que hace el código infinitamente más fácil de leer para otros (y para tu "yo" del futuro).</p>
+</div>
+<h4 id="ejemplos-practicos">Ejemplos Prácticos</h4>
+<p><strong>Expresión Completa:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Precedencia</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="mi">10</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Desglose paso a paso:</span>
+<span class="w">        </span><span class="c1">// 1. Paréntesis: (10 % 3 == 1 || 8 &gt; 10)</span>
+<span class="w">        </span><span class="c1">//    a. Dentro del paréntesis, el módulo primero: 10 % 3 -&gt; 1</span>
+<span class="w">        </span><span class="c1">//    b. Comparaciones: 1 == 1 -&gt; true;  8 &gt; 10 -&gt; false</span>
+<span class="w">        </span><span class="c1">//    c. OR lógico: true || false -&gt; true</span>
+<span class="w">        </span><span class="c1">//    Resultado del paréntesis: true</span>
+<span class="w">        </span><span class="c1">// 2. Expresión principal: 5 + 3 * 2 &lt; 15 &amp;&amp; true</span>
+<span class="w">        </span><span class="c1">//    a. Multiplicación: 3 * 2 -&gt; 6</span>
+<span class="w">        </span><span class="c1">//    b. Suma: 5 + 6 -&gt; 11</span>
+<span class="w">        </span><span class="c1">//    c. Relacional: 11 &lt; 15 -&gt; true</span>
+<span class="w">        </span><span class="c1">//    d. AND lógico final: true &amp;&amp; true -&gt; true</span>
+<span class="w">        </span><span class="c1">// 3. El resultado final es true</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El resultado es: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">resultado</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime true</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Caso Peligroso: Asignación vs. Comparación</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// ¡¡ERROR COMÚN DE NOVATO!!</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Esto no COMPARA, ¡ASIGNA 10 a x y se evalúa como si fuera un boolean (lo cual es un error en JAVA)!</span>
+<span class="w">    </span><span class="c1">// Este código da un error de compilación en JAVA,</span>
+<span class="w">    </span><span class="c1">// ¡pero en otros lenguajes como C podría causar un bug terrible!</span>
+<span class="p">}</span>
+
+<span class="c1">// Lo correcto es usar el operador de igualdad '=='</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"x vale 10"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">¡Mucho cuidado con <code>=</code> vs <code>==</code>!</p>
+<p>En JAVA, el compilador suele salvarte de asignar dentro de un <code>if</code>. Pero en otros lenguajes, es una de las fuentes de bugs más difíciles de encontrar. Acostúmbrate desde ya a diferenciar mentalmente <strong>asignación (<code>=</code>)</strong> de <strong>comparación (<code>==</code>)</strong>.</p>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="14-casting-y-conversion-de-tipos">1.4. Casting y Conversión de Tipos</h3>
+<p>A veces necesitamos convertir un dato de un tipo a otro. Es como intentar meter una moneda en una máquina que solo acepta billetes; necesitas cambiarla primero.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Casting (Moldeado de tipo)</p>
+<p>El casting es el proceso de convertir un valor de un tipo de dato a otro. Puede ser implícito (el compilador lo hace por ti) o explícito (tú fuerzas la conversión).</p>
+</div>
+<h4 id="casting-implicito-widening-conversion">Casting Implícito (Widening Conversion)</h4>
+<p>Ocurre automáticamente cuando conviertes un tipo de dato "pequeño" a uno "grande", donde no hay riesgo de perder información.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CastingImplicito</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">miEntero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">miDoble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">miEntero</span><span class="p">;</span><span class="w"> </span><span class="c1">// Conversión implícita de int a double</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Entero: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">miEntero</span><span class="p">);</span><span class="w"> </span><span class="c1">// 100</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Doble: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">miDoble</span><span class="p">);</span><span class="w">   </span><span class="c1">// 100.0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="casting-explicito-narrowing-conversion">Casting Explícito (Narrowing Conversion)</h4>
+<p>Ocurre cuando conviertes un tipo "grande" a uno "pequeño". Aquí hay riesgo de perder información (como la parte decimal), por lo que debes decirle explícitamente al compilador que estás seguro de lo que haces.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CastingExplicito</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">miDoble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9.78</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// int miEntero = miDoble; // ERROR DE COMPILACIÓN!</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">miEntero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">miDoble</span><span class="p">;</span><span class="w"> </span><span class="c1">// Casting explícito de double a int</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Doble: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">miDoble</span><span class="p">);</span><span class="w">     </span><span class="c1">// 9.78</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Entero: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">miEntero</span><span class="p">);</span><span class="w">   </span><span class="c1">// 9 (¡se pierde la parte decimal!)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">¡Peligro con el Casting Explícito!</p>
+<p>Cuando haces un casting explícito, asumes la responsabilidad. Si el valor del tipo grande no cabe en el pequeño, puedes obtener resultados inesperados o errores.</p>
+</div>
+<h4 id="ejemplos-en-java">Ejemplos en JAVA</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Conversiones</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// --- Conversión Implícita ---</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">miEntero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">miDoble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">miEntero</span><span class="p">;</span><span class="w"> </span><span class="c1">// Perfecto, JAVA lo hace solo. miDoble ahora es 100.0</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Implícita: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">miDoble</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// --- Conversión Explícita (Casting) ---</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">precio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">99.99</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// int precioEntero = precio; // ¡ERROR DE COMPILACIÓN! No se puede hacer implícitamente.</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">precioEntero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">precio</span><span class="p">;</span><span class="w"> </span><span class="c1">// ¡Correcto! Le decimos a JAVA que lo fuerce.</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Explícita (casting): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">precioEntero</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 99 (se pierde la parte decimal)</span>
+
+<span class="w">        </span><span class="c1">// --- Conversión con métodos de ayuda ---</span>
+
+<span class="w">        </span><span class="c1">// De String a Número</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">textoNumero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"123"</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">numeroDesdeTexto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">textoNumero</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"String a int: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">numeroDesdeTexto</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span><span class="w"> </span><span class="c1">// Imprime 124</span>
+
+<span class="w">        </span><span class="c1">// De Número a String</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">puntuacion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">textoPuntuacion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">puntuacion</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Int a String: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">textoPuntuacion</span><span class="p">.</span><span class="na">length</span><span class="p">());</span><span class="w"> </span><span class="c1">// Imprime 3</span>
+
+<span class="w">        </span><span class="c1">// De char a su código numérico (ASCII/Unicode)</span>
+<span class="w">        </span><span class="kt">char</span><span class="w"> </span><span class="n">letra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'A'</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">codigoLetra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">letra</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El código de 'A' es: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">codigoLetra</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 65</span>
+
+<span class="w">        </span><span class="c1">// De código numérico a char</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">codigo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">66</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">char</span><span class="w"> </span><span class="n">letraDesdeCodigo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="w"> </span><span class="n">codigo</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El carácter del código 66 es: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">letraDesdeCodigo</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime 'B'</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Peligros del Casting</p>
+<p>Cuando haces un casting explícito, estás asumiendo la responsabilidad. Si el valor "grande" no cabe en el tipo "pequeño", puedes obtener resultados inesperados o erróneos sin que el programa te avise.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">numeroGrande</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">130</span><span class="p">;</span>
+<span class="kt">byte</span><span class="w"> </span><span class="n">numeroPequeno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">byte</span><span class="p">)</span><span class="w"> </span><span class="n">numeroGrande</span><span class="p">;</span><span class="w"> </span><span class="c1">// byte va de -128 a 127</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numeroPequeno</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime -126. ¡Un resultado totalmente inesperado!</span>
+</code></pre></div>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="15-variables-y-constantes">1.5. Variables y Constantes</h3>
+<p>Ya hemos usado variables, pero es hora de formalizarlo. En el mundo del desarrollo, es crucial distinguir entre datos que van a cambiar y datos que deben permanecer fijos.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Variable</p>
+<p>Una <strong>variable</strong> es un espacio en memoria que tiene un nombre y almacena un valor que <strong>puede cambiar</strong> durante la ejecución del programa. Se declara simplemente con su tipo y nombre.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Constante</p>
+<p>Una <strong>constante</strong> es una variable cuyo valor <strong>no puede ser modificado</strong> una vez que ha sido asignado. En JAVA, se declaran usando la palabra clave <code>final</code>. Por convención, sus nombres se escriben en mayúsculas (<code>SNAKE_CASE</code>).</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">La importancia de las constantes</p>
+<p>Usar constantes hace tu código más legible (es mejor leer <code>precio * IVA</code> que <code>precio * 0.21</code>) y más fácil de mantener (si el IVA cambia, solo lo modificas en un sitio).</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">VariablesYConstantes</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Una constante de clase. `static` significa que pertenece a la clase, no a un objeto.</span>
+<span class="w">    </span><span class="c1">// `final` significa que su valor no puede cambiar.</span>
+<span class="w">    </span><span class="c1">// Por convención, los nombres de las constantes se escriben en MAYÚSCULAS.</span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">HORAS_DIA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">24</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Una variable local</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Contador inicial: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">contador</span><span class="p">);</span>
+<span class="w">        </span><span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Podemos cambiar su valor</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Contador final: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">contador</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Una constante local (variable final)</span>
+<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">MENSAJE_BIENVENIDA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"¡Bienvenido a DAW!"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">MENSAJE_BIENVENIDA</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// MENSAJE_BIENVENIDA = "Adiós"; // ¡ERROR DE COMPILACIÓN! No se puede reasignar una variable final.</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>¿Cuándo usarías una variable y cuándo una constante para almacenar el número de intentos en un juego?</li>
+<li>¿Por qué es una buena práctica usar nombres en mayúsculas para las constantes?</li>
+<li>Imagina que estás programando una tienda online. ¿El precio de un producto sería una variable o una constante? ¿Y el porcentaje de IVA? Razona tu respuesta.</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="16-operaciones-con-strings">1.6. Operaciones con Strings</h3>
+<p>Los <code>String</code> en JAVA, aunque parecen un tipo primitivo, son en realidad objetos. Esto les da una gran potencia y un montón de "habilidades" (métodos) incorporadas que usaremos constantemente.</p>
+<h4 id="tabla-de-metodos-comunes-de-string">Tabla de Métodos Comunes de <code>String</code></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Método</th>
+<th style="text-align: left;">Descripción</th>
+<th style="text-align: left;">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>length()</code></td>
+<td style="text-align: left;">Devuelve la longitud (número de caracteres) del String.</td>
+<td style="text-align: left;"><code>"Hola".length()</code> → <code>4</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>charAt(int index)</code></td>
+<td style="text-align: left;">Devuelve el carácter en la posición especificada.</td>
+<td style="text-align: left;"><code>"Java".charAt(0)</code> → <code>'J'</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>substring(int begin, int end)</code></td>
+<td style="text-align: left;">Extrae una subcadena desde <code>begin</code> hasta <code>end-1</code>.</td>
+<td style="text-align: left;"><code>"Programación".substring(0, 4)</code> → <code>"Progra"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>toUpperCase()</code> / <code>toLowerCase()</code></td>
+<td style="text-align: left;">Convierte el String a mayúsculas o minúsculas.</td>
+<td style="text-align: left;"><code>"Hola".toUpperCase()</code> → <code>"HOLA"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>equals(String another)</code></td>
+<td style="text-align: left;">Compara si dos Strings tienen el mismo contenido.</td>
+<td style="text-align: left;"><code>"A".equals("a")</code> → <code>false</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>equalsIgnoreCase(String another)</code></td>
+<td style="text-align: left;">Igual que <code>equals</code>, pero ignora mayúsculas/minúsculas.</td>
+<td style="text-align: left;"><code>"A".equalsIgnoreCase("a")</code> → <code>true</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>contains(String s)</code></td>
+<td style="text-align: left;">Devuelve <code>true</code> si el String contiene la subcadena.</td>
+<td style="text-align: left;"><code>"Hola Mundo".contains("Mundo")</code> → <code>true</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>replace(char old, char new)</code></td>
+<td style="text-align: left;">Reemplaza todas las ocurrencias de un carácter.</td>
+<td style="text-align: left;"><code>"casa".replace('a', 'o')</code> → <code>"coso"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>trim()</code></td>
+<td style="text-align: left;">Elimina los espacios en blanco al principio y al final.</td>
+<td style="text-align: left;"><code>"  hola  ".trim()</code> → <code>"hola"</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">OperacionesString</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">frase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"  JAVA es Genial!  "</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Longitud</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Longitud: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">frase</span><span class="p">.</span><span class="na">length</span><span class="p">());</span><span class="w"> </span><span class="c1">// 19</span>
+
+<span class="w">        </span><span class="c1">// Quitar espacios y convertir a minúsculas</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">fraseLimpia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">frase</span><span class="p">.</span><span class="na">trim</span><span class="p">().</span><span class="na">toLowerCase</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Frase limpia: '"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fraseLimpia</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"'"</span><span class="p">);</span><span class="w"> </span><span class="c1">// 'java es genial!'</span>
+
+<span class="w">        </span><span class="c1">// Extraer una parte</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">primeraPalabra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fraseLimpia</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Primera palabra: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">primeraPalabra</span><span class="p">);</span><span class="w"> </span><span class="c1">// "java"</span>
+
+<span class="w">        </span><span class="c1">// Reemplazar</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">conExclamaciones</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fraseLimpia</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="s">"!"</span><span class="p">,</span><span class="w"> </span><span class="s">"!!!"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Con exclamaciones: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">conExclamaciones</span><span class="p">);</span><span class="w"> </span><span class="c1">// "java es genial!!!"</span>
+
+<span class="w">        </span><span class="c1">// Comparar</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">primeraPalabra</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"java"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"La primera palabra es 'java'."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">NUNCA uses <code>==</code> para comparar Strings</p>
+<p>El operador <code>==</code> en objetos compara si dos referencias apuntan al <strong>mismo objeto en memoria</strong>, no si tienen el mismo contenido. Puede que funcione a veces por optimizaciones del compilador, pero fallará en otros casos.
+<strong>Usa siempre el método <code>.equals()</code> para comparar el contenido de los Strings.</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="s">"hola"</span><span class="p">);</span>
+<span class="n">String</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="s">"hola"</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">s2</span><span class="p">);</span><span class="w">      </span><span class="c1">// false (son dos objetos diferentes)</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">s2</span><span class="p">));</span><span class="w"> </span><span class="c1">// true (tienen el mismo contenido)</span>
+</code></pre></div>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="17-comentarios">1.7. Comentarios</h3>
+<p>Los comentarios son el "alma" del código. Son notas para humanos que el compilador ignora por completo. Un buen código se explica por sí mismo, pero un buen comentario explica el "porqué".</p>
+<div class="admonition tip">
+<p class="admonition-title">Comenta el 'porqué', no el 'qué'</p>
+<p>❌ <strong>Mal comentario (obvio):</strong> <code>i++; // Incrementa i en 1</code>
+✅ <strong>Buen comentario (explica la intención):</strong> <code>intentos++; // El usuario ha fallado, incrementamos el contador de intentos.</code></p>
+</div>
+<p>En JAVA tenemos tres tipos de comentarios:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TiposDeComentarios</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 1. Comentario de una sola línea. Empieza con // y llega hasta el final de la línea.</span>
+<span class="w">    </span><span class="c1">// Es perfecto para notas cortas y aclaraciones puntuales.</span>
+
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">     * 2. Comentario de múltiples líneas.</span>
+<span class="cm">     * Empieza con /* y termina con */</span>
+<span class="w">     </span><span class="o">*</span><span class="w"> </span><span class="n">Todo</span><span class="w"> </span><span class="n">lo</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">esté</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">medio</span><span class="w"> </span><span class="n">será</span><span class="w"> </span><span class="n">ignorado</span><span class="p">.</span>
+<span class="w">     </span><span class="o">*</span><span class="w"> </span><span class="n">Es</span><span class="w"> </span><span class="n">útil</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">explicaciones</span><span class="w"> </span><span class="n">más</span><span class="w"> </span><span class="n">largas</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="s">"desactivar"</span><span class="w"> </span><span class="n">temporalmente</span><span class="w"> </span><span class="n">un</span><span class="w"> </span><span class="n">bloque</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">código</span><span class="p">.</span>
+<span class="w">     </span><span class="o">*/</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * 3. Comentario de Documentación (Javadoc).</span>
+<span class="cm">     * Es un tipo especial de comentario multilínea que empieza con /**</span>
+<span class="cm">     * Se usa para generar documentación automática de tu código.</span>
+<span class="cm">     * Es la forma profesional de explicar qué hace una clase o un método.</span>
+<span class="cm">     * @param args Argumentos de la línea de comandos (no se usan en este ejemplo).</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Este código sí se ejecuta."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>¿Qué tipo de comentario usarías para explicar brevemente lo que hace una variable compleja?</li>
+<li>¿Y si necesitas desactivar temporalmente 15 líneas de código para hacer una prueba?</li>
+<li>¿Por qué es importante documentar tu código, especialmente si trabajas en equipo?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="2-algoritmo">2. Algoritmo</h2>
+<p>Como vimos en la introducción, un algoritmo es nuestra receta para resolver un problema. Antes de lanzarnos a escribir código en JAVA, es fundamental tener claro el algoritmo. Dos herramientas clásicas para diseñar y visualizar algoritmos son el <strong>pseudocódigo</strong> y los <strong>diagramas de flujo</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Pseudocódigo</p>
+<p>Es una forma de describir un algoritmo usando un lenguaje simple, parecido al lenguaje natural, pero con una estructura que se asemeja a la de un lenguaje de programación. No es un lenguaje real y no se puede compilar, pero es perfecto para planificar la lógica. Herramientas como <strong>PSeInt</strong> son geniales para practicar esto.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Diagrama de Flujo (Ordinograma)</p>
+<p>Es una representación gráfica de un algoritmo. Usa símbolos estandarizados para representar los diferentes pasos (inicio/fin, proceso, entrada/salida, decisión) y flechas para indicar el flujo de ejecución.</p>
+</div>
+<p><strong>Ejemplo: Algoritmo para saber si un número es par o impar</strong></p>
+<p><strong>Pseudocódigo (estilo PSeInt):</strong></p>
+<div class="highlight"><pre><span></span><code>Algoritmo ParOImpar
+    Definir numero Como Entero
+    Escribir "Introduce un número:"
+    Leer numero
+    Si numero % 2 == 0 Entonces
+        Escribir "El número es PAR"
+    Sino
+        Escribir "El número es IMPAR"
+    FinSi
+FinAlgoritmo
+</code></pre></div>
+<p><strong>Diagrama de Flujo:</strong></p>
+<pre class="mermaid"><code>flowchart TD
+    A[Inicio] --&gt; B{Leer número};
+    B --&gt; C{"numero % 2 == 0?"};
+    C -- "Sí" --&gt; D["Escribir 'Es PAR'"];
+    C -- "No" --&gt; E["Escribir 'Es IMPAR'"];
+    D --&gt; F[Fin];
+    E --&gt; F;
+
+    style A fill:#2ecc71,stroke:#333,stroke-width:2px
+    style F fill:#e74c3c,stroke:#333,stroke-width:2px
+    style C fill:#3498db,stroke:#333,stroke-width:2px,color:#fff</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>¿Qué ventajas tiene el pseudocódigo sobre el diagrama de flujo? ¿Y al revés?</li>
+<li>Intenta escribir en pseudocódigo el algoritmo para calcular la media de dos números.</li>
+<li>Dibuja el diagrama de flujo para el mismo algoritmo de la media de dos números.</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="3-programacion-estructurada">3. Programación Estructurada</h2>
+<p>A finales de los 60, el software era un caos. Los programadores usaban una instrucción llamada <code>GOTO</code> que permitía saltar de cualquier punto del programa a cualquier otro. El resultado era el famoso "código espagueti": un lío de saltos imposible de seguir, depurar o mantener.</p>
+<div class="admonition danger">
+<p class="admonition-title">El GOTO es el Lado Oscuro</p>
+<p>Edsger Dijkstra, uno de los padres de la informática, escribió en 1968 un famoso artículo llamado <em>"Go To Statement Considered Harmful"</em> (La sentencia GOTO considerada dañina). Demostró que su uso indiscriminado era una de las principales fuentes de errores en programación.</p>
+</div>
+<p>La <strong>programación estructurada</strong> nació como la solución a este caos. El <strong>Teorema del Programa Estructurado</strong> (de Böhm y Jacopini) demostró matemáticamente que cualquier algoritmo, por complejo que sea, puede construirse usando únicamente tres estructuras de control básicas:</p>
+<ol>
+<li><strong>Secuencia:</strong> Ejecutar instrucciones una detrás de otra.</li>
+<li><strong>Selección (o Condicional):</strong> Elegir entre dos o más caminos de ejecución (<code>if</code>, <code>switch</code>).</li>
+<li><strong>Iteración (o Bucle):</strong> Repetir un bloque de código (<code>while</code>, <code>for</code>).</li>
+</ol>
+<p>Estos tres pilares son la base de casi todos los lenguajes de programación modernos, incluido JAVA. Dominarlos es dominar la lógica fundamental de la programación.</p>
+<div class="language-markmap mkdocs-markmap"><markmap-data encoding="base64" hidden="true">IyBQcm9ncmFtYWNpw7NuIEVzdHJ1Y3R1cmFkYQoKIyMgUGlsYXJlcwotICoqU2VjdWVuY2lhKio6IFBhc28gMSDihpIgUGFzbyAyIOKGkiAuLi4KLSAqKlNlbGVjY2nDs24qKjogwr9FcyB2ZXJkYWQ/IOKGkiBIYXogQSAvIFNpIG5vIOKGkiBIYXogQgotICoqSXRlcmFjacOzbioqOiBNaWVudHJhcyBzZWEgdmVyZGFkIOKGkiBSZXBpdGUgZXN0bwoKIyMgRWwgR3JhbiBFbmVtaWdvCi0gKipgZ290b2AqKjogRWwgInNhbHRvIiBpbmNvbmRpY2lvbmFsIHF1ZSBjcmVhYmEgY8OzZGlnbyBjYcOzdGljby4KLSBMYSBwcm9ncmFtYWNpw7NuIGVzdHJ1Y3R1cmFkYSBsbyBwcm9ow61iZS4KCiMjIEJlbmVmaWNpb3MKLSAqKkNsYXJpZGFkKio6IEVsIGPDs2RpZ28gZXMgbcOhcyBmw6FjaWwgZGUgbGVlciB5IGVudGVuZGVyLgotICoqTWFudGVuaWJpbGlkYWQqKjogTcOhcyBmw6FjaWwgZGUgZGVwdXJhciB5IG1vZGlmaWNhci4KLSAqKkZpYWJpbGlkYWQqKjogTWVub3MgcHJvcGVuc28gYSBlcnJvcmVzIGzDs2dpY29zLg==</markmap-data></div>
+<p><br/></p><hr/><p></p>
+<h2 id="4-secuencias">4. Secuencias</h2>
+<p>Es la estructura más simple y natural. El código se ejecuta en el orden en que está escrito, de arriba hacia abajo, como leer un libro.</p>
+<pre class="mermaid"><code>graph TD
+    A(Inicio) --&gt; B[Paso 1: Leer datos del usuario];
+    B --&gt; C[Paso 2: Realizar un cálculo];
+    C --&gt; D[Paso 3: Mostrar resultado];
+    D --&gt; E(Fin);
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style E fill:#f9f,stroke:#333,stroke-width:2px</code></pre>
+<h3 id="41-ejemplos-de-ejecucion-secuencial">4.1 Ejemplos de Ejecución Secuencial</h3>
+<p>El siguiente programa JAVA es un ejemplo puro de secuencia. Cada línea se ejecuta después de la anterior, sin saltos ni repeticiones.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SaludoSecuencial</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 1. Inicia el programa</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 2. Se ejecuta esta instrucción de salida</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Bienvenido! Vamos a crear tu perfil de jugador."</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 3. Se ejecuta esta instrucción</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Por favor, introduce tu nombre de usuario: "</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 4. El programa se detiene aquí y espera una entrada. Es secuencial pero bloqueante.</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">nombreUsuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// 5. Una vez que el usuario pulsa Enter, la ejecución continúa aquí.</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Hola, "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombreUsuario</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"! Un gran nombre para un campeón."</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 6. Finalmente, se ejecuta esta última instrucción y el programa termina.</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Perfil creado con éxito."</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w"> </span><span class="c1">// Buena práctica: cerrar el scanner cuando no se usa más.</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="42-secuencias-avanzadas-streams-en-java">4.2 Secuencias Avanzadas: Streams en JAVA</h3>
+<p>Aunque el flujo básico es secuencial, JAVA moderno (desde la versión 8) introduce el concepto de <strong>Streams</strong>, que permite procesar secuencias de datos de una manera más declarativa y funcional. Aunque parece que todo ocurre a la vez, internamente sigue un flujo de procesamiento secuencial (a menos que se especifique lo contrario).</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.stream.Collectors</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SecuenciaConStreams</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">videojuegos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"Cyberpunk 2077"</span><span class="p">,</span><span class="w"> </span><span class="s">"Baldur's Gate 3"</span><span class="p">,</span><span class="w"> </span><span class="s">"Starfield"</span><span class="p">,</span><span class="w"> </span><span class="s">"Elden Ring"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Esta es una cadena de operaciones secuenciales sobre la lista</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">juegosConMasDe10LetrasEnMayusculas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">videojuegos</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span><span class="w"> </span><span class="c1">// 1. Convierte la lista en una secuencia (stream)</span>
+<span class="w">            </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">juego</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">juego</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w">     </span><span class="c1">// 2. Filtra los juegos con nombres de más de 10 letras</span>
+<span class="w">            </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">toUpperCase</span><span class="p">)</span><span class="w">                 </span><span class="c1">// 3. Convierte los nombres restantes a mayúsculas</span>
+<span class="w">            </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span><span class="w">            </span><span class="c1">// 4. Recolecta los resultados en una nueva lista</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">juegosConMasDe10LetrasEnMayusculas</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Salida: [CYBERPUNK 2077, BALDUR'S GATE 3, ELDEN RING]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>¿Un programa que solo contenga declaraciones de variables y operaciones de asignación es un ejemplo de secuencia? ¿Por qué?</li>
+<li>En el ejemplo <code>SaludoSecuencial</code>, ¿qué pasaría si la línea <code>String nombreUsuario = scanner.nextLine();</code> se colocara antes de la línea <code>System.out.print(...)</code>? ¿El programa seguiría funcionando? ¿Cómo cambiaría la experiencia del usuario?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="5-condicionales">5. Condicionales</h2>
+<p>La vida está llena de decisiones, y los programas también. Los condicionales permiten que nuestro código elija un camino u otro basándose en si una condición es <code>true</code> o <code>false</code>. Es el "depende" de la programación.</p>
+<p>¡Excelente idea! Es fundamental diferenciar bien la estructura <code>if</code> simple de la <code>if-else</code>. Aquí tienes el punto desarrollado para el condicional sencillo, siguiendo el mismo estilo y formato del ejemplo que me proporcionaste.</p>
+<h3 id="51-condicional-basico-if-unico">5.1. Condicional Básico (if único)</h3>
+<p>Esta es la forma más simple de decisión. Se utiliza cuando queremos ejecutar un bloque de código <strong>solo si una condición específica se cumple</strong>. A diferencia del <code>if-else</code>, aquí no hay un camino alternativo. Si la condición es falsa, el programa simplemente ignora el bloque <code>if</code> y continúa con la siguiente instrucción.</p>
+<pre class="mermaid"><code>graph TD
+    A1(Inicio) --&gt; B1{¿Condición?};
+    B1 -- Sí --&gt; C1[Ejecutar Acción];
+    C1 --&gt; D1(Fin);
+    B1 -- No --&gt; D1;</code></pre>
+<p>Es como un bonus en un videojuego: solo si cumples el requisito (ej. encontrar un tesoro), obtienes la recompensa. Si no, el juego simplemente sigue su curso normal.</p>
+<p><strong>Ejemplo: Mensaje especial por Puntuación Alta</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PuntuacionFinal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Definimos una constante para el umbral del récord. ¡Buenas prácticas!</span>
+<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PUNTUACION_PARA_RECORD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">teclado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Introduce tu puntuación final: "</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">puntuacion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">teclado</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// La condición a evaluar: ¿supera la puntuación el récord?</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">puntuacion</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">PUNTUACION_PARA_RECORD</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Este bloque SÓLO se ejecuta si la condición es true.</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡NUEVO RÉCORD! ¡Has entrado en el salón de la fama!"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Esta línea se ejecuta SIEMPRE, sin importar el resultado del 'if'.</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Partida terminada. Tu puntuación ha sido registrada."</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">teclado</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="52-condicional-simple-if-else">5.2. Condicional Simple (<code>if-else</code>)</h3>
+<p>Es la bifurcación más básica: si se cumple una condición, haz una cosa; si no, haz otra.</p>
+<pre class="mermaid"><code>graph TD
+    A2(Inicio) --&gt; B2{¿Condición?};
+    B2 -- Sí --&gt; C2[Acción si es Verdadero];
+    B2 -- No --&gt; D2[Acción si es Falso];
+    C2 --&gt; E2(Fin);
+    D2 --&gt; E2;</code></pre>
+<h4 id="ejemplo-login-de-un-videojuego">Ejemplo: Login de un videojuego</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginSimple</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">USUARIO_CORRECTO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"GeraltDeRivia"</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">PASSWORD_CORRECTA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"RoachIsTheBest"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">teclado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Usuario: "</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">teclado</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Contraseña: "</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">teclado</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// La condición a evaluar: ¿coinciden usuario Y contraseña?</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">usuario</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">USUARIO_CORRECTO</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">password</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">PASSWORD_CORRECTA</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Rama VERDADERA (si la condición es true)</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Bienvenido, Brujo! Se han cargado tus pociones."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Rama FALSA (si la condición es false)</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Credenciales incorrectas. Un drowner te ha comido."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">teclado</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">¡No uses <code>==</code> para comparar Strings!</p>
+<p>En JAVA, el operador <code>==</code> compara si dos referencias de objetos apuntan a la misma dirección de memoria, no si su contenido es el mismo. Para comparar el contenido de dos Strings, <strong>siempre</strong> debes usar el método <code>.equals()</code>.</p>
+</div>
+<h3 id="53-condicionales-multiples-if-else-if-else">5.3. Condicionales Múltiples (<code>if-else if-else</code>)</h3>
+<p>A veces, hay más de dos caminos posibles. Para eso, encadenamos condiciones con <code>else if</code>.</p>
+<pre class="mermaid"><code>graph TD
+    A3(Inicio) --&gt; B3[¿Condición 1?];
+    B3 -- Sí --&gt; C3[Acción 1];
+    B3 -- No --&gt; D3[¿Condición 2?];
+    D3 -- Sí --&gt; E3[Acción 2];
+    D3 -- No --&gt; F3[Acción por defecto del else];
+    C3 --&gt; G3(Fin);
+    E3 --&gt; G3;
+    F3 --&gt; G3;</code></pre>
+<h4 id="ejemplo-sistema-de-loot-botin-de-un-enemigo">Ejemplo: Sistema de "loot" (botín) de un enemigo</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Random</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SistemaDeLoot</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Generamos un número aleatorio entre 1 y 100 para simular la suerte</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">tiradaDeSuerte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">().</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Has derrotado a un dragón. Tu tirada de suerte es: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tiradaDeSuerte</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tiradaDeSuerte</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">95</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Un 5% de probabilidad (96, 97, 98, 99, 100)</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡LOOT LEGENDARIO! Has conseguido la Espada de Fuego del Dragón."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tiradaDeSuerte</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">75</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Un 20% de probabilidad</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Loot Épico! Has conseguido una pechera de escamas de dragón."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tiradaDeSuerte</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">40</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Un 35% de probabilidad</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Loot Raro. Has conseguido 500 monedas de oro."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// El 40% restante</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Loot Común. Has conseguido una garra de dragón rota."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="54-estructura-switch">5.4. Estructura <code>switch</code></h3>
+<p>Cuando tienes que comprobar una misma variable contra múltiples valores discretos (números, caracteres, Strings), usar una cadena larga de <code>if-else if</code> puede volverse feo y repetitivo (el "Efecto Hadouken"). La estructura <code>switch</code> es una alternativa más limpia y, a menudo, más eficiente.</p>
+<pre class="mermaid"><code>graph TD
+    A4(Inicio) --&gt; B4[Leer variable];
+    B4 --&gt; C4{{Evaluar variable}};
+    C4 -- Caso 1 --&gt; D4[Acción para Caso 1];
+    C4 -- Caso 2 --&gt; E4[Acción para Caso 2];
+    C4 -- Otro --&gt; F4[Acción por defecto];
+    D4 --&gt; G4(Fin);
+    E4 --&gt; G4;
+    F4 --&gt; G4;</code></pre>
+<h4 id="ejemplo-menu-de-opciones">Ejemplo: Menú de opciones</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MenuConSwitch</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"== MENÚ PRINCIPAL =="</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"1. Nueva Partida"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"2. Cargar Partida"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"3. Opciones"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"4. Salir"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Elige una opción: "</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">opcion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Switch tradicional (hasta JAVA 11)</span>
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">opcion</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Iniciando una nueva aventura..."</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="c1">// ¡El break es crucial para no seguir al siguiente caso!</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Cargando tu último punto de guardado..."</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Mostrando menú de opciones gráficas y de sonido..."</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="p">:</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Gracias por jugar!"</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="k">default</span><span class="p">:</span><span class="w"> </span><span class="c1">// Se ejecuta si no coincide ningún caso</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Opción no válida. Por favor, elige un número del 1 al 4."</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Switch Expression (JAVA 12+), más moderno y seguro</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">opcion</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">"Iniciando una nueva aventura..."</span><span class="p">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">"Cargando tu último punto de guardado..."</span><span class="p">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">"Mostrando menú de opciones gráficas y de sonido..."</span><span class="p">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">"¡Gracias por jugar!"</span><span class="p">;</span>
+<span class="w">            </span><span class="k">default</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">"Opción no válida. Por favor, elige un número del 1 al 4."</span><span class="p">;</span>
+<span class="w">        </span><span class="p">};</span><span class="w"> </span><span class="c1">// El punto y coma va al final de la expresión</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Mensaje del Switch Expression: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mensaje</span><span class="p">);</span>
+<span class="w">        </span><span class="n">scanner</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Switch Expressions: el futuro es hoy</p>
+<p>Desde JAVA 12, las "Switch Expressions" (con la sintaxis de flecha <code>-&gt;</code>) son la forma recomendada. Son más seguras porque te obligan a cubrir todos los casos posibles (o usar <code>default</code>), eliminan la necesidad del <code>break</code> (evitando errores de "caída"), y pueden devolver un valor, lo que las hace increíblemente potentes.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Reflexión</p>
+<ol>
+<li>¿Podrías reescribir el ejemplo del sistema de "loot" usando una estructura <code>switch</code>? ¿Sería una buena idea? ¿Por qué sí o por qué no?</li>
+<li>En el <code>switch</code> tradicional, ¿qué pasaría si olvidamos poner un <code>break</code> en el <code>case 1</code>?</li>
+<li>¿En qué situaciones un <code>if-else if</code> es preferible a un <code>switch</code>? (Pista: piensa en las condiciones que puedes evaluar).</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script type="text/javascript">(function initializeMarkmap() {
+    const transformer = new markmap.Transformer();
+    const preloadScripts = transformer.plugins
+        .flatMap((plugin) => plugin.config?.preloadScripts || [])
+        .map((item) => transformer.resolveJS(item));
+    const assets = transformer.getAssets();
+    const loading = Promise.all([
+        assets.styles && markmap.loadCSS(assets.styles),
+        markmap.loadJS([...preloadScripts, ...assets.scripts]),
+    ]);
+
+    function parseData(content) {
+        const { root, frontmatter } = transformer.transform(content);
+        let options = markmap.deriveOptions(frontmatter?.markmap);
+        options = Object.assign(
+            {
+                fitRatio: 0.85,
+            },
+            options
+        );
+        return { root, options };
+    }
+
+    function resetMarkmap(m, el) {
+        if (!m.state.rect) return;
+        const { x1, y1, x2, y2 } = m.state.rect;
+        const height = (el.offsetWidth / (x2 - x1)) * (y2 - y1);
+        el.style.height = height + "px";
+        m.fit();
+    }
+
+    function decodeBase64(encoded) {
+        const binary = atob(encoded);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < bytes.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        return new TextDecoder().decode(bytes);
+    }
+
+    function renderMarkmap(el) {
+        const dataEl = el.querySelector("markmap-data");
+        if (!dataEl) return;
+        let content = el.textContent;
+        if (dataEl.getAttribute("encoding") === "base64") {
+            content = decodeBase64(content);
+        }
+        el.innerHTML = "<svg>";
+        svg = el.firstChild;
+        const { root, options } = parseData(content);
+        const m = markmap.Markmap.create(svg, options);
+        m.setData(root);
+        requestAnimationFrame(() => {
+            resetMarkmap(m, el);
+        });
+    }
+
+    function updateMarkmaps(node) {
+        for (const el of node.querySelectorAll(".mkdocs-markmap")) {
+            renderMarkmap(el);
+        }
+    }
+
+    loading.then(() => {
+        const observer = new MutationObserver((mutationList) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "childList") {
+                    for (const node of mutation.addedNodes) {
+                        updateMarkmaps(node);
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true });
+
+        updateMarkmaps(document);
+    });
+})();
+</script></body></html>

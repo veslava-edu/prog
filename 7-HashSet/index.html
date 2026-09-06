@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>7 HashSet - PROG</title>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script><script src="../js/unpkg.com/d3@7.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-lib@0.18.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-view@0.18.js" type="text/javascript"></script><style type="text/css">div.mkdocs-markmap {
+    width: 100%;
+    min-height: 1em;
+    border: 1px solid grey;
+}
+.mkdocs-markmap > svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+</style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#hashset-el-club-vip-de-los-datos-sin-duplicados">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="PROG" class="md-header__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            PROG
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              7 HashSet
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../1-Introduccion-programacion/">
+          
+  
+  
+  Programación
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="PROG" class="md-nav__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    PROG
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1-Introduccion-programacion/">
+<span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2-Programacion-estructurada/">
+<span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3-Programacion-modular/">
+<span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4-Estructuras-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5-POO-Clases-y-Objetos/">
+<span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6-POO-Uso-avanzado/">
+<span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7-Estructuras-datos-dinamicas/">
+<span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../8-Programacion-funcional-Streams/">
+<span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../9-Ficheros/">
+<span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10-Acceso-base-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11-Interfaces-graficas-MVC/">
+<span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conceptos-fundamentales">
+<span class="md-ellipsis">
+      
+        Conceptos Fundamentales
+      
+    </span>
+</a>
+<nav aria-label="Conceptos Fundamentales" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapa-mental-el-universo-set">
+<span class="md-ellipsis">
+      
+        Mapa Mental: El Universo Set
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desarrollo-y-ejemplos-practicos">
+<span class="md-ellipsis">
+      
+        Desarrollo y Ejemplos Prácticos
+      
+    </span>
+</a>
+<nav aria-label="Desarrollo y Ejemplos Prácticos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-anadir-elementos-y-gestionar-duplicados">
+<span class="md-ellipsis">
+      
+        1. Añadir Elementos y Gestionar Duplicados
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-comprobar-existencia-la-busqueda-veloz">
+<span class="md-ellipsis">
+      
+        2. Comprobar Existencia (La Búsqueda Veloz)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-eliminar-y-limpiar">
+<span class="md-ellipsis">
+      
+        3. Eliminar y Limpiar
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-iteracion-el-caos-ordenado">
+<span class="md-ellipsis">
+      
+        4. Iteración (El Caos Ordenado)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-clonado-copia-superficial">
+<span class="md-ellipsis">
+      
+        5. Clonado (Copia Superficial)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagrama-de-flujo-como-funciona-add">
+<span class="md-ellipsis">
+      
+        Diagrama de Flujo: ¿Cómo funciona add()?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-comparativa-list-vs-set">
+<span class="md-ellipsis">
+      
+        Tabla Comparativa: List vs Set
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacion-en-el-mundo-real">
+<span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-saber-mas">
+<span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<!-- hashset_java_fp.md --><h1 id="hashset-el-club-vip-de-los-datos-sin-duplicados">HashSet: El Club VIP de los Datos (Sin Duplicados)</h1>
+<p><strong>Introducción: La fiesta exclusiva</strong></p>
+<p>¡Hola, futuros arquitectos de software! 🏗️</p>
+<p>Hasta ahora hemos visto listas (<code>ArrayList</code>, <code>LinkedList</code>) donde podíamos guardar lo que quisiéramos: tres veces el número 5, diez veces el String "Hola", etc. Son como una hoja de papel donde escribes en orden.</p>
+<p>Pero, ¿y si necesitamos controlar la <strong>unicidad</strong>? Imaginad que estáis programando el sistema de registro de usuarios de Instagram. ¿Puede haber dos usuarios con el mismo email? <strong>No</strong>. ¿Puede un usuario darle "Like" dos veces a la misma foto? <strong>No</strong>.</p>
+<p>Aquí entra en juego el <strong><code>HashSet</code></strong>.</p>
+<p>Pensad en un <code>HashSet</code> como en el <strong>portero de una discoteca VIP</strong>. Tiene una lista en la mano. Cuando intentas entrar (añadir un dato), el portero mira la lista. Si ya estás dentro, te dice: <em>"Lo siento, ya estás en la fiesta, no puedes entrar dos veces"</em>. Si no estás, te deja pasar. Además, dentro de la fiesta <strong>no hay orden</strong>: la gente se mezcla, no están en fila india.</p>
+<p>¡Vamos a aprender a gestionar la exclusividad con Java! 🕺💃</p>
+<hr/>
+<h2 id="conceptos-fundamentales">Conceptos Fundamentales</h2>
+<div class="admonition note">
+<p class="admonition-title">Definición: Set (Conjunto)</p>
+<p>Es una colección que <strong>NO permite elementos duplicados</strong>. Modela la abstracción matemática de un conjunto finito.
+*   Si intentas añadir un elemento que ya existe, la operación simplemente se ignora (o devuelve false).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: HashSet</p>
+<p>Es la implementación más popular de la interfaz <code>Set</code>.
+*   <strong>Hash</strong>: Utiliza una tabla hash internamente. Esto significa que usa una fórmula matemática (hash function) sobre el objeto para decidir dónde guardarlo en memoria.
+*   <strong>Rendimiento</strong>: Es <strong>extremadamente rápido</strong> (O(1)) para buscar, añadir y borrar. Mucho más que un ArrayList.
+*   <strong>Caos</strong>: <strong>NO garantiza ningún orden</strong>. Lo que insertas primero puede salir el último.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Requisito Vital: hashCode() y equals()</p>
+<p>Para que un <code>HashSet</code> funcione con objetos propios (como una clase <code>Alumno</code>), esa clase DEBE tener implementados correctamente los métodos <code>hashCode()</code> y <code>equals()</code>. Si no, el portero de la discoteca no sabrá reconocer si dos alumnos son la misma persona.</p>
+</div>
+<h3 id="mapa-mental-el-universo-set">Mapa Mental: El Universo Set</h3>
+<div class="language-markmap mkdocs-markmap"><markmap-data encoding="base64" hidden="true">IyBKYXZhIFNldHMKCiMjIEludGVyZmFjZXMKLSAqKkNvbGxlY3Rpb24qKiAoUGFkcmUpCi0gKipTZXQqKiAoU2luIGR1cGxpY2Fkb3MpCgojIyBJbXBsZW1lbnRhY2lvbmVzCi0gKipIYXNoU2V0KioKICAgIC0gRWwgbcOhcyByw6FwaWRvIChPKDEpKS4KICAgIC0gU2luIG9yZGVuLgogICAgLSBQZXJtaXRlIDEgbnVsbC4KLSAqKkxpbmtlZEhhc2hTZXQqKgogICAgLSBNYW50aWVuZSBvcmRlbiBkZSBpbnNlcmNpw7NuLgogICAgLSBVbiBwb2NvIG3DoXMgbGVudG8uCi0gKipUcmVlU2V0KioKICAgIC0gT3JkZW5hIGxvcyBlbGVtZW50b3MgKGFsZmFiw6l0aWNvL251bcOpcmljbykuCiAgICAtIE3DoXMgbGVudG8gKE8obG9nIG4pKS4=</markmap-data></div>
+<p><br/></p><hr/><p></p>
+<h2 id="desarrollo-y-ejemplos-practicos">Desarrollo y Ejemplos Prácticos</h2>
+<p>Vamos a destripar los métodos de <code>HashSet</code> basándonos en la documentación y buenas prácticas.</p>
+<h3 id="1-anadir-elementos-y-gestionar-duplicados">1. Añadir Elementos y Gestionar Duplicados</h3>
+<p>El método estrella es <code>add</code>. Aquí es donde ocurre la magia del filtrado.</p>
+<p><strong><code>add(E e)</code></strong>
+*   Intenta añadir el elemento.
+*   Devuelve <code>true</code> si el elemento NO existía y se añadió.
+*   Devuelve <code>false</code> si el elemento YA existía (no se añade, no da error, solo avisa).</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashSet</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RegistroEmails</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Creamos un HashSet para guardar emails únicos.</span>
+<span class="w">        </span><span class="c1">// No definimos capacidad inicial, crece solo.</span>
+<span class="w">        </span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">emails</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// 1. Añadimos correos nuevos</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">r1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emails</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"alumno@fp.com"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¿Añadido 'alumno'? "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r1</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+
+<span class="w">        </span><span class="n">emails</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"profesor@fp.com"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">emails</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"director@fp.com"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 2. Intentamos añadir un DUPLICADO</span>
+<span class="w">        </span><span class="c1">// El HashSet detecta que el String es idéntico (usando hashCode y equals)</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">r2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emails</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"alumno@fp.com"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¿Añadido duplicado? "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r2</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+
+<span class="w">        </span><span class="c1">// 3. Imprimimos</span>
+<span class="w">        </span><span class="c1">// Fíjate que "alumno@fp.com" solo aparece UNA vez.</span>
+<span class="w">        </span><span class="c1">// Y el orden puede no ser el de inserción.</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Lista de emails: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">emails</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="2-comprobar-existencia-la-busqueda-veloz">2. Comprobar Existencia (La Búsqueda Veloz)</h3>
+<p>Aquí es donde <code>HashSet</code> humilla a <code>ArrayList</code>. Buscar en un ArrayList de 1 millón de datos requiere recorrerlo (lento). Buscar en un <code>HashSet</code> es instantáneo, gracias al código hash (es como saber la dirección exacta de la casa sin mirar el mapa).</p>
+<p><strong><code>contains(Object o)</code></strong>
+*   Devuelve <code>true</code> si el elemento está en el conjunto.</p>
+<p><strong><code>isEmpty()</code></strong>
+*   Devuelve <code>true</code> si no hay elementos.</p>
+<p><strong><code>size()</code></strong>
+*   Devuelve el número de elementos únicos.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashSet</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ControlAcceso</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">idsPermitidos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">idsPermitidos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"ID_001"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">idsPermitidos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"ID_999"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">idsPermitidos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"ID_555"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// --- Verificación Instantánea ---</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">usuarioIntentandoEntrar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"ID_999"</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// contains es O(1) - Rapidísimo</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">idsPermitidos</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">usuarioIntentandoEntrar</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Acceso Concedido a "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">usuarioIntentandoEntrar</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Acceso Denegado."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// --- Estado del Conjunto ---</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Usuarios totales permitidos: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">idsPermitidos</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¿Está el sistema vacío? "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">idsPermitidos</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="3-eliminar-y-limpiar">3. Eliminar y Limpiar</h3>
+<p><strong><code>remove(Object o)</code></strong>
+*   Borra el elemento si existe. Devuelve <code>true</code> si lo borró, <code>false</code> si no estaba.</p>
+<p><strong><code>clear()</code></strong>
+*   Borra todo. Deja el conjunto como un solar.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashSet</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GestionInventario</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">carrito</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">carrito</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Manzanas"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">carrito</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Peras"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">carrito</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Plátanos"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 1. Eliminar un elemento específico</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">borrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">carrito</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">"Peras"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">borrado</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Peras eliminadas del carrito."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"No tenías peras."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Intentamos borrar algo que no existe</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Borrando 'Unicornio': "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">carrito</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">"Unicornio"</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Carrito actual: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">carrito</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 2. Vaciar todo (Reset)</span>
+<span class="w">        </span><span class="n">carrito</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tamaño tras clear: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">carrito</span><span class="p">.</span><span class="na">size</span><span class="p">());</span><span class="w"> </span><span class="c1">// 0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="4-iteracion-el-caos-ordenado">4. Iteración (El Caos Ordenado)</h3>
+<p><strong><code>iterator()</code></strong>
+*   Devuelve un objeto iterador para recorrer el conjunto.
+*   <strong>¡ADVERTENCIA!</strong>: No confíes en el orden. Hoy puede salir "A, B, C" y mañana "C, A, B". Si necesitas orden, usa <code>LinkedHashSet</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashSet</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Iterator</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">IteracionSet</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">loteria</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">loteria</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
+<span class="w">        </span><span class="n">loteria</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span>
+<span class="w">        </span><span class="n">loteria</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="w">        </span><span class="n">loteria</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">45</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- Usando Iterator Clásico ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Obtenemos el iterador</span>
+<span class="w">        </span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">loteria</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Integer</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">it</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Bola: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numero</span><span class="p">);</span>
+<span class="w">            </span><span class="c1">// El iterador permite borrar de forma segura mientras recorres:</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">numero</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">90</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">it</span><span class="p">.</span><span class="na">remove</span><span class="p">();</span><span class="w"> </span><span class="c1">// Borramos el 90</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"(El 90 ha sido anulado)"</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- Usando For-Each (Moderno) ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Internamente usa el iterator</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">loteria</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" | "</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="c1">// Salida probable: 3 | 15 | 45 | (El orden es impredecible)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="5-clonado-copia-superficial">5. Clonado (Copia Superficial)</h3>
+<p><strong><code>clone()</code></strong>
+*   Crea una copia <em>superficial</em> (shallow copy) del HashSet.
+*   <strong>Nota</strong>: Devuelve un <code>Object</code>, así que hay que hacer <em>casting</em> <code>(HashSet&lt;T&gt;)</code>.
+*   <strong>Peligro</strong>: Si guardas objetos complejos (como <code>Persona</code>), se copian las <em>referencias</em>, no los objetos en sí. Si modificas la persona en la copia, se modifica en el original.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashSet</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ClonadoDemo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">original</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">original</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Java"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">original</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Python"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Hacemos el clon (casting necesario)</span>
+<span class="w">        </span><span class="nd">@SuppressWarnings</span><span class="p">(</span><span class="s">"unchecked"</span><span class="p">)</span>
+<span class="w">        </span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">copia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="n">original</span><span class="p">.</span><span class="na">clone</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Copia: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">copia</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Modificar la copia no afecta a la estructura del original</span>
+<span class="w">        </span><span class="n">copia</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"C++"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">copia</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">"Java"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Original tras tocar copia: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">original</span><span class="p">);</span><span class="w"> </span><span class="c1">// Sigue igual</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Copia modificada: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">copia</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><br/></p><hr/><p></p>
+<h3 id="diagrama-de-flujo-como-funciona-add">Diagrama de Flujo: ¿Cómo funciona <code>add()</code>?</h3>
+<p>Este diagrama explica por qué es tan rápido. No recorre la lista, calcula la posición.</p>
+<pre class="mermaid"><code>graph TD
+    A["Inicio: set.add 'Objeto'"] --&gt; B["Calcular hashCode del Objeto"]
+    B --&gt; C["Buscar esa posición en memoria 'Bucket'"]
+    C --&gt; D["¿Está vacío el Bucket?"]
+
+    D -- Sí --&gt; E["Guardar Objeto"]
+    E --&gt; F["Fin: return true"]
+
+    D -- No (Colisión) --&gt; G["Comparar con equals"]
+    G --&gt; H["¿Son iguales?"]
+
+    H -- Sí --&gt; I["Ya existe: No hacer nada"]
+    I --&gt; J["Fin: return false"]
+
+    H -- No --&gt; K["Guardar en el mismo bucket lista enlazada"]
+    K --&gt; F</code></pre>
+<h3 id="tabla-comparativa-list-vs-set">Tabla Comparativa: List vs Set</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Característica</th>
+<th style="text-align: left;">ArrayList (List)</th>
+<th style="text-align: left;">HashSet (Set)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Duplicados</strong></td>
+<td style="text-align: left;">✅ Permitidos</td>
+<td style="text-align: left;">❌ Prohibidos</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Orden</strong></td>
+<td style="text-align: left;">✅ Mantiene orden de inserción</td>
+<td style="text-align: left;">❌ Caótico (Sin garantías)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Acceso</strong></td>
+<td style="text-align: left;">✅ Por índice <code>.get(5)</code></td>
+<td style="text-align: left;">❌ No tiene índice</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Búsqueda</strong></td>
+<td style="text-align: left;">🐢 Lenta O(n)</td>
+<td style="text-align: left;">🐇 Rapidísima O(1)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Uso ideal</strong></td>
+<td style="text-align: left;">Listas de la compra, rankings.</td>
+<td style="text-align: left;">DNI únicos, correos, IDs.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition question">
+<p class="admonition-title">Ejercicios Reflexivos</p>
+<ol>
+<li><strong>El misterio del orden</strong>: Ejecuta el código de iteración varias veces o con diferentes números. ¿Cambia el orden de salida? ¿Por qué crees que Java no gasta energía en ordenarlos?</li>
+<li><strong>Objetos Mutables</strong>: Si añades un objeto <code>Persona("Pepe")</code> a un HashSet, y luego cambias su nombre a <code>Persona("Juan")</code>... ¿Crees que el HashSet podrá encontrarlo con <code>contains</code> o <code>remove</code>? (Pista: Si cambia el atributo, cambia el hash).</li>
+<li><strong>Rendimiento</strong>: Si tienes una lista de 10.000 palabras y quieres saber cuántas palabras <strong>únicas</strong> hay (sin repetir), ¿cómo lo harías en una sola línea de código usando el constructor de <code>HashSet</code>?</li>
+</ol>
+</div>
+<h2 id="aplicacion-en-el-mundo-real">Aplicación en el Mundo Real</h2>
+<ol>
+<li><strong>Filtros de Spam</strong>:
+    Los servidores de correo tienen un <code>HashSet</code> gigante con direcciones IP de spammers conocidos. Cuando llega un correo, calculan el hash de la IP y miran si está en el conjunto <code>contains()</code>. Es instantáneo.</li>
+<li><strong>Juegos Online (Matchmaking)</strong>:
+    Imagina una partida de Fortnite. Necesitas 100 jugadores únicos. Usas un <code>HashSet&lt;Jugador&gt;</code> para ir añadiendo a la sala de espera. Si un jugador pulsa "Unirse" dos veces por error, el Set lo ignora automáticamente.</li>
+<li><strong>Etiquetas (Tags) en Redes Sociales</strong>:
+    En un post de Instagram o un vídeo de YouTube, las etiquetas (#java, #coding) no se repiten. Si pones #java tres veces, solo se guarda una. La estructura de datos subyacente es un Set.</li>
+</ol>
+<h2 id="para-saber-mas">Para Saber Más</h2>
+<ul>
+<li>
+<p><strong>Documentación Oficial de HashSet</strong>:
+    <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashSet.html">https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashSet.html</a></p>
+</li>
+<li>
+<p><strong>GeeksForGeeks - HashSet in Java</strong>: La fuente de inspiración de hoy, con más detalles.
+    <a href="https://www.geeksforgeeks.org/java/hashset-in-java/">https://www.geeksforgeeks.org/java/hashset-in-java/</a></p>
+</li>
+<li>
+<p><strong>HashCode y Equals explicados</strong>: Fundamental si vas a usar Sets con tus propias clases.
+    <a href="https://www.baeldung.com/java-equals-hashcode-contracts">https://www.baeldung.com/java-equals-hashcode-contracts</a></p>
+</li>
+</ul>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script type="text/javascript">(function initializeMarkmap() {
+    const transformer = new markmap.Transformer();
+    const preloadScripts = transformer.plugins
+        .flatMap((plugin) => plugin.config?.preloadScripts || [])
+        .map((item) => transformer.resolveJS(item));
+    const assets = transformer.getAssets();
+    const loading = Promise.all([
+        assets.styles && markmap.loadCSS(assets.styles),
+        markmap.loadJS([...preloadScripts, ...assets.scripts]),
+    ]);
+
+    function parseData(content) {
+        const { root, frontmatter } = transformer.transform(content);
+        let options = markmap.deriveOptions(frontmatter?.markmap);
+        options = Object.assign(
+            {
+                fitRatio: 0.85,
+            },
+            options
+        );
+        return { root, options };
+    }
+
+    function resetMarkmap(m, el) {
+        if (!m.state.rect) return;
+        const { x1, y1, x2, y2 } = m.state.rect;
+        const height = (el.offsetWidth / (x2 - x1)) * (y2 - y1);
+        el.style.height = height + "px";
+        m.fit();
+    }
+
+    function decodeBase64(encoded) {
+        const binary = atob(encoded);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < bytes.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        return new TextDecoder().decode(bytes);
+    }
+
+    function renderMarkmap(el) {
+        const dataEl = el.querySelector("markmap-data");
+        if (!dataEl) return;
+        let content = el.textContent;
+        if (dataEl.getAttribute("encoding") === "base64") {
+            content = decodeBase64(content);
+        }
+        el.innerHTML = "<svg>";
+        svg = el.firstChild;
+        const { root, options } = parseData(content);
+        const m = markmap.Markmap.create(svg, options);
+        m.setData(root);
+        requestAnimationFrame(() => {
+            resetMarkmap(m, el);
+        });
+    }
+
+    function updateMarkmaps(node) {
+        for (const el of node.querySelectorAll(".mkdocs-markmap")) {
+            renderMarkmap(el);
+        }
+    }
+
+    loading.then(() => {
+        const observer = new MutationObserver((mutationList) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "childList") {
+                    for (const node of mutation.addedNodes) {
+                        updateMarkmaps(node);
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true });
+
+        updateMarkmaps(document);
+    });
+})();
+</script></body></html>

@@ -1,0 +1,2476 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>7 Estructuras datos dinamicas sol - PROG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ejercicios-practicos-estructuras-de-datos-dinamicas-en-java" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PROG" class="md-header__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PROG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7 Estructuras datos dinamicas sol
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../1-Introduccion-programacion/" class="md-tabs__link">
+          
+  
+  
+  Programación
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PROG" class="md-nav__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    PROG
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-Introduccion-programacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-Programacion-estructurada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-Programacion-modular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-Estructuras-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-POO-Clases-y-Objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-POO-Uso-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-Estructuras-datos-dinamicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-Programacion-funcional-Streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-Ficheros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-Acceso-base-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-Interfaces-graficas-MVC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-consolidacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Consolidación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Consolidación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Producto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-inventario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Inventario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-main" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Main
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clase Main">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-camion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Camion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-main_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Main
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clase Main">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-lineaempaquetado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase LineaEmpaquetado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-main_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Main
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clase Main">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-controlstock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase ControlStock
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-main_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Main
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clase Main">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-contenedor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Contenedor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-zonadecarga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase ZonaDeCarga
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-main_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Main
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clase Main">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial-codigo-con-bug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial (Código con Bug):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explicacion-del-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicación del Error
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-corregido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código Corregido
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-refuerzo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Refuerzo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Refuerzo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-producto-implementando-comparable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Producto (Implementando Comparable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-main_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Main
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clase Main">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparador-por-cantidad-clase-externa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparador por Cantidad (Clase Externa)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-main_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase Main
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clase Main">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clase-controlstockordenado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clase ControlStockOrdenado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clase ControlStockOrdenado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-ampliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Ampliación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Ampliación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-diseno-solucion-abierta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo de Diseño (Solución Abierta)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplo de Diseño (Solución Abierta)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-clases-en-mermaid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrama de Clases en Mermaid
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#justificacion-del-diseno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Justificación del Diseño
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- Nombre de archivo sugerido: T07-Ejercicios-Estructuras-Datos-Dinamicas.md --><h1 id="ejercicios-practicos-estructuras-de-datos-dinamicas-en-java">Ejercicios Prácticos: Estructuras de Datos Dinámicas en Java</h1>
+<p><strong>Narrativa del Proyecto:</strong> ¡Felicidades! Has sido fichado como desarrollador Java en <strong>"LogiTrack"</strong>, una startup en plena expansión que está revolucionando el sector de la logística y la gestión de inventarios. Nuestro producto estrella es un sistema de gestión de almacenes (SGA) que necesita ser robusto, eficiente y escalable. Los arrays estáticos que usaba el prototipo inicial ya no son suficientes.</p>
+<p>Tu misión es rediseñar y construir los componentes clave del sistema utilizando el <strong>Java Collections Framework</strong>. Tendrás que gestionar inventarios de productos, procesar colas de pedidos, rastrear envíos únicos y optimizar la consulta de datos. Cada decisión que tomes sobre qué estructura de datos usar tendrá un impacto directo en el rendimiento y la fiabilidad del sistema. ¡Es hora de poner orden en el almacén!</p>
+<h2 id="ejercicios-de-consolidacion">Ejercicios de Consolidación</h2>
+<div class="admonition abstract">
+<p class="admonition-title">1) Primer Día en el Almacén: Gestionando el Inventario | Nivel: Fácil</p>
+<h5 id="objetivo"><strong>Objetivo:</strong></h5>
+<p>Utilizar la colección <code>ArrayList</code> para gestionar una lista de productos, aplicando las operaciones básicas de inserción, consulta, modificación y eliminación.</p>
+<h5 id="setup-inicial"><strong>Setup Inicial:</strong></h5>
+<p>Crea una clase <code>Producto</code> simple con atributos para <code>id</code> (<code>String</code>), <code>nombre</code> (<code>String</code>) y <code>cantidad</code> (<code>int</code>). Incluye un constructor y un método <code>toString()</code> para una fácil visualización.</p>
+<h5 id="tarea-a-realizar"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>Inventario</code> que contenga una <code>List&lt;Producto&gt;</code> (usa un <code>ArrayList</code>).</li>
+<li>Implementa los siguientes métodos en la clase <code>Inventario</code>:<ul>
+<li><code>agregarProducto(Producto producto)</code>: Añade un nuevo producto al final de la lista.</li>
+<li><code>eliminarProducto(String id)</code>: Busca y elimina un producto por su <code>id</code>.</li>
+<li><code>consultarProducto(String nombre)</code>: Busca y devuelve el primer producto que coincida con el nombre.</li>
+<li><code>listarInventario()</code>: Imprime todos los productos del inventario en la consola.</li>
+</ul>
+</li>
+<li>En una clase <code>Main</code>, instancia un <code>Inventario</code>, añade varios productos, lista el inventario, elimina uno y vuelve a listarlo para comprobar el resultado.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p><code>ArrayList</code> es la estructura de datos por defecto para manejar listas de elementos cuyo tamaño puede variar. Es la base para mostrar listados de usuarios, catálogos de productos, historiales de transacciones y prácticamente cualquier secuencia de datos en una aplicación.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="clase-producto">Clase Producto</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Producto</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">cantidad</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Producto</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">cantidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">cantidad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cantidad</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getId</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getNombre</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getCantidad</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">cantidad</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setCantidad</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">cantidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">cantidad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cantidad</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"Producto[ID='"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"', Nombre='"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"', Cantidad="</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cantidad</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"]"</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-inventario">Clase Inventario</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Iterator</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Inventario</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Producto</span><span class="o">&gt;</span><span class="w"> </span><span class="n">productos</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Inventario</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">productos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">agregarProducto</span><span class="p">(</span><span class="n">Producto</span><span class="w"> </span><span class="n">producto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">productos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">producto</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Añadido: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">producto</span><span class="p">.</span><span class="na">getNombre</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eliminarProducto</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Usamos un iterador para eliminar de forma segura</span>
+<span class="w">        </span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Producto</span><span class="o">&gt;</span><span class="w"> </span><span class="n">iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">productos</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">iterator</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Producto</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iterator</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">getId</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="n">id</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">iterator</span><span class="p">.</span><span class="na">remove</span><span class="p">();</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Eliminado: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">getNombre</span><span class="p">());</span>
+<span class="w">                </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="c1">// Asumimos IDs únicos</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Producto</span><span class="w"> </span><span class="nf">consultarProducto</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Producto</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">productos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">getNombre</span><span class="p">().</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="n">nombre</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">listarInventario</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Inventario Actual ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">productos</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El inventario está vacío."</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Producto</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">productos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"-------------------------"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-main">Clase Main</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Inventario</span><span class="w"> </span><span class="n">almacen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Inventario</span><span class="p">();</span>
+<span class="w">        </span><span class="n">almacen</span><span class="p">.</span><span class="na">listarInventario</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">almacen</span><span class="p">.</span><span class="na">agregarProducto</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Producto</span><span class="p">(</span><span class="s">"SKU-001"</span><span class="p">,</span><span class="w"> </span><span class="s">"Laptop Pro"</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">));</span>
+<span class="w">        </span><span class="n">almacen</span><span class="p">.</span><span class="na">agregarProducto</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Producto</span><span class="p">(</span><span class="s">"SKU-002"</span><span class="p">,</span><span class="w"> </span><span class="s">"Teclado Mecánico"</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">));</span>
+<span class="w">        </span><span class="n">almacen</span><span class="p">.</span><span class="na">agregarProducto</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Producto</span><span class="p">(</span><span class="s">"SKU-003"</span><span class="p">,</span><span class="w"> </span><span class="s">"Mouse Inalámbrico"</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">));</span>
+
+<span class="w">        </span><span class="n">almacen</span><span class="p">.</span><span class="na">listarInventario</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">almacen</span><span class="p">.</span><span class="na">eliminarProducto</span><span class="p">(</span><span class="s">"SKU-002"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">almacen</span><span class="p">.</span><span class="na">listarInventario</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">2) La Herramienta Adecuada: ¿<code>ArrayList</code> o <code>LinkedList</code>? | Nivel: Fácil</p>
+<h5 id="objetivo_1"><strong>Objetivo:</strong></h5>
+<p>Evaluar y justificar la elección entre <code>ArrayList</code> y <code>LinkedList</code> basándose en los requisitos de un caso de uso específico.</p>
+<h5 id="tarea-a-realizar_1"><strong>Tarea a realizar:</strong></h5>
+<p>Responde a las siguientes preguntas teóricas, justificando tu elección para cada escenario dentro del sistema "LogiTrack":</p>
+<ol>
+<li><strong>Escenario A:</strong> Necesitas implementar el historial de cambios de ubicación de un paquete. Se añadirán nuevas ubicaciones constantemente al final de la lista, y rara vez se consultará una ubicación específica por su posición. ¿Qué implementación de <code>List</code> es más eficiente y por qué?</li>
+<li><strong>Escenario B:</strong> Estás construyendo una función que muestra los 10 productos más vendidos del mes en una pantalla. Los datos se cargan una vez desde la base de datos y luego se accede a ellos por su posición (índice) para mostrarlos en la interfaz gráfica. ¿Qué implementación de <code>List</code> elegirías y por qué?</li>
+<li><strong>Escenario C:</strong> Debes gestionar la "cola de preparación de envíos". Los nuevos pedidos se añaden al principio de la cola (máxima prioridad) y se procesan (eliminan) también desde el principio. ¿Qué implementación de <code>List</code> es más adecuada para estas operaciones <code>addFirst</code>/<code>removeFirst</code> y por qué?</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_1"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Elegir la implementación correcta de una colección no es una cuestión menor. Una mala elección puede llevar a degradaciones significativas de rendimiento en aplicaciones a gran escala, especialmente cuando se trabaja con miles o millones de elementos.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<ol>
+<li>
+<p><strong>Escenario A (Historial de ubicaciones):</strong> La mejor opción sería <strong><code>LinkedList</code></strong>. Aunque añadir al final (<code>addLast</code>) es eficiente en ambas, <code>LinkedList</code> está ligeramente optimizada para ello al no tener que preocuparse por el redimensionamiento de un array subyacente. Dado que el acceso por índice es raro, la principal desventaja de <code>LinkedList</code> (acceso lento por índice) no es un problema aquí.</p>
+</li>
+<li>
+<p><strong>Escenario B (Top 10 productos):</strong> La mejor opción es <strong><code>ArrayList</code></strong>. El caso de uso principal es el acceso rápido y frecuente por índice (<code>get(i)</code>), que es la mayor fortaleza de <code>ArrayList</code> con su rendimiento de tiempo constante O(1). La lista se construye una vez y luego se lee muchas veces, por lo que la eficiencia en la lectura es primordial.</p>
+</li>
+<li>
+<p><strong>Escenario C (Cola de preparación):</strong> La mejor opción es <strong><code>LinkedList</code></strong>. <code>LinkedList</code> implementa la interfaz <code>Deque</code> (cola de doble extremo) y está altamente optimizada para operaciones en sus extremos (<code>addFirst</code>, <code>removeFirst</code>, <code>addLast</code>, <code>removeLast</code>). Realizar estas operaciones en un <code>ArrayList</code> sería extremadamente ineficiente, ya que cada inserción o eliminación al principio requeriría desplazar todos los demás elementos de la lista (una operación O(n)).</p>
+</li>
+</ol>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">3) Cargando el Camión: La Pila de Pallets | Nivel: Fácil</p>
+<h5 id="objetivo_2"><strong>Objetivo:</strong></h5>
+<p>Utilizar una implementación de <code>Deque</code> (como <code>ArrayDeque</code>) para simular una Pila (LIFO - Last-In, First-Out).</p>
+<h5 id="tarea-a-realizar_2"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>Camion</code> que simule la carga de pallets. Debe tener una <code>Deque&lt;String&gt;</code> para almacenar los identificadores de los pallets.</li>
+<li>Implementa los siguientes métodos:<ul>
+<li><code>cargarPallet(String idPallet)</code>: Usa <code>push()</code> para añadir un pallet a la "cima" de la carga.</li>
+<li><code>descargarPallet()</code>: Usa <code>pop()</code> para quitar y devolver el último pallet cargado. Debe imprimir un mensaje si el camión ya está vacío.</li>
+<li><code>verProximoPallet()</code>: Usa <code>peek()</code> para ver cuál es el siguiente pallet a descargar sin quitarlo.</li>
+</ul>
+</li>
+<li>En una clase <code>Main</code>, simula el proceso: carga 3-4 pallets, muestra cuál es el próximo a descargar, y luego descarga todos los pallets uno por uno, imprimiendo el ID de cada uno a medida que se descarga.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_2"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Las pilas son fundamentales en informática para gestionar llamadas a funciones (la "pila de llamadas"), analizar la sintaxis de código (parsing), implementar algoritmos de búsqueda en grafos (DFS) y, por supuesto, para la funcionalidad de "Deshacer" (Ctrl+Z) en cualquier editor.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="clase-camion">Clase Camion</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayDeque</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Deque</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Camion</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Deque</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">carga</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Camion</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">carga</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayDeque</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">cargarPallet</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">idPallet</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">carga</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">idPallet</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Pallet "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">idPallet</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" cargado."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">descargarPallet</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">carga</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡El camión está vacío! No se puede descargar."</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">idPallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">carga</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Pallet "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">idPallet</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" descargado."</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">idPallet</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">verProximoPallet</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">carga</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">estaVacio</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">carga</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-main_1">Clase Main</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Camion</span><span class="w"> </span><span class="n">trailer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Camion</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- Proceso de Carga ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">trailer</span><span class="p">.</span><span class="na">cargarPallet</span><span class="p">(</span><span class="s">"PLT-A1"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">trailer</span><span class="p">.</span><span class="na">cargarPallet</span><span class="p">(</span><span class="s">"PLT-B2"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">trailer</span><span class="p">.</span><span class="na">cargarPallet</span><span class="p">(</span><span class="s">"PLT-C3"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nEl próximo pallet a descargar es: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">trailer</span><span class="p">.</span><span class="na">verProximoPallet</span><span class="p">());</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Proceso de Descarga ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">trailer</span><span class="p">.</span><span class="na">estaVacio</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">trailer</span><span class="p">.</span><span class="na">descargarPallet</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Intentar descargar de un camión vacío</span>
+<span class="w">        </span><span class="n">trailer</span><span class="p">.</span><span class="na">descargarPallet</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">4) Línea de Empaquetado: La Cola de Pedidos | Nivel: Fácil</p>
+<h5 id="objetivo_3"><strong>Objetivo:</strong></h5>
+<p>Utilizar una implementación de <code>Queue</code> (como <code>LinkedList</code>) para simular una Cola (FIFO - First-In, First-Out).</p>
+<h5 id="tarea-a-realizar_3"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>LineaEmpaquetado</code> que gestione una cola de pedidos pendientes. Usa una <code>Queue&lt;String&gt;</code> (con <code>LinkedList</code> como implementación) para almacenar los números de pedido.</li>
+<li>Implementa los siguientes métodos:<ul>
+<li><code>nuevoPedido(String numeroPedido)</code>: Usa <code>offer()</code> para añadir un pedido al final de la cola.</li>
+<li><code>procesarSiguientePedido()</code>: Usa <code>poll()</code> para obtener y eliminar el primer pedido de la cola. Debe devolver el número de pedido procesado.</li>
+<li><code>verSiguientePedido()</code>: Usa <code>peek()</code> para ver cuál es el próximo pedido a procesar sin quitarlo de la cola.</li>
+</ul>
+</li>
+<li>En <code>Main</code>, simula el flujo: añade varios pedidos, muestra cuál es el siguiente, y luego procesa todos los pedidos en orden hasta que la cola esté vacía.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_3"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Las colas son omnipresentes en sistemas concurrentes y de procesamiento de tareas. Se usan para gestionar colas de impresión, solicitudes de red a un servidor, procesamiento de mensajes en sistemas de mensajería (como RabbitMQ o Kafka), y en algoritmos de búsqueda en grafos (BFS).</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="clase-lineaempaquetado">Clase LineaEmpaquetado</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.LinkedList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Queue</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LineaEmpaquetado</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pedidos</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">LineaEmpaquetado</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">pedidos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">nuevoPedido</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">numeroPedido</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">pedidos</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="n">numeroPedido</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Pedido "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numeroPedido</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" añadido a la cola."</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">procesarSiguientePedido</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">pedidoProcesado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pedidos</span><span class="p">.</span><span class="na">poll</span><span class="p">();</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pedidoProcesado</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Procesando pedido: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pedidoProcesado</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"No hay pedidos en la cola."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pedidoProcesado</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">verSiguientePedido</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pedidos</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">hayPedidos</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="n">pedidos</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-main_2">Clase Main</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LineaEmpaquetado</span><span class="w"> </span><span class="n">linea1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LineaEmpaquetado</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- Llegada de Pedidos ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">linea1</span><span class="p">.</span><span class="na">nuevoPedido</span><span class="p">(</span><span class="s">"ORD-901"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">linea1</span><span class="p">.</span><span class="na">nuevoPedido</span><span class="p">(</span><span class="s">"ORD-902"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">linea1</span><span class="p">.</span><span class="na">nuevoPedido</span><span class="p">(</span><span class="s">"ORD-903"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nEl próximo pedido a procesar es: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">linea1</span><span class="p">.</span><span class="na">verSiguientePedido</span><span class="p">());</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Procesando Pedidos ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">linea1</span><span class="p">.</span><span class="na">hayPedidos</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">linea1</span><span class="p">.</span><span class="na">procesarSiguientePedido</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Intentar procesar con la cola vacía</span>
+<span class="w">        </span><span class="n">linea1</span><span class="p">.</span><span class="na">procesarSiguientePedido</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">5) Control de Stock: <code>HashMap</code> al Rescate | Nivel: Fácil</p>
+<h5 id="objetivo_4"><strong>Objetivo:</strong></h5>
+<p>Utilizar un <code>HashMap</code> para implementar un sistema de control de stock eficiente, asociando un identificador de producto (clave) con su cantidad (valor).</p>
+<h5 id="tarea-a-realizar_4"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>ControlStock</code> que utilice un <code>Map&lt;String, Integer&gt;</code> para almacenar el stock. La clave será el ID del producto (<code>String</code>) y el valor será la cantidad (<code>Integer</code>).</li>
+<li>Implementa los siguientes métodos:<ul>
+<li><code>actualizarStock(String idProducto, int cantidad)</code>: Usa <code>put()</code> para añadir o actualizar el stock de un producto.</li>
+<li><code>obtenerStock(String idProducto)</code>: Usa <code>getOrDefault()</code> para devolver el stock de un producto. Si el producto no existe, debe devolver 0.</li>
+<li><code>imprimirStock()</code>: Recorre el mapa (usando <code>entrySet()</code>) y muestra el stock de cada producto.</li>
+</ul>
+</li>
+<li>En <code>Main</code>, añade varios productos al control de stock, actualiza la cantidad de uno de ellos, consulta el stock de un producto existente y de uno inexistente, y finalmente imprime el stock completo.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_4"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p><code>HashMap</code> es posiblemente la estructura de datos más útil para un acceso rápido a la información. Se usa para cachés en memoria (guardar datos de la BBDD para no tener que consultarla constantemente), para almacenar datos de sesión de usuario, para representar objetos JSON, y en general, para cualquier situación que requiera una búsqueda de datos por un identificador único.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="clase-controlstock">Clase ControlStock</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashMap</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Map</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ControlStock</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stock</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ControlStock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">stock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">actualizarStock</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">idProducto</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">cantidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">stock</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">idProducto</span><span class="p">,</span><span class="w"> </span><span class="n">cantidad</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Stock de "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">idProducto</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" actualizado a "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cantidad</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">obtenerStock</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">idProducto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">stock</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="n">idProducto</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">imprimirStock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Stock del Almacén ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">stock</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"No hay productos en stock."</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">stock</span><span class="p">.</span><span class="na">entrySet</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Producto: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="na">getKey</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", Cantidad: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="na">getValue</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"-------------------------"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-main_3">Clase Main</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ControlStock</span><span class="w"> </span><span class="n">control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ControlStock</span><span class="p">();</span>
+<span class="w">        </span><span class="n">control</span><span class="p">.</span><span class="na">actualizarStock</span><span class="p">(</span><span class="s">"SKU-001"</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">);</span>
+<span class="w">        </span><span class="n">control</span><span class="p">.</span><span class="na">actualizarStock</span><span class="p">(</span><span class="s">"SKU-002"</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span>
+<span class="w">        </span><span class="n">control</span><span class="p">.</span><span class="na">actualizarStock</span><span class="p">(</span><span class="s">"SKU-003"</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">control</span><span class="p">.</span><span class="na">imprimirStock</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nActualizando stock de Teclados..."</span><span class="p">);</span>
+<span class="w">        </span><span class="n">control</span><span class="p">.</span><span class="na">actualizarStock</span><span class="p">(</span><span class="s">"SKU-002"</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nStock de SKU-001: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">control</span><span class="p">.</span><span class="na">obtenerStock</span><span class="p">(</span><span class="s">"SKU-001"</span><span class="p">));</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Stock de SKU-999 (inexistente): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">control</span><span class="p">.</span><span class="na">obtenerStock</span><span class="p">(</span><span class="s">"SKU-999"</span><span class="p">));</span>
+
+<span class="w">        </span><span class="n">control</span><span class="p">.</span><span class="na">imprimirStock</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">6) Envíos Únicos: Registrando Contenedores con <code>HashSet</code> | Nivel: Fácil</p>
+<h5 id="objetivo_5"><strong>Objetivo:</strong></h5>
+<p>Utilizar un <code>HashSet</code> para garantizar que no se registren identificadores de contenedores de envío duplicados y comprender la importancia de <code>equals()</code> y <code>hashCode()</code>.</p>
+<h5 id="setup-inicial_1"><strong>Setup Inicial:</strong></h5>
+<p>Crea una clase <code>Contenedor</code> con un <code>id</code> (<code>String</code>) y un <code>origen</code> (<code>String</code>). Sobrescribe <strong>correctamente</strong> los métodos <code>equals()</code> y <code>hashCode()</code> para que dos contenedores se consideren iguales si su <code>id</code> es el mismo.</p>
+<h5 id="tarea-a-realizar_5"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>ZonaDeCarga</code> con un <code>Set&lt;Contenedor&gt;</code> para almacenar los contenedores que están listos para ser enviados.</li>
+<li>Implementa un método <code>registrarContenedor(Contenedor c)</code>. Este método debe usar <code>add()</code> para añadir un contenedor al <code>Set</code>. El método debe imprimir si el contenedor fue añadido con éxito o si ya existía (puedes saberlo por el booleano que devuelve <code>add()</code>).</li>
+<li>En <code>Main</code>, crea varios objetos <code>Contenedor</code>. Asegúrate de crear al menos dos objetos que sean "iguales" (mismo ID pero pueden tener diferente origen o ser instancias distintas).</li>
+<li>Intenta registrar todos los contenedores en la <code>ZonaDeCarga</code> y observa la salida. Comprueba que el duplicado no se añade.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_5"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p><code>HashSet</code> es ideal para mantener colecciones de elementos únicos donde el orden no importa. Se utiliza para detectar elementos duplicados en grandes conjuntos de datos, para gestionar listas de usuarios únicos que han dado "like" a una publicación, o para realizar operaciones de conjuntos como uniones, intersecciones y diferencias de forma muy eficiente.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="clase-contenedor">Clase Contenedor</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Objects</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Contenedor</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">origen</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Contenedor</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">origen</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">origen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">origen</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getId</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getOrigen</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">origen</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Es crucial para que HashSet funcione correctamente</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">o</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">o</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">getClass</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="na">getClass</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Contenedor</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Contenedor</span><span class="p">)</span><span class="w"> </span><span class="n">o</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Objects</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">that</span><span class="p">.</span><span class="na">id</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">hashCode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Objects</span><span class="p">.</span><span class="na">hash</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"Contenedor[ID='"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"', Origen='"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">origen</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"']"</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-zonadecarga">Clase ZonaDeCarga</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashSet</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Set</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ZonaDeCarga</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Contenedor</span><span class="o">&gt;</span><span class="w"> </span><span class="n">contenedores</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ZonaDeCarga</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">contenedores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registrarContenedor</span><span class="p">(</span><span class="n">Contenedor</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">anadido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">contenedores</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">anadido</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Éxito: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" registrado."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Fallo: El contenedor con ID "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" ya está registrado."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">listarContenedores</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Contenedores en Zona de Carga ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">contenedores</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"-------------------------------------"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-main_4">Clase Main</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ZonaDeCarga</span><span class="w"> </span><span class="n">muelle5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ZonaDeCarga</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">Contenedor</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Contenedor</span><span class="p">(</span><span class="s">"CNT-001"</span><span class="p">,</span><span class="w"> </span><span class="s">"Valencia"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Contenedor</span><span class="w"> </span><span class="n">c2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Contenedor</span><span class="p">(</span><span class="s">"CNT-002"</span><span class="p">,</span><span class="w"> </span><span class="s">"Algeciras"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Contenedor</span><span class="w"> </span><span class="n">c3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Contenedor</span><span class="p">(</span><span class="s">"CNT-001"</span><span class="p">,</span><span class="w"> </span><span class="s">"Barcelona"</span><span class="p">);</span><span class="w"> </span><span class="c1">// ID duplicado</span>
+
+<span class="w">        </span><span class="n">muelle5</span><span class="p">.</span><span class="na">registrarContenedor</span><span class="p">(</span><span class="n">c1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">muelle5</span><span class="p">.</span><span class="na">registrarContenedor</span><span class="p">(</span><span class="n">c2</span><span class="p">);</span>
+<span class="w">        </span><span class="n">muelle5</span><span class="p">.</span><span class="na">registrarContenedor</span><span class="p">(</span><span class="n">c3</span><span class="p">);</span><span class="w"> </span><span class="c1">// Este debería fallar</span>
+
+<span class="w">        </span><span class="n">muelle5</span><span class="p">.</span><span class="na">listarContenedores</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">7) ¡Bug en el Reparto! La <code>ConcurrentModificationException</code> | Nivel: Fácil</p>
+<h5 id="objetivo_6"><strong>Objetivo:</strong></h5>
+<p>Identificar y corregir el error común <code>ConcurrentModificationException</code> que ocurre al intentar modificar una colección mientras se recorre con un bucle <code>for-each</code>.</p>
+<h5 id="setup-inicial-codigo-con-bug"><strong>Setup Inicial (Código con Bug):</strong></h5>
+<p>El siguiente código intenta eliminar de una lista de paquetes todos aquellos cuyo destino sea "Zona Fantasma". Sin embargo, lanza una excepción.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Repartidor</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">paquetes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span>
+<span class="w">            </span><span class="s">"Paquete a Madrid"</span><span class="p">,</span>
+<span class="w">            </span><span class="s">"Paquete a Zona Fantasma"</span><span class="p">,</span>
+<span class="w">            </span><span class="s">"Paquete a Barcelona"</span><span class="p">,</span>
+<span class="w">            </span><span class="s">"Paquete a Sevilla"</span><span class="p">,</span>
+<span class="w">            </span><span class="s">"Paquete a Zona Fantasma"</span>
+<span class="w">        </span><span class="p">));</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Lista de paquetes inicial: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">paquetes</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Código con bug</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">paquete</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">paquetes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">paquete</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">"Zona Fantasma"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">paquetes</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">paquete</span><span class="p">);</span><span class="w"> </span><span class="c1">// ¡ERROR! No se puede modificar así</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Lista de paquetes final: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">paquetes</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="tarea-a-realizar_6"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Ejecuta el código y observa la <code>ConcurrentModificationException</code>.</li>
+<li>Explica en una o dos frases por qué ocurre este error.</li>
+<li>Reescribe el bucle utilizando un <code>Iterator</code> y su método <code>remove()</code> para eliminar los elementos de forma segura y conseguir que el programa funcione correctamente.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_6"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Este es uno de los errores más clásicos al empezar a trabajar con colecciones en Java. Entender el "fallo rápido" (fail-fast) de los iteradores y saber cómo modificar colecciones durante la iteración es una habilidad fundamental para evitar bugs sutiles y difíciles de rastrear en aplicaciones complejas.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="explicacion-del-error">Explicación del Error</h4>
+<p>El error <code>ConcurrentModificationException</code> ocurre porque el bucle <code>for-each</code> utiliza internamente un <code>Iterator</code>. Modificar la estructura de la lista (añadiendo o quitando elementos) directamente a través de los métodos de la lista (<code>paquetes.remove()</code>) mientras el iterador la está recorriendo, hace que el estado del iterador se vuelva inconsistente con el estado de la lista. Para protegerse contra un comportamiento indefinido, el iterador detecta esta modificación "concurrente" y lanza la excepción.</p>
+<h4 id="codigo-corregido">Código Corregido</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Iterator</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RepartidorCorregido</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">paquetes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span>
+<span class="w">            </span><span class="s">"Paquete a Madrid"</span><span class="p">,</span>
+<span class="w">            </span><span class="s">"Paquete a Zona Fantasma"</span><span class="p">,</span>
+<span class="w">            </span><span class="s">"Paquete a Barcelona"</span><span class="p">,</span>
+<span class="w">            </span><span class="s">"Paquete a Sevilla"</span><span class="p">,</span>
+<span class="w">            </span><span class="s">"Paquete a Zona Fantasma"</span>
+<span class="w">        </span><span class="p">));</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Lista de paquetes inicial: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">paquetes</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Forma correcta de eliminar durante la iteración</span>
+<span class="w">        </span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">paquetes</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">iterator</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">paquete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iterator</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">paquete</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">"Zona Fantasma"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">iterator</span><span class="p">.</span><span class="na">remove</span><span class="p">();</span><span class="w"> </span><span class="c1">// ¡CORRECTO! Usar el método del iterador</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Lista de paquetes final: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">paquetes</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Salida esperada: [Paquete a Madrid, Paquete a Barcelona, Paquete a Sevilla]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<h2 id="ejercicios-de-refuerzo">Ejercicios de Refuerzo</h2>
+<div class="admonition warning">
+<p class="admonition-title">8) Orden Natural: Productos <code>Comparable</code>s | Nivel: Medio</p>
+<h5 id="objetivo_7"><strong>Objetivo:</strong></h5>
+<p>Implementar la interfaz <code>Comparable</code> para definir un "orden natural" para los objetos de una clase personalizada y utilizarlo para ordenar una colección.</p>
+<h5 id="setup-inicial_2"><strong>Setup Inicial:</strong></h5>
+<p>Usa la clase <code>Producto</code> del ejercicio 1. Añádele un atributo <code>double precio</code>.</p>
+<h5 id="tarea-a-realizar_7"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Modifica la clase <code>Producto</code> para que implemente <code>Comparable&lt;Producto&gt;</code>.</li>
+<li>Implementa el método <code>compareTo(Producto otro)</code>. El <strong>orden natural</strong> de los productos en "LogiTrack" se define por su <code>nombre</code>, alfabéticamente.</li>
+<li>En una clase <code>Main</code>, crea una <code>List&lt;Producto&gt;</code> y añádele varios productos en desorden.</li>
+<li>Imprime la lista para ver el orden original.</li>
+<li>Usa <code>Collections.sort(miLista)</code> para ordenar la lista.</li>
+<li>
+<p>Vuelve a imprimir la lista para verificar que los productos ahora están ordenados por nombre.</p>
+</li>
+<li>
+<p><strong>Pista:</strong> La clase <code>String</code> ya implementa <code>Comparable</code>, así que puedes delegar la comparación directamente a los nombres: <code>this.nombre.compareTo(otro.getNombre())</code>.</p>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_7"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Definir un orden natural es útil para que las clases "sepan" cómo ordenarse por defecto. Estructuras como <code>TreeSet</code> y <code>TreeMap</code> dependen de ello para mantener sus elementos ordenados automáticamente, y métodos como <code>Collections.sort()</code> o <code>Arrays.sort()</code> lo usan como criterio de ordenación principal.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="clase-producto-implementando-comparable">Clase Producto (Implementando Comparable)</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Producto</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Comparable</span><span class="o">&lt;</span><span class="n">Producto</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">cantidad</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">precio</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// ... constructor, getters, setters ...</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"Producto[ID='"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"', Nombre='"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"', Precio="</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">precio</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"]"</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Implementación del orden natural (por nombre)</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compareTo</span><span class="p">(</span><span class="n">Producto</span><span class="w"> </span><span class="n">otro</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">otro</span><span class="p">.</span><span class="na">getNombre</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-main_5">Clase Main</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Collections</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Producto</span><span class="o">&gt;</span><span class="w"> </span><span class="n">productos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">productos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Producto</span><span class="p">(</span><span class="s">"SKU-002"</span><span class="p">,</span><span class="w"> </span><span class="s">"Teclado Mecánico"</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mf">79.99</span><span class="p">));</span>
+<span class="w">        </span><span class="n">productos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Producto</span><span class="p">(</span><span class="s">"SKU-001"</span><span class="p">,</span><span class="w"> </span><span class="s">"Laptop Pro"</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mf">1200.50</span><span class="p">));</span>
+<span class="w">        </span><span class="n">productos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Producto</span><span class="p">(</span><span class="s">"SKU-003"</span><span class="p">,</span><span class="w"> </span><span class="s">"Mouse Inalámbrico"</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mf">25.00</span><span class="p">));</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- Lista sin ordenar ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">productos</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Ordena la lista usando el orden natural definido en compareTo</span>
+<span class="w">        </span><span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">productos</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Lista ordenada por nombre (orden natural) ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">productos</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">9) Orden a la Carta: <code>Comparator</code> para Múltiples Criterios | Nivel: Medio</p>
+<h5 id="objetivo_8"><strong>Objetivo:</strong></h5>
+<p>Utilizar la interfaz <code>Comparator</code> para definir múltiples criterios de ordenación externos a una clase, incluyendo el uso de expresiones lambda.</p>
+<h5 id="setup-inicial_3"><strong>Setup Inicial:</strong></h5>
+<p>Usa la clase <code>Producto</code> del ejercicio anterior (con <code>id</code>, <code>nombre</code>, <code>cantidad</code>, <code>precio</code>).</p>
+<h5 id="tarea-a-realizar_8"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>En tu clase <code>Main</code>, tienes una lista de <code>Producto</code>s. El equipo de logística necesita poder ordenarla de varias maneras.</li>
+<li><strong>Crea una clase</strong> que implemente <code>Comparator&lt;Producto&gt;</code> para ordenar los productos por <code>cantidad</code> de stock, de mayor a menor (descendente).</li>
+<li><strong>Usa una expresión lambda</strong> para ordenar la misma lista por <code>precio</code>, de menor a mayor (ascendente).</li>
+<li><strong>Usa el método estático <code>Comparator.comparing()</code></strong> para crear un comparador que ordene por <code>id</code> y muéstralo por pantalla.</li>
+<li>
+<p>Por cada criterio de ordenación, imprime la lista para verificar que el orden es correcto.</p>
+</li>
+<li>
+<p><strong>Pista para el comparador por cantidad (descendente):</strong> <code>Integer.compare(p2.getCantidad(), p1.getCantidad())</code> invierte el orden de los parámetros para lograr un orden descendente.</p>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_8"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>En aplicaciones reales, es muy raro que baste con un único criterio de ordenación. Los usuarios esperan poder ordenar tablas y listados por diferentes columnas (nombre, fecha, precio, etc.). <code>Comparator</code> es la herramienta estándar de Java para implementar esta funcionalidad de forma limpia y desacoplada.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="comparador-por-cantidad-clase-externa">Comparador por Cantidad (Clase Externa)</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Comparator</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ComparadorProductoPorCantidad</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Producto</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compare</span><span class="p">(</span><span class="n">Producto</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">Producto</span><span class="w"> </span><span class="n">p2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Descendente: p2 comparado con p1</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="n">p2</span><span class="p">.</span><span class="na">getCantidad</span><span class="p">(),</span><span class="w"> </span><span class="n">p1</span><span class="p">.</span><span class="na">getCantidad</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="clase-main_6">Clase Main</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Comparator</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Producto</span><span class="o">&gt;</span><span class="w"> </span><span class="n">productos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">productos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Producto</span><span class="p">(</span><span class="s">"SKU-B02"</span><span class="p">,</span><span class="w"> </span><span class="s">"Teclado Mecánico"</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mf">79.99</span><span class="p">));</span>
+<span class="w">        </span><span class="n">productos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Producto</span><span class="p">(</span><span class="s">"SKU-A01"</span><span class="p">,</span><span class="w"> </span><span class="s">"Laptop Pro"</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mf">1200.50</span><span class="p">));</span>
+<span class="w">        </span><span class="n">productos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Producto</span><span class="p">(</span><span class="s">"SKU-C03"</span><span class="p">,</span><span class="w"> </span><span class="s">"Mouse Inalámbrico"</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mf">25.00</span><span class="p">));</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- Lista Original ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">productos</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 1. Ordenar por cantidad descendente (usando la clase)</span>
+<span class="w">        </span><span class="n">productos</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ComparadorProductoPorCantidad</span><span class="p">());</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Ordenado por Cantidad (desc) ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">productos</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 2. Ordenar por precio ascendente (usando lambda)</span>
+<span class="w">        </span><span class="n">productos</span><span class="p">.</span><span class="na">sort</span><span class="p">((</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="na">getPrecio</span><span class="p">(),</span><span class="w"> </span><span class="n">p2</span><span class="p">.</span><span class="na">getPrecio</span><span class="p">()));</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Ordenado por Precio (asc) ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">productos</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 3. Ordenar por ID ascendente (usando método de referencia)</span>
+<span class="w">        </span><span class="n">productos</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparing</span><span class="p">(</span><span class="n">Producto</span><span class="p">::</span><span class="n">getId</span><span class="p">));</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Ordenado por ID (asc) ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">productos</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">10) Informes Ordenados: El Poder del <code>TreeMap</code> | Nivel: Medio</p>
+<h5 id="objetivo_9"><strong>Objetivo:</strong></h5>
+<p>Refactorizar un <code>HashMap</code> a un <code>TreeMap</code> para aprovechar su capacidad de mantener las claves ordenadas automáticamente.</p>
+<h5 id="setup-inicial_4"><strong>Setup Inicial:</strong></h5>
+<p>Usa la clase <code>ControlStock</code> del ejercicio 5, que utilizaba un <code>HashMap</code>.</p>
+<h5 id="tarea-a-realizar_9"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una nueva clase <code>ControlStockOrdenado</code>.</li>
+<li>En esta nueva clase, cambia la declaración del <code>Map</code> para que sea un <code>TreeMap</code>: <code>Map&lt;String, Integer&gt; stock = new TreeMap&lt;&gt;();</code>.</li>
+<li>Copia y pega los métodos <code>actualizarStock</code>, <code>obtenerStock</code> e <code>imprimirStock</code> de la clase <code>ControlStock</code> original. <strong>No necesitas cambiar el código de los métodos</strong>.</li>
+<li>En <code>Main</code>, instancia <code>ControlStockOrdenado</code> y añade los mismos productos que en el ejercicio 5, pero en un orden diferente (ej: empieza por "SKU-003", luego "SKU-001").</li>
+<li>Llama a <code>imprimirStock()</code> y observa que, a diferencia del <code>HashMap</code>, la salida está <strong>siempre ordenada por la clave (ID del producto)</strong>.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_9"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p><code>TreeMap</code> es la elección perfecta cuando se necesita tanto la búsqueda rápida de un mapa como la garantía de que los datos se pueden recorrer en un orden predecible. Es ideal para generar informes, índices de libros, directorios telefónicos o cualquier visualización de datos que deba presentarse ordenada por su clave.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="clase-controlstockordenado">Clase ControlStockOrdenado</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Map</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.TreeMap</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ControlStockOrdenado</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// La única diferencia es usar TreeMap en lugar de HashMap</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stock</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ControlStockOrdenado</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">stock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// El resto de los métodos son idénticos a los de ControlStock</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">actualizarStock</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">idProducto</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">cantidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">stock</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">idProducto</span><span class="p">,</span><span class="w"> </span><span class="n">cantidad</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Stock de "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">idProducto</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" actualizado a "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cantidad</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">obtenerStock</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">idProducto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">stock</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="n">idProducto</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">imprimirStock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Stock del Almacén (Ordenado por ID) ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">stock</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"No hay productos en stock."</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">stock</span><span class="p">.</span><span class="na">entrySet</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Producto: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="na">getKey</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", Cantidad: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="na">getValue</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"------------------------------------------"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="err">```</span><span class="w">        </span><span class="err">####</span><span class="w"> </span><span class="n">Clase</span><span class="w"> </span><span class="n">Main</span>
+<span class="err">```</span><span class="n">java</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ControlStockOrdenado</span><span class="w"> </span><span class="n">control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ControlStockOrdenado</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Añadimos los productos en desorden</span>
+<span class="w">        </span><span class="n">control</span><span class="p">.</span><span class="na">actualizarStock</span><span class="p">(</span><span class="s">"SKU-003"</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span>
+<span class="w">        </span><span class="n">control</span><span class="p">.</span><span class="na">actualizarStock</span><span class="p">(</span><span class="s">"SKU-001"</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">);</span>
+<span class="w">        </span><span class="n">control</span><span class="p">.</span><span class="na">actualizarStock</span><span class="p">(</span><span class="s">"SKU-002"</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// La salida siempre estará ordenada por la clave</span>
+<span class="w">        </span><span class="n">control</span><span class="p">.</span><span class="na">imprimirStock</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">11) Ruta de Reparto Interactiva: <code>ListIterator</code> | Nivel: Medio</p>
+<h5 id="objetivo_10"><strong>Objetivo:</strong></h5>
+<p>Utilizar un <code>ListIterator</code> para recorrer una lista en ambas direcciones y modificarla durante la iteración.</p>
+<h5 id="tarea-a-realizar_10"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una <code>List&lt;String&gt;</code> con varias paradas de una ruta de reparto: <code>["Almacén", "Cliente A", "Cliente B", "Cliente C", "Almacén"]</code>.</li>
+<li>Obtén un <code>ListIterator&lt;String&gt;</code> de la lista.</li>
+<li><strong>Recorre hacia adelante:</strong> Usa un bucle <code>while (iterator.hasNext())</code> para imprimir cada parada.</li>
+<li><strong>Inserta una parada extra:</strong> Después de "Cliente B", usa <code>iterator.add("Punto de Recogida D")</code>.</li>
+<li><strong>Recorre hacia atrás:</strong> Ahora que el iterador está al final, usa un bucle <code>while (iterator.hasPrevious())</code> para imprimir la ruta en orden inverso.</li>
+<li>Imprime la lista final para ver que la nueva parada se ha añadido correctamente.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_10"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p><code>ListIterator</code> es útil en escenarios donde se necesita una navegación bidireccional, como en un editor de texto (moverse por caracteres o palabras hacia adelante y atrás), un historial de navegador, o para algoritmos que necesitan inspeccionar elementos vecinos en una lista para realizar modificaciones complejas.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ListIterator</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RutaDeReparto</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ruta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span>
+<span class="w">            </span><span class="s">"Almacén Central"</span><span class="p">,</span><span class="w"> </span><span class="s">"Cliente A"</span><span class="p">,</span><span class="w"> </span><span class="s">"Cliente B"</span><span class="p">,</span><span class="w"> </span><span class="s">"Cliente C"</span><span class="p">,</span><span class="w"> </span><span class="s">"Vuelta al Almacén"</span>
+<span class="w">        </span><span class="p">));</span>
+
+<span class="w">        </span><span class="n">ListIterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ruta</span><span class="p">.</span><span class="na">listIterator</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- Ruta de Ida ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">parada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">it</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Siguiente parada: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">parada</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// Añadir una parada extra en medio del recorrido</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">parada</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"Cliente B"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">it</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Punto de Recogida D"</span><span class="p">);</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--&gt; Parada extra añadida: Punto de Recogida D"</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Ruta de Vuelta (desde el final) ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="na">hasPrevious</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">parada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">it</span><span class="p">.</span><span class="na">previous</span><span class="p">();</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Parada anterior: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">parada</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Ruta final modificada ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ruta</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<h2 id="ejercicios-de-ampliacion">Ejercicios de Ampliación</h2>
+<div class="admonition danger">
+<p class="admonition-title">12) Diseño y Revisión por Pares: Sistema de Trazabilidad de Envíos | Nivel: Alto</p>
+<h5 id="objetivo_11"><strong>Objetivo:</strong></h5>
+<p>Diseñar una solución de software de pequeña escala que combine múltiples estructuras de datos, documentarla con un diagrama de clases y realizar una revisión por pares (Peer Review) para mejorar el diseño.</p>
+<h5 id="tarea-a-realizar_11"><strong>Tarea a realizar:</strong></h5>
+<p>"LogiTrack" necesita un sistema para la trazabilidad de envíos. Un envío tiene un ID único y pasa por varios estados a lo largo de su ciclo de vida (ej: "Registrado", "En almacén", "En tránsito", "Entregado").</p>
+<p><strong>Parte 1: Tu Diseño (Individual)</strong>
+1.  Diseña la arquitectura de clases para este módulo. Piensa en las clases que necesitas: <code>Envio</code>, <code>RegistroEstado</code>, <code>SistemaTrazabilidad</code>, etc.
+2.  Elige las <strong>estructuras de datos más adecuadas</strong> para los siguientes requisitos:
+    *   El <code>SistemaTrazabilidad</code> debe poder buscar un <code>Envio</code> por su ID de forma muy rápida.
+    *   Cada <code>Envio</code> debe mantener un historial de sus cambios de estado, en el orden en que ocurrieron.
+    *   El sistema necesita mantener una cola de envíos que están pendientes de ser procesados por el personal del almacén.
+3.  Crea un <strong>diagrama de clases en Mermaid</strong> que represente tu diseño, mostrando las clases, sus atributos principales y las relaciones entre ellas.
+4.  Escribe una <strong>justificación</strong> (2-3 párrafos) explicando tus decisiones sobre las estructuras de datos. Por ejemplo: <em>"Para el acceso rápido por ID, he elegido un <code>HashMap&lt;String, Envio&gt;</code>... Para el historial de estados, he usado un <code>ArrayList&lt;RegistroEstado&gt;</code> porque el orden es crucial..."</em>.</p>
+<p><strong>Parte 2: Revisión por Pares (En parejas)</strong>
+1.  Intercambia tu diagrama y justificación con un compañero.
+2.  Analiza su diseño y proporciona feedback constructivo por escrito sobre al menos dos puntos. Céntrate en la elección y el uso de las estructuras de datos. Ejemplos de buen feedback:
+    *   <em>"Has usado un <code>ArrayList</code> para la cola de procesamiento. ¿Has considerado que un <code>LinkedList</code> o <code>ArrayDeque</code> sería más performante para las operaciones de encolar y desencolar?"</em>
+    *   <em>"Tu <code>HashMap</code> para los envíos es una buena elección. Como mejora, podrías considerar un <code>LinkedHashMap</code> si el sistema necesitara mostrar los envíos en el orden en que fueron registrados."</em>
+3.  Recibe el feedback de tu compañero y reflexiona sobre cómo podrías mejorar tu diseño inicial.</p>
+<h5 id="aplicacion-en-el-mundo-real_11"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Esta tarea simula el día a día de un desarrollador de software: analizar requisitos, diseñar una solución, elegir las herramientas (estructuras de datos) adecuadas, documentar el diseño y, fundamentalmente, colaborar con el equipo a través de revisiones de código y diseño para construir un producto de mayor calidad.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<h4 id="ejemplo-de-diseno-solucion-abierta">Ejemplo de Diseño (Solución Abierta)</h4>
+<h5 id="diagrama-de-clases-en-mermaid"><strong>Diagrama de Clases en Mermaid</strong></h5>
+<pre class="mermaid"><code>classDiagram
+    class SistemaTrazabilidad {
+        -Map~String, Envio~ envios
+        -Queue~Envio~ pendientesDeProcesar
+        +registrarEnvio(Envio)
+        +actualizarEstado(String, String, String)
+        +obtenerEnvio(String) Envio
+        +procesarSiguiente() Envio
+    }
+
+    class Envio {
+        -String idEnvio
+        -String origen
+        -String destino
+        -List~RegistroEstado~ historial
+        +agregarEstado(String, String)
+    }
+
+    class RegistroEstado {
+        -String estado
+        -String ubicacion
+        -LocalDateTime fecha
+    }
+
+    SistemaTrazabilidad o-- "*" Envio : "gestiona"
+    Envio o-- "*" RegistroEstado : "tiene un historial de"</code></pre>
+<h5 id="justificacion-del-diseno"><strong>Justificación del Diseño</strong></h5>
+<p>Este diseño se centra en la eficiencia y la correcta representación de los datos utilizando una combinación de <code>Map</code>, <code>Queue</code> y <code>List</code>.</p>
+<ol>
+<li>
+<p><strong><code>Map&lt;String, Envio&gt; envios</code></strong>: Para el requisito de búsqueda ultrarrápida de envíos por su ID, un <strong><code>HashMap</code></strong> es la elección ideal. Ofrece un rendimiento de tiempo constante (O(1)) para operaciones <code>get()</code>, lo que es crucial para un sistema de trazabilidad donde las consultas por ID serán la operación más frecuente. Un <code>TreeMap</code> podría ser una alternativa si los informes necesitaran listar los envíos ordenados por ID, pero para la funcionalidad básica de consulta, <code>HashMap</code> es más performante.</p>
+</li>
+<li>
+<p><strong><code>List&lt;RegistroEstado&gt; historial</code></strong>: Dentro de cada objeto <code>Envio</code>, el historial de estados se almacena en una <strong><code>ArrayList</code></strong>. La principal característica de un historial es que el orden de los eventos es fundamental y se mantiene. Una <code>ArrayList</code> garantiza este orden de inserción y permite un recorrido eficiente para mostrar la cronología del envío al cliente. Las inserciones siempre ocurren al final, lo cual es una operación rápida en <code>ArrayList</code>.</p>
+</li>
+<li>
+<p><strong><code>Queue&lt;Envio&gt; pendientesDeProcesar</code></strong>: Para gestionar los envíos que esperan ser procesados, se utiliza una <strong><code>Queue</code></strong> (implementada con <code>LinkedList</code> o <code>ArrayDeque</code>). Esto asegura un tratamiento justo y ordenado (FIFO - First-In, First-Out). Un nuevo envío registrado se añade al final de la cola con <code>offer()</code>, y el personal del almacén procesa el envío que está al principio de la cola con <code>poll()</code>, garantizando que los envíos más antiguos se procesen primero.</p>
+</li>
+</ol>
+</details>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

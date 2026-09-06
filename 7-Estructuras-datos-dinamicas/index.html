@@ -1,0 +1,2071 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../6-POO-Uso-avanzado/" rel="prev"/>
+<link href="../8-Programacion-funcional-Streams/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>UD7 - Estructuras de datos dinámicas - PROG</title>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script><script src="../js/unpkg.com/d3@7.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-lib@0.18.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-view@0.18.js" type="text/javascript"></script><style type="text/css">div.mkdocs-markmap {
+    width: 100%;
+    min-height: 1em;
+    border: 1px solid grey;
+}
+.mkdocs-markmap > svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+</style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#estructuras-de-datos-dinamicas-en-java">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="PROG" class="md-header__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            PROG
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              UD7 - Estructuras de datos dinámicas
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../1-Introduccion-programacion/">
+          
+  
+  
+  Programación
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="PROG" class="md-nav__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    PROG
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1-Introduccion-programacion/">
+<span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2-Programacion-estructurada/">
+<span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3-Programacion-modular/">
+<span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4-Estructuras-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5-POO-Clases-y-Objetos/">
+<span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6-POO-Uso-avanzado/">
+<span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-introduccion-a-las-estructuras-de-datos-dinamicas">
+<span class="md-ellipsis">
+      
+        1. Introducción a las estructuras de datos dinámicas
+      
+    </span>
+</a>
+<nav aria-label="1. Introducción a las estructuras de datos dinámicas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#concepto-de-coleccion">
+<span class="md-ellipsis">
+      
+        Concepto de Colección
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diferencias-respecto-a-arrays">
+<span class="md-ellipsis">
+      
+        Diferencias Respecto a Arrays
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tipos-fundamentales">
+<span class="md-ellipsis">
+      
+        Tipos Fundamentales
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-interfaces-base-de-colecciones-en-java">
+<span class="md-ellipsis">
+      
+        2. Interfaces Base de Colecciones en Java
+      
+    </span>
+</a>
+<nav aria-label="2. Interfaces Base de Colecciones en Java" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interfaz-collectione-la-raiz-de-todo">
+<span class="md-ellipsis">
+      
+        Interfaz Collection&lt;E&gt;: La Raíz de Todo
+      
+    </span>
+</a>
+<nav aria-label="Interfaz Collection&lt;E&gt;: La Raíz de Todo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operaciones-principales">
+<span class="md-ellipsis">
+      
+        Operaciones Principales
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#decidir-que-coleccion-utilizar">
+<span class="md-ellipsis">
+      
+        Decidir qué Colección Utilizar
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-listas-en-java-liste">
+<span class="md-ellipsis">
+      
+        3. Listas en Java (List&lt;E&gt;)
+      
+    </span>
+</a>
+<nav aria-label="3. Listas en Java (List&lt;E&gt;)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31-concepto-y-caracteristicas">
+<span class="md-ellipsis">
+      
+        3.1 Concepto y Características
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32-arraylist">
+<span class="md-ellipsis">
+      
+        3.2 ArrayList
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#33-linkedlist">
+<span class="md-ellipsis">
+      
+        3.3 LinkedList
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-pilas-stack-y-colas-queue">
+<span class="md-ellipsis">
+      
+        4. Pilas (Stack) y Colas (Queue)
+      
+    </span>
+</a>
+<nav aria-label="4. Pilas (Stack) y Colas (Queue)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-clase-stack-lifo">
+<span class="md-ellipsis">
+      
+        4.1 Clase Stack (LIFO)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42-colas-queue-y-deque-fifo">
+<span class="md-ellipsis">
+      
+        4.2 Colas (Queue y Deque) (FIFO)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-conjuntos-sete">
+<span class="md-ellipsis">
+      
+        5. Conjuntos (Set&lt;E&gt;)
+      
+    </span>
+</a>
+<nav aria-label="5. Conjuntos (Set&lt;E&gt;)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hashset-y-la-importancia-de-equals-y-hashcode">
+<span class="md-ellipsis">
+      
+        HashSet y la importancia de equals() y hashCode()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-con-hashset-y-alumno">
+<span class="md-ellipsis">
+      
+        Ejemplo con HashSet y Alumno
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#treeset-y-la-ordenacion">
+<span class="md-ellipsis">
+      
+        TreeSet y la Ordenación
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-mapas-mapk-v">
+<span class="md-ellipsis">
+      
+        6. Mapas (Map&lt;K, V&gt;)
+      
+    </span>
+</a>
+<nav aria-label="6. Mapas (Map&lt;K, V&gt;)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementaciones-principales">
+<span class="md-ellipsis">
+      
+        Implementaciones Principales
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metodos-principales-de-map">
+<span class="md-ellipsis">
+      
+        Métodos Principales de Map
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-contando-la-frecuencia-de-palabras">
+<span class="md-ellipsis">
+      
+        Ejemplo: Contando la Frecuencia de Palabras
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-avanzado-mapalumno-arraylistcalificacion">
+<span class="md-ellipsis">
+      
+        Ejemplo Avanzado: Map&lt;Alumno, ArrayList&lt;Calificacion&gt;&gt;
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-iteradores">
+<span class="md-ellipsis">
+      
+        7. Iteradores
+      
+    </span>
+</a>
+<nav aria-label="7. Iteradores" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#71-interfaz-iteratore">
+<span class="md-ellipsis">
+      
+        7.1 Interfaz Iterator&lt;E&gt;
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#72-interfaz-iterablee">
+<span class="md-ellipsis">
+      
+        7.2 Interfaz Iterable&lt;E&gt;
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#73-interfaz-listiteratore">
+<span class="md-ellipsis">
+      
+        7.3 Interfaz ListIterator&lt;E&gt;
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-ordenacion-y-comparacion">
+<span class="md-ellipsis">
+      
+        8. Ordenación y Comparación
+      
+    </span>
+</a>
+<nav aria-label="8. Ordenación y Comparación" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#81-interface-comparablet">
+<span class="md-ellipsis">
+      
+        8.1 Interface Comparable&lt;T&gt;
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#82-interfaz-comparatort">
+<span class="md-ellipsis">
+      
+        8.2 Interfaz Comparator&lt;T&gt;
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-estructuras-de-datos-clasicas-conceptos">
+<span class="md-ellipsis">
+      
+        9. Estructuras de Datos Clásicas (Conceptos)
+      
+    </span>
+</a>
+<nav aria-label="9. Estructuras de Datos Clásicas (Conceptos)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#91-listas-enlazadas">
+<span class="md-ellipsis">
+      
+        9.1 Listas Enlazadas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#92-arboles">
+<span class="md-ellipsis">
+      
+        9.2 Árboles
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#93-grafos">
+<span class="md-ellipsis">
+      
+        9.3 Grafos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#94-tablas-hash">
+<span class="md-ellipsis">
+      
+        9.4 Tablas Hash
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacion-en-el-mundo-real">
+<span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-saber-mas">
+<span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios">
+<span class="md-ellipsis">
+      
+        EJERCICIOS
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../8-Programacion-funcional-Streams/">
+<span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../9-Ficheros/">
+<span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10-Acceso-base-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11-Interfaces-graficas-MVC/">
+<span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-introduccion-a-las-estructuras-de-datos-dinamicas">
+<span class="md-ellipsis">
+      
+        1. Introducción a las estructuras de datos dinámicas
+      
+    </span>
+</a>
+<nav aria-label="1. Introducción a las estructuras de datos dinámicas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#concepto-de-coleccion">
+<span class="md-ellipsis">
+      
+        Concepto de Colección
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diferencias-respecto-a-arrays">
+<span class="md-ellipsis">
+      
+        Diferencias Respecto a Arrays
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tipos-fundamentales">
+<span class="md-ellipsis">
+      
+        Tipos Fundamentales
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-interfaces-base-de-colecciones-en-java">
+<span class="md-ellipsis">
+      
+        2. Interfaces Base de Colecciones en Java
+      
+    </span>
+</a>
+<nav aria-label="2. Interfaces Base de Colecciones en Java" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interfaz-collectione-la-raiz-de-todo">
+<span class="md-ellipsis">
+      
+        Interfaz Collection&lt;E&gt;: La Raíz de Todo
+      
+    </span>
+</a>
+<nav aria-label="Interfaz Collection&lt;E&gt;: La Raíz de Todo" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operaciones-principales">
+<span class="md-ellipsis">
+      
+        Operaciones Principales
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#decidir-que-coleccion-utilizar">
+<span class="md-ellipsis">
+      
+        Decidir qué Colección Utilizar
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-listas-en-java-liste">
+<span class="md-ellipsis">
+      
+        3. Listas en Java (List&lt;E&gt;)
+      
+    </span>
+</a>
+<nav aria-label="3. Listas en Java (List&lt;E&gt;)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31-concepto-y-caracteristicas">
+<span class="md-ellipsis">
+      
+        3.1 Concepto y Características
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32-arraylist">
+<span class="md-ellipsis">
+      
+        3.2 ArrayList
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#33-linkedlist">
+<span class="md-ellipsis">
+      
+        3.3 LinkedList
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-pilas-stack-y-colas-queue">
+<span class="md-ellipsis">
+      
+        4. Pilas (Stack) y Colas (Queue)
+      
+    </span>
+</a>
+<nav aria-label="4. Pilas (Stack) y Colas (Queue)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-clase-stack-lifo">
+<span class="md-ellipsis">
+      
+        4.1 Clase Stack (LIFO)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42-colas-queue-y-deque-fifo">
+<span class="md-ellipsis">
+      
+        4.2 Colas (Queue y Deque) (FIFO)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-conjuntos-sete">
+<span class="md-ellipsis">
+      
+        5. Conjuntos (Set&lt;E&gt;)
+      
+    </span>
+</a>
+<nav aria-label="5. Conjuntos (Set&lt;E&gt;)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hashset-y-la-importancia-de-equals-y-hashcode">
+<span class="md-ellipsis">
+      
+        HashSet y la importancia de equals() y hashCode()
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-con-hashset-y-alumno">
+<span class="md-ellipsis">
+      
+        Ejemplo con HashSet y Alumno
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#treeset-y-la-ordenacion">
+<span class="md-ellipsis">
+      
+        TreeSet y la Ordenación
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-mapas-mapk-v">
+<span class="md-ellipsis">
+      
+        6. Mapas (Map&lt;K, V&gt;)
+      
+    </span>
+</a>
+<nav aria-label="6. Mapas (Map&lt;K, V&gt;)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementaciones-principales">
+<span class="md-ellipsis">
+      
+        Implementaciones Principales
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metodos-principales-de-map">
+<span class="md-ellipsis">
+      
+        Métodos Principales de Map
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-contando-la-frecuencia-de-palabras">
+<span class="md-ellipsis">
+      
+        Ejemplo: Contando la Frecuencia de Palabras
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-avanzado-mapalumno-arraylistcalificacion">
+<span class="md-ellipsis">
+      
+        Ejemplo Avanzado: Map&lt;Alumno, ArrayList&lt;Calificacion&gt;&gt;
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-iteradores">
+<span class="md-ellipsis">
+      
+        7. Iteradores
+      
+    </span>
+</a>
+<nav aria-label="7. Iteradores" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#71-interfaz-iteratore">
+<span class="md-ellipsis">
+      
+        7.1 Interfaz Iterator&lt;E&gt;
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#72-interfaz-iterablee">
+<span class="md-ellipsis">
+      
+        7.2 Interfaz Iterable&lt;E&gt;
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#73-interfaz-listiteratore">
+<span class="md-ellipsis">
+      
+        7.3 Interfaz ListIterator&lt;E&gt;
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-ordenacion-y-comparacion">
+<span class="md-ellipsis">
+      
+        8. Ordenación y Comparación
+      
+    </span>
+</a>
+<nav aria-label="8. Ordenación y Comparación" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#81-interface-comparablet">
+<span class="md-ellipsis">
+      
+        8.1 Interface Comparable&lt;T&gt;
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#82-interfaz-comparatort">
+<span class="md-ellipsis">
+      
+        8.2 Interfaz Comparator&lt;T&gt;
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-estructuras-de-datos-clasicas-conceptos">
+<span class="md-ellipsis">
+      
+        9. Estructuras de Datos Clásicas (Conceptos)
+      
+    </span>
+</a>
+<nav aria-label="9. Estructuras de Datos Clásicas (Conceptos)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#91-listas-enlazadas">
+<span class="md-ellipsis">
+      
+        9.1 Listas Enlazadas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#92-arboles">
+<span class="md-ellipsis">
+      
+        9.2 Árboles
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#93-grafos">
+<span class="md-ellipsis">
+      
+        9.3 Grafos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#94-tablas-hash">
+<span class="md-ellipsis">
+      
+        9.4 Tablas Hash
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacion-en-el-mundo-real">
+<span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-saber-mas">
+<span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejercicios">
+<span class="md-ellipsis">
+      
+        EJERCICIOS
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<!-- 
+---
+title: "Estructuras de Datos Dinámicas en Java"
+description: "Una inmersión profunda en el Java Collections Framework, desde ArrayLists y LinkedLists hasta HashMaps, Sets, Iteradores y los principios de las estructuras de datos."
+---
+--><h1 id="estructuras-de-datos-dinamicas-en-java">Estructuras de Datos Dinámicas en Java</h1>
+<p>¡Hola, futuros arquitectos de software! En la unidad anterior, trabajamos con arrays, que son como trenes de mercancías: increíblemente eficientes para transportar una cantidad fija de vagones en una vía recta. Sabes exactamente cuántos vagones tienes, y llegar al quinto vagón es súper rápido. Pero, ¿qué pasa si a mitad de camino necesitas añadir un vagón extra? O quitar uno del medio... ¡Tienes que parar todo el tren, desmontarlo y volverlo a montar! Es rígido y poco práctico para situaciones cambiantes.</p>
+<p>Ahora, vamos a aparcar el tren y a coger las llaves de un coche en una gran ciudad. Con un coche, puedes ir donde quieras, cambiar de ruta, recoger a más gente por el camino y no tienes un número fijo de asientos para todo tu viaje. Esta flexibilidad es la esencia de las <strong>estructuras de datos dinámicas</strong>.</p>
+<p>En esta unidad, nos sumergiremos en el <strong>Java Collections Framework (JCF)</strong>, que es como el concesionario de vehículos de Java. Nos ofrece un catálogo impresionante de "vehículos" para gestionar nuestros datos: desde las versátiles "furgonetas" <code>ArrayList</code> y los "trenes de carretera" <code>LinkedList</code>, hasta los "almacenes con direcciones únicas" <code>HashMap</code>. Aprenderemos a elegir el vehículo correcto para cada tipo de carga (datos) y cada tipo de viaje (operación). ¡Abróchate el cinturón, que arrancamos!</p>
+<p><br/></p><hr/><p></p>
+<h2 id="1-introduccion-a-las-estructuras-de-datos-dinamicas">1. Introducción a las estructuras de datos dinámicas</h2>
+<p>Cuando el volumen de datos que una aplicación debe manejar crece, las variables simples y los arrays estáticos se quedan cortos. Imagina gestionar un único pedido en una tienda online: podrías usar unas cuantas variables. Pero, ¿qué ocurre cuando tienes que gestionar miles de pedidos simultáneamente, cada uno con su cliente, su lista de productos y su estado? Aquí es donde entran en juego las estructuras de datos dinámicas.</p>
+<h3 id="concepto-de-coleccion">Concepto de Colección</h3>
+<div class="admonition note">
+<p class="admonition-title">Definición: Colección (Collection)</p>
+<p>Una colección es un objeto que agrupa múltiples elementos en una sola unidad. Representa un conjunto de objetos que, a priori, tienen alguna relación entre sí. Piénsalo como una "caja" inteligente diseñada para almacenar y manipular otros objetos de forma eficiente.</p>
+</div>
+<p>El <strong>Java Collections Framework (JCF)</strong> es la librería estándar de Java que nos proporciona un conjunto de interfaces y clases para trabajar con estas colecciones. Es una de las APIs más importantes y utilizadas del lenguaje.</p>
+<h3 id="diferencias-respecto-a-arrays">Diferencias Respecto a Arrays</h3>
+<p>Los arrays, como vimos en la UD4, son la estructura de datos más básica. Las colecciones son una evolución que soluciona muchas de sus limitaciones.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Característica</th>
+<th style="text-align: left;">Arrays (<code>String[]</code>)</th>
+<th style="text-align: left;">Colecciones (<code>List&lt;String&gt;</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Tamaño</strong></td>
+<td style="text-align: left;"><strong>Fijo</strong>. Se define en la creación y no se puede cambiar.</td>
+<td style="text-align: left;"><strong>Dinámico</strong>. Crece o decrece automáticamente según se añaden o eliminan elementos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Funcionalidad</strong></td>
+<td style="text-align: left;"><strong>Básica</strong>. Ofrece acceso por índice, pero pocas operaciones integradas.</td>
+<td style="text-align: left;"><strong>Rica</strong>. Incluye métodos para añadir, eliminar, buscar, ordenar, etc.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tipo de Datos</strong></td>
+<td style="text-align: left;">Puede almacenar tipos primitivos (<code>int</code>, <code>char</code>) y objetos.</td>
+<td style="text-align: left;"><strong>Solo almacena objetos</strong>. Para primitivos, usa las clases <em>Wrapper</em> (<code>Integer</code>, <code>Character</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Flexibilidad</strong></td>
+<td style="text-align: left;">Baja. Modificar (insertar/eliminar en medio) es ineficiente.</td>
+<td style="text-align: left;">Alta. Proporciona implementaciones optimizadas para diferentes casos de uso.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tipos-fundamentales">Tipos Fundamentales</h3>
+<p>El JCF nos ofrece una variedad de estructuras, cada una con sus propias fortalezas. Estas son las más importantes:</p>
+<ul>
+<li><strong>Listas (<code>List</code>)</strong>: Colecciones ordenadas de elementos. Permiten duplicados y el acceso a los elementos es por su posición (índice). Son como un estante de libros numerado.</li>
+<li><strong>Colas (<code>Queue</code>)</strong>: Colecciones diseñadas para mantener elementos antes de su procesamiento. Siguen el principio <strong>FIFO</strong> (First-In, First-Out), como la cola del supermercado.</li>
+<li><strong>Pilas (<code>Stack</code>)</strong>: Colecciones que siguen el principio <strong>LIFO</strong> (Last-In, First-Out). El último elemento en entrar es el primero en salir, como una pila de platos.</li>
+<li><strong>Conjuntos (<code>Set</code>)</strong>: Colecciones que <strong>no permiten elementos duplicados</strong>. Son como una bolsa de canicas únicas.</li>
+<li><strong>Mapas (<code>Map</code>)</strong>: Colecciones que almacenan pares <strong>clave-valor</strong>. Cada clave es única y se usa para recuperar su valor asociado. Son como un diccionario.</li>
+<li><strong>Árboles (<code>Tree</code>)</strong>: Estructuras jerárquicas no lineales donde cada elemento (nodo) puede tener hijos. Son excelentes para almacenar datos ordenados y realizar búsquedas eficientes.</li>
+<li><strong>Grafos (<code>Graph</code>)</strong>: Estructuras no lineales compuestas por nodos y las conexiones (aristas) entre ellos. Perfectas para modelar redes (sociales, de carreteras, etc.).</li>
+<li><strong>Tablas Hash (<code>Hash Table</code>)</strong>: Estructuras que usan una función "mágica" (hash) para asignar a cada elemento una ubicación única, permitiendo inserciones y búsquedas increíblemente rápidas (promedio O(1)). Son la base de <code>HashSet</code> y <code>HashMap</code>.</li>
+</ul>
+<div class="language-markmap mkdocs-markmap"><markmap-data encoding="base64" hidden="true">IyBFc3RydWN0dXJhcyBkZSBEYXRvcyBEaW7DoW1pY2FzCgojIyBMaW5lYWxlcwotICoqTGlzdGFzKio6IE9yZGVuYWRhcywgY29uIGR1cGxpY2Fkb3MKICAtIGBBcnJheUxpc3RgCiAgLSBgTGlua2VkTGlzdGAKLSAqKlBpbGFzIChMSUZPKSoqOiDDmmx0aW1vIGVuIGVudHJhciwgcHJpbWVybyBlbiBzYWxpcgogIC0gYFN0YWNrYCAob2Jzb2xldG8pCiAgLSBVc2FyIGBEZXF1ZWAgKGUuZy4sIGBBcnJheURlcXVlYCkKLSAqKkNvbGFzIChGSUZPKSoqOiBQcmltZXJvIGVuIGVudHJhciwgcHJpbWVybyBlbiBzYWxpcgogIC0gYFF1ZXVlYCAvIGBEZXF1ZWAKCiMjIE5vIExpbmVhbGVzCi0gKipDb25qdW50b3MgKFNldCkqKjogRWxlbWVudG9zIMO6bmljb3MKICAtIGBIYXNoU2V0YCAoc2luIG9yZGVuKQogIC0gYExpbmtlZEhhc2hTZXRgIChvcmRlbiBkZSBpbnNlcmNpw7NuKQogIC0gYFRyZWVTZXRgIChvcmRlbmFkbykKLSAqKk1hcGFzIChNYXApKio6IFBhcmVzIGNsYXZlLXZhbG9yCiAgLSBgSGFzaE1hcGAKICAtIGBUcmVlTWFwYAotICoqw4FyYm9sZXMqKgotICoqR3JhZm9zKioKLSAqKlRhYmxhcyBIYXNoKio=</markmap-data></div>
+<div class="admonition question">
+<p class="admonition-title">Reflexiona</p>
+<ol>
+<li>¿Por qué un <code>ArrayList</code> es más flexible que un array tradicional para gestionar la lista de la compra?</li>
+<li>Si estás desarrollando el historial de "Deshacer" (Ctrl+Z) de un editor de texto, ¿qué estructura de datos te parece más adecuada y por qué?</li>
+<li>¿Qué estructura de datos usarías para almacenar los contactos de tu teléfono, donde cada nombre está asociado a un número?</li>
+<li>¿Por qué las colecciones en Java no pueden almacenar tipos primitivos como <code>int</code> directamente?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="2-interfaces-base-de-colecciones-en-java">2. Interfaces Base de Colecciones en Java</h2>
+<p>El Java Collections Framework (JCF) está brillantemente diseñado en torno a un conjunto de interfaces. Esto significa que aprendes a programar contra un "contrato" (<code>List</code>, <code>Set</code>, <code>Map</code>), y puedes cambiar la implementación concreta (<code>ArrayList</code>, <code>HashSet</code>) con un impacto mínimo en tu código.</p>
+<h3 id="interfaz-collectione-la-raiz-de-todo">Interfaz <code>Collection&lt;E&gt;</code>: La Raíz de Todo</h3>
+<p>Casi todas las colecciones en Java (excepto los Mapas) heredan de la interfaz <code>Collection&lt;E&gt;</code>. Esta interfaz define el comportamiento más básico que cualquier colección debe tener.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Interfaz <code>Collection&lt;E&gt;</code></p>
+<p>Es la interfaz raíz de la jerarquía de colecciones. Define las operaciones fundamentales como añadir, eliminar, y consultar elementos, sin especificar detalles como el orden o si se permiten duplicados. La <code>E</code> es un <strong>parámetro de tipo genérico</strong>, que se sustituye por la clase concreta de objetos que queremos almacenar (ej: <code>Collection&lt;String&gt;</code>, <code>Collection&lt;Alumno&gt;</code>).</p>
+</div>
+<h4 id="operaciones-principales">Operaciones Principales</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Método</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>boolean add(E elemento)</code></td>
+<td style="text-align: left;">Añade un elemento a la colección. Devuelve <code>true</code> si la colección cambió.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>boolean remove(Object objeto)</code></td>
+<td style="text-align: left;">Elimina una única instancia del objeto especificado.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>int size()</code></td>
+<td style="text-align: left;">Devuelve el número de elementos en la colección.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>boolean isEmpty()</code></td>
+<td style="text-align: left;">Devuelve <code>true</code> si la colección no tiene elementos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>boolean contains(Object objeto)</code></td>
+<td style="text-align: left;">Devuelve <code>true</code> si la colección contiene el elemento especificado.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>void clear()</code></td>
+<td style="text-align: left;">Elimina todos los elementos de la colección.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Object[] toArray()</code></td>
+<td style="text-align: left;">Convierte la colección en un array de objetos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Iterator&lt;E&gt; iterator()</code></td>
+<td style="text-align: left;">Devuelve un iterador para recorrer los elementos de la colección (lo veremos en detalle más adelante).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="decidir-que-coleccion-utilizar">Decidir qué Colección Utilizar</h3>
+<p>Antes de empezar a programar, hazte estas tres preguntas clave. La respuesta te guiará hacia la colección correcta como si fuera un GPS.</p>
+<ol>
+<li><strong>¿Necesito mantener el orden?</strong><ul>
+<li><strong>Sí:</strong> Necesitas una <code>List</code> (<code>ArrayList</code>, <code>LinkedList</code>).</li>
+<li><strong>No:</strong> Un <code>Set</code> (<code>HashSet</code>) puede ser más eficiente.</li>
+</ul>
+</li>
+<li><strong>¿Necesito almacenar elementos duplicados?</strong><ul>
+<li><strong>Sí:</strong> Una <code>List</code> es tu opción.</li>
+<li><strong>No:</strong> Debes usar un <code>Set</code>.</li>
+</ul>
+</li>
+<li><strong>¿Necesito acceder a elementos por una clave única en lugar de por su posición?</strong><ul>
+<li><strong>Sí:</strong> Necesitas un <code>Map</code> (<code>HashMap</code>, <code>TreeMap</code>).</li>
+</ul>
+</li>
+</ol>
+<pre class="mermaid"><code>graph TD
+    Start{Inicio: ¿Qué necesito?} --&gt; Q1{¿Necesito&lt;br&gt;duplicados?};
+    Q1 -- Sí --&gt; Q2{¿Necesito&lt;br&gt;orden?};
+    Q1 -- No --&gt; UseSet[Usa un Set: HashSet, TreeSet];
+
+    Q2 -- Sí, por inserción o acceso posicional --&gt; UseList[Usa una List: ArrayList, LinkedList];
+    Q2 -- Sí, por orden natural o personalizado --&gt; UseTreeSet[Considera un TreeSet o una List ordenada];
+    Q2 -- No --&gt; UseSet;
+
+    Start --&gt; Q3{¿Necesito&lt;br&gt;pares Clave-Valor?};
+    Q3 -- Sí --&gt; UseMap[Usa un Map: HashMap, TreeMap];
+    Q3 -- No --&gt; Q1;</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Reflexiona</p>
+<ol>
+<li>Estás creando una baraja de cartas para un juego. No puede haber cartas repetidas. ¿Qué interfaz de colección principal usarías?</li>
+<li>Necesitas almacenar el historial de páginas web visitadas por un usuario, en el orden en que las visitó. ¿Qué interfaz es la más adecuada?</li>
+<li>Para una agenda, necesitas asociar el NIF de una persona (que es único) con su objeto <code>Persona</code> completo. ¿Qué estructura elegirías?</li>
+<li>¿Por qué crees que el método <code>add()</code> devuelve un <code>boolean</code> en lugar de <code>void</code>? ¿En qué tipo de colección podría devolver <code>false</code>?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="3-listas-en-java-liste">3. Listas en Java (<code>List&lt;E&gt;</code>)</h2>
+<p>Las listas son, con diferencia, la colección más común y versátil que usarás. Son la evolución natural de los arrays, pero con superpoderes.</p>
+<h3 id="31-concepto-y-caracteristicas">3.1 Concepto y Características</h3>
+<div class="admonition note">
+<p class="admonition-title">Definición: Interfaz <code>List&lt;E&gt;</code></p>
+<p>Una <code>List</code> es una subinterfaz de <code>Collection</code> que representa una colección <strong>ordenada</strong> de elementos (también conocida como secuencia). A diferencia de los <code>Set</code>, las listas <strong>permiten elementos duplicados</strong>.</p>
+</div>
+<p>Sus características clave son:</p>
+<ul>
+<li><strong>Elementos Ordenados</strong>: Las listas mantienen el orden de inserción. El primer elemento que añades estará en la posición 0, el segundo en la 1, y así sucesivamente.</li>
+<li><strong>Permiten Duplicados</strong>: Puedes añadir el mismo objeto a una lista varias veces.</li>
+<li><strong>Acceso Posicional (por Índice)</strong>: Puedes acceder, modificar o eliminar elementos especificando su posición numérica (índice), igual que en un array.</li>
+</ul>
+<p>La interfaz <code>List</code> hereda todos los métodos de <code>Collection</code> y añade otros nuevos basados en el índice:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Método</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>E get(int index)</code></td>
+<td style="text-align: left;">Devuelve el elemento en la posición especificada.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>E set(int index, E element)</code></td>
+<td style="text-align: left;">Reemplaza el elemento en la posición <code>index</code> con <code>element</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>void add(int index, E element)</code></td>
+<td style="text-align: left;">Inserta un elemento en la posición <code>index</code>, desplazando los siguientes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>E remove(int index)</code></td>
+<td style="text-align: left;">Elimina el elemento en la posición <code>index</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>int indexOf(Object o)</code></td>
+<td style="text-align: left;">Devuelve el índice de la primera aparición del objeto, o -1 si no está.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>int lastIndexOf(Object o)</code></td>
+<td style="text-align: left;">Devuelve el índice de la última aparición del objeto, o -1 si no está.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-arraylist">3.2 <code>ArrayList</code></h3>
+<p>Es la implementación más común de la interfaz <code>List</code>. Internamente, usa un array dinámico.</p>
+<div class="admonition info">
+<p class="admonition-title">Bajo el capó de un <code>ArrayList</code></p>
+<p>Un <code>ArrayList</code> empieza con un array de un tamaño inicial (por ejemplo, 10). Cuando intentas añadir el 11º elemento, la clase crea un nuevo array más grande (normalmente un 50% más grande), copia todos los elementos del array viejo al nuevo y luego descarta el viejo. Este proceso de "redimensionamiento" es automático, pero puede tener un coste de rendimiento si añades muchísimos elementos uno a uno.</p>
+</div>
+<p><strong>Uso básico:</strong> <code>ArrayList</code> es excelente para acceso rápido a elementos por su índice (<code>get</code>) y para recorrer la lista, pero es menos eficiente para inserciones o eliminaciones en medio de la lista, ya que requiere desplazar todos los elementos posteriores.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Collections</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EjemploArrayList</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Buena práctica: programar contra la interfaz List</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">listaCompra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// 1. Añadir elementos (add)</span>
+<span class="w">        </span><span class="n">listaCompra</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Leche"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">listaCompra</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Pan"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">listaCompra</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Manzanas"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">listaCompra</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">"Huevos"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Añade en una posición específica</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Lista de la compra: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">listaCompra</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 2. Acceder a un elemento (get)</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">segundoElemento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listaCompra</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"El segundo elemento es: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">segundoElemento</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 3. Modificar un elemento (set)</span>
+<span class="w">        </span><span class="n">listaCompra</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">"Leche desnatada"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Lista actualizada: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">listaCompra</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 4. Eliminar un elemento (remove)</span>
+<span class="w">        </span><span class="n">listaCompra</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">"Pan"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Por objeto</span>
+<span class="w">        </span><span class="n">listaCompra</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">   </span><span class="c1">// Por índice</span>
+
+<span class="w">        </span><span class="c1">// 5. Ordenación con Collections.sort()</span>
+<span class="w">        </span><span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">listaCompra</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Lista ordenada: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">listaCompra</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ampliación.png"><img alt="+Info" src="../images/ampliación.png"/></a></div>
+<p><a href="../7-ArrayList/">-&gt; Ampliación ArrayList </a></p>
+<p><br/></p>
+<h3 id="33-linkedlist">3.3 <code>LinkedList</code></h3>
+<p>Es la otra gran implementación de <code>List</code>. Internamente, usa una <strong>lista doblemente enlazada</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">Bajo el capó de un <code>LinkedList</code></p>
+<p>No usa un array. Cada elemento es un "nodo" que contiene el dato y dos punteros: uno al nodo anterior y otro al siguiente. Para añadir o quitar un elemento en medio, solo hay que cambiar un par de punteros. Para acceder al elemento en la posición 500, tiene que empezar desde el principio (o el final) y seguir los punteros 500 veces.</p>
+</div>
+<p><strong>Uso básico:</strong> <code>LinkedList</code> es extremadamente eficiente para añadir o eliminar elementos al principio, al final o en medio de la lista. Sin embargo, el acceso a un elemento por su índice (<code>get(i)</code>) es mucho más lento que en un <code>ArrayList</code>, ya que tiene que recorrer la lista desde el principio.</p>
+<p>Además de <code>List</code>, <code>LinkedList</code> también implementa las interfaces <code>Queue</code> (cola) y <code>Deque</code> (cola de doble extremo), lo que le da métodos adicionales para comportarse como una pila o una cola.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.LinkedList</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EjemploLinkedList</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">playlist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Métodos de Deque: añadir al principio y al final</span>
+<span class="w">        </span><span class="n">playlist</span><span class="p">.</span><span class="na">addFirst</span><span class="p">(</span><span class="s">"Bohemian Rhapsody - Queen"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">playlist</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">"Stairway to Heaven - Led Zeppelin"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">playlist</span><span class="p">.</span><span class="na">addFirst</span><span class="p">(</span><span class="s">"Hotel California - Eagles"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Playlist: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">playlist</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Métodos de Deque: eliminar del principio y del final</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">primera</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">removeFirst</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Reproduciendo ahora: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">primera</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">ultima</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">removeLast</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Quitando la última: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ultima</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Playlist restante: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">playlist</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Método de Queue: mirar el primer elemento sin quitarlo</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Siguiente en la cola: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">peek</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ampliación.png"><img alt="+Info" src="../images/ampliación.png"/></a></div>
+<p><a href="../7-LinkedList/">-&gt; Ampliación LinkedList </a>
+<br/></p>
+<div class="admonition question">
+<p class="admonition-title">Reflexiona</p>
+<ol>
+<li>Estás creando una aplicación para gestionar una lista de tareas. Los usuarios añadirán tareas principalmente al final y las consultarán a menudo por su posición. ¿Usarías <code>ArrayList</code> o <code>LinkedList</code>? ¿Por qué?</li>
+<li>Ahora imagina una aplicación que gestiona el historial de un navegador web. Los usuarios pueden ir "atrás" y "adelante". ¿Qué estructura te parece más adecuada?</li>
+<li>¿Qué crees que es más rápido: <code>lista.get(50000)</code> en un <code>ArrayList</code> de 100.000 elementos o en un <code>LinkedList</code> del mismo tamaño? ¿Y <code>lista.add(50000, "nuevoElemento")</code>?</li>
+<li>El método <code>remove(Object o)</code> en una <code>List</code> elimina la <em>primera</em> ocurrencia del objeto. ¿Cómo harías para eliminar <em>todas</em> las ocurrencias de un objeto en un <code>ArrayList</code>?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="4-pilas-stack-y-colas-queue">4. Pilas (<code>Stack</code>) y Colas (<code>Queue</code>)</h2>
+<p>Las pilas y las colas son colecciones especializadas, diseñadas para procesar elementos en un orden específico. Son fundamentales en muchos algoritmos e incluso en el funcionamiento interno de los sistemas operativos.</p>
+<div class="center"><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/fifo-lifo.png"><img alt="Lifo vs fifo" src="../images/fifo-lifo.png"/></a></div>
+<h3 id="41-clase-stack-lifo">4.1 Clase <code>Stack</code> (LIFO)</h3>
+<p>Una pila funciona bajo el principio <strong>LIFO (Last-In, First-Out)</strong>: el último elemento que entra es el primero que sale.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Pila (Stack)</p>
+<p>Es una estructura de datos que permite dos operaciones principales: <strong>push</strong> (empujar), para agregar un elemento en la cima, y <strong>pop</strong> (sacar), para eliminar el elemento de la cima. Es como una pila de platos: siempre coges el de arriba.</p>
+</div>
+<p>En Java, existe una clase <code>Stack</code> heredada, pero se considera obsoleta.</p>
+<div class="admonition warning">
+<p class="admonition-title">La clase <code>Stack</code> está obsoleta</p>
+<p>La clase <code>java.util.Stack</code> es antigua (desde Java 1.0) y extiende <code>Vector</code>, que es una clase sincronizada y lenta. La recomendación moderna es usar una implementación de la interfaz <code>Deque</code> (como <code>ArrayDeque</code> o <code>LinkedList</code>) para modelar una pila.</p>
+</div>
+<p>Las operaciones principales son:<br/>
+*   <code>push(E item)</code>: Añade un elemento a la cima de la pila.<br/>
+*   <code>E pop()</code>: Elimina y devuelve el elemento de la cima. Lanza <code>EmptyStackException</code> si la pila está vacía.<br/>
+*   <code>E peek()</code>: Devuelve el elemento de la cima sin eliminarlo.<br/>
+*   <code>boolean empty()</code>: Devuelve <code>true</code> si la pila está vacía.<br/>
+*   <code>int search(Object o)</code>: Busca un objeto y devuelve su distancia desde la cima (1-based).<br/></p>
+<h3 id="42-colas-queue-y-deque-fifo">4.2 Colas (<code>Queue</code> y <code>Deque</code>) (FIFO)</h3>
+<p>Una cola funciona bajo el principio <strong>FIFO (First-In, First-Out)</strong>: el primer elemento que entra es el primero que sale, como la cola para pagar en una tienda.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Cola (Queue)</p>
+<p>Es una estructura de datos para mantener elementos antes de procesarlos. Las operaciones principales son <strong><code>add</code></strong> u <strong><code>offer</code></strong> (encolar) para agregar un elemento al final, y <strong><code>remove</code></strong> o <strong><code>poll</code></strong> (desencolar) para eliminar el elemento del principio.</p>
+</div>
+<p>La interfaz <code>Deque</code> (pronunciado "deck", por "Double Ended Queue") es aún más versátil, ya que permite añadir y quitar elementos de ambos extremos, por lo que puede funcionar perfectamente como una pila (usando <code>push</code> y <code>pop</code>) o como una cola.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayDeque</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Deque</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.LinkedList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Queue</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EjemploPilasYColas</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- Ejemplo de Pila (con Deque) ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Deque</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">historialNavegador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayDeque</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">historialNavegador</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="s">"google.com"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Equivale a addFirst()</span>
+<span class="w">        </span><span class="n">historialNavegador</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="s">"github.com"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">historialNavegador</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="s">"wikipedia.org"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Página actual: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">historialNavegador</span><span class="p">.</span><span class="na">peek</span><span class="p">());</span><span class="w"> </span><span class="c1">// wikipedia.org</span>
+
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">paginaAtras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">historialNavegador</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span><span class="w"> </span><span class="c1">// Equivale a removeFirst()</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Volviendo atrás... ahora en: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">paginaAtras</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Página actual: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">historialNavegador</span><span class="p">.</span><span class="na">peek</span><span class="p">());</span><span class="w"> </span><span class="c1">// github.com</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Ejemplo de Cola (con LinkedList) ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">colaImpresion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">colaImpresion</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Documento1.pdf"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Equivale a add() o addLast()</span>
+<span class="w">        </span><span class="n">colaImpresion</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Foto.jpg"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">colaImpresion</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Contrato.docx"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Cola de impresión: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">colaImpresion</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">imprimiendo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">colaImpresion</span><span class="p">.</span><span class="na">poll</span><span class="p">();</span><span class="w"> </span><span class="c1">// Equivale a remove() o removeFirst()</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Imprimiendo ahora: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">imprimiendo</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Cola restante: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">colaImpresion</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<pre class="mermaid"><code>
+graph TD
+    subgraph "Pila (LIFO)"
+        direction TB
+        A["push(A)"] --&gt; B["push(B)"] --&gt; C["push(C)"]
+        C -- pop() --&gt; D("Sale C")
+        B -- pop() --&gt; E("Sale B")
+    end
+
+    subgraph "Cola (FIFO)"
+        direction LR
+        X["offer(X)"] --&gt; Y["offer(Y)"] --&gt; Z["offer(Z)"]
+        X -- poll() --&gt; W("Sale X")
+        Y -- poll() --&gt; V("Sale Y")
+    end</code></pre>
+<p><br/></p><div><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ampliación.png"><img alt="+Info" src="../images/ampliación.png"/></a></div><p></p>
+<p><a href="../7-Queue%20y%20Deque/">-&gt; Ampliación Queue y Deque </a>
+<br/></p>
+<div class="admonition question">
+<p class="admonition-title">Reflexiona</p>
+<ol>
+<li>Además del historial del navegador o la función "deshacer", ¿en qué otra situación del mundo real o de la informática se te ocurre que una pila (LIFO) sería útil?</li>
+<li>Las colas se usan masivamente en sistemas operativos para gestionar tareas. ¿Puedes pensar por qué el principio FIFO es el más justo y adecuado para, por ejemplo, una cola de impresión?</li>
+<li>La interfaz <code>Deque</code> tiene métodos como <code>offerFirst</code> y <code>pollFirst</code>, y también <code>push</code> y <code>pop</code>. ¿Cuál es la principal diferencia entre <code>poll</code> y <code>pop</code>? (Pista: ¿qué pasa si la colección está vacía?).</li>
+<li>Si quieres implementar una pila, ¿por qué <code>ArrayDeque</code> es generalmente preferible a <code>LinkedList</code>? (Pista: investiga la eficiencia de añadir/quitar elementos al principio/final en ambas).</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="5-conjuntos-sete">5. Conjuntos (<code>Set&lt;E&gt;</code>)</h2>
+<p>Los conjuntos son colecciones que modelan la abstracción matemática de un conjunto: una agrupación de elementos <strong>únicos</strong> y sin un orden particular.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Interfaz <code>Set&lt;E&gt;</code></p>
+<p>Es una subinterfaz de <code>Collection</code> que representa una colección que <strong>no permite elementos duplicados</strong>. Si intentas añadir un elemento que ya existe (según su método <code>equals()</code>), la operación simplemente no tendrá efecto y el método <code>add()</code> devolverá <code>false</code>.</p>
+</div>
+<p>Hay tres implementaciones principales:<br/></p>
+<ul>
+<li><strong><code>HashSet</code></strong>: Es la más común. No garantiza ningún orden en los elementos. Es extremadamente rápida para añadir, eliminar y comprobar si un elemento existe (rendimiento de tiempo constante, O(1), en promedio).<br/></li>
+<li><strong><code>LinkedHashSet</code></strong>: Como un <code>HashSet</code>, pero mantiene el <strong>orden de inserción</strong>. Es ligeramente más lenta que <code>HashSet</code>.<br/></li>
+<li><strong><code>TreeSet</code></strong>: Mantiene los elementos en un <strong>orden natural</strong> (o un orden personalizado). Es más lenta que <code>HashSet</code> (rendimiento logarítmico, O(log n)), pero te permite recorrer los elementos de forma ordenada.<br/></li>
+</ul>
+<h3 id="hashset-y-la-importancia-de-equals-y-hashcode"><code>HashSet</code> y la importancia de <code>equals()</code> y <code>hashCode()</code></h3>
+<p><code>HashSet</code> utiliza una tabla hash para almacenar sus elementos. Para determinar si un elemento es "duplicado", no solo usa <code>equals()</code>, sino que depende críticamente de <code>hashCode()</code>.</p>
+<div class="admonition danger">
+<p class="admonition-title">¡El Contrato es Ley!</p>
+<p>Para que un <code>HashSet</code> (y un <code>HashMap</code>) funcione correctamente con tus propios objetos, tu clase <strong>DEBE</strong> sobrescribir <code>equals()</code> y <code>hashCode()</code> siguiendo estas reglas:
+1.  Si <code>objeto1.equals(objeto2)</code> es <code>true</code>, entonces <code>objeto1.hashCode()</code> <strong>debe ser igual a</strong> <code>objeto2.hashCode()</code>.
+2.  El <code>hashCode()</code> de un objeto debe ser consistente (devolver el mismo valor) mientras no se modifiquen los campos usados en <code>equals()</code>.</p>
+</div>
+<p>Si no lo haces, te encontrarás con que el <code>HashSet</code> permite "duplicados" o no encuentra objetos que sabes que están ahí.</p>
+<h3 id="ejemplo-con-hashset-y-alumno">Ejemplo con <code>HashSet</code> y <code>Alumno</code></h3>
+<p>Veamos qué pasa cuando la clase <code>Alumno</code> no tiene <code>equals()</code> y <code>hashCode()</code> correctos, y qué pasa cuando sí los tiene.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Escenario 1: Clase Alumno SIN equals() y hashCode() correctos</span>
+<span class="c1">// Usará la implementación de Object, que compara referencias de memoria.</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AlumnoMal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nia</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// ... constructor, getters ...</span>
+<span class="p">}</span>
+
+<span class="n">Set</span><span class="o">&lt;</span><span class="n">AlumnoMal</span><span class="o">&gt;</span><span class="w"> </span><span class="n">claseMal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">claseMal</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">AlumnoMal</span><span class="p">(</span><span class="s">"111A"</span><span class="p">,</span><span class="w"> </span><span class="s">"Ana"</span><span class="p">));</span>
+<span class="n">claseMal</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">AlumnoMal</span><span class="p">(</span><span class="s">"111A"</span><span class="p">,</span><span class="w"> </span><span class="s">"Ana"</span><span class="p">));</span><span class="w"> </span><span class="c1">// ¡Debería ser un duplicado!</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">claseMal</span><span class="p">.</span><span class="na">size</span><span class="p">());</span><span class="w"> </span><span class="c1">// Imprime 2. ¡ERROR! Permitió un duplicado.</span>
+
+<span class="c1">// Escenario 2: Clase Alumno CON equals() y hashCode() correctos (basados en NIA)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AlumnoBien</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nia</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// ... constructor, getters ...</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">hashCode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Objects</span><span class="p">.</span><span class="na">hash</span><span class="p">(</span><span class="n">nia</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">getClass</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">obj</span><span class="p">.</span><span class="na">getClass</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">        </span><span class="n">AlumnoBien</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">AlumnoBien</span><span class="p">)</span><span class="w"> </span><span class="n">obj</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Objects</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">nia</span><span class="p">,</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="na">nia</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">Set</span><span class="o">&lt;</span><span class="n">AlumnoBien</span><span class="o">&gt;</span><span class="w"> </span><span class="n">claseBien</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">claseBien</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">AlumnoBien</span><span class="p">(</span><span class="s">"222B"</span><span class="p">,</span><span class="w"> </span><span class="s">"Juan"</span><span class="p">));</span>
+<span class="n">claseBien</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">AlumnoBien</span><span class="p">(</span><span class="s">"222B"</span><span class="p">,</span><span class="w"> </span><span class="s">"Juan"</span><span class="p">));</span><span class="w"> </span><span class="c1">// Duplicado</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">claseBien</span><span class="p">.</span><span class="na">size</span><span class="p">());</span><span class="w"> </span><span class="c1">// Imprime 1. ¡CORRECTO! No permitió el duplicado.</span>
+</code></pre></div>
+<div><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ampliación.png"><img alt="+Info" src="../images/ampliación.png"/></a></div>
+<p><a href="../7-HashSet/">-&gt; Ampliación HashSet </a></p>
+<h3 id="treeset-y-la-ordenacion"><code>TreeSet</code> y la Ordenación</h3>
+<p><code>TreeSet</code> mantiene los elementos ordenados. Para ello, los objetos que almacena deben implementar la interfaz <code>Comparable</code> (orden natural) o debes pasarle un <code>Comparator</code> al crearlo.</p>
+<div class="admonition warning">
+<p class="admonition-title">Consistencia entre <code>compareTo</code> y <code>equals</code></p>
+<p>Para <code>TreeSet</code>, la unicidad se determina usando <code>compareTo()</code> (o <code>compare()</code>), no <code>equals()</code>. Si <code>a.compareTo(b)</code> devuelve 0, <code>TreeSet</code> considera que los objetos son iguales y no añadirá el segundo. Es una buena práctica que el orden definido por <code>compareTo</code> sea "consistente con equals". Esto significa que <code>a.compareTo(b) == 0</code> debería ser verdad si y solo si <code>a.equals(b)</code> es verdad. Si no es así, <code>TreeSet</code> y <code>HashSet</code> se comportarán de forma diferente para la misma clase.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c1">// Suponiendo que Alumno implementa Comparable por nombre</span>
+<span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nombresOrdenados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">nombresOrdenados</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Carlos"</span><span class="p">);</span>
+<span class="n">nombresOrdenados</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Ana"</span><span class="p">);</span>
+<span class="n">nombresOrdenados</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Beatriz"</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nombresOrdenados</span><span class="p">);</span><span class="w"> </span><span class="c1">// Salida: [Ana, Beatriz, Carlos]</span>
+</code></pre></div>
+<div><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ampliación.png"><img alt="+Info" src="../images/ampliación.png"/></a></div>
+<p><a href="../7-TreeSet/">-&gt; Ampliación TreeSet</a></p>
+<div class="admonition question">
+<p class="admonition-title">Reflexiona</p>
+<ol>
+<li>Si quieres una colección que no permita duplicados y que, al recorrerla, te devuelva los elementos en el mismo orden en que los insertaste, ¿qué implementación de <code>Set</code> usarías?</li>
+<li>En el <code>Escenario 1</code> del <code>AlumnoMal</code>, ¿por qué <code>HashSet</code> considera que los dos objetos son diferentes?</li>
+<li>¿Qué pasaría si metes un objeto en un <code>HashSet</code>, luego modificas un campo de ese objeto que se usa en el cálculo de <code>hashCode()</code>, y finalmente intentas hacer <code>miSet.contains(miObjeto)</code>? ¿Lo encontraría?</li>
+<li>¿Por qué <code>TreeSet</code> no permite elementos <code>null</code>?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="6-mapas-mapk-v">6. Mapas (<code>Map&lt;K, V&gt;</code>)</h2>
+<p>A diferencia de las colecciones anteriores que almacenan elementos individuales, un mapa almacena asociaciones entre <strong>pares clave-valor</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Interfaz <code>Map&lt;K, V&gt;</code></p>
+<p>Un <code>Map</code> es un objeto que mapea claves (<code>K</code>, de Key) a valores (<code>V</code>, de Value). Cada clave debe ser <strong>única</strong>; no puede haber claves duplicadas. Cada clave puede mapear a, como máximo, un valor. Es como un diccionario: la palabra (clave) es única y tiene una definición (valor) asociada.</p>
+</div>
+<p>La interfaz <code>Map</code> <strong>no</strong> extiende la interfaz <code>Collection</code>.</p>
+<h3 id="implementaciones-principales">Implementaciones Principales</h3>
+<ul>
+<li><strong><code>HashMap</code></strong>: La implementación más común. Usa una tabla hash. No garantiza ningún orden. Permite una clave <code>null</code> y múltiples valores <code>null</code>. Ofrece rendimiento O(1) para <code>get()</code> y <code>put()</code>.</li>
+<li><strong><code>LinkedHashMap</code></strong>: Mantiene el orden de inserción de las claves.</li>
+<li><strong><code>TreeMap</code></strong>: Mantiene las claves ordenadas (orden natural o por <code>Comparator</code>).</li>
+</ul>
+<h3 id="metodos-principales-de-map">Métodos Principales de <code>Map</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Método</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>V put(K key, V value)</code></td>
+<td style="text-align: left;">Asocia la clave <code>key</code> con el valor <code>value</code>. Si la clave ya existía, reemplaza el valor antiguo y lo devuelve.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>V get(Object key)</code></td>
+<td style="text-align: left;">Devuelve el valor asociado a la clave, o <code>null</code> si la clave no existe.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>V remove(Object key)</code></td>
+<td style="text-align: left;">Elimina el mapeo para una clave.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>boolean containsKey(Object key)</code></td>
+<td style="text-align: left;">Devuelve <code>true</code> si el mapa contiene un mapeo para la clave especificada.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>boolean containsValue(Object value)</code></td>
+<td style="text-align: left;">Devuelve <code>true</code> si el mapa mapea una o más claves al valor especificado.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>int size()</code></td>
+<td style="text-align: left;">Devuelve el número de pares clave-valor.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Set&lt;K&gt; keySet()</code></td>
+<td style="text-align: left;">Devuelve un <code>Set</code> con todas las claves del mapa.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Collection&lt;V&gt; values()</code></td>
+<td style="text-align: left;">Devuelve una <code>Collection</code> con todos los valores del mapa.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()</code></td>
+<td style="text-align: left;">Devuelve un <code>Set</code> de objetos <code>Map.Entry</code> que representan cada par clave-valor.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ejemplo-contando-la-frecuencia-de-palabras">Ejemplo: Contando la Frecuencia de Palabras</h3>
+<p>Un uso clásico de <code>HashMap</code> es contar la frecuencia de elementos.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashMap</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Map</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FrecuenciaPalabras</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">texto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"hola mundo hola a todos y todas en el mundo"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">frecuencias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">palabras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">texto</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">" "</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">palabra</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">palabras</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// getOrDefault es muy útil: si la clave no existe, devuelve el valor por defecto (0)</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">frecuencias</span><span class="p">.</span><span class="na">getOrDefault</span><span class="p">(</span><span class="n">palabra</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">            </span><span class="n">frecuencias</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">palabra</span><span class="p">,</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Frecuencia de palabras:"</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Recorrer con entrySet() es la forma más eficiente</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">frecuencias</span><span class="p">.</span><span class="na">entrySet</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"'"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="na">getKey</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"': "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="na">getValue</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="ejemplo-avanzado-mapalumno-arraylistcalificacion">Ejemplo Avanzado: <code>Map&lt;Alumno, ArrayList&lt;Calificacion&gt;&gt;</code></h3>
+<p>Los mapas son increíblemente potentes para modelar datos complejos. Imagina que queremos almacenar las calificaciones de varios módulos para cada alumno.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Calificacion</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">modulo</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">notas</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// ... constructor, getters, etc.</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Alumno</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ... con equals y hashCode basados en NIA</span>
+<span class="p">}</span>
+
+<span class="c1">// En nuestro programa principal</span>
+<span class="n">Map</span><span class="o">&lt;</span><span class="n">Alumno</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Calificacion</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">expediente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeMap</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"> </span><span class="c1">// TreeMap para tener los alumnos ordenados</span>
+
+<span class="c1">// ... código para rellenar el mapa ...</span>
+</code></pre></div>
+<div><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ampliación.png"><img alt="+Info" src="../images/ampliación.png"/></a></div>
+<p><a href="../7-HashMap/">-&gt; Ampliación HashMap </a></p>
+<div class="admonition question">
+<p class="admonition-title">Reflexiona</p>
+<ol>
+<li>¿Por qué <code>Map</code> no hereda de <code>Collection</code>? (Pista: <code>add(E element)</code> no tiene sentido para un <code>Map</code>).</li>
+<li>Si usas un objeto de tu propia clase como clave en un <code>HashMap</code>, ¿qué métodos de esa clase son absolutamente críticos para que el mapa funcione correctamente?</li>
+<li>Explica las tres formas de recorrer un <code>Map</code> (<code>keySet</code>, <code>values</code>, <code>entrySet</code>) y cuál consideras más eficiente si necesitas tanto la clave como el valor en cada iteración.</li>
+<li>¿Qué pasaría si intentas hacer <code>miMapa.put(null, "valor");</code> en un <code>HashMap</code>? ¿Y en un <code>TreeMap</code>? Investígalo.</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="7-iteradores">7. Iteradores</h2>
+<p>¿Cómo recorremos una colección de forma segura y estandarizada, especialmente si queremos modificarla durante el recorrido? La respuesta son los iteradores.</p>
+<h3 id="71-interfaz-iteratore">7.1 Interfaz <code>Iterator&lt;E&gt;</code></h3>
+<div class="admonition note">
+<p class="admonition-title">Definición: <code>Iterator&lt;E&gt;</code></p>
+<p>Es un objeto que permite recorrer una colección elemento a elemento. Proporciona una forma unificada de acceder a los elementos secuencialmente, sin exponer la estructura interna de la colección.</p>
+</div>
+<p>Proporciona tres métodos clave:
+*   <code>boolean hasNext()</code>: Devuelve <code>true</code> si hay más elementos por recorrer.
+*   <code>E next()</code>: Devuelve el siguiente elemento y avanza el "cursor" del iterador.
+*   <code>void remove()</code>: <strong>Elimina de la colección el último elemento devuelto por <code>next()</code></strong>. Este es el único modo seguro de modificar una colección mientras se itera sobre ella.</p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"A"</span><span class="p">,</span><span class="w"> </span><span class="s">"B"</span><span class="p">,</span><span class="w"> </span><span class="s">"C"</span><span class="p">,</span><span class="w"> </span><span class="s">"D"</span><span class="p">));</span>
+<span class="n">Iterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lista</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
+
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">elemento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">it</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">elemento</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">elemento</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"B"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">it</span><span class="p">.</span><span class="na">remove</span><span class="p">();</span><span class="w"> </span><span class="c1">// ¡Forma correcta de eliminar!</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Lista final: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lista</span><span class="p">);</span><span class="w"> </span><span class="c1">// [A, C, D]</span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">ConcurrentModificationException</p>
+<p>Si intentas modificar una colección (añadir o quitar elementos) usando los métodos de la propia colección mientras la recorres con un bucle <code>for-each</code> o un iterador, Java lanzará una <code>ConcurrentModificationException</code>. <strong>Siempre</strong> debes usar <code>iterator.remove()</code>.</p>
+</div>
+<div><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ampliación.png"><img alt="+Info" src="../images/ampliación.png"/></a></div>
+<p><a href="../7-Iterator/">-&gt; Ampliación Iterator </a></p>
+<h3 id="72-interfaz-iterablee">7.2 Interfaz <code>Iterable&lt;E&gt;</code></h3>
+<p>Esta es una interfaz muy simple, pero fundamental. Solo tiene un método: <code>iterator()</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">Iterable y el bucle <code>for-each</code></p>
+<p>Cualquier clase que implemente la interfaz <code>Iterable&lt;E&gt;</code> puede ser utilizada en un bucle <code>for-each</code> (<code>for (Elemento e : miColeccion)</code>). Todas las colecciones del JCF implementan <code>Iterable</code>.</p>
+</div>
+<p>Podemos hacer que nuestras propias clases sean "iterables":</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Grupo</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Alumno</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Alumno</span><span class="o">&gt;</span><span class="w"> </span><span class="n">alumnos</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Grupo</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">alumnos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addAlumno</span><span class="p">(</span><span class="n">Alumno</span><span class="w"> </span><span class="n">alumno</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">alumnos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">alumno</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Implementación del método de Iterable</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Alumno</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">iterator</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Simplemente delegamos al iterador de nuestra lista interna</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">alumnos</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Ahora podemos hacer esto:</span>
+<span class="n">Grupo</span><span class="w"> </span><span class="n">daw1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Grupo</span><span class="p">(</span><span class="s">"1º DAW"</span><span class="p">);</span>
+<span class="n">daw1</span><span class="p">.</span><span class="na">addAlumno</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Alumno</span><span class="p">(</span><span class="s">"Ana"</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">));</span>
+<span class="n">daw1</span><span class="p">.</span><span class="na">addAlumno</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Alumno</span><span class="p">(</span><span class="s">"Luis"</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">));</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Alumno</span><span class="w"> </span><span class="n">alumno</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">daw1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// ¡Funciona gracias a Iterable!</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">alumno</span><span class="p">.</span><span class="na">getNombre</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+<div><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ampliación.png"><img alt="+Info" src="../images/ampliación.png"/></a></div>
+<p><a href="../7-Iterable/">-&gt; Ampliación Iterable </a></p>
+<h3 id="73-interfaz-listiteratore">7.3 Interfaz <code>ListIterator&lt;E&gt;</code></h3>
+<p>Es un subtipo de <code>Iterator</code> específico para <code>List</code>s, que añade muchísima más potencia.</p>
+<ul>
+<li>Permite el <strong>recorrido bidireccional</strong> (<code>hasPrevious()</code>, <code>previous()</code>).</li>
+<li>Permite <strong>modificar</strong> la lista durante la iteración (<code>add()</code>, <code>set()</code>).</li>
+<li>Permite conocer el índice del elemento siguiente y anterior (<code>nextIndex()</code>, <code>previousIndex()</code>).</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Característica</th>
+<th style="text-align: left;"><code>Iterator</code></th>
+<th style="text-align: left;"><code>ListIterator</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Dirección</strong></td>
+<td style="text-align: left;">Hacia adelante</td>
+<td style="text-align: left;">Hacia adelante y hacia atrás</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Operaciones</strong></td>
+<td style="text-align: left;"><code>hasNext()</code>, <code>next()</code>, <code>remove()</code></td>
+<td style="text-align: left;">Todo lo de <code>Iterator</code> más <code>hasPrevious()</code>, <code>previous()</code>, <code>add()</code>, <code>set()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Colecciones</strong></td>
+<td style="text-align: left;">Todas las de <code>Collection</code></td>
+<td style="text-align: left;">Solo para <code>List</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition question">
+<p class="admonition-title">Reflexiona</p>
+<ol>
+<li>¿Por qué <code>iterator.remove()</code> es seguro mientras que <code>collection.remove()</code> no lo es durante una iteración?</li>
+<li>Implementa la interfaz <code>Iterable</code> en la clase <code>Autor</code> del ejemplo N:M para que se pueda iterar sobre los libros que ha escrito.</li>
+<li>Usando un <code>ListIterator</code>, recorre una lista de números del final al principio e imprime cada número.</li>
+<li>¿Por qué no existe un <code>SetIterator</code> con las mismas funcionalidades que <code>ListIterator</code>?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="8-ordenacion-y-comparacion">8. Ordenación y Comparación</h2>
+<p>A menudo, necesitamos que nuestras colecciones estén ordenadas. Java nos ofrece dos interfaces para definir criterios de ordenación: <code>Comparable</code> y <code>Comparator</code>.</p>
+<h3 id="81-interface-comparablet">8.1 Interface <code>Comparable&lt;T&gt;</code></h3>
+<p>Esta interfaz se usa para definir el <strong>orden natural</strong> de los objetos de una clase.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: <code>Comparable&lt;T&gt;</code></p>
+<p>Una clase que implementa <code>Comparable&lt;T&gt;</code> está diciendo: "Yo sé cómo compararme con otros objetos de mi mismo tipo". Implementa un único método, <code>compareTo(T otro)</code>, que devuelve:
+*   Un <code>int</code> <strong>negativo</strong> si <code>this</code> objeto es "menor que" <code>otro</code>.
+*   <strong>Cero</strong> si <code>this</code> objeto es "igual a" <code>otro</code> en términos de orden.
+*   Un <code>int</code> <strong>positivo</strong> si <code>this</code> objeto es "mayor que" <code>otro</code>.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Alumno</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Comparable</span><span class="o">&lt;</span><span class="n">Alumno</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// ... Constructor, getters, etc. ...</span>
+
+<span class="w">    </span><span class="c1">// Orden natural: por edad, de menor a mayor. Si la edad es la misma, por nombre.</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compareTo</span><span class="p">(</span><span class="n">Alumno</span><span class="w"> </span><span class="n">otro</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">comparacionEdad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">edad</span><span class="p">,</span><span class="w"> </span><span class="n">otro</span><span class="p">.</span><span class="na">edad</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">comparacionEdad</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">comparacionEdad</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">nombre</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">otro</span><span class="p">.</span><span class="na">nombre</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="82-interfaz-comparatort">8.2 Interfaz <code>Comparator&lt;T&gt;</code></h3>
+<p>¿Y si queremos ordenar los alumnos por nota a veces, y por nombre otras? <code>Comparable</code> solo define <em>un</em> orden natural. Para múltiples criterios de ordenación, o para ordenar clases que no puedes modificar, usamos <code>Comparator</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: <code>Comparator&lt;T&gt;</code></p>
+<p>Un <code>Comparator</code> es un objeto cuya única función es comparar otros dos objetos. Implementa un método <code>compare(T o1, T o2)</code>. La lógica de devolución es la misma que en <code>compareTo</code>.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Comparator</span><span class="p">;</span>
+
+<span class="c1">// Un comparador para ordenar Alumnos por nota, de mayor a menor.</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AlumnoPorNotaComparator</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Alumno</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compare</span><span class="p">(</span><span class="n">Alumno</span><span class="w"> </span><span class="n">a1</span><span class="p">,</span><span class="w"> </span><span class="n">Alumno</span><span class="w"> </span><span class="n">a2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="n">a2</span><span class="p">.</span><span class="na">getNota</span><span class="p">(),</span><span class="w"> </span><span class="n">a1</span><span class="p">.</span><span class="na">getNota</span><span class="p">());</span><span class="w"> </span><span class="c1">// Orden descendente</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Uso:</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Alumno</span><span class="o">&gt;</span><span class="w"> </span><span class="n">clase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span>
+<span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">clase</span><span class="p">);</span><span class="w"> </span><span class="c1">// Usa el orden natural de Alumno (Comparable)</span>
+<span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">clase</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AlumnoPorNotaComparator</span><span class="p">());</span><span class="w"> </span><span class="c1">// Usa el criterio del Comparator</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Clases Anónimas y Lambdas</p>
+<p>Desde Java 8, es muy común crear <code>Comparator</code>s "al vuelo" usando clases anónimas o, de forma mucho más concisa, expresiones lambda.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Ordenar por nombre, alfabéticamente</span>
+<span class="n">clase</span><span class="p">.</span><span class="na">sort</span><span class="p">((</span><span class="n">a1</span><span class="p">,</span><span class="w"> </span><span class="n">a2</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">a1</span><span class="p">.</span><span class="na">getNombre</span><span class="p">().</span><span class="na">compareTo</span><span class="p">(</span><span class="n">a2</span><span class="p">.</span><span class="na">getNombre</span><span class="p">()));</span>
+
+<span class="c1">// O usando métodos de referencia, ¡aún más corto!</span>
+<span class="n">clase</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparing</span><span class="p">(</span><span class="n">Alumno</span><span class="p">::</span><span class="n">getNombre</span><span class="p">));</span>
+</code></pre></div>
+</div>
+<div><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ampliación.png"><img alt="+Info" src="../images/ampliación.png"/></a></div>
+<p><a href="../7-Comparator%20y%20Comparable/">-&gt; Ampliación Comparator y Comparable </a></p>
+<p><br/></p><hr/><p></p>
+<h2 id="9-estructuras-de-datos-clasicas-conceptos">9. Estructuras de Datos Clásicas (Conceptos)</h2>
+<p>El JCF es una abstracción de alto nivel. Es útil entender brevemente las estructuras de datos "clásicas" que hay debajo, ya que son la base de la informática.</p>
+<h3 id="91-listas-enlazadas">9.1 Listas Enlazadas</h3>
+<p>Una lista enlazada consiste en <strong>nodos</strong>. Cada nodo contiene un dato y un "puntero" o referencia al siguiente nodo de la secuencia. En una <strong>lista doblemente enlazada</strong> (como la <code>LinkedList</code> de Java), cada nodo tiene también un puntero al nodo anterior. Son muy eficientes para inserciones y eliminaciones, pero lentas para el acceso aleatorio.</p>
+<h3 id="92-arboles">9.2 Árboles</h3>
+<p>Son estructuras jerárquicas. Comienzan en un nodo <strong>raíz</strong>. Cada nodo puede tener cero o más <strong>nodos hijos</strong>. Los nodos sin hijos se llaman <strong>hojas</strong>. Un tipo muy común es el <strong>Árbol Binario de Búsqueda (BST)</strong>, donde cada nodo tiene como máximo dos hijos, y todos los valores del subárbol izquierdo son menores que el nodo, y los del subárbol derecho son mayores. Esto permite búsquedas muy rápidas (O(log n)), pero solo si el árbol está <strong>balanceado</strong> (no degenera en una lista).</p>
+<h3 id="93-grafos">9.3 Grafos</h3>
+<p>Un grafo es un conjunto de <strong>vértices</strong> (o nodos) y un conjunto de <strong>aristas</strong> (o conexiones) que los unen. Se usan para modelar todo tipo de redes: sociales (amigos), de transporte (carreteras entre ciudades), de internet (routers conectados), etc. Pueden ser <strong>dirigidos</strong> (las conexiones tienen un sentido) o <strong>no dirigidos</strong>, y <strong>ponderados</strong> (cada conexión tiene un "coste" o "peso") o no ponderados.</p>
+<h3 id="94-tablas-hash">9.4 Tablas Hash</h3>
+<p>Son la magia detrás de <code>HashSet</code> y <code>HashMap</code>. Una tabla hash es básicamente un array. Para almacenar un objeto, se le aplica una <strong>función hash</strong> que convierte el objeto en un número entero. Este número (o su módulo respecto al tamaño del array) se usa como índice para decidir en qué "cubo" o <code>bucket</code> del array guardar el objeto.
+*   <strong>Colisiones</strong>: Ocurre cuando dos objetos diferentes producen el mismo hash. Se gestionan, por ejemplo, almacenando una lista de objetos en ese <code>bucket</code>.
+*   Una buena función hash distribuye los objetos de manera uniforme, minimizando las colisiones y garantizando un rendimiento cercano a O(1). Una mala función hash puede hacer que el rendimiento degenere a O(n).</p>
+<p><br/></p><hr/><p></p>
+<h2 id="aplicacion-en-el-mundo-real">Aplicación en el Mundo Real</h2>
+<ul>
+<li><strong><code>ArrayList</code></strong>: Es tu caballo de batalla para casi cualquier lista donde el acceso por índice es frecuente (ej: mostrar una lista de productos en una web).</li>
+<li><strong><code>LinkedList</code></strong>: Ideal para implementar colas, pilas, o listas donde hay constantes inserciones/eliminaciones en los extremos (ej: una playlist de música donde puedes añadir canciones al principio o al final).</li>
+<li><strong><code>HashSet</code></strong>: Perfecto para saber rápidamente si un elemento ya ha sido procesado o si existe en un gran conjunto de datos, sin importar el orden (ej: comprobar si un email ya está registrado).</li>
+<li><strong><code>HashMap</code></strong>: La estructura más usada para mapear un identificador único a un objeto complejo (ej: un <code>Map&lt;Integer, Usuario&gt;</code> para cachear usuarios por su ID y acceder a ellos instantáneamente).</li>
+<li><strong><code>TreeSet</code>/<code>TreeMap</code></strong>: Se usan cuando necesitas mantener los datos constantemente ordenados (ej: un ranking de puntuaciones de un juego).</li>
+</ul>
+<h2 id="para-saber-mas">Para Saber Más</h2>
+<ol>
+<li><strong>Documentación Oficial de Oracle sobre el Collections Framework:</strong> <a href="https://docs.oracle.com/javase/tutorial/collections/index.html">The Java™ Tutorials - Collections</a> - La guía de referencia completa y oficial.</li>
+<li><strong>Visualgo - Visualizing data structures and algorithms:</strong> <a href="https://visualgo.net/en">https://visualgo.net/en</a> - Una herramienta interactiva increíble para visualizar cómo funcionan internamente las listas enlazadas, árboles, tablas hash y otras estructuras.</li>
+<li><strong>Baeldung: A Guide to the Java Collections Framework:</strong> <a href="https://www.baeldung.com/java-collections">Java Collections Framework Guide</a> - Un tutorial muy completo que cubre todas las colecciones principales con ejemplos prácticos.</li>
+</ol>
+<p><br/></p><hr class="double"/><p></p>
+<h2 id="ejercicios">EJERCICIOS</h2>
+<hr/>
+<!-- 
+********************************************
+*   EJERCICIOS ESTRUCTURAS DATOS DINÁMICAS *    
+********************************************
+-->
+<p><a href="../7-Estructuras-datos-dinamicas-ejercicios/">=&gt; Ejercicios de Estructuras de Datos Dinámicas </a></p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script type="text/javascript">(function initializeMarkmap() {
+    const transformer = new markmap.Transformer();
+    const preloadScripts = transformer.plugins
+        .flatMap((plugin) => plugin.config?.preloadScripts || [])
+        .map((item) => transformer.resolveJS(item));
+    const assets = transformer.getAssets();
+    const loading = Promise.all([
+        assets.styles && markmap.loadCSS(assets.styles),
+        markmap.loadJS([...preloadScripts, ...assets.scripts]),
+    ]);
+
+    function parseData(content) {
+        const { root, frontmatter } = transformer.transform(content);
+        let options = markmap.deriveOptions(frontmatter?.markmap);
+        options = Object.assign(
+            {
+                fitRatio: 0.85,
+            },
+            options
+        );
+        return { root, options };
+    }
+
+    function resetMarkmap(m, el) {
+        if (!m.state.rect) return;
+        const { x1, y1, x2, y2 } = m.state.rect;
+        const height = (el.offsetWidth / (x2 - x1)) * (y2 - y1);
+        el.style.height = height + "px";
+        m.fit();
+    }
+
+    function decodeBase64(encoded) {
+        const binary = atob(encoded);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < bytes.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        return new TextDecoder().decode(bytes);
+    }
+
+    function renderMarkmap(el) {
+        const dataEl = el.querySelector("markmap-data");
+        if (!dataEl) return;
+        let content = el.textContent;
+        if (dataEl.getAttribute("encoding") === "base64") {
+            content = decodeBase64(content);
+        }
+        el.innerHTML = "<svg>";
+        svg = el.firstChild;
+        const { root, options } = parseData(content);
+        const m = markmap.Markmap.create(svg, options);
+        m.setData(root);
+        requestAnimationFrame(() => {
+            resetMarkmap(m, el);
+        });
+    }
+
+    function updateMarkmaps(node) {
+        for (const el of node.querySelectorAll(".mkdocs-markmap")) {
+            renderMarkmap(el);
+        }
+    }
+
+    loading.then(() => {
+        const observer = new MutationObserver((mutationList) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "childList") {
+                    for (const node of mutation.addedNodes) {
+                        updateMarkmaps(node);
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true });
+
+        updateMarkmaps(document);
+    });
+})();
+</script></body></html>

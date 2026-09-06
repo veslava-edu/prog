@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>9 Ficheros old - PROG</title>
+<link href="../../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../../toggle-sidebar.js"></script><script src="../../js/unpkg.com/d3@7.js" type="text/javascript"></script><script src="../../js/unpkg.com/markmap-lib@0.18.js" type="text/javascript"></script><script src="../../js/unpkg.com/markmap-view@0.18.js" type="text/javascript"></script><style type="text/css">div.mkdocs-markmap {
+    width: 100%;
+    min-height: 1em;
+    border: 1px solid grey;
+}
+.mkdocs-markmap > svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+</style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#9-gestion-de-ficheros-y-persistencia">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="PROG" class="md-header__button md-logo" data-md-component="logo" href="../.." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            PROG
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              9 Ficheros old
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../1-Introduccion-programacion/">
+          
+  
+  
+  Programación
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="PROG" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    PROG
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../1-Introduccion-programacion/">
+<span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2-Programacion-estructurada/">
+<span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../3-Programacion-modular/">
+<span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4-Estructuras-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../5-POO-Clases-y-Objetos/">
+<span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../6-POO-Uso-avanzado/">
+<span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../7-Estructuras-datos-dinamicas/">
+<span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../8-Programacion-funcional-Streams/">
+<span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../9-Ficheros/">
+<span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../10-Acceso-base-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../11-Interfaces-graficas-MVC/">
+<span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conceptos-fundamentales">
+<span class="md-ellipsis">
+      
+        Conceptos Fundamentales
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desarrollo-y-ejemplos-practicos">
+<span class="md-ellipsis">
+      
+        Desarrollo y Ejemplos Prácticos
+      
+    </span>
+</a>
+<nav aria-label="Desarrollo y Ejemplos Prácticos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-introduccion-a-los-ficheros">
+<span class="md-ellipsis">
+      
+        1. Introducción a los Ficheros
+      
+    </span>
+</a>
+<nav aria-label="1. Introducción a los Ficheros" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-que-es-un-fichero">
+<span class="md-ellipsis">
+      
+        1.1 ¿Qué es un fichero?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12-tipos-de-ficheros-texto-y-binarios">
+<span class="md-ellipsis">
+      
+        1.2 Tipos de ficheros: texto y binarios
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13-flujos-streams-de-entrada-y-salida">
+<span class="md-ellipsis">
+      
+        1.3 Flujos (Streams) de entrada y salida
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14-entradasalida-estandar">
+<span class="md-ellipsis">
+      
+        1.4 Entrada/Salida estándar
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#15-uso-de-try-catch-con-recursos-try-with-resources">
+<span class="md-ellipsis">
+      
+        1.5 Uso de try-catch con recursos (try-with-resources)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-ficheros-y-directorios-en-java">
+<span class="md-ellipsis">
+      
+        2. Ficheros y Directorios en Java
+      
+    </span>
+</a>
+<nav aria-label="2. Ficheros y Directorios en Java" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21-clase-file-legacy">
+<span class="md-ellipsis">
+      
+        2.1 Clase File (Legacy)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22-clase-path-moderna">
+<span class="md-ellipsis">
+      
+        2.2 Clase Path (Moderna)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#23-clase-paths">
+<span class="md-ellipsis">
+      
+        2.3 Clase Paths
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#24-clase-files-la-navaja-suiza">
+<span class="md-ellipsis">
+      
+        2.4 Clase Files (La Navaja Suiza)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#25-operaciones-basicas-con-ficheros-y-directorios">
+<span class="md-ellipsis">
+      
+        2.5 Operaciones básicas con ficheros y directorios
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#26-directorio-resources">
+<span class="md-ellipsis">
+      
+        2.6 Directorio resources
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#27-ficheros-temporales">
+<span class="md-ellipsis">
+      
+        2.7 Ficheros temporales
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#28-ficheros-comprimidos-zip">
+<span class="md-ellipsis">
+      
+        2.8 Ficheros comprimidos (ZIP)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-flujos-de-entrada-y-salida-io">
+<span class="md-ellipsis">
+      
+        3. Flujos de Entrada y Salida (I/O)
+      
+    </span>
+</a>
+<nav aria-label="3. Flujos de Entrada y Salida (I/O)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31-clases-base">
+<span class="md-ellipsis">
+      
+        3.1 Clases base
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32-streams-de-bytes-para-imagenes-pdf-etc">
+<span class="md-ellipsis">
+      
+        3.2 Streams de bytes (Para imágenes, PDF, etc.)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#33-streams-de-caracteres-para-texto">
+<span class="md-ellipsis">
+      
+        3.3 Streams de caracteres (Para texto)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#34-streams-con-buffer-la-clave-del-rendimiento">
+<span class="md-ellipsis">
+      
+        3.4 Streams con buffer (La clave del rendimiento)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#35-printwriter">
+<span class="md-ellipsis">
+      
+        3.5 PrintWriter
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#336-scanner-para-lectura">
+<span class="md-ellipsis">
+      
+        3.3.6 Scanner para lectura
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#337-flujos-especiales">
+<span class="md-ellipsis">
+      
+        3.3.7 Flujos especiales
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-ficheros-de-texto">
+<span class="md-ellipsis">
+      
+        4. Ficheros de Texto
+      
+    </span>
+</a>
+<nav aria-label="4. Ficheros de Texto" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-y-42-lectura-linea-a-linea-dos-metodos">
+<span class="md-ellipsis">
+      
+        4.1 y 4.2 Lectura línea a línea (Dos métodos)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#443-escritura-de-ficheros-de-texto">
+<span class="md-ellipsis">
+      
+        4.4.3 Escritura de ficheros de texto
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#444-buenas-practicas">
+<span class="md-ellipsis">
+      
+        4.4.4 Buenas prácticas
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#55-ficheros-binarios">
+<span class="md-ellipsis">
+      
+        5.5 Ficheros Binarios
+      
+    </span>
+</a>
+<nav aria-label="5.5 Ficheros Binarios" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#551-concepto">
+<span class="md-ellipsis">
+      
+        5.5.1 Concepto
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#552-y-553-lectura-y-escritura-copiar-una-imagen">
+<span class="md-ellipsis">
+      
+        5.5.2 y 5.5.3 Lectura y Escritura (Copiar una imagen)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#56-ficheros-de-acceso-aleatorio">
+<span class="md-ellipsis">
+      
+        5.6 Ficheros de Acceso Aleatorio
+      
+    </span>
+</a>
+<nav aria-label="5.6 Ficheros de Acceso Aleatorio" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#561-que-es">
+<span class="md-ellipsis">
+      
+        5.6.1 ¿Qué es?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#562-clase-randomaccessfile">
+<span class="md-ellipsis">
+      
+        5.6.2 Clase RandomAccessFile
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#563-y-564-lectura-y-escritura">
+<span class="md-ellipsis">
+      
+        5.6.3 y 5.6.4 Lectura y Escritura
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#57-serializacion-de-objetos">
+<span class="md-ellipsis">
+      
+        5.7 Serialización de Objetos
+      
+    </span>
+</a>
+<nav aria-label="5.7 Serialización de Objetos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#571-y-572-concepto-e-interfaz">
+<span class="md-ellipsis">
+      
+        5.7.1 y 5.7.2 Concepto e Interfaz
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#573-a-575-lectura-y-escritura">
+<span class="md-ellipsis">
+      
+        5.7.3 a 5.7.5 Lectura y Escritura
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#58-formatos-de-intercambio-de-datos">
+<span class="md-ellipsis">
+      
+        5.8 Formatos de Intercambio de Datos
+      
+    </span>
+</a>
+<nav aria-label="5.8 Formatos de Intercambio de Datos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#581-dto-data-transfer-object">
+<span class="md-ellipsis">
+      
+        5.8.1 DTO (Data Transfer Object)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#582-ficheros-properties">
+<span class="md-ellipsis">
+      
+        5.8.2 Ficheros properties
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#583-csv-comma-separated-values">
+<span class="md-ellipsis">
+      
+        5.8.3 CSV (Comma Separated Values)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#584-json-javascript-object-notation">
+<span class="md-ellipsis">
+      
+        5.8.4 JSON (JavaScript Object Notation)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#585-xml">
+<span class="md-ellipsis">
+      
+        5.8.5 XML
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10-resumen-y-buenas-practicas">
+<span class="md-ellipsis">
+      
+        10. Resumen y Buenas Prácticas
+      
+    </span>
+</a>
+<nav aria-label="10. Resumen y Buenas Prácticas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#101-tabla-de-decision">
+<span class="md-ellipsis">
+      
+        10.1 Tabla de Decisión
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#102-gestion-correcta-de-recursos">
+<span class="md-ellipsis">
+      
+        10.2 Gestión correcta de recursos
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#103-errores-comunes">
+<span class="md-ellipsis">
+      
+        10.3 Errores comunes
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacion-en-el-mundo-real">
+<span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-saber-mas">
+<span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<!-- 9 - Ficheros.md --><h1 id="9-gestion-de-ficheros-y-persistencia">9 - Gestión de Ficheros y Persistencia</h1>
+<p>¡Bienvenidos, futuros arquitectos del software! 👋</p>
+<p>Hasta ahora, vuestros programas padecían de una enfermedad terrible: <strong>amnesia anterógrada</strong>. Todo lo que calculaban, todos los objetos que creaban y todos los datos que el usuario introducía vivían felices en la memoria RAM... hasta que apagabais el programa. En ese momento, <em>poof</em>, todo desaparecía como lágrimas en la lluvia.</p>
+<p>Hoy vamos a darle a vuestras aplicaciones memoria a largo plazo. Vamos a aprender a <strong>persistir</strong> la información.</p>
+<p>Imaginad que la <strong>RAM</strong> es una pizarra en un aula: es rapidísima para escribir y borrar, ideal para trabajar en el momento, pero el conserje (el Sistema Operativo) la borra cada noche. El <strong>Disco Duro (Ficheros)</strong> es el archivo de la biblioteca: es más lento ir a buscar un libro o guardarlo, pero la información sobrevive años, terremotos y reinicios.</p>
+<p>En este tema, aprenderemos a mover cajas de datos desde la pizarra al archivo y viceversa. ¡Empecemos!</p>
+<hr/>
+<h2 id="conceptos-fundamentales">Conceptos Fundamentales</h2>
+<p>Antes de mancharnos las manos de código, definamos las herramientas con las que vamos a trabajar.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Fichero (File)</p>
+<p>Es una secuencia de bytes almacenada en un dispositivo de almacenamiento secundario (disco duro, SSD, USB...). Para el sistema operativo, es una unidad lógica que agrupa datos relacionados y tiene un nombre y una ruta (<em>path</em>).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Stream (Flujo)</p>
+<p>Es una abstracción que representa una fuente o un destino de datos secuenciales. Imaginadlo como una <strong>tubería</strong> o una <strong>cinta transportadora</strong>. Los datos entran por un lado y salen por el otro. No necesitamos tener <em>todo</em> el océano en la tubería, solo el agua que fluye en ese instante.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Buffer</p>
+<p>Es una zona de memoria intermedia (como un cubo) que se usa para almacenar datos temporalmente mientras se mueven de un lugar a otro. Usar un buffer reduce el número de viajes al disco duro (que son "caros" en tiempo), mejorando drásticamente el rendimiento.</p>
+</div>
+<hr/>
+<h2 id="desarrollo-y-ejemplos-practicos">Desarrollo y Ejemplos Prácticos</h2>
+<h3 id="1-introduccion-a-los-ficheros">1. Introducción a los Ficheros</h3>
+<h4 id="11-que-es-un-fichero">1.1 ¿Qué es un fichero?</h4>
+<p>En el nivel más bajo, un fichero no es más que una <strong>colección de ceros y unos</strong>. Sin embargo, cómo interpretamos esos bits cambia totalmente la película.</p>
+<h4 id="12-tipos-de-ficheros-texto-y-binarios">1.2 Tipos de ficheros: texto y binarios</h4>
+<p>Aunque todos son bytes, los dividimos en dos categorías según su interpretación:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Característica</th>
+<th style="text-align: left;">Ficheros de Texto</th>
+<th style="text-align: left;">Ficheros Binarios</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Contenido</strong></td>
+<td style="text-align: left;">Caracteres legibles (ASCII, UTF-8).</td>
+<td style="text-align: left;">Bytes crudos (imágenes, audio, clases compiladas).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Legibilidad</strong></td>
+<td style="text-align: left;">Legibles por humanos (se abren con el Bloc de Notas).</td>
+<td style="text-align: left;">Ilegibles directamente (parecen "basura" en un editor de texto).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Interpretación</strong></td>
+<td style="text-align: left;">Se interpretan línea a línea o carácter a carácter.</td>
+<td style="text-align: left;">Requieren un software específico que conozca la estructura.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ejemplos</strong></td>
+<td style="text-align: left;"><code>.txt</code>, <code>.java</code>, <code>.xml</code>, <code>.json</code>, <code>.html</code></td>
+<td style="text-align: left;"><code>.jpg</code>, <code>.mp3</code>, <code>.class</code>, <code>.exe</code>, <code>.zip</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="13-flujos-streams-de-entrada-y-salida">1.3 Flujos (Streams) de entrada y salida</h4>
+<p>En Java, la comunicación con el exterior se basa en <strong>Streams</strong>.<br/>
+*   <strong>Input Stream (Entrada):</strong> Tubería para <strong>LEER</strong>. Los datos vienen <em>hacia</em> tu programa (teclado, fichero, red).<br/>
+*   <strong>Output Stream (Salida):</strong> Tubería para <strong>ESCRIBIR</strong>. Los datos salen <em>desde</em> tu programa.<br/></p>
+<pre class="mermaid"><code>graph LR
+    A[Fichero en Disco] --&gt;|Input Stream| B(Tu Programa Java)
+    B --&gt;|Output Stream| C[Fichero / Consola / Red]</code></pre>
+<h4 id="14-entradasalida-estandar">1.4 Entrada/Salida estándar</h4>
+<p>Ya las conocéis, son viejas amigas:<br/>
+*   <code>System.in</code>: Flujo de entrada estándar (normalmente el teclado). Es un <code>InputStream</code>.<br/>
+*   <code>System.out</code>: Flujo de salida estándar (la consola). Es un <code>PrintStream</code>.<br/>
+*   <code>System.err</code>: Flujo de error (consola, pero usualmente en rojo o separado).<br/></p>
+<h4 id="15-uso-de-try-catch-con-recursos-try-with-resources">1.5 Uso de try-catch con recursos (try-with-resources)</h4>
+<div class="admonition tip">
+<p class="admonition-title">La Regla de Oro de los Ficheros</p>
+<p><strong>SIEMPRE</strong> debes cerrar un fichero después de usarlo. Dejar un fichero abierto es como dejarte el grifo abierto: desperdicias recursos del sistema y puedes bloquear el archivo para otros programas.</p>
+</div>
+<p>Antiguamente (Java 6 y anterior) era un dolor de cabeza cerrar ficheros en el bloque <code>finally</code>. Desde Java 7, tenemos el <strong>try-with-resources</strong>. Cualquier objeto que implemente <code>AutoCloseable</code> se cerrará automáticamente al terminar el bloque <code>try</code>.</p>
+<p><strong>Ejemplo Clásico (Mala práctica hoy en día):</strong>
+</p><div class="highlight"><pre><span></span><code><span class="c1">// NO HAGÁIS ESTO EN CASA</span>
+<span class="n">FileReader</span><span class="w"> </span><span class="n">fr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">fr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="s">"miFichero.txt"</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// leer...</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fr</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="n">fr</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w"> </span><span class="c1">// ¡Qué dolor de código!</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ex</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p></p>
+<p><strong>Ejemplo Moderno (Buena práctica):</strong>
+</p><div class="highlight"><pre><span></span><code><span class="c1">// ESTO SÍ: Limpio, seguro y automático</span>
+<span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">FileReader</span><span class="w"> </span><span class="n">fr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="s">"miFichero.txt"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Usar el recurso</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fr</span><span class="p">.</span><span class="na">read</span><span class="p">();</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Leído: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">valor</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error al acceder al fichero: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="p">}</span>
+<span class="c1">// Aquí 'fr' ya está cerrado automáticamente, pase lo que pase.</span>
+</code></pre></div><p></p>
+<div class="admonition question">
+<p class="admonition-title">Ejercicio Reflexivo</p>
+<ol>
+<li>Si un fichero binario es más eficiente y ocupa menos espacio, ¿por qué usamos tanto JSON o XML (texto) en la industria hoy en día?</li>
+<li>¿Qué ocurriría si intentamos abrir un fichero para escribir en él, pero no tenemos permisos de administrador en esa carpeta?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="2-ficheros-y-directorios-en-java">2. Ficheros y Directorios en Java</h3>
+<p>Java tiene dos APIs principales para ficheros: la clásica (<code>java.io.File</code>) y la moderna "NIO.2" (<code>java.nio.file</code>). <strong>En FP Superior nos enfocamos en la moderna (NIO)</strong>, pero debéis conocer la clásica porque hay mucho código antiguo por ahí (legacy).</p>
+<h4 id="21-clase-file-legacy">2.1 Clase File (Legacy)</h4>
+<p>Representa una ruta abstracta. <em>No es el contenido</em>, es la dirección.
+</p><div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.File</span><span class="p">;</span>
+
+<span class="n">File</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">"documentos/notas.txt"</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="na">exists</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Nombre: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tamaño: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" bytes"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p></p>
+<h4 id="22-clase-path-moderna">2.2 Clase Path (Moderna)</h4>
+<p>Es la versión mejorada de <code>File</code>. Pertenece al paquete <code>java.nio.file</code>. Es inmutable y más versátil para manejar rutas de diferentes sistemas operativos.</p>
+<h4 id="23-clase-paths">2.3 Clase Paths</h4>
+<p>Es una fábrica de objetos <code>Path</code>.
+</p><div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Path</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.Paths</span><span class="p">;</span>
+
+<span class="c1">// Crear un Path</span>
+<span class="n">Path</span><span class="w"> </span><span class="n">ruta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"data"</span><span class="p">,</span><span class="w"> </span><span class="s">"usuarios"</span><span class="p">,</span><span class="w"> </span><span class="s">"lista.txt"</span><span class="p">);</span><span class="w"> </span><span class="c1">// data/usuarios/lista.txt</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Ruta absoluta: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ruta</span><span class="p">.</span><span class="na">toAbsolutePath</span><span class="p">());</span>
+</code></pre></div><p></p>
+<h4 id="24-clase-files-la-navaja-suiza">2.4 Clase Files (La Navaja Suiza)</h4>
+<p>Esta clase estática contiene <strong>todos</strong> los métodos útiles para operar con ficheros usando <code>Path</code>. Es vuestra mejor amiga.</p>
+<h4 id="25-operaciones-basicas-con-ficheros-y-directorios">2.5 Operaciones básicas con ficheros y directorios</h4>
+<p><strong>Ejemplo 1: Verificar existencia y crear directorio</strong>
+</p><div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.*</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GestionFicheros</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Path</span><span class="w"> </span><span class="n">directorio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"mis_datos"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Path</span><span class="w"> </span><span class="n">fichero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">directorio</span><span class="p">.</span><span class="na">resolve</span><span class="p">(</span><span class="s">"secreto.txt"</span><span class="p">);</span><span class="w"> </span><span class="c1">// mis_datos/secreto.txt</span>
+
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// 1. Crear directorio si no existe</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Files</span><span class="p">.</span><span class="na">notExists</span><span class="p">(</span><span class="n">directorio</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Files</span><span class="p">.</span><span class="na">createDirectory</span><span class="p">(</span><span class="n">directorio</span><span class="p">);</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Directorio creado."</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="c1">// 2. Crear fichero vacío</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Files</span><span class="p">.</span><span class="na">notExists</span><span class="p">(</span><span class="n">fichero</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Files</span><span class="p">.</span><span class="na">createFile</span><span class="p">(</span><span class="n">fichero</span><span class="p">);</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Fichero creado."</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="c1">// 3. Copiar fichero</span>
+<span class="w">            </span><span class="n">Path</span><span class="w"> </span><span class="n">copia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">directorio</span><span class="p">.</span><span class="na">resolve</span><span class="p">(</span><span class="s">"secreto_backup.txt"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">Files</span><span class="p">.</span><span class="na">copy</span><span class="p">(</span><span class="n">fichero</span><span class="p">,</span><span class="w"> </span><span class="n">copia</span><span class="p">,</span><span class="w"> </span><span class="n">StandardCopyOption</span><span class="p">.</span><span class="na">REPLACE_EXISTING</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Backup realizado."</span><span class="p">);</span>
+
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p></p>
+<p><strong>Ejemplo 2: Mover y Borrar</strong>
+</p><div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Path</span><span class="w"> </span><span class="n">origen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"mis_datos/secreto.txt"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Path</span><span class="w"> </span><span class="n">destino</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"mis_datos/archivos_viejos/secreto_old.txt"</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Aseguramos que el directorio destino exista</span>
+<span class="w">    </span><span class="n">Files</span><span class="p">.</span><span class="na">createDirectories</span><span class="p">(</span><span class="n">destino</span><span class="p">.</span><span class="na">getParent</span><span class="p">());</span>
+
+<span class="w">    </span><span class="c1">// Mover (Renombrar)</span>
+<span class="w">    </span><span class="n">Files</span><span class="p">.</span><span class="na">move</span><span class="p">(</span><span class="n">origen</span><span class="p">,</span><span class="w"> </span><span class="n">destino</span><span class="p">,</span><span class="w"> </span><span class="n">StandardCopyOption</span><span class="p">.</span><span class="na">REPLACE_EXISTING</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Borrar</span>
+<span class="w">    </span><span class="c1">// Files.delete(destino); // Lanza excepción si no existe</span>
+<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">borrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">deleteIfExists</span><span class="p">(</span><span class="n">destino</span><span class="p">);</span><span class="w"> </span><span class="c1">// Más seguro</span>
+
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error en operación de E/S: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div><p></p>
+<h4 id="26-directorio-resources">2.6 Directorio resources</h4>
+<p>En proyectos Java (Maven/Gradle), tenemos una carpeta <code>src/main/resources</code>. Los ficheros aquí se empaquetan dentro del JAR final. <strong>No se accede a ellos como ficheros normales</strong>, sino como streams del <em>Classpath</em>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Alerta: Resources</p>
+<p>No intentes escribir en un fichero dentro de <code>resources</code> en tiempo de ejecución. Esos ficheros son de solo lectura una vez compilada la aplicación.</p>
+</div>
+<h4 id="27-ficheros-temporales">2.7 Ficheros temporales</h4>
+<p>Útil para datos de usar y tirar.
+</p><div class="highlight"><pre><span></span><code><span class="n">Path</span><span class="w"> </span><span class="n">tempFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">createTempFile</span><span class="p">(</span><span class="s">"miAppLog_"</span><span class="p">,</span><span class="w"> </span><span class="s">".tmp"</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Fichero temporal: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tempFile</span><span class="p">);</span>
+<span class="c1">// Al salir, intentar borrar</span>
+<span class="n">tempFile</span><span class="p">.</span><span class="na">toFile</span><span class="p">().</span><span class="na">deleteOnExit</span><span class="p">();</span>
+</code></pre></div><p></p>
+<h4 id="28-ficheros-comprimidos-zip">2.8 Ficheros comprimidos (ZIP)</h4>
+<p>Java permite tratar un ZIP como si fuera un sistema de ficheros. Es potente pero avanzado. Para uso básico, usamos <code>ZipInputStream</code> y <code>ZipOutputStream</code>.</p>
+<div class="admonition info inline end">
+<p class="admonition-title">Sabías que...</p>
+<p>Los archivos <code>.jar</code> de Java son en realidad archivos <code>.zip</code> con una estructura de carpetas específica (META-INF). Puedes cambiarles la extensión y abrirlos con WinRAR.</p>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="3-flujos-de-entrada-y-salida-io">3. Flujos de Entrada y Salida (I/O)</h3>
+<p>Aquí es donde mucha gente se lía. Vamos a simplificarlo con un mapa mental.</p>
+<div class="language-markmap mkdocs-markmap"><markmap-data encoding="base64" hidden="true">IyBGbHVqb3MgSS9PIGVuIEphdmEKCiMjIEJ5dGUgU3RyZWFtcyAoQmluYXJpb3MpCi0gKipJbnB1dFN0cmVhbSoqIChMZWN0dXJhKQogICAgLSBGaWxlSW5wdXRTdHJlYW0KICAgIC0gQnVmZmVyZWRJbnB1dFN0cmVhbQogICAgLSBPYmplY3RJbnB1dFN0cmVhbQotICoqT3V0cHV0U3RyZWFtKiogKEVzY3JpdHVyYSkKICAgIC0gRmlsZU91dHB1dFN0cmVhbQogICAgLSBCdWZmZXJlZE91dHB1dFN0cmVhbQogICAgLSBPYmplY3RPdXRwdXRTdHJlYW0KCiMjIENoYXJhY3RlciBTdHJlYW1zIChUZXh0bykKLSAqKlJlYWRlcioqIChMZWN0dXJhKQogICAgLSBGaWxlUmVhZGVyCiAgICAtIEJ1ZmZlcmVkUmVhZGVyCiAgICAtIElucHV0U3RyZWFtUmVhZGVyCi0gKipXcml0ZXIqKiAoRXNjcml0dXJhKQogICAgLSBGaWxlV3JpdGVyCiAgICAtIEJ1ZmZlcmVkV3JpdGVyCiAgICAtIFByaW50V3JpdGVyCiAgICAtIE91dHB1dFN0cmVhbVdyaXRlcg==</markmap-data></div>
+<h4 id="31-clases-base">3.1 Clases base</h4>
+<ul>
+<li><strong>InputStream / OutputStream:</strong> La madre de los bytes.</li>
+<li><strong>Reader / Writer:</strong> La madre de los caracteres.</li>
+</ul>
+<h4 id="32-streams-de-bytes-para-imagenes-pdf-etc">3.2 Streams de bytes (Para imágenes, PDF, etc.)</h4>
+<p>Usamos <code>FileInputStream</code> y <code>FileOutputStream</code>. Leen byte a byte (0-255).</p>
+<h4 id="33-streams-de-caracteres-para-texto">3.3 Streams de caracteres (Para texto)</h4>
+<p>Usan <code>Reader</code> y <code>Writer</code>. Gestionan automáticamente la codificación (UTF-8, ISO-8859-1).
+*   <strong>InputStreamReader / OutputStreamWriter:</strong> Son los <strong>puentes</strong>. Convierten un flujo de bytes en un flujo de caracteres.</p>
+<h4 id="34-streams-con-buffer-la-clave-del-rendimiento">3.4 Streams con buffer (La clave del rendimiento)</h4>
+<div class="admonition danger">
+<p class="admonition-title">No leas byte a byte en disco</p>
+<p>Leer un fichero byte a byte directamente del disco es lentísimo. Es como ir al supermercado a comprar un solo huevo, volver a casa, y volver al súper a por otro huevo.
+<strong>Solución:</strong> Usa <code>Buffered...</code>. Es como llevar un carro de la compra. Lees un bloque grande de golpe (el buffer) en memoria y vas cogiendo de ahí.</p>
+</div>
+<h4 id="35-printwriter">3.5 PrintWriter</h4>
+<p>Es el rey de la escritura de texto cómoda. Tiene los métodos <code>print</code> y <code>println</code> que ya amáis de <code>System.out</code>.</p>
+<p><strong>Ejemplo de combinación de flujos (El patrón Decorator):</strong>
+</p><div class="highlight"><pre><span></span><code><span class="c1">// Escribir texto eficientemente</span>
+<span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">PrintWriter</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PrintWriter</span><span class="p">(</span>
+<span class="w">                         </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedWriter</span><span class="p">(</span>
+<span class="w">                           </span><span class="k">new</span><span class="w"> </span><span class="n">FileWriter</span><span class="p">(</span><span class="s">"salida.txt"</span><span class="p">))))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Hola Mundo"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"Tengo %d años y aprendo %s"</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="s">"Java"</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div><p></p>
+<h4 id="336-scanner-para-lectura">3.3.6 Scanner para lectura</h4>
+<p>El <code>Scanner</code> no es solo para el teclado. Puede parsear ficheros de texto buscando enteros, líneas, etc.</p>
+<h4 id="337-flujos-especiales">3.3.7 Flujos especiales</h4>
+<ul>
+<li><code>DataInput/Output</code>: Para escribir primitivos (<code>int</code>, <code>boolean</code>, <code>double</code>) en binario de forma portable.</li>
+<li><code>Piped...</code>: Para comunicar dos hilos (threads).</li>
+</ul>
+<p><br/></p><hr/><p></p>
+<h3 id="4-ficheros-de-texto">4. Ficheros de Texto</h3>
+<p>El 90% de vuestro trabajo será con texto (logs, configuraciones, CSV).</p>
+<h4 id="41-y-42-lectura-linea-a-linea-dos-metodos">4.1 y 4.2 Lectura línea a línea (Dos métodos)</h4>
+<p><strong>Método A: BufferedReader (Clásico y eficiente)</strong>
+</p><div class="highlight"><pre><span></span><code><span class="n">Path</span><span class="w"> </span><span class="n">ruta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"quijote.txt"</span><span class="p">);</span>
+<span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">BufferedReader</span><span class="w"> </span><span class="n">br</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">newBufferedReader</span><span class="p">(</span><span class="n">ruta</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">linea</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">linea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">br</span><span class="p">.</span><span class="na">readLine</span><span class="p">())</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">linea</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div><p></p>
+<p><strong>Método B: Files.lines (Java 8+ Streams)</strong>
+Ideal para procesamiento funcional.
+</p><div class="highlight"><pre><span></span><code><span class="n">Path</span><span class="w"> </span><span class="n">ruta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"quijote.txt"</span><span class="p">);</span>
+<span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lineas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Files</span><span class="p">.</span><span class="na">lines</span><span class="p">(</span><span class="n">ruta</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">lineas</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">"Sancho"</span><span class="p">))</span>
+<span class="w">          </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">toUpperCase</span><span class="p">)</span>
+<span class="w">          </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div><p></p>
+<h4 id="443-escritura-de-ficheros-de-texto">4.4.3 Escritura de ficheros de texto</h4>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">listaCompra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">"Pan"</span><span class="p">,</span><span class="w"> </span><span class="s">"Huevos"</span><span class="p">,</span><span class="w"> </span><span class="s">"Leche"</span><span class="p">);</span>
+<span class="n">Path</span><span class="w"> </span><span class="n">destino</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"lista.txt"</span><span class="p">);</span>
+
+<span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Escribe todo de golpe (bueno para ficheros pequeños)</span>
+<span class="w">    </span><span class="n">Files</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">destino</span><span class="p">,</span><span class="w"> </span><span class="n">listaCompra</span><span class="p">,</span><span class="w"> </span><span class="n">StandardCharsets</span><span class="p">.</span><span class="na">UTF_8</span><span class="p">);</span><span class="w"> </span>
+
+<span class="w">    </span><span class="c1">// Añadir al final (Append)</span>
+<span class="w">    </span><span class="n">Files</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">destino</span><span class="p">,</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">"Cerveza"</span><span class="p">),</span><span class="w"> </span>
+<span class="w">                </span><span class="n">StandardOpenOption</span><span class="p">.</span><span class="na">APPEND</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<h4 id="444-buenas-practicas">4.4.4 Buenas prácticas</h4>
+<ol>
+<li>Especificar siempre el <strong>Charset</strong> (UTF-8). No dependáis del defecto del sistema (Windows usa CP1252 y rompe las tildes en Linux).</li>
+<li>Usar Buffers para ficheros grandes.</li>
+<li>Validar rutas antes de escribir.</li>
+</ol>
+<p><br/></p><hr/><p></p>
+<h3 id="55-ficheros-binarios">5.5 Ficheros Binarios</h3>
+<h4 id="551-concepto">5.5.1 Concepto</h4>
+<p>Guardamos la información tal cual está en memoria. Un entero <code>123456</code> ocupa 4 bytes en binario, pero 6 bytes en texto ("123456").</p>
+<h4 id="552-y-553-lectura-y-escritura-copiar-una-imagen">5.5.2 y 5.5.3 Lectura y Escritura (Copiar una imagen)</h4>
+<div class="highlight"><pre><span></span><code><span class="n">Path</span><span class="w"> </span><span class="n">origen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"foto.jpg"</span><span class="p">);</span>
+<span class="n">Path</span><span class="w"> </span><span class="n">destino</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">"copia_foto.jpg"</span><span class="p">);</span>
+
+<span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">InputStream</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="n">origen</span><span class="p">.</span><span class="na">toFile</span><span class="p">());</span>
+<span class="w">     </span><span class="n">OutputStream</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileOutputStream</span><span class="p">(</span><span class="n">destino</span><span class="p">.</span><span class="na">toFile</span><span class="p">()))</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="c1">// Buffer de 1KB</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">bytesLeidos</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Leemos del origen al buffer y escribimos al destino</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">bytesLeidos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">in</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="n">buffer</span><span class="p">))</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">out</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">bytesLeidos</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Imagen copiada."</span><span class="p">);</span>
+
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p><br/></p><hr/><p></p>
+<h3 id="56-ficheros-de-acceso-aleatorio">5.6 Ficheros de Acceso Aleatorio</h3>
+<h4 id="561-que-es">5.6.1 ¿Qué es?</h4>
+<p>Los flujos normales son secuenciales (como una cinta de casete). El acceso aleatorio (<code>RandomAccessFile</code>) es como un vinilo o un disco duro: puedes saltar inmediatamente al byte 1.000.000 sin leer los anteriores.</p>
+<h4 id="562-clase-randomaccessfile">5.6.2 Clase RandomAccessFile</h4>
+<p>Tiene un <strong>puntero</strong> de fichero que podemos mover.
+*   Modos: "r" (lectura), "rw" (lectura/escritura).</p>
+<h4 id="563-y-564-lectura-y-escritura">5.6.3 y 5.6.4 Lectura y Escritura</h4>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">RandomAccessFile</span><span class="w"> </span><span class="n">raf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RandomAccessFile</span><span class="p">(</span><span class="s">"datos.bin"</span><span class="p">,</span><span class="w"> </span><span class="s">"rw"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Escribir algo</span>
+<span class="w">    </span><span class="n">raf</span><span class="p">.</span><span class="na">writeInt</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// 4 bytes</span>
+<span class="w">    </span><span class="n">raf</span><span class="p">.</span><span class="na">writeDouble</span><span class="p">(</span><span class="mf">3.14</span><span class="p">);</span><span class="w"> </span><span class="c1">// 8 bytes</span>
+
+<span class="w">    </span><span class="c1">// Volver al principio (seek)</span>
+<span class="w">    </span><span class="n">raf</span><span class="p">.</span><span class="na">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">raf</span><span class="p">.</span><span class="na">readInt</span><span class="p">());</span><span class="w"> </span><span class="c1">// Imprime 100</span>
+
+<span class="w">    </span><span class="c1">// Saltar el double e ir al final</span>
+<span class="w">    </span><span class="n">raf</span><span class="p">.</span><span class="na">seek</span><span class="p">(</span><span class="n">raf</span><span class="p">.</span><span class="na">length</span><span class="p">());</span>
+<span class="w">    </span><span class="n">raf</span><span class="p">.</span><span class="na">writeBoolean</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"> </span><span class="c1">// Añadir al final</span>
+
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p><br/></p><hr/><p></p>
+<h3 id="57-serializacion-de-objetos">5.7 Serialización de Objetos</h3>
+<p>Es como teletransportar objetos de Star Trek. Desintegramos el objeto en bytes, lo mandamos por la red o a disco, y lo reconstruimos en otro lado.</p>
+<h4 id="571-y-572-concepto-e-interfaz">5.7.1 y 5.7.2 Concepto e Interfaz</h4>
+<p>La clase debe implementar <code>Serializable</code>.
+</p><div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.Serializable</span><span class="p">;</span>
+
+<span class="c1">// DTO simple</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Usuario</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Serializable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">serialVersionUID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1L</span><span class="p">;</span><span class="w"> </span><span class="c1">// Importante para versiones</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">transient</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">;</span><span class="w"> </span><span class="c1">// transient = NO se serializa</span>
+
+<span class="w">    </span><span class="c1">// Constructor, getters, setters...</span>
+<span class="p">}</span>
+</code></pre></div><p></p>
+<h4 id="573-a-575-lectura-y-escritura">5.7.3 a 5.7.5 Lectura y Escritura</h4>
+<div class="highlight"><pre><span></span><code><span class="n">Usuario</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Usuario</span><span class="p">(</span><span class="s">"Pepe"</span><span class="p">,</span><span class="w"> </span><span class="s">"1234"</span><span class="p">);</span>
+
+<span class="c1">// Serializar (Guardar)</span>
+<span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">ObjectOutputStream</span><span class="w"> </span><span class="n">oos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectOutputStream</span><span class="p">(</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">FileOutputStream</span><span class="p">(</span><span class="s">"usuario.ser"</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">oos</span><span class="p">.</span><span class="na">writeObject</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Deserializar (Recuperar)</span>
+<span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">ObjectInputStream</span><span class="w"> </span><span class="n">ois</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectInputStream</span><span class="p">(</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="s">"usuario.ser"</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Usuario</span><span class="w"> </span><span class="n">recuperado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Usuario</span><span class="p">)</span><span class="w"> </span><span class="n">ois</span><span class="p">.</span><span class="na">readObject</span><span class="p">();</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Nombre: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">recuperado</span><span class="p">.</span><span class="na">getNombre</span><span class="p">());</span>
+<span class="w">    </span><span class="c1">// password será null porque es transient</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Peligro de la Serialización</p>
+<p>La serialización nativa de Java es lenta, produce ficheros grandes y tiene problemas de seguridad. En el mundo moderno, preferimos serializar a <strong>JSON</strong> para intercambiar datos. Usad la nativa solo para almacenamiento interno temporal simple.</p>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="58-formatos-de-intercambio-de-datos">5.8 Formatos de Intercambio de Datos</h3>
+<p>Aquí es donde conectaréis con el mundo real (APIs, Front-ends).</p>
+<h4 id="581-dto-data-transfer-object">5.8.1 DTO (Data Transfer Object)</h4>
+<p>Es un objeto "tonto" (solo atributos, getters y setters) usado para transportar datos.</p>
+<h4 id="582-ficheros-properties">5.8.2 Ficheros properties</h4>
+<p>Clave-valor. Típico para configuraciones (<code>config.properties</code>).
+</p><div class="highlight"><pre><span></span><code><span class="na">db.user</span><span class="o">=</span><span class="s">admin</span>
+<span class="na">db.port</span><span class="o">=</span><span class="s">3306</span>
+<span class="na">version</span><span class="o">=</span><span class="s">1.0</span>
+</code></pre></div>
+Java tiene la clase <code>Properties</code> para manejarlos fácilmente.<p></p>
+<h4 id="583-csv-comma-separated-values">5.8.3 CSV (Comma Separated Values)</h4>
+<p>Excel para programadores.
+<code>id,nombre,edad</code>
+<code>1,Pepe,25</code>
+Se puede parsear a mano con <code>String.split(",")</code> o usando librerías como OpenCSV.</p>
+<h4 id="584-json-javascript-object-notation">5.8.4 JSON (JavaScript Object Notation)</h4>
+<p>El estándar <em>de facto</em> para la web.
+</p><div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"nombre"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pepe"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"habilidades"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Java"</span><span class="p">,</span><span class="w"> </span><span class="s2">"SQL"</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+En Java, usamos librerías externas porque la nativa es limitada. Las reinas son <strong>Jackson</strong> y <strong>Gson</strong>.<p></p>
+<p><strong>Ejemplo con Gson (necesita librería externa):</strong>
+</p><div class="highlight"><pre><span></span><code><span class="n">Gson</span><span class="w"> </span><span class="n">gson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Gson</span><span class="p">();</span>
+<span class="c1">// Objeto a JSON</span>
+<span class="n">String</span><span class="w"> </span><span class="n">json</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gson</span><span class="p">.</span><span class="na">toJson</span><span class="p">(</span><span class="n">miUsuario</span><span class="p">);</span>
+<span class="c1">// JSON a Objeto</span>
+<span class="n">Usuario</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gson</span><span class="p">.</span><span class="na">fromJson</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="w"> </span><span class="n">Usuario</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+</code></pre></div><p></p>
+<h4 id="585-xml">5.8.5 XML</h4>
+<p>Estructura de árbol con etiquetas. Verborreico pero robusto.
+Java tiene JAXB o DOM/SAX para procesarlo. Hoy en día se usa menos que JSON, pero sigue vivo en configuraciones (Maven <code>pom.xml</code>) y sistemas antiguos.</p>
+<p><br/></p><hr/><p></p>
+<h3 id="10-resumen-y-buenas-practicas">10. Resumen y Buenas Prácticas</h3>
+<h4 id="101-tabla-de-decision">10.1 Tabla de Decisión</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Escenario</th>
+<th style="text-align: left;">Usa...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Configuración simple</td>
+<td style="text-align: left;"><code>.properties</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Intercambio datos web</td>
+<td style="text-align: left;"><code>.json</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Tabla de datos / Excel</td>
+<td style="text-align: left;"><code>.csv</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Imagen / Audio</td>
+<td style="text-align: left;">Binario (<code>FileInputStream</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Texto grande</td>
+<td style="text-align: left;"><code>BufferedReader</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Escribir reporte</td>
+<td style="text-align: left;"><code>PrintWriter</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="102-gestion-correcta-de-recursos">10.2 Gestión correcta de recursos</h4>
+<ul>
+<li>Usa siempre <strong>try-with-resources</strong>.</li>
+<li>Usa buffers.</li>
+</ul>
+<h4 id="103-errores-comunes">10.3 Errores comunes</h4>
+<ul>
+<li>Olvidar cerrar el stream (memory leaks).</li>
+<li>No controlar <code>FileNotFoundException</code>.</li>
+<li>Usar rutas absolutas ("C:\Users\Yo\...") en lugar de relativas o <code>System.getProperty("user.home")</code>. El código debe funcionar en el PC de tu compañero también.</li>
+</ul>
+<hr/>
+<h2 id="aplicacion-en-el-mundo-real">Aplicación en el Mundo Real</h2>
+<ol>
+<li><strong>Logs de Servidores:</strong> Cuando una aplicación web falla, escribe el error en un fichero <code>.log</code> usando streams. Herramientas como Splunk o ELK leen esos ficheros masivamente.</li>
+<li><strong>Videojuegos:</strong> El "Guardar Partida" es pura serialización (a binario o JSON) del estado de los objetos (posición del jugador, inventario, vida).</li>
+<li><strong>Bases de Datos:</strong> Por debajo, Oracle o MySQL no son magia. Son programas muy sofisticados que escriben y leen ficheros binarios en el disco duro usando acceso aleatorio (<code>RandomAccessFile</code> con esteroides) para ser ultra-rápidos.</li>
+</ol>
+<hr/>
+<h2 id="para-saber-mas">Para Saber Más</h2>
+<ul>
+<li>
+<p><strong>Documentación Oficial de Oracle (The Java Tutorials - File I/O):</strong> La biblia de NIO.2. Es densa pero es la fuente de la verdad.
+    <a href="https://docs.oracle.com/javase/tutorial/essential/io/fileio.html">https://docs.oracle.com/javase/tutorial/essential/io/fileio.html</a></p>
+</li>
+<li>
+<p><strong>Baeldung - Java NIO.2 Guide:</strong> Baeldung es uno de los mejores recursos para Java moderno. Sus guías son claras y con ejemplos al grano.
+    <a href="https://www.baeldung.com/java-nio-2-file-api">https://www.baeldung.com/java-nio-2-file-api</a></p>
+</li>
+<li>
+<p><strong>Gson User Guide:</strong> Para aprender a manejar JSON como un profesional.
+    <a href="https://github.com/google/gson/blob/master/UserGuide.md">https://github.com/google/gson/blob/master/UserGuide.md</a></p>
+</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Pregunta final de examen</p>
+<p>Si tuvieras que diseñar el sistema de almacenamiento de WhatsApp para guardar los mensajes en el móvil, ¿qué usarías? ¿Ficheros de texto plano, XML, o una base de datos local (SQLite)? ¿Por qué? (Pista: Piensa en la velocidad de búsqueda).</p>
+</div>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script type="text/javascript">(function initializeMarkmap() {
+    const transformer = new markmap.Transformer();
+    const preloadScripts = transformer.plugins
+        .flatMap((plugin) => plugin.config?.preloadScripts || [])
+        .map((item) => transformer.resolveJS(item));
+    const assets = transformer.getAssets();
+    const loading = Promise.all([
+        assets.styles && markmap.loadCSS(assets.styles),
+        markmap.loadJS([...preloadScripts, ...assets.scripts]),
+    ]);
+
+    function parseData(content) {
+        const { root, frontmatter } = transformer.transform(content);
+        let options = markmap.deriveOptions(frontmatter?.markmap);
+        options = Object.assign(
+            {
+                fitRatio: 0.85,
+            },
+            options
+        );
+        return { root, options };
+    }
+
+    function resetMarkmap(m, el) {
+        if (!m.state.rect) return;
+        const { x1, y1, x2, y2 } = m.state.rect;
+        const height = (el.offsetWidth / (x2 - x1)) * (y2 - y1);
+        el.style.height = height + "px";
+        m.fit();
+    }
+
+    function decodeBase64(encoded) {
+        const binary = atob(encoded);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < bytes.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        return new TextDecoder().decode(bytes);
+    }
+
+    function renderMarkmap(el) {
+        const dataEl = el.querySelector("markmap-data");
+        if (!dataEl) return;
+        let content = el.textContent;
+        if (dataEl.getAttribute("encoding") === "base64") {
+            content = decodeBase64(content);
+        }
+        el.innerHTML = "<svg>";
+        svg = el.firstChild;
+        const { root, options } = parseData(content);
+        const m = markmap.Markmap.create(svg, options);
+        m.setData(root);
+        requestAnimationFrame(() => {
+            resetMarkmap(m, el);
+        });
+    }
+
+    function updateMarkmaps(node) {
+        for (const el of node.querySelectorAll(".mkdocs-markmap")) {
+            renderMarkmap(el);
+        }
+    }
+
+    loading.then(() => {
+        const observer = new MutationObserver((mutationList) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "childList") {
+                    for (const node of mutation.addedNodes) {
+                        updateMarkmaps(node);
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true });
+
+        updateMarkmaps(document);
+    });
+})();
+</script></body></html>

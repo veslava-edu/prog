@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>7 LinkedList - PROG</title>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script><script src="../js/unpkg.com/d3@7.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-lib@0.18.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-view@0.18.js" type="text/javascript"></script><style type="text/css">div.mkdocs-markmap {
+    width: 100%;
+    min-height: 1em;
+    border: 1px solid grey;
+}
+.mkdocs-markmap > svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+</style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#linkedlist-el-tren-de-los-datos-en-java">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="PROG" class="md-header__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            PROG
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              7 LinkedList
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../1-Introduccion-programacion/">
+          
+  
+  
+  Programación
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="PROG" class="md-nav__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    PROG
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1-Introduccion-programacion/">
+<span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2-Programacion-estructurada/">
+<span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3-Programacion-modular/">
+<span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4-Estructuras-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5-POO-Clases-y-Objetos/">
+<span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6-POO-Uso-avanzado/">
+<span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7-Estructuras-datos-dinamicas/">
+<span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../8-Programacion-funcional-Streams/">
+<span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../9-Ficheros/">
+<span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10-Acceso-base-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11-Interfaces-graficas-MVC/">
+<span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conceptos-fundamentales">
+<span class="md-ellipsis">
+      
+        Conceptos Fundamentales
+      
+    </span>
+</a>
+<nav aria-label="Conceptos Fundamentales" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapa-mental-estructura-de-la-linkedlist">
+<span class="md-ellipsis">
+      
+        Mapa Mental: Estructura de la LinkedList
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desarrollo-y-ejemplos-practicos">
+<span class="md-ellipsis">
+      
+        Desarrollo y Ejemplos Prácticos
+      
+    </span>
+</a>
+<nav aria-label="Desarrollo y Ejemplos Prácticos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-creacion-de-linkedlist">
+<span class="md-ellipsis">
+      
+        1. Creación de LinkedList
+      
+    </span>
+</a>
+<nav aria-label="1. Creación de LinkedList" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-constructor-vacio-el-clasico">
+<span class="md-ellipsis">
+      
+        A) Constructor Vacío (El clásico)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b-constructor-con-coleccion-la-mudanza">
+<span class="md-ellipsis">
+      
+        B) Constructor con Colección (La mudanza)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-metodos-del-linkedlist">
+<span class="md-ellipsis">
+      
+        2. Métodos del LinkedList
+      
+    </span>
+</a>
+<nav aria-label="2. Métodos del LinkedList" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-anadir-elementos-adding-items">
+<span class="md-ellipsis">
+      
+        A. Añadir Elementos (Adding Items)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b-obtenerconsultar-elementos-retrieving-items">
+<span class="md-ellipsis">
+      
+        B. Obtener/Consultar Elementos (Retrieving Items)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#c-eliminar-elementos-removing-items">
+<span class="md-ellipsis">
+      
+        C. Eliminar Elementos (Removing Items)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#d-modificar-e-iterar-modifying-iterating">
+<span class="md-ellipsis">
+      
+        D. Modificar e Iterar (Modifying &amp; Iterating)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#e-otros-metodos">
+<span class="md-ellipsis">
+      
+        E. Otros Métodos
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-comparativa-metodos-peligrosos-vs-seguros">
+<span class="md-ellipsis">
+      
+        Tabla Comparativa: Métodos "Peligrosos" vs "Seguros"
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagrama-de-secuencia-recorriendo-una-linkedlist">
+<span class="md-ellipsis">
+      
+        Diagrama de Secuencia: Recorriendo una LinkedList
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacion-en-el-mundo-real">
+<span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-saber-mas">
+<span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<!-- linkedlist_java_fp.md --><h1 id="linkedlist-el-tren-de-los-datos-en-java">LinkedList: El Tren de los Datos en Java</h1>
+<p><strong>Introducción: ¿Dónde dejamos los vagones?</strong></p>
+<p>¡Hola, futuros arquitectos del software! 🚀</p>
+<p>¿Recordáis cuando en el <strong>Tema 7</strong> hablamos de las estructuras dinámicas? Vimos que el <code>ArrayList</code> era como una fila de butacas en el cine: todas seguidas, numeradas y muy rápidas de encontrar si tienes la entrada. Pero, ¿qué pasa si llega un grupo de amigos tarde y queremos sentarlos <em>en medio</em>? ¡Un caos! Tendríamos que pedirle a todo el mundo que se levante y se mueva una silla a la derecha. 😫</p>
+<p>Aquí es donde entra nuestra estrella de hoy: la <strong>LinkedList</strong> (Lista Enlazada).</p>
+<p>Imaginad una <strong>búsqueda del tesoro</strong> o un <strong>tren de mercancías</strong>. Cada vagón (nodo) contiene dos cosas:
+1.  La carga (tu dato).
+2.  Un gancho (puntero) que lo une al siguiente vagón y otro al anterior.</p>
+<p>No necesitan estar juntos en la memoria del ordenador. Un vagón puede estar en "Cuenca" y el siguiente en "Teruel", pero mientras estén enganchados, el tren funciona. Esto la hace <strong>brutalmente eficiente</strong> para insertar y borrar datos (solo desenganchas y enganchas), pero un poco más lenta para buscar (tienes que recorrer todos los vagones desde la locomotora hasta encontrar el que buscas).</p>
+<p>¿Listos para enganchar código? ¡Viajeros al tren! 🚂💻</p>
+<hr/>
+<h2 id="conceptos-fundamentales">Conceptos Fundamentales</h2>
+<p>Antes de picar código como si no hubiera un mañana, definamos las piezas del puzle.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Nodo (Node)</p>
+<p>Es la unidad básica de una LinkedList. Imagínalo como una caja con tres compartimentos:
+1.  <strong>Item</strong>: El dato real (un String, un objeto Cliente, un entero...).
+2.  <strong>Next</strong>: Una referencia (flecha) que apunta al <em>siguiente</em> nodo.
+3.  <strong>Prev</strong>: Una referencia que apunta al nodo <em>anterior</em>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Lista Doblemente Enlazada</p>
+<p>Java implementa <code>java.util.LinkedList</code> como una lista <strong>doblemente enlazada</strong>. Esto significa que puedes recorrerla tanto de principio a fin como de fin a principio. Es decir, el tren puede ir marcha adelante y marcha atrás sin problemas.</p>
+</div>
+<p><br/></p>
+<div class="admonition info">
+<p class="admonition-title">Interfaces que implementa</p>
+<p>La <code>LinkedList</code> es una "navaja suiza".
+Implementa <strong><code>List</code></strong> (como ArrayList),
+<strong><code>Deque</code></strong> (Cola de doble extremo) y
+<strong><code>Queue</code></strong> (Cola). ¡Sirve para todo!</p>
+</div>
+<p><br/></p>
+<div class="admonition info">
+<p class="admonition-title">Java 21 Update</p>
+<p>Desde Java 21, <code>LinkedList</code> forma parte
+de la familia <code>SequencedCollection</code>,
+estandarizando métodos como <code>addFirst</code>
+o <code>getLast</code> para todas las colecciones
+con orden.</p>
+</div>
+<h3 id="mapa-mental-estructura-de-la-linkedlist">Mapa Mental: Estructura de la LinkedList</h3>
+<div class="language-markmap mkdocs-markmap"><markmap-data encoding="base64" hidden="true">IyBMaW5rZWRMaXN0IGVuIEphdmEKCiMjIEVzdHJ1Y3R1cmEgSW50ZXJuYQotICoqTm9kZSAoQ2xhc2UgaW50ZXJuYSkqKgogICAgLSBFIGl0ZW0gKERhdG8pCiAgICAtIE5vZGUgbmV4dCAoU2lndWllbnRlKQogICAgLSBOb2RlIHByZXYgKEFudGVyaW9yKQoKIyMgQ2FwYWNpZGFkZXMgKEludGVyZmFjZXMpCi0gKipMaXN0Kio6IEFjY2VzbyBwb3Igw61uZGljZSAobGVudG8pLCBkdXBsaWNhZG9zIHBlcm1pdGlkb3MuCi0gKipEZXF1ZSoqOiBQaWxhIChTdGFjaykgeSBDb2xhIChRdWV1ZSkuCi0gKipDbG9uZWFibGUgLyBTZXJpYWxpemFibGUqKjogQ29waWFzIHkgZ3VhcmRhZG8uCgojIyBSZW5kaW1pZW50byAoQmlnIE8pCi0gKipJbnNlcnRhci9Cb3JyYXIgKEluaWNpby9GaW4pKio6IE8oMSkgLSDCoUluc3RhbnTDoW5lbyEKLSAqKkluc2VydGFyL0JvcnJhciAoRW4gbWVkaW8pKio6IE8oMSkgLSAoU2kgeWEgdGllbmVzIGVsIGl0ZXJhZG9yKS4KLSAqKkFjY2VzbyAoZ2V0L3NldCkqKjogTyhuKSAtIExlbnRvIChIYXkgcXVlIHJlY29ycmVyKS4=</markmap-data></div>
+<p><br/></p><hr/><p></p>
+<h2 id="desarrollo-y-ejemplos-practicos">Desarrollo y Ejemplos Prácticos</h2>
+<h3 id="1-creacion-de-linkedlist">1. Creación de LinkedList</h3>
+<p>Crear una <code>LinkedList</code> es tan fácil como invocar a su constructor. A diferencia de los Arrays, aquí no declaramos tamaño inicial (recuerda, es memoria dinámica, crece y decrece mágicamente).</p>
+<h4 id="a-constructor-vacio-el-clasico">A) Constructor Vacío (El clásico)</h4>
+<p>Creamos una lista sin elementos.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.LinkedList</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Creamos una lista enlazada para guardar nombres de videojuegos</span>
+<span class="w">        </span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">juegos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Lista creada: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">juegos</span><span class="p">);</span><span class="w"> </span><span class="c1">// Salida: []</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="b-constructor-con-coleccion-la-mudanza">B) Constructor con Colección (La mudanza)</h4>
+<p>Si ya tienes otra lista (un <code>ArrayList</code>, un <code>Set</code>...) y quieres convertirla en una <code>LinkedList</code>, usas este constructor.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.LinkedList</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Imagina que esto viene de una Base de Datos como ArrayList</span>
+<span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">listaOriginal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"Zelda"</span><span class="p">,</span><span class="w"> </span><span class="s">"Mario"</span><span class="p">,</span><span class="w"> </span><span class="s">"Metroid"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// La convertimos a LinkedList</span>
+<span class="w">        </span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">juegosRetro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">listaOriginal</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Lista copiada: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">juegosRetro</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Ejercicios Reflexivos</p>
+<ol>
+<li>¿Por qué no le pasamos una capacidad inicial (ej. <code>new LinkedList(10)</code>) como hacíamos con <code>ArrayList</code>? (Pista: piensa en cómo se guardan los datos en memoria).</li>
+<li>Si tuvieras que programar un historial de navegación web (Página A -&gt; Página B -&gt; Página C) y permitir al usuario volver atrás, ¿usarías <code>LinkedList</code> o <code>ArrayList</code>? ¿Por qué?</li>
+<li>¿Qué pasaría si intentas inicializar <code>List&lt;String&gt; lista = new LinkedList&lt;&gt;();</code> en lugar de <code>LinkedList&lt;String&gt;...</code>? ¿Podrías usar métodos como <code>addFirst()</code>?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h3 id="2-metodos-del-linkedlist">2. Métodos del LinkedList</h3>
+<p>Aquí está el arsenal completo. Como desarrolladores <em>Full Stack</em> (o casi), debéis conocer la herramienta para saber cuándo usarla.</p>
+<p><em>Nota: He agrupado los métodos por funcionalidad para que tenga sentido, pero están </em><em>todos</em><em> los que habéis pedido.</em></p>
+<h4 id="a-anadir-elementos-adding-items">A. Añadir Elementos (Adding Items)</h4>
+<p>La <code>LinkedList</code> brilla aquí. Insertar es barato.</p>
+<p><strong><code>add(E e)</code></strong> / <strong><code>addLast(E e)</code></strong> / <strong><code>offer(E e)</code></strong> / <strong><code>offerLast(E e)</code></strong>
+Todos añaden al final. <code>offer</code> es preferible cuando usamos la lista como Cola (Queue) porque está diseñado para manejar fallos de capacidad (aunque en LinkedList la capacidad es virtualmente infinita).</p>
+<div class="highlight"><pre><span></span><code><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">playlist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="c1">// add devuelve true si tiene éxito</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">agregado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Bohemian Rhapsody"</span><span class="p">);</span><span class="w"> </span>
+
+<span class="c1">// addLast es void, específico de listas enlazadas/deques</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">addLast</span><span class="p">(</span><span class="s">"Stairway to Heaven"</span><span class="p">);</span>
+
+<span class="c1">// offer devuelve true, típico de Colas</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">"Hotel California"</span><span class="p">);</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">offerLast</span><span class="p">(</span><span class="s">"Imagine"</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">playlist</span><span class="p">);</span><span class="w"> </span>
+<span class="c1">// [Bohemian Rhapsody, Stairway to Heaven, Hotel California, Imagine]</span>
+</code></pre></div>
+<p><strong><code>addFirst(E e)</code></strong> / <strong><code>push(E e)</code></strong> / <strong><code>offerFirst(E e)</code></strong>
+Añaden al principio. <code>push</code> viene de la terminología de Pilas (Stack).</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// addFirst coloca al inicio</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">addFirst</span><span class="p">(</span><span class="s">"Despacito"</span><span class="p">);</span><span class="w"> </span>
+
+<span class="c1">// push "empuja" al inicio (como poner un plato sobre una pila de platos)</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="s">"Macarena"</span><span class="p">);</span>
+
+<span class="c1">// offerFirst hace lo mismo, devuelve boolean</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">offerFirst</span><span class="p">(</span><span class="s">"Aserejé"</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">playlist</span><span class="p">);</span>
+<span class="c1">// [Aserejé, Macarena, Despacito, Bohemian Rhapsody...]</span>
+</code></pre></div>
+<p><strong><code>add(int index, E element)</code></strong>
+Inserta en una posición específica.</p>
+<div class="admonition warning">
+<p class="admonition-title">Cuidado con el rendimiento</p>
+<p>Aunque insertar el nodo es rápido, Java tiene que <strong>llegar</strong> hasta el índice <code>index</code> recorriendo la lista uno a uno. Si el índice es alto, esto tarda.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="c1">// Insertamos en la posición 1 (segundo lugar)</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">"Waka Waka"</span><span class="p">);</span>
+</code></pre></div>
+<p><strong><code>addAll(Collection c)</code></strong> / <strong><code>addAll(int index, Collection c)</code></strong>
+Añade todo un grupo de elementos.</p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nuevasCanciones</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"Song 1"</span><span class="p">,</span><span class="w"> </span><span class="s">"Song 2"</span><span class="p">);</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">nuevasCanciones</span><span class="p">);</span><span class="w"> </span><span class="c1">// Al final</span>
+</code></pre></div>
+<h4 id="b-obtenerconsultar-elementos-retrieving-items">B. Obtener/Consultar Elementos (Retrieving Items)</h4>
+<p>Aquí es donde la <code>LinkedList</code> sufre un poco comparada con el <code>ArrayList</code>.</p>
+<p><strong><code>get(int index)</code></strong>
+Devuelve el elemento en la posición dada.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Devuelve la canción en la posición 2. </span>
+<span class="c1">// Java tiene que saltar desde el nodo 0 -&gt; 1 -&gt; 2.</span>
+<span class="n">String</span><span class="w"> </span><span class="n">cancion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span>
+</code></pre></div>
+<p><strong><code>getFirst()</code></strong> / <strong><code>element()</code></strong> / <strong><code>peek()</code></strong> / <strong><code>peekFirst()</code></strong>
+Todos miran el primer elemento.
+*   <code>getFirst</code> / <code>element</code>: Lanzan excepción si la lista está vacía.
+*   <code>peek</code> / <code>peekFirst</code>: Devuelven <code>null</code> si está vacía (más seguro).</p>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">playlist</span><span class="p">.</span><span class="na">getFirst</span><span class="p">());</span><span class="w"> </span><span class="c1">// Si vacía -&gt; NoSuchElementException</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">playlist</span><span class="p">.</span><span class="na">element</span><span class="p">());</span><span class="w">  </span><span class="c1">// Igual que getFirst</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Lista vacía"</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">playlist</span><span class="p">.</span><span class="na">peek</span><span class="p">());</span><span class="w">      </span><span class="c1">// Si vacía -&gt; null</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">playlist</span><span class="p">.</span><span class="na">peekFirst</span><span class="p">());</span><span class="w"> </span><span class="c1">// Si vacía -&gt; null</span>
+</code></pre></div>
+<p><strong><code>getLast()</code></strong> / <strong><code>peekLast()</code></strong>
+Miran el último elemento.</p>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">playlist</span><span class="p">.</span><span class="na">getLast</span><span class="p">());</span><span class="w">   </span><span class="c1">// Lanza excepción si vacía</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">playlist</span><span class="p">.</span><span class="na">peekLast</span><span class="p">());</span><span class="w">  </span><span class="c1">// Devuelve null si vacía</span>
+</code></pre></div>
+<p><strong><code>indexOf(Object o)</code></strong> / <strong><code>lastIndexOf(Object o)</code></strong> / <strong><code>contains(Object o)</code></strong>
+Búsqueda lineal. Recorren la lista comparando con <code>.equals()</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="s">"Macarena"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Devuelve índice o -1</span>
+<span class="kt">boolean</span><span class="w"> </span><span class="n">existe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">"Despacito"</span><span class="p">);</span><span class="w"> </span><span class="c1">// true/false</span>
+</code></pre></div>
+<h4 id="c-eliminar-elementos-removing-items">C. Eliminar Elementos (Removing Items)</h4>
+<p><strong><code>remove()</code></strong> / <strong><code>removeFirst()</code></strong> / <strong><code>pop()</code></strong> / <strong><code>poll()</code></strong> / <strong><code>pollFirst()</code></strong>
+Todos eliminan la <strong>cabeza</strong> (el primer elemento).
+*   <code>remove</code> / <code>pop</code>: Lanzan excepción si está vacía.
+*   <code>poll</code>: Devuelve <code>null</code> si está vacía.</p>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">eliminada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">remove</span><span class="p">();</span><span class="w"> </span><span class="c1">// Adios al primero</span>
+<span class="n">String</span><span class="w"> </span><span class="n">popC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span><span class="w">         </span><span class="c1">// Saca el primero de la pila</span>
+<span class="n">String</span><span class="w"> </span><span class="n">pollC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">poll</span><span class="p">();</span><span class="w">       </span><span class="c1">// Saca el primero (safe)</span>
+</code></pre></div>
+<p><strong><code>removeLast()</code></strong> / <strong><code>pollLast()</code></strong>
+Eliminan la <strong>cola</strong> (el último).</p>
+<div class="highlight"><pre><span></span><code><span class="n">playlist</span><span class="p">.</span><span class="na">removeLast</span><span class="p">();</span><span class="w"> </span><span class="c1">// Excepción si vacía</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">pollLast</span><span class="p">();</span><span class="w">   </span><span class="c1">// Null si vacía</span>
+</code></pre></div>
+<p><strong><code>remove(int index)</code></strong> / <strong><code>remove(Object o)</code></strong>
+Elimina por posición o por objeto.</p>
+<div class="highlight"><pre><span></span><code><span class="n">playlist</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// Borra el tercero</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">"Waka Waka"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Borra la primera ocurrencia de ese objeto</span>
+</code></pre></div>
+<p><strong><code>removeFirstOccurrence(Object o)</code></strong> / <strong><code>removeLastOccurrence(Object o)</code></strong>
+Específico para cuando hay duplicados.</p>
+<div class="highlight"><pre><span></span><code><span class="n">playlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Macarena"</span><span class="p">);</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Macarena"</span><span class="p">);</span>
+<span class="c1">// Tenemos dos Macarenas.</span>
+<span class="n">playlist</span><span class="p">.</span><span class="na">removeLastOccurrence</span><span class="p">(</span><span class="s">"Macarena"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Borra la que añadimos al final</span>
+</code></pre></div>
+<p><strong><code>clear()</code></strong>
+Borra todo. Deja la lista como un solar vacío.</p>
+<div class="highlight"><pre><span></span><code><span class="n">playlist</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span><span class="w"> </span><span class="c1">// size() ahora es 0</span>
+</code></pre></div>
+<p><strong><code>removeAll(Collection c)</code></strong> / <strong><code>retainAll(Collection c)</code></strong> / <strong><code>removeIf(Predicate filter)</code></strong>
+Operaciones en masa.</p>
+<div class="highlight"><pre><span></span><code><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span>
+
+<span class="c1">// Borrar los que estén en esta lista</span>
+<span class="n">numeros</span><span class="p">.</span><span class="na">removeAll</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span><span class="w"> </span><span class="c1">// Queda [2, 3, 4]</span>
+
+<span class="c1">// Quedarse SOLO con los que estén en esta lista</span>
+<span class="n">numeros</span><span class="p">.</span><span class="na">retainAll</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">));</span><span class="w"> </span><span class="c1">// Queda [2, 3]</span>
+
+<span class="c1">// Borrar con condición (lambda)</span>
+<span class="n">numeros</span><span class="p">.</span><span class="na">removeIf</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Borra impares</span>
+</code></pre></div>
+<h4 id="d-modificar-e-iterar-modifying-iterating">D. Modificar e Iterar (Modifying &amp; Iterating)</h4>
+<p><strong><code>set(int index, E element)</code></strong>
+Reemplaza el elemento en una posición.</p>
+<div class="highlight"><pre><span></span><code><span class="n">playlist</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">"Nueva Canción"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Machaca lo que hubiera en index 0</span>
+</code></pre></div>
+<p><strong><code>replaceAll(UnaryOperator operator)</code></strong>
+Reemplaza todos los elementos aplicando una función.</p>
+<div class="highlight"><pre><span></span><code><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">frutas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"manzana"</span><span class="p">,</span><span class="w"> </span><span class="s">"pera"</span><span class="p">));</span>
+<span class="n">frutas</span><span class="p">.</span><span class="na">replaceAll</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">toUpperCase</span><span class="p">);</span><span class="w"> </span><span class="c1">// [MANZANA, PERA]</span>
+</code></pre></div>
+<p><strong><code>sort(Comparator c)</code></strong>
+Ordena la lista. Ojo: <code>LinkedList</code> se ordena más lento que <code>ArrayList</code> debido a los punteros.</p>
+<div class="highlight"><pre><span></span><code><span class="n">frutas</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span><span class="w"> </span><span class="c1">// Orden natural (alfabético)</span>
+</code></pre></div>
+<p><strong><code>iterator()</code></strong> / <strong><code>listIterator()</code></strong> / <strong><code>descendingIterator()</code></strong>
+Formas de recorrer la lista.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Iterador estándar (hacia adelante)</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
+<span class="k">while</span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="na">next</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="c1">// Iterador de lista (permite ir atrás y adelante)</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">listIt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">listIterator</span><span class="p">();</span>
+<span class="n">listIt</span><span class="p">.</span><span class="na">next</span><span class="p">();</span><span class="w"> </span><span class="c1">// Avanza</span>
+<span class="k">if</span><span class="p">(</span><span class="n">listIt</span><span class="p">.</span><span class="na">hasPrevious</span><span class="p">())</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">listIt</span><span class="p">.</span><span class="na">previous</span><span class="p">());</span><span class="w"> </span><span class="c1">// Retrocede</span>
+
+<span class="c1">// Iterador inverso (del final al principio)</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">descIt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">descendingIterator</span><span class="p">();</span>
+<span class="k">while</span><span class="p">(</span><span class="n">descIt</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Inverso: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">descIt</span><span class="p">.</span><span class="na">next</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong><code>forEach(Consumer action)</code></strong>
+La forma moderna (Java 8+) de iterar.</p>
+<div class="highlight"><pre><span></span><code><span class="n">playlist</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">cancion</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Reproduciendo: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cancion</span><span class="p">));</span>
+</code></pre></div>
+<p><strong><code>spliterator()</code></strong>
+Crea un <code>Spliterator</code> para procesamiento paralelo. En <code>LinkedList</code> no es muy eficiente porque dividir una lista enlazada es costoso (no sabes dónde está la mitad hasta que la recorres).</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">spliterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">spliterator</span><span class="p">();</span>
+<span class="c1">// Útil si pasas esto a un Stream paralelo, pero preferible usar ArrayList para eso.</span>
+</code></pre></div>
+<h4 id="e-otros-metodos">E. Otros Métodos</h4>
+<p><strong><code>size()</code></strong>
+Devuelve el número de elementos (<code>int</code>).</p>
+<p><strong><code>isEmpty()</code></strong>
+Devuelve <code>true</code> si no hay elementos. Más elegante que poner <code>size() == 0</code>.</p>
+<p><strong><code>clone()</code></strong>
+Crea una copia superficial (shallow copy) de la lista.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Object</span><span class="w"> </span><span class="n">copia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">clone</span><span class="p">();</span><span class="w"> </span><span class="c1">// Devuelve Object, hay que hacer cast si se necesita</span>
+</code></pre></div>
+<p><strong><code>subList(int fromIndex, int toIndex)</code></strong>
+Devuelve una vista de una parte de la lista. ¡Cuidado! Si modificas la sublista, modificas la original.</p>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">top3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">subList</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+</code></pre></div>
+<p><strong><code>toArray()</code></strong>
+Convierte la lista en un Array clásico.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">toArray</span><span class="p">();</span>
+<span class="c1">// O tipado:</span>
+<span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">arrayString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playlist</span><span class="p">.</span><span class="na">toArray</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="tabla-comparativa-metodos-peligrosos-vs-seguros">Tabla Comparativa: Métodos "Peligrosos" vs "Seguros"</h3>
+<p>En estructuras de tipo Cola/Pila, a menudo tenemos dos versiones de la misma acción.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Acción</th>
+<th style="text-align: left;">Lanza Excepción (Peligroso) ⚠️</th>
+<th style="text-align: left;">Devuelve null/false (Seguro) ✅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Insertar</strong></td>
+<td style="text-align: left;"><code>add(e)</code>, <code>addLast(e)</code></td>
+<td style="text-align: left;"><code>offer(e)</code>, <code>offerLast(e)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Borrar</strong></td>
+<td style="text-align: left;"><code>remove()</code>, <code>removeFirst()</code></td>
+<td style="text-align: left;"><code>poll()</code>, <code>pollFirst()</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Mirar</strong></td>
+<td style="text-align: left;"><code>element()</code>, <code>getFirst()</code></td>
+<td style="text-align: left;"><code>peek()</code>, <code>peekFirst()</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Consejo Profesional</p>
+<p>Si tu lógica de negocio <em>espera</em> que siempre haya datos, usa los métodos de la columna "Peligroso" para detectar errores rápido (Fail Fast). Si es normal que la lista esté vacía a veces, usa los "Seguros" y gestiona el <code>null</code>.</p>
+</div>
+<h3 id="diagrama-de-secuencia-recorriendo-una-linkedlist">Diagrama de Secuencia: Recorriendo una LinkedList</h3>
+<p>Fíjate cómo el código pide el "Siguiente" repetidamente.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Main as Código Principal
+    participant It as Iterator
+    participant N1 as Nodo 1
+    participant N2 as Nodo 2
+
+    Main-&gt;&gt;It: next()
+    It-&gt;&gt;N1: Dame tu valor
+    N1--&gt;&gt;It: "Valor 1"
+    It--&gt;&gt;Main: "Valor 1"
+
+    Main-&gt;&gt;It: next()
+    Note right of It: El iterador usa el puntero .next del Nodo 1
+    It-&gt;&gt;N2: Dame tu valor
+    N2--&gt;&gt;It: "Valor 2"
+    It--&gt;&gt;Main: "Valor 2"</code></pre>
+<p><br/></p><hr/><p></p>
+<div class="admonition question">
+<p class="admonition-title">Preguntas para el Examen (y la vida)</p>
+<ol>
+<li>Si tienes una <code>LinkedList</code> con 1 millón de registros y haces <code>list.get(500000)</code>, ¿qué hace Java internamente? ¿Es eficiente?</li>
+<li>Analiza este código: <code>for (int i=0; i &lt; list.size(); i++) { System.out.println(list.get(i)); }</code>. Si <code>list</code> es una <code>LinkedList</code>, ¿por qué este bucle es un crimen contra el rendimiento? (Pista: complejidad cuadrática).</li>
+<li>¿Cuál es la diferencia entre <code>poll()</code> y <code>remove()</code>? ¿Cuál usarías si no estás seguro de si la lista tiene elementos?</li>
+<li>¿Por qué <code>spliterator</code> en una LinkedList podría no ser tan eficiente para paralelizar como en un ArrayList?</li>
+</ol>
+</div>
+<h2 id="aplicacion-en-el-mundo-real">Aplicación en el Mundo Real</h2>
+<p>Vale, profe, ¿pero esto se usa fuera de clase? <strong>Sí, y mucho.</strong></p>
+<ol>
+<li><strong>Funcionalidad "Deshacer" (Undo) en editores de texto</strong>:
+    Imagina Word o tu IDE. Cada vez que escribes, se guarda un estado. Si pulsas Ctrl+Z, vuelves atrás. Esto suele implementarse con pilas (Stacks) o Listas Doblemente Enlazadas, donde puedes moverte fácil hacia atrás y adelante en el historial de cambios.</li>
+<li><strong>Reproductores de Música (Spotify/Apple Music)</strong>:
+    Una lista de reproducción es literalmente una <code>LinkedList</code>. Tienes una canción actual, un puntero a la <code>next</code> y otro a la <code>previous</code>. Si añades una canción a la cola ("Reproducir a continuación"), simplemente se cambia un puntero para intercalarla sin mover todo el resto de canciones de la memoria.</li>
+<li><strong>Gestión de tareas en Sistemas Operativos</strong>:
+    El planificador de procesos de Linux o Windows a menudo usa colas (implementadas con listas enlazadas) para saber qué programa debe usar la CPU a continuación. Entran por un lado y salen por el otro (FIFO).</li>
+</ol>
+<h2 id="para-saber-mas">Para Saber Más</h2>
+<p>Aquí tenéis recursos "pata negra" para profundizar. Nada de tutoriales dudosos de 2010.</p>
+<ul>
+<li>
+<p><strong>Documentación Oficial de Java 21 (Oracle)</strong>: La biblia. Siempre hay que ir a la fuente.
+    <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/LinkedList.html">https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/LinkedList.html</a></p>
+</li>
+<li>
+<p><strong>Baeldung - Guide to LinkedList</strong>: Baeldung es el "StackOverflow" de los artículos de calidad en Java.
+    <a href="https://www.baeldung.com/java-linkedlist">https://www.baeldung.com/java-linkedlist</a></p>
+</li>
+<li>
+<p><strong>Visualgo - Visualización de Listas Enlazadas</strong>: Una web interactiva increíble para <em>ver</em> cómo se mueven los punteros cuando añades o borras nodos. (Busca "Linked List").
+    <a href="https://visualgo.net/en/list">https://visualgo.net/en/list</a></p>
+</li>
+</ul>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script type="text/javascript">(function initializeMarkmap() {
+    const transformer = new markmap.Transformer();
+    const preloadScripts = transformer.plugins
+        .flatMap((plugin) => plugin.config?.preloadScripts || [])
+        .map((item) => transformer.resolveJS(item));
+    const assets = transformer.getAssets();
+    const loading = Promise.all([
+        assets.styles && markmap.loadCSS(assets.styles),
+        markmap.loadJS([...preloadScripts, ...assets.scripts]),
+    ]);
+
+    function parseData(content) {
+        const { root, frontmatter } = transformer.transform(content);
+        let options = markmap.deriveOptions(frontmatter?.markmap);
+        options = Object.assign(
+            {
+                fitRatio: 0.85,
+            },
+            options
+        );
+        return { root, options };
+    }
+
+    function resetMarkmap(m, el) {
+        if (!m.state.rect) return;
+        const { x1, y1, x2, y2 } = m.state.rect;
+        const height = (el.offsetWidth / (x2 - x1)) * (y2 - y1);
+        el.style.height = height + "px";
+        m.fit();
+    }
+
+    function decodeBase64(encoded) {
+        const binary = atob(encoded);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < bytes.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        return new TextDecoder().decode(bytes);
+    }
+
+    function renderMarkmap(el) {
+        const dataEl = el.querySelector("markmap-data");
+        if (!dataEl) return;
+        let content = el.textContent;
+        if (dataEl.getAttribute("encoding") === "base64") {
+            content = decodeBase64(content);
+        }
+        el.innerHTML = "<svg>";
+        svg = el.firstChild;
+        const { root, options } = parseData(content);
+        const m = markmap.Markmap.create(svg, options);
+        m.setData(root);
+        requestAnimationFrame(() => {
+            resetMarkmap(m, el);
+        });
+    }
+
+    function updateMarkmaps(node) {
+        for (const el of node.querySelectorAll(".mkdocs-markmap")) {
+            renderMarkmap(el);
+        }
+    }
+
+    loading.then(() => {
+        const observer = new MutationObserver((mutationList) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "childList") {
+                    for (const node of mutation.addedNodes) {
+                        updateMarkmaps(node);
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true });
+
+        updateMarkmaps(document);
+    });
+})();
+</script></body></html>

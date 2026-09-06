@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>7 TreeSet - PROG</title>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script><script src="../js/unpkg.com/d3@7.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-lib@0.18.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-view@0.18.js" type="text/javascript"></script><style type="text/css">div.mkdocs-markmap {
+    width: 100%;
+    min-height: 1em;
+    border: 1px solid grey;
+}
+.mkdocs-markmap > svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+</style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#treeset-el-maniatico-del-orden">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="PROG" class="md-header__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            PROG
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              7 TreeSet
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../1-Introduccion-programacion/">
+          
+  
+  
+  Programación
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="PROG" class="md-nav__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    PROG
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1-Introduccion-programacion/">
+<span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2-Programacion-estructurada/">
+<span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3-Programacion-modular/">
+<span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4-Estructuras-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5-POO-Clases-y-Objetos/">
+<span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6-POO-Uso-avanzado/">
+<span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7-Estructuras-datos-dinamicas/">
+<span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../8-Programacion-funcional-Streams/">
+<span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../9-Ficheros/">
+<span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10-Acceso-base-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11-Interfaces-graficas-MVC/">
+<span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conceptos-fundamentales">
+<span class="md-ellipsis">
+      
+        Conceptos Fundamentales
+      
+    </span>
+</a>
+<nav aria-label="Conceptos Fundamentales" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapa-mental-el-arbol-genealogico">
+<span class="md-ellipsis">
+      
+        Mapa Mental: El Árbol Genealógico
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desarrollo-y-ejemplos-practicos">
+<span class="md-ellipsis">
+      
+        Desarrollo y Ejemplos Prácticos
+      
+    </span>
+</a>
+<nav aria-label="Desarrollo y Ejemplos Prácticos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-gestion-basica-anadir-y-ordenar">
+<span class="md-ellipsis">
+      
+        1. Gestión Básica (Añadir y Ordenar)
+      
+    </span>
+</a>
+<nav aria-label="1. Gestión Básica (Añadir y Ordenar)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-la-lista-de-invitados-vip-ordenada">
+<span class="md-ellipsis">
+      
+        Ejemplo: La Lista de Invitados VIP (Ordenada)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-navegacion-extrema-first-last-poll">
+<span class="md-ellipsis">
+      
+        2. Navegación Extrema (First, Last, Poll)
+      
+    </span>
+</a>
+<nav aria-label="2. Navegación Extrema (First, Last, Poll)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-sistema-de-puntuaciones-leaderboard">
+<span class="md-ellipsis">
+      
+        Ejemplo: Sistema de Puntuaciones (Leaderboard)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-busqueda-de-proximidad-ceiling-floor">
+<span class="md-ellipsis">
+      
+        3. Búsqueda de Proximidad (Ceiling, Floor...)
+      
+    </span>
+</a>
+<nav aria-label="3. Búsqueda de Proximidad (Ceiling, Floor...)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejemplo-buscador-de-tarifas-de-vuelo">
+<span class="md-ellipsis">
+      
+        Ejemplo: Buscador de Tarifas de Vuelo
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-vistas-de-rango-subset-headset-tailset">
+<span class="md-ellipsis">
+      
+        4. Vistas de Rango (SubSet, HeadSet, TailSet)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-iteracion-y-utilidades-avanzadas">
+<span class="md-ellipsis">
+      
+        5. Iteración y Utilidades Avanzadas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagrama-mermaid-arbol-rojo-negro-simplificado">
+<span class="md-ellipsis">
+      
+        Diagrama Mermaid: Árbol Rojo-Negro Simplificado
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tabla-comparativa-treeset-vs-hashset">
+<span class="md-ellipsis">
+      
+        Tabla Comparativa: TreeSet vs HashSet
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacion-en-el-mundo-real">
+<span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-saber-mas">
+<span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<!-- treeset_java_fp.md --><h1 id="treeset-el-maniatico-del-orden">TreeSet: El Maniático del Orden</h1>
+<p><strong>Introducción: De la Fiesta al Archivo</strong></p>
+<p>¡Hola, equipo de desarrollo! 👓</p>
+<p>Si el <strong><code>HashSet</code></strong> era una fiesta descontrolada donde el portero solo chequeaba que no te colaras dos veces, el <strong><code>TreeSet</code></strong> es... bueno, es como <strong>Monica Geller</strong> de <em>Friends</em> organizando su armario. O como ese bibliotecario severo que no soporta ver un libro fuera de su sitio.</p>
+<p>Imaginad un <strong>Ranking de Videojuegos</strong>. No solo queréis que los jugadores sean únicos (no puede haber dos "xX_Slayer_Xx"), sino que además queréis saber <strong>siempre</strong> quién va primero, quién va último y quién está justo por encima de ti para intentar superarle.</p>
+<p>El <code>TreeSet</code> hace el trabajo sucio por nosotros: mantiene los datos <strong>siempre ordenados</strong> automáticamente. ¿El precio a pagar? Es un poco más lento que el <code>HashSet</code> (porque tiene que pensar dónde colocar cada cosa), pero nos da superpoderes de navegación que no tienen precio.</p>
+<p>¡Orden en la sala, que empieza la clase! 👨‍⚖️</p>
+<hr/>
+<h2 id="conceptos-fundamentales">Conceptos Fundamentales</h2>
+<div class="admonition note">
+<p class="admonition-title">Definición: TreeSet</p>
+<p>Es una implementación de la interfaz <code>NavigableSet</code> (que a su vez extiende de <code>SortedSet</code>).
+*   <strong>Estructura</strong>: Internamente usa un <strong>Red-Black Tree</strong> (Árbol Rojo-Negro), un tipo de árbol binario que se auto-equilibra.
+*   <strong>Orden</strong>: Los elementos se almacenan ordenados según su "Orden Natural" (Comparable) o mediante un "Árbitro externo" (<code>Comparator</code>) que le pasemos al constructor.
+*   <strong>Sin Duplicados</strong>: Como buen <code>Set</code>, no admite repes.
+*   <strong>Sin Nulos</strong>: Por lo general, <strong>NO</strong> admite <code>null</code>, ya que no se puede comparar <code>null</code> con otros objetos para saber si es mayor o menor.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Interfaces Clave</p>
+<p>Al implementar <code>NavigableSet</code>, el <code>TreeSet</code> gana métodos para búsquedas de proximidad:
+"dame el número más cercano a 100 pero que no se pase". ¡Magia pura!</p>
+</div>
+<h3 id="mapa-mental-el-arbol-genealogico">Mapa Mental: El Árbol Genealógico</h3>
+<div class="language-markmap mkdocs-markmap"><markmap-data encoding="base64" hidden="true">IyBUcmVlU2V0IGVuIEphdmEKCiMjIEplcmFycXXDrWEKLSAqKkNvbGxlY3Rpb24qKgogIC0gKipTZXQqKiAoU2luIGR1cGxpY2Fkb3MpCiAgICAtICoqU29ydGVkU2V0KiogKE9yZGVuYWRvcykKICAgICAgLSAqKk5hdmlnYWJsZVNldCoqIChOYXZlZ2FibGVzKQogICAgICAgIC0gKipUcmVlU2V0KiogKExhIENsYXNlKQoKIyMgQ2FyYWN0ZXLDrXN0aWNhcwotICoqTyhsb2cgbikqKjogVGllbXBvIHBhcmEgYcOxYWRpciwgYm9ycmFyIHkgYnVzY2FyLgotICoqTm8gVGhyZWFkLVNhZmUqKjogQ3VpZGFkbyBjb24gbG9zIGhpbG9zLgotICoqRmFpbC1GYXN0IEl0ZXJhdG9ycyoqOiBTaSBtb2RpZmljYXMgbWllbnRyYXMgcmVjb3JyZXMsIGV4cGxvdGEuCgojIyDCv0PDs21vIG9yZGVuYT8KLSAqKkNvbXBhcmFibGUgKERlZmF1bHQpKio6IExhIGNsYXNlIGRlYmUgaW1wbGVtZW50YXIgYGNvbXBhcmVUb2AuCi0gKipDb21wYXJhdG9yKio6IEzDs2dpY2EgcGVyc29uYWxpemFkYSBwYXNhZGEgYWwgY29uc3RydWN0b3Iu</markmap-data></div>
+<p><br/></p><hr/><p></p>
+<h2 id="desarrollo-y-ejemplos-practicos">Desarrollo y Ejemplos Prácticos</h2>
+<p>Vamos a dividir el arsenal de métodos del <code>TreeSet</code> en bloques lógicos. Preparad el IDE.</p>
+<h3 id="1-gestion-basica-anadir-y-ordenar">1. Gestión Básica (Añadir y Ordenar)</h3>
+<p>Aquí vemos cómo el <code>TreeSet</code> ordena solo nada más insertar.</p>
+<p><strong>Métodos:</strong><br/>
+*   <strong><code>add(E e)</code></strong>: Añade y ordena. Ignora si ya existe.<br/>
+*   <strong><code>addAll(Collection c)</code></strong>: Añade un montón de golpe.<br/>
+*   <strong><code>remove(Object o)</code></strong>: Borra si existe.<br/>
+*   <strong><code>contains(Object o)</code></strong>: Busca (usando el árbol, no hash).<br/>
+*   <strong><code>size()</code></strong>, <strong><code>isEmpty()</code></strong>, <strong><code>clear()</code></strong>.<br/>
+*   <strong><code>clone()</code></strong>: Copia superficial.<br/></p>
+<h4 id="ejemplo-la-lista-de-invitados-vip-ordenada">Ejemplo: La Lista de Invitados VIP (Ordenada)</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.TreeSet</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Comparator</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">OrdenAlfabetico</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 1. Orden Natural (Strings se ordenan alfabéticamente)</span>
+<span class="w">        </span><span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">invitados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">invitados</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Zendaya"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">invitados</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Brad Pitt"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">invitados</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Ana de Armas"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">invitados</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Brad Pitt"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Duplicado: Se ignora</span>
+
+<span class="w">        </span><span class="c1">// ¡Magia! Salen ordenados sin hacer nada más</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Lista Oficial: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">invitados</span><span class="p">);</span><span class="w"> </span>
+<span class="w">        </span><span class="c1">// Salida: [Ana de Armas, Brad Pitt, Zendaya]</span>
+
+<span class="w">        </span><span class="c1">// 2. Orden Personalizado (Comparator)</span>
+<span class="w">        </span><span class="c1">// Queremos ordenar por longitud del nombre (de corto a largo)</span>
+<span class="w">        </span><span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">porLongitud</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeSet</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">comparingInt</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">length</span><span class="p">));</span>
+<span class="w">        </span><span class="n">porLongitud</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">invitados</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Por longitud: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">porLongitud</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Salida: [Zendaya, Brad Pitt, Ana de Armas] (Depende de longitudes)</span>
+
+<span class="w">        </span><span class="c1">// 3. Comprobaciones básicas</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">invitados</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">"Zendaya"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Zendaya está invitada."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Total invitados: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">invitados</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
+
+<span class="w">        </span><span class="c1">// 4. Clonado</span>
+<span class="w">        </span><span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">copia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="n">invitados</span><span class="p">.</span><span class="na">clone</span><span class="p">();</span>
+<span class="w">        </span><span class="n">invitados</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span><span class="w"> </span><span class="c1">// Borramos el original</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Copia sobrevive: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">copia</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">¡Cuidado con ClassCastException!</p>
+<p>Si intentas crear un <code>TreeSet</code> de objetos propios (ej: <code>new TreeSet&lt;Alumno&gt;()</code>) y la clase <code>Alumno</code> no implementa la interfaz <code>Comparable</code>, el programa lanzará una excepción en tiempo de ejecución al intentar añadir el primer elemento. ¡Java necesita saber cómo ordenar tus alumnos!</p>
+</div>
+<h3 id="2-navegacion-extrema-first-last-poll">2. Navegación Extrema (First, Last, Poll)</h3>
+<p>Estos métodos aprovechan que el árbol sabe dónde está el mínimo y el máximo. Son rapidísimos.</p>
+<p><strong>Métodos:</strong><br/>
+*   <strong><code>first()</code></strong> / <strong><code>last()</code></strong>: Devuelven el primero (mínimo) y el último (máximo). Lanzan excepción si está vacío.<br/>
+*   <strong><code>pollFirst()</code></strong> / <strong><code>pollLast()</code></strong>: Recuperan y <strong>eliminan</strong> el primero o el último. Devuelven <code>null</code> si está vacío (más seguros).<br/></p>
+<h4 id="ejemplo-sistema-de-puntuaciones-leaderboard">Ejemplo: Sistema de Puntuaciones (Leaderboard)</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.TreeSet</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HighScores</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">puntuaciones</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">puntuaciones</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="w">        </span><span class="n">puntuaciones</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// Mínimo</span>
+<span class="w">        </span><span class="n">puntuaciones</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">9000</span><span class="p">);</span><span class="w"> </span><span class="c1">// Máximo</span>
+<span class="w">        </span><span class="n">puntuaciones</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">2500</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Puntuación más baja (Noob): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">puntuaciones</span><span class="p">.</span><span class="na">first</span><span class="p">());</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Puntuación más alta (Pro): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">puntuaciones</span><span class="p">.</span><span class="na">last</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Lista vacía"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Eliminamos al peor y al mejor</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Eliminando al peor: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">puntuaciones</span><span class="p">.</span><span class="na">pollFirst</span><span class="p">());</span><span class="w"> </span><span class="c1">// 100</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Eliminando al mejor: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">puntuaciones</span><span class="p">.</span><span class="na">pollLast</span><span class="p">());</span><span class="w"> </span><span class="c1">// 9000</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Quedan en medio: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">puntuaciones</span><span class="p">);</span><span class="w"> </span><span class="c1">// [500, 2500]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="3-busqueda-de-proximidad-ceiling-floor">3. Búsqueda de Proximidad (Ceiling, Floor...)</h3>
+<p>Aquí es donde <code>TreeSet</code> justifica su sueldo. Imaginad buscar precios de vuelos.</p>
+<p><strong>Métodos:</strong><br/>
+*   <strong><code>ceiling(E e)</code></strong> ("Techo"): Devuelve el menor elemento que sea <strong>mayor o igual</strong> (&gt;=) al dado.<br/>
+*   <strong><code>floor(E e)</code></strong> ("Suelo"): Devuelve el mayor elemento que sea <strong>menor o igual</strong> (&lt;=) al dado.<br/>
+*   <strong><code>higher(E e)</code></strong> ("Estrictamente Mayor"): Devuelve el menor elemento <strong>mayor estricto</strong> (&gt;) al dado.<br/>
+*   <strong><code>lower(E e)</code></strong> ("Estrictamente Menor"): Devuelve el mayor elemento <strong>menor estricto</strong> (&lt;) al dado.<br/></p>
+<p>Recuerda: <code>Ceiling/Floor</code> admiten empate. <code>Higher/Lower</code> no.</p>
+<h4 id="ejemplo-buscador-de-tarifas-de-vuelo">Ejemplo: Buscador de Tarifas de Vuelo</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.TreeSet</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BuscadorVuelos</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">precios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="c1">// Precios disponibles</span>
+<span class="w">        </span><span class="n">precios</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+<span class="w">        </span><span class="n">precios</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">        </span><span class="n">precios</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">150</span><span class="p">);</span>
+<span class="w">        </span><span class="n">precios</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span>
+<span class="w">        </span><span class="n">precios</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">miPresupuesto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">150</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Mi presupuesto exacto: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">miPresupuesto</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// floor: Quiero gastar 150 o menos (lo más cercano posible)</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Floor (&lt;= 150): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">precios</span><span class="p">.</span><span class="na">floor</span><span class="p">(</span><span class="n">miPresupuesto</span><span class="p">));</span><span class="w"> </span><span class="c1">// 150</span>
+
+<span class="w">        </span><span class="c1">// lower: Quiero gastar MENOS de 150 obligatoriamente</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Lower (&lt; 150): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">precios</span><span class="p">.</span><span class="na">lower</span><span class="p">(</span><span class="n">miPresupuesto</span><span class="p">));</span><span class="w"> </span><span class="c1">// 100</span>
+
+<span class="w">        </span><span class="c1">// ceiling: Si no hay de 150, ¿cuál es el siguiente más barato?</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Ceiling (&gt;= 150): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">precios</span><span class="p">.</span><span class="na">ceiling</span><span class="p">(</span><span class="n">miPresupuesto</span><span class="p">));</span><span class="w"> </span><span class="c1">// 150</span>
+
+<span class="w">        </span><span class="c1">// higher: Quiero algo mejor (más caro) que 150</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Higher (&gt; 150): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">precios</span><span class="p">.</span><span class="na">higher</span><span class="p">(</span><span class="n">miPresupuesto</span><span class="p">));</span><span class="w"> </span><span class="c1">// 300</span>
+
+<span class="w">        </span><span class="c1">// Caso null: Buscamos algo menor que 10 euros</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¿Vuelo por 10€? "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">precios</span><span class="p">.</span><span class="na">floor</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span><span class="w"> </span><span class="c1">// null</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="4-vistas-de-rango-subset-headset-tailset">4. Vistas de Rango (SubSet, HeadSet, TailSet)</h3>
+<p>Estos métodos no crean copias, sino <strong>ventanas</strong> hacia el conjunto original. Si borras algo en la vista, ¡se borra en el original!</p>
+<p><strong>Métodos:</strong><br/>
+*   <strong><code>subSet(from, to)</code></strong>: Rango [desde, hasta). El "hasta" es exclusivo por defecto.<br/>
+*   <strong><code>headSet(to)</code></strong>: Desde el principio hasta el elemento (exclusivo).<br/>
+*   <strong><code>tailSet(from)</code></strong>: Desde el elemento (inclusivo) hasta el final.<br/></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.TreeSet</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.SortedSet</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FiltroRango</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span><span class="w"> </span><span class="n">alfabeto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'a'</span><span class="p">;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">'z'</span><span class="p">;</span><span class="w"> </span><span class="n">c</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">alfabeto</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// 1. subSet: De la 'a' (incluida) a la 'd' (excluida)</span>
+<span class="w">        </span><span class="n">SortedSet</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rango</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alfabeto</span><span class="p">.</span><span class="na">subSet</span><span class="p">(</span><span class="sc">'a'</span><span class="p">,</span><span class="w"> </span><span class="sc">'d'</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Primeras letras: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rango</span><span class="p">);</span><span class="w"> </span><span class="c1">// [a, b, c]</span>
+
+<span class="w">        </span><span class="c1">// 2. tailSet: De la 'x' al final</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Últimas letras: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">alfabeto</span><span class="p">.</span><span class="na">tailSet</span><span class="p">(</span><span class="sc">'x'</span><span class="p">));</span><span class="w"> </span><span class="c1">// [x, y, z]</span>
+
+<span class="w">        </span><span class="c1">// 3. Demostración de vista conectada</span>
+<span class="w">        </span><span class="c1">// ¡OJO! Si borro la 'a' del subSet, desaparece del conjunto principal</span>
+<span class="w">        </span><span class="n">rango</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="sc">'a'</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Alfabeto original tras borrar en la vista: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">alfabeto</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// La 'a' ha desaparecido.</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="5-iteracion-y-utilidades-avanzadas">5. Iteración y Utilidades Avanzadas</h3>
+<p><strong>Métodos:</strong><br/>
+*   <strong><code>iterator()</code></strong>: Recorre en orden ascendente (menor a mayor).<br/>
+*   <strong><code>descendingIterator()</code></strong>: Recorre en orden descendente (mayor a menor).<br/>
+*   <strong><code>descendingSet()</code></strong>: Devuelve una vista completa del conjunto al revés.<br/>
+*   <strong><code>comparator()</code></strong>: Devuelve el comparador usado, o <code>null</code> si usa orden natural.<br/>
+*   <strong><code>spliterator()</code></strong>: Para paralelismo (avanzado, Java 8+).<br/></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.TreeSet</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Iterator</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">IteracionAvanzada</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">TreeSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">palabras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">palabras</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Banana"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">palabras</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Avión"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">palabras</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">"Cereza"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Orden natural</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Orden normal: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">palabras</span><span class="p">);</span><span class="w"> </span><span class="c1">// [Avión, Banana, Cereza]</span>
+
+<span class="w">        </span><span class="c1">// Iterador inverso</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Inverso: "</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">palabras</span><span class="p">.</span><span class="na">descendingIterator</span><span class="p">();</span>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">it</span><span class="p">.</span><span class="na">next</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" "</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="c1">// Salida: Cereza Banana Avión </span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Vista inversa completa</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Set Invertido: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">palabras</span><span class="p">.</span><span class="na">descendingSet</span><span class="p">());</span>
+
+<span class="w">        </span><span class="c1">// Verificamos el comparador</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¿Tiene comparador manual? "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">palabras</span><span class="p">.</span><span class="na">comparator</span><span class="p">());</span><span class="w"> </span><span class="c1">// null</span>
+
+<span class="w">        </span><span class="c1">// Spliterator (Para Streams)</span>
+<span class="w">        </span><span class="n">palabras</span><span class="p">.</span><span class="na">spliterator</span><span class="p">().</span><span class="na">forEachRemaining</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><br/></p><hr/><p></p>
+<h3 id="diagrama-mermaid-arbol-rojo-negro-simplificado">Diagrama Mermaid: Árbol Rojo-Negro Simplificado</h3>
+<p>Así es como <code>TreeSet</code> organiza los números internamente para encontrar todo tan rápido.</p>
+<pre class="mermaid"><code>graph TD
+    Root((20))
+    L1((10))
+    R1((30))
+    L2((5))
+    R2((15))
+    R3((25))
+    R4((40))
+
+    Root --&gt;|Menor| L1
+    Root --&gt;|Mayor| R1
+    L1 --&gt;|Menor| L2
+    L1 --&gt;|Mayor| R2
+    R1 --&gt;|Menor| R3
+    R1 --&gt;|Mayor| R4
+
+    style Root fill:#f96,stroke:#333
+    style L1 fill:#9cf,stroke:#333
+    style R1 fill:#9cf,stroke:#333</code></pre>
+<h3 id="tabla-comparativa-treeset-vs-hashset">Tabla Comparativa: TreeSet vs HashSet</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Característica</th>
+<th style="text-align: left;">HashSet (La Fiesta)</th>
+<th style="text-align: left;">TreeSet (La Biblioteca)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Orden</strong></td>
+<td style="text-align: left;">Ninguno (Caótico)</td>
+<td style="text-align: left;">Ordenado (Natural o Comparator)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Velocidad (Add/Remove)</strong></td>
+<td style="text-align: left;">O(1) - Flash ⚡</td>
+<td style="text-align: left;">O(log n) - Rápido 🏎️</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Nulos (<code>null</code>)</strong></td>
+<td style="text-align: left;">Permite 1</td>
+<td style="text-align: left;">❌ Prohibidos (generalmente)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Navegación</strong></td>
+<td style="text-align: left;">No existe</td>
+<td style="text-align: left;"><code>higher</code>, <code>lower</code>, <code>subSet</code>...</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Memoria</strong></td>
+<td style="text-align: left;">Menos consumo</td>
+<td style="text-align: left;">Más consumo (punteros del árbol)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition question">
+<p class="admonition-title">Ejercicios Reflexivos</p>
+<ol>
+<li><strong>Búsqueda vs Orden</strong>: Si solo necesitas saber si un elemento existe (<code>contains</code>), ¿usarías TreeSet o HashSet? ¿Por qué?</li>
+<li><strong>El caso del objeto mutable</strong>: Si insertas un objeto en un TreeSet ordenado por un atributo "edad", y luego modificas esa edad fuera del Set... ¿qué crees que le pasa al árbol? (Pista: El árbol no se entera automáticamente y se "rompe" el orden).</li>
+<li><strong>Subconjuntos</strong>: ¿Para qué podría servirte <code>subSet</code> en una aplicación de calendario con eventos fechados?</li>
+</ol>
+</div>
+<h2 id="aplicacion-en-el-mundo-real">Aplicación en el Mundo Real</h2>
+<ol>
+<li>
+<p><strong>Bases de Datos (Índices)</strong>:
+    Aunque las BD usan estructuras más complejas (B-Trees), el concepto es idéntico al <code>TreeSet</code>. Mantener los índices ordenados permite hacer consultas de rangos (<code>WHERE fecha BETWEEN X AND Y</code>) de forma eficiente sin recorrer toda la tabla.</p>
+</li>
+<li>
+<p><strong>Planificador de Tareas (Schedulers)</strong>:
+    Imagina un sistema que tiene que ejecutar tareas programadas. Usas un <code>TreeSet</code> de tareas ordenadas por "hora de ejecución".</p>
+<ul>
+<li><code>first()</code> te da siempre la siguiente tarea a ejecutar inmediatamente.</li>
+<li>No tienes que buscar entre todas las tareas, solo miras la primera.</li>
+</ul>
+</li>
+<li>
+<p><strong>Corrector Ortográfico (Sugerencias)</strong>:
+    Si tienes un diccionario cargado en un <code>TreeSet&lt;String&gt;</code>, cuando alguien escribe "progra", puedes usar <code>tailSet("progra")</code> para encontrar rápidamente todas las palabras que empiezan por ese prefijo y sugerir autocompletado.</p>
+</li>
+</ol>
+<h2 id="para-saber-mas">Para Saber Más</h2>
+<ul>
+<li>
+<p><strong>Documentación Oficial de TreeSet</strong>:
+    <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/TreeSet.html">https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/TreeSet.html</a></p>
+</li>
+<li>
+<p><strong>GeeksForGeeks - TreeSet with Examples</strong>: Explicación detallada y más casos de uso.
+    <a href="https://www.geeksforgeeks.org/java/treeset-in-java-with-examples/">https://www.geeksforgeeks.org/java/treeset-in-java-with-examples/</a></p>
+</li>
+<li>
+<p><strong>Visualización de Árboles (USF)</strong>: Juega insertando números para ver cómo el árbol se balancea solo. (Selecciona "Red-Black Tree").
+    <a href="https://www.cs.usfca.edu/~galles/visualization/RedBlack.html">https://www.cs.usfca.edu/~galles/visualization/RedBlack.html</a></p>
+</li>
+</ul>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script type="text/javascript">(function initializeMarkmap() {
+    const transformer = new markmap.Transformer();
+    const preloadScripts = transformer.plugins
+        .flatMap((plugin) => plugin.config?.preloadScripts || [])
+        .map((item) => transformer.resolveJS(item));
+    const assets = transformer.getAssets();
+    const loading = Promise.all([
+        assets.styles && markmap.loadCSS(assets.styles),
+        markmap.loadJS([...preloadScripts, ...assets.scripts]),
+    ]);
+
+    function parseData(content) {
+        const { root, frontmatter } = transformer.transform(content);
+        let options = markmap.deriveOptions(frontmatter?.markmap);
+        options = Object.assign(
+            {
+                fitRatio: 0.85,
+            },
+            options
+        );
+        return { root, options };
+    }
+
+    function resetMarkmap(m, el) {
+        if (!m.state.rect) return;
+        const { x1, y1, x2, y2 } = m.state.rect;
+        const height = (el.offsetWidth / (x2 - x1)) * (y2 - y1);
+        el.style.height = height + "px";
+        m.fit();
+    }
+
+    function decodeBase64(encoded) {
+        const binary = atob(encoded);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < bytes.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        return new TextDecoder().decode(bytes);
+    }
+
+    function renderMarkmap(el) {
+        const dataEl = el.querySelector("markmap-data");
+        if (!dataEl) return;
+        let content = el.textContent;
+        if (dataEl.getAttribute("encoding") === "base64") {
+            content = decodeBase64(content);
+        }
+        el.innerHTML = "<svg>";
+        svg = el.firstChild;
+        const { root, options } = parseData(content);
+        const m = markmap.Markmap.create(svg, options);
+        m.setData(root);
+        requestAnimationFrame(() => {
+            resetMarkmap(m, el);
+        });
+    }
+
+    function updateMarkmaps(node) {
+        for (const el of node.querySelectorAll(".mkdocs-markmap")) {
+            renderMarkmap(el);
+        }
+    }
+
+    loading.then(() => {
+        const observer = new MutationObserver((mutationList) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "childList") {
+                    for (const node of mutation.addedNodes) {
+                        updateMarkmaps(node);
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true });
+
+        updateMarkmaps(document);
+    });
+})();
+</script></body></html>

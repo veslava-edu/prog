@@ -1,0 +1,2002 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>3 Programacion modular ejercicios alt - PROG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ejercicios-practicos-programacion-modular-en-java" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PROG" class="md-header__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PROG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3 Programacion modular ejercicios alt
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../1-Introduccion-programacion/" class="md-tabs__link">
+          
+  
+  
+  Programación
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PROG" class="md-nav__button md-logo" aria-label="PROG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    PROG
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-Introduccion-programacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-Programacion-estructurada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-Programacion-modular/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-Estructuras-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-POO-Clases-y-Objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-POO-Uso-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-Estructuras-datos-dinamicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-Programacion-funcional-Streams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-Ficheros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-Acceso-base-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-Interfaces-graficas-MVC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#narrativa-del-proyecto-backend-para-wellcorp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Narrativa del Proyecto: Backend para "WellCorp"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-consolidacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Consolidación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Consolidación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup Inicial:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-refuerzo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Refuerzo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Refuerzo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-ampliacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicios de Ampliación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Ampliación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetivo_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-a-realizar_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea a realizar:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-en-el-mundo-real_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- Nombre de archivo sugerido: 3-Programacion-modular-ejercicios.md --><h1 id="ejercicios-practicos-programacion-modular-en-java">Ejercicios Prácticos: Programación Modular en Java</h1>
+<h2 id="narrativa-del-proyecto-backend-para-wellcorp">Narrativa del Proyecto: Backend para "WellCorp"</h2>
+<p>Bienvenidos al equipo de desarrollo de <strong>WellCorp</strong>, una nueva plataforma de bienestar corporativo. Nuestra misión es crear una aplicación que permita a los empleados registrar sus actividades físicas, monitorizar su progreso y participar en retos de la empresa.</p>
+<p>Para construir un sistema robusto y escalable, aplicaremos desde el primer día los principios de la <strong>programación modular</strong>. Vuestra tarea será desarrollar diferentes módulos (métodos en Java) que se encargarán de la lógica de negocio de la plataforma. ¡Manos al código!</p>
+<hr>
+<h2 id="ejercicios-de-consolidacion">Ejercicios de Consolidación</h2>
+<div class="admonition abstract">
+<p class="admonition-title">1) El Glosario del Desarrollador de WellCorp | Nivel: Fácil</p>
+<h5 id="objetivo"><strong>Objetivo:</strong></h5>
+<p>Asegurar la comprensión de los conceptos teóricos fundamentales de la programación modular antes de escribir código.</p>
+<h5 id="tarea-a-realizar"><strong>Tarea a realizar:</strong></h5>
+<p>Responde a las siguientes preguntas como si estuvieras documentando el glosario para un nuevo miembro del equipo de WellCorp.</p>
+<ol>
+<li>En nuestra plataforma, necesitamos un módulo que calcule el total de calorías quemadas en una semana y nos dé ese número. ¿Deberíamos implementarlo como una <strong>función</strong> o un <strong>procedimiento</strong>? ¿Por qué?</li>
+<li>Vamos a crear otro módulo para imprimir un ticket de resumen de actividad en la consola. ¿Será una <strong>función</strong> o un <strong>procedimiento</strong>? ¿Qué palabra clave (<code>void</code> o <code>return</code>) define su naturaleza?</li>
+<li>Al llamar al método <code>registrarActividad("Juan Pérez", "Running", 60)</code>, ¿qué son <code>"Juan Pérez"</code>, <code>"Running"</code> y <code>60</code>? ¿<strong>Parámetros</strong> o <strong>argumentos</strong>?</li>
+<li>Si dentro de un método <code>calcularMetas</code>, declaramos una variable <code>int metaDiaria = 10000;</code>, ¿podemos acceder a <code>metaDiaria</code> desde el método <code>main</code>? ¿Por qué?</li>
+<li>¿Qué demuestra el <strong>Teorema del Programa Estructurado</strong> y cuáles son las tres estructuras de control que propone?</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Utilizar la terminología correcta es crucial en un entorno profesional para comunicarse de manera efectiva con otros desarrolladores, evitar malentendidos y escribir documentación clara.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<ol>
+<li><strong>Función</strong>. Porque necesita realizar un cálculo y <strong>devolver un resultado</strong> (el número total de calorías) que probablemente será utilizado en otra parte del programa (por ejemplo, para asignarlo a una variable o mostrarlo en la interfaz).</li>
+<li><strong>Procedimiento</strong>. Su única tarea es realizar una acción (imprimir en consola) pero no necesita devolver ningún valor. Se define usando la palabra clave <strong><code>void</code></strong>.</li>
+<li>Son <strong>argumentos</strong>. Son los valores reales y concretos que se le pasan al método en el momento de la llamada. Los <strong>parámetros</strong> son las variables declaradas en la firma del método que reciben estos valores.</li>
+<li><strong>No</strong>. La variable <code>metaDiaria</code> es <strong>local</strong> al método <code>calcularMetas</code>. Su <strong>ámbito (scope)</strong> se limita a ese método. Muere cuando el método termina su ejecución y es inaccesible desde el exterior.</li>
+<li>El <strong>Teorema del Programa Estructurado</strong> demuestra que cualquier algoritmo puede ser implementado usando únicamente tres estructuras de control: <strong>Secuencia</strong> (una instrucción después de otra), <strong>Selección</strong> (condicionales como <code>if</code>/<code>switch</code>) e <strong>Iteración</strong> (bucles como <code>for</code>/<code>while</code>). Esto elimina la necesidad del caótico <code>goto</code>.</li>
+</ol>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">2) Depuración: El Misterio de los Puntos de Bienestar | Nivel: Fácil</p>
+<h5 id="objetivo_1"><strong>Objetivo:</strong></h5>
+<p>Identificar y corregir un error común relacionado con el paso de parámetros por valor en tipos primitivos.</p>
+<h5 id="setup-inicial"><strong>Setup Inicial:</strong></h5>
+<p>En WellCorp, los usuarios ganan puntos por cada actividad. Un desarrollador junior ha intentado crear un método para añadir puntos a un usuario, pero no funciona como esperaba.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Código con errores</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">WellnessPoints</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addBonusPoints</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">currentPoints</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  -&gt; Método recibe puntos: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">currentPoints</span><span class="p">);</span>
+<span class="w">        </span><span class="n">currentPoints</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="c1">// Añade 100 puntos de bonus</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  -&gt; Método modifica los puntos a: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">currentPoints</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">userPoints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Puntos del usuario ANTES de llamar al método: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userPoints</span><span class="p">);</span>
+<span class="w">        </span><span class="n">addBonusPoints</span><span class="p">(</span><span class="n">userPoints</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Puntos del usuario DESPUÉS de llamar al método: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userPoints</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="tarea-a-realizar_1"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Ejecuta el código mentalmente o en un IDE. ¿Cuál es el resultado final impreso en la consola?</li>
+<li>Explica por qué <code>userPoints</code> en el <code>main</code> no cambia su valor.</li>
+<li>Modifica el método <code>addBonusPoints</code> para que sea una <strong>función</strong> que <strong>devuelva</strong> el nuevo total de puntos.</li>
+<li>Ajusta la llamada en el <code>main</code> para que capture el valor devuelto y actualice <code>userPoints</code> correctamente.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_1"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Entender el paso por valor es fundamental en Java. Este error es uno de los más comunes al empezar y saber cómo manejarlo correctamente (por ejemplo, devolviendo el nuevo valor) es una habilidad clave.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<ol>
+<li>El resultado final será <code>Puntos del usuario DESPUÉS de llamar al método: 500</code>.</li>
+<li>
+<p>La variable <code>userPoints</code> no cambia porque los tipos primitivos en Java (<code>int</code> en este caso) se pasan <strong>por valor</strong>. El método <code>addBonusPoints</code> recibe una <strong>copia</strong> de <code>userPoints</code>, no la variable original. Cualquier cambio se realiza sobre esa copia local, que se destruye al finalizar el método.</p>
+</li>
+<li>
+<p>y 4. <strong>Código Corregido:</strong></p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">WellnessPoints</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// 3. Convertido a una FUNCIÓN que devuelve el nuevo valor</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">addBonusPoints</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">currentPoints</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  -&gt; Método recibe puntos: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">currentPoints</span><span class="p">);</span>
+<span class="w">        </span><span class="n">currentPoints</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="c1">// Añade 100 puntos de bonus</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  -&gt; Método calcula los nuevos puntos: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">currentPoints</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">currentPoints</span><span class="p">;</span><span class="w"> </span><span class="c1">// Devuelve el resultado</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">userPoints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Puntos del usuario ANTES de llamar al método: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userPoints</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 4. Se captura el valor devuelto y se reasigna a la variable original</span>
+<span class="w">        </span><span class="n">userPoints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addBonusPoints</span><span class="p">(</span><span class="n">userPoints</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Puntos del usuario DESPUÉS de llamar al método: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userPoints</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">3) Módulo de Registro: Tu Primera Función y Procedimiento | Nivel: Fácil</p>
+<h5 id="objetivo_2"><strong>Objetivo:</strong></h5>
+<p>Crear un método que devuelve un valor (función) y otro que solo realiza una acción (procedimiento) para afianzar la diferencia.</p>
+<h5 id="tarea-a-realizar_2"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una <strong>función</strong> estática llamada <code>calculateWeeklyScore</code>.<ul>
+<li>Debe recibir un array de enteros (<code>int[]</code>) que representa los pasos diarios de un usuario durante una semana (7 días).</li>
+<li>Debe calcular la suma total de los pasos de la semana.</li>
+<li>Debe <strong>devolver</strong> el total calculado como un <code>int</code>.</li>
+</ul>
+</li>
+<li>Crea un <strong>procedimiento</strong> estático llamado <code>displayUserProfile</code>.<ul>
+<li>Debe recibir tres <code>String</code>: <code>username</code>, <code>department</code> y un <code>int</code> <code>totalScore</code>.</li>
+<li>Debe imprimir en consola una ficha de usuario formateada con estos datos.</li>
+</ul>
+</li>
+<li>En el método <code>main</code>, crea un array de pasos, llama a <code>calculateWeeklyScore</code> para obtener el total, y luego llama a <code>displayUserProfile</code> para mostrar la ficha completa.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_2"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>En cualquier aplicación, la lógica se separa constantemente: algunos métodos calculan datos (funciones) mientras que otros los muestran o los guardan (procedimientos). Esta separación de responsabilidades es la base del código limpio.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserDashboard</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * FUNCIÓN: Calcula la suma de pasos de un array y devuelve el total.</span>
+<span class="cm">     * @param dailySteps Array con los pasos de 7 días.</span>
+<span class="cm">     * @return La suma total de los pasos.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">calculateWeeklyScore</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">dailySteps</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">steps</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">dailySteps</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">steps</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * PROCEDIMIENTO: Muestra una ficha de usuario en consola. No devuelve nada (void).</span>
+<span class="cm">     * @param username Nombre del usuario.</span>
+<span class="cm">     * @param department Departamento del usuario.</span>
+<span class="cm">     * @param totalScore Puntuación total a mostrar.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">displayUserProfile</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">department</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">totalScore</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"==================================="</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"      PERFIL DE USUARIO WellCorp   "</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"-----------------------------------"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Usuario: \t"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">username</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Departamento: \t"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">department</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Puntuación Semanal: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">totalScore</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" pasos"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"==================================="</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Datos de un usuario de ejemplo</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Ana García"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Desarrollo"</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">weekSteps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">8500</span><span class="p">,</span><span class="w"> </span><span class="mi">9200</span><span class="p">,</span><span class="w"> </span><span class="mi">10500</span><span class="p">,</span><span class="w"> </span><span class="mi">7800</span><span class="p">,</span><span class="w"> </span><span class="mi">12000</span><span class="p">,</span><span class="w"> </span><span class="mi">6500</span><span class="p">,</span><span class="w"> </span><span class="mi">11000</span><span class="p">};</span>
+
+<span class="w">        </span><span class="c1">// 1. Llamar a la función para obtener el resultado</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calculateWeeklyScore</span><span class="p">(</span><span class="n">weekSteps</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 2. Llamar al procedimiento para que realice su acción</span>
+<span class="w">        </span><span class="n">displayUserProfile</span><span class="p">(</span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">dept</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">4) Actualización de Perfil: Entendiendo el Paso por Referencia | Nivel: Fácil</p>
+<h5 id="objetivo_3"><strong>Objetivo:</strong></h5>
+<p>Observar cómo la modificación del estado de un objeto dentro de un método afecta a la variable original fuera de él.</p>
+<h5 id="tarea-a-realizar_3"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea un método estático y <code>void</code> (procedimiento) llamado <code>promoteUser</code>.<ul>
+<li>Este método debe recibir un array de <code>String</code> como parámetro, que representará los datos de un usuario: <code>userData[0]</code> es el nombre y <code>userData[1]</code> es el rol.</li>
+</ul>
+</li>
+<li>Dentro de <code>promoteUser</code>, modifica el segundo elemento del array (<code>userData[1]</code>) al valor <code>"Team Lead"</code>.</li>
+<li>En el método <code>main</code>:<ul>
+<li>Crea un array de <code>String</code> llamado <code>employee</code> con los valores <code>{"Carlos Ruiz", "Developer"}</code>.</li>
+<li>Imprime el rol del empleado <strong>antes</strong> de llamar a <code>promoteUser</code>.</li>
+<li>Llama al método <code>promoteUser</code>, pasándole el array <code>employee</code>.</li>
+<li>Imprime el rol del empleado <strong>después</strong> de llamar al método.</li>
+</ul>
+</li>
+<li>Analiza el resultado. ¿Por qué cambió el array original en <code>main</code> esta vez?</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_3"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Este comportamiento es la base de cómo se manipulan los objetos en Java. Cuando pasas un objeto a un método (por ejemplo, un objeto <code>User</code> a un método <code>updateEmail</code>), esperas que los cambios realizados dentro del método persistan en el objeto original.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<p></p><div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserPromotion</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Modifica el estado del objeto (array) recibido.</span>
+<span class="cm">     * @param userData Array con los datos del usuario.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">promoteUser</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">userData</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  -&gt; Método recibe el rol: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userData</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Modificamos el contenido del objeto al que apunta la referencia</span>
+<span class="w">        </span><span class="n">userData</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Team Lead"</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"  -&gt; Método actualiza el rol a: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userData</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">"Carlos Ruiz"</span><span class="p">,</span><span class="w"> </span><span class="s">"Developer"</span><span class="p">};</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Rol ANTES de la promoción: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">employee</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">promoteUser</span><span class="p">(</span><span class="n">employee</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Rol DESPUÉS de la promoción: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">employee</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>Análisis del resultado:</strong>
+El array original en <code>main</code> cambia porque en Java, los objetos (y los arrays son objetos) se pasan por <strong>copia de la referencia</strong>. Esto significa que el método <code>promoteUser</code> no recibe una copia del array en sí, sino una copia de la <strong>dirección de memoria</strong> donde se encuentra el array original. Tanto <code>employee</code> en <code>main</code> como <code>userData</code> en <code>promoteUser</code> apuntan al <strong>mismo objeto en memoria</strong>. Por lo tanto, cualquier modificación en el estado interno del objeto a través de una de estas referencias es visible a través de la otra.<p></p>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">5) Generador de Nombres de Usuario | Nivel: Fácil</p>
+<h5 id="objetivo_4"><strong>Objetivo:</strong></h5>
+<p>Practicar la creación de una función que manipula cadenas de texto (<code>String</code>) y devuelve un nuevo valor.</p>
+<h5 id="tarea-a-realizar_4"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Basándote en el ejemplo <code>generateUsername</code> del material didáctico, crea tu propia versión de una función estática con las siguientes reglas:<ul>
+<li>Nombre del método: <code>createAlias</code>.</li>
+<li>Recibe dos <code>String</code>: <code>firstName</code> y <code>birthYear</code>.</li>
+<li>El alias se formará con:<ul>
+<li>Las primeras tres letras del nombre, en mayúsculas.</li>
+<li>El carácter <code>_</code>.</li>
+<li>Los dos últimos dígitos del año de nacimiento.</li>
+</ul>
+</li>
+<li>Ejemplo: <code>createAlias("Beatriz", "1995")</code> debería devolver <code>"BEA_95"</code>.</li>
+</ul>
+</li>
+<li>Añade una validación: si el nombre tiene menos de 3 letras, deberá usar el nombre completo. Ejemplo: <code>createAlias("Ana", "2001")</code> debería devolver <code>"ANA_01"</code>.</li>
+<li>Llama a la función desde <code>main</code> con al menos dos ejemplos diferentes y muestra el resultado.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_4"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Generar identificadores únicos, slugs para URLs, o códigos de referencia a partir de otros datos es una tarea extremadamente común en el desarrollo de backends para cualquier tipo de aplicación.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AliasGenerator</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Crea un alias de usuario basado en su nombre y año de nacimiento.</span>
+<span class="cm">     * @param firstName El nombre del usuario.</span>
+<span class="cm">     * @param birthYear El año de nacimiento del usuario como String.</span>
+<span class="cm">     * @return Un alias formateado, por ejemplo, "BEA_95".</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">createAlias</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">firstName</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">birthYear</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Validación por si los datos son nulos o vacíos</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">firstName</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">birthYear</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">firstName</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">birthYear</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s">"INVALID_DATA"</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">namePart</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">firstName</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">namePart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">firstName</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">namePart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">firstName</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">).</span><span class="na">toUpperCase</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">yearPart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">birthYear</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// Obtiene los dos últimos caracteres</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">namePart</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"_"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">yearPart</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">alias1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createAlias</span><span class="p">(</span><span class="s">"Beatriz"</span><span class="p">,</span><span class="w"> </span><span class="s">"1995"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Alias para Beatriz (1995): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">alias1</span><span class="p">);</span><span class="w"> </span><span class="c1">// BEA_95</span>
+
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">alias2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createAlias</span><span class="p">(</span><span class="s">"Ana"</span><span class="p">,</span><span class="w"> </span><span class="s">"2001"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Alias para Ana (2001): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">alias2</span><span class="p">);</span><span class="w"> </span><span class="c1">// ANA_01</span>
+
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">alias3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createAlias</span><span class="p">(</span><span class="s">"Leo"</span><span class="p">,</span><span class="w"> </span><span class="s">"2010"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Alias para Leo (2010): "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">alias3</span><span class="p">);</span><span class="w"> </span><span class="c1">// LEO_10</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<hr>
+<h2 id="ejercicios-de-refuerzo">Ejercicios de Refuerzo</h2>
+<div class="admonition warning">
+<p class="admonition-title">6) Registro de Actividad con Sobrecarga | Nivel: Medio</p>
+<h5 id="objetivo_5"><strong>Objetivo:</strong></h5>
+<p>Implementar la sobrecarga de métodos para ofrecer distintas formas de registrar una actividad física, aportando flexibilidad al sistema WellCorp.</p>
+<h5 id="tarea-a-realizar_5"><strong>Tarea a realizar:</strong></h5>
+<p>Crea una clase <code>ActivityLogger</code> con tres versiones sobrecargadas del método <code>logActivity</code>:
+1.  <code>logActivity(String user, String activityType)</code>: Esta versión solo registra una actividad simple. Debe imprimir un mensaje como <code>"[INFO] - El usuario [user] ha registrado la actividad: [activityType]."</code>.
+2.  <code>logActivity(String user, String activityType, int durationInMinutes)</code>: Esta versión añade la duración. Debe imprimir un mensaje como <code>"[INFO] - El usuario [user] ha registrado [activityType] durante [duration] minutos."</code>.
+3.  <code>logActivity(String user, String activityType, int durationInMinutes, int caloriesBurned)</code>: La versión más completa, que también incluye las calorías quemadas. Debe imprimir <code>"[INFO] - El usuario [user] ha completado [activityType] ([duration] min), quemando [calories] kcal."</code>.</p>
+<p>En el <code>main</code>, llama a cada una de las tres versiones para demostrar que Java elige la correcta basándose en los argumentos proporcionados.</p>
+<ul>
+<li><strong>Pista:</strong> Recuerda que la sobrecarga funciona si la <strong>lista de parámetros</strong> (cantidad o tipo) es diferente entre los métodos con el mismo nombre. El tipo de retorno no influye.</li>
+</ul>
+<h5 id="aplicacion-en-el-mundo-real_5"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>La sobrecarga es muy usada en librerías y frameworks para proporcionar "constructores" o métodos que pueden ser llamados de formas más simples o más complejas según la necesidad del desarrollador, mejorando la usabilidad de la API.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.LocalDateTime</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.time.format.DateTimeFormatter</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ActivityLogger</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Método base para obtener el timestamp, para no repetir código.</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getTimestamp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">format</span><span class="p">(</span><span class="n">DateTimeFormatter</span><span class="p">.</span><span class="na">ofPattern</span><span class="p">(</span><span class="s">"yyyy-MM-dd HH:mm:ss"</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Versión 1: Actividad simple</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">logActivity</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">activityType</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="w">            </span><span class="s">"["</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">getTimestamp</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"] [INFO] - El usuario "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" ha registrado la actividad: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">activityType</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"."</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Versión 2: Con duración</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">logActivity</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">activityType</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">durationInMinutes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="w">            </span><span class="s">"["</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">getTimestamp</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"] [INFO] - El usuario "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" ha registrado "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">activityType</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" durante "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">durationInMinutes</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" minutos."</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Versión 3: Con duración y calorías</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">logActivity</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">activityType</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">durationInMinutes</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">caloriesBurned</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+<span class="w">            </span><span class="s">"["</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">getTimestamp</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"] [INFO] - El usuario "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" ha completado "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">activityType</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" ("</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">durationInMinutes</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" min), quemando "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">caloriesBurned</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" kcal."</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Registrando actividades en WellCorp..."</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Llamada a la primera versión</span>
+<span class="w">        </span><span class="n">logActivity</span><span class="p">(</span><span class="s">"Laura"</span><span class="p">,</span><span class="w"> </span><span class="s">"Meditación"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Llamada a la segunda versión</span>
+<span class="w">        </span><span class="n">logActivity</span><span class="p">(</span><span class="s">"Marcos"</span><span class="p">,</span><span class="w"> </span><span class="s">"Running"</span><span class="p">,</span><span class="w"> </span><span class="mi">45</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Llamada a la tercera versión</span>
+<span class="w">        </span><span class="n">logActivity</span><span class="p">(</span><span class="s">"Elena"</span><span class="p">,</span><span class="w"> </span><span class="s">"Ciclismo"</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">650</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">7) Módulo de Validación de Datos | Nivel: Medio</p>
+<h5 id="objetivo_6"><strong>Objetivo:</strong></h5>
+<p>Crear un módulo de validación con varios métodos que encapsulen reglas de negocio específicas, promoviendo la reutilización de código.</p>
+<h5 id="tarea-a-realizar_6"><strong>Tarea a realizar:</strong></h5>
+<p>Crea una clase <code>DataValidator</code> con dos funciones de validación estáticas y públicas:
+1.  <code>isValidEmail(String email)</code>:
+    *   Debe devolver <code>true</code> si el email contiene un símbolo <code>@</code> y un <code>.</code> después del <code>@</code>.
+    *   Debe devolver <code>false</code> en cualquier otro caso.
+    *   No es necesario usar expresiones regulares complejas, una simple comprobación de la presencia y orden de los caracteres es suficiente.
+2.  <code>isPasswordSecure(String password)</code>:
+    *   Debe devolver <code>true</code> solo si la contraseña cumple <strong>todas</strong> estas condiciones:
+        *   Tiene al menos 8 caracteres de longitud.
+        *   Contiene al menos un número (puedes hacer un bucle y usar <code>Character.isDigit()</code>).
+    *   Debe devolver <code>false</code> si alguna de las condiciones no se cumple.
+3.  Crea un procedimiento <code>registerUser(String email, String password)</code> que use los dos métodos anteriores.
+    *   Si ambos son válidos, debe imprimir "Usuario registrado con éxito."
+    *   Si el email es inválido, debe imprimir "Error: El formato del email es incorrecto."
+    *   Si la contraseña es insegura, debe imprimir "Error: La contraseña no cumple los requisitos de seguridad."
+4.  Llama a <code>registerUser</code> desde el <code>main</code> con diferentes datos para probar todos los casos.</p>
+<h5 id="aplicacion-en-el-mundo-real_6"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Tener un módulo centralizado de validación (<code>Validator</code>) es una práctica estándar en el desarrollo de software. Evita duplicar las mismas reglas de validación en múltiples partes de una aplicación, haciendo que el mantenimiento sea mucho más sencillo.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DataValidator</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Valida si un email tiene un formato básico correcto.</span>
+<span class="cm">     * @param email El email a validar.</span>
+<span class="cm">     * @return true si es válido, false si no.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isValidEmail</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">email</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">email</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">"@"</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">email</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">"."</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="c1">// Asegura que el punto esté después de la arroba</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">email</span><span class="p">.</span><span class="na">lastIndexOf</span><span class="p">(</span><span class="sc">'.'</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">email</span><span class="p">.</span><span class="na">lastIndexOf</span><span class="p">(</span><span class="sc">'@'</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Valida si una contraseña cumple con los requisitos de seguridad.</span>
+<span class="cm">     * @param password La contraseña a validar.</span>
+<span class="cm">     * @return true si es segura, false si no.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isPasswordSecure</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">password</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">password</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">hasDigit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">password</span><span class="p">.</span><span class="na">toCharArray</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Character</span><span class="p">.</span><span class="na">isDigit</span><span class="p">(</span><span class="n">c</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">hasDigit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="c1">// Si encontramos un dígito, no hace falta seguir</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">hasDigit</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Intenta registrar a un usuario validando sus credenciales.</span>
+<span class="cm">     * @param email El email del usuario.</span>
+<span class="cm">     * @param password La contraseña del usuario.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerUser</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">isValidEmail</span><span class="p">(</span><span class="n">email</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error: El formato del email es incorrecto."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">isPasswordSecure</span><span class="p">(</span><span class="n">password</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error: La contraseña no cumple los requisitos de seguridad."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Usuario registrado con éxito!"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- Pruebas de Registro ---"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Caso 1: Todo correcto</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Probando con 'test@example.com' y 'password123': "</span><span class="p">);</span>
+<span class="w">        </span><span class="n">registerUser</span><span class="p">(</span><span class="s">"test@example.com"</span><span class="p">,</span><span class="w"> </span><span class="s">"password123"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Caso 2: Email inválido</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Probando con 'test.example.com' y 'password123': "</span><span class="p">);</span>
+<span class="w">        </span><span class="n">registerUser</span><span class="p">(</span><span class="s">"test.example.com"</span><span class="p">,</span><span class="w"> </span><span class="s">"password123"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Caso 3: Contraseña muy corta</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Probando con 'test@example.com' y 'pass1': "</span><span class="p">);</span>
+<span class="w">        </span><span class="n">registerUser</span><span class="p">(</span><span class="s">"test@example.com"</span><span class="p">,</span><span class="w"> </span><span class="s">"pass1"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Caso 4: Contraseña sin números</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Probando con 'test@example.com' y 'password': "</span><span class="p">);</span>
+<span class="w">        </span><span class="n">registerUser</span><span class="p">(</span><span class="s">"test@example.com"</span><span class="p">,</span><span class="w"> </span><span class="s">"password"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">8) Cálculo Recursivo de Metas Semanales | Nivel: Medio</p>
+<h5 id="objetivo_7"><strong>Objetivo:</strong></h5>
+<p>Aplicar el concepto de recursividad para resolver un problema que podría resolverse de forma iterativa, con el fin de entender su mecánica.</p>
+<h5 id="tarea-a-realizar_7"><strong>Tarea a realizar:</strong></h5>
+<p>En WellCorp, se quiere mostrar una proyección de "puntos de consistencia". La idea es que un usuario empiece con 10 puntos el día 1, y cada día subsiguiente gane los puntos del día anterior más un 10% extra (redondeado hacia abajo al entero más cercano).</p>
+<ol>
+<li>Crea una función <strong>recursiva</strong> llamada <code>calculateConsistencyPoints(int day)</code>.</li>
+<li><strong>Caso Base:</strong> Si <code>day</code> es 1, la función debe devolver 10.</li>
+<li><strong>Llamada Recursiva:</strong> Si <code>day</code> es mayor que 1, la función debe devolver el resultado de <code>calculateConsistencyPoints(day - 1)</code> más el 10% de ese resultado. La fórmula sería: <code>puntos_dia_anterior + (int)(puntos_dia_anterior * 0.1)</code>.</li>
+<li>En el <code>main</code>, llama a la función para ver los puntos proyectados para el día 7 y muestra el resultado.</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_7"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Aunque este problema específico es más eficiente con un bucle, entender la recursividad es clave para trabajar con estructuras de datos jerárquicas (como árboles de archivos o categorías en un e-commerce) y para comprender algoritmos más avanzados de "divide y vencerás" como Mergesort o Quicksort.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ConsistencyChallenge</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Calcula los puntos de consistencia para un día específico usando recursividad.</span>
+<span class="cm">     * @param day El día para el cual calcular los puntos (debe ser &gt; 0).</span>
+<span class="cm">     * @return Los puntos de consistencia calculados.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">calculateConsistencyPoints</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">day</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Caso Base: El primer día siempre otorga 10 puntos.</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">day</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Llamada Recursiva: Pide los puntos del día anterior.</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">previousDayPoints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calculateConsistencyPoints</span><span class="p">(</span><span class="n">day</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// Calcula los nuevos puntos basados en los del día anterior.</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">newPoints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">previousDayPoints</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">previousDayPoints</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span>
+
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">newPoints</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">targetDay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calculateConsistencyPoints</span><span class="p">(</span><span class="n">targetDay</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Proyección de puntos de consistencia para el día "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">targetDay</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">": "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">points</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" puntos."</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Traza para ver la progresión:</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\n--- Traza de la progresión ---"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">targetDay</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Día "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">": "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">calculateConsistencyPoints</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" puntos."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/*</span>
+<span class="cm">Traza de ejecución para el día 4:</span>
+<span class="cm">calculateConsistencyPoints(4)</span>
+<span class="cm">  -&gt; Llama a calculateConsistencyPoints(3)</span>
+<span class="cm">    -&gt; Llama a calculateConsistencyPoints(2)</span>
+<span class="cm">      -&gt; Llama a calculateConsistencyPoints(1)</span>
+<span class="cm">        -&gt; Caso Base: Retorna 10</span>
+<span class="cm">      -&gt; Recibe 10. Calcula 10 + (int)(10 * 0.1) = 11. Retorna 11.</span>
+<span class="cm">    -&gt; Recibe 11. Calcula 11 + (int)(11 * 0.1) = 12. Retorna 12.</span>
+<span class="cm">  -&gt; Recibe 12. Calcula 12 + (int)(12 * 0.1) = 13. Retorna 13.</span>
+<span class="cm">*/</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">9) Diagrama de Flujo: Invocación de Métodos | Nivel: Medio</p>
+<h5 id="objetivo_8"><strong>Objetivo:</strong></h5>
+<p>Visualizar el flujo de ejecución de un programa que utiliza múltiples métodos, incluyendo el paso de parámetros y la recepción de valores de retorno.</p>
+<h5 id="tarea-a-realizar_8"><strong>Tarea a realizar:</strong></h5>
+<p>Dado el siguiente código de la clase <code>DataValidator</code> del ejercicio 7, crea un diagrama de secuencia usando la sintaxis de Mermaid.js que represente la llamada <code>registerUser("test@example.com", "password123")</code> desde el <code>main</code>.</p>
+<p>El diagrama debe mostrar:
+*   El actor <code>main</code>.
+*   El método <code>registerUser</code>.
+*   El método <code>isValidEmail</code>.
+*   El método <code>isPasswordSecure</code>.
+*   Las llamadas entre ellos con los parámetros.
+*   Los valores de retorno (<code>true</code>/<code>false</code>).
+*   La impresión final en consola.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DataValidator</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isValidEmail</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isPasswordSecure</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">registerUser</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">isValidEmail</span><span class="p">(</span><span class="n">email</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error: Email inválido."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">isPasswordSecure</span><span class="p">(</span><span class="n">password</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Error: Contraseña insegura."</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Usuario registrado con éxito!"</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="n">registerUser</span><span class="p">(</span><span class="s">"test@example.com"</span><span class="p">,</span><span class="w"> </span><span class="s">"password123"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="aplicacion-en-el-mundo-real_8"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Los diagramas de secuencia son una herramienta UML (Lenguaje Unificado de Modelado) esencial para diseñar y documentar las interacciones entre diferentes componentes o módulos de un sistema antes de escribirlos o para explicar su funcionamiento.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<pre class="mermaid"><code>sequenceDiagram
+    participant main as "main()"
+    participant registerUser as "registerUser()"
+    participant isValidEmail as "isValidEmail()"
+    participant isPasswordSecure as "isPasswordSecure()"
+
+    main-&gt;&gt;registerUser: registerUser("test@example.com", "password123")
+
+    activate registerUser
+
+    registerUser-&gt;&gt;isValidEmail: isValidEmail("test@example.com")
+    activate isValidEmail
+    isValidEmail--&gt;&gt;registerUser: return true
+    deactivate isValidEmail
+
+    Note right of registerUser: La primera condición (if) es falsa, pasa a la siguiente.
+
+    registerUser-&gt;&gt;isPasswordSecure: isPasswordSecure("password123")
+    activate isPasswordSecure
+    isPasswordSecure--&gt;&gt;registerUser: return true
+    deactivate isPasswordSecure
+
+    Note right of registerUser: La segunda condición (else if) también es falsa.
+
+    registerUser-&gt;&gt;main: Imprime "¡Usuario registrado con éxito!"
+    deactivate registerUser</code></pre>
+</details>
+</div>
+<hr>
+<h2 id="ejercicios-de-ampliacion">Ejercicios de Ampliación</h2>
+<div class="admonition danger">
+<p class="admonition-title">10) Reto de Diseño: Módulo de Estadísticas | Nivel: Alto</p>
+<h5 id="objetivo_9"><strong>Objetivo:</strong></h5>
+<p>Diseñar y construir un módulo cohesivo siguiendo el principio de responsabilidad única, donde cada método realiza una tarea de cálculo específica y bien definida.</p>
+<h5 id="tarea-a-realizar_9"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>UserStats</code> que actuará como nuestro módulo de estadísticas.</li>
+<li>Dentro de la clase, implementa las siguientes funciones estáticas:<ul>
+<li><code>calculateAverage(double[] numbers)</code>: Recibe un array de <code>double</code> y devuelve la media. Si el array es nulo o está vacío, debe devolver <code>0.0</code>.</li>
+<li><code>findMax(int[] numbers)</code>: Recibe un array de <code>int</code>, encuentra el valor máximo y lo devuelve. Si el array es nulo o vacío, debe devolver <code>Integer.MIN_VALUE</code>.</li>
+<li><code>normalizeData(int[] dailySteps, int goal)</code>: Recibe un array de pasos diarios y una meta. Debe devolver un nuevo array de <code>double</code> donde cada valor representa el porcentaje de la meta alcanzado ese día (ej: si la meta es 10000 y un día se hicieron 8000 pasos, el valor correspondiente en el nuevo array será <code>80.0</code>).</li>
+</ul>
+</li>
+<li>Escribe un método <code>main</code> que demuestre el uso de <strong>todos</strong> los métodos de tu módulo <code>UserStats</code> con datos de ejemplo.</li>
+<li><strong>Revisión por Pares (Peer Review):</strong><ul>
+<li>Intercambia tu clase <code>UserStats</code> con un compañero.</li>
+<li>Revisa su código en busca de:<ul>
+<li><strong>Claridad:</strong> ¿Los nombres de los métodos y variables son autoexplicativos?</li>
+<li><strong>Robustez:</strong> ¿Maneja correctamente los casos límite (arrays nulos o vacíos)?</li>
+<li><strong>Eficiencia:</strong> ¿Hay alguna operación innecesaria en los bucles?</li>
+</ul>
+</li>
+<li>Proporciona feedback constructivo por escrito (1-2 párrafos).</li>
+</ul>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_9"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Este ejercicio simula la creación de una "clase de utilidad" (Utility Class), un patrón muy común en el desarrollo profesional. Clases como <code>Math</code> en Java o <code>StringUtils</code> de Apache Commons son ejemplos famosos de módulos que agrupan funcionalidades relacionadas y reutilizables.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserStats</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Calcula el valor promedio de un array de doubles.</span>
+<span class="cm">     * @param numbers Array de números.</span>
+<span class="cm">     * @return El promedio, o 0.0 si el array es nulo o vacío.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculateAverage</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">numbers</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">numbers</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">number</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">numbers</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Encuentra el valor máximo en un array de enteros.</span>
+<span class="cm">     * @param numbers Array de números.</span>
+<span class="cm">     * @return El valor máximo, o Integer.MIN_VALUE si el array es nulo o vacío.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">findMax</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">numbers</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">numbers</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">MIN_VALUE</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numbers</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">numbers</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">numbers</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">max</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numbers</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">max</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Convierte los pasos diarios a un porcentaje de la meta diaria.</span>
+<span class="cm">     * @param dailySteps Array de pasos diarios.</span>
+<span class="cm">     * @param goal La meta de pasos.</span>
+<span class="cm">     * @return Un nuevo array de doubles con los porcentajes.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="nf">normalizeData</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">dailySteps</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">goal</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dailySteps</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">goal</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="c1">// Devuelve un array vacío si los datos son inválidos</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">normalized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="o">[</span><span class="n">dailySteps</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dailySteps</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">normalized</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="kt">double</span><span class="p">)</span><span class="w"> </span><span class="n">dailySteps</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">goal</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100.0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">normalized</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Main para demostración</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- Demostración del Módulo UserStats ---"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Prueba de calculateAverage</span>
+<span class="w">        </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">weeklyExpenses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">12.5</span><span class="p">,</span><span class="w"> </span><span class="mf">20.0</span><span class="p">,</span><span class="w"> </span><span class="mf">8.75</span><span class="p">,</span><span class="w"> </span><span class="mf">15.5</span><span class="p">,</span><span class="w"> </span><span class="mf">22.0</span><span class="p">};</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">avgExpense</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calculateAverage</span><span class="p">(</span><span class="n">weeklyExpenses</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"Gasto promedio en almuerzos: %.2f€%n"</span><span class="p">,</span><span class="w"> </span><span class="n">avgExpense</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Prueba de findMax</span>
+<span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">dailySteps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">8500</span><span class="p">,</span><span class="w"> </span><span class="mi">9200</span><span class="p">,</span><span class="w"> </span><span class="mi">10500</span><span class="p">,</span><span class="w"> </span><span class="mi">7800</span><span class="p">,</span><span class="w"> </span><span class="mi">12300</span><span class="p">,</span><span class="w"> </span><span class="mi">6500</span><span class="p">,</span><span class="w"> </span><span class="mi">11000</span><span class="p">};</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">maxSteps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findMax</span><span class="p">(</span><span class="n">dailySteps</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Día con más pasos: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">maxSteps</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" pasos."</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Prueba de normalizeData</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">dailyGoal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">goalPercentage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">normalizeData</span><span class="p">(</span><span class="n">dailySteps</span><span class="p">,</span><span class="w"> </span><span class="n">dailyGoal</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Porcentaje de meta alcanzado cada día:"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">goalPercentage</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"  Día %d: %.1f%%%n"</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">goalPercentage</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">11) Factorial Recursivo vs. Iterativo: Análisis de Rendimiento | Nivel: Alto</p>
+<h5 id="objetivo_10"><strong>Objetivo:</strong></h5>
+<p>Implementar un algoritmo de dos maneras diferentes (recursiva e iterativa) y analizar las diferencias en términos de claridad del código y (de forma teórica) rendimiento.</p>
+<h5 id="tarea-a-realizar_10"><strong>Tarea a realizar:</strong></h5>
+<ol>
+<li>Crea una clase <code>FactorialCalculator</code>.</li>
+<li>Implementa una función <strong>recursiva</strong> estática <code>factorialRecursive(int n)</code> que calcule el factorial de un número. No olvides el caso base.</li>
+<li>Implementa una función <strong>iterativa</strong> (usando un bucle <code>for</code> o <code>while</code>) estática <code>factorialIterative(int n)</code> que haga exactamente lo mismo.</li>
+<li>En el <code>main</code>, calcula el factorial de un número (por ejemplo, 15) usando ambos métodos y comprueba que el resultado es idéntico.</li>
+<li><strong>Análisis y Reflexión:</strong> Escribe un comentario de bloque (<code>/* ... */</code>) en tu código respondiendo a estas preguntas:<ul>
+<li>¿Qué versión te parece más fácil de leer y entender a primera vista? ¿Por qué?</li>
+<li>El factorial de números grandes (ej. 50) causaría un <code>StackOverflowError</code> en la versión recursiva, pero no en la iterativa. Investiga y explica brevemente por qué ocurre esto. ¿Qué es la "pila de llamadas" (call stack)?</li>
+</ul>
+</li>
+</ol>
+<h5 id="aplicacion-en-el-mundo-real_10"><strong>Aplicación en el Mundo Real:</strong></h5>
+<p>Saber cuándo usar recursividad (elegante para problemas jerárquicos) y cuándo preferir la iteración (más eficiente en memoria para secuencias lineales) es una marca de un programador maduro. Elegir el enfoque correcto afecta directamente al rendimiento y la mantenibilidad del software.</p>
+<details class="success">
+<summary>VER Solución.</summary>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FactorialCalculator</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Calcula el factorial usando un enfoque recursivo.</span>
+<span class="cm">     * @param n Número no negativo.</span>
+<span class="cm">     * @return El factorial de n.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">factorialRecursive</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Validación de entrada</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// O lanzar una excepción</span>
+
+<span class="w">        </span><span class="c1">// Caso Base</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="c1">// Llamada Recursiva</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">factorialRecursive</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Calcula el factorial usando un enfoque iterativo.</span>
+<span class="cm">     * @param n Número no negativo.</span>
+<span class="cm">     * @return El factorial de n.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">factorialIterative</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Validación de entrada</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">result</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="n">recursiveResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factorialRecursive</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Resultado Recursivo para "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"!: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">recursiveResult</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="n">iterativeResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factorialIterative</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Resultado Iterativo para "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"!: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">iterativeResult</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¿Son los resultados iguales? "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">recursiveResult</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">iterativeResult</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">    Análisis y Reflexión:</span>
+
+<span class="cm">    1. ¿Qué versión es más fácil de leer?</span>
+<span class="cm">    Para muchas personas, la versión recursiva es más elegante y se parece más a la definición</span>
+<span class="cm">    matemática del factorial (n! = n * (n-1)!). Es muy concisa. Sin embargo, la versión</span>
+<span class="cm">    iterativa puede ser más intuitiva para quienes están acostumbrados a pensar en términos</span>
+<span class="cm">    de bucles, ya que muestra el proceso de acumulación de forma más explícita.</span>
+
+<span class="cm">    2. ¿Por qué ocurre el StackOverflowError?</span>
+<span class="cm">    La "pila de llamadas" (call stack) es una estructura de datos que Java utiliza para</span>
+<span class="cm">    llevar un registro de los métodos que están en ejecución. Cada vez que se llama a un</span>
+<span class="cm">    método, se añade un "marco" a la pila con la información de ese método (variables locales,</span>
+<span class="cm">    punto de retorno, etc.).</span>
+
+<span class="cm">    En la versión recursiva de `factorial(50)`, la llamada a `factorial(50)` llama a `factorial(49)`,</span>
+<span class="cm">    que llama a `factorial(48)`, y así sucesivamente. Esto apila 50 marcos de método, uno encima</span>
+<span class="cm">    del otro, antes de que ninguno de ellos pueda terminar. La pila tiene un tamaño limitado</span>
+<span class="cm">    y, con números suficientemente grandes, se desborda, causando un `StackOverflowError`.</span>
+
+<span class="cm">    La versión iterativa no tiene este problema porque solo hay un marco en la pila para el</span>
+<span class="cm">    método `factorialIterative`. El bucle se ejecuta dentro de ese único marco, sin hacer</span>
+<span class="cm">    nuevas llamadas a métodos, por lo que el uso de la memoria de la pila es constante y muy bajo.</span>
+<span class="cm">    */</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

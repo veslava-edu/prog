@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>5 POO Clases y Objetos old - PROG</title>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style><script src="../toggle-sidebar.js"></script><script src="../js/unpkg.com/d3@7.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-lib@0.18.js" type="text/javascript"></script><script src="../js/unpkg.com/markmap-view@0.18.js" type="text/javascript"></script><style type="text/css">div.mkdocs-markmap {
+    width: 100%;
+    min-height: 1em;
+    border: 1px solid grey;
+}
+.mkdocs-markmap > svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+</style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#programacion-orientada-a-objetos-en-java">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="PROG" class="md-header__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            PROG
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              5 POO Clases y Objetos old
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Cambiar a modo oscuro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Cambiar a modo oscuro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Cambiar a modo claro" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Cambiar a modo claro">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../1-Introduccion-programacion/">
+          
+  
+  
+  Programación
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="PROG" class="md-nav__button md-logo" data-md-component="logo" href=".." title="PROG">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    PROG
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Programación
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1-Introduccion-programacion/">
+<span class="md-ellipsis">
+    
+  
+    UD1 - Introducción a la programación
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2-Programacion-estructurada/">
+<span class="md-ellipsis">
+    
+  
+    UD2 - Programación estructurada
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3-Programacion-modular/">
+<span class="md-ellipsis">
+    
+  
+    UD3 - Programación modular
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4-Estructuras-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD4 - Estructuras de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5-POO-Clases-y-Objetos/">
+<span class="md-ellipsis">
+    
+  
+    UD5 - POO. Clases y Objetos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6-POO-Uso-avanzado/">
+<span class="md-ellipsis">
+    
+  
+    UD6 - POO. Uso avanzado
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7-Estructuras-datos-dinamicas/">
+<span class="md-ellipsis">
+    
+  
+    UD7 - Estructuras de datos dinámicas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../8-Programacion-funcional-Streams/">
+<span class="md-ellipsis">
+    
+  
+    UD8 - Programación funcional y Streams
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../9-Ficheros/">
+<span class="md-ellipsis">
+    
+  
+    UD9 - Ficheros
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10-Acceso-base-datos/">
+<span class="md-ellipsis">
+    
+  
+    UD10 - Acceso a base de datos
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11-Interfaces-graficas-MVC/">
+<span class="md-ellipsis">
+    
+  
+    UD11 - Interfaces gráficas de usuarios. MVC
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conceptos-fundamentales-el-adn-de-la-poo">
+<span class="md-ellipsis">
+      
+        Conceptos Fundamentales: El ADN de la POO
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#anatomia-de-una-clase-en-java">
+<span class="md-ellipsis">
+      
+        Anatomía de una Clase en Java
+      
+    </span>
+</a>
+<nav aria-label="Anatomía de una Clase en Java" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-atributos-el-estado-del-objeto">
+<span class="md-ellipsis">
+      
+        1. Atributos: El Estado del Objeto
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-metodos-el-comportamiento-del-objeto">
+<span class="md-ellipsis">
+      
+        2. Métodos: El Comportamiento del Objeto
+      
+    </span>
+</a>
+<nav aria-label="2. Métodos: El Comportamiento del Objeto" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#getters-y-setters-puertas-de-acceso-controlado">
+<span class="md-ellipsis">
+      
+        Getters y Setters: Puertas de Acceso Controlado
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#el-origen-de-los-objetos-constructores-y-this">
+<span class="md-ellipsis">
+      
+        El Origen de los Objetos: Constructores y "this"
+      
+    </span>
+</a>
+<nav aria-label='El Origen de los Objetos: Constructores y "this"' class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sobrecarga-de-constructores-multiples-formas-de-nacer">
+<span class="md-ellipsis">
+      
+        Sobrecarga de Constructores: Múltiples Formas de Nacer
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#la-palabra-clave-this-yo-el-objeto">
+<span class="md-ellipsis">
+      
+        La Palabra Clave this: "Yo, el Objeto"
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#miembros-de-clase-el-poder-de-static">
+<span class="md-ellipsis">
+      
+        Miembros de Clase: El Poder de static
+      
+    </span>
+</a>
+<nav aria-label="Miembros de Clase: El Poder de static" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#atributos-static-variables-de-clase">
+<span class="md-ellipsis">
+      
+        Atributos static (Variables de Clase)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metodos-static">
+<span class="md-ellipsis">
+      
+        Métodos static
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aplicacion-en-el-mundo-real">
+<span class="md-ellipsis">
+      
+        Aplicación en el Mundo Real
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#para-saber-mas">
+<span class="md-ellipsis">
+      
+        Para Saber Más
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<!-- TEMA: 5-POO --><h1 id="programacion-orientada-a-objetos-en-java">Programación Orientada a Objetos en JAVA</h1>
+<p>¡Hola, equipo! Bienvenidos al que probablemente sea el cambio de mentalidad más importante en vuestro viaje como desarrolladores: la <strong>Programación Orientada a Objetos (POO)</strong>. Hasta ahora, en el [TEMA ANTERIOR], hemos manejado estructuras de datos y hemos creado programas que siguen una secuencia de pasos, como una receta de cocina. Funciona, pero... ¿es escalable? ¿Es mantenible?</p>
+<p>Imaginad por un momento que en lugar de programadores, somos los directores de una enorme fábrica de montaje de vehículos. Nuestro antiguo método sería como tener un único manual de instrucciones larguísimo que dice: "Paso 1: coger tornillo A. Paso 2: atornillarlo a la pieza B...". Si quisiéramos construir una moto en lugar de un coche, tendríamos que reescribir el manual casi desde cero. ¡Un auténtico caos!</p>
+<p>La POO nos propone algo radicalmente distinto. En lugar de un manual gigante, diseñamos "planos" para cada componente: un plano para el "Motor", otro para la "Rueda", otro para el "Chasis". Cada plano (que llamaremos <strong>Clase</strong>) define qué es cada componente (sus <strong>atributos</strong>, como la cilindrada del motor) y qué sabe hacer (sus <strong>métodos</strong>, como <code>arrancar()</code> o <code>acelerar()</code>).</p>
+<p>Luego, para construir un coche, simplemente decimos: "necesito una instancia del plano Motor, cuatro del plano Rueda y una del plano Chasis". Cada una de estas "instancias" es un <strong>Objeto</strong>, una pieza real y funcional que podemos ensamblar. Si ahora queremos una moto, simplemente cogemos un Motor y dos Ruedas. ¡Reutilización al poder!</p>
+<p>Este es el corazón de la POO: modelar el mundo real (o cualquier problema) como un conjunto de objetos que colaboran entre sí. Es la base sobre la que se construyen las aplicaciones y sistemas más complejos que usáis cada día, desde vuestro videojuego favorito hasta la app del banco. ¡Abróchate el cinturón, que despegamos!</p>
+<h2 id="conceptos-fundamentales-el-adn-de-la-poo">Conceptos Fundamentales: El ADN de la POO</h2>
+<p>Antes de empezar a escribir código, tenemos que tener claro el vocabulario. Estos son los cinco conceptos que forman el ADN de la Programación Orientada a Objetos.</p>
+<div class="admonition note">
+<p class="admonition-title">Definición: Clase</p>
+<p>Una <strong>Clase</strong> es el plano, el molde o la plantilla a partir de la cual se crean los objetos. No es algo tangible, sino una definición abstracta. Define las propiedades (atributos) y los comportamientos (métodos) que tendrán los objetos creados a partir de ella. Por ejemplo, la clase <code>Humano</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Objeto</p>
+<p>Un <strong>Objeto</strong> es una "instancia" de una clase. Es la materialización del plano. Si la clase <code>Humano</code> es el plano, tú, yo, y cada persona somos objetos de esa clase. Cada objeto tiene su propia identidad y su propio estado (sus atributos tendrán valores específicos).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Atributo</p>
+<p>Los <strong>Atributos</strong> (también llamados variables de instancia o propiedades) son las características que definen a un objeto. Son las variables que pertenecen a una clase. Para un objeto de la clase <code>Humano</code>, los atributos podrían ser <code>nombre</code>, <code>edad</code>, <code>altura</code>...</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Método</p>
+<p>Los <strong>Métodos</strong> son las acciones o comportamientos que un objeto puede realizar. Son las funciones que pertenecen a una clase. Para un objeto de la clase <code>Humano</code>, los métodos podrían ser <code>hablar()</code>, <code>comer()</code> o <code>cumplirAnios()</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Definición: Instancia</p>
+<p><strong>Instancia</strong> es, en la práctica, un sinónimo de objeto. Cuando creas un objeto a partir de una clase, estás "instanciando" esa clase. El proceso de creación se llama <strong>instanciación</strong>.</p>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="anatomia-de-una-clase-en-java">Anatomía de una Clase en Java</h2>
+<p>Una clase en Java es el bloque de construcción fundamental. Es donde definimos esos planos que hemos comentado. Su estructura es sencilla pero poderosa.</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="n">modificador</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">acceso</span><span class="o">]</span><span class="w"> </span><span class="kd">class</span> <span class="nc">NombreDeLaClase</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 1. Atributos (variables de instancia)</span>
+<span class="w">    </span><span class="c1">// Definen el estado del objeto</span>
+
+<span class="w">    </span><span class="c1">// 2. Constructores</span>
+<span class="w">    </span><span class="c1">// Métodos especiales para crear e inicializar objetos</span>
+
+<span class="w">    </span><span class="c1">// 3. Métodos (funciones)</span>
+<span class="w">    </span><span class="c1">// Definen el comportamiento del objeto</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="1-atributos-el-estado-del-objeto">1. Atributos: El Estado del Objeto</h3>
+<p>Los atributos son variables que definen las características de cualquier objeto de la clase. Cada instancia de la clase tendrá su propia copia de estos atributos, con sus propios valores.</p>
+<div class="admonition warning">
+<p class="admonition-title">Buena Práctica: Encapsulación</p>
+<p>Como veremos más adelante, una de las reglas de oro de la POO es la <strong>encapsulación</strong>. Esto significa que, por norma general, los atributos de una clase siempre deberían ser <code>private</code>. El acceso a ellos se gestionará a través de métodos públicos. ¡Nunca dejes tus datos expuestos!</p>
+</div>
+<h3 id="2-metodos-el-comportamiento-del-objeto">2. Métodos: El Comportamiento del Objeto</h3>
+<p>Los métodos definen lo que los objetos de la clase pueden hacer. Pueden usarse para modificar el estado del objeto (cambiar el valor de sus atributos) o para realizar acciones.</p>
+<h4 id="getters-y-setters-puertas-de-acceso-controlado">Getters y Setters: Puertas de Acceso Controlado</h4>
+<p>Para respetar la encapsulación, usamos métodos especiales para acceder y modificar nuestros atributos privados.</p>
+<ul>
+<li><strong>Getters</strong>: Métodos que "obtienen" (get) y devuelven el valor de un atributo. Suelen empezar por <code>get</code> seguido del nombre del atributo en CamelCase.</li>
+<li><strong>Setters</strong>: Métodos que "establecen" (set) un nuevo valor para un atributo. Suelen empezar por <code>set</code> seguido del nombre del atributo en CamelCase y reciben el nuevo valor como parámetro.</li>
+</ul>
+<p>La gran ventaja de los setters es que nos permiten añadir <strong>lógica de validación</strong>. Por ejemplo, un método <code>setEdad()</code> podría impedir que se asigne un valor negativo.</p>
+<p>Veamos un primer ejemplo completo con una clase <code>Videojuego</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// google-java-format</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Representa un videojuego con sus propiedades básicas.</span>
+<span class="cm"> * Esta clase sigue los principios de encapsulación.</span>
+<span class="cm"> */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Videojuego</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Atributos privados para encapsular el estado</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">titulo</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">genero</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">jugadores</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">puntuacion</span><span class="p">;</span><span class="w"> </span><span class="c1">// Puntuación de 0 a 100</span>
+
+<span class="w">  </span><span class="c1">// Constructor para inicializar el objeto</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">Videojuego</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">titulo</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">genero</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">jugadores</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">titulo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">titulo</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">genero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">genero</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">jugadores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jugadores</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">puntuacion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span><span class="w"> </span><span class="c1">// Una puntuación por defecto</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// --- Getters (Métodos de consulta) ---</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getTitulo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">titulo</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getGenero</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">genero</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getJugadores</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">jugadores</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getPuntuacion</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">puntuacion</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// --- Setters (Métodos de modificación) ---</span>
+
+<span class="w">  </span><span class="c1">// No creamos un setTitulo() o setGenero() porque asumimos que no cambian.</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setJugadores</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">jugadores</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">jugadores</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="na">jugadores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jugadores</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * Modifica la puntuación, asegurando que esté siempre entre 0 y 100.</span>
+<span class="cm">   * @param puntuacion El nuevo valor de la puntuación.</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setPuntuacion</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">puntuacion</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">puntuacion</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">puntuacion</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="na">puntuacion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">puntuacion</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">puntuacion</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="na">puntuacion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="na">puntuacion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// --- Otros Métodos ---</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mostrarInfo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"--- Ficha del Videojuego ---"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Título: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">titulo</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Género: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">genero</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Jugadores: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">jugadores</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Puntuación: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">puntuacion</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"/100"</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Y así lo usaríamos desde otra clase (la que tiene el método <code>main</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// google-java-format</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TiendaDeJuegos</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Creamos una instancia (objeto) de la clase Videojuego</span>
+<span class="w">    </span><span class="n">Videojuego</span><span class="w"> </span><span class="n">eldenRing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Videojuego</span><span class="p">(</span><span class="s">"Elden Ring"</span><span class="p">,</span><span class="w"> </span><span class="s">"Action RPG"</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Puntuación inicial: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">eldenRing</span><span class="p">.</span><span class="na">getPuntuacion</span><span class="p">());</span><span class="w"> </span><span class="c1">// Salida: 50</span>
+
+<span class="w">    </span><span class="c1">// Le damos una nueva puntuación</span>
+<span class="w">    </span><span class="n">eldenRing</span><span class="p">.</span><span class="na">setPuntuacion</span><span class="p">(</span><span class="mi">98</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Intentamos poner una puntuación inválida</span>
+<span class="w">    </span><span class="n">eldenRing</span><span class="p">.</span><span class="na">setPuntuacion</span><span class="p">(</span><span class="mi">150</span><span class="p">);</span><span class="w"> </span><span class="c1">// No hará nada gracias a la validación</span>
+
+<span class="w">    </span><span class="c1">// Mostramos la información completa</span>
+<span class="w">    </span><span class="n">eldenRing</span><span class="p">.</span><span class="na">mostrarInfo</span><span class="p">();</span>
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">     * --- Ficha del Videojuego ---</span>
+<span class="cm">     * Título: Elden Ring</span>
+<span class="cm">     * Género: Action RPG</span>
+<span class="cm">     * Jugadores: 1</span>
+<span class="cm">     * Puntuación: 98/100</span>
+<span class="cm">     */</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Reflexionemos un poco</p>
+<ol>
+<li>¿Por qué es una mala idea declarar los atributos como <code>public</code> en la mayoría de los casos?</li>
+<li>En la clase <code>Videojuego</code>, no hemos creado un método <code>setTitulo()</code>. ¿Qué implica esto para los objetos creados? ¿Qué ventaja o desventaja podría tener?</li>
+<li>Imagina que queremos añadir un atributo <code>precio</code>. ¿Cómo implementarías su <code>setter</code> para que no se puedan asignar precios negativos?</li>
+<li>¿Qué son los "fluent setters"? Busca información y explica qué devuelven y para qué sirven.</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="el-origen-de-los-objetos-constructores-y-this">El Origen de los Objetos: Constructores y "this"</h2>
+<p>Hemos visto que los objetos se crean, pero... ¿cómo exactamente? El responsable de este "parto" es un método muy especial llamado <strong>constructor</strong>.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Constructor</p>
+<p>Es un método especial que se llama automáticamente cuando se crea una instancia de una clase con la palabra clave <code>new</code>. Su misión es inicializar los atributos del objeto, dejándolo en un estado válido y listo para ser usado.</p>
+</div>
+<p>Un constructor tiene dos reglas sagradas:
+1.  Debe tener <strong>exactamente el mismo nombre</strong> que la clase.
+2.  <strong>No tiene tipo de retorno</strong>, ni siquiera <code>void</code>.</p>
+<p>Si no escribes ningún constructor en tu clase, Java amablemente te proporciona uno por defecto, vacío y sin parámetros, que inicializa los atributos a sus valores predeterminados (0 para números, <code>false</code> para booleanos, <code>null</code> para objetos). Pero en el 99% de los casos, querrás definir el tuyo.</p>
+<h3 id="sobrecarga-de-constructores-multiples-formas-de-nacer">Sobrecarga de Constructores: Múltiples Formas de Nacer</h3>
+<p>Una clase puede tener varios constructores, siempre que su <strong>firma</strong> (el número y/o tipo de sus parámetros) sea diferente. Esto se llama <strong>sobrecarga</strong> y es increíblemente útil. Permite crear objetos de diferentes maneras.</p>
+<h3 id="la-palabra-clave-this-yo-el-objeto">La Palabra Clave <code>this</code>: "Yo, el Objeto"</h3>
+<p>Dentro de una clase, a veces necesitamos hacer referencia al propio objeto con el que estamos trabajando. Para eso existe la palabra clave <code>this</code>. Sus dos usos principales son:</p>
+<ol>
+<li><strong>Desambiguar entre atributos y parámetros</strong>: Si un parámetro de un constructor o método se llama igual que un atributo de la clase, <code>this.nombreAtributo</code> se refiere al atributo, mientras que <code>nombreAtributo</code> a secas se refiere al parámetro. Es una convención muy extendida y recomendable.</li>
+<li><strong>Llamar a otro constructor (Constructor Chaining)</strong>: Desde un constructor, puedes llamar a otro constructor de la misma clase usando <code>this(...)</code>. ¡Ojo! Esta debe ser obligatoriamente la <strong>primera línea</strong> del constructor.</li>
+</ol>
+<pre class="mermaid"><code>sequenceDiagram
+    participant main as "main()"
+    participant new as "Operador new"
+    participant Constructor as "Constructor de Usuario"
+
+    main-&gt;&gt;new: `new Usuario("dev.pepe", "1234")`
+    new-&gt;&gt;Constructor: Llama al constructor con los parámetros
+    Note over Constructor: `this.nombre` se refiere al atributo&lt;br/&gt;`nombre` se refiere al parámetro "dev.pepe"
+    Constructor-&gt;&gt;Constructor: this.nombre = nombre;
+    Constructor-&gt;&gt;Constructor: this.password = password;
+    Constructor--&gt;&gt;new: Objeto inicializado
+    new--&gt;&gt;main: Devuelve la referencia al nuevo objeto</code></pre>
+<p>Veamos el ejemplo de una clase <code>Usuario</code> que aplica estos conceptos.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// google-java-format</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Representa un usuario en un sistema.</span>
+<span class="cm"> * Demuestra la sobrecarga de constructores y el uso de 'this'.</span>
+<span class="cm"> */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Usuario</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombreUsuario</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">estaActivo</span><span class="p">;</span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * Constructor principal que inicializa todos los datos.</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">Usuario</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombreUsuario</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Uso de 'this' para desambiguar</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">nombreUsuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nombreUsuario</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">email</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">password</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">estaActivo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// Por defecto, un usuario nuevo está activo</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * Constructor sobrecargado para un registro rápido solo con nombre y contraseña.</span>
+<span class="cm">   * Llama al constructor principal usando this().</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">Usuario</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nombreUsuario</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Llama al otro constructor, pasando un email por defecto</span>
+<span class="w">    </span><span class="k">this</span><span class="p">(</span><span class="n">nombreUsuario</span><span class="p">,</span><span class="w"> </span><span class="s">"sin-email@dominio.com"</span><span class="p">,</span><span class="w"> </span><span class="n">password</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * Constructor sin parámetros que crea un usuario "invitado".</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">Usuario</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Llama al segundo constructor</span>
+<span class="w">    </span><span class="k">this</span><span class="p">(</span><span class="s">"invitado"</span><span class="p">,</span><span class="w"> </span><span class="s">"password"</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">estaActivo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Getters, setters y otros métodos irían aquí...</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mostrarPerfil</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Usuario: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">nombreUsuario</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" ("</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">estaActivo</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">"Activo"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">"Inactivo"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">")"</span><span class="p">);</span>
+<span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Email: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">email</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Y su uso:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// google-java-format</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GestionUsuarios</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Usando el constructor principal</span>
+<span class="w">        </span><span class="n">Usuario</span><span class="w"> </span><span class="n">admin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Usuario</span><span class="p">(</span><span class="s">"admin"</span><span class="p">,</span><span class="w"> </span><span class="s">"admin@sistema.com"</span><span class="p">,</span><span class="w"> </span><span class="s">"supersecret"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Usando el constructor sobrecargado</span>
+<span class="w">        </span><span class="n">Usuario</span><span class="w"> </span><span class="n">pepe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Usuario</span><span class="p">(</span><span class="s">"pepe123"</span><span class="p">,</span><span class="w"> </span><span class="s">"qwerty"</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Usando el constructor sin parámetros</span>
+<span class="w">        </span><span class="n">Usuario</span><span class="w"> </span><span class="n">invitado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Usuario</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">admin</span><span class="p">.</span><span class="na">mostrarPerfil</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">pepe</span><span class="p">.</span><span class="na">mostrarPerfil</span><span class="p">();</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"---"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">invitado</span><span class="p">.</span><span class="na">mostrarPerfil</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">¿Lo tienes?</p>
+<ol>
+<li>¿Qué pasa si no defines ningún constructor en una clase Java?</li>
+<li>¿Por qué es útil la sobrecarga de constructores? Piensa en un ejemplo de la clase <code>Videojuego</code>.</li>
+<li>¿Cuál es la regla más importante al usar <code>this()</code> para llamar a otro constructor?</li>
+<li>Si un atributo se llama <code>nombre</code> y un parámetro también se llama <code>nombre</code>, ¿qué pasaría si en el constructor escribes <code>nombre = nombre;</code> sin usar <code>this</code>?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="miembros-de-clase-el-poder-de-static">Miembros de Clase: El Poder de <code>static</code></h2>
+<p>Hasta ahora, todos los atributos y métodos que hemos visto "pertenecen" a una instancia u objeto particular. Cada coche tiene su propio color, cada usuario su propia contraseña. Pero, ¿y si necesitamos una propiedad o un comportamiento que sea común a <strong>toda la clase</strong>?</p>
+<p>Para eso, Java nos da la palabra clave <code>static</code>. Un miembro <code>static</code> (ya sea atributo o método) no pertenece a ningún objeto, sino a la clase en su conjunto.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Analogía de la Fábrica</p>
+<p>Pensemos de nuevo en nuestra fábrica de coches. El <code>color</code> de un coche es un atributo de instancia. Pero el <code>contadorTotalDeCochesFabricados</code> es una propiedad de la fábrica (la clase), no de un coche individual. Este contador sería un atributo <code>static</code>.</p>
+</div>
+<h3 id="atributos-static-variables-de-clase">Atributos <code>static</code> (Variables de Clase)</h3>
+<ul>
+<li>Solo existe <strong>una única copia</strong> de esta variable, compartida por todas las instancias de la clase.</li>
+<li>Si un objeto modifica un atributo <code>static</code>, el cambio es visible para todos los demás objetos de esa clase.</li>
+<li>Se pueden acceder usando el nombre de la clase, sin necesidad de crear un objeto: <code>NombreClase.nombreAtributoStatic</code>.</li>
+</ul>
+<h3 id="metodos-static">Métodos <code>static</code></h3>
+<ul>
+<li>Se invocan sobre la clase, no sobre un objeto: <code>NombreClase.metodoStatic()</code>.</li>
+<li>A menudo son <strong>funciones de utilidad</strong> que no dependen del estado de un objeto particular. Un ejemplo clásico es la clase <code>Math</code> de Java: <code>Math.random()</code> o <code>Math.sqrt(25)</code> no necesitan que crees un objeto <code>Math</code> para funcionar.</li>
+<li><strong>Importante</strong>: Un método <code>static</code> no puede acceder a atributos o métodos de instancia (los no-estáticos), porque no está asociado a ningún objeto. ¡No puede usar <code>this</code>!</li>
+</ul>
+<div class="language-markmap mkdocs-markmap"><markmap-data encoding="base64" hidden="true">IyBNaWVtYnJvcyBkZSB1bmEgQ2xhc2UKCiMjIE1pZW1icm9zIGRlIEluc3RhbmNpYSAobG8gbm9ybWFsKQotICoqQXRyaWJ1dG9zKio6CiAgLSBDYWRhIG9iamV0byB0aWVuZSBzdSBjb3BpYS4KICAtIGBjb2NoZTEuY29sb3IgPSAiUm9qbyJgIG5vIGFmZWN0YSBhIGBjb2NoZTIuY29sb3JgLgotICoqTcOpdG9kb3MqKjoKICAtIE9wZXJhbiBzb2JyZSBlbCBlc3RhZG8gZGUgdW4gb2JqZXRvIChgdGhpc2ApLgogIC0gU2UgbGxhbWFuIGNvbiBgb2JqZXRvLm1ldG9kbygpYC4KCiMjIE1pZW1icm9zIGRlIENsYXNlIChgc3RhdGljYCkKLSAqKkF0cmlidXRvcyoqOgogIC0gVW5hIHNvbGEgY29waWEgcGFyYSB0b2RhIGxhIGNsYXNlLgogIC0gU2kgYENvY2hlLmNvbnRhZG9yKytgLCB0b2RhcyBsYXMgaW5zdGFuY2lhcyB2ZW4gZWwgbnVldm8gdmFsb3IuCi0gKipNw6l0b2RvcyoqOgogIC0gUGVydGVuZWNlbiBhIGxhIGNsYXNlLCBubyBhIHVuIG9iamV0by4KICAtIE5vIHB1ZWRlbiB1c2FyIGB0aGlzYC4KICAtIFNvbiBjb21vIGhlcnJhbWllbnRhcyBnbG9iYWxlcy4KICAtIFNlIGxsYW1hbiBjb24gYENsYXNlLm1ldG9kb1N0YXRpYygpYC4=</markmap-data></div>
+<p>Vamos a crear una clase <code>OperacionMatematica</code> que use métodos <code>static</code> y una clase <code>Punto</code> que use un atributo <code>static</code> para contar cuántos puntos se han creado.</p>
+<p><strong>Ejemplo 1: Clase de Utilidad <code>static</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// google-java-format</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Una clase de utilidad que solo contiene métodos estáticos.</span>
+<span class="cm"> * No tiene sentido crear objetos de esta clase.</span>
+<span class="cm"> */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Calculadora</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 'final' impide que se herede de ella</span>
+
+<span class="w">  </span><span class="c1">// Hacemos el constructor privado para que nadie pueda instanciarla</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="nf">Calculadora</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159265359</span><span class="p">;</span><span class="w"> </span><span class="c1">// Constante estática</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">sumar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">areaCirculo</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">radio</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radio</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radio</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Uso:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// google-java-format</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Calculadora</span><span class="p">.</span><span class="na">sumar</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"5 + 10 = "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">suma</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Calculadora</span><span class="p">.</span><span class="na">areaCirculo</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Área de círculo de radio 10: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">area</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Esto daría un error de compilación porque el constructor es privado</span>
+<span class="w">    </span><span class="c1">// Calculadora miCalculadora = new Calculadora(); </span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Ejemplo 2: Atributo <code>static</code> como contador</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// google-java-format</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Punto</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Atributo estático para contar las instancias creadas</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">contadorPuntos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">Punto</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// Cada vez que se llama al constructor, se incrementa el contador</span>
+<span class="w">    </span><span class="n">contadorPuntos</span><span class="o">++</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Método estático para obtener el valor del contador</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getContadorPuntos</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">contadorPuntos</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Uso:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// google-java-format</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GeometriaApp</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Puntos creados al inicio: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Punto</span><span class="p">.</span><span class="na">getContadorPuntos</span><span class="p">());</span><span class="w"> </span><span class="c1">// Salida: 0</span>
+
+<span class="w">    </span><span class="n">Punto</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Punto</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Punto</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Punto</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Puntos creados ahora: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Punto</span><span class="p">.</span><span class="na">getContadorPuntos</span><span class="p">());</span><span class="w"> </span><span class="c1">// Salida: 2</span>
+
+<span class="w">    </span><span class="n">Punto</span><span class="w"> </span><span class="n">p3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Punto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Puntos creados al final: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Punto</span><span class="p">.</span><span class="na">getContadorPuntos</span><span class="p">());</span><span class="w"> </span><span class="c1">// Salida: 3</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">A ver si queda claro...</p>
+<ol>
+<li>¿Cuándo usarías un método <code>static</code> en lugar de un método de instancia? Da un ejemplo práctico.</li>
+<li>¿Por qué un método <code>static</code> no puede llamar a un método no <code>static</code> de la misma clase directamente?</li>
+<li>¿Qué es una constante <code>static final</code>? ¿Para qué puede ser útil?</li>
+<li>Si tienes 100 objetos de la clase <code>Punto</code> en memoria, ¿cuántas copias de la variable <code>contadorPuntos</code> existen? ¿Y de la variable <code>x</code>?</li>
+</ol>
+</div>
+<p><br/></p><hr/><p></p>
+<h2 id="aplicacion-en-el-mundo-real">Aplicación en el Mundo Real</h2>
+<p>La POO no es un concepto académico; es el pilar sobre el que se construye el software moderno.</p>
+<ul>
+<li><strong>Frameworks de Desarrollo Web (Spring, Jakarta EE):</strong> En entornos como Spring, toda la aplicación se modela como un conjunto de objetos (llamados <em>Beans</em> o <em>Components</em>) que colaboran. El framework se encarga de "instanciar" y "conectar" estos objetos por ti, un concepto llamado <strong>Inversión de Control (IoC)</strong>. Tú defines los planos (las clases) y el framework construye la casa.</li>
+<li><strong>Desarrollo de Videojuegos (Unity, LibGDX):</strong> En un motor de videojuegos, todo es un objeto: el jugador, los enemigos, las balas, los obstáculos... La clase <code>Enemigo</code> puede tener atributos como <code>vida</code> y <code>velocidad</code>, y métodos como <code>atacar()</code> o <code>recibirDanio()</code>. Luego creas múltiples instancias de <code>Enemigo</code> para poblar el nivel.</li>
+<li><strong>Aplicaciones Android:</strong> Cada pantalla (Activity) de una app Android es una clase. Los botones, campos de texto y otros elementos visuales son objetos de clases predefinidas que tú instancias y configuras.</li>
+<li><strong>APIs y Librerías:</strong> Las APIs que consumes (como la de Google Maps o la de Twitter) te exponen un conjunto de clases (<code>Mapa</code>, <code>Tweet</code>, <code>Usuario</code>) con métodos que puedes llamar para interactuar con su servicio, ocultando toda la complejidad interna (encapsulación).</li>
+</ul>
+<p>En resumen, pensar en términos de objetos, responsabilidades y colaboraciones es la habilidad clave que te permitirá construir sistemas robustos, mantenibles y escalables en cualquier área del desarrollo de software.</p>
+<h2 id="para-saber-mas">Para Saber Más</h2>
+<p>Para profundizar en estos conceptos, aquí tienes algunos recursos de altísima calidad:</p>
+<ol>
+<li>
+<p><strong>Documentación Oficial de Oracle sobre Clases y Objetos (Español):</strong> La fuente de la verdad. Imprescindible tenerla a mano siempre.
+    <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/index.html">https://docs.oracle.com/javase/tutorial/java/javaOO/index.html</a></p>
+</li>
+<li>
+<p><strong>pildorasinformaticas - Curso de Java (YouTube):</strong> Un curso legendario en español, muy completo y con explicaciones muy claras sobre todos los conceptos de la POO. Los vídeos del 27 en adelante son oro puro para este tema.
+    <a href="https://www.youtube.com/playlist?list=PLU8oAlHdN5BlyaPFiNQDFiSIi_IkK_d5a">https://www.youtube.com/playlist?list=PLU8oAlHdN5BlyaPFiNQDFiSIi_IkK_d5a</a></p>
+</li>
+<li>
+<p><strong>Baeldung - "Static" in Java (Inglés):</strong> Baeldung es una de las mejores webs técnicas sobre Java. Este artículo explica en profundidad y con ejemplos claros todos los matices de la palabra clave <code>static</code>.
+    <a href="https://www.baeldung.com/java-static">https://www.baeldung.com/java-static</a></p>
+</li>
+</ol>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script type="text/javascript">(function initializeMarkmap() {
+    const transformer = new markmap.Transformer();
+    const preloadScripts = transformer.plugins
+        .flatMap((plugin) => plugin.config?.preloadScripts || [])
+        .map((item) => transformer.resolveJS(item));
+    const assets = transformer.getAssets();
+    const loading = Promise.all([
+        assets.styles && markmap.loadCSS(assets.styles),
+        markmap.loadJS([...preloadScripts, ...assets.scripts]),
+    ]);
+
+    function parseData(content) {
+        const { root, frontmatter } = transformer.transform(content);
+        let options = markmap.deriveOptions(frontmatter?.markmap);
+        options = Object.assign(
+            {
+                fitRatio: 0.85,
+            },
+            options
+        );
+        return { root, options };
+    }
+
+    function resetMarkmap(m, el) {
+        if (!m.state.rect) return;
+        const { x1, y1, x2, y2 } = m.state.rect;
+        const height = (el.offsetWidth / (x2 - x1)) * (y2 - y1);
+        el.style.height = height + "px";
+        m.fit();
+    }
+
+    function decodeBase64(encoded) {
+        const binary = atob(encoded);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < bytes.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        return new TextDecoder().decode(bytes);
+    }
+
+    function renderMarkmap(el) {
+        const dataEl = el.querySelector("markmap-data");
+        if (!dataEl) return;
+        let content = el.textContent;
+        if (dataEl.getAttribute("encoding") === "base64") {
+            content = decodeBase64(content);
+        }
+        el.innerHTML = "<svg>";
+        svg = el.firstChild;
+        const { root, options } = parseData(content);
+        const m = markmap.Markmap.create(svg, options);
+        m.setData(root);
+        requestAnimationFrame(() => {
+            resetMarkmap(m, el);
+        });
+    }
+
+    function updateMarkmaps(node) {
+        for (const el of node.querySelectorAll(".mkdocs-markmap")) {
+            renderMarkmap(el);
+        }
+    }
+
+    loading.then(() => {
+        const observer = new MutationObserver((mutationList) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "childList") {
+                    for (const node of mutation.addedNodes) {
+                        updateMarkmaps(node);
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true });
+
+        updateMarkmaps(document);
+    });
+})();
+</script></body></html>
